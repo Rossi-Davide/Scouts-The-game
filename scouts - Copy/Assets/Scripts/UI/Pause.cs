@@ -23,4 +23,9 @@ public class Pause : MonoBehaviour
 			overlay.SetActive(false);
 		}
 	}
+
+	public void Menu()
+	{
+		mainMenu.instance.GoToMenu();
+	}
 }
