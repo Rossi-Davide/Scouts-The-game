@@ -1,0 +1,1076 @@
+fileFormatVersion: 2
+guid: d9d3a096d12785f4489e4d908df6cc6a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4428103489929628584
+    second: Cambu1_0
+  - first:
+      213: 5949145263085615846
+    second: Cambu1_1
+  - first:
+      213: 2691165193132231810
+    second: Cambu1_2
+  - first:
+      213: -3874404608313208960
+    second: Cambu1_3
+  - first:
+      213: 4777517144108115735
+    second: Cambu1_4
+  - first:
+      213: -1242319648603221663
+    second: Cambu1_5
+  - first:
+      213: -5353081477080373219
+    second: Cambu1_6
+  - first:
+      213: 8857192054492076377
+    second: Cambu1_7
+  - first:
+      213: -2769135688437745435
+    second: Cambu1_8
+  - first:
+      213: 5332726008361784039
+    second: Cambu1_9
+  - first:
+      213: -4643541931196742806
+    second: Cambu1_10
+  - first:
+      213: -9207212479645417313
+    second: Cambu1_11
+  - first:
+      213: 3951476542702914322
+    second: Cambu1_12
+  - first:
+      213: -3814467840024699386
+    second: Cambu1_13
+  - first:
+      213: -7314133194257423812
+    second: Cambu1_14
+  - first:
+      213: 8733517632244782787
+    second: Cambu1_15
+  - first:
+      213: 9158511887541650
+    second: Cambu1_16
+  - first:
+      213: -743009758735002502
+    second: Cambu1_17
+  - first:
+      213: 7188217268062511028
+    second: Cambu1_18
+  - first:
+      213: 8331344015680808482
+    second: Cambu1_19
+  - first:
+      213: 4216623884336342158
+    second: Cambu1_20
+  - first:
+      213: -7921794428074150282
+    second: Cambu1_21
+  - first:
+      213: -3703606728105173020
+    second: Cambu1_22
+  - first:
+      213: -7496048922845411057
+    second: Cambu1_23
+  - first:
+      213: -5756167679305831939
+    second: Cambu1_24
+  - first:
+      213: -168272124451145569
+    second: Cambu1_25
+  - first:
+      213: 196144354222383643
+    second: Cambu1_26
+  - first:
+      213: -1031136208779647790
+    second: Cambu1_27
+  - first:
+      213: 6174396213624300200
+    second: Cambu1_28
+  - first:
+      213: 7646465981561268602
+    second: Cambu1_29
+  - first:
+      213: 167254699752774282
+    second: Cambu1_30
+  - first:
+      213: -4193884824589881177
+    second: Cambu1_31
+  - first:
+      213: -7304508792920228071
+    second: Cambu1_32
+  - first:
+      213: -2960860637435009805
+    second: Cambu1_33
+  - first:
+      213: -3468384605836586114
+    second: Cambu1_34
+  - first:
+      213: 467055038710695023
+    second: Cambu1_35
+  - first:
+      213: -1413889325328632225
+    second: Cambu1_36
+  - first:
+      213: 8418521971514888556
+    second: Cambu1_37
+  - first:
+      213: -3785811541886049973
+    second: Cambu1_38
+  - first:
+      213: 1819022577307631490
+    second: Cambu1_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cambu1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854b31646573c82c0800000000000000
+      internalID: -4428103489929628584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 162
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea7a6bc81c9f8250800000000000000
+      internalID: 5949145263085615846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 161
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cca881c70f85520800000000000000
+      internalID: 2691165193132231810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 162
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08fca5549895b3ac0800000000000000
+      internalID: -3874404608313208960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_4
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 162
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71727eab7862d4240800000000000000
+      internalID: 4777517144108115735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 162
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16154879cd462cee0800000000000000
+      internalID: -1242319648603221663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_6
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 161
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d18a6e822c806b5b0800000000000000
+      internalID: -5353081477080373219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 162
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95999630f311bea70800000000000000
+      internalID: 8857192054492076377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8bfcb43cd0299d0800000000000000
+      internalID: -2769135688437745435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_9
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 52
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e214e4fc06a10a40800000000000000
+      internalID: 5332726008361784039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6303635733de8fb0800000000000000
+      internalID: -4643541931196742806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_11
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 52
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90013b1809693080800000000000000
+      internalID: -9207212479645417313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_12
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 2
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b8812daf676d630800000000000000
+      internalID: 3951476542702914322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_13
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 52
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e1d2c95b9401bc0800000000000000
+      internalID: -3814467840024699386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_14
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 2
+        width: 52
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32a46c9c9afe7a90800000000000000
+      internalID: -7314133194257423812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_15
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 0
+        width: 52
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c69f8da300b33970800000000000000
+      internalID: 8733517632244782787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_16
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 2
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2956ab73e99802000800000000000000
+      internalID: 9158511887541650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_17
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1
+        width: 48
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7493f1af8c40b5f0800000000000000
+      internalID: -743009758735002502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_18
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 2
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfd13f358da1c360800000000000000
+      internalID: 7188217268062511028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_19
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 2
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2262b3cad31ee9370800000000000000
+      internalID: 8331344015680808482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_20
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 3
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84ab490515748a30800000000000000
+      internalID: 4216623884336342158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_21
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 2
+        width: 48
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676b8fa60f1201290800000000000000
+      internalID: -7921794428074150282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_22
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 3
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef5b87ad452a9cc0800000000000000
+      internalID: -3703606728105173020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_23
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 1
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0989de683fa8f790800000000000000
+      internalID: -7496048922845411057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_24
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 2
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9246f3efbfd10b0800000000000000
+      internalID: -5756167679305831939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_25
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1
+        width: 49
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f983d74f46d2aadf0800000000000000
+      internalID: -168272124451145569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_26
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12af1e3048d8b200800000000000000
+      internalID: 196144354222383643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_27
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 2
+        width: 49
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d465a0d41ba0b1f0800000000000000
+      internalID: -1031136208779647790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_28
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1
+        width: 49
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2e79794acdfa550800000000000000
+      internalID: 6174396213624300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_29
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 0
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79611a2c44bd1a60800000000000000
+      internalID: 7646465981561268602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_30
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 0
+        width: 49
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a57c56345325200800000000000000
+      internalID: 167254699752774282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_31
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1
+        width: 49
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a03b61e8f35cc5c0800000000000000
+      internalID: -4193884824589881177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_32
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 0
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fb54b24fb21aa90800000000000000
+      internalID: -7304508792920228071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_33
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 2
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4ef3400f8e8e6d0800000000000000
+      internalID: -2960860637435009805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_34
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1
+        width: 48
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e735da8c392dddfc0800000000000000
+      internalID: -3468384605836586114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_35
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 2
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6448e845105b7600800000000000000
+      internalID: 467055038710695023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_36
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56f114562bd06ce0800000000000000
+      internalID: -1413889325328632225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_37
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6157fd312994d470800000000000000
+      internalID: 8418521971514888556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_38
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 0
+        width: 48
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41ee43f578167bc0800000000000000
+      internalID: -3785811541886049973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cambu1_39
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 1
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f36de75677e3910800000000000000
+      internalID: 1819022577307631490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

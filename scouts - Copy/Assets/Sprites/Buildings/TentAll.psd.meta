@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: a38b9d106f5c6df43b845eda8fd8b964
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6530369346187733173
+    second: TentAll_0
+  - first:
+      213: 7109017437905001829
+    second: TentAll_1
+  - first:
+      213: 7320608835912768252
+    second: TentAll_2
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TentAll_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 18
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -12.5, y: -7}
+        - {x: -13.5, y: -7}
+        - {x: -13.5, y: -5}
+        - {x: -8.5, y: 5}
+        - {x: -3.5, y: 13}
+        - {x: -3.5, y: 14}
+        - {x: 1.5, y: 14}
+        - {x: 1.5, y: 13}
+        - {x: 3.5, y: 13}
+        - {x: 3.5, y: 12}
+        - {x: 5.5, y: 12}
+        - {x: 5.5, y: 11}
+        - {x: 7.5, y: 11}
+        - {x: 7.5, y: 10}
+        - {x: 9.5, y: 10}
+        - {x: 9.5, y: 9}
+        - {x: 11.5, y: 9}
+        - {x: 11.5, y: 8}
+        - {x: 12.5, y: 8}
+        - {x: 12.5, y: 7}
+        - {x: 12.5, y: 6}
+        - {x: 12.5, y: 5}
+        - {x: 13.5, y: 5}
+        - {x: 13.5, y: 3}
+        - {x: 14.5, y: 3}
+        - {x: 14.5, y: 1}
+        - {x: 15.5, y: 1}
+        - {x: 15.5, y: -1}
+        - {x: 16.5, y: -1}
+        - {x: 16.5, y: -3}
+        - {x: 17.5, y: -3}
+        - {x: 17.5, y: -5}
+        - {x: 16.5, y: -5}
+        - {x: 16.5, y: -6}
+        - {x: 15.5, y: -6}
+        - {x: 15.5, y: -7}
+        - {x: 13.5, y: -7}
+        - {x: 13.5, y: -8}
+        - {x: 11.5, y: -8}
+        - {x: 11.5, y: -9}
+        - {x: 9.5, y: -9}
+        - {x: 9.5, y: -10}
+        - {x: 7.5, y: -10}
+        - {x: 7.5, y: -11}
+        - {x: 5.5, y: -11}
+        - {x: 5.5, y: -12}
+        - {x: 3.5, y: -12}
+        - {x: 3.5, y: -13}
+        - {x: 1.5, y: -13}
+        - {x: 1.5, y: -14}
+        - {x: -0.5, y: -14}
+        - {x: -0.5, y: -13}
+        - {x: -2.5, y: -13}
+        - {x: -2.5, y: -12}
+        - {x: -4.5, y: -12}
+        - {x: -4.5, y: -11}
+        - {x: -6.5, y: -11}
+        - {x: -6.5, y: -10}
+        - {x: -7.5, y: -10}
+        - {x: -7.5, y: -11}
+        - {x: -8.5, y: -11}
+        - {x: -8.5, y: -13}
+        - {x: -9.5, y: -13}
+        - {x: -9.5, y: -11}
+        - {x: -8.5, y: -11}
+        - {x: -8.5, y: -9}
+        - {x: -10.5, y: -9}
+        - {x: -10.5, y: -8}
+        - {x: -12.5, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8ae9b225880aa50800000000000000
+      internalID: 6530369346187733173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TentAll_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 14
+        width: 64
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d9260d1bd48a260800000000000000
+      internalID: 7109017437905001829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TentAll_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 14
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa9a2433f6089560800000000000000
+      internalID: 7320608835912768252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
+  m_Name: Tenda
+  m_EditorClassIdentifier: 
+  name: Campeggiatore
+  description: 'Monta la tenda '
+  completed: 0
+  prizeTaken: 0
+  prizeCounter: 3
+  prizeAmount: 5
+  action: {fileID: 0}
+  timesToDo: 1
+  timesDone: 0
