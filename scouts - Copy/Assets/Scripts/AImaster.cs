@@ -15,14 +15,24 @@ public class AImaster : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
+    Vector3 meta;
 
     // Start is called before the first frame update
     void Start()
     {
+        meta.z = 0;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        InvokeRepeating("UpdatePath", 0f,0.5f);
+    }
 
-        seeker.StartPath(rb.position, target.position, OnPathComplete);
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb.position, target.position, OnPathComplete);
+
+        }
     }
 
     void OnPathComplete(Path p)
@@ -44,6 +54,7 @@ public class AImaster : MonoBehaviour
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
+            AggiornaPosizione(false);
             return;
         }
         else
@@ -54,11 +65,19 @@ public class AImaster : MonoBehaviour
         Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
 
+
+
         rb.AddForce(force);
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
         if (distance < nextWayPointDistance)
         {
             currentWayPoint++;
         }
+    }
+
+
+    void AggiornaPosizione(bool player)
+    {
+
     }
 }
