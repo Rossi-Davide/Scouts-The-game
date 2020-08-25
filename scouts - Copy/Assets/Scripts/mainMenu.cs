@@ -9,6 +9,7 @@ public class mainMenu : MonoBehaviour
         if (instance != null)
             throw new System.Exception("Main menu non è un singleton");
         instance = this;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 
 	public void Quit()
@@ -26,5 +27,10 @@ public class mainMenu : MonoBehaviour
     public void GoToMenu()
 	{
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene(3);
     }
 }

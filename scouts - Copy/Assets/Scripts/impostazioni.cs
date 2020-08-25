@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class impostazioni : MonoBehaviour
 {
     Resolution[] resolutions;
     public AudioMixer mixer;
-    public Dropdown resDrop;
+    public TMP_Dropdown resDrop;
+
+    public TextMeshProUGUI masterValue, musicValue, effectsValue;
 
     private void Start()
     {
@@ -38,18 +40,21 @@ public class impostazioni : MonoBehaviour
 
     public void SetVolumeMaster(float volume)
     {
-        mixer.SetFloat("master",volume);
+        mixer.SetFloat("master", volume - 80);
+        masterValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
 
     public void SetVolumeMusic(float volume)
     {
-        mixer.SetFloat("music", volume);
+        mixer.SetFloat("music", volume - 80);
+        musicValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
     public void SetVolumeSounds(float volume)
     {
-        mixer.SetFloat("sounds", volume);
+        mixer.SetFloat("sounds", volume - 80);
+        effectsValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
 
