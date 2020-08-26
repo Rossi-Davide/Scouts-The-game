@@ -5,7 +5,7 @@ using TMPro;
 
 public class nascondinoManager : MonoBehaviour
 {
-    public Animator luceGlobale, pointLight;
+    public Animator luceGlobale, pointLight,regole,titolo;
     public GameObject luce1, luce2, testo1, testo2,joystick,player,enemy,countdownStartObj,haisec;
     bool countdownStart = false,countdownStartGrande=false,countdownGiocoInSe=false;
     float seconds = 10f,minutes=0f,secondsInizioGioco=3f;
@@ -30,25 +30,28 @@ public class nascondinoManager : MonoBehaviour
         luce2.SetActive(true);
         yield return new WaitForSeconds(2f);
         testo1.SetActive(true);
-        yield return new WaitForSeconds(3f);
-
+        yield return new WaitForSeconds(4f);
+        titolo.SetBool("uscitaTesto", true);
+        yield return new WaitForSeconds(1f);
         testo1.SetActive(false);
         testo2.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
+        regole.SetBool("fadeOut", true);
+        yield return new WaitForSeconds(1f);
         testo2.SetActive(false);
         pointLight.SetBool("inizioGioco", true);
         yield return new WaitForSeconds(1f);
         luceGlobale.SetBool("inizioGioco", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
+        haisec.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        haisec.SetActive(false);
         countdownStart = true;
         countdownStartObj.SetActive(true);
         yield return null;
     }
 
-    void InizioGioco()
-    {
-        
-    }
+   
 
 
     void Update()
@@ -68,7 +71,7 @@ public class nascondinoManager : MonoBehaviour
 
         if (countdownStartGrande == true)
         {
-            haisec.SetActive(true);
+            //haisec.SetActive(true);
 
             joystick.SetActive(true);
             player.SetActive(true);
@@ -80,6 +83,7 @@ public class nascondinoManager : MonoBehaviour
                 minutes = 1;
                 //minutes -= 1;
                 countdownStartGrande = false;
+                InizioGioco();
             }
             countdownSeconds.text = seconds.ToString("0");
             //countdownMinutes.text = minutes.ToString();
@@ -101,5 +105,13 @@ public class nascondinoManager : MonoBehaviour
             countdownMinutes.text = minutes.ToString();
         }
         
+    }
+
+    void InizioGioco()
+    {
+        for(int i = 1; i <= 1; i++)
+        {
+            Instantiate(enemy, Vector3.zero,Quaternion.identity);
+        }
     }
 }

@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class AImaster : MonoBehaviour
 {
+     GameObject targetObj;
     public Transform target;
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -16,11 +17,21 @@ public class AImaster : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
     Vector3 meta;
+    bool playerFound=false;
 
     // Start is called before the first frame update
     void Start()
     {
-        meta.z = 0;
+        targetObj = GameObject.Find("playerNascondino");
+        if (targetObj == null)
+        {
+            Debug.Log("giocatore non trovato");
+        }
+        else
+        {
+            target = targetObj.transform;
+        }
+        AggiornaPosizione();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f,0.5f);
@@ -28,11 +39,23 @@ public class AImaster : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (playerFound == true)
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            if (seeker.IsDone())
+            {
+                seeker.StartPath(rb.position, target.position, OnPathComplete);
 
+            }
         }
+        else
+        {
+            if (seeker.IsDone())
+            {
+                seeker.StartPath(rb.position, meta, OnPathComplete);
+
+            }
+        }
+        
     }
 
     void OnPathComplete(Path p)
@@ -54,7 +77,7 @@ public class AImaster : MonoBehaviour
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
-            AggiornaPosizione(false);
+            AggiornaPosizione();
             return;
         }
         else
@@ -76,8 +99,14 @@ public class AImaster : MonoBehaviour
     }
 
 
-    void AggiornaPosizione(bool player)
+    void AggiornaPosizione()
     {
-
+        if (playerFound == false)
+        {
+            meta.x = (Random.Range(-428,383))/100;
+            meta.y = (Random.Range(-1101,987))/100;
+            meta.z = 0;
+        }
+        Debug.Log("posizione aggiornata");
     }
 }
