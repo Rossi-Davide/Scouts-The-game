@@ -1,0 +1,35 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemySearch : MonoBehaviour
+{
+    public LayerMask player;
+    public LayerMask coll;
+    public float viewRadius;
+
+    [Range(0,360)]
+    public float viewAngle;
+
+    public Vector2 DirFromAngle(float angle,bool angleIsGlobal)
+    {
+        if (!angleIsGlobal)
+        {
+            angle += transform.eulerAngles.z;
+        }
+        return new Vector2(Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad));
+    }
+
+
+    void FindVisibleTarget()
+    {
+        Collider2D targetsInViewRadius = Physics2D.OverlapCircle(transform.position, viewRadius, player);
+        Transform target = targetsInViewRadius.transform;
+        Vector3 dirToTarget = (target.position - transform.position).normalized;
+        Vector2 direct = dirToTarget;
+        if (Vector2.Angle(transform.right, direct) < viewAngle / 2)
+        {
+            
+        }
+    }
+}
