@@ -99,7 +99,10 @@ public class Shop : MonoBehaviour
 	{
 		itemsPanel.SetActive(!itemsPanel.activeSelf);
 		shopPanel.SetActive(!shopPanel.activeSelf);
-		costruzioniEPioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Costruzioni);
+		costruzioniEPioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Costruzioni || currentScreen == GameManager.ShopScreen.Pioneristica);
+		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);
+		altreCassePanel.SetActive(currentScreen == GameManager.ShopScreen.Infermieristica || currentScreen == GameManager.ShopScreen.Topografia || currentScreen == GameManager.ShopScreen.Espressione);
+		negozioIllegalePanel.SetActive(currentScreen == GameManager.ShopScreen.NegozioIllegale);
 		closeButton.SetActive(!closeButton.activeSelf);
 	}
 
