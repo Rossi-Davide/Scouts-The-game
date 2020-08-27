@@ -35,6 +35,7 @@ public class AImaster : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f,0.5f);
+        InvokeRepeating("AggiornaPosizione",0f,15f);
     }
 
     void UpdatePath()
@@ -77,11 +78,14 @@ public class AImaster : MonoBehaviour
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
+            Debug.Log("finePath");
+
             AggiornaPosizione();
             return;
         }
         else
         {
+
             reachedEndOfPath = false;
         }
 
@@ -103,8 +107,8 @@ public class AImaster : MonoBehaviour
     {
         if (playerFound == false)
         {
-            meta.x = (Random.Range(-428,383))/100;
-            meta.y = (Random.Range(-1101,987))/100;
+            meta.y = (Random.Range(-428,383))/100;
+            meta.x = (Random.Range(-1101,987))/100;
             meta.z = 0;
         }
         Debug.Log("posizione aggiornata");
