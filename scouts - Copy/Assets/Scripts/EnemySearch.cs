@@ -29,7 +29,12 @@ public class EnemySearch : MonoBehaviour
         Vector2 direct = dirToTarget;
         if (Vector2.Angle(transform.right, direct) < viewAngle / 2)
         {
-            
+            float disToTarget = Vector2.Distance(transform.position, target.position);
+
+            if (!Physics2D.Raycast(transform.position, direct, disToTarget, coll))
+            {
+
+            }
         }
     }
 }
