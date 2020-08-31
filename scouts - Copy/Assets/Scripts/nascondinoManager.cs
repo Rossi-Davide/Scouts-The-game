@@ -109,7 +109,7 @@ public class nascondinoManager : MonoBehaviour
 
     void InizioGioco()
     {
-        for(int i = 1; i <= 1; i++)
+        for(int i = 1; i <= 5; i++)
         {
             Instantiate(enemy, Vector3.zero,Quaternion.identity);
         }

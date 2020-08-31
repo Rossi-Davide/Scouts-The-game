@@ -7,9 +7,21 @@ public class EnemySearch : MonoBehaviour
     public LayerMask player;
     public LayerMask coll;
     public float viewRadius;
+    [HideInInspector]
+    public List<Transform> visibleTarget = new List<Transform>();
 
     [Range(0,360)]
     public float viewAngle;
+
+
+    private void Start()
+    {
+        StartCoroutine("callingVision", .2f);
+    }
+
+
+
+
 
     public Vector2 DirFromAngle(float angle,bool angleIsGlobal)
     {
@@ -23,18 +35,34 @@ public class EnemySearch : MonoBehaviour
 
     void FindVisibleTarget()
     {
-        Collider2D targetsInViewRadius = Physics2D.OverlapCircle(transform.position, viewRadius, player);
-        Transform target = targetsInViewRadius.transform;
-        Vector3 dirToTarget = (target.position - transform.position).normalized;
-        Vector2 direct = dirToTarget;
-        if (Vector2.Angle(transform.right, direct) < viewAngle / 2)
+        visibleTarget.Clear();
+        Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, player);
+        for(int i = 0; i < targetsInViewRadius.Length; i++)
         {
-            float disToTarget = Vector2.Distance(transform.position, target.position);
-
-            if (!Physics2D.Raycast(transform.position, direct, disToTarget, coll))
+            Transform target = targetsInViewRadius[i].transform;
+            Vector3 dirToTarget = (target.position - transform.position).normalized;
+            Vector2 direct = dirToTarget;
+            if (Vector2.Angle(transform.right, direct) < viewAngle / 2)
             {
+                float disToTarget = Vector2.Distance(transform.position, target.position);
 
+                if (!Physics2D.Raycast(transform.position, direct, disToTarget, coll))
+                {
+                    visibleTarget.Add(target);
+                }
             }
+        }
+            
+        
+        
+    }
+
+    IEnumerator callingVision(float delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(delay);
+            FindVisibleTarget();
         }
     }
 }

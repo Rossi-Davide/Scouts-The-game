@@ -78,7 +78,6 @@ public class AImaster : MonoBehaviour
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
-            Debug.Log("finePath");
 
             AggiornaPosizione();
             return;
@@ -111,6 +110,6 @@ public class AImaster : MonoBehaviour
             meta.x = (Random.Range(-1101,987))/100;
             meta.z = 0;
         }
-        Debug.Log("posizione aggiornata");
+
     }
 }

@@ -15,8 +15,11 @@ public class EditorModif : Editor
 
         Handles.DrawLine(es.transform.position,(Vector2) es.transform.position + viewAngleA * es.viewRadius);
         Handles.DrawLine(es.transform.position, (Vector2)es.transform.position + viewAngleB * es.viewRadius);
-
-
+        Handles.color = Color.red;
+        foreach(Transform transform in es.visibleTarget)
+        {
+            Handles.DrawLine(es.transform.position, transform.position);
+        }
     }
 
 }
