@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa84be6a36f035e4ea80a6f10a961f13, type: 3}
+  m_Name: Pentolone
+  m_EditorClassIdentifier: 
+  name: 
+  description: 
+  abilityDescription: 
+  icon: {fileID: 0}
+  type: 0
+  shopScreen: 0
+  currentAmount: 0
+  maxAmount: 0
+  chest: 0
+  neededItems: []
+  price: 0
+  priceType: 0
+  periodicUseInterval: 0
+  changedCounter: 0
+  deltaPoints: 0
+  modifiedAction: {fileID: 0}
+  modifiedParameter: 0
+  newValue: 0
+  screenUnlocked: 0
+  timeRequired: 0
+  pointsGiven: 0
