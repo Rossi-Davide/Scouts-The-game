@@ -17,7 +17,7 @@ public class AImaster : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
     Vector3 meta;
-    bool playerFound=false;
+   public bool playerFound=false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class AImaster : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f,0.5f);
-        InvokeRepeating("AggiornaPosizione",0f,15f);
+        InvokeRepeating("AggiornaPosizione",0f,10f);
     }
 
     void UpdatePath()
@@ -106,9 +106,22 @@ public class AImaster : MonoBehaviour
     {
         if (playerFound == false)
         {
-            meta.y = (Random.Range(-428,383))/100;
-            meta.x = (Random.Range(-1101,987))/100;
-            meta.z = 0;
+            nascondinoManager manager = GameObject.Find("GameManager").GetComponent<nascondinoManager>();
+
+
+            if (manager.aumentoDifficoltà == false)
+            {
+                meta.y = (Random.Range(-428, 383)) / 100;
+                meta.x = (Random.Range(-1101, 987)) / 100;
+                meta.z = 0;
+            }
+            else
+            {
+                meta.y = Random.Range(target.position.y - 1, target.position.y + 1);
+                meta.x = Random.Range(target.position.x - 1, target.position.x + 1);
+                meta.z = 0;
+            }
+
         }
 
     }

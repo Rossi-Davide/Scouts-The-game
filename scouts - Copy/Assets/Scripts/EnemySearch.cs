@@ -7,8 +7,8 @@ public class EnemySearch : MonoBehaviour
     public LayerMask player;
     public LayerMask coll;
     public float viewRadius;
-    [HideInInspector]
-    public List<Transform> visibleTarget = new List<Transform>();
+    /*[HideInInspector]
+    public List<Transform> visibleTarget = new List<Transform>();*/
 
     [Range(0,360)]
     public float viewAngle;
@@ -35,7 +35,7 @@ public class EnemySearch : MonoBehaviour
 
     void FindVisibleTarget()
     {
-        visibleTarget.Clear();
+        //visibleTarget.Clear();
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, player);
         for(int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -48,7 +48,9 @@ public class EnemySearch : MonoBehaviour
 
                 if (!Physics2D.Raycast(transform.position, direct, disToTarget, coll))
                 {
-                    visibleTarget.Add(target);
+                    //visibleTarget.Add(target);
+                    AImaster AIBrain = GetComponent<AImaster>();
+                    AIBrain.playerFound = true;
                 }
             }
         }

@@ -10,10 +10,15 @@ public class nascondinoManager : MonoBehaviour
     bool countdownStart = false,countdownStartGrande=false,countdownGiocoInSe=false;
     float seconds = 10f,minutes=0f,secondsInizioGioco=3f;
     public TextMeshProUGUI countdownSeconds,countdownMinutes,countdownSecondsInizio;
+    Transform spawnPoint;
+    [HideInInspector]
+    public bool aumentoDifficoltà=false;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("iniziale");
+        spawnPoint = transform.Find("spawnPoint");
     }
 
     // Update is called once per frame
@@ -92,8 +97,7 @@ public class nascondinoManager : MonoBehaviour
 
         if (countdownGiocoInSe == true)
         {
-            joystick.SetActive(true);
-            player.SetActive(true);
+            
             seconds -= 1 * Time.deltaTime;
             if (seconds < 0)
             {
@@ -104,14 +108,17 @@ public class nascondinoManager : MonoBehaviour
             countdownSeconds.text = seconds.ToString("0");
             countdownMinutes.text = minutes.ToString();
         }
-        
+        if (minutes <= 0)
+        {
+            aumentoDifficoltà = true;
+        }
     }
 
     void InizioGioco()
     {
         for(int i = 1; i <= 5; i++)
         {
-            Instantiate(enemy, Vector3.zero,Quaternion.identity);
+            Instantiate(enemy,spawnPoint.position,Quaternion.identity);
         }
     }
 }
