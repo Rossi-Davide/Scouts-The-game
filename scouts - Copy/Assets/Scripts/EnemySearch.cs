@@ -51,6 +51,7 @@ public class EnemySearch : MonoBehaviour
                     //visibleTarget.Add(target);
                     AImaster AIBrain = GetComponent<AImaster>();
                     AIBrain.playerFound = true;
+                    //Debug.Log("giocatore trovato");
                 }
             }
         }

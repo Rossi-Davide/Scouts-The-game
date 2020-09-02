@@ -13,6 +13,7 @@ public class nascondinoManager : MonoBehaviour
     Transform spawnPoint;
     [HideInInspector]
     public bool aumentoDifficoltà=false;
+    GameObject[] enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -107,18 +108,62 @@ public class nascondinoManager : MonoBehaviour
             }
             countdownSeconds.text = seconds.ToString("0");
             countdownMinutes.text = minutes.ToString();
+            if (minutes <= 0)
+            {
+                //aumentoDifficoltà = true; da decidere se implementare
+            }
+            if (minutes <= 0)
+            {
+                StartCoroutine("Vittoria");
+            }
         }
-        if (minutes <= 0)
-        {
-            aumentoDifficoltà = true;
-        }
+       
     }
 
     void InizioGioco()
     {
         for(int i = 1; i <= 5; i++)
         {
-            Instantiate(enemy,spawnPoint.position,Quaternion.identity);
+           enemies[i]= Instantiate(enemy,spawnPoint.position,Quaternion.identity);
         }
+    }
+
+
+
+    IEnumerator Vittoria()
+    {
+        /*Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        joystick.SetActive(false);*/
+        foreach (GameObject item in enemies)
+        {
+            Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
+            AImaster movement = item.GetComponent<AImaster>();
+            movement.enabled = false;
+            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        Debug.Log("hai vinto");
+        //animazione da decidere
+        yield return null;
+
+    }
+
+    
+    
+     public  IEnumerator Sconfitta()
+    {
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        joystick.SetActive(false);
+        foreach (GameObject item in enemies)
+        {
+            Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
+            AImaster movement = item.GetComponent<AImaster>();
+            movement.enabled = false;
+            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        Debug.Log("hai perso");
+        //animazione da decidere
+        yield return null;
     }
 }

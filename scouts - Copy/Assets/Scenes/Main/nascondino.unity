@@ -285,6 +285,7 @@ Transform:
   - {fileID: 922327070}
   - {fileID: 1107459211}
   - {fileID: 782981849}
+  - {fileID: 1295007738}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -430,7 +431,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.42882967, y: 0.12995839}
+  m_Offset: {x: -0.42882967, y: 0.090801515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -441,7 +442,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96380043, y: 0.33759767}
+  m_Size: {x: 0.96380043, y: 0.2592839}
   m_EdgeRadius: 0
 --- !u!4 &289412665
 Transform:
@@ -451,7 +452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289412663}
   m_LocalRotation: {x: -0, y: -0, z: 0.03922316, w: 0.9992305}
-  m_LocalPosition: {x: -4.896434, y: 3.7070615, z: -10.840401}
+  m_LocalPosition: {x: -4.896434, y: 3.781, z: -10.840401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 194844991}
@@ -488,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezgyfAdagIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxHROgt5YQ0kM+JrSTiy/CWmMNsuSR5ABh+O9dyTJ2KRfkt/tWb9+ufSZcmhpyq/Rac/asGJDvI+LO5NuoDz7Bke6U3PAv6HI+OLOlS6I+551arhCPHc2oCqzm+Q+5Ey45QrCRvFC6WrEdLJWxBuGCCgMY0so6tkToPCJH/BsvHOWEp2TmTl94WkSjCx5zkBb0IDWaRAv83cdxoDgkRWQ+je6SQG65jcwFrWpgrpG+xF00SaaBHCeT2dQnS2w05IV4roTgJggl9lR7IzZ1CRqcE4xT7NuLiyczBErgu9K6Lobs16IwYIMtmp4euEYD27Lkp2pdrajZtwo/qWjcRUmUzr2wturzfwnj2IcLraqn7uI4cpfYkuf7d3rKqbED34fww0C7d+pAxZ5uBXyUIF/UWqtGMgxa3ThqYyB56B+vvS1LyPc93kq9AZu6t74bczdk18PFt39cCl5tvflpC2yE8o773QCN4/mFgv3mmFACUafij4HfdDdcsRB45NpYDIUupZO3VY12qWTlPXPdNHaptAQPB9E1SCrs6Q3L2NsZ3sQG195EHql7mcLlIda9IzcUD/f5UXQTelOH67BMqQ7PYMrXxgouoRftAi/o01JJ2a7Y0JOOtml0QfMBbddw9u9qke10u0i2NJ9NGeQpjcaL6WKW0jRNEnZ/T+cz4nePS+yTirdWaLAHpyb74hL3rPvGjNaa1n7dmaaHNf+q1MByLgu1yTWAfG0rXIWDxkvw1WQrxtGgDVjLpZ83OWdEqHwPLLsWynynq6PVNOurZKTmn8o6JCNL/1HJyIVc/gJQSwMEFAAACAgAAAgh7L2WWoVtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKSaZKlUVJisrlpSmqySaKBrqWppblJoomJkVGKmVmihblSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7ODJ8B1qAgAAEwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7L2WWoVtAAAAeAAAAAkAJAAAAAAAAAAAAAAAtwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABvAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIezaPr2JZgIAABAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoUxHhOgtxYI6YEkE9rJxRdhrbEGWfJIcvga/ntXsoxdygX57b7dt09rXwmXpoLMKr3WnG0UA/J9QNyZfBt0wRc40b2SW36BNueTM1u4JOpzPqjlCvGxoxlVgtU8+yH3wiVHCNaS50qXK7aHhTLWIJxTYQBDWlnHlghdB+SEf8O5o5zxFE/d6YKneTS44TEDaUH3UqNRNMffNE4CxSEJIrNZYDbEWmaClhUwN0XHj5PRJBDH0Sie+FyJQ4Y0h7m2Sghugkhiz5U3YVsVoMG5wDjFmb2w8WiKQAF8X1jXoM9+y3MDNlii6XnJNZrXlCU/VeNoSc2hEfhFRe0axVEy88Kaqpv/EoZjH861Kl/axuPINbEFzw4f9JxRY3ue9+FlT7s36kjFge4EfBYgX9Vaq1oyDFpdO2ptIF52j/fZFgVkhw5vpD6AddU5315xe8Fuhpsf/7QQvNx585MG2ArlHfd7ARqv5xcK9ltjQglEnYo/Bn7TfX+9QuCZa2MxFKaUTt5O1dqlkpX3zE1T24XSEjwcRFcgqbDndyxjH+/wIdZr+xB5pu5FCs1DrH0/Hige7vKj6CH0ro73yzKFOm7AFG+1FVxCJ9oFXtGnhZKyWbG+Jy1tW+ucZj3avubs39Uiu8luHu9oNp0wyBIaDeeT+TShSRLH7OmJzqbE7x6XOCcV743QYA/emuyKS9yz9vsyWGta+XVnmh7X/FKqvkAuc7XNNIB8a0rclYPGLvhushXj6NAWrOXSXzi5pkSo7AAsvfdM/airk9U07aqkpOJfyjokJQv/RUnJjdz+AlBLAwQUAAAICAAACCHsvZZahW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UpJpkqVRUmKyuWlKarJJooGupamluUmiiYmRUYqZWaKFuVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHs2j69iWYCAAAQBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsvZZahW0AAAB4AAAACQAkAAAAAAAAAAAAAACzAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGsDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -2156,6 +2157,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1295007737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295007738}
+  - component: {fileID: 1295007739}
+  m_Layer: 11
+  m_Name: GameObject (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1295007738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295007737}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -15.56, y: -0.61, z: -10.840401}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 194844991}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &1295007739
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295007737}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.635789, y: 0.2037152}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.4394712, y: 0.9031855}
+  m_EdgeRadius: 0
 --- !u!1 &1439440678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,6 +3047,7 @@ MonoBehaviour:
   countdownSeconds: {fileID: 592551654}
   countdownMinutes: {fileID: 912929567}
   countdownSecondsInizio: {fileID: 1038382385}
+  "aumentoDifficolt\xE0": 0
 --- !u!1 &1753120085
 GameObject:
   m_ObjectHideFlags: 0

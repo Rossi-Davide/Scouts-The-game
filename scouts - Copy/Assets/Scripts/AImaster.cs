@@ -17,6 +17,7 @@ public class AImaster : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
     Vector3 meta;
+    [HideInInspector]
    public bool playerFound=false;
 
     // Start is called before the first frame update
@@ -117,9 +118,20 @@ public class AImaster : MonoBehaviour
             }
             else
             {
-                meta.y = Random.Range(target.position.y - 1, target.position.y + 1);
-                meta.x = Random.Range(target.position.x - 1, target.position.x + 1);
+                //Debug.Log("restringimento area");
+                do
+                {
+                    meta.y = Random.Range(target.position.y - 10, target.position.y + 10);
+
+                } while (meta.y<(-428/100)||meta.y>=(383/100));
+
+                do
+                {
+                    meta.x = Random.Range(target.position.x - 10, target.position.x + 10);
+
+                } while (meta.x < (-1101 / 100) || meta.x >= (987 / 100));
                 meta.z = 0;
+
             }
 
         }
