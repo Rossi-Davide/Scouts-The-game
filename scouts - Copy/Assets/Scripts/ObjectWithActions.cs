@@ -69,9 +69,13 @@ public abstract class ObjectWithActions : MonoBehaviour
 		{
 			var b = buttons[n];
 			var c = FindNotVerified(b.conditions);
-			if (c == null && CheckActionManager())
+			if (c == null)
 			{
-				DoAction(b);
+				if (CheckActionManager(n))
+					DoAction(b);
+				else
+					GameManager.instance.WarningMessage("Non puoi eseguire più azioni contemporaneamente sullo stesso oggetto");
+
 			}
 			else
 			{
@@ -82,11 +86,11 @@ public abstract class ObjectWithActions : MonoBehaviour
 	}
 
 	public Build.Objects thisObject;
-	protected bool CheckActionManager()
+	protected bool CheckActionManager(int buttonNum)
 	{
-		return ActionManager.instance.AddAction(new CurrentAction(currentAction, thisObject, GetTime()));
+		return ActionManager.instance.AddAction(new CurrentAction(currentAction, thisObject, GetTime(buttonNum)));
 	}
-	protected virtual int GetTime()
+	protected virtual int GetTime(int buttonNum)
 	{
 		return 0;
 	}

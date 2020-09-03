@@ -90,7 +90,7 @@ public class ActionManager : MonoBehaviour
 				return GameManager.IntToMinuteSeconds(a.timeLeft);
 			}
 		}
-		throw new System.Exception("Azione scorretta: non esiste");
+		return 0.ToString();
 	}
 
 }

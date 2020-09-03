@@ -9,6 +9,8 @@ public class TimeLeftBar : MonoBehaviour
 	public int timeLeft;
 	private Slider slider;
 	private TextMeshProUGUI value;
+	[HideInInspector]
+	public CurrentAction action;
 
 	private void OnEnable()
 	{
@@ -17,21 +19,18 @@ public class TimeLeftBar : MonoBehaviour
 		slider.maxValue = totalTime;
 		slider.value = 0;
 		timeLeft = totalTime;
-		InvokeRepeating("Counter", 0, 1);
+		InvokeRepeating("RefreshTime", 0, 1);
 	}
 	private void OnDisable()
 	{
-		CancelInvoke("Counter");
+		CancelInvoke("RefreshTime");
 	}
-	void Counter()
+	void RefreshTime()
 	{
 		if (timeLeft == 0)
 		{
 			gameObject.SetActive(false);
 		}
-		value.text = GameManager.IntToMinuteSeconds(timeLeft);
-		slider.value = totalTime - timeLeft;
-		timeLeft--;
-		
+		value.text = ActionManager.instance.GetTimeLeft(action);
 	}
 }

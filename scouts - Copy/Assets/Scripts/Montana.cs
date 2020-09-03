@@ -31,7 +31,6 @@ public class Montana : ObjectWithActions
 		canDance = true;
 	}
 
-
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
@@ -40,11 +39,22 @@ public class Montana : ObjectWithActions
 			default: return base.GetConditionValue(t);
 		}
 	}
+
+
+	protected override int GetTime(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return 20;
+		}
+		else
+			throw new System.NotImplementedException();
+	}
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
-			case 0:
+			case 1:
 				StartCoroutine(Dance());
 				break;
 			default:
