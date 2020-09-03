@@ -29,10 +29,7 @@ public class TimeLeftBar : MonoBehaviour
 		{
 			gameObject.SetActive(false);
 		}
-		int sec = (timeLeft % 60);
-		int min = (timeLeft - sec) / 60;
-		string timeString = timeLeft >= 60 ? min + "m " + sec + "s" : sec + "s";
-		value.text = timeString;
+		value.text = GameManager.IntToMinuteSeconds(timeLeft);
 		slider.value = totalTime - timeLeft;
 		timeLeft--;
 		

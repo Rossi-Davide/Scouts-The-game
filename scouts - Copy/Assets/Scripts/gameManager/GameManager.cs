@@ -134,6 +134,20 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public static string IntToMinuteSeconds(int time)
+	{
+		string st = "";
+		int other = time % 3600;
+		int hours = (time - other) / 3600;
+		int seconds = other % 60;
+		int minutes = (other - seconds) / 60;
+		if (hours > 0)
+			st = hours + "h ";
+		if (minutes > 0)
+			st += minutes + "m ";
+		st += seconds + "s";
+		return st;
+	}
 
 	public bool CanDoAction(PlayerAction a)
 	{

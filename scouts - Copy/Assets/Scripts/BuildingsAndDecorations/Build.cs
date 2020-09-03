@@ -14,34 +14,8 @@ public class Build : MonoBehaviour
 		instance = this;
 	}
 	#endregion
-	private Item currentBuilding;
-	private int time, points;
-	public Camera mainCam, buildCam;
-	public Vector2[] startAngoloSq, endAngoloSq;
-	private Dictionary<Item, BuildingInfo> builtBuildings = new Dictionary<Item, BuildingInfo>();
-	public void EnterBuildMode(Item building, int time, int points)
-	{
-		if (currentBuilding != null)
-		{
-			return;
-		}
-		currentBuilding = building;
-		this.time = time;
-		this.points = points;
-		mainCam.enabled = false;
-		buildCam.enabled = true;
-	}
-	void Save()
-	{
-		if (currentBuilding != null)
-		{
-			builtBuildings.Add(currentBuilding, new BuildingInfo { position = new Vector2(1, 0), timeRequired = time, pointsGiven = points });
-			mainCam.enabled = true;
-			buildCam.enabled = false;
-		}
-	}
-	public bool HasBuilt(Item building) => builtBuildings.ContainsKey(building);
-	public enum Buildings
+
+	public enum Objects
 	{
 		tenda, 
 		refettorio, 
@@ -54,12 +28,8 @@ public class Build : MonoBehaviour
 		cassaDiCucina, 
 		cassaDiTopografia, 
 		cassaDiEspressione, 
-		cassaDelFurfante
+		cassaDelFurfante,
+		tree,
+		bush,
 	}
-}
-public class BuildingInfo
-{
-	public int timeRequired;
-	public int pointsGiven;
-	public Vector2 position;
 }

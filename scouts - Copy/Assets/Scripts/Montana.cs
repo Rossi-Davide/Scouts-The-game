@@ -36,7 +36,6 @@ public class Montana : ObjectWithActions
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionIsDancing: return isDancing;
 			case ConditionType.ConditionCanDance: return canDance;
 			default: return base.GetConditionValue(t);
 		}

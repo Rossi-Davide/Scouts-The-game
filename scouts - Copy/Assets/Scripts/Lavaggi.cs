@@ -70,10 +70,7 @@ public class Lavaggi : ObjectWithActions
 		switch (t)
 		{
 			case ConditionType.ConditionCanCleanLavaggi: return canClean;
-			case ConditionType.ConditionIsCleaningLavaggi: return isCleaning;
-			case ConditionType.ConditionStaLavandoPanni: return staLavandoPanni;
 			case ConditionType.ConditionPuoLavarePanni: return puoLavarePanni;
-			case ConditionType.ConditionStaLavandoPiatti: return staLavandoPiatti;
 			case ConditionType.ConditionPuoLavarePiatti: return puoLavarePiatti;
 			default: return base.GetConditionValue(t);
 		}

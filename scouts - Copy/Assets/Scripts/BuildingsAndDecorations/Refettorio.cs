@@ -28,7 +28,6 @@ public class Refettorio : BuildingsActionsAbstract
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionIsEating: return isEating;
 			case ConditionType.ConditionCanEat: return FindObjectOfType<PianoBidoni>().canEat;
 			default: return base.GetConditionValue(t);
 		}

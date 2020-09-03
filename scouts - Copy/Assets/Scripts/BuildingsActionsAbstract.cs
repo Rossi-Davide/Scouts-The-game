@@ -13,6 +13,8 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 	public int health, maxHealth, healthLossAmount, healthLossFrequency;
 	protected bool isSafe, isDestroyed, staMettendoAlSicuro, staRiparando;
 
+
+
 	protected override void Start()
 	{
 		healthBar = Instantiate(wpCanvas.transform.Find("HealthBar").gameObject, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
@@ -24,6 +26,8 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 		GameManager.instance.OnRain += RefreshIsSafe;
 		base.Start();
 	}
+
+
 
 	public override void Select()
 	{
@@ -89,8 +93,7 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 		{
 			case ConditionType.ConditionIsSafe: return isSafe;
 			case ConditionType.ConditionIsDestroyed: return isDestroyed;
-			case ConditionType.ConditionStaMettendoAlSicuro: return staMettendoAlSicuro;
-			case ConditionType.ConditionStaRiparando: return staRiparando;
+			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(thisObject);
 			default: return base.GetConditionValue(t);
 		}
 	}

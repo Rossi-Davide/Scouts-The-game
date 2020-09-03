@@ -47,7 +47,6 @@ public class Amaca : BuildingsActionsAbstract
 		switch (t)
 		{
 			case ConditionType.ConditionCanSleepOnAmaca: return canSleepOnAmaca;
-			case ConditionType.ConditionIsSleeping: return isSleeping;
 			default: return base.GetConditionValue(t);
 		}
 	}

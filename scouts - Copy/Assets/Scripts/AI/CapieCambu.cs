@@ -12,7 +12,7 @@ public class CapieCambu : BaseAI
 	[HideInInspector]
 	public int dialoguesDone, currentSentenceIndex;
 	public GameObject dialoguePanel;
-	GameObject nextButton, answer1Button, answer2Button, message;
+	GameObject nextButton, answer1Button, answer2Button;
 	TextMeshProUGUI answer1Text, answer2Text, title, sentenceText;
 	bool canAnswer, canTalk, isTalking;
 	public Dialogue[] dialoguesArray;
@@ -27,12 +27,7 @@ public class CapieCambu : BaseAI
 		sentenceText = dialoguePanel.transform.Find("Sentence").GetComponent<TextMeshProUGUI>();
 		answer1Text = answer1Button.transform.Find("Text").GetComponent<TextMeshProUGUI>();
 		answer2Text = answer2Button.transform.Find("Text").GetComponent<TextMeshProUGUI>();
-		message = transform.Find("WorldSpaceCanvas/Message").gameObject;
 		canTalk = true;
-		if (canTalk)
-		{
-			message.SetActive(true);
-		}
 	}
 
 	private void OnMouseDown()
@@ -50,7 +45,6 @@ public class CapieCambu : BaseAI
 						ShowSentence(currentSentence);
 						pointsDelta = dialoguesArray[dialoguesDone].basePointsDelta;
 						DialogueManager.instance.selectedCapoOrCambu = this;
-						message.SetActive(false);
 						isTalking = true;
 
 					}
@@ -128,7 +122,6 @@ public class CapieCambu : BaseAI
 	{
 		yield return new WaitForSeconds(secs);
 		canTalk = true;
-		message.SetActive(true);
 	}
 
 

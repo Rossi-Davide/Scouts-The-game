@@ -36,7 +36,6 @@ public class Alzabandiera : ObjectWithActions
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionStaFacendoAlzabandiera: return staFacendoAlzabandiera;
 			case ConditionType.ConditionPuoFareAlzabandiera: return puoFareAlzabandiera;
 			default: return base.GetConditionValue(t);
 		}

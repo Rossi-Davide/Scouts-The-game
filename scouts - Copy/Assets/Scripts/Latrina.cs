@@ -36,7 +36,6 @@ public class Latrina : ObjectWithActions
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionIsCleaningLatrina: return isCleaningLatrina;
 			case ConditionType.ConditionCanCleanLatrina: return canCleanLatrina;
 			default: return base.GetConditionValue(t);
 		}

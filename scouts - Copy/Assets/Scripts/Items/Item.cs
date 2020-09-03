@@ -56,7 +56,7 @@ public class Item : ScriptableObject
 		}
 		if (type == Type.Costruzione)
 		{
-			Build.instance.EnterBuildMode(this, timeRequired, pointsGiven);
+			
 		}
 	}
 }

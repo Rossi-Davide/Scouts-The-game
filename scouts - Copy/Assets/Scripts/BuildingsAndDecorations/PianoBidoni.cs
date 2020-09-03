@@ -40,7 +40,6 @@ public class PianoBidoni : BuildingsActionsAbstract
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionIsCooking: return isCooking;
 			case ConditionType.ConditionCanEat: return canEat;
 			case ConditionType.ConditionPuoLavarePiatti: return FindObjectOfType<Lavaggi>().puoLavarePiatti;
 			case ConditionType.ConditionCanCook: return canCook;

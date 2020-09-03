@@ -15,6 +15,10 @@ public abstract class ObjectWithActions : MonoBehaviour
     public float maxDistanceFromPlayer;
     protected bool hasBeenClicked;
 
+
+
+	protected string currentAction;
+
     protected virtual void Start()
     {
 		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
@@ -65,7 +69,7 @@ public abstract class ObjectWithActions : MonoBehaviour
 		{
 			var b = buttons[n];
 			var c = FindNotVerified(b.conditions);
-			if (c == null)
+			if (c == null && CheckActionManager())
 			{
 				DoAction(b);
 			}
@@ -75,6 +79,16 @@ public abstract class ObjectWithActions : MonoBehaviour
 			}
 		}
 
+	}
+
+	public Build.Objects thisObject;
+	protected bool CheckActionManager()
+	{
+		return ActionManager.instance.AddAction(new CurrentAction(currentAction, thisObject, GetTime()));
+	}
+	protected virtual int GetTime()
+	{
+		return 0;
 	}
 
 	protected virtual void RefreshButtonsState()
@@ -99,6 +113,7 @@ public abstract class ObjectWithActions : MonoBehaviour
 	}
 	protected abstract void DoAction(ActionButton b);
 
+	#region Wait To Use Again
 	protected virtual IEnumerator WaitToUseAgain(ActionButton b, System.Action onEnd)
 	{
 		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(true);
@@ -119,11 +134,11 @@ public abstract class ObjectWithActions : MonoBehaviour
 	{
 		if (ActionButtons.instance.selected == this)
 		{
-			int sec = b.timeLeft % 60;
-			int min = (b.timeLeft - sec) / 60;
-			b.obj.transform.Find("TimeLeftCounter").GetComponent<TextMeshProUGUI>().text = b.timeLeft >= 60 ? min + "m " + sec + "s" : sec + "s";
+			b.obj.transform.Find("TimeLeftCounter").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(b.timeLeft);
 		}
 	}
+	#endregion
+
 
 	/// <summary> Restituisce null se sono tutte verificate. </summary>
 	protected Condition FindNotVerified(Condition[] conditions) => conditions.FirstOrDefault(c => c.desiredValue != GetConditionValue(c.type));
@@ -166,29 +181,19 @@ public enum ConditionType
 	ConditionIsPlayerCloseEnough,
 	ConditionIsDaytime,
 	ConditionIsRaining,
-	ConditionIsSleeping,
-	ConditionStaMettendoAlSicuro,
-	ConditionIsCooking,
 	ConditionCanEat,
-	ConditionIsEating,
-	ConditionStaRiparando,
-	ConditionCanSleepOnAmaca,
-	ConditionStaFacendoLegna,
-	ConditionIsDancing,
 	ConditionCanDance,
-	ConditionIsCleaningLatrina,
 	ConditionCanCleanLatrina,
 	ConditionCanCleanLavaggi,
-	ConditionIsCleaningLavaggi,
-	ConditionStaLavandoPanni,
 	ConditionPuoLavarePanni,
-	ConditionStaLavandoPiatti,
 	ConditionPuoLavarePiatti,
 	ConditionPuoFareLegna,
 	ConditionPuoAttaccareLaCambusa,
-	ConditionStaFacendoAlzabandiera,
 	ConditionPuoFareAlzabandiera,
 	ConditionCanCook,
+	ConditionCanSleepOnAmaca,
+	ConditionStaFacendoLegna,
+	ConditionCanDoActionOnBuilding,
 }
 
 [System.Serializable]
