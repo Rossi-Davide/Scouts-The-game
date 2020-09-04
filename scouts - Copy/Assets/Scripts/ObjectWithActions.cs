@@ -17,7 +17,7 @@ public abstract class ObjectWithActions : MonoBehaviour
 
 
 
-	protected string currentAction;
+	protected CurrentAction action;
 
     protected virtual void Start()
     {
@@ -65,16 +65,16 @@ public abstract class ObjectWithActions : MonoBehaviour
 	}
 	public virtual void ClickedButton(int n)
 	{
-		if (n >= 0 && n < buttons.Length)
+		if (n - 1 >= 0 && n - 1 < buttons.Length)
 		{
-			var b = buttons[n];
+			var b = buttons[n - 1];
 			var c = FindNotVerified(b.conditions);
 			if (c == null)
 			{
 				if (CheckActionManager(n))
 					DoAction(b);
 				else
-					GameManager.instance.WarningMessage("Non puoi eseguire più azioni contemporaneamente sullo stesso oggetto");
+					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
 
 			}
 			else
@@ -88,11 +88,16 @@ public abstract class ObjectWithActions : MonoBehaviour
 	public Build.Objects thisObject;
 	protected bool CheckActionManager(int buttonNum)
 	{
-		return ActionManager.instance.AddAction(new CurrentAction(currentAction, thisObject, GetTime(buttonNum)));
+		action = new CurrentAction(GetActionName(buttonNum), thisObject, GetTime(buttonNum));
+		return ActionManager.instance.AddAction(action);
 	}
 	protected virtual int GetTime(int buttonNum)
 	{
 		return 0;
+	}
+	protected virtual string GetActionName(int buttonNum)
+	{
+		return "";
 	}
 
 	protected virtual void RefreshButtonsState()
@@ -155,6 +160,7 @@ public abstract class ObjectWithActions : MonoBehaviour
 			case ConditionType.ConditionIsRaining: return GameManager.instance.isRaining;
 			case ConditionType.ConditionIsDaytime: return GameManager.instance.isDay;
 			case ConditionType.ConditionIsPlayerCloseEnough: return Vector2.Distance(transform.position, Player.instance.transform.position) <= maxDistanceFromPlayer;
+			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(thisObject);
 			default: throw new NotImplementedException(t.ToString());
 		}
 	}
@@ -191,7 +197,7 @@ public enum ConditionType
 	ConditionCanCleanLavaggi,
 	ConditionPuoLavarePanni,
 	ConditionPuoLavarePiatti,
-	ConditionPuoFareLegna,
+	ConditionPuoFareLegnaPerFuoco,
 	ConditionPuoAttaccareLaCambusa,
 	ConditionPuoFareAlzabandiera,
 	ConditionCanCook,

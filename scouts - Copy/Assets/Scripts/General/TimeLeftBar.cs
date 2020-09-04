@@ -11,17 +11,19 @@ public class TimeLeftBar : MonoBehaviour
 	private TextMeshProUGUI value;
 	[HideInInspector]
 	public CurrentAction action;
+	[HideInInspector]
+	public System.Action OnEnd;
 
-	private void OnEnable()
+	void OnEnable()
 	{
 		slider = GetComponent<Slider>();
 		value = transform.Find("TimeLeft").GetComponent<TextMeshProUGUI>();
 		slider.maxValue = totalTime;
 		slider.value = 0;
 		timeLeft = totalTime;
-		InvokeRepeating("RefreshTime", 0, 1);
+		InvokeRepeating("RefreshTime", 0, .3f);
 	}
-	private void OnDisable()
+	void OnDisable()
 	{
 		CancelInvoke("RefreshTime");
 	}
@@ -30,7 +32,18 @@ public class TimeLeftBar : MonoBehaviour
 		if (timeLeft == 0)
 		{
 			gameObject.SetActive(false);
+			OnEnd();
 		}
-		value.text = ActionManager.instance.GetTimeLeft(action);
+		timeLeft = ActionManager.instance.GetTimeLeft(action);
+		value.text = GameManager.IntToMinuteSeconds(timeLeft);
+		slider.value = totalTime - timeLeft;
+	}
+
+	public void InitializeValues(CurrentAction action, System.Action OnEnd)
+	{
+		this.action = action;
+		this.OnEnd = OnEnd;
+		this.totalTime = action.totalTime;
+		gameObject.SetActive(true);
 	}
 }

@@ -12,15 +12,9 @@ public class Montana : ObjectWithActions
 		base.Start();
 		canDance = true;
 	}
-	IEnumerator Dance()
+	void Dance()
 	{
-		isDancing = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 20;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(20);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
-		isDancing = false;
 		canDance = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
@@ -50,12 +44,25 @@ public class Montana : ObjectWithActions
 		else
 			throw new System.NotImplementedException();
 	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return "Discotenda";
+		}
+		else
+			throw new System.NotImplementedException();
+	}
+
+
+
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				StartCoroutine(Dance());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Dance);
 				break;
 			default:
 				throw new NotImplementedException();
