@@ -24,13 +24,10 @@ public class ActionManager : MonoBehaviour
 		{
 			var s = actionSpots[i];
 			var a = currentActions[i];
-			if (a != null)
-			{
-				s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.name;
-				s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.building.ToString());
-				s.transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
-			}
 			s.SetActive(a != null);
+			s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.name;
+			s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = a.building.ToString();
+			s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
 		}
 	}
 
@@ -56,7 +53,7 @@ public class ActionManager : MonoBehaviour
 	{
 		foreach (var a in currentActions)
 		{
-			if (a != null && a.building == b)
+			if (a.building == b)
 			{
 				return false;
 			}
@@ -67,7 +64,6 @@ public class ActionManager : MonoBehaviour
 	private void Start()
 	{
 		InvokeRepeating("RefreshTimesLeft", 0, 1);
-		isOpen = false;
 	}
 	void RefreshTimesLeft()
 	{
@@ -77,26 +73,24 @@ public class ActionManager : MonoBehaviour
 			if (a != null)
 			{
 				a.timeLeft--;
-				actionSpots[i].transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
 				if (a.timeLeft <= 0)
 				{
-					currentActions[i] = null;
-					actionSpots[i].SetActive(false);
+					a = null;
 				}
 			}
 		}
 	}
 
-	public int GetTimeLeft(CurrentAction action)
+	public string GetTimeLeft(CurrentAction action)
 	{
 		foreach (var a in currentActions)
 		{
 			if (a == action)
 			{
-				return a.timeLeft;
+				return GameManager.IntToMinuteSeconds(a.timeLeft);
 			}
 		}
-		return 0;
+		return 0.ToString();
 	}
 
 }

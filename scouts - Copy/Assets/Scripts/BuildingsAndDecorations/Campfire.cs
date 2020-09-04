@@ -50,7 +50,7 @@ public class Campfire : ObjectWithActions
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionPuoFareLegnaPerFuoco: return puoFareLegna;
+			case ConditionType.ConditionPuoFareLegna: return puoFareLegna;
 			default: return base.GetConditionValue(t);
 		}
 	}
