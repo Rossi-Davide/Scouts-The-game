@@ -17,6 +17,12 @@ public class Build : MonoBehaviour
 
 	public enum Objects
 	{
+		montana,
+		cambusa,
+		alzabandiera,
+		fuocoDaCampo,
+		latrina,
+		lavaggi,
 		tenda, 
 		refettorio, 
 		stendipanni, 

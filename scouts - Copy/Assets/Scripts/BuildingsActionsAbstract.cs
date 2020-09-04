@@ -93,7 +93,6 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 		{
 			case ConditionType.ConditionIsSafe: return isSafe;
 			case ConditionType.ConditionIsDestroyed: return isDestroyed;
-			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(thisObject);
 			default: return base.GetConditionValue(t);
 		}
 	}
