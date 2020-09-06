@@ -92,11 +92,15 @@ public class Shop : MonoBehaviour
 
 	public void CloseInfoPanel()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		infoPanel.SetActive(false);
 	}
 
 	public void ToggleShop()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		itemsPanel.SetActive(!itemsPanel.activeSelf);
 		shopPanel.SetActive(!shopPanel.activeSelf);
 		costruzioniEPioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Costruzioni || currentScreen == GameManager.ShopScreen.Pioneristica);

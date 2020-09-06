@@ -35,6 +35,8 @@ public abstract class ObjectWithActions : MonoBehaviour
 		}
 		else if (!ClickedObjects.instance.ClickedOnUI)
 		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 			ActionButtons.instance.ChangeSelectedObject(this);
 			hasBeenClicked = true;
 		}

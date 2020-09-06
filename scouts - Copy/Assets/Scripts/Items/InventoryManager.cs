@@ -57,8 +57,11 @@ public class InventoryManager : MonoBehaviour
 	bool isOpen;
 	public void ToggleInventoryPanel()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 		if (!isOpen)
 		{
+			
+
 			overlay.SetActive(true);
 			inventoryPanelParent.SetActive(true);
 			isOpen = true;

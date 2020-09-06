@@ -20,6 +20,8 @@ public class ActionButtons : MonoBehaviour
 		{
 			if (selected == null)
 			{
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 				selected = b;
 				selected.Select();
 			}
@@ -27,6 +29,8 @@ public class ActionButtons : MonoBehaviour
 			{
 				selected.Deselect();
 				selected = b;
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 				selected.Select();
 			}
 		}
@@ -42,6 +46,8 @@ public class ActionButtons : MonoBehaviour
 
 	public void Click(int n)
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		if (selected != null)
 		{
 			selected.ClickedButton(n);

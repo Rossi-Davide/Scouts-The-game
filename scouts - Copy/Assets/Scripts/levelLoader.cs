@@ -11,6 +11,8 @@ public class levelLoader : MonoBehaviour
 	public TextMeshProUGUI progressText;
 	public void LoadLevel()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+		
 		StartCoroutine(Caricamento());
 	}
 

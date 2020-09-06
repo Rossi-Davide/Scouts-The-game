@@ -7,8 +7,11 @@ public class QuestManager : MonoBehaviour
 	bool isOpen;
     public void ToggleQuestPanel()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		if (!isOpen)
 		{
+
 			overlay.SetActive(true);
 			questPanel.SetActive(true);
 			Time.timeScale = 0;

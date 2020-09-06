@@ -14,12 +14,16 @@ public class mainMenu : MonoBehaviour
 
 	public void Quit()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         Debug.Log("QUIT");
         Application.Quit();
     }
 
     public void Options()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         SceneManager.LoadScene(2);
     }
 
@@ -31,6 +35,8 @@ public class mainMenu : MonoBehaviour
 
     public void OpenCredits()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         SceneManager.LoadScene(3);
     }
 }

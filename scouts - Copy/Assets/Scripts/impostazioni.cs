@@ -60,22 +60,30 @@ public class impostazioni : MonoBehaviour
 
     public void SetQuality(int qualityIndex)
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     public void SetFullScreen (bool screen)
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         Screen.fullScreen = screen;
     }
 
     public void SetRes(int resIndex)
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         Resolution resolution = resolutions[resIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void tornaAlMenu()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         SceneManager.LoadScene(0);
     }
 }

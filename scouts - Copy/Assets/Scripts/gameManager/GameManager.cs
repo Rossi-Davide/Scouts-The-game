@@ -239,6 +239,8 @@ public class GameManager : MonoBehaviour
 	public GameObject closeDayCounter, openDayCounter;
 	public void ToggleDayCounter()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		hasOpenedCounter = !hasOpenedCounter;
 		closeDayCounter.SetActive(!hasOpenedCounter);
 		openDayCounter.SetActive(hasOpenedCounter);

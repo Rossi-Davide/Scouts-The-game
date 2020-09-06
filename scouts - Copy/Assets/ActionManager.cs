@@ -17,7 +17,9 @@ public class ActionManager : MonoBehaviour
 	public GameObject[] actionSpots;
 	public CurrentAction[] currentActions = new CurrentAction[5];
 	public void TogglePanel()
-    {
+	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		isOpen = !isOpen;
 		panel.SetActive(isOpen);
 		for (int i = 0; i < currentActions.Length; i++)

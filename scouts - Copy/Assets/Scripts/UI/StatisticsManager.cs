@@ -6,8 +6,11 @@ public class StatisticsManager : MonoBehaviour
 	public GameObject panel, overlay, nomeSq, descrizione, materiali, punti;
 	public void ToggleStatisticsPanel()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		if (!isOpen)
 		{
+
 			panel.SetActive(true);
 			overlay.SetActive(true);
 			Time.timeScale = 0;

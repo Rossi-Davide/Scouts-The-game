@@ -18,6 +18,8 @@ public class ModificaBaseTrigger : MonoBehaviour
 
 	public void ToggleModificaBase()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		isModifying = !isModifying;
 		foreach (GameObject g in objectsToToggle)
 		{
