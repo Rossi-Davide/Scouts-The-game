@@ -2088,11 +2088,18 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].mixerGroup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8601028313873911329, guid: d2c21433200a7e44ebb94f957911670d,
+        type: 2}
     - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
         type: 3}
       propertyPath: mixerGroup
       value: 
+      objectReference: {fileID: 24300002, guid: d2c21433200a7e44ebb94f957911670d,
+        type: 2}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b671173bcf6f52647b678007eae7e388, type: 3}
