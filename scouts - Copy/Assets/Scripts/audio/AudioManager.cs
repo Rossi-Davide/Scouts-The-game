@@ -16,12 +16,13 @@ public class AudioManager : MonoBehaviour
 		if (instance != null)
 		{
 			Destroy(gameObject);
+			return;
 		}
 		else
 		{
 			instance = this;
 		}
-
+		DontDestroyOnLoad(gameObject);
 		foreach (Sound s in sounds)
 		{
 			s.source = gameObject.AddComponent<AudioSource>();
@@ -30,6 +31,7 @@ public class AudioManager : MonoBehaviour
 
 			s.source.outputAudioMixerGroup = mixerGroup;
 		}
+		
 	}
 
 	public void Play(string sound)
@@ -46,5 +48,9 @@ public class AudioManager : MonoBehaviour
 
 		s.source.Play();
 	}
-
+	private void Start()
+	{
+		Play("musicaGioco");
+		Debug.Log("pera");
+	}
 }
