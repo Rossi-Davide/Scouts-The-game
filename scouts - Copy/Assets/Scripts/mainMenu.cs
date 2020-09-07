@@ -22,14 +22,16 @@ public class mainMenu : MonoBehaviour
 
     public void Options()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+        //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
         SceneManager.LoadScene(2);
     }
 
 
     public void GoToMenu()
-	{
+    {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
+
         SceneManager.LoadScene(0);
     }
 

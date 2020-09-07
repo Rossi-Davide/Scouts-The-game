@@ -47,10 +47,24 @@ public class AudioManager : MonoBehaviour
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
 
 		s.source.Play();
+	
 	}
 	private void Start()
 	{
 		Play("musicaGioco");
-		Debug.Log("pera");
+
+	}
+
+
+	public void Stop(string sound)
+	{
+		Sound s = Array.Find(sounds,item=>item.name==sound);
+
+		if (s == null)
+		{
+			Debug.Log("Sound:" + name + " da stoppare non trovato");
+			return;
+		}
+		s.source.Stop();
 	}
 }

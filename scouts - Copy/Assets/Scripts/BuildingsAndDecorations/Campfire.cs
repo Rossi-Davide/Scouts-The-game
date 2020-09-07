@@ -2,22 +2,26 @@
 using UnityEngine.Experimental.Rendering.Universal;
 using System.Collections;
 using System;
+using UnityEngine.Audio;
 
 public class Campfire : ObjectWithActions
 {
 
 	[HideInInspector]
 	public bool puoFareLegna;
-
+	[HideInInspector]
+	public AudioSource aud;
 
     void ChangeLight()
     {
         if (!GameManager.instance.isDay)
 		{
+			aud.Play();
             GetComponent<Light2D>().enabled = true;
 		}
         else
 		{
+			aud.Stop();
             GetComponent<Light2D>().enabled = false;
 		}
     }
@@ -25,6 +29,7 @@ public class Campfire : ObjectWithActions
 
 	protected override void Start()
 	{
+		 aud = GetComponent<AudioSource>();
 		base.Start();
 		puoFareLegna = true;
 		GameManager.instance.OnDayEndOrStart += ChangeLight;

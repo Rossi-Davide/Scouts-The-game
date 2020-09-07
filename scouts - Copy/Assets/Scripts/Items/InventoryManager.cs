@@ -57,10 +57,10 @@ public class InventoryManager : MonoBehaviour
 	bool isOpen;
 	public void ToggleInventoryPanel()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 		if (!isOpen)
 		{
-			
+
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
 			overlay.SetActive(true);
 			inventoryPanelParent.SetActive(true);
@@ -68,6 +68,8 @@ public class InventoryManager : MonoBehaviour
 		}
 		else
 		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
+
 			isOpen = false;
 			inventoryPanelParent.SetActive(false);
 			overlay.SetActive(false);

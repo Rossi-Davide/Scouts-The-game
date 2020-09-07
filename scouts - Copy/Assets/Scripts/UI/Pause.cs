@@ -8,10 +8,10 @@ public class Pause : MonoBehaviour
 	public GameObject panel, overlay;
 	public void TogglePausePanel()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
 		if (!isOpen)
 		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
 			overlay.SetActive(true);
 			panel.SetActive(true);
@@ -20,6 +20,7 @@ public class Pause : MonoBehaviour
 		}
 		else
 		{
+
 			Time.timeScale = 1;
 			isOpen = false;
 			panel.SetActive(false);
@@ -29,7 +30,20 @@ public class Pause : MonoBehaviour
 
 	public void Menu()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
 		Time.timeScale = 1;
 		mainMenu.instance.GoToMenu();
+	}
+
+	public void ResumeClicked()              //ho applicato delle diversificazioni per i suoni, null'altro è stato cambiato
+	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
+	}
+	public void ClosedClicked()
+	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
+
 	}
 }

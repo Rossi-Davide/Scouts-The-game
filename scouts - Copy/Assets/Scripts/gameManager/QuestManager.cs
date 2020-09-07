@@ -7,10 +7,10 @@ public class QuestManager : MonoBehaviour
 	bool isOpen;
     public void ToggleQuestPanel()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
 		if (!isOpen)
 		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
 			overlay.SetActive(true);
 			questPanel.SetActive(true);
@@ -24,6 +24,8 @@ public class QuestManager : MonoBehaviour
 		}
 		else
 		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
+
 			Time.timeScale = 1;
 			isOpen = false;
 			questPanel.SetActive(false);

@@ -92,14 +92,14 @@ public class Shop : MonoBehaviour
 
 	public void CloseInfoPanel()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
 
 		infoPanel.SetActive(false);
 	}
 
 	public void ToggleShop()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
 
 		itemsPanel.SetActive(!itemsPanel.activeSelf);
 		shopPanel.SetActive(!shopPanel.activeSelf);

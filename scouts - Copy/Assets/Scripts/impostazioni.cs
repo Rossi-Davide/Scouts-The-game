@@ -82,7 +82,7 @@ public class impostazioni : MonoBehaviour
 
     public void tornaAlMenu()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
 
         SceneManager.LoadScene(0);
     }

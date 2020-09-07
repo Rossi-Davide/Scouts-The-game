@@ -36,6 +36,8 @@ public class FollowPlayer : MonoBehaviour
 	}
 	public void EnableFollow()
 	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("whoosh");
+
 		isFollowing = true;
 		goToTargetButton.SetActive(!isFollowing);
 		GoToTarget();

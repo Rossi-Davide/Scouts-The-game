@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 		animator.SetFloat("Speed", movement.sqrMagnitude);
 		if (movement.sqrMagnitude >= 0.01) 
 		{
+			//Invoke("StepSounds", 0.5f);
 			isMoving = true;
 			animator.SetFloat("XMovement", movement.x);
 			animator.SetFloat("YMovement", movement.y);
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
 		}
 		else
 		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("walking");
+
 			isMoving = false;
 			animator.SetFloat("XMovement", lastX);
 			animator.SetFloat("YMovement", lastY);
@@ -56,7 +59,11 @@ public class Player : MonoBehaviour
 	Vector3 tPos;
 	Touch t;
 
+	public void StepSounds()
+	{
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("walking");
 
+	}
 
 	#endregion
 	#region General

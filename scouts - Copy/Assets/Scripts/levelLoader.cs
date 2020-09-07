@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class levelLoader : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class levelLoader : MonoBehaviour
 
 	IEnumerator Caricamento()
 	{
+		AudioManager audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+		audio.Play("nature");
+
+		Sound s = Array.Find(audio.sounds, item => item.name == "musicaGioco");
+		s.source.volume = 0.6f;
+
 		AsyncOperation operation = SceneManager.LoadSceneAsync(1);
 		menu.SetActive(true);
 		while (operation.isDone == false)
