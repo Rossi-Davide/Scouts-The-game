@@ -112,4 +112,10 @@ public class Squadrigliere : BaseAI
         staFacendoLegna = false;
     }
 	#endregion
+
+
+	protected override void DoAction(ActionButton b)
+	{
+		throw new System.NotImplementedException();
+	}
 }

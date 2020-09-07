@@ -2,7 +2,7 @@
 
 public class ActionButtons : MonoBehaviour
 {
-	public ObjectWithActions selected;
+	public InGameObject selected;
 	public static ActionButtons instance;
 	private void Awake()
 	{
@@ -13,7 +13,7 @@ public class ActionButtons : MonoBehaviour
 		instance = this;
 	}
 
-	public void ChangeSelectedObject(ObjectWithActions b)
+	public void ChangeSelectedObject(InGameObject b)
 	{
 
 		if (b != null)

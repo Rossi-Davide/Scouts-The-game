@@ -2,7 +2,7 @@
 using Pathfinding;
 
 
-public abstract class BaseAI : MonoBehaviour
+public abstract class BaseAI : InGameObject
 {
 	public Vector3[] randomTarget;
 	public float speed;
@@ -14,13 +14,23 @@ public abstract class BaseAI : MonoBehaviour
 	protected Rigidbody2D rb;
 	protected Animator animator;
 
-	protected virtual void Start()
+
+	private void OnMouseDown()
 	{
-		//base.Start();
+		if (!ClickedObjects.instance.ClickedOnUI)
+		{
+			OnClick();
+		}
+	}
+
+
+	protected override void Start()
+	{
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
 		CreateNewPath();
+		base.Start();
 	}
 	protected virtual void CreateNewPath()
 	{
@@ -42,7 +52,7 @@ public abstract class BaseAI : MonoBehaviour
 	protected void ChangeAnimation()
 	{
 		float xMovement = rb.velocity.normalized.x, yMovement = rb.velocity.normalized.y;
-		animator.SetFloat("Speed", (xMovement > 0.1 || yMovement > 0.1) ? 1 : 0);
+		animator.SetFloat("Speed", (xMovement > 0.01 || yMovement > 0.01) ? 1 : 0);
 		animator.SetFloat("XMovement", xMovement);
 		animator.SetFloat("YMovement", yMovement);
 	}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -8,15 +9,15 @@ using UnityEngine.UI;
 public class CapieCambu : BaseAI
 {
 	Sentence currentSentence;
-	public new string name;
 	[HideInInspector]
 	public int dialoguesDone, currentSentenceIndex;
 	public GameObject dialoguePanel;
+	public GameObject blackOverlay;
 	GameObject nextButton, answer1Button, answer2Button;
 	TextMeshProUGUI answer1Text, answer2Text, title, sentenceText;
 	bool canAnswer, canTalk, isTalking;
 	public Dialogue[] dialoguesArray;
-	int pointsDelta;
+	int pointsToAdd;
 
 	void Awake()
 	{
@@ -30,47 +31,10 @@ public class CapieCambu : BaseAI
 		canTalk = true;
 	}
 
-	private void OnMouseDown()
-	{
-		if (!ClickedObjects.instance.ClickedOnUI)
-		{
-			if (dialoguesDone < dialoguesArray.Length)
-			{
-				if (DialogueManager.instance.selectedCapoOrCambu == null)
-				{
-					if (canTalk)
-					{
-						dialoguePanel.SetActive(true);
-						currentSentence = dialoguesArray[dialoguesDone].sentences[currentSentenceIndex];
-						ShowSentence(currentSentence);
-						pointsDelta = dialoguesArray[dialoguesDone].basePointsDelta;
-						DialogueManager.instance.selectedCapoOrCambu = this;
-						isTalking = true;
-
-					}
-					else
-					{
-						string warningText = "Puoi parlare con lo stesso capo o cambusiere solo ogni 60 secondi!";
-						GameManager.instance.WarningMessage(warningText);
-					}
-				}
-				else
-				{
-					Debug.Log("sta già parlando");
-					//????
-				}
-			}
-			else
-			{
-				string warningText = name + " ha già detto tutto quello che aveva da dirti!";
-				GameManager.instance.WarningMessage(warningText);
-			}
-		}
-	}
 	void ShowSentence(Sentence s)
 	{
 		title.text = name;
-		sentenceText.text = currentSentence.s;
+		sentenceText.text = currentSentence.sentence;
 		if (s.canAnswer)
 		{
 			canAnswer = true;
@@ -92,13 +56,12 @@ public class CapieCambu : BaseAI
 	{
 		if (canAnswer)
 		{
-			pointsDelta += currentSentence.answer[answerNum].pointsDelta;
-			currentSentenceIndex = currentSentence.answer[answerNum].pointsDelta;
+			pointsToAdd += currentSentence.answer[answerNum].pointsDelta;
+			currentSentenceIndex = currentSentence.answer[answerNum].nextSentenceNum - 1;
 		}
 		else
 		{
-			currentSentenceIndex = currentSentence.nextSentenceIndex;
-
+			currentSentenceIndex = currentSentence.nextSentenceNum - 1;
 		}
 		if (currentSentenceIndex < dialoguesArray[dialoguesDone].sentences.Length)
 		{
@@ -107,36 +70,68 @@ public class CapieCambu : BaseAI
 		}
 		else
 		{
-			dialoguePanel.SetActive(false);
-			GameManager.instance.ChangeCounter(GameManager.Counter.Punti, pointsDelta);
-			canTalk = false;
-			StartCoroutine(WaitToTalkAgain(120));
-			dialoguesDone++;
-			currentSentenceIndex = 0;
-			DialogueManager.instance.selectedCapoOrCambu = null;
+			EndTalk();
 			isTalking = false;
 		}
 	}
 
-	IEnumerator WaitToTalkAgain(int secs)
+
+	protected override void Start()
 	{
-		yield return new WaitForSeconds(secs);
+		base.Start();
+		canTalk = true;
+	}
+	void EndTalk()
+	{
+		dialoguePanel.SetActive(false);
+		blackOverlay.SetActive(false);
+		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, pointsToAdd);
+		canTalk = false;
+		dialoguesDone++;
+		currentSentenceIndex = 0;
+		DialogueManager.instance.selectedCapoOrCambu = null;
+		RefreshButtonsState();
+		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
+	}
+
+	void Talk()
+	{
+		DialogueManager.instance.selectedCapoOrCambu = this;
+		dialoguePanel.SetActive(true);
+		blackOverlay.SetActive(true);
+		currentSentence = dialoguesArray[dialoguesDone].sentences[currentSentenceIndex];
+		ShowSentence(currentSentence);
+		pointsToAdd = dialoguesArray[dialoguesDone].basePointsDelta;
+		isTalking = true;
+	}
+
+	private void OnWaitEnd()
+	{
 		canTalk = true;
 	}
 
-
-	protected override void CreateNewPath()
+	protected override bool GetConditionValue(ConditionType t)
 	{
-		if (isTalking)
+		switch (t)
 		{
-			target = Player.instance.transform.position;
-			seeker.StartPath(rb.position, target, OnPathCreated);
-		}
-		else
-		{
-			base.CreateNewPath();
+			case ConditionType.ConditionCanTalkAI: return canTalk;
+			case ConditionType.ConditionHasAnythingToSayAI: return dialoguesDone < dialoguesArray.Length;
+			default: return base.GetConditionValue(t);
 		}
 	}
+
+	protected override void DoAction(ActionButton b)
+	{
+		switch (b.buttonNum)
+		{
+			case 1:
+				Talk();
+				break;
+			default:
+				throw new NotImplementedException();
+		}
+	}
+
 }
 
 
@@ -151,16 +146,16 @@ public class Dialogue
 [System.Serializable]
 public class Sentence
 {
-	public string s;
+	public string sentence;
 	public bool canAnswer;
 	public Answer[] answer;
-	public int nextSentenceIndex;
+	public int nextSentenceNum; //more than 1 (it's not like an array)
 }
 
 [System.Serializable]
 public class Answer
 {
 	public string answer;
-	public int nextSentenceIndex;
+	public int nextSentenceNum;
 	public int pointsDelta;
 }

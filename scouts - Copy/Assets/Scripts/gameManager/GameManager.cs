@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
 			throw new System.Exception("GameManager singleton has been created more than once!");
 		}
 		instance = this;
-		DontDestroyOnLoad(instance);
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 	#endregion
