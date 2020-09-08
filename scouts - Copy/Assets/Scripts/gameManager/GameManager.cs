@@ -4,6 +4,7 @@ using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -157,6 +158,18 @@ public class GameManager : MonoBehaviour
 		}
 		return canDoAction;
 	}
+
+
+
+
+	public static IEnumerator Wait(float time, System.Action onEnd)
+	{
+		yield return new WaitForSeconds(time);
+		onEnd();
+	}
+
+
+
 	#endregion
 	#region Abilities
 	void PeriodicItemActionSlow() => PeriodicItemAction(PeriodicActionInterval.Slow);
@@ -218,7 +231,7 @@ public class GameManager : MonoBehaviour
 				int currentArea = Random.Range(0, startAreaSpawn.Length);
 				float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
 				float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
-				GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity);
+				GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
 				decoration.GetComponent<Decorations>().buttonsText = buttonsText;
 				decoration.GetComponent<Decorations>().buttons[0].obj = button1;
 				decoration.GetComponent<Decorations>().wpCanvas = wpCanvas;

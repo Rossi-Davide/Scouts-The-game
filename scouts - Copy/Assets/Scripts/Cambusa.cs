@@ -13,18 +13,13 @@ public class Cambusa : ObjectWithActions
 		canAttack = true;
 	}
 
-	IEnumerator EntraNelloShop()
+	void EntraNelloShop()
 	{
 		Shop.instance.ToggleShop();
-		yield return new WaitForEndOfFrame();
 	}
 	
-	IEnumerator Attack()
+	void Attack()
 	{
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 10;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(10);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, 250);
 		canAttack = false;
 		RefreshButtonsState();
@@ -35,6 +30,35 @@ public class Cambusa : ObjectWithActions
 	{
 		canAttack = true;
 	}
+
+	protected override int GetTime(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return 0;
+		}
+		else if (buttonNum == 2)
+		{
+			return 30;
+		}
+		else
+			throw new System.NotImplementedException();
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return "Negozio";
+		}
+		else if (buttonNum == 2)
+		{
+			return "Attacco alla cambusa";
+		}
+		else
+			throw new System.NotImplementedException();
+	}
+
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
@@ -47,11 +71,12 @@ public class Cambusa : ObjectWithActions
 	{
 		switch (b.buttonNum)
 		{
-			case 0:
-				StartCoroutine(EntraNelloShop());
-				break;
 			case 1:
-				StartCoroutine(Attack());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, null);
+				EntraNelloShop();
+				break;
+			case 2:
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Attack);
 				break;
 			default:
 				throw new NotImplementedException();

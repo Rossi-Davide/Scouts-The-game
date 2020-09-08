@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lavaggi : ObjectWithActions
 {
 	[HideInInspector]
-	public bool isCleaning, canClean, staLavandoPanni, puoLavarePanni, staLavandoPiatti, puoLavarePiatti;
+	public bool canClean, puoLavarePanni, puoLavarePiatti;
 
 
 	protected override void Start()
@@ -14,43 +14,25 @@ public class Lavaggi : ObjectWithActions
 		canClean = true;
 		puoLavarePanni = true;
 	}
-	IEnumerator LavaIPanni()
+	void LavaIPanni()
 	{
-		staLavandoPanni = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 45;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(45);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
-		staLavandoPanni = false;
 		puoLavarePanni = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnLavarePanniWaitEnd));
 	}
-	IEnumerator LavaIPiatti()
+	void LavaIPiatti()
 	{
-		staLavandoPiatti = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 30;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(30);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
-		staLavandoPiatti = false;
 		puoLavarePiatti = false;
 		FindObjectOfType<PianoBidoni>().canCook = true;
 		RefreshButtonsState();
 	}
 
-	IEnumerator Pulisci()
+	void Pulisci()
 	{
-		isCleaning = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 20;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(20);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
-		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, 3);
-		isCleaning = false;
+		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, 6);
 		canClean = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[2], OnCleanWaitEnd));
@@ -63,6 +45,34 @@ public class Lavaggi : ObjectWithActions
 	private void OnLavarePanniWaitEnd()
 	{
 		puoLavarePanni = true;
+	}
+
+	protected override int GetTime(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return 20;
+			case 2:
+				return 45;
+			case 3:
+				return 30;
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return "Lavare i panni";
+			case 2:
+				return "Lavare i piatti";
+			case 3:
+				return "Pulizia lavaggi";
+			default: throw new System.NotImplementedException();
+		}
 	}
 
 	protected override bool GetConditionValue(ConditionType t)
@@ -79,14 +89,14 @@ public class Lavaggi : ObjectWithActions
 	{
 		switch (b.buttonNum)
 		{
-			case 0:
-				StartCoroutine(LavaIPanni());
-				break;
 			case 1:
-				StartCoroutine(LavaIPiatti());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, LavaIPanni);
 				break;
 			case 2:
-				StartCoroutine(Pulisci());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, LavaIPiatti);
+				break;
+			case 3:
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Pulisci);
 				break;
 			default:
 				throw new NotImplementedException();

@@ -6,24 +6,49 @@ using UnityEngine.UI;
 
 public class Tent : BuildingsActionsAbstract
 {
-	[HideInInspector]
-	public bool isSleeping;
-
-	IEnumerator Sleep()
+	void StartSleep()
 	{
-		isSleeping = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 10;
-		loadingBar.SetActive(true);
 		Player.instance.gameObject.SetActive(false);
-		yield return new WaitForSeconds(10);
-		Player.instance.gameObject.SetActive(true);
+	}
+	void EndOfSleep()
+	{
 		GameManager.instance.hasSkippedNight = true;
+		Player.instance.gameObject.SetActive(true);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, 20);
-		yield return new WaitForSeconds(.1f);
-		GameManager.instance.hasSkippedNight = false;
-		isSleeping = false;
 		RefreshButtonsState();
+		GameManager.Wait(.1f, SkipNight);
+	}
+	void SkipNight()
+	{
+		GameManager.instance.hasSkippedNight = false;
+	}
+
+	protected override int GetTime(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return 10;
+			case 2:
+				return 5;
+			case 3:
+				return 60;
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return "Dormire";
+			case 2:
+				return "Imbragare";
+			case 3:
+				return "Riparare";
+			default: throw new System.NotImplementedException();
+		}
 	}
 
 
@@ -32,13 +57,14 @@ public class Tent : BuildingsActionsAbstract
 		switch (b.buttonNum)
 		{
 			case 1:
-				StartCoroutine(Sleep());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, EndOfSleep);
+				StartSleep();
 				break;
 			case 2:
-				StartCoroutine(MettiAlSicuro());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
 				break;
 			case 3:
-				StartCoroutine(Ripara());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
 				break;
 			default:
 				throw new NotImplementedException();

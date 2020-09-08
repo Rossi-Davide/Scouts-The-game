@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class Decorations : ObjectWithActions
 {
-	private bool staFacendoLegna;
-	public IEnumerator PlayerHandPunch()
+	public Button button;
+	Button btn;
+	protected override void Start()
 	{
-		staFacendoLegna = true;
+		base.Start();
+		btn = Instantiate(button, transform.position, Quaternion.identity, wpCanvas.transform);
+		btn.onClick.AddListener(OnClick);
+	}
+
+	void PlayerHandPunch()
+	{
 		Player.instance.enabled = false;
 		if (Player.instance.transform.position.x >= transform.position.x)
 		{
@@ -18,9 +26,10 @@ public class Decorations : ObjectWithActions
 			Player.instance.GetComponent<Animator>().Play("rightHandPunch");
 		}
 		GetComponent<ParticleSystem>().Play();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 3;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(3f);
+	}
+
+	void EndPunch()
+	{
 		GetComponent<ParticleSystem>().Stop();
 		Player.instance.GetComponent<Animator>().Play("idle");
 		Player.instance.enabled = true;
@@ -28,14 +37,33 @@ public class Decorations : ObjectWithActions
 		GameManager.instance.spawnedDecorations.Remove(gameObject);
 		Deselect();
 		Destroy(gameObject);
-		staFacendoLegna = false;
+		Destroy(btn.gameObject);
+	}
+
+	protected override int GetTime(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return 3;
+		}
+		else
+			throw new System.NotImplementedException();
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return "Fare legna";
+		}
+		else
+			throw new System.NotImplementedException();
 	}
 
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionStaFacendoLegna: return staFacendoLegna;
 			default: return base.GetConditionValue(t);
 		}
 	}
@@ -44,7 +72,8 @@ public class Decorations : ObjectWithActions
 		switch (b.buttonNum)
 		{
 			case 1:
-				StartCoroutine(PlayerHandPunch());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, EndPunch);
+				PlayerHandPunch();
 				break;
 			default:
 				throw new NotImplementedException();

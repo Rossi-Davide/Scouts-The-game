@@ -4,7 +4,7 @@ using System;
 public class Montana : ObjectWithActions
 {
 	[HideInInspector]
-	public bool isDancing, canDance;
+	public bool canDance;
 
 	protected override void Start()
 	{

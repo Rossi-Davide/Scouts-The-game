@@ -6,18 +6,10 @@ using UnityEngine.UI;
 
 public class Refettorio : BuildingsActionsAbstract
 {
-	[HideInInspector]
-	public bool isEating;
 
-	IEnumerator Eat()
+	void Eat()
 	{
-		isEating = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 5;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(5);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, 20);
-		isEating = false;
 		FindObjectOfType<PianoBidoni>().canEat = false;
 		FindObjectOfType<Lavaggi>().puoLavarePiatti = true;
 		RefreshButtonsState();
@@ -32,18 +24,49 @@ public class Refettorio : BuildingsActionsAbstract
 			default: return base.GetConditionValue(t);
 		}
 	}
+
+
+	protected override int GetTime(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return 10;
+			case 2:
+				return 5;
+			case 3:
+				return 60;
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return "Mangiare";
+			case 2:
+				return "Imbragare";
+			case 3:
+				return "Riparare";
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				StartCoroutine(Eat());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Eat);
 				break;
 			case 2:
-				StartCoroutine(MettiAlSicuro());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
 				break;
 			case 3:
-				StartCoroutine(Ripara());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
 				break;
 			default:
 				throw new NotImplementedException();

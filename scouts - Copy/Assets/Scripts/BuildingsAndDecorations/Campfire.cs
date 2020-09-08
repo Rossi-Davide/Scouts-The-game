@@ -29,20 +29,18 @@ public class Campfire : ObjectWithActions
 
 	protected override void Start()
 	{
-		 aud = GetComponent<AudioSource>();
+		aud = GetComponent<AudioSource>();
 		base.Start();
 		puoFareLegna = true;
 		GameManager.instance.OnDayEndOrStart += ChangeLight;
 	}
-	IEnumerator FaiLegna()
+	void FaiLegna()
 	{
-		RefreshButtonsState();
 		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, 10);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, -100);
 		puoFareLegna = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
-		yield return new WaitForEndOfFrame();
 	}
 
 	private void OnWaitEnd()
@@ -50,12 +48,30 @@ public class Campfire : ObjectWithActions
 		puoFareLegna = true;
 	}
 
+	protected override string GetActionName(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return "Fare legna";
+		}
+		else
+			throw new System.NotImplementedException();
+	}
+	protected override int GetTime(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return 10;
+		}
+		else
+			throw new System.NotImplementedException();
+	}
 
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionPuoFareLegnaPerFuoco: return puoFareLegna;
+			case ConditionType.ConditionPuoFareLegnaPerFuoco: return puoFareLegna && GameManager.instance.materialsValue >= 100;
 			default: return base.GetConditionValue(t);
 		}
 	}
@@ -63,8 +79,8 @@ public class Campfire : ObjectWithActions
 	{
 		switch (b.buttonNum)
 		{
-			case 0:
-				StartCoroutine(FaiLegna());
+			case 1:
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, FaiLegna);
 				break;
 			default:
 				throw new NotImplementedException();

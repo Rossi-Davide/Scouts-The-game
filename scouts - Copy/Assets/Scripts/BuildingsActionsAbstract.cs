@@ -8,12 +8,14 @@ using UnityEngine.EventSystems;
 
 public abstract class BuildingsActionsAbstract : ObjectWithActions
 {
-	protected GameObject healthBar;
-	protected Vector3 healthBarOffset = new Vector3(0, -0.2f, 0);
+	[HideInInspector]
+	public GameObject healthBar;
+	[HideInInspector]
+	public Vector3 healthBarOffset = new Vector3(0, -0.2f, 0);
 	public int health, maxHealth, healthLossAmount, healthLossFrequency;
-	protected bool isSafe, isDestroyed, staMettendoAlSicuro, staRiparando;
+	protected bool isSafe, isDestroyed;
 
-
+	public Vector3 clickListenerOffset;
 
 	protected override void Start()
 	{
@@ -97,26 +99,16 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 		}
 	}
 
-	protected IEnumerator MettiAlSicuro()
+	protected void MettiAlSicuro()
 	{
-		staMettendoAlSicuro = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 5;
-		loadingBar.SetActive(true);
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
-		yield return new WaitForSeconds(5);
+		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -2);
 		isSafe = true;
-		staMettendoAlSicuro = false;
 		RefreshButtonsState();
 	}
 
-	protected IEnumerator Ripara()
+	protected void Ripara()
 	{
-		RefreshButtonsState();
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -10);
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 60;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(60f);
+		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
 		isDestroyed = false;
 		health = maxHealth;
 		healthBar.GetComponent<Slider>().value = health;

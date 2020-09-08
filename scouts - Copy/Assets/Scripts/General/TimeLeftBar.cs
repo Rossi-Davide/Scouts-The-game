@@ -32,7 +32,7 @@ public class TimeLeftBar : MonoBehaviour
 		if (timeLeft == 0)
 		{
 			gameObject.SetActive(false);
-			OnEnd();
+			OnEnd?.Invoke();
 		}
 		timeLeft = ActionManager.instance.GetTimeLeft(action);
 		value.text = GameManager.IntToMinuteSeconds(timeLeft);

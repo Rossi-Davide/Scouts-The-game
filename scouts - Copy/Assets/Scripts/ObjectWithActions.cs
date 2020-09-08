@@ -1,19 +1,26 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public abstract class ObjectWithActions : InGameObject
 {
 	public Canvas wpCanvas;
-	protected Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
-    protected GameObject loadingBar, nameText;
+	[HideInInspector]
+	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
+	[HideInInspector]
+    public GameObject loadingBar, nameText;
 
 	protected ObjectAction action;
 
-    protected override void Start()
+	public Button clickListener;
+
+	protected override void Start()
     {
 		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
 		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform);
 		nameText.GetComponent<TextMeshProUGUI>().text = name;
+		if (clickListener != null)
+			clickListener.onClick.AddListener(OnClick);
 		base.Start();
     }
 

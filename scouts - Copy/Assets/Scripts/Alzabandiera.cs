@@ -5,22 +5,16 @@ using UnityEngine;
 public class Alzabandiera : ObjectWithActions
 {
 	[HideInInspector]
-	public bool staFacendoAlzabandiera, puoFareAlzabandiera;
+	public bool puoFareAlzabandiera;
 
 	protected override void Start()
 	{
 		base.Start();
 		puoFareAlzabandiera = true;
 	}
-	IEnumerator FareAlzabandiera()
+	void FareAlzabandiera()
 	{
-		staFacendoAlzabandiera = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 10;
-		loadingBar.SetActive(true);
-		yield return new WaitForSeconds(10);
 		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, 5);
-		staFacendoAlzabandiera = false;
 		puoFareAlzabandiera = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
@@ -29,6 +23,27 @@ public class Alzabandiera : ObjectWithActions
 	private void OnWaitEnd()
 	{
 		puoFareAlzabandiera = true;
+	}
+
+
+	protected override int GetTime(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return 10;
+		}
+		else
+			throw new System.NotImplementedException();
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		if (buttonNum == 1)
+		{
+			return "Alzabandiera";
+		}
+		else
+			throw new System.NotImplementedException();
 	}
 
 
@@ -44,8 +59,8 @@ public class Alzabandiera : ObjectWithActions
 	{
 		switch (b.buttonNum)
 		{
-			case 0:
-				StartCoroutine(FareAlzabandiera());
+			case 1:
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, FareAlzabandiera);
 				break;
 			default:
 				throw new NotImplementedException();

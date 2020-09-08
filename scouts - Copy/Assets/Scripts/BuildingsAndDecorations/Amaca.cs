@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Amaca : BuildingsActionsAbstract
 {
 	[HideInInspector]
-	public bool isSleeping, canSleepOnAmaca;
+	public bool canSleepOnAmaca;
 
 
 
@@ -17,20 +17,16 @@ public class Amaca : BuildingsActionsAbstract
 		canSleepOnAmaca = true;
 	}
 
-
-	IEnumerator Sleep()
+	void StartSleep()
 	{
-		isSleeping = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 10;
-		loadingBar.SetActive(true);
 		Player.instance.gameObject.SetActive(false);
 		GetComponent<Animator>().Play("Amaca1");
-		yield return new WaitForSeconds(10);
+	}
+	void EndOfSleep()
+	{
 		Player.instance.gameObject.SetActive(true);
 		GetComponent<Animator>().Play("Amaca2");
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, 20);
-		isSleeping = false;
 		canSleepOnAmaca = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
@@ -52,18 +48,50 @@ public class Amaca : BuildingsActionsAbstract
 	}
 
 
+
+	protected override int GetTime(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return 10;
+			case 2:
+				return 5;
+			case 3:
+				return 60;
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return "Dormire";
+			case 2:
+				return "Imbragare";
+			case 3:
+				return "Riparare";
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+
+
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				StartCoroutine(Sleep());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, EndOfSleep);
+				StartSleep();
 				break;
 			case 2:
-				StartCoroutine(MettiAlSicuro());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
 				break;
 			case 3:
-				StartCoroutine(Ripara());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
 				break;
 			default:
 				throw new NotImplementedException();

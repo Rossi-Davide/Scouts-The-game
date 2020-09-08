@@ -8,23 +8,20 @@ using UnityEngine.UI;
 public class PianoBidoni : BuildingsActionsAbstract
 {
 	[HideInInspector]
-	public bool isCooking, canEat, canCook;
+	public bool canEat, canCook;
 	protected override void Start()
 	{
 		base.Start();
 		canCook = true;
 	}
-	IEnumerator Cucina()
+	void CucinaStart()
 	{
-		isCooking = true;
-		RefreshButtonsState();
-		loadingBar.GetComponent<TimeLeftBar>().totalTime = 20;
-		loadingBar.SetActive(true);
 		GetComponent<Animator>().Play("PianoBidoni1");
-		yield return new WaitForSeconds(20);
+	}
+	void EndCucina()
+	{
 		GetComponent<Animator>().Play("PianoBidoni2");
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
-		isCooking = false;
 		canCook = false;
 		canEat = true;
 		RefreshButtonsState();
@@ -46,18 +43,52 @@ public class PianoBidoni : BuildingsActionsAbstract
 			default: return base.GetConditionValue(t);
 		}
 	}
+
+
+
+	protected override int GetTime(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return 20;
+			case 2:
+				return 5;
+			case 3:
+				return 60;
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+	protected override string GetActionName(int buttonNum)
+	{
+		switch (buttonNum)
+		{
+			case 1:
+				return "Cucinare";
+			case 2:
+				return "Imbragare";
+			case 3:
+				return "Riparare";
+			default: throw new System.NotImplementedException();
+		}
+	}
+
+
+
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				StartCoroutine(Cucina());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, EndCucina);
+				CucinaStart();
 				break;
 			case 2:
-				StartCoroutine(MettiAlSicuro());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
 				break;
 			case 3:
-				StartCoroutine(Ripara());
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
 				break;
 			default:
 				throw new NotImplementedException();

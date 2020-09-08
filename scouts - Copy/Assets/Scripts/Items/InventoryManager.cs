@@ -65,6 +65,7 @@ public class InventoryManager : MonoBehaviour
 			overlay.SetActive(true);
 			inventoryPanelParent.SetActive(true);
 			isOpen = true;
+			PanZoom.instance.canDo = false;
 		}
 		else
 		{
@@ -73,6 +74,7 @@ public class InventoryManager : MonoBehaviour
 			isOpen = false;
 			inventoryPanelParent.SetActive(false);
 			overlay.SetActive(false);
+			PanZoom.instance.canDo = true;
 		}
 		foreach (InventorySlot s in slots)
 		{

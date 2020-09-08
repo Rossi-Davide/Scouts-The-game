@@ -7,7 +7,7 @@ public class PanZoom : MonoBehaviour
 	public float minCameraSize, maxCameraSize;
 	public float leftLimit, rightLimit, bottomLimit, topLimit;
 	public bool panningOrZooming;
-
+	public bool canDo;
 
 	#region Singleton
 	public static PanZoom instance;
@@ -17,6 +17,7 @@ public class PanZoom : MonoBehaviour
 		{
 			throw new System.Exception("PanZoom non è un singlton");
 		}
+		canDo = true;
 		instance = this;
 	}
 	#endregion
@@ -26,7 +27,7 @@ public class PanZoom : MonoBehaviour
 		if (!Joystick.instance.isUsingJoystick)
 		{
 			//scroll
-			if (Input.touchCount >= 1)
+			if (Input.touchCount >= 1 && canDo)
 			{
 				Pan();
 				panningOrZooming = true;
@@ -36,7 +37,7 @@ public class PanZoom : MonoBehaviour
 				panningOrZooming = false;
 			}
 			//zoom			
-			if (Input.touchCount >= 2)
+			if (Input.touchCount >= 2 && canDo)
 			{
 				Zoom();
 			}
@@ -44,7 +45,7 @@ public class PanZoom : MonoBehaviour
 		else
 		{
 			//scroll
-			if (Input.touchCount >= 2)
+			if (Input.touchCount >= 2 && canDo)
 			{
 				Pan();
 				panningOrZooming = true;
@@ -54,7 +55,7 @@ public class PanZoom : MonoBehaviour
 				panningOrZooming = false;
 			}
 			//zoom			
-			if (Input.touchCount >= 3)
+			if (Input.touchCount >= 3 && canDo)
 			{
 				Zoom();
 			}

@@ -3,7 +3,7 @@
 public class SnapToGridSpostamentoCostruzioni : MonoBehaviour
 {
 	[HideInInspector]
-	public float grid = 0.5f;
+	public float grid = 0.8f;
 
 	void Update()
 	{
