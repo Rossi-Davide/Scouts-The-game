@@ -27,10 +27,13 @@ public class ModificaBaseTrigger : MonoBehaviour
 		}
 		foreach (var b in buildings)
 		{
-			b.enabled = isModifying;
-			b.GetComponent<MoveBuildings>().enabled = isModifying;
-			modificaAngolo.instance.enabled = isModifying;
-			b.GetComponent<ObjectWithActions>().enabled = !isModifying;
+			if (b.gameObject.activeSelf)
+			{
+				b.enabled = isModifying;
+				b.GetComponent<MoveBuildings>().enabled = isModifying;
+				modificaAngolo.instance.enabled = isModifying;
+				b.GetComponent<ObjectWithActions>().enabled = !isModifying;
+			}
 		}
 		cam.GetComponent<FollowPlayer>().SetTarget(isModifying ? angolo : player);
 		cam.GetComponent<PanZoom>().enabled = !isModifying;

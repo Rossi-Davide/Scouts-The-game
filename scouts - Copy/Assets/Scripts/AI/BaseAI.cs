@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Pathfinding;
+using UnityEngine.UI;
 
 
 public abstract class BaseAI : InGameObject
@@ -15,20 +16,15 @@ public abstract class BaseAI : InGameObject
 	protected Animator animator;
 
 
-	private void OnMouseDown()
-	{
-		if (!ClickedObjects.instance.ClickedOnUI)
-		{
-			OnClick();
-		}
-	}
 
+	public Button clickListenerButton;
 
 	protected override void Start()
 	{
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
+		clickListenerButton.onClick.AddListener(OnClick);
 		CreateNewPath();
 		base.Start();
 	}
@@ -62,6 +58,7 @@ public abstract class BaseAI : InGameObject
 	}
 	protected void Update()
 	{
+		clickListenerButton.transform.position = transform.position;
 		ChangeAnimation();
 		if (currentPath == null)
 			return;

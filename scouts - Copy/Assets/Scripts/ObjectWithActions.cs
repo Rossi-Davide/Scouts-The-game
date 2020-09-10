@@ -34,30 +34,9 @@ public abstract class ObjectWithActions : InGameObject
 		nameText.SetActive(false);
 		base.Deselect();
 	}
-	public override void ClickedButton(int n)
-	{
-		if (n - 1 >= 0 && n - 1 < buttons.Length)
-		{
-			var b = buttons[n - 1];
-			var c = FindNotVerified(b.conditions);
-			if (c == null)
-			{
-				if (CheckActionManager(n))
-					DoAction(b);
-				else
-					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
-
-			}
-			else
-			{
-				GameManager.instance.WarningMessage(c.warning);
-			}
-		}
-
-	}
 
 	public Build.Objects thisObject;
-	protected bool CheckActionManager(int buttonNum)
+	protected override bool CheckActionManager(int buttonNum)
 	{
 		action = new ObjectAction(GetActionName(buttonNum), thisObject, GetTime(buttonNum));
 		return ActionManager.instance.AddAction(action);

@@ -31,6 +31,19 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnCampEnd;
 	public event System.Action OnDayEndOrStart;
 	public event System.Action OnRain;
+	public event System.Action<PlayerAction> OnActionDo;
+	public event System.Action OnInventoryChange;
+
+
+	public void ActionDone(PlayerAction a)
+	{
+		OnActionDo?.Invoke(a);
+	} 
+	public void InventoryChanged()
+	{
+		OnInventoryChange?.Invoke();
+	}
+
 	private void EnergyChanged(int newValue)
 	{
 		OnEnergyChange?.Invoke(newValue);
@@ -177,12 +190,22 @@ public class GameManager : MonoBehaviour
 	void PeriodicItemActionFast() => PeriodicItemAction(PeriodicActionInterval.Fast);
 	void PeriodicItemAction(PeriodicActionInterval interval)
 	{
-		foreach (Item i in InventoryManager.instance.allItems)
+		foreach (InventorySlot i in InventoryManager.instance.slots)
 		{
-			if (i.PeriodicUse == interval && i.currentAmount >= 1)
-			{
-				for (int y = 0; y < i.currentAmount; y++) { i.DoAction(); };
-			}
+			for (int y = 0; y < i.amount; y++)
+				UseItem(i, interval);
+		}
+		foreach (InventorySlot i in ChestManager.instance.slots)
+		{
+			for (int y = 0; y < i.amount; y++)
+				UseItem(i, interval);
+		}
+	}
+	void UseItem(InventorySlot i, PeriodicActionInterval interval)
+	{
+		if (i.item != null && i.item.periodicUseInterval == interval && i.item.currentAmount >= 1)
+		{
+			for (int y = 0; y < i.item.currentAmount; y++) { i.item.DoAction(); };
 		}
 	}
 	public enum PeriodicActionInterval

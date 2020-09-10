@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-[CreateAssetMenu(fileName ="New Action", menuName ="Action")]
+[CreateAssetMenu(fileName = "New Player Action", menuName = "PlayerAction")]
 
 public class PlayerAction : ScriptableObject
 {
     public new string name;
-    public string description;
     public Item[] neededItems;
-    public Item[] optionalItems;
-    public bool canBeDone;
+
     [Header("Parameters")]
     public int timeNeeded;
     public int energyNeeded, materialsNeeded, pointsNeeded;

@@ -5,7 +5,70 @@ public class QuestManager : MonoBehaviour
 	public GameObject questPanel, overlay;
 	QuestUI[] quests;
 	bool isOpen;
-    public void ToggleQuestPanel()
+
+	private void Start()
+	{
+		quests = questPanel.GetComponentsInChildren<QuestUI>();
+		GameManager.instance.OnActionDo += RefreshQuests;
+		GameManager.instance.OnInventoryChange += RefreshActions;
+	}
+
+
+	void RefreshQuests(PlayerAction a)
+	{
+		foreach (var q in quests)
+		{
+			if (q.quest.action == a)
+			{
+				q.quest.timesDone++;
+				q.RefreshQuest();
+			}
+		}
+	}
+	void RefreshActions()
+	{
+		IterateChestOrInventory(InventoryManager.instance.slots);
+		IterateChestOrInventory(ChestManager.instance.slots);
+	}
+	void IterateChestOrInventory(InventorySlot[] items)
+	{
+		foreach (var i in items)
+		{
+			var a = i.item.modifiedAction;
+			var n = i.item.newValue;
+			switch (i.item.modifiedParameter)
+			{
+				case PlayerAction.ActionParams.timeNeeded:
+					a.timeNeeded = n;
+					break;
+				case PlayerAction.ActionParams.energyNeeded:
+					a.energyNeeded = n;
+					break;
+				case PlayerAction.ActionParams.materialsNeeded:
+					a.materialsNeeded = n;
+					break;
+				case PlayerAction.ActionParams.pointsNeeded:
+					a.pointsNeeded = n;
+					break;
+				case PlayerAction.ActionParams.energyGiven:
+					a.energyGiven = n;
+					break;
+				case PlayerAction.ActionParams.materialsGiven:
+					a.materialsGiven = n;
+					break;
+				case PlayerAction.ActionParams.pointsGiven:
+					a.pointsGiven= n;
+					break;
+				case PlayerAction.ActionParams.timeBeforeRedo:
+					a.timeBeforeRedo = n;
+					break;
+			}
+		}
+	}
+
+
+
+	public void ToggleQuestPanel()
 	{
 
 		if (!isOpen)
@@ -16,7 +79,6 @@ public class QuestManager : MonoBehaviour
 			questPanel.SetActive(true);
 			Time.timeScale = 0;
 			isOpen = true;
-			quests = questPanel.GetComponentsInChildren<QuestUI>();
 			foreach (QuestUI q in quests)
 			{
 				q.RefreshQuest();

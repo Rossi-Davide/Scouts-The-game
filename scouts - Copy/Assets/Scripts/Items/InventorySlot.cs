@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+	public GameObject ovCanvas;
 	public GameObject itemInfoBox;
 	TextMeshProUGUI itemName, description, type;
 	GameObject useButton;
@@ -21,6 +22,25 @@ public class InventorySlot : MonoBehaviour
 		type = itemInfoBox.transform.Find("Type").GetComponent<TextMeshProUGUI>();
 		useButton = itemInfoBox.transform.Find("Button").gameObject;
 	}
+
+	public void ResetSlot()
+	{
+		amount = 0;
+		item = null;
+		GetComponent<Image>().enabled = false;
+	}
+
+	public void SetAllValues(int a, Item i)
+	{
+		amount = a;
+		item = i;
+		if (item != null)
+		{
+			icon.sprite = item.icon;
+			GetComponent<Image>().enabled = amount > 0;
+		}
+	}
+
 
 	public void AddItem(Item i)
 	{
@@ -79,8 +99,9 @@ public class InventorySlot : MonoBehaviour
 				amountText.text = (amount- 1).ToString();
 				amountText.gameObject.SetActive(amount - 1 > 1);
 				icon.enabled = amount - 1 >= 1;
-				c = Instantiate(clone.gameObject, t.position, Quaternion.identity, transform);
+				c = Instantiate(clone.gameObject, t.position, Quaternion.identity, ovCanvas.transform);
 				c.GetComponent<Image>().sprite = item.icon;
+				c.GetComponent<InventoryDragAndDrop>().parent = this;
 				InventoryManager.dragging = true;
 			}
 		}

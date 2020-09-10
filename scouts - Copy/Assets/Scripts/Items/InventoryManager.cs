@@ -5,7 +5,6 @@ public class InventoryManager : MonoBehaviour
 {
 	private const int maxInventoryItems = 8;
 	public static bool dragging;
-	public Item[] allItems; //the item database
 	public InventorySlot[] slots;
 
 	#region Singleton
@@ -25,9 +24,10 @@ public class InventoryManager : MonoBehaviour
 		foreach (InventorySlot s in slots)
 		{
 			var i = s.item;
-			if (i == item && i.currentAmount < i.maxAmount)
+			if (i == item && i.currentAmount <= i.maxAmount)
 			{
 				s.AddItem(item);
+				GameManager.instance.InventoryChanged();
 				return;
 			}
 		}
@@ -36,10 +36,25 @@ public class InventoryManager : MonoBehaviour
 			if (s.item == null)
 			{
 				s.AddItem(item);
-				break;
+				GameManager.instance.InventoryChanged();
+				return;
 			}
 		}
 	}
+
+
+	public bool Contains(Item i)
+	{
+		foreach (var s in slots)
+		{
+			if (s.item == i)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 
 	public bool IsInventoryFull()
 	{
@@ -53,7 +68,7 @@ public class InventoryManager : MonoBehaviour
 
 	#endregion
 	#region InGameMethods
-	public GameObject inventoryPanelParent, inventoryPanel, overlay;
+	public GameObject inventoryPanelParent, overlay;
 	bool isOpen;
 	public void ToggleInventoryPanel()
 	{

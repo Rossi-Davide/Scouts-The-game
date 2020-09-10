@@ -23,4 +23,12 @@ public class DialogueManager : MonoBehaviour
 			selectedCapoOrCambu.NextSentence(num);
 		}
 	}
+
+	public void ClosePanel()
+	{
+		if (selectedCapoOrCambu != null)
+		{
+			selectedCapoOrCambu.CancelDialogue();
+		}
+	}
 }

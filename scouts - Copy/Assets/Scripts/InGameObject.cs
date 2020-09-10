@@ -16,6 +16,37 @@ public abstract class InGameObject : MonoBehaviour
 	protected virtual void Start()
 	{
 		InvokeRepeating("RefreshButtonsState", 0f, .4f);
+		foreach (ActionButton b in buttons)
+		{
+			string finalString;
+			if (b.generalAction.materialsNeeded != 0)
+				finalString = "+" + b.generalAction.materialsNeeded;
+			if (b.generalAction.energyNeeded != 0)
+				finalString = "+" + b.generalAction.energyNeeded;
+			if (b.generalAction.pointsNeeded != 0)
+				finalString = "+" + b.generalAction.pointsNeeded;
+			if (b.generalAction.materialsGiven != 0)
+				finalString = "+" + b.generalAction.materialsGiven;
+			if (b.generalAction.energyGiven != 0)
+				finalString = "+" + b.generalAction.energyGiven;
+			if (b.generalAction.pointsGiven != 0)
+				finalString = "+" + b.generalAction.pointsGiven;
+		} //change price or prize string in buttons
+	}
+
+
+	protected Item[] CheckGeneralAction(ActionButton b)
+	{
+		Item[] items = new Item[b.generalAction.neededItems.Length];
+		for (int i = 0; i < items.Length; i++)
+		{
+			var y = b.generalAction.neededItems[i];
+			if (!InventoryManager.instance.Contains(y) && !ChestManager.instance.Contains(y))
+			{
+				items[i] = y;
+			}
+		}
+		return null;
 	}
 
 
@@ -70,7 +101,16 @@ public abstract class InGameObject : MonoBehaviour
 			var c = FindNotVerified(b.conditions);
 			if (c == null)
 			{
-				DoAction(b);
+				if (CheckActionManager(n))
+					DoAction(b);
+				else
+					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
+
+				var i = CheckGeneralAction(b);
+				if (i == null)
+					DoAction(b);
+				else
+					GameManager.instance.WarningMessage($"Prima di svolgere l'azione {b.generalAction.name}, devi acquistare {i}");
 			}
 			else
 			{
@@ -79,6 +119,8 @@ public abstract class InGameObject : MonoBehaviour
 		}
 
 	}
+
+	protected virtual bool CheckActionManager(int buttonNum) { return true;  }
 
 
 	protected virtual void RefreshButtonsState()
@@ -90,7 +132,7 @@ public abstract class InGameObject : MonoBehaviour
 			{
 				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.conditions) == null)
+				if (FindNotVerified(b.conditions) == null && CheckGeneralAction(b) == null && CheckActionManager(b.buttonNum - 1))
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -129,7 +171,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(true);
 		b.isWaiting = true;
-		b.timeLeft = b.timeBeforeUse;
+		b.timeLeft = b.generalAction.timeBeforeRedo;
 		while (b.timeLeft > 0)
 		{
 			RefreshTimeLeft(b);
@@ -162,13 +204,14 @@ public class ActionButton
 	public int buttonNum;
 	public GameManager.Color color;
 	public GameObject obj;
-	public string priceOrPrizeAmount; //add "+" or "-" at the beginning
+	[HideInInspector]
+	public string priceOrPrizeAmount;
 	public GameManager.Counter priceOrPrizeType;
 	[HideInInspector]
 	public int timeLeft;
 	[HideInInspector]
 	public bool isWaiting;
-	public int timeBeforeUse;
+	public PlayerAction generalAction;
 
 	public Condition[] conditions;
 }
@@ -196,6 +239,9 @@ public enum ConditionType
 	ConditionCanDoActionOnBuilding,
 	ConditionCanTalkAI,
 	ConditionHasAnythingToSayAI,
+	ConditionPuoMandareAFareLegna,
+	ConditionEDellaStessaSquadriglia,
+	ConditionStaFacendoLegnaAI,
 }
 
 [System.Serializable]

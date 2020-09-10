@@ -12,7 +12,6 @@ public class Item : ScriptableObject
 	public GameManager.ShopScreen shopScreen;
 	public int currentAmount;
 	public int maxAmount;
-	public Chests chest;
 	public Item[] neededItems;
 	public int price;
 	public GameManager.Counter priceType;
@@ -28,18 +27,10 @@ public class Item : ScriptableObject
 	[Header("ShopScreen")]
 	public GameManager.ShopScreen screenUnlocked;
 	[Header("Buildings")]
+	public GameObject realBuilding;
 	public int timeRequired;
 	public int pointsGiven;
 
-	public enum Chests
-	{
-		cassaDiPioneristica,
-		cassaDiInfermieristica,
-		cassaDiCucina,
-		cassaDiTopografia,
-		cassaDiEspressione,
-		cassaDelFurfante,
-	}
 	public enum Type
 	{
 		Costruzione,
@@ -56,7 +47,9 @@ public class Item : ScriptableObject
 		}
 		if (type == Type.Costruzione)
 		{
-			
+			InventoryManager.instance.ToggleInventoryPanel();
+			FindObjectOfType<ModificaBaseTrigger>().ToggleModificaBase();
+			realBuilding.SetActive(true);
 		}
 	}
 }

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class QuestUI : MonoBehaviour
 {
-    public Quest quest;
+	public Quest quest;
 	Slider bar;
 	Text title;
 	Text description;
@@ -26,24 +26,23 @@ public class QuestUI : MonoBehaviour
 		pointsLogo = transform.Find("Prize/Punti").gameObject;
 		riscuoti = transform.Find("Riscuoti").GetComponent<Button>();
 		completato = transform.Find("Completato").GetComponent<Text>();
+		riscuoti.onClick.AddListener(Riscuoti);
 	}
+	void Riscuoti()
+	{
+		quest.GetPrize();
+		RefreshQuest();
+	}
+
 	public void RefreshQuest()
 	{
 		title.text = quest.name;
 		description.text = quest.description;
-		if (quest.completed)
+		if (quest.timesDone >= quest.timesToDo)
 		{
 			bar.enabled = false;
-			if (quest.prizeTaken)
-			{
-				completato.enabled = true;
-				riscuoti.enabled = false;
-			}
-			else
-			{
-				completato.enabled = false;
-				riscuoti.enabled = true; 
-			}
+			completato.enabled = quest.prizeTaken;
+			riscuoti.enabled = !quest.prizeTaken;
 		}
 		else
 		{
@@ -54,26 +53,9 @@ public class QuestUI : MonoBehaviour
 			completato.enabled = false;
 			barValue.text = quest.timesDone + "/" + quest.timesToDo;
 			prizeValue.text = quest.prizeAmount.ToString();
-			switch (quest.prizeCounter)
-			{
-				case GameManager.Counter.Energia:
-					energyLogo.SetActive(true);
-					materialsLogo.SetActive(false);
-					pointsLogo.SetActive(false);
-					break;
-				case GameManager.Counter.Materiali:
-					energyLogo.SetActive(false);
-					materialsLogo.SetActive(true);
-					pointsLogo.SetActive(false);
-					break;
-				case GameManager.Counter.Punti:
-					energyLogo.SetActive(false);
-					materialsLogo.SetActive(false);
-					pointsLogo.SetActive(true);
-					break;
-				default:
-					throw new System.Exception("Invalid counter");
-			}
+			energyLogo.SetActive(quest.prizeCounter == GameManager.Counter.Energia);
+			materialsLogo.SetActive(quest.prizeCounter == GameManager.Counter.Materiali);
+			pointsLogo.SetActive(quest.prizeCounter == GameManager.Counter.Punti);
 		}
 	}
 }

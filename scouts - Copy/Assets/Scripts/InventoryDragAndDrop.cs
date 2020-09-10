@@ -2,7 +2,9 @@
 
 public class InventoryDragAndDrop : MonoBehaviour
 {
-	int radius = 30; 
+	[HideInInspector]
+	public InventorySlot parent;
+	int radius = 50;
 	void Update()
 	{
 		if (Input.touchCount >= 1)
@@ -17,11 +19,11 @@ public class InventoryDragAndDrop : MonoBehaviour
 				var s = CheckIfNearASlot(t);
 				if (s != null)
 				{
-					transform.parent.GetComponent<InventorySlot>().Drop(s);
+					parent.Drop(s);
 				}
 				else
 				{
-					transform.parent.GetComponent<InventorySlot>().EndOfDrag();
+					parent.EndOfDrag();
 				}
 			}
 		}

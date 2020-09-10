@@ -15,7 +15,7 @@ public class CapieCambu : BaseAI
 	public GameObject blackOverlay;
 	GameObject nextButton, answer1Button, answer2Button;
 	TextMeshProUGUI answer1Text, answer2Text, title, sentenceText;
-	bool canAnswer, canTalk, isTalking;
+	bool canAnswer, canTalk;
 	public Dialogue[] dialoguesArray;
 	int pointsToAdd;
 
@@ -71,10 +71,14 @@ public class CapieCambu : BaseAI
 		else
 		{
 			EndTalk();
-			isTalking = false;
 		}
 	}
 
+
+	public void CancelDialogue()
+	{
+		ClosePanel();
+	}
 
 	protected override void Start()
 	{
@@ -83,15 +87,20 @@ public class CapieCambu : BaseAI
 	}
 	void EndTalk()
 	{
-		dialoguePanel.SetActive(false);
-		blackOverlay.SetActive(false);
+		ClosePanel();
 		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, pointsToAdd);
 		canTalk = false;
 		dialoguesDone++;
+		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
+	}
+
+	void ClosePanel()
+	{
+		dialoguePanel.SetActive(false);
+		blackOverlay.SetActive(false);
 		currentSentenceIndex = 0;
 		DialogueManager.instance.selectedCapoOrCambu = null;
 		RefreshButtonsState();
-		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
 	}
 
 	void Talk()
@@ -102,7 +111,6 @@ public class CapieCambu : BaseAI
 		currentSentence = dialoguesArray[dialoguesDone].sentences[currentSentenceIndex];
 		ShowSentence(currentSentence);
 		pointsToAdd = dialoguesArray[dialoguesDone].basePointsDelta;
-		isTalking = true;
 	}
 
 	private void OnWaitEnd()
