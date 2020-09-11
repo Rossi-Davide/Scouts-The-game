@@ -18,20 +18,33 @@ public abstract class InGameObject : MonoBehaviour
 		InvokeRepeating("RefreshButtonsState", 0f, .4f);
 		foreach (ActionButton b in buttons)
 		{
-			string finalString;
-			if (b.generalAction.materialsNeeded != 0)
-				finalString = "+" + b.generalAction.materialsNeeded;
-			if (b.generalAction.energyNeeded != 0)
-				finalString = "+" + b.generalAction.energyNeeded;
-			if (b.generalAction.pointsNeeded != 0)
-				finalString = "+" + b.generalAction.pointsNeeded;
-			if (b.generalAction.materialsGiven != 0)
-				finalString = "+" + b.generalAction.materialsGiven;
-			if (b.generalAction.energyGiven != 0)
-				finalString = "+" + b.generalAction.energyGiven;
-			if (b.generalAction.pointsGiven != 0)
-				finalString = "+" + b.generalAction.pointsGiven;
+			CalculatePriceOrPrize(b);
 		} //change price or prize string in buttons
+	}
+
+	void CalculatePriceOrPrize(ActionButton b)
+	{
+		string s = "";
+		if (b.generalAction.materialsGiven > 0 || b.generalAction.energyGiven > 0 || b.generalAction.pointsGiven > 0)
+			s = "+";
+		else
+			s = "-";
+		if (b.generalAction.materialsGiven >= b.generalAction.energyGiven && b.generalAction.materialsGiven >= b.generalAction.energyGiven)
+		{
+			s += b.generalAction.materialsGiven.ToString();
+			b.priceOrPrizeType = GameManager.Counter.Materiali;
+		}
+		if (b.generalAction.energyGiven >= b.generalAction.materialsGiven && b.generalAction.energyGiven >= b.generalAction.pointsGiven)
+		{
+			s += b.generalAction.energyGiven.ToString();
+			b.priceOrPrizeType = GameManager.Counter.Energia;
+		}
+		if (b.generalAction.pointsGiven >= b.generalAction.energyGiven && b.generalAction.pointsGiven >= b.generalAction.materialsGiven)
+		{
+			s += b.generalAction.pointsGiven.ToString();
+			b.priceOrPrizeType = GameManager.Counter.Punti;
+		}
+		b.priceOrPrizeAmount = s;
 	}
 
 
@@ -98,10 +111,10 @@ public abstract class InGameObject : MonoBehaviour
 		if (n - 1 >= 0 && n - 1 < buttons.Length)
 		{
 			var b = buttons[n - 1];
-			var c = FindNotVerified(b.conditions);
+			var c = FindNotVerified(b.generalAction.conditions);
 			if (c == null)
 			{
-				if (CheckActionManager(n))
+				if (CheckActionManager(n - 1))
 					DoAction(b);
 				else
 					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
@@ -120,7 +133,7 @@ public abstract class InGameObject : MonoBehaviour
 
 	}
 
-	protected virtual bool CheckActionManager(int buttonNum) { return true;  }
+	protected virtual bool CheckActionManager(int buttonIndex) { return true;  }
 
 
 	protected virtual void RefreshButtonsState()
@@ -130,9 +143,9 @@ public abstract class InGameObject : MonoBehaviour
 			buttonsText.text = name;
 			foreach (var b in buttons)
 			{
-				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
+				b.obj.transform.Find("TextMeshProUGUI").GetComponent<TextMeshProUGUI>().text = b.buttonText;
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.conditions) == null && CheckGeneralAction(b) == null && CheckActionManager(b.buttonNum - 1))
+				if (FindNotVerified(b.generalAction.conditions) == null && CheckGeneralAction(b) == null && CheckActionManager(b.buttonNum - 1))
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -156,13 +169,24 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionHasBeenClicked: return hasBeenClicked;
 			case ConditionType.ConditionIsRaining: return GameManager.instance.isRaining;
 			case ConditionType.ConditionIsDaytime: return GameManager.instance.isDay;
 			case ConditionType.ConditionIsPlayerCloseEnough: if (maxDistanceFromPlayer == 0) { return true; } else { return Vector2.Distance(transform.position, Player.instance.transform.position) <= maxDistanceFromPlayer; };
 			default: throw new System.NotImplementedException(t.ToString());
 		}
 	}
+
+
+
+	protected void ChangeCounter(int n)
+	{
+		var b = buttons[n - 1];
+		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, b.generalAction.energyGiven);
+		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, b.generalAction.materialsGiven);
+		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, b.generalAction.pointsGiven);
+	}
+
+
 
 
 
@@ -206,19 +230,17 @@ public class ActionButton
 	public GameObject obj;
 	[HideInInspector]
 	public string priceOrPrizeAmount;
+	[HideInInspector]
 	public GameManager.Counter priceOrPrizeType;
 	[HideInInspector]
 	public int timeLeft;
 	[HideInInspector]
 	public bool isWaiting;
 	public PlayerAction generalAction;
-
-	public Condition[] conditions;
 }
 
 public enum ConditionType
 {
-	ConditionHasBeenClicked,
 	ConditionIsSafe,
 	ConditionIsDestroyed,
 	ConditionIsPlayerCloseEnough,
@@ -242,6 +264,8 @@ public enum ConditionType
 	ConditionPuoMandareAFareLegna,
 	ConditionEDellaStessaSquadriglia,
 	ConditionStaFacendoLegnaAI,
+	ConditionCanUnlockNegozioDelFurfante,
+	ConditionPuoSfidareSquadriglia,
 }
 
 [System.Serializable]

@@ -21,7 +21,7 @@ public class PianoBidoni : BuildingsActionsAbstract
 	void EndCucina()
 	{
 		GetComponent<Animator>().Play("PianoBidoni2");
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
+		ChangeCounter(1);
 		canCook = false;
 		canEat = true;
 		RefreshButtonsState();
@@ -43,39 +43,6 @@ public class PianoBidoni : BuildingsActionsAbstract
 			default: return base.GetConditionValue(t);
 		}
 	}
-
-
-
-	protected override int GetTime(int buttonNum)
-	{
-		switch (buttonNum)
-		{
-			case 1:
-				return 20;
-			case 2:
-				return 5;
-			case 3:
-				return 60;
-			default: throw new System.NotImplementedException();
-		}
-	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		switch (buttonNum)
-		{
-			case 1:
-				return "Cucinare";
-			case 2:
-				return "Imbragare";
-			case 3:
-				return "Riparare";
-			default: throw new System.NotImplementedException();
-		}
-	}
-
-
-
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
@@ -86,9 +53,11 @@ public class PianoBidoni : BuildingsActionsAbstract
 				break;
 			case 2:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
+				ChangeCounter(2);
 				break;
 			case 3:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
+				ChangeCounter(3);
 				break;
 			default:
 				throw new NotImplementedException();

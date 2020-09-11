@@ -58,17 +58,14 @@ MonoBehaviour:
     priceOrPrizeType: 1
     timeLeft: 0
     isWaiting: 0
-    timeBeforeUse: 0
-    conditions:
-    - type: 3
-      desiredValue: 1
-      warning: Non sei abbastanza vicino!
-    - type: 18
-      desiredValue: 1
-      warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-        oggetto!"
+    generalAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
   maxDistanceFromPlayer: 1.5
   wpCanvas: {fileID: 0}
+  nameTextOffset: {x: 0, y: 0.55, z: 0}
+  loadingBarOffset: {x: 0, y: 0.15, z: 0}
+  loadingBar: {fileID: 0}
+  nameText: {fileID: 0}
+  clickListener: {fileID: 0}
   thisObject: 19
   button: {fileID: 4621947097978961903, guid: 41d512e912e499a4387e33cfa3ecd7ea, type: 3}
 --- !u!95 &1323579708

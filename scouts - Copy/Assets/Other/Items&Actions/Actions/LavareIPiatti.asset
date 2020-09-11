@@ -13,15 +13,20 @@ MonoBehaviour:
   m_Name: LavareIPiatti
   m_EditorClassIdentifier: 
   name: Lavare i piatti
-  description: Per poter mangiare hai di certo bisogno di lavare le stoviglie.
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
-  timeNeeded: 10
-  energyNeeded: 4
-  materialsNeeded: 0
-  pointsNeeded: 0
-  energyGiven: 0
+  conditions:
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 10
+    desiredValue: 1
+    warning: Devi mangiare prima di lavare i panni!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
+  timeNeeded: 45
+  energyGiven: -3
   materialsGiven: 0
-  pointsGiven: 0
+  pointsGiven: 1
   timeBeforeRedo: 0

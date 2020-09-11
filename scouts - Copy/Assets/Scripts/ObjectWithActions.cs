@@ -36,18 +36,10 @@ public abstract class ObjectWithActions : InGameObject
 	}
 
 	public Build.Objects thisObject;
-	protected override bool CheckActionManager(int buttonNum)
+	protected override bool CheckActionManager(int buttonIndex)
 	{
-		action = new ObjectAction(GetActionName(buttonNum), thisObject, GetTime(buttonNum));
+		action = new ObjectAction(buttons[buttonIndex].generalAction.name, thisObject, buttons[buttonIndex].generalAction.timeBeforeRedo);
 		return ActionManager.instance.AddAction(action);
-	}
-	protected virtual int GetTime(int buttonNum)
-	{
-		return 0;
-	}
-	protected virtual string GetActionName(int buttonNum)
-	{
-		return "";
 	}
 
 

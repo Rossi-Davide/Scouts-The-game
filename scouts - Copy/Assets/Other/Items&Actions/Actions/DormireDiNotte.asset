@@ -13,18 +13,24 @@ MonoBehaviour:
   m_Name: DormireDiNotte
   m_EditorClassIdentifier: 
   name: Dormire di notte
-  description: Dormire nella tenda
   neededItems:
   - {fileID: 0}
-  optionalItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  canBeDone: 0
-  timeNeeded: 5
-  energyNeeded: 0
-  materialsNeeded: 0
-  pointsNeeded: 0
+  conditions:
+  - type: 1
+    desiredValue: 0
+    warning: "Non puoi dormire perch\xE8 la tenda \xE8 distrutta"
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano dalla tenda
+  - type: 3
+    desiredValue: 0
+    warning: Puoi dormire solo di notte!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
+  timeNeeded: 10
   energyGiven: 20
   materialsGiven: 0
   pointsGiven: 0
-  timeBeforeRedo: 300
+  timeBeforeRedo: 0

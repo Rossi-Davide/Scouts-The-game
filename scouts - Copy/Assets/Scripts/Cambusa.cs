@@ -20,43 +20,14 @@ public class Cambusa : ObjectWithActions
 	
 	void Attack()
 	{
-		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, 250);
 		canAttack = false;
 		RefreshButtonsState();
-		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
+		StartCoroutine(WaitToUseAgain(buttons[1], OnWaitEnd));
 	}
 
 	private void OnWaitEnd()
 	{
 		canAttack = true;
-	}
-
-	protected override int GetTime(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return 0;
-		}
-		else if (buttonNum == 2)
-		{
-			return 30;
-		}
-		else
-			throw new System.NotImplementedException();
-	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return "Negozio";
-		}
-		else if (buttonNum == 2)
-		{
-			return "Attacco alla cambusa";
-		}
-		else
-			throw new System.NotImplementedException();
 	}
 
 	protected override bool GetConditionValue(ConditionType t)
@@ -77,6 +48,7 @@ public class Cambusa : ObjectWithActions
 				break;
 			case 2:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Attack);
+				ChangeCounter(2);
 				break;
 			default:
 				throw new NotImplementedException();

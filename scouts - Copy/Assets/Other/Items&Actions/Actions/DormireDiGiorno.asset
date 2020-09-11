@@ -13,15 +13,26 @@ MonoBehaviour:
   m_Name: DormireDiGiorno
   m_EditorClassIdentifier: 
   name: Dormire di giorno
-  description: Dormire dondolando dolcemente sull'amaca.
   neededItems:
   - {fileID: 0}
-  optionalItems: []
-  canBeDone: 0
-  timeNeeded: 5
-  energyNeeded: 0
-  materialsNeeded: 0
-  pointsNeeded: 0
+  conditions:
+  - type: 1
+    desiredValue: 0
+    warning: "Non puoi dormire perch\xE8 l'amaca \xE8 distrutta!"
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano dall'amaca!
+  - type: 3
+    desiredValue: 1
+    warning: Puoi dormire sull'amaca solo di giorno!
+  - type: 15
+    desiredValue: 1
+    warning: Prima di dormire sull'amaca di nuovo devi attendere!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
+  timeNeeded: 10
   energyGiven: 15
   materialsGiven: 0
   pointsGiven: 0

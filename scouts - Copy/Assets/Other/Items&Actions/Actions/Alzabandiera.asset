@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850fbf1d3d832934ebaa3c4f47d9c467, type: 3}
+  m_Name: Alzabandiera
+  m_EditorClassIdentifier: 
+  name: Alzabandiera
+  neededItems: []
+  conditions:
+  - type: 3
+    desiredValue: 1
+    warning: Puoi fare l'alzabandiera solo di giorno!
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano dall'alzabandiera!
+  - type: 13
+    desiredValue: 1
+    warning: Devi attendere prima di fare l'alzabandiera di nuovo!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
+  timeNeeded: 10
+  energyGiven: 0
+  materialsGiven: 0
+  pointsGiven: 2
+  timeBeforeRedo: 60

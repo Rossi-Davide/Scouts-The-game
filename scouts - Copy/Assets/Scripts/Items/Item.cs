@@ -22,6 +22,7 @@ public class Item : ScriptableObject
 	public int deltaPoints;
 	[Header("Modified Action")]
 	public PlayerAction modifiedAction;
+	public bool hasToBeInInventory;
 	public PlayerAction.ActionParams modifiedParameter;
 	public int newValue;
 	[Header("ShopScreen")]

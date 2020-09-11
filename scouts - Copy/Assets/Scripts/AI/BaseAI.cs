@@ -15,25 +15,36 @@ public abstract class BaseAI : InGameObject
 	protected Rigidbody2D rb;
 	protected Animator animator;
 
+	protected Transform priorityTarget;
 
 
+	public GameObject buttonCanvas;
 	public Button clickListenerButton;
+
+
+	public event System.Action OnPathCreated;
+	public event System.Action OnPathCompleted;
 
 	protected override void Start()
 	{
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
+		Instantiate(clickListenerButton.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
 		clickListenerButton.onClick.AddListener(OnClick);
 		CreateNewPath();
 		base.Start();
+
+		OnPathCreated += PriorityPath;
+		OnPathCompleted += AfterPathCompletion;
 	}
 	protected virtual void CreateNewPath()
 	{
 		target = randomTarget[Random.Range(0, randomTarget.Length)];
-		seeker.StartPath(rb.position, target, OnPathCreated);
+		seeker.StartPath(rb.position, target, VerifyPath);
+		OnPathCreated?.Invoke();
 	}
-	protected void OnPathCreated(Path p)
+	protected void VerifyPath(Path p)
 	{
 		if (!p.error)
 		{
@@ -47,15 +58,35 @@ public abstract class BaseAI : InGameObject
 	}
 	protected void ChangeAnimation()
 	{
-		float xMovement = rb.velocity.normalized.x, yMovement = rb.velocity.normalized.y;
+		float xMovement = rb.velocity.x, yMovement = rb.velocity.y;
 		animator.SetFloat("Speed", (xMovement > 0.01 || yMovement > 0.01) ? 1 : 0);
 		animator.SetFloat("XMovement", xMovement);
 		animator.SetFloat("YMovement", yMovement);
 	}
-	protected virtual void OnPathCompleted()
+	protected virtual void PathCompleted()
 	{
+		if (priorityTarget != null && target == priorityTarget.position)
+			priorityTarget = null;
 		CreateNewPath();
+		OnPathCompleted?.Invoke();
 	}
+
+
+	public void PriorityPath()
+	{
+		if (priorityTarget != null)
+		{
+			target = priorityTarget.position;
+			seeker.StartPath(rb.position, target, VerifyPath);
+		}
+	}
+
+	public virtual void AfterPathCompletion()
+	{
+
+	}
+
+
 	protected void Update()
 	{
 		clickListenerButton.transform.position = transform.position;
@@ -70,7 +101,7 @@ public abstract class BaseAI : InGameObject
 				//Path completata
 				currentPath = null;
 				currentWayPointIndex = 0;
-				OnPathCompleted();
+				PathCompleted();
 				return;
 			}
 			currentWayPointIndex++;

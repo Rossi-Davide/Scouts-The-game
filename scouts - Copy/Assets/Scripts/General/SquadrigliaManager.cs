@@ -14,10 +14,19 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 
 	#endregion
+
 	public Squadriglia[] squadrigliePossibili;
+	[HideInInspector]
 	public Squadriglia[] squadriglieInGioco;
 	string[] nomiF = { "Sara", "Sofia", "Beatrice", "Federica", "Caterina", "Emma", "Vera", "Lucia", "Martina", "Matilde", "Letizia", "Giada", "Chiara", "Annalisa", "Francesca", "Victoria", "Giulia", "Ginevra", "Viola", "Greta", "Aurora", "Simona", "Monica", "Bianca", "Miriam", "Gloria", "Greta", "Ilaria", "Bianca", "Anita", "Gilda" };
-	string[] nomiM = { "Simone", "Lorenzo", "Nicola", "Francesco", "Michele", "Giovanni", "Fabio", "Nicolò", "Davide", "Matteo", "Tommaso", "Samuele", "Raffaele", "Giulio", "Pietro", "Luca", "Andrea", "Giacomo", "Gianluca", "Riccardo", "Filippo", "Lukas" };
+	string[] nomiM = { "Simone", "Lorenzo", "Nicola", "Francesco", "Michele", "Giovanni", "Fabio", "Nicolò", "Davide", "Matteo", "Tommaso", "Samuele", "Raffaele", "Giulio", "Pietro", "Luca", "Andrea", "Giacomo", "Gianluca", "Riccardo", "Filippo", "Lukas", "Gabriele" };
+	string[] cognomi = { "Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "Bruno", "Rizzo", "Moretti", "De Luca", "Marino", "Greco", "Barbieri", "Lombardi", "Giordano", "Rinaldi", "Colombo", "Mancini", "Longo", "Leone", "Martinelli", "Marchetti", "Martini", "Galli", "Gatti", "Mariani", "Ferrara", "Santoro", "Marini", "Bianco", "Conte", "Serra", "Farina", "Gentile", "Caruso", "Morelli", "Ferri", "Testa", "Ferraro", "Pellegrini", "Grassi", "Rossetti", "D'Angelo", "Bernardi", "Mazza", "Rizzi", "Silvestri", "Vitale", "Franco", "Parisi", "Martino", "Valentini", "Castelli", "Bellini", "Monti", "Lombardo", "Fiore", "Grasso", "Ferro", "Carbone", "Orlando", "Guerra", "Palmieri", "Milani", "Villa", "Viola", "Ruggeri", "De Santis", "D'Amico", "Negri", "Battaglia", "Sala", "Palumbo", "Benedetti", "Olivieri", "Giuliani", "Rosa", "Amato", "Molinari", "Alberti", "Barone", "Pellegrino", "Piazza", "Moro", "Vitali", "Spinelli", "Sartori", "Fabbri", "Vaccari", "Massari", "Medici", "Sarti", "Venturi", "Montanari", "Cappelli" };
+
+	public GameObject[] AIcontainers;
+
+	int numeroSquadriglie = 6;
+
+
 	#region Metodi per dare informazioni sulle squadriglie
 	public string GetSquadrigliaName(int n)
 	{
@@ -43,7 +52,7 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			if (sq.num == n)
 			{
-				return "CapoSquadriglia: " + sq.capo + "\nVice: " + sq.vice + "\nTerzino: " + sq.terzino + "\nNovizio: " + sq.novizio1 + "\nNovizio: " + sq.novizio2;
+				return $"{sq.ruoli[0]}: {sq.nomi[0]} \n{sq.ruoli[1]}: {sq.nomi[1]} \n{sq.ruoli[2]}: {sq.nomi[2]} \n{sq.ruoli[3]}: {sq.nomi[3]} \n{sq.ruoli[4]}: {sq.nomi[4]}";
 			}
 		}
 		throw new System.Exception("La squadriglia ricercata non esiste" + n);
@@ -71,41 +80,43 @@ public class SquadrigliaManager : MonoBehaviour
 		throw new System.Exception("La squadriglia ricercata non esiste");
 	}
 	#endregion
+
 	#region Nomi a caso
 	public void GetRandomNames()
 	{
 		foreach (Squadriglia sq in squadriglieInGioco)
 		{
-			if (sq.femminile)
+			for (int p = 0; p < sq.nomi.Length; p++)
 			{
-				sq.capo = nomiF[Random.Range(0, nomiF.Length)];
-				sq.vice = nomiF[Random.Range(0, nomiF.Length)];
-				sq.terzino = nomiF[Random.Range(0, nomiF.Length)];
-				sq.novizio1 = nomiF[Random.Range(0, nomiF.Length)];
-				sq.novizio2 = nomiF[Random.Range(0, nomiF.Length)];
-			}
-			else
-			{
-				sq.capo = nomiM[Random.Range(0, nomiM.Length)];
-				sq.vice = nomiM[Random.Range(0, nomiM.Length)];
-				sq.terzino = nomiM[Random.Range(0, nomiM.Length)];
-				sq.novizio1 = nomiM[Random.Range(0, nomiM.Length)];
-				sq.novizio2 = nomiM[Random.Range(0, nomiM.Length)];
+				if (sq.femminile)
+				{
+					sq.nomi[p] = nomiF[Random.Range(0, nomiF.Length)];
+				}
+				else
+				{
+					sq.nomi[p] = nomiM[Random.Range(0, nomiM.Length)];
+				}
+				sq.nomi[p] += $" {cognomi[Random.Range(0, cognomi.Length)]}";
 			}
 			if (Player.instance.squadriglia == sq.name)
 			{
-				sq.capo = Player.instance.playerName + " (Tu)";
+				sq.nomi[0] = Player.instance.playerName + " (Tu)";
 			}
 		}
 	}
+
+
+
 	#endregion
-	#region Counters
+
+	#region Counters and buildings
 	private void Start()
 	{
 		GameManager.instance.OnMaterialsChange += RefreshPlayerMaterials;
 		GameManager.instance.OnPointsChange += RefreshPlayerPoints;
-		InvokeRepeating("ChangeOtherSqCounters", 30, Random.Range(15, 40));
-		GetRandomNames();
+		InvokeRepeating("ChangeOtherSqCounters", 30, Random.Range(10, 30));
+		InvokeRepeating("OtherSQBuildBuildings", 30, Random.Range(30, 60));
+		AssegnazioneSquadriglieInGioco();
 	}
 	private void OnDestroy()
 	{
@@ -124,13 +135,13 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	void RefreshPlayerPoints(int newValue)
 	{
-			foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (Squadriglia sq in squadriglieInGioco)
+		{
+			if (sq.name == Player.instance.squadriglia)
 			{
-				if (sq.name == Player.instance.squadriglia)
-				{
-					sq.points = newValue;
-				}
+				sq.points = newValue;
 			}
+		}
 	}
 
 	void ChangeOtherSqCounters()
@@ -141,26 +152,105 @@ public class SquadrigliaManager : MonoBehaviour
 			{
 				if (Random.Range(0, 100) >= 50)
 				{
-					sq.materials += Random.Range(5, 10);
+					sq.materials += Random.Range(5, 15);
 				}
 				if (Random.Range(0, 100) >= 70)
 				{
-					sq.points += Random.Range(2, 6);
+					sq.points += Random.Range(1, 3);
+				}
+			}
+		}
+	}
+
+	void OtherSQBuildBuildings()
+	{
+		foreach (var sq in squadriglieInGioco)
+		{
+			if (sq.name != Player.instance.squadriglia)
+			{
+				bool canBuild = true;
+				if (Random.Range(0, 100) >= 50)
+				{
+					foreach (var b in sq.buildings)
+					{
+						if (!b.gameObject.activeSelf && Random.Range(0, 100) >= 50 && canBuild)
+						{
+							canBuild = false;
+							b.gameObject.SetActive(true);
+						}
+					}
 				}
 			}
 		}
 	}
 	#endregion
-	}
 
 
-	[System.Serializable]
-	public class Squadriglia
+	void AssegnazioneAI()
 	{
-		public int num;
-		public bool femminile;
-		public GameManager.Squadriglia name;
-		public string capo, vice, terzino, novizio1, novizio2;
-		public int materials;
-		public int points;
+		for (int i = 0; i < squadriglieInGioco.Length; i++)
+		{
+			var sq = squadriglieInGioco[i];
+			var squadriglieri = AIcontainers[i].GetComponentsInChildren<Squadrigliere>();
+			for (int p = 0; p < squadriglieri.Length; p++)
+			{
+				if (sq.name == Player.instance.squadriglia)
+				{
+					if (p == 0)
+					{
+						squadriglieri[p].gameObject.SetActive(false);
+					}
+					p++;
+				}
+				squadriglieri[p].name = sq.nomi[i];
+				squadriglieri[p].nomeRuolo = sq.ruoli[i];
+				squadriglieri[p].nomeSquadriglia = sq.name;
+				squadriglieri[p].tent = sq.tenda;
+			}
+		}
 	}
+
+
+	void AssegnazioneSquadriglieInGioco()
+	{
+		foreach (Squadriglia sq in squadrigliePossibili)
+		{
+			sq.nomi = new string[5];
+			sq.buildings = sq.angolo.GetComponentsInChildren<SpriteRenderer>();
+			sq.ruoli = new GameManager.Ruolo[5] { GameManager.Ruolo.Capo, GameManager.Ruolo.Vice, GameManager.Ruolo.Terzino, GameManager.Ruolo.Novizio, GameManager.Ruolo.Novizio };
+		}
+		squadriglieInGioco = new Squadriglia[numeroSquadriglie];
+		for (int i = 0; i < numeroSquadriglie; i++)
+		{
+			
+			squadriglieInGioco[i] = squadrigliePossibili[i];
+		}
+		Player.instance.squadriglia = squadriglieInGioco[5].name;
+		GetRandomNames();
+	}
+
+
+
+
+}
+
+
+[System.Serializable]
+public class Squadriglia
+{
+	public GameManager.Squadriglia name;
+	public int num; // 1 to 6
+	public bool femminile;
+	public GameObject angolo;
+	public Transform tenda;
+	[HideInInspector]
+	public SpriteRenderer[] buildings;
+	[HideInInspector]
+	public GameManager.Ruolo[] ruoli;
+	[HideInInspector]
+	public string[] nomi = new string[5];
+	[HideInInspector]
+	public int materials;
+	[HideInInspector]
+	public int points;
+}

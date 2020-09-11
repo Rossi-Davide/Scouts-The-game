@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StatisticsTabs : MonoBehaviour
 {
+	[HideInInspector]
 	public int selectedTab = 1;
-	public Text nomeSq, description, materials, points;
+	public TextMeshProUGUI nomeSq, description, materials, points;
 	public void OnClick(int tabNum)
 	{
 		selectedTab = tabNum;

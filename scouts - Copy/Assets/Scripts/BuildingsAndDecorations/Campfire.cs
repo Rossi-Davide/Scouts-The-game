@@ -36,8 +36,7 @@ public class Campfire : ObjectWithActions
 	}
 	void FaiLegna()
 	{
-		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, 10);
-		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, -100);
+		ChangeCounter(1);
 		puoFareLegna = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
@@ -47,26 +46,6 @@ public class Campfire : ObjectWithActions
 	{
 		puoFareLegna = true;
 	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return "Fare legna";
-		}
-		else
-			throw new System.NotImplementedException();
-	}
-	protected override int GetTime(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return 10;
-		}
-		else
-			throw new System.NotImplementedException();
-	}
-
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)

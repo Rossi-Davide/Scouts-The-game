@@ -13,15 +13,32 @@ MonoBehaviour:
   m_Name: Cucinare
   m_EditorClassIdentifier: 
   name: Cucinare
-  description: Preparare il pasto al piano bidoni.
   neededItems:
   - {fileID: 0}
-  optionalItems: []
-  canBeDone: 0
+  conditions:
+  - type: 1
+    desiredValue: 0
+    warning: "Non puoi cucinare perch\xE8 il piano bidoni \xE8 distrutto!"
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano dal piano bidoni!
+  - type: 3
+    desiredValue: 1
+    warning: Puoi cucinare solo di giorno!
+  - type: 14
+    desiredValue: 1
+    warning: Prima di cucinare devi attendere!
+  - type: 5
+    desiredValue: 0
+    warning: "Hai gi\xE0 preparato il pasto!"
+  - type: 10
+    desiredValue: 0
+    warning: Prima di cucinare di nuovo devi lavare i piatti!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
   timeNeeded: 20
-  energyNeeded: 5
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 0
   materialsGiven: 0
   pointsGiven: 0

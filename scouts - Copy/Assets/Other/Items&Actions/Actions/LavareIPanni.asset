@@ -13,15 +13,20 @@ MonoBehaviour:
   m_Name: LavareIPanni
   m_EditorClassIdentifier: 
   name: Lavare i panni
-  description: Devi farlo se non vuoi puzzare come...
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
-  timeNeeded: 10
-  energyNeeded: 4
-  materialsNeeded: 0
-  pointsNeeded: 0
-  energyGiven: 0
+  conditions:
+  - type: 9
+    desiredValue: 1
+    warning: Prima di lavare i panni devi attendere!
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
+  timeNeeded: 60
+  energyGiven: -5
   materialsGiven: 0
-  pointsGiven: 0
-  timeBeforeRedo: 600
+  pointsGiven: 7
+  timeBeforeRedo: 300

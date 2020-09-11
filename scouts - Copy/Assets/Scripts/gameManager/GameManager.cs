@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 	public event System.Action<int> OnPointsChange;
 	public event System.Action OnPlayerDeath;
 	public event System.Action OnCampEnd;
+	public event System.Action OnCampStart;
 	public event System.Action OnDayEndOrStart;
 	public event System.Action OnRain;
 	public event System.Action<PlayerAction> OnActionDo;
@@ -64,6 +65,14 @@ public class GameManager : MonoBehaviour
 	{
 		OnCampEnd?.Invoke();
 	}
+
+	void CampStarted()
+	{
+		OnCampStart?.Invoke();
+	}
+
+
+
 	public void ChangeCounter(Counter counter, int delta)
 	{
 		switch (counter)
@@ -162,6 +171,18 @@ public class GameManager : MonoBehaviour
 		return st;
 	}
 
+	public static int FindMax(int[] nums)
+	{
+		int max = 0;
+		foreach (int i in nums)
+		{
+			if (i > max)
+				max = i;
+		}
+		return max;
+	}
+
+
 	public bool CanDoAction(PlayerAction a)
 	{
 		bool canDoAction = false;
@@ -247,18 +268,21 @@ public class GameManager : MonoBehaviour
 	private int toSpawnPerType;
 	void SpawnDecorations()
 	{
-		foreach (var d in decorations)
+		if (spawnedDecorations.Count <= 10)
 		{
-			for (int spawned = 0; spawned < toSpawnPerType; spawned++)
+			foreach (var d in decorations)
 			{
-				int currentArea = Random.Range(0, startAreaSpawn.Length);
-				float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
-				float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
-				GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
-				decoration.GetComponent<Decorations>().buttonsText = buttonsText;
-				decoration.GetComponent<Decorations>().buttons[0].obj = button1;
-				decoration.GetComponent<Decorations>().wpCanvas = wpCanvas;
-				spawnedDecorations.Add(decoration);
+				for (int spawned = 0; spawned < toSpawnPerType; spawned++)
+				{
+					int currentArea = Random.Range(0, startAreaSpawn.Length);
+					float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
+					float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
+					GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
+					decoration.GetComponent<Decorations>().buttonsText = buttonsText;
+					decoration.GetComponent<Decorations>().buttons[0].obj = button1;
+					decoration.GetComponent<Decorations>().wpCanvas = wpCanvas;
+					spawnedDecorations.Add(decoration);
+				}
 			}
 		}
 	}
@@ -435,6 +459,7 @@ public class GameManager : MonoBehaviour
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
 		SpawnDecorations();
+		InvokeRepeating("SpawnDecorations", 30, Random.Range(45, 75));
 		InvokeRepeating("PeriodicItemActionSlow", 60, 60);
 		InvokeRepeating("PeriodicItemActionMedium", 30, 30);
 		InvokeRepeating("PeriodicItemActionFast", 15, 15);
@@ -476,7 +501,7 @@ public class GameManager : MonoBehaviour
 		Novizio,
 		Terzino,
 		Vice,
-		CapoSquadriglia,
+		Capo,
 	}
 
 

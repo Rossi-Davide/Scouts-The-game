@@ -29,6 +29,7 @@ public class Amaca : BuildingsActionsAbstract
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, 20);
 		canSleepOnAmaca = false;
 		RefreshButtonsState();
+		ChangeCounter(1);
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
 	}
 
@@ -47,38 +48,6 @@ public class Amaca : BuildingsActionsAbstract
 		}
 	}
 
-
-
-	protected override int GetTime(int buttonNum)
-	{
-		switch (buttonNum)
-		{
-			case 1:
-				return 10;
-			case 2:
-				return 5;
-			case 3:
-				return 60;
-			default: throw new System.NotImplementedException();
-		}
-	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		switch (buttonNum)
-		{
-			case 1:
-				return "Dormire";
-			case 2:
-				return "Imbragare";
-			case 3:
-				return "Riparare";
-			default: throw new System.NotImplementedException();
-		}
-	}
-
-
-
 	protected override void DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
@@ -89,9 +58,11 @@ public class Amaca : BuildingsActionsAbstract
 				break;
 			case 2:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
+				ChangeCounter(2);
 				break;
 			case 3:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
+				ChangeCounter(3);
 				break;
 			default:
 				throw new NotImplementedException();

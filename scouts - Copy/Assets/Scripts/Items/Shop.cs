@@ -8,6 +8,8 @@ public class Shop : MonoBehaviour
 	public GameManager.ShopScreen currentScreen;
 	public GameObject itemsPanel, shopPanel, costruzioniEPioneristicaPanel, cucinaPanel, altreCassePanel, negozioIllegalePanel, closeButton;
 	bool hasEnoughMoney, canBuy;
+	[HideInInspector]
+	public bool negozioIllegaleUnlocked;
 
 	Item selectedItem;
 	#region Singleton
@@ -31,7 +33,7 @@ public class Shop : MonoBehaviour
 		icon = infoPanel.transform.Find("Icon").gameObject;
 		itemName = infoPanel.transform.Find("Name").GetComponent<TextMeshProUGUI>();
 		description = infoPanel.transform.Find("Description").GetComponent<TextMeshProUGUI>();
-		price = buyButton.transform.Find("Text").GetComponent<TextMeshProUGUI>();
+		price = buyButton.transform.Find("TextMeshProUGUI").GetComponent<TextMeshProUGUI>();
 		amount = infoPanel.transform.Find("Amount").GetComponent<TextMeshProUGUI>();
 	}
 	public void Buy()
@@ -112,6 +114,11 @@ public class Shop : MonoBehaviour
 
 	public void ChangePanel(int n)
 	{
+		if (!negozioIllegaleUnlocked && (GameManager.ShopScreen)n == GameManager.ShopScreen.NegozioIllegale)
+		{
+			GameManager.instance.WarningMessage("Per sbloccare il negozio illegale devi prima trovare la cassa del furfante!");
+			return;
+		}
 		currentScreen = (GameManager.ShopScreen)n;
 		costruzioniEPioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Costruzioni || currentScreen == GameManager.ShopScreen.Pioneristica);
 		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);

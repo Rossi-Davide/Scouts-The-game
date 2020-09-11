@@ -33,31 +33,11 @@ public class Decorations : ObjectWithActions
 		GetComponent<ParticleSystem>().Stop();
 		Player.instance.GetComponent<Animator>().Play("idle");
 		Player.instance.enabled = true;
-		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, 15);
+		ChangeCounter(1);
 		GameManager.instance.spawnedDecorations.Remove(gameObject);
 		Deselect();
 		Destroy(gameObject);
 		Destroy(btn.gameObject);
-	}
-
-	protected override int GetTime(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return 3;
-		}
-		else
-			throw new System.NotImplementedException();
-	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return "Fare legna";
-		}
-		else
-			throw new System.NotImplementedException();
 	}
 
 	protected override bool GetConditionValue(ConditionType t)

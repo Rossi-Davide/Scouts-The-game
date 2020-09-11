@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
 	#endregion
 	#region General
+	[HideInInspector]
 	public GameManager.Squadriglia squadriglia;
 	#endregion
 }

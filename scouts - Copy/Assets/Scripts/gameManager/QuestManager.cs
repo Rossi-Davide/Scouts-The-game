@@ -36,32 +36,26 @@ public class QuestManager : MonoBehaviour
 		{
 			var a = i.item.modifiedAction;
 			var n = i.item.newValue;
-			switch (i.item.modifiedParameter)
+			if (!i.item.hasToBeInInventory)
 			{
-				case PlayerAction.ActionParams.timeNeeded:
-					a.timeNeeded = n;
-					break;
-				case PlayerAction.ActionParams.energyNeeded:
-					a.energyNeeded = n;
-					break;
-				case PlayerAction.ActionParams.materialsNeeded:
-					a.materialsNeeded = n;
-					break;
-				case PlayerAction.ActionParams.pointsNeeded:
-					a.pointsNeeded = n;
-					break;
-				case PlayerAction.ActionParams.energyGiven:
-					a.energyGiven = n;
-					break;
-				case PlayerAction.ActionParams.materialsGiven:
-					a.materialsGiven = n;
-					break;
-				case PlayerAction.ActionParams.pointsGiven:
-					a.pointsGiven= n;
-					break;
-				case PlayerAction.ActionParams.timeBeforeRedo:
-					a.timeBeforeRedo = n;
-					break;
+				switch (i.item.modifiedParameter)
+				{
+					case PlayerAction.ActionParams.timeNeeded:
+						a.timeNeeded = n;
+						break;
+					case PlayerAction.ActionParams.energyGiven:
+						a.energyGiven = n;
+						break;
+					case PlayerAction.ActionParams.materialsGiven:
+						a.materialsGiven = n;
+						break;
+					case PlayerAction.ActionParams.pointsGiven:
+						a.pointsGiven = n;
+						break;
+					case PlayerAction.ActionParams.timeBeforeRedo:
+						a.timeBeforeRedo = n;
+						break;
+				}
 			}
 		}
 	}

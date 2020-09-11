@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850fbf1d3d832934ebaa3c4f47d9c467, type: 3}
   m_Name: LegnaPerIlFuocoSerale
   m_EditorClassIdentifier: 
-  name: Fare legna per il fuoco serale
-  description: Donare un po' dei propri materiali per una giusta causa.
+  name: Fare legna
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
-  timeNeeded: 0
-  energyNeeded: 0
-  materialsNeeded: 100
-  pointsNeeded: 0
+  conditions:
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 11
+    desiredValue: 1
+    warning: Prima di fare la legna per il fuoco devi attendere!
+  timeNeeded: 10
   energyGiven: 0
-  materialsGiven: 0
+  materialsGiven: -300
   pointsGiven: 5
   timeBeforeRedo: 300

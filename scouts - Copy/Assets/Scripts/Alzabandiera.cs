@@ -14,7 +14,6 @@ public class Alzabandiera : ObjectWithActions
 	}
 	void FareAlzabandiera()
 	{
-		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, 5);
 		puoFareAlzabandiera = false;
 		RefreshButtonsState();
 		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
@@ -24,28 +23,6 @@ public class Alzabandiera : ObjectWithActions
 	{
 		puoFareAlzabandiera = true;
 	}
-
-
-	protected override int GetTime(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return 10;
-		}
-		else
-			throw new System.NotImplementedException();
-	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		if (buttonNum == 1)
-		{
-			return "Alzabandiera";
-		}
-		else
-			throw new System.NotImplementedException();
-	}
-
 
 	protected override bool GetConditionValue(ConditionType t)
 	{
@@ -61,6 +38,7 @@ public class Alzabandiera : ObjectWithActions
 		{
 			case 1:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, FareAlzabandiera);
+				ChangeCounter(1);
 				break;
 			default:
 				throw new NotImplementedException();

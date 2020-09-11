@@ -14,7 +14,7 @@ public class Tent : BuildingsActionsAbstract
 	{
 		GameManager.instance.hasSkippedNight = true;
 		Player.instance.gameObject.SetActive(true);
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, 20);
+		ChangeCounter(1);
 		RefreshButtonsState();
 		GameManager.Wait(.1f, SkipNight);
 	}
@@ -22,35 +22,6 @@ public class Tent : BuildingsActionsAbstract
 	{
 		GameManager.instance.hasSkippedNight = false;
 	}
-
-	protected override int GetTime(int buttonNum)
-	{
-		switch (buttonNum)
-		{
-			case 1:
-				return 10;
-			case 2:
-				return 5;
-			case 3:
-				return 60;
-			default: throw new System.NotImplementedException();
-		}
-	}
-
-	protected override string GetActionName(int buttonNum)
-	{
-		switch (buttonNum)
-		{
-			case 1:
-				return "Dormire";
-			case 2:
-				return "Imbragare";
-			case 3:
-				return "Riparare";
-			default: throw new System.NotImplementedException();
-		}
-	}
-
 
 	protected override void DoAction(ActionButton b)
 	{
@@ -62,9 +33,11 @@ public class Tent : BuildingsActionsAbstract
 				break;
 			case 2:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
+				ChangeCounter(2);
 				break;
 			case 3:
 				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
+				ChangeCounter(3);
 				break;
 			default:
 				throw new NotImplementedException();

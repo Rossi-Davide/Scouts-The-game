@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class Squadrigliere : BaseAI
 {
+    [HideInInspector]
     public Transform tent;
     bool staFacendoLegna, homeCoroutineStarted, puoMandareAFareLegna;
+    [HideInInspector]
     public GameManager.Squadriglia nomeSquadriglia;
+    [HideInInspector]
     public GameManager.Ruolo nomeRuolo;
     TextMesh squadriglia, ruolo;
 
