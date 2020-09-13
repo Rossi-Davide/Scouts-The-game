@@ -13,15 +13,27 @@ MonoBehaviour:
   m_Name: Mangiare
   m_EditorClassIdentifier: 
   name: Mangiare
-  description: Consumare il pasto rimanendo comodamente seduti al refettorio.
+  description: 
   neededItems:
   - {fileID: 0}
-  optionalItems: []
-  canBeDone: 0
+  conditions:
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 5
+    desiredValue: 1
+    warning: Prima di mangiare devi preparare il pasto!
+  - type: 10
+    desiredValue: 0
+    warning: "Hai gi\xE0 mangiato!"
+  - type: 1
+    desiredValue: 0
+    warning: "Non puoi mangiare perch\xE8 il refettorio \xE8 distrutto!"
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
   timeNeeded: 5
-  energyNeeded: 0
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 20
   materialsGiven: 0
   pointsGiven: 0

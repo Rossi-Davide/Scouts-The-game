@@ -10,7 +10,7 @@ public class CassaDelFurfante : InGameObject
 	{
 		base.Start();
 		canUnlock = true;
-		transform.position = possiblePositions[Random.Range(0, possiblePositions.Length)];
+		transform.position = possiblePositions[Random.Range(0, possiblePositions.Length - 1)];
 	}
 
 	void SbloccaScreen()

@@ -12,8 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850fbf1d3d832934ebaa3c4f47d9c467, type: 3}
   m_Name: RiparareCostruzione
   m_EditorClassIdentifier: 
-  name: 
+  name: Riparare
+  description: 
   neededItems: []
+  conditions:
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 1
+    desiredValue: 1
+    warning: "Non puoi riparare la costruzione perch\xE8 \xE8 distrutta!"
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

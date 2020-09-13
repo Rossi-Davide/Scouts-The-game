@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 			throw new System.Exception("GameManager singleton has been created more than once!");
 		}
 		instance = this;
+		DontDestroyOnLoad(this);
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 	#endregion
@@ -257,7 +258,7 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 	#region Spawn stuff
-	public GameObject button1, button2, button3;
+	public GameObject[] actionButtons;
 	public TextMeshProUGUI buttonsText;
 	public Canvas wpCanvas;
 
@@ -278,8 +279,6 @@ public class GameManager : MonoBehaviour
 					float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
 					float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
 					GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
-					decoration.GetComponent<Decorations>().buttonsText = buttonsText;
-					decoration.GetComponent<Decorations>().buttons[0].obj = button1;
 					decoration.GetComponent<Decorations>().wpCanvas = wpCanvas;
 					spawnedDecorations.Add(decoration);
 				}
@@ -486,15 +485,6 @@ public class GameManager : MonoBehaviour
 		{
 			PlayerIsDead();
 		}
-	}
-	public enum Squadriglia
-	{
-		Volpi,
-		Aquile,
-		Puma,
-		Lupi,
-		Pantere,
-		Cervi,
 	}
 	public enum Ruolo
 	{

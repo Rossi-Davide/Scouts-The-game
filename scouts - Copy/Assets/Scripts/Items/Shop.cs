@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
 		icon = infoPanel.transform.Find("Icon").gameObject;
 		itemName = infoPanel.transform.Find("Name").GetComponent<TextMeshProUGUI>();
 		description = infoPanel.transform.Find("Description").GetComponent<TextMeshProUGUI>();
-		price = buyButton.transform.Find("TextMeshProUGUI").GetComponent<TextMeshProUGUI>();
+		price = buyButton.transform.Find("Text").GetComponent<TextMeshProUGUI>();
 		amount = infoPanel.transform.Find("Amount").GetComponent<TextMeshProUGUI>();
 	}
 	public void Buy()

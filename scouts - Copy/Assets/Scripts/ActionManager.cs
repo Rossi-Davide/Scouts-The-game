@@ -13,7 +13,7 @@ public class ActionManager : MonoBehaviour
 	}
 	#endregion
 	bool isOpen;
-	public GameObject panel;
+	public GameObject panel, overlay;
 	public GameObject[] actionSpots;
 	public ObjectAction[] currentActions = new ObjectAction[5];
 	public void TogglePanel()
@@ -22,6 +22,8 @@ public class ActionManager : MonoBehaviour
 
 		isOpen = !isOpen;
 		panel.SetActive(isOpen);
+		overlay.SetActive(isOpen);
+		PanZoom.instance.enabled = !isOpen;
 		for (int i = 0; i < currentActions.Length; i++)
 		{
 			var s = actionSpots[i];
@@ -37,7 +39,10 @@ public class ActionManager : MonoBehaviour
 	}
 
 
-	public bool AddAction(ObjectAction action)
+
+
+
+	public void AddAction(ObjectAction action)
 	{
 		for (int i = 0; i < currentActions.Length; i++)
 		{
@@ -45,16 +50,30 @@ public class ActionManager : MonoBehaviour
 			{
 				currentActions[i] = action;
 				currentActions[i].timeLeft = currentActions[i].totalTime;
+				return;
+			}
+		}
+	}
+
+
+	public bool CheckIfTooManyActions()
+	{
+		for (int i = 0; i < currentActions.Length; i++)
+		{
+			if (currentActions[i] == null)
+			{
 				return true;
 			}
 		}
 		return false;
 	}
 
+
+
 	/// <summary>
 	/// Returns true if there aren't any other actions done on the same building
 	/// </summary>
-	public bool CanDoAction(Build.Objects b)
+	public bool CanDoAction(string b)
 	{
 		foreach (var a in currentActions)
 		{
@@ -106,11 +125,11 @@ public class ActionManager : MonoBehaviour
 public class ObjectAction
 {
 	public string name;
-	public Build.Objects building;
+	public string building;
 	public int totalTime;
 	public int timeLeft;
 
-	public ObjectAction(string name, Build.Objects building, int time)
+	public ObjectAction(string name, string building, int time)
 	{
 		this.name = name;
 		this.building = building;

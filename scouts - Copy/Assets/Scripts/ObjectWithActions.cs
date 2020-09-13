@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public abstract class ObjectWithActions : InGameObject
 {
+	[HideInInspector]
 	public Canvas wpCanvas;
 	[HideInInspector]
 	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
@@ -16,6 +17,7 @@ public abstract class ObjectWithActions : InGameObject
 
 	protected override void Start()
     {
+		wpCanvas = GameManager.instance.wpCanvas;
 		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
 		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform);
 		nameText.GetComponent<TextMeshProUGUI>().text = name;
@@ -34,12 +36,19 @@ public abstract class ObjectWithActions : InGameObject
 		nameText.SetActive(false);
 		base.Deselect();
 	}
-
-	public Build.Objects thisObject;
 	protected override bool CheckActionManager(int buttonIndex)
 	{
-		action = new ObjectAction(buttons[buttonIndex].generalAction.name, thisObject, buttons[buttonIndex].generalAction.timeBeforeRedo);
-		return ActionManager.instance.AddAction(action);
+		action = new ObjectAction(buttons[buttonIndex].generalAction.name, name, buttons[buttonIndex].generalAction.timeNeeded);
+		if (ActionManager.instance.CheckIfTooManyActions())
+		{
+			ActionManager.instance.AddAction(action);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
 	}
 
 
@@ -47,7 +56,7 @@ public abstract class ObjectWithActions : InGameObject
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(thisObject);
+			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(name);
 			default: return base.GetConditionValue(t);
 		}
 	}

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public abstract class InGameObject : MonoBehaviour
 {
     public new string name;
-    public TextMeshProUGUI buttonsText;
+    protected TextMeshProUGUI buttonsText;
     public ActionButton[] buttons;
     public float maxDistanceFromPlayer;
     protected bool hasBeenClicked;
@@ -16,10 +16,13 @@ public abstract class InGameObject : MonoBehaviour
 	protected virtual void Start()
 	{
 		InvokeRepeating("RefreshButtonsState", 0f, .4f);
-		foreach (ActionButton b in buttons)
+		for (int b = 0; b < buttons.Length; b++)
 		{
-			CalculatePriceOrPrize(b);
+			CalculatePriceOrPrize(buttons[b]);
+			buttons[b].buttonNum = b + 1;
+			buttons[b].obj = GameManager.instance.actionButtons[b];
 		} //change price or prize string in buttons
+		buttonsText = GameManager.instance.buttonsText;
 	}
 
 	void CalculatePriceOrPrize(ActionButton b)
@@ -43,6 +46,11 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			s += b.generalAction.pointsGiven.ToString();
 			b.priceOrPrizeType = GameManager.Counter.Punti;
+		}
+		if (b.generalAction.materialsGiven == 0 && b.generalAction.pointsGiven == 0 && b.generalAction.pointsGiven == 0)
+		{
+			s = "";
+			b.priceOrPrizeType = GameManager.Counter.None;
 		}
 		b.priceOrPrizeAmount = s;
 	}
@@ -114,16 +122,20 @@ public abstract class InGameObject : MonoBehaviour
 			var c = FindNotVerified(b.generalAction.conditions);
 			if (c == null)
 			{
-				if (CheckActionManager(n - 1))
-					DoAction(b);
-				else
-					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
-
 				var i = CheckGeneralAction(b);
-				if (i == null)
+				if (CheckActionManager(n - 1) && i == null)
+				{
 					DoAction(b);
-				else
+					GameManager.instance.ActionDone(b.generalAction);
+				}
+				else if (!CheckActionManager(n - 1))
+				{
+					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
+				}
+				else if (i != null)
+				{
 					GameManager.instance.WarningMessage($"Prima di svolgere l'azione {b.generalAction.name}, devi acquistare {i}");
+				}
 			}
 			else
 			{
@@ -143,9 +155,9 @@ public abstract class InGameObject : MonoBehaviour
 			buttonsText.text = name;
 			foreach (var b in buttons)
 			{
-				b.obj.transform.Find("TextMeshProUGUI").GetComponent<TextMeshProUGUI>().text = b.buttonText;
+				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.generalAction.conditions) == null && CheckGeneralAction(b) == null && CheckActionManager(b.buttonNum - 1))
+				if (FindNotVerified(b.generalAction.conditions) == null && CheckGeneralAction(b) == null && ActionManager.instance.CheckIfTooManyActions())
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -225,8 +237,10 @@ public abstract class InGameObject : MonoBehaviour
 public class ActionButton
 {
 	public string buttonText;
+	[HideInInspector]
 	public int buttonNum;
 	public GameManager.Color color;
+	[HideInInspector]
 	public GameObject obj;
 	[HideInInspector]
 	public string priceOrPrizeAmount;

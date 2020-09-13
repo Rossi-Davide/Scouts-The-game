@@ -20,6 +20,7 @@ public abstract class BaseAI : InGameObject
 
 	public GameObject buttonCanvas;
 	public Button clickListenerButton;
+	GameObject instanceOfListener;
 
 
 	public event System.Action OnPathCreated;
@@ -30,8 +31,8 @@ public abstract class BaseAI : InGameObject
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
-		Instantiate(clickListenerButton.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
-		clickListenerButton.onClick.AddListener(OnClick);
+		instanceOfListener = Instantiate(clickListenerButton.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
+		instanceOfListener.GetComponent<Button>().onClick.AddListener(OnClick);
 		CreateNewPath();
 		base.Start();
 
@@ -89,7 +90,7 @@ public abstract class BaseAI : InGameObject
 
 	protected void Update()
 	{
-		clickListenerButton.transform.position = transform.position;
+		instanceOfListener.transform.position = transform.position;
 		ChangeAnimation();
 		if (currentPath == null)
 			return;

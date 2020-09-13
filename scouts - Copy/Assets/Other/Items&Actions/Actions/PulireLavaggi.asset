@@ -13,7 +13,22 @@ MonoBehaviour:
   m_Name: PulireLavaggi
   m_EditorClassIdentifier: 
   name: Pulire
+  description: 
   neededItems: []
+  conditions:
+  - type: 8
+    desiredValue: 1
+    warning: Prima di pulire i lavaggi devi attendere!
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
+  - type: 3
+    desiredValue: 1
+    warning: Puoi pulire i lavaggi solo di giorno!
   timeNeeded: 45
   energyGiven: -5
   materialsGiven: 0

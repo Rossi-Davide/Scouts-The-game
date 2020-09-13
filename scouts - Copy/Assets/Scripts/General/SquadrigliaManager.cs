@@ -10,6 +10,7 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			throw new System.Exception("SquadrigliaManager non è un singleton!");
 		}
+		DontDestroyOnLoad(this);
 		instance = this;
 	}
 
@@ -34,7 +35,7 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			if (sq.num == n)
 			{
-				if (Player.instance.squadriglia == sq.name)
+				if (Player.instance.squadriglia == sq)
 				{
 					return "Squadriglia " + sq.name + " (Tu)";
 				}
@@ -98,7 +99,7 @@ public class SquadrigliaManager : MonoBehaviour
 				}
 				sq.nomi[p] += $" {cognomi[Random.Range(0, cognomi.Length)]}";
 			}
-			if (Player.instance.squadriglia == sq.name)
+			if (Player.instance.squadriglia == sq)
 			{
 				sq.nomi[0] = Player.instance.playerName + " (Tu)";
 			}
@@ -127,7 +128,7 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		foreach (Squadriglia sq in squadriglieInGioco)
 		{
-			if (sq.name == Player.instance.squadriglia)
+			if (sq == Player.instance.squadriglia)
 			{
 				sq.materials = newValue;
 			}
@@ -137,7 +138,7 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		foreach (Squadriglia sq in squadriglieInGioco)
 		{
-			if (sq.name == Player.instance.squadriglia)
+			if (sq == Player.instance.squadriglia)
 			{
 				sq.points = newValue;
 			}
@@ -148,7 +149,7 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		foreach (Squadriglia sq in squadriglieInGioco)
 		{
-			if (sq.name != Player.instance.squadriglia)
+			if (sq != Player.instance.squadriglia)
 			{
 				if (Random.Range(0, 100) >= 50)
 				{
@@ -166,7 +167,7 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		foreach (var sq in squadriglieInGioco)
 		{
-			if (sq.name != Player.instance.squadriglia)
+			if (sq != Player.instance.squadriglia)
 			{
 				bool canBuild = true;
 				if (Random.Range(0, 100) >= 50)
@@ -194,7 +195,7 @@ public class SquadrigliaManager : MonoBehaviour
 			var squadriglieri = AIcontainers[i].GetComponentsInChildren<Squadrigliere>();
 			for (int p = 0; p < squadriglieri.Length; p++)
 			{
-				if (sq.name == Player.instance.squadriglia)
+				if (sq == Player.instance.squadriglia)
 				{
 					if (p == 0)
 					{
@@ -204,7 +205,7 @@ public class SquadrigliaManager : MonoBehaviour
 				}
 				squadriglieri[p].name = sq.nomi[i];
 				squadriglieri[p].nomeRuolo = sq.ruoli[i];
-				squadriglieri[p].nomeSquadriglia = sq.name;
+				squadriglieri[p].sq = sq;
 				squadriglieri[p].tent = sq.tenda;
 			}
 		}
@@ -213,35 +214,37 @@ public class SquadrigliaManager : MonoBehaviour
 
 	void AssegnazioneSquadriglieInGioco()
 	{
-		foreach (Squadriglia sq in squadrigliePossibili)
-		{
-			sq.nomi = new string[5];
-			sq.buildings = sq.angolo.GetComponentsInChildren<SpriteRenderer>();
-			sq.ruoli = new GameManager.Ruolo[5] { GameManager.Ruolo.Capo, GameManager.Ruolo.Vice, GameManager.Ruolo.Terzino, GameManager.Ruolo.Novizio, GameManager.Ruolo.Novizio };
-		}
 		squadriglieInGioco = new Squadriglia[numeroSquadriglie];
 		for (int i = 0; i < numeroSquadriglie; i++)
 		{
 			
 			squadriglieInGioco[i] = squadrigliePossibili[i];
 		}
-		Player.instance.squadriglia = squadriglieInGioco[5].name;
+		Player.instance.squadriglia = squadriglieInGioco[5];
+		foreach (Squadriglia sq in squadrigliePossibili)
+		{
+			if (sq != Player.instance.squadriglia)
+			{
+				sq.angolo.name = "Angolo " + sq.name;
+				sq.angolo.squadriglia = sq;
+				sq.buildings = sq.angolo.GetComponentsInChildren<SpriteRenderer>();
+			}
+			sq.nomi = new string[5];
+			sq.ruoli = new GameManager.Ruolo[5] { GameManager.Ruolo.Capo, GameManager.Ruolo.Vice, GameManager.Ruolo.Terzino, GameManager.Ruolo.Novizio, GameManager.Ruolo.Novizio };
+		}
 		GetRandomNames();
 	}
-
-
-
-
 }
 
 
-[System.Serializable]
-public class Squadriglia
+[CreateAssetMenu(fileName = "New Squadriglia", menuName = "Squadriglia")]
+
+public class Squadriglia : ScriptableObject
 {
-	public GameManager.Squadriglia name;
+	public new string name;
 	public int num; // 1 to 6
 	public bool femminile;
-	public GameObject angolo;
+	public AngoloDiAltraSquadriglia angolo;
 	public Transform tenda;
 	[HideInInspector]
 	public SpriteRenderer[] buildings;

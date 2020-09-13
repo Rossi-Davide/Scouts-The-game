@@ -9,20 +9,20 @@ public class Squadrigliere : BaseAI
     public Transform tent;
     bool staFacendoLegna, homeCoroutineStarted, puoMandareAFareLegna;
     [HideInInspector]
-    public GameManager.Squadriglia nomeSquadriglia;
+    public Squadriglia sq;
     [HideInInspector]
     public GameManager.Ruolo nomeRuolo;
-    TextMesh squadriglia, ruolo;
+    TextMesh sqText, ruolo;
 
 	protected override void Start()
 	{
-        squadriglia = transform.Find("Squadriglia").GetComponent<TextMesh>();
+        sqText = transform.Find("Squadriglia").GetComponent<TextMesh>();
         ruolo = transform.Find("Ruolo").GetComponent<TextMesh>();
-        squadriglia.text = nomeSquadriglia.ToString();
+        sqText.text = sq.name;
         ruolo.text = nomeRuolo.ToString();
         puoMandareAFareLegna = true;
-        squadriglia.gameObject.SetActive(nomeSquadriglia == Player.instance.squadriglia);
-        ruolo.gameObject.SetActive(nomeSquadriglia == Player.instance.squadriglia);
+        sqText.gameObject.SetActive(sq == Player.instance.squadriglia);
+        ruolo.gameObject.SetActive(sq == Player.instance.squadriglia);
         base.Start();
     }
 
@@ -39,14 +39,14 @@ public class Squadrigliere : BaseAI
 	public override void Select()
 	{
 		base.Select();
-        squadriglia.gameObject.SetActive(true);
+        sqText.gameObject.SetActive(true);
         ruolo.gameObject.SetActive(true);
     }
     public override void Deselect()
     {
         base.Deselect();
-        squadriglia.gameObject.SetActive(nomeSquadriglia == Player.instance.squadriglia);
-        ruolo.gameObject.SetActive(nomeSquadriglia == Player.instance.squadriglia);
+        sqText.gameObject.SetActive(sq == Player.instance.squadriglia);
+        ruolo.gameObject.SetActive(sq == Player.instance.squadriglia);
     }
 
 
@@ -61,7 +61,7 @@ public class Squadrigliere : BaseAI
         switch (t)
         {
             case ConditionType.ConditionPuoMandareAFareLegna: return puoMandareAFareLegna;
-            case ConditionType.ConditionEDellaStessaSquadriglia: return nomeSquadriglia == Player.instance.squadriglia;
+            case ConditionType.ConditionEDellaStessaSquadriglia: return sq == Player.instance.squadriglia;
             case ConditionType.ConditionStaFacendoLegnaAI: return staFacendoLegna;
             default: return base.GetConditionValue(t);
         }

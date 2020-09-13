@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/Crediti.unity
     guid: 109a2b39ac98944408162c31c53c3608
+  - enabled: 1
+    path: Assets/Scenes/UI/CampCreate.unity
+    guid: eda5f0d4ea06be94fa86c8f5a70d1430
   m_configObjects: {}

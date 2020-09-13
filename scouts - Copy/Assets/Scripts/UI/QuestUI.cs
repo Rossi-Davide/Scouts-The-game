@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestUI : MonoBehaviour
 {
 	public Quest quest;
 	Slider bar;
-	Text title;
-	Text description;
-	Text barValue;
-	Text prizeValue;
-	Text completato;
+	TextMeshProUGUI title;
+	TextMeshProUGUI description;
+	TextMeshProUGUI barValue;
+	TextMeshProUGUI prizeValue;
+	TextMeshProUGUI completato;
 	GameObject energyLogo;
 	GameObject materialsLogo;
 	GameObject pointsLogo;
@@ -17,15 +18,15 @@ public class QuestUI : MonoBehaviour
 	void Awake()
 	{
 		bar = transform.Find("Bar").GetComponent<Slider>();
-		barValue = bar.transform.Find("Value").GetComponent<Text>();
-		title = transform.Find("Titolo").GetComponent<Text>();
-		description = title.transform.Find("Description").GetComponent<Text>();
-		prizeValue = transform.Find("Prize/Value").GetComponent<Text>();
+		barValue = bar.transform.Find("Value").GetComponent<TextMeshProUGUI>();
+		title = transform.Find("Titolo").GetComponent<TextMeshProUGUI>();
+		description = title.transform.Find("Description").GetComponent<TextMeshProUGUI>();
+		prizeValue = transform.Find("Prize/Value").GetComponent<TextMeshProUGUI>();
 		energyLogo = transform.Find("Prize/Energia").gameObject;
 		materialsLogo = transform.Find("Prize/Materiali").gameObject;
 		pointsLogo = transform.Find("Prize/Punti").gameObject;
 		riscuoti = transform.Find("Riscuoti").GetComponent<Button>();
-		completato = transform.Find("Completato").GetComponent<Text>();
+		completato = transform.Find("Completato").GetComponent<TextMeshProUGUI>();
 		riscuoti.onClick.AddListener(Riscuoti);
 	}
 	void Riscuoti()

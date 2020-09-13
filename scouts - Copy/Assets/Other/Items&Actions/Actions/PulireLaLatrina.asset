@@ -15,12 +15,18 @@ MonoBehaviour:
   name: Pulire la latrina
   description: Meglio che non scriva nulla a questo riguardo.
   neededItems: []
-  optionalItems: []
-  canBeDone: 1
+  conditions:
+  - type: 7
+    desiredValue: 1
+    warning: Prima di pulire la latrina devi attendere!
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  - type: 17
+    desiredValue: 1
+    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
+      oggetto!"
   timeNeeded: 10
-  energyNeeded: 10
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 0
   materialsGiven: 0
   pointsGiven: 20

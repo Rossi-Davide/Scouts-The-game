@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: ParlareConUnCapo
   m_EditorClassIdentifier: 
   name: Parlare con un capo
-  description: Chiaccherare amorevolmente con un capo reparto.
+  description: Chiaccherare con un capo reparto.
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
+  conditions:
+  - type: 19
+    desiredValue: 1
+    warning: "Questa persona ha gi\xE0 detto tutto ci\xF2 che voleva dirti!"
+  - type: 18
+    desiredValue: 1
+    warning: Prima di parlare ancora con questa persona devi attendere!
   timeNeeded: 0
-  energyNeeded: 3
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 0
   materialsGiven: 0
-  pointsGiven: 5
+  pointsGiven: 0
   timeBeforeRedo: 180

@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class AngoloDiAltraSquadriglia : InGameObject
+public class AngoloDiAltraSquadriglia : ObjectWithActions
 {
 	bool puoSfidare;
+	[HideInInspector]
+	public Squadriglia squadriglia;
 	protected override void Start()
 	{
 		base.Start();
@@ -13,10 +13,8 @@ public class AngoloDiAltraSquadriglia : InGameObject
 
 	void Sfida()
 	{
-		
 		puoSfidare = false;
 	}
-
 
 	protected override bool GetConditionValue(ConditionType t)
 	{
@@ -32,7 +30,8 @@ public class AngoloDiAltraSquadriglia : InGameObject
 		switch (b.buttonNum)
 		{
 			case 1:
-				Sfida();
+				SfidaManager.instance.ToggleChallengePanel();
+				SfidaManager.instance.RefreshChallenge(squadriglia);
 				break;
 			default:
 				throw new System.NotImplementedException();
