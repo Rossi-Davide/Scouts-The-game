@@ -256,4 +256,21 @@ public class Squadriglia : ScriptableObject
 	public int materials;
 	[HideInInspector]
 	public int points;
+
+	public Squadriglia Clone()
+	{
+		return new Squadriglia
+		{
+			name = this.name,
+			num = this.num,
+			femminile = this.femminile,
+			angolo = this.angolo,
+			tenda = this.tenda,
+			buildings = this.buildings,
+			ruoli = this.ruoli,
+			nomi = this.nomi,
+			materials = this.materials,
+			points = this.points,
+		};
+	}
 }

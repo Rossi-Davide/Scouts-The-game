@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Lupi
   m_EditorClassIdentifier: Assembly-CSharp::Squadriglia
-  name: 
+  name: Lupi
   num: 0
   femminile: 0
   angolo: {fileID: 0}

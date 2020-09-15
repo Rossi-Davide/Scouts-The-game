@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Scoiattoli
   m_EditorClassIdentifier: Assembly-CSharp::Squadriglia
-  name: 
+  name: Scoiattoli
   num: 0
-  femminile: 0
+  femminile: 1
   angolo: {fileID: 0}
   tenda: {fileID: 0}
   buildings: []

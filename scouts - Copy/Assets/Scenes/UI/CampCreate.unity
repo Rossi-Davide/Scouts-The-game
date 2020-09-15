@@ -359,7 +359,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 90535789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: SwitchDayCycle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &90535789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,8 +761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 772, y: 312}
+  m_AnchoredPosition: {x: -0.00005865097, y: 0.000032902}
+  m_SizeDelta: {x: 799.99963, y: 372.7931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &155580418
 GameObject:
@@ -1404,7 +1415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1827,7 +1838,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 373856209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeCampName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &373856209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2615,7 +2637,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 472365715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangePlayerSq
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &472365715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,7 +3083,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 596585547}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangePlayerName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &596585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3503,8 +3547,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 130.1}
-  m_SizeDelta: {x: 772, y: 51.84964}
+  m_AnchoredPosition: {x: -0.000025272, y: 145.98}
+  m_SizeDelta: {x: 799.9995, y: 51.84964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711496623
 MonoBehaviour:
@@ -3707,7 +3751,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 716336384}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeMaleSqs
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &716336384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4387,7 +4442,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 874371277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeMaleSqs
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &874371277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4704,7 +4770,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 881830681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: SwitchMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &881830681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5092,26 +5169,19 @@ MonoBehaviour:
   - {fileID: 1544834776}
   - {fileID: 451468095}
   - {fileID: 1956089122}
-  standardCamp:
-    settings:
-      campName: Nuovo Campo
-      playerName: Giocatore
-      playerSq: {fileID: 11400000, guid: bb3d9daaea430fd4ca14ab6025a4622d, type: 2}
-      maleSqs:
-      - {fileID: 11400000, guid: bb3d9daaea430fd4ca14ab6025a4622d, type: 2}
-      - {fileID: 11400000, guid: 5643c46ee1ea73b408f23ad80f964720, type: 2}
-      - {fileID: 11400000, guid: a184796952fe49547b425fc3b0e36e0a, type: 2}
-      femaleSqs:
-      - {fileID: 11400000, guid: 90c95939bc454a0449b1b04d25e10fc6, type: 2}
-      - {fileID: 11400000, guid: 59bf7313a0215da458f23ea90a4af66d, type: 2}
-      - {fileID: 11400000, guid: 50b7384c1aa69f944bf57f50fa9494ee, type: 2}
-      savingInterval: 10
-      gender: 1
-      hair: 1
-      difficulty: 0
-      map: 0
-      dayCycle: 0
-      rain: 1
+  standardSettings:
+    campName: Nuovo Campo
+    playerName: Giocatore
+    playerSqIndex: 0
+    maleSqs: 000000000200000003000000
+    femaleSqs: 000000000200000004000000
+    savingInterval: 2
+    gender: 1
+    hair: 1
+    difficulty: 0
+    map: 0
+    dayCycle: 0
+    rain: 1
   possibleFemaleSqs:
   - {fileID: 11400000, guid: 90c95939bc454a0449b1b04d25e10fc6, type: 2}
   - {fileID: 11400000, guid: f3a8ac7451bb5e24ba13756390bbad6d, type: 2}
@@ -5128,9 +5198,9 @@ MonoBehaviour:
     settings:
       campName: 
       playerName: 
-      playerSq: {fileID: 0}
-      maleSqs: []
-      femaleSqs: []
+      playerSqIndex: 0
+      maleSqs: 
+      femaleSqs: 
       savingInterval: 0
       gender: 0
       hair: 0
@@ -5390,7 +5460,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 938688397}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: SwitchDifficulty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &938688397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5642,7 +5723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Nome del campo*'
+  m_text: "Nuovo Campo\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: efea94aa7c958c54f9158ca84ceb4aff, type: 2}
   m_sharedMaterial: {fileID: 6371198972698492290, guid: efea94aa7c958c54f9158ca84ceb4aff,
@@ -5671,7 +5752,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15.75
+  m_fontSize: 18.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5712,10 +5793,10 @@ MonoBehaviour:
   m_margin: {x: 6.966461, y: 1.7416229, z: 7.2567444, w: 6.0956573}
   m_textInfo:
     textComponent: {fileID: 962063051}
-    characterCount: 16
+    characterCount: 12
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -5824,7 +5905,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1011146978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: SwitchHair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1011146978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6369,8 +6461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 772, y: 312}
+  m_AnchoredPosition: {x: -0.000025272, y: 0.000015259}
+  m_SizeDelta: {x: 799.9995, y: 372.7931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132245090
 MonoBehaviour:
@@ -6600,8 +6692,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0010681152, y: 0}
-  m_SizeDelta: {x: 771.99786, y: 312}
+  m_AnchoredPosition: {x: -0.000051975, y: 0.000032902}
+  m_SizeDelta: {x: 799.9997, y: 372.7931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1301305281
 GameObject:
@@ -6815,7 +6907,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1328316454}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeFemaleSqs
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1328316454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6935,7 +7038,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1390797143}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeFemaleSqs
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 920774497}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1390797143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7055,7 +7180,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1445087655}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeFemaleSqs
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1445087655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7175,7 +7311,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1486423965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: SwitchSavingInterval
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1486423965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7970,7 +8117,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1726873121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: SwitchGender
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1726873121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8467,7 +8625,7 @@ GameObject:
   - component: {fileID: 1865495590}
   - component: {fileID: 1865495589}
   m_Layer: 5
-  m_Name: ClicloDelGiorno
+  m_Name: CicloDelGiorno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8648,7 +8806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -356, y: 126.00001}
+  m_AnchoredPosition: {x: -361, y: 146.9}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1866637750
@@ -9411,7 +9569,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1978184907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ChangeMaleSqs
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1978184907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9531,7 +9700,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2035898886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920774498}
+        m_MethodName: ToggleRain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2035898886
 MonoBehaviour:
   m_ObjectHideFlags: 0

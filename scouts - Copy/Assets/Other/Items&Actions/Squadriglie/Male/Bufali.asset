@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Bufali
   m_EditorClassIdentifier: Assembly-CSharp::Squadriglia
-  name: 
+  name: Bufali
   num: 0
   femminile: 0
   angolo: {fileID: 0}
