@@ -60,6 +60,7 @@ public class CampManager : MonoBehaviour
 	Button[] femaleSqs, maleSqs;
 	private void Start()
 	{
+		DontDestroyOnLoad(this);
 		campName = panel.transform.Find("Base/NomeCampo/Button").GetComponent<Button>();
 		playerName = panel.transform.Find("Base/NomePlayer/Button").GetComponent<Button>();
 		playerSq = panel.transform.Find("Base/Squadriglia/Button").GetComponent<Button>();
@@ -187,7 +188,7 @@ public class CampManager : MonoBehaviour
 
 	public void ChangeFemaleSqs(int index)
 	{
-		int c = Array.IndexOf(possibleFemaleSqs, newCamp.settings.femaleSqs[index]);
+		int c = Array.IndexOf(possibleFemaleSqs, possibleFemaleSqs[newCamp.settings.femaleSqs[index]]);
 		for (int i = 0; i < possibleFemaleSqs.Length; i++)
 		{
 			if (!Array.Exists(newCamp.settings.femaleSqs, element => element == c))
@@ -204,7 +205,7 @@ public class CampManager : MonoBehaviour
 	}
 	public void ChangeMaleSqs(int index)
 	{
-		int c = Array.IndexOf(possibleMaleSqs, newCamp.settings.maleSqs[index]);
+		int c = Array.IndexOf(possibleMaleSqs, possibleMaleSqs[newCamp.settings.maleSqs[index]]);
 		for (int i = 0; i < possibleMaleSqs.Length; i++)
 		{
 			if (!Array.Exists(newCamp.settings.maleSqs, element => element == c))
@@ -222,6 +223,7 @@ public class CampManager : MonoBehaviour
 
 	#endregion
 
+	#region Other
 	string RefreshPlayerSq()
 	{
 		if (newCamp.settings.gender == Gender.Femmina)
@@ -234,6 +236,14 @@ public class CampManager : MonoBehaviour
 		}
 		return null;
 	}
+	#endregion
+
+	#region Initialize in game
+	public void InitializeSquadrigliaManager()
+	{
+		SquadrigliaManager.instance.InitializeSquadrigliaManager(newCamp.settings.gender, possibleFemaleSqs, possibleMaleSqs, newCamp.settings.femaleSqs, newCamp.settings.maleSqs, newCamp.settings.playerSqIndex);
+	}
+	#endregion
 }
 
 [System.Serializable]
@@ -252,8 +262,8 @@ public class Settings
 	public string campName;
 	public string playerName;
 	public int playerSqIndex;
-	public int[] maleSqs;
 	public int[] femaleSqs;
+	public int[] maleSqs;
 	public SavingInterval savingInterval;
 	public Gender gender;
 	public Hair hair;
@@ -264,13 +274,23 @@ public class Settings
 
 	public Settings Clone()
 	{
+		int[] maleSqsTemp = new int[maleSqs.Length];
+		int[] femaleSqsTemp = new int[femaleSqs.Length];
+		for (int m = 0; m < maleSqs.Length; m++)
+		{
+			maleSqsTemp[m] = maleSqs[m];
+		}
+		for (int m = 0; m < femaleSqs.Length; m++)
+		{
+			femaleSqsTemp[m] = femaleSqs[m];
+		}
 		return new Settings
 		{
-			campName = this.campName,
-			playerName = this.playerName,
+			campName = this.campName.Clone().ToString(),
+			playerName = this.playerName.Clone().ToString(),
 			playerSqIndex = this.playerSqIndex,
-			maleSqs = this.maleSqs,
-			femaleSqs = this.femaleSqs,
+			maleSqs = maleSqsTemp,
+			femaleSqs = femaleSqsTemp,
 			savingInterval = this.savingInterval,
 			gender = this.gender,
 			hair = this.hair,

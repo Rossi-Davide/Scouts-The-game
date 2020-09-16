@@ -15,7 +15,7 @@ public class ActionManager : MonoBehaviour
 	bool isOpen;
 	public GameObject panel, overlay;
 	public GameObject[] actionSpots;
-	public ObjectAction[] currentActions = new ObjectAction[5];
+	public TimeAction[] currentActions = new TimeAction[5];
 	public void TogglePanel()
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
@@ -42,7 +42,7 @@ public class ActionManager : MonoBehaviour
 
 
 
-	public void AddAction(ObjectAction action)
+	public void AddAction(TimeAction action)
 	{
 		for (int i = 0; i < currentActions.Length; i++)
 		{
@@ -108,7 +108,7 @@ public class ActionManager : MonoBehaviour
 		}
 	}
 
-	public int GetTimeLeft(ObjectAction action)
+	public int GetTimeLeft(TimeAction action)
 	{
 		foreach (var a in currentActions)
 		{
@@ -122,14 +122,14 @@ public class ActionManager : MonoBehaviour
 
 }
 
-public class ObjectAction
+public class TimeAction
 {
 	public string name;
 	public string building;
 	public int totalTime;
 	public int timeLeft;
 
-	public ObjectAction(string name, string building, int time)
+	public TimeAction(string name, string building, int time)
 	{
 		this.name = name;
 		this.building = building;

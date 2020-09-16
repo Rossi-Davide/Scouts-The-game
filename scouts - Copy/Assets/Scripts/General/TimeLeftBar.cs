@@ -10,7 +10,7 @@ public class TimeLeftBar : MonoBehaviour
 	private Slider slider;
 	private TextMeshProUGUI value;
 	[HideInInspector]
-	public ObjectAction action;
+	public TimeAction action;
 	[HideInInspector]
 	public System.Action OnEnd;
 
@@ -39,7 +39,7 @@ public class TimeLeftBar : MonoBehaviour
 		slider.value = totalTime - timeLeft;
 	}
 
-	public void InitializeValues(ObjectAction action, System.Action OnEnd)
+	public void InitializeValues(TimeAction action, System.Action OnEnd)
 	{
 		this.action = action;
 		this.OnEnd = OnEnd;

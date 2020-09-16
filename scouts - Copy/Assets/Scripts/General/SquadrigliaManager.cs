@@ -12,20 +12,24 @@ public class SquadrigliaManager : MonoBehaviour
 		}
 		DontDestroyOnLoad(this);
 		instance = this;
+		squadriglieInGioco = new ConcreteSquadriglia[6];
+		for (int s = 0; s < squadriglieInGioco.Length; s++)
+			squadriglieInGioco[s] = new ConcreteSquadriglia();
 	}
 
 	#endregion
 
-	public Squadriglia[] squadrigliePossibili;
+
+	public Transform playerAngoloPos;
 	[HideInInspector]
-	public Squadriglia[] squadriglieInGioco;
+	public ConcreteSquadriglia[] squadriglieInGioco;
+	public Transform[] tents;
+	public AngoloDiAltraSquadriglia[] angoli;
 	string[] nomiF = { "Sara", "Sofia", "Beatrice", "Federica", "Caterina", "Emma", "Vera", "Lucia", "Martina", "Matilde", "Letizia", "Giada", "Chiara", "Annalisa", "Francesca", "Victoria", "Giulia", "Ginevra", "Viola", "Greta", "Aurora", "Simona", "Monica", "Bianca", "Miriam", "Gloria", "Greta", "Ilaria", "Bianca", "Anita", "Gilda" };
 	string[] nomiM = { "Simone", "Lorenzo", "Nicola", "Francesco", "Michele", "Giovanni", "Fabio", "Nicolò", "Davide", "Matteo", "Tommaso", "Samuele", "Raffaele", "Giulio", "Pietro", "Luca", "Andrea", "Giacomo", "Gianluca", "Riccardo", "Filippo", "Lukas", "Gabriele" };
 	string[] cognomi = { "Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "Bruno", "Rizzo", "Moretti", "De Luca", "Marino", "Greco", "Barbieri", "Lombardi", "Giordano", "Rinaldi", "Colombo", "Mancini", "Longo", "Leone", "Martinelli", "Marchetti", "Martini", "Galli", "Gatti", "Mariani", "Ferrara", "Santoro", "Marini", "Bianco", "Conte", "Serra", "Farina", "Gentile", "Caruso", "Morelli", "Ferri", "Testa", "Ferraro", "Pellegrini", "Grassi", "Rossetti", "D'Angelo", "Bernardi", "Mazza", "Rizzi", "Silvestri", "Vitale", "Franco", "Parisi", "Martino", "Valentini", "Castelli", "Bellini", "Monti", "Lombardo", "Fiore", "Grasso", "Ferro", "Carbone", "Orlando", "Guerra", "Palmieri", "Milani", "Villa", "Viola", "Ruggeri", "De Santis", "D'Amico", "Negri", "Battaglia", "Sala", "Palumbo", "Benedetti", "Olivieri", "Giuliani", "Rosa", "Amato", "Molinari", "Alberti", "Barone", "Pellegrino", "Piazza", "Moro", "Vitali", "Spinelli", "Sartori", "Fabbri", "Vaccari", "Massari", "Medici", "Sarti", "Venturi", "Montanari", "Cappelli" };
 
 	public GameObject[] AIcontainers;
-
-	int numeroSquadriglie = 6;
 
 
 	#region Metodi per dare informazioni sulle squadriglie
@@ -49,7 +53,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	public string GetSquadrigliaDescription(int n)
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq.num == n)
 			{
@@ -60,7 +64,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	public string GetSquadrigliaMaterials(int n)
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq.num == n)
 			{
@@ -71,7 +75,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	public string GetSquadrigliaPoints(int n)
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq.num == n)
 			{
@@ -85,7 +89,7 @@ public class SquadrigliaManager : MonoBehaviour
 	#region Nomi a caso
 	public void GetRandomNames()
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			for (int p = 0; p < sq.nomi.Length; p++)
 			{
@@ -104,6 +108,7 @@ public class SquadrigliaManager : MonoBehaviour
 				sq.nomi[0] = Player.instance.playerName + " (Tu)";
 			}
 		}
+		AssegnazioneAI();
 	}
 
 
@@ -117,7 +122,7 @@ public class SquadrigliaManager : MonoBehaviour
 		GameManager.instance.OnPointsChange += RefreshPlayerPoints;
 		InvokeRepeating("ChangeOtherSqCounters", 30, Random.Range(10, 30));
 		InvokeRepeating("OtherSQBuildBuildings", 30, Random.Range(30, 60));
-		AssegnazioneSquadriglieInGioco();
+		CampManager.instance.InitializeSquadrigliaManager();
 	}
 	private void OnDestroy()
 	{
@@ -126,7 +131,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	void RefreshPlayerMaterials(int newValue)
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq == Player.instance.squadriglia)
 			{
@@ -136,7 +141,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	void RefreshPlayerPoints(int newValue)
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq == Player.instance.squadriglia)
 			{
@@ -147,7 +152,7 @@ public class SquadrigliaManager : MonoBehaviour
 
 	void ChangeOtherSqCounters()
 	{
-		foreach (Squadriglia sq in squadriglieInGioco)
+		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq != Player.instance.squadriglia)
 			{
@@ -186,13 +191,32 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	#endregion
 
-
+	#region Assegnazione
+	void SetSqNums()
+	{
+		int currentNum = 1;
+		foreach (var sq in squadriglieInGioco)
+		{
+			if (!(sq == Player.instance.squadriglia))
+			{
+				sq.num = currentNum;
+				currentNum++;
+			}
+			else
+			{
+				sq.num = squadriglieInGioco.Length;
+			}
+		}
+	}
 	void AssegnazioneAI()
 	{
 		for (int i = 0; i < squadriglieInGioco.Length; i++)
 		{
 			var sq = squadriglieInGioco[i];
+			AIcontainers[i].transform.Find("Female").gameObject.SetActive(sq.femminile);
+			AIcontainers[i].transform.Find("Male").gameObject.SetActive(!sq.femminile);
 			var squadriglieri = AIcontainers[i].GetComponentsInChildren<Squadrigliere>();
+			AIcontainers[i].transform.position = sq.angolo.transform.position;
 			for (int p = 0; p < squadriglieri.Length; p++)
 			{
 				if (sq == Player.instance.squadriglia)
@@ -203,8 +227,10 @@ public class SquadrigliaManager : MonoBehaviour
 					}
 					p++;
 				}
-				squadriglieri[p].name = sq.nomi[i];
-				squadriglieri[p].nomeRuolo = sq.ruoli[i];
+				squadriglieri[p].name = sq.nomi[p];
+				squadriglieri[p].nomeRuolo = sq.ruoli[p];
+				squadriglieri[p].sqText.text = sq.name;
+				squadriglieri[p].ruolo.text = squadriglieri[p].nomeRuolo.ToString();
 				squadriglieri[p].sq = sq;
 				squadriglieri[p].tent = sq.tenda;
 			}
@@ -214,63 +240,48 @@ public class SquadrigliaManager : MonoBehaviour
 
 	void AssegnazioneSquadriglieInGioco()
 	{
-		squadriglieInGioco = new Squadriglia[numeroSquadriglie];
-		for (int i = 0; i < numeroSquadriglie; i++)
+		for (int s = 0; s < squadriglieInGioco.Length; s++)
 		{
-			
-			squadriglieInGioco[i] = squadrigliePossibili[i];
-		}
-		Player.instance.squadriglia = squadriglieInGioco[5];
-		foreach (Squadriglia sq in squadrigliePossibili)
-		{
+			var sq = squadriglieInGioco[s];
 			if (sq != Player.instance.squadriglia)
 			{
+				sq.angolo = angoli[s];
 				sq.angolo.name = "Angolo " + sq.name;
 				sq.angolo.squadriglia = sq;
-				sq.buildings = sq.angolo.GetComponentsInChildren<SpriteRenderer>();
 			}
-			sq.nomi = new string[5];
+			else
+			{
+				sq.angolo.enabled = false;
+				playerAngoloPos.position = sq.angolo.transform.position;
+			}
+			sq.buildings = sq.angolo.GetComponentsInChildren<SpriteRenderer>();
+			foreach (var b in sq.buildings)
+				b.GetComponent<BuildingsActionsAbstract>().enabled = sq == Player.instance.squadriglia;
+			sq.tenda = tents[s];
+			sq.nomi = new string[5] { "", "", "", "", ""};
 			sq.ruoli = new GameManager.Ruolo[5] { GameManager.Ruolo.Capo, GameManager.Ruolo.Vice, GameManager.Ruolo.Terzino, GameManager.Ruolo.Novizio, GameManager.Ruolo.Novizio };
 		}
 		GetRandomNames();
+		SetSqNums();
 	}
-}
 
 
-[CreateAssetMenu(fileName = "New Squadriglia", menuName = "Squadriglia")]
 
-public class Squadriglia : ScriptableObject
-{
-	public new string name;
-	public int num; // 1 to 6
-	public bool femminile;
-	public AngoloDiAltraSquadriglia angolo;
-	public Transform tenda;
-	[HideInInspector]
-	public SpriteRenderer[] buildings;
-	[HideInInspector]
-	public GameManager.Ruolo[] ruoli;
-	[HideInInspector]
-	public string[] nomi = new string[5];
-	[HideInInspector]
-	public int materials;
-	[HideInInspector]
-	public int points;
-
-	public Squadriglia Clone()
+	public void InitializeSquadrigliaManager(Gender gender, Squadriglia[] possibleFemaleSqs, Squadriglia[] possibleMaleSqs, int[] femaleSqs, int[] maleSqs, int playerSqIndex)
 	{
-		return new Squadriglia
+		Player.instance.squadriglia = gender == Gender.Femmina ? possibleFemaleSqs[femaleSqs[playerSqIndex]] : possibleMaleSqs[maleSqs[playerSqIndex]];
+		for (int s = 0; s < femaleSqs.Length; s++)
 		{
-			name = this.name,
-			num = this.num,
-			femminile = this.femminile,
-			angolo = this.angolo,
-			tenda = this.tenda,
-			buildings = this.buildings,
-			ruoli = this.ruoli,
-			nomi = this.nomi,
-			materials = this.materials,
-			points = this.points,
-		};
+			squadriglieInGioco[s].name = possibleFemaleSqs[femaleSqs[s]].name;
+			squadriglieInGioco[s].femminile = possibleFemaleSqs[femaleSqs[s]].femminile;
+		}
+		for (int s = femaleSqs.Length - 1; s < femaleSqs.Length + femaleSqs.Length; s++)
+		{
+			int index = femaleSqs.Length - 1;
+			instance.squadriglieInGioco[s].name = possibleMaleSqs[maleSqs[index]].name;
+			instance.squadriglieInGioco[s].femminile = possibleMaleSqs[maleSqs[index]].femminile;
+		}
+		AssegnazioneSquadriglieInGioco();
 	}
+	#endregion
 }

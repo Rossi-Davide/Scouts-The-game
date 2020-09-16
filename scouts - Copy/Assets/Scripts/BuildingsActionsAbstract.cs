@@ -22,6 +22,7 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 		healthBar = Instantiate(wpCanvas.transform.Find("HealthBar").gameObject, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
 		healthBar.transform.SetParent(wpCanvas.transform, false);
 		health = maxHealth;
+		clickListener.transform.position = transform.position;
 		healthBar.GetComponent<Slider>().maxValue = maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		InvokeRepeating("LoseHealthWhenRaining", 0f, healthLossFrequency);

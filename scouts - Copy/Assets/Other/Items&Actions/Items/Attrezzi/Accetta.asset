@@ -19,17 +19,18 @@ MonoBehaviour:
   type: 1
   shopScreen: 2
   currentAmount: 0
-  maxAmount: 5
-  chest: 0
+  maxAmount: 1
   neededItems: []
   price: 100
   priceType: 1
   periodicUseInterval: 0
   changedCounter: 0
   deltaPoints: 0
-  modifiedAction: {fileID: 0}
-  modifiedParameter: 0
-  newValue: 0
-  screenUnlocked: 2
+  modifiedAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
+  hasToBeInInventory: 1
+  modifiedParameter: 3
+  newValue: 30
+  screenUnlocked: 0
+  realBuilding: {fileID: 0}
   timeRequired: 0
   pointsGiven: 0

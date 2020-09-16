@@ -11,7 +11,7 @@ public abstract class ObjectWithActions : InGameObject
 	[HideInInspector]
     public GameObject loadingBar, nameText;
 
-	protected ObjectAction action;
+	protected TimeAction action;
 
 	public Button clickListener;
 
@@ -38,7 +38,7 @@ public abstract class ObjectWithActions : InGameObject
 	}
 	protected override bool CheckActionManager(int buttonIndex)
 	{
-		action = new ObjectAction(buttons[buttonIndex].generalAction.name, name, buttons[buttonIndex].generalAction.timeNeeded);
+		action = new TimeAction(buttons[buttonIndex].generalAction.name, name, buttons[buttonIndex].generalAction.timeNeeded);
 		if (ActionManager.instance.CheckIfTooManyActions())
 		{
 			ActionManager.instance.AddAction(action);

@@ -91,7 +91,7 @@ public class InventoryManager : MonoBehaviour
 			overlay.SetActive(false);
 			PanZoom.instance.canDo = true;
 		}
-		foreach (InventorySlot s in slots)
+		foreach (var s in slots)
 		{
 			s.RefreshInventoryAmount();
 		}

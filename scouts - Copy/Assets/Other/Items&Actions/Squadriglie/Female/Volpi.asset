@@ -9,21 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 48b4f8adb398e7f4e8ceeac565c33100, type: 3}
   m_Name: Volpi
-  m_EditorClassIdentifier: Assembly-CSharp::Squadriglia
+  m_EditorClassIdentifier: 
   name: Volpi
   num: 0
   femminile: 1
-  angolo: {fileID: 0}
-  tenda: {fileID: 0}
-  buildings: []
-  ruoli: 
-  nomi:
-  - 
-  - 
-  - 
-  - 
-  - 
-  materials: 0
-  points: 0

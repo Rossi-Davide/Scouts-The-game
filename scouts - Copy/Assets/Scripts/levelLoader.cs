@@ -28,7 +28,7 @@ public class levelLoader : MonoBehaviour
 
 		AsyncOperation operation = SceneManager.LoadSceneAsync(1);
 		menu.SetActive(true);
-		while (operation.isDone == false)
+		while (!operation.isDone)
 		{
 			float progress = Mathf.Clamp01(operation.progress / .9f);
 			loadingBar.value = progress;

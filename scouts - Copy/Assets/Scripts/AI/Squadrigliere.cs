@@ -12,14 +12,15 @@ public class Squadrigliere : BaseAI
     public Squadriglia sq;
     [HideInInspector]
     public GameManager.Ruolo nomeRuolo;
-    TextMesh sqText, ruolo;
-
-	protected override void Start()
+    [HideInInspector]
+    public TextMesh sqText, ruolo;
+	private void Awake()
 	{
         sqText = transform.Find("Squadriglia").GetComponent<TextMesh>();
         ruolo = transform.Find("Ruolo").GetComponent<TextMesh>();
-        sqText.text = sq.name;
-        ruolo.text = nomeRuolo.ToString();
+    }
+	protected override void Start()
+	{
         puoMandareAFareLegna = true;
         sqText.gameObject.SetActive(sq == Player.instance.squadriglia);
         ruolo.gameObject.SetActive(sq == Player.instance.squadriglia);

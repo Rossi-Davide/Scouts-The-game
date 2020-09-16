@@ -41,4 +41,10 @@ public class mainMenu : MonoBehaviour
 
         SceneManager.LoadScene(3);
     }
+    public void GoToCampCreate()
+	{
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
+        SceneManager.LoadScene(4);
+    }
 }

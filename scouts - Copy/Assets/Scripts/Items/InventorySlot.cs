@@ -34,10 +34,10 @@ public class InventorySlot : MonoBehaviour
 	{
 		amount = a;
 		item = i;
+		GetComponent<Image>().enabled = amount > 0;
 		if (item != null)
 		{
 			icon.sprite = item.icon;
-			GetComponent<Image>().enabled = amount > 0;
 		}
 	}
 
