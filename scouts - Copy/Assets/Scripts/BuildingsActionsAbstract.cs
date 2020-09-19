@@ -23,6 +23,7 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 		buttonCanvas = GameManager.instance.buttonCanvas;
 		instanceOfListener = Instantiate(clickListener.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
 		instanceOfListener.transform.position = transform.position;
+		instanceOfListener.GetComponent<Button>().onClick.AddListener(OnClick);
 		healthBar.GetComponent<Slider>().maxValue = maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		InvokeRepeating("LoseHealthWhenRaining", 0f, healthLossFrequency);
