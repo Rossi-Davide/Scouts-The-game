@@ -21,10 +21,10 @@ public class Squadrigliere : BaseAI
     }
 	protected override void Start()
 	{
+        base.Start();
         puoMandareAFareLegna = true;
         sqText.gameObject.SetActive(sq == Player.instance.squadriglia);
         ruolo.gameObject.SetActive(sq == Player.instance.squadriglia);
-        base.Start();
     }
 
 	void FaiLegna()

@@ -18,7 +18,7 @@ public abstract class ObjectWithActions : InGameObject
 	protected override void Start()
     {
 		wpCanvas = GameManager.instance.wpCanvas;
-		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
+		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position, Quaternion.identity, wpCanvas.transform);
 		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform);
 		nameText.GetComponent<TextMeshProUGUI>().text = name;
 		if (clickListener != null)

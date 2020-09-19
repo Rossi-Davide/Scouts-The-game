@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections;
-using System;
-using System.Linq;
-using UnityEngine.EventSystems;
 
 public abstract class BuildingsActionsAbstract : ObjectWithActions
 {
@@ -14,15 +10,19 @@ public abstract class BuildingsActionsAbstract : ObjectWithActions
 	public Vector3 healthBarOffset = new Vector3(0, -0.2f, 0);
 	public int health, maxHealth, healthLossAmount, healthLossFrequency;
 	protected bool isSafe, isDestroyed;
-
+	GameObject buttonCanvas;
 	public Vector3 clickListenerOffset;
 
+	[HideInInspector]
+	public GameObject instanceOfListener;
 	protected override void Start()
 	{
 		healthBar = Instantiate(wpCanvas.transform.Find("HealthBar").gameObject, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
 		healthBar.transform.SetParent(wpCanvas.transform, false);
 		health = maxHealth;
-		clickListener.transform.position = transform.position;
+		buttonCanvas = GameManager.instance.buttonCanvas;
+		instanceOfListener = Instantiate(clickListener.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
+		instanceOfListener.transform.position = transform.position;
 		healthBar.GetComponent<Slider>().maxValue = maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		InvokeRepeating("LoseHealthWhenRaining", 0f, healthLossFrequency);

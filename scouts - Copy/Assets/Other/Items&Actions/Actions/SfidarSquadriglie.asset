@@ -15,12 +15,11 @@ MonoBehaviour:
   name: Sfidare altre squadriglie
   description: Roverino, abbatti il guidone, ...
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
+  conditions:
+  - type: 2
+    desiredValue: 1
+    warning: 
   timeNeeded: 0
-  energyNeeded: 0
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 0
   materialsGiven: 0
   pointsGiven: 0

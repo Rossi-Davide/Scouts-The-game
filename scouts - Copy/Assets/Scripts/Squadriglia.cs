@@ -11,12 +11,13 @@ public class Squadriglia : ScriptableObject
 	public bool femminile;
 }
 [System.Serializable]
-public class ConcreteSquadriglia : Squadriglia
+public class ConcreteSquadriglia
 {
+	public Squadriglia baseSq;
 	public AngoloDiAltraSquadriglia angolo;
 	public Transform tenda;
 	[HideInInspector]
-	public SpriteRenderer[] buildings;
+	public BuildingsActionsAbstract[] buildings;
 	[HideInInspector]
 	public GameManager.Ruolo[] ruoli;
 	[HideInInspector]

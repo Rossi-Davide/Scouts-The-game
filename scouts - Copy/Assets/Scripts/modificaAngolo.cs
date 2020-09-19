@@ -31,7 +31,7 @@ public class modificaAngolo : MonoBehaviour
 			touchPosWorld = Camera.main.ScreenToWorldPoint(touch.position);
 			Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
 			RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-			if (hitInformation.collider != null && hitInformation.transform.tag == "oggSquadriglia1" && oggetto == hitInformation.transform || oggetto == null)
+			if (hitInformation.collider != null && hitInformation.transform.tag == "oggSquadriglia1" && oggetto == null || oggetto == hitInformation.transform)
 			{
 				if (touch.phase == TouchPhase.Began)
 				{

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 	public int pointsValue, materialsValue, energyValue = 100;
-
+	public GameObject buttonCanvas;
 
 	#region Singleton
 	public static GameManager instance;
