@@ -135,7 +135,7 @@ public class nascondinoManager : MonoBehaviour
         enemies = new GameObject[5];
         for(int i = 0; i < 5; i++)
         {
-           enemies[i] = Instantiate(enemy,spawnPoint.position, Quaternion.identity);
+           enemies[i] =(GameObject)Instantiate(enemy,spawnPoint.position, Quaternion.identity);
         }
     }
 
@@ -143,9 +143,9 @@ public class nascondinoManager : MonoBehaviour
 
     IEnumerator Vittoria()
     {
-        /*Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        joystick.SetActive(false);*/
+        joystick.SetActive(false);
         foreach (GameObject item in enemies)
         {
             Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
