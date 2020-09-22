@@ -16,6 +16,7 @@ public class LevelGenerator : MonoBehaviour
     public bool stopGeneration = false;
      int downCounter;
     public LayerMask LayerRoom;
+
   
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,9 @@ public class LevelGenerator : MonoBehaviour
     {
         if (timeBTWrooms <= 0&&stopGeneration==false)
         {
+        
             Move();
+           
             timeBTWrooms = startTime;
         }
         else

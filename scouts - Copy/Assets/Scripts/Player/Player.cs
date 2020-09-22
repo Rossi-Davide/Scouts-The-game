@@ -36,7 +36,8 @@ public class Player : MonoBehaviour
 		animator.SetFloat("Speed", movement.sqrMagnitude);
 		if (movement.sqrMagnitude >= 0.01) 
 		{
-			//Invoke("StepSounds", 0.5f);
+			
+			Invoke("StepSounds", 0.5f);
 			isMoving = true;
 			animator.SetFloat("XMovement", movement.x);
 			animator.SetFloat("YMovement", movement.y);
