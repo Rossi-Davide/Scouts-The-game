@@ -5,9 +5,9 @@ public class modificaAngolo : MonoBehaviour
 	Camera cam;
 	Vector3 touchPosWorld;
 	[HideInInspector]
-	public bool collisione = false;
 	Vector3 posizioneIniziale;
 
+	#region Singleton
 	public static modificaAngolo instance;
 	private void Awake()
 	{
@@ -15,7 +15,7 @@ public class modificaAngolo : MonoBehaviour
 			throw new System.Exception("Modifica Angolo non è un singleton");
 		instance = this;
 	}
-
+	#endregion
 
 	Transform oggetto;
 	void Start()
@@ -31,11 +31,11 @@ public class modificaAngolo : MonoBehaviour
 			touchPosWorld = Camera.main.ScreenToWorldPoint(touch.position);
 			Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
 			RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-			if (hitInformation.collider != null && hitInformation.transform.tag == "oggSquadriglia1" && oggetto == null || oggetto == hitInformation.transform)
+			if (hitInformation.collider.transform != null && hitInformation.transform.tag == "oggSquadriglia1" && oggetto == null || oggetto == hitInformation.collider.transform)
 			{
 				if (touch.phase == TouchPhase.Began)
 				{
-					oggetto = hitInformation.transform;
+					oggetto = hitInformation.collider.transform;
 					posizioneIniziale = oggetto.position;
 				}
 				if (touch.phase == TouchPhase.Moved)
@@ -46,11 +46,7 @@ public class modificaAngolo : MonoBehaviour
 				}
 				if (touch.phase == TouchPhase.Ended)
 				{
-					if (collisione)
-					{
-						oggetto.GetComponent<MoveBuildings>().ResetPosition(posizioneIniziale);
-					}
-					oggetto.GetComponent<MoveBuildings>().MoveUI();
+					oggetto.GetComponent<MoveBuildings>().OnEndDragging(posizioneIniziale);
 					oggetto = null;
 				}
 			}

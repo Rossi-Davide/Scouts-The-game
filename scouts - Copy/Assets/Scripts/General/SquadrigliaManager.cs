@@ -270,13 +270,39 @@ public class SquadrigliaManager : MonoBehaviour
 			sq.buildings = sq.angolo.GetComponentsInChildren<BuildingsActionsAbstract>();
 			sq.angolo.clickListener.gameObject.SetActive(sq.baseSq != Player.instance.squadriglia);
 			foreach (var b in sq.buildings)
+			{
 				b.instanceOfListener.SetActive(sq.baseSq == Player.instance.squadriglia);
+				DisableComponents(b, sq.baseSq == Player.instance.squadriglia);
+			}
 			sq.tenda = tents[s];
 			sq.nomi = new string[5];
 			sq.ruoli = new GameManager.Ruolo[5] { GameManager.Ruolo.Capo, GameManager.Ruolo.Vice, GameManager.Ruolo.Terzino, GameManager.Ruolo.Novizio, GameManager.Ruolo.Novizio };
 		}
 		GetRandomNames();
 	}
+
+
+	void DisableComponents(BuildingsActionsAbstract b, bool disable)
+	{
+		var component = b;
+		if (disable)
+		{
+			if (b.GetComponent<Tent>() != null)
+				component = GetComponent<Tent>();
+			if (b.GetComponent<PianoBidoni>() != null)
+				component = GetComponent<PianoBidoni>();
+			if (b.GetComponent<Stendipanni>() != null)
+				component = GetComponent<Stendipanni>();
+			if (b.GetComponent<Refettorio>() != null)
+				component = GetComponent<Refettorio>();
+			if (b.GetComponent<Portalegna>() != null)
+				component = GetComponent<Portalegna>();
+			if (b.GetComponent<Amaca>() != null)
+				component = GetComponent<Amaca>();
+			component.enabled = false;
+		}
+	}
+
 
 
 	public void InitializeSquadrigliaManager(Gender gender, Squadriglia[] possibleFemaleSqs, Squadriglia[] possibleMaleSqs, int[] femaleSqs, int[] maleSqs, int playerSqIndex)

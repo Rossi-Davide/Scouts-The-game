@@ -7,7 +7,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	Camera cam;
 	public Transform angolo;
 	Transform player;
-	bool isModifying = false;
+	bool isModifying;
 
 	void Start()
 	{

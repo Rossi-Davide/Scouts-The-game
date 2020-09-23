@@ -72,7 +72,6 @@ public class CampManager : MonoBehaviour
 		savingInterval = panel.transform.Find("Advanced1/Salvataggio/Button").GetComponent<Button>();
 		map = panel.transform.Find("Advanced1/Mappa/Button").GetComponent<Button>();
 		dayCycle = panel.transform.Find("Advanced1/CicloDelGiorno/Button").GetComponent<Button>();
-		rain = panel.transform.Find("Advanced2/Pioggia/Button").GetComponent<Button>();
 	}
 	void RefreshUI()
 	{
@@ -96,7 +95,6 @@ public class CampManager : MonoBehaviour
 		map.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.map.ToString();
 		dayCycle.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.dayCycle.ToString();
 		//advanced settings 2
-		rain.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.rain.ToString();
 	}
 
 	#region mobile keyboard
@@ -136,11 +134,6 @@ public class CampManager : MonoBehaviour
 	int NextInArray(int current, int lenght)
 	{
 		return current < lenght - 1 ? current + 1 : 0;
-	}
-	public void ToggleRain()
-	{
-		newCamp.settings.rain = !newCamp.settings.rain;
-		RefreshUI();
 	}
 	public void SwitchSavingInterval()
 	{
@@ -270,7 +263,6 @@ public class Settings
 	public Difficulty difficulty;
 	public Map map;
 	public DaylightCycle dayCycle;
-	public bool rain;
 
 	public Settings Clone()
 	{
@@ -297,7 +289,6 @@ public class Settings
 			difficulty = this.difficulty,
 			map = this.map,
 			dayCycle = this.dayCycle,
-			rain = this.rain,
 		};
 	}
 }

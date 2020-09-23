@@ -11,7 +11,20 @@ public class impostazioni : MonoBehaviour
     public AudioMixer mixer;
     public TMP_Dropdown resDrop;
 
-    public TextMeshProUGUI masterValue, musicValue, effectsValue;
+    #region Singleton
+    public static impostazioni instance;
+	private void Awake()
+	{
+        if (instance != null)
+            throw new System.Exception("impostazioni non è un singleton!");
+        instance = this;
+	}
+	#endregion
+
+
+
+
+	public TextMeshProUGUI masterValue, musicValue, effectsValue;
 
     private void Start()
     {
@@ -38,44 +51,62 @@ public class impostazioni : MonoBehaviour
         resDrop.RefreshShownValue();
     }
 
+    [HideInInspector]
+    public float generalVolume;
+    [HideInInspector]
+    public float musicVolume;
+    [HideInInspector]
+    public float effectsVolume;
+    [HideInInspector]
+    public int resIndex;
+    [HideInInspector]
+    public int qualityIndex;
+    [HideInInspector]
+    public bool fullscreen;
+
+
+
     public void SetVolumeMaster(float volume)
     {
-        mixer.SetFloat("master", volume - 80);
+        generalVolume = volume - 80;
+        mixer.SetFloat("master", generalVolume);
         masterValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
 
     public void SetVolumeMusic(float volume)
     {
-        mixer.SetFloat("music", volume - 80);
+        musicVolume = volume - 80;
+        mixer.SetFloat("music", musicVolume);
         musicValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
     public void SetVolumeSounds(float volume)
     {
-        mixer.SetFloat("sounds", volume - 80);
+        effectsVolume = volume - 80;
+        mixer.SetFloat("sounds", effectsVolume);
         effectsValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
 
-    public void SetQuality(int qualityIndex)
+    public void SetQuality(int qi)
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
+        qualityIndex = qi;
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     public void SetFullScreen (bool screen)
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
-        Screen.fullScreen = screen;
+        fullscreen = screen;
+        Screen.fullScreen = fullscreen;
     }
 
-    public void SetRes(int resIndex)
+    public void SetRes(int ri)
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
+        resIndex = ri;
         Resolution resolution = resolutions[resIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }

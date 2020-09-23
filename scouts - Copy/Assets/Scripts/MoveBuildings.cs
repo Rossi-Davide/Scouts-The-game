@@ -2,11 +2,12 @@
 
 public class MoveBuildings : MonoBehaviour
 {
+	bool isTouching;
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "oggSquadriglia1")
 		{
-			modificaAngolo.instance.collisione = true;
+			isTouching = true;
 			GameManager.instance.WarningMessage("Non puoi piazzare l'oggetto qui!");
 		}
 	}
@@ -14,23 +15,25 @@ public class MoveBuildings : MonoBehaviour
 	{
 		if (collision.tag == "oggSquadriglia1")
 		{
-			modificaAngolo.instance.collisione = false;
+			isTouching = false;
 			GameManager.instance.WarningMessage("");
 		}
 	}
 
-	public void ResetPosition(Vector3 posizioneIniziale)
+	public void OnEndDragging(Vector3 startPos)
 	{
-		transform.position = posizioneIniziale;
+		if (isTouching)
+		{
+			transform.position = startPos;
+		}
+		MoveUI();
 	}
-
-
-	public void MoveUI()
+	void MoveUI()
 	{
 		BuildingsActionsAbstract b = GetComponent<BuildingsActionsAbstract>();
 		b.healthBar.transform.position = transform.position + b.healthBarOffset;
 		b.loadingBar.transform.position = transform.position + b.loadingBarOffset;
 		b.nameText.transform.position = transform.position + b.nameTextOffset;
-		b.clickListener.transform.position = transform.position + b.clickListenerOffset;
+		b.instanceOfListener.transform.position = transform.position + b.clickListenerOffset;
 	}
 }
