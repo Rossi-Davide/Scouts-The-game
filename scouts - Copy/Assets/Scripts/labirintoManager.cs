@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class labirintoManager : MonoBehaviour
 {
     public Animator luceGlobale, pointLight, regole, titolo;
-    public GameObject luce1, luce2, testo1, testo2, joystick, player, enemy, haisec,riavvioScenaErrorMessage;
+    public GameObject luce1, luce2, testo1, testo2, joystick, player, enemy, haisec,riavvioScenaErrorMessage,levGen,panel;
     bool countdownStart = false, countdownStartGrande = false, countdownGiocoInSe = false;
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
     Transform spawnPoint;
@@ -45,7 +45,8 @@ public class labirintoManager : MonoBehaviour
         InvokeRepeating("CountDown", 1, 1);
         seconds = 120;
         secondsInizioGioco = 3;
-        l = transform.Find("LevelGenerator").GetComponent<LevelGenerator>();
+        l = levGen.GetComponent<LevelGenerator>();
+        panel.SetActive(true);
 
     }
 
@@ -54,7 +55,8 @@ public class labirintoManager : MonoBehaviour
 
     IEnumerator Iniziale()
     {
-        GameObject.Find("Panel").SetActive(false);
+        panel.SetActive(false);
+        //GameObject panel = transform.FindChild("Panel").gameObject;
         editorCountdown.transform.parent.gameObject.SetActive(false);
         player.transform.position = spawnPoint.position;
         player.SetActive(true);
