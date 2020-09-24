@@ -67,11 +67,11 @@ public class CampManager : MonoBehaviour
 		gender = panel.transform.Find("Base/Genere/Button").GetComponent<Button>();
 		hair = panel.transform.Find("Base/Aspetto/Button").GetComponent<Button>();
 		difficulty = panel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
-		femaleSqs = panel.transform.Find("Advanced1/Squadriglie/Femminili").GetComponentsInChildren<Button>();
-		maleSqs = panel.transform.Find("Advanced1/Squadriglie/Maschili").GetComponentsInChildren<Button>();
-		savingInterval = panel.transform.Find("Advanced1/Salvataggio/Button").GetComponent<Button>();
-		map = panel.transform.Find("Advanced1/Mappa/Button").GetComponent<Button>();
-		dayCycle = panel.transform.Find("Advanced1/CicloDelGiorno/Button").GetComponent<Button>();
+		femaleSqs = panel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
+		maleSqs = panel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
+		savingInterval = panel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
+		map = panel.transform.Find("Advanced/Mappa/Button").GetComponent<Button>();
+		dayCycle = panel.transform.Find("Advanced/CicloDelGiorno/Button").GetComponent<Button>();
 	}
 	void RefreshUI()
 	{

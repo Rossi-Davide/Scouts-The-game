@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -181,10 +182,10 @@ public class SquadrigliaManager : MonoBehaviour
 				{
 					foreach (var b in sq.buildings)
 					{
-						if (!b.gameObject.activeSelf && Random.Range(0, 100) >= 50 && canBuild)
+						if (!b.Key.gameObject.activeSelf && Random.Range(0, 100) >= 50 && canBuild)
 						{
 							canBuild = false;
-							b.gameObject.SetActive(true);
+							b.Key.gameObject.SetActive(true);
 						}
 					}
 				}
@@ -267,12 +268,13 @@ public class SquadrigliaManager : MonoBehaviour
 			{
 				playerAngoloPos.position = sq.angolo.transform.position;
 			}
-			sq.buildings = sq.angolo.GetComponentsInChildren<BuildingsActionsAbstract>();
+			var buildings = sq.angolo.GetComponentsInChildren<BuildingsActionsAbstract>(true);
 			sq.angolo.clickListener.gameObject.SetActive(sq.baseSq != Player.instance.squadriglia);
-			foreach (var b in sq.buildings)
+			for (int i = 0; i < buildings.Length; i++)
 			{
-				b.instanceOfListener.SetActive(sq.baseSq == Player.instance.squadriglia);
-				DisableComponents(b, sq.baseSq == Player.instance.squadriglia);
+				sq.buildings.Add(buildings[i], buildings[i].gameObject.activeSelf);
+				sq.buildings.ElementAt(i).Key.instanceOfListener.SetActive(sq.baseSq == Player.instance.squadriglia);
+				DisableComponents(sq.buildings.ElementAt(i).Key, sq.baseSq == Player.instance.squadriglia);
 			}
 			sq.tenda = tents[s];
 			sq.nomi = new string[5];
@@ -288,17 +290,17 @@ public class SquadrigliaManager : MonoBehaviour
 		if (disable)
 		{
 			if (b.GetComponent<Tent>() != null)
-				component = GetComponent<Tent>();
+				component = b.GetComponent<Tent>();
 			if (b.GetComponent<PianoBidoni>() != null)
-				component = GetComponent<PianoBidoni>();
+				component = b.GetComponent<PianoBidoni>();
 			if (b.GetComponent<Stendipanni>() != null)
-				component = GetComponent<Stendipanni>();
+				component = b.GetComponent<Stendipanni>();
 			if (b.GetComponent<Refettorio>() != null)
-				component = GetComponent<Refettorio>();
+				component = b.GetComponent<Refettorio>();
 			if (b.GetComponent<Portalegna>() != null)
-				component = GetComponent<Portalegna>();
+				component = b.GetComponent<Portalegna>();
 			if (b.GetComponent<Amaca>() != null)
-				component = GetComponent<Amaca>();
+				component = b.GetComponent<Amaca>();
 			component.enabled = false;
 		}
 	}
@@ -320,4 +322,20 @@ public class SquadrigliaManager : MonoBehaviour
 		
 	}
 	#endregion
+
+
+	public ConcreteSquadriglia[] GetInfo()
+	{
+		foreach (var sq in squadriglieInGioco)
+		{
+			foreach (var b in sq.buildings)
+			{
+				sq.buildings[b.Key] = b.Key.gameObject.activeSelf;
+			}
+		}
+		return squadriglieInGioco;
+	}
+
+
+
 }

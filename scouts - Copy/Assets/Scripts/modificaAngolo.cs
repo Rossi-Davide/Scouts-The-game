@@ -38,7 +38,7 @@ public class modificaAngolo : MonoBehaviour
 					oggetto = hitInformation.collider.transform;
 					posizioneIniziale = oggetto.position;
 				}
-				if (touch.phase == TouchPhase.Moved)
+				if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
 				{
 					Vector2 posizioneDito = touch.position;
 					Vector3 posizioneOggetto = cam.ScreenToWorldPoint(posizioneDito);
@@ -47,6 +47,11 @@ public class modificaAngolo : MonoBehaviour
 				if (touch.phase == TouchPhase.Ended)
 				{
 					oggetto.GetComponent<MoveBuildings>().OnEndDragging(posizioneIniziale);
+					oggetto = null;
+				}
+				if (touch.phase == TouchPhase.Canceled)
+				{
+					oggetto.GetComponent<MoveBuildings>().ResetPos(posizioneIniziale);
 					oggetto = null;
 				}
 			}

@@ -3,7 +3,7 @@
 public class ModificaBaseTrigger : MonoBehaviour
 {
 	public GameObject[] objectsToToggle;
-	SnapToGridSpostamentoCostruzioni[] buildings;
+	MoveBuildings[] buildings;
 	Camera cam;
 	public Transform angolo;
 	Transform player;
@@ -12,7 +12,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	void Start()
 	{
 		cam = Camera.main;
-		buildings = FindObjectsOfType<SnapToGridSpostamentoCostruzioni>();
+		buildings = FindObjectsOfType<MoveBuildings>();
 		player = Player.instance.transform;
 	}
 
@@ -30,8 +30,9 @@ public class ModificaBaseTrigger : MonoBehaviour
 			if (b.gameObject.activeSelf)
 			{
 				b.enabled = isModifying;
-				b.GetComponent<MoveBuildings>().enabled = isModifying;
+				b.isEnabled = isModifying;
 				modificaAngolo.instance.enabled = isModifying;
+				b.GetComponent<SnapToGridSpostamentoCostruzioni>().enabled = true;
 				b.GetComponent<ObjectWithActions>().enabled = !isModifying;
 			}
 		}

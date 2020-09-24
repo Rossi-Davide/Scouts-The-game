@@ -3,9 +3,11 @@
 public class MoveBuildings : MonoBehaviour
 {
 	bool isTouching;
+	[HideInInspector]
+	public bool isEnabled;
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag == "oggSquadriglia1")
+		if (collision.tag == "oggSquadriglia1" && isEnabled)
 		{
 			isTouching = true;
 			GameManager.instance.WarningMessage("Non puoi piazzare l'oggetto qui!");
@@ -13,18 +15,21 @@ public class MoveBuildings : MonoBehaviour
 	}
 	void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.tag == "oggSquadriglia1")
+		if (collision.tag == "oggSquadriglia1" && isEnabled)
 		{
 			isTouching = false;
 			GameManager.instance.WarningMessage("");
 		}
 	}
-
+	public void ResetPos(Vector3 startPos)
+	{
+		transform.position = startPos;
+	}
 	public void OnEndDragging(Vector3 startPos)
 	{
 		if (isTouching)
 		{
-			transform.position = startPos;
+			ResetPos(startPos);
 		}
 		MoveUI();
 	}

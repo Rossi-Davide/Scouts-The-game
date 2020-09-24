@@ -48,12 +48,16 @@ public class SaveSystem : MonoBehaviour
 
 		currentAppSettings = GetAppSettings();
 		jsonCurrentAppSettings = JsonUtility.ToJson(currentAppSettings);
+
+		currentSquadriglias = new CurrentSquadriglias(SquadrigliaManager.instance.GetInfo());
+		jsonCurrentSquadriglias = JsonUtility.ToJson(currentSquadriglias);
 	}
 
 	public void LoadAll()
 	{
 		currentTimeActions = JsonUtility.FromJson<CurrentTimeActions>(jsonCurrentTimeActions);
 		currentAppSettings = JsonUtility.FromJson<CurrentAppSettings>(jsonCurrentAppSettings);
+		currentSquadriglias = JsonUtility.FromJson<CurrentSquadriglias>(jsonCurrentSquadriglias);
 	}
 
 	#endregion
@@ -62,6 +66,11 @@ public class SaveSystem : MonoBehaviour
 
 	public CurrentAppSettings currentAppSettings;
 	public string jsonCurrentAppSettings;
+
+	public CurrentSquadriglias currentSquadriglias;
+	public string jsonCurrentSquadriglias;
+
+
 
 
 }
@@ -99,9 +108,14 @@ public class CurrentCampSettings
 {
 	public Camp camp;
 }
-public class CurrentSquadriglie
+public class CurrentSquadriglias
 {
+	public ConcreteSquadriglia[] currentSquadriglias;
 
+	public CurrentSquadriglias(ConcreteSquadriglia[] squadriglias)
+	{
+		currentSquadriglias = squadriglias;
+	}
 }
 public class CurrentObjects
 {
