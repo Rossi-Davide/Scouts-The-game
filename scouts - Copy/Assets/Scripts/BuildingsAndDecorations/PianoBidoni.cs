@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class PianoBidoni : BuildingsActionsAbstract
+public class PianoBidoni : PlayerBuildingBase
 {
 	[HideInInspector]
 	public bool canEat, canCook;

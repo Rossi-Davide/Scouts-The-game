@@ -12,7 +12,7 @@ public abstract class ObjectWithActions : InGameObject
     public GameObject loadingBar, nameText;
 
 	protected TimeAction action;
-
+	public bool isInstantiating;
 	public Button clickListener;
 
 	protected override void Start()
@@ -20,8 +20,8 @@ public abstract class ObjectWithActions : InGameObject
 		wpCanvas = GameManager.instance.wpCanvas;
 		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
 		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform);
-		nameText.GetComponent<TextMeshProUGUI>().text = name;
-		if (clickListener != null)
+		nameText.GetComponent<TextMeshProUGUI>().text = objectName;
+		if (clickListener != null && !isInstantiating)
 			clickListener.onClick.AddListener(OnClick);
 		base.Start();
     }
@@ -38,7 +38,7 @@ public abstract class ObjectWithActions : InGameObject
 	}
 	protected override bool CheckActionManager(int buttonIndex)
 	{
-		action = new TimeAction(buttons[buttonIndex].generalAction.name, name, buttons[buttonIndex].generalAction.timeNeeded);
+		action = new TimeAction(buttons[buttonIndex].generalAction.name, objectName, buttons[buttonIndex].generalAction.timeNeeded);
 		if (ActionManager.instance.CheckIfTooManyActions())
 		{
 			ActionManager.instance.AddAction(action);
@@ -56,7 +56,7 @@ public abstract class ObjectWithActions : InGameObject
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(name);
+			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(objectName);
 			default: return base.GetConditionValue(t);
 		}
 	}

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Amaca : BuildingsActionsAbstract
+public class Amaca : PlayerBuildingBase
 {
 	[HideInInspector]
 	public bool canSleepOnAmaca;

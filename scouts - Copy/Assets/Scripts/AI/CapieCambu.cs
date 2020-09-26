@@ -33,7 +33,7 @@ public class CapieCambu : BaseAI
 
 	void ShowSentence(Sentence s)
 	{
-		title.text = name;
+		title.text = objectName;
 		sentenceText.text = currentSentence.sentence;
 		if (s.canAnswer)
 		{

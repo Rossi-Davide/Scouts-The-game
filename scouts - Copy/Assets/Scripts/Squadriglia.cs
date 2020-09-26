@@ -17,7 +17,7 @@ public class ConcreteSquadriglia
 	public AngoloDiAltraSquadriglia angolo;
 	public Transform tenda;
 	[HideInInspector]
-	public Dictionary<BuildingsActionsAbstract, bool> buildings;
+	public PlayerBuildingBase[] buildings;
 	[HideInInspector]
 	public GameManager.Ruolo[] ruoli;
 	[HideInInspector]

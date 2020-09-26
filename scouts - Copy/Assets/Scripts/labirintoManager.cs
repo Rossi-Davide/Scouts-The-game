@@ -8,7 +8,7 @@ public class labirintoManager : MonoBehaviour
 {
     public Animator luceGlobale, pointLight, regole, titolo;
     public GameObject luce1, luce2, testo1, testo2, joystick, player, enemy, haisec,riavvioScenaErrorMessage,levGen,panel;
-    bool countdownStart = false, countdownStartGrande = false, countdownGiocoInSe = false;
+    bool countdownStart = false, countdownStartGrande = false;
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
     Transform spawnPoint;
     [HideInInspector]

@@ -35,10 +35,10 @@ public class MoveBuildings : MonoBehaviour
 	}
 	void MoveUI()
 	{
-		BuildingsActionsAbstract b = GetComponent<BuildingsActionsAbstract>();
+		PlayerBuildingBase b = GetComponent<PlayerBuildingBase>();
 		b.healthBar.transform.position = transform.position + b.healthBarOffset;
 		b.loadingBar.transform.position = transform.position + b.loadingBarOffset;
 		b.nameText.transform.position = transform.position + b.nameTextOffset;
-		b.instanceOfListener.transform.position = transform.position + b.clickListenerOffset;
+		b.instanceOfListener.transform.position = transform.position + b.building.clickListenerOffset;
 	}
 }

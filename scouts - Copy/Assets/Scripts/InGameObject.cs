@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public abstract class InGameObject : MonoBehaviour
 {
-    public new string name;
+    public string objectName;
     protected TextMeshProUGUI buttonsText;
     public ActionButton[] buttons;
     public float maxDistanceFromPlayer;
@@ -152,7 +152,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		if (ActionButtons.instance.selected == this)
 		{
-			buttonsText.text = name;
+			buttonsText.text = objectName;
 			foreach (var b in buttons)
 			{
 				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;

@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -248,7 +246,6 @@ public class GameManager : MonoBehaviour
 	public enum ShopScreen
 	{
 		None,
-		Costruzioni,
 		Pioneristica,
 		Cucina,
 		Infermieristica,

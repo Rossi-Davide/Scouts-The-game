@@ -13,7 +13,6 @@ public class StatisticsManager : MonoBehaviour
 
 			panel.SetActive(true);
 			overlay.SetActive(true);
-			Time.timeScale = 0;
 			isOpen = true;
 			FindObjectOfType<StatisticsTabs>().OnClick(1);
 			FindObjectOfType<StatisticsTabs>().RefreshSqInfo();
@@ -21,8 +20,6 @@ public class StatisticsManager : MonoBehaviour
 		else
 		{
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
-			Time.timeScale = 1;
 			isOpen = false;
 			panel.SetActive(false);
 			overlay.SetActive(false);

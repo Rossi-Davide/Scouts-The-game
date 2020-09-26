@@ -72,8 +72,8 @@ public class InventorySlot : MonoBehaviour
 			itemName.text = item.name;
 			description.text = item.description + " " + item.abilityDescription;
 			type.text = item.type.ToString();
-			useButton.SetActive(item.type == Item.Type.Costruzione || item.periodicUseInterval == GameManager.PeriodicActionInterval.Once);
-			useButton.GetComponentInChildren<TextMeshProUGUI>().text = item.type == Item.Type.Costruzione ? "Costruisci" : "Usa";
+			useButton.SetActive(item.periodicUseInterval == GameManager.PeriodicActionInterval.Once);
+			useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Usa";
 		}
 	}
 	public void Use()

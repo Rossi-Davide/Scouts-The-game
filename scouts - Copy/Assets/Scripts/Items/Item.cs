@@ -27,30 +27,17 @@ public class Item : ScriptableObject
 	public int newValue;
 	[Header("ShopScreen")]
 	public GameManager.ShopScreen screenUnlocked;
-	[Header("Buildings")]
-	public GameObject realBuilding;
-	public int timeRequired;
-	public int pointsGiven;
 
 	public enum Type
 	{
-		Costruzione,
 		Oggetto,
-		OggettoSpeciale,
 	}
-
 	public GameManager.PeriodicActionInterval PeriodicUse => periodicUseInterval;
 	public void DoAction()
 	{
-		if (changedCounter != GameManager.Counter.None && type == Type.Oggetto)
+		if (changedCounter != GameManager.Counter.None)
 		{
 			GameManager.instance.ChangeCounter(changedCounter, deltaPoints);
-		}
-		if (type == Type.Costruzione)
-		{
-			InventoryManager.instance.ToggleInventoryPanel();
-			FindObjectOfType<ModificaBaseTrigger>().ToggleModificaBase();
-			realBuilding.SetActive(true);
 		}
 	}
 }

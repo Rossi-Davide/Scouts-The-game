@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CassaDelFurfante : InGameObject
+public class CassaDelFurfante : ObjectWithActions
 {
 	public Vector3[] possiblePositions;
 	bool canUnlock;
@@ -11,6 +9,7 @@ public class CassaDelFurfante : InGameObject
 		base.Start();
 		canUnlock = true;
 		transform.position = possiblePositions[Random.Range(0, possiblePositions.Length - 1)];
+		clickListener.transform.position = transform.position;
 	}
 
 	void SbloccaScreen()
@@ -34,7 +33,7 @@ public class CassaDelFurfante : InGameObject
 		switch (b.buttonNum)
 		{
 			case 1:
-				SbloccaScreen();
+				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, SbloccaScreen);
 				break;
 			default:
 				throw new System.NotImplementedException();

@@ -182,10 +182,10 @@ public class SquadrigliaManager : MonoBehaviour
 				{
 					foreach (var b in sq.buildings)
 					{
-						if (!b.Key.gameObject.activeSelf && Random.Range(0, 100) >= 50 && canBuild)
+						if (!b.gameObject.activeSelf && Random.Range(0, 100) >= 50 && canBuild)
 						{
 							canBuild = false;
-							b.Key.gameObject.SetActive(true);
+							b.gameObject.SetActive(true);
 						}
 					}
 				}
@@ -234,7 +234,7 @@ public class SquadrigliaManager : MonoBehaviour
 			AIcontainers[i].transform.position = sq.angolo.transform.position;
 			for (int p = 0; p < squadriglieri.Length; p++)
 			{
-				squadriglieri[p].name = sq.nomi[p];
+				squadriglieri[p].objectName = sq.nomi[p];
 				squadriglieri[p].nomeRuolo = sq.ruoli[p];
 				squadriglieri[p].sqText.text = sq.baseSq.name;
 				squadriglieri[p].ruolo.text = squadriglieri[p].nomeRuolo.ToString();
@@ -262,19 +262,19 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			var sq = squadriglieInGioco[s];
 			sq.angolo = angoli[s];
-			sq.angolo.name = "Angolo " + sq.baseSq.name;
+			sq.angolo.objectName = "Angolo " + sq.baseSq.name;
 			sq.angolo.squadriglia = sq.baseSq;
 			if (sq.baseSq == Player.instance.squadriglia)
 			{
 				playerAngoloPos.position = sq.angolo.transform.position;
 			}
-			var buildings = sq.angolo.GetComponentsInChildren<BuildingsActionsAbstract>(true);
+			sq.buildings = sq.angolo.GetComponentsInChildren<PlayerBuildingBase>(true);
 			sq.angolo.clickListener.gameObject.SetActive(sq.baseSq != Player.instance.squadriglia);
-			for (int i = 0; i < buildings.Length; i++)
+			for (int i = 0; i < sq.buildings.Length; i++)
 			{
-				sq.buildings.Add(buildings[i], buildings[i].gameObject.activeSelf);
-				sq.buildings.ElementAt(i).Key.instanceOfListener.SetActive(sq.baseSq == Player.instance.squadriglia);
-				DisableComponents(sq.buildings.ElementAt(i).Key, sq.baseSq == Player.instance.squadriglia);
+				sq.buildings[i].instanceOfListener.SetActive(false);
+				sq.buildings[i].gameObject.SetActive(false);
+				DisableComponents(sq.buildings[i], sq.baseSq == Player.instance.squadriglia);
 			}
 			sq.tenda = tents[s];
 			sq.nomi = new string[5];
@@ -284,7 +284,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 
 
-	void DisableComponents(BuildingsActionsAbstract b, bool disable)
+	void DisableComponents(PlayerBuildingBase b, bool disable)
 	{
 		var component = b;
 		if (disable)
@@ -326,16 +326,17 @@ public class SquadrigliaManager : MonoBehaviour
 
 	public ConcreteSquadriglia[] GetInfo()
 	{
-		foreach (var sq in squadriglieInGioco)
-		{
-			foreach (var b in sq.buildings)
-			{
-				sq.buildings[b.Key] = b.Key.gameObject.activeSelf;
-			}
-		}
 		return squadriglieInGioco;
 	}
 
-
+	public ConcreteSquadriglia GetPlayerSq()
+	{
+		foreach (var sq in squadriglieInGioco)
+		{
+			if (sq.baseSq == Player.instance.squadriglia)
+				return sq;
+		}
+		throw new System.Exception("l'array 'squadriglieInGioco' non contiene la squadriglia del player");
+	}
 
 }

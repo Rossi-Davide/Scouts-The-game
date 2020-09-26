@@ -87,4 +87,5 @@ public enum Challenge
 	nascondino,
 	hebert,
 	sumo,
+	//labirinto,
 }

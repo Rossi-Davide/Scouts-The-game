@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Portalegna : BuildingsActionsAbstract
+public class Portalegna : PlayerBuildingBase
 {
 	protected override void DoAction(ActionButton b)
 	{

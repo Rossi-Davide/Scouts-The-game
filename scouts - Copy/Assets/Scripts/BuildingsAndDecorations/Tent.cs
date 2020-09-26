@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tent : BuildingsActionsAbstract
+public class Tent : PlayerBuildingBase
 {
 	void StartSleep()
 	{

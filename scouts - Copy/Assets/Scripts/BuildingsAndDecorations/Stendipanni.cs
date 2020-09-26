@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Stendipanni : BuildingsActionsAbstract
+public class Stendipanni : PlayerBuildingBase
 {
 	protected override void DoAction(ActionButton b)
 	{

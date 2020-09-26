@@ -6,7 +6,7 @@ public class Shop : MonoBehaviour
 {
 	[HideInInspector]
 	public GameManager.ShopScreen currentScreen;
-	public GameObject itemsPanel, shopPanel, costruzioniEPioneristicaPanel, cucinaPanel, altreCassePanel, negozioIllegalePanel, closeButton;
+	public GameObject itemsPanel, shopPanel, pioneristicaPanel, cucinaPanel, altreCassePanel, negozioIllegalePanel, closeButton;
 	bool hasEnoughMoney, canBuy;
 	[HideInInspector]
 	public bool negozioIllegaleUnlocked;
@@ -25,7 +25,7 @@ public class Shop : MonoBehaviour
 	#endregion
 	private void Start()
 	{
-		currentScreen = GameManager.ShopScreen.Costruzioni;
+		currentScreen = GameManager.ShopScreen.Pioneristica;
 		buyButton = infoPanel.transform.Find("BuyButton").gameObject;
 		materialsLogo = buyButton.transform.Find("MaterialsLogo").gameObject;
 		energyLogo = buyButton.transform.Find("EnergyLogo").gameObject;
@@ -105,7 +105,7 @@ public class Shop : MonoBehaviour
 
 		itemsPanel.SetActive(!itemsPanel.activeSelf);
 		shopPanel.SetActive(!shopPanel.activeSelf);
-		costruzioniEPioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Costruzioni || currentScreen == GameManager.ShopScreen.Pioneristica);
+		pioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Pioneristica);
 		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);
 		altreCassePanel.SetActive(currentScreen == GameManager.ShopScreen.Infermieristica || currentScreen == GameManager.ShopScreen.Topografia || currentScreen == GameManager.ShopScreen.Espressione);
 		negozioIllegalePanel.SetActive(currentScreen == GameManager.ShopScreen.NegozioIllegale);
@@ -120,7 +120,7 @@ public class Shop : MonoBehaviour
 			return;
 		}
 		currentScreen = (GameManager.ShopScreen)n;
-		costruzioniEPioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Costruzioni || currentScreen == GameManager.ShopScreen.Pioneristica);
+		pioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Pioneristica);
 		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);
 		altreCassePanel.SetActive(currentScreen == GameManager.ShopScreen.Infermieristica || currentScreen == GameManager.ShopScreen.Topografia || currentScreen == GameManager.ShopScreen.Espressione);
 		negozioIllegalePanel.SetActive(currentScreen == GameManager.ShopScreen.NegozioIllegale);

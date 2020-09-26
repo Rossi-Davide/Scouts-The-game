@@ -74,7 +74,7 @@ public class QuestManager : MonoBehaviour
 
 			overlay.SetActive(true);
 			questPanel.SetActive(true);
-			Time.timeScale = 0;
+
 			isOpen = true;
 			foreach (QuestUI q in quests)
 			{
@@ -84,8 +84,6 @@ public class QuestManager : MonoBehaviour
 		else
 		{
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
-			Time.timeScale = 1;
 			isOpen = false;
 			questPanel.SetActive(false);
 			overlay.SetActive(false);

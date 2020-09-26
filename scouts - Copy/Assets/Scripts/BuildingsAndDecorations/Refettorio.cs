@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Refettorio : BuildingsActionsAbstract
+public class Refettorio : PlayerBuildingBase
 {
 
 	void Eat()

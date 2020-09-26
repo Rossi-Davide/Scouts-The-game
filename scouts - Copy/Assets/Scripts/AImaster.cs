@@ -13,7 +13,7 @@ public class AImaster : MonoBehaviour
 
     Path path;
     int currentWayPoint = 0;
-    bool reachedEndOfPath = false;
+    //bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
     Vector3 meta;
@@ -78,16 +78,16 @@ public class AImaster : MonoBehaviour
         }
         if (currentWayPoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
 
             AggiornaPosizione();
             return;
         }
-        else
-        {
+        //else
+        //{
 
-            reachedEndOfPath = false;
-        }
+        //    reachedEndOfPath = false;
+        //}
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
