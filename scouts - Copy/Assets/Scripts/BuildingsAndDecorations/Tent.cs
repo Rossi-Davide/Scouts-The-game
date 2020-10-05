@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-
 public class Tent : PlayerBuildingBase
 {
 	void StartSleep()
@@ -23,22 +18,19 @@ public class Tent : PlayerBuildingBase
 		GameManager.instance.hasSkippedNight = false;
 	}
 
-	protected override void DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, EndOfSleep);
 				StartSleep();
-				break;
+				return EndOfSleep;
 			case 2:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, MettiAlSicuro);
 				ChangeCounter(2);
-				break;
+				return MettiAlSicuro;
 			case 3:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Ripara);
 				ChangeCounter(3);
-				break;
+				return Ripara;
 			default:
 				throw new NotImplementedException();
 		}

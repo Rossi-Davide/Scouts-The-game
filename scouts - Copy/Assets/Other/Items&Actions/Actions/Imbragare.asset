@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Imbragare
   m_EditorClassIdentifier: 
   name: Imbragare
+  description: 
   neededItems: []
   conditions:
   - type: 0
@@ -27,11 +28,12 @@ MonoBehaviour:
   - type: 4
     desiredValue: 1
     warning: "Non puoi imbragare la costruzione perch\xE8 non sta piovendo!"
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
-  timeNeeded: 0
+  hasInfoPanel: 1
+  timeNeeded: 7
   energyGiven: 0
   materialsGiven: 0
   pointsGiven: 0

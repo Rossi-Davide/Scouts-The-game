@@ -16,16 +16,14 @@ MonoBehaviour:
   description: Meglio che non scriva nulla a questo riguardo.
   neededItems: []
   conditions:
-  - type: 7
-    desiredValue: 1
-    warning: Prima di pulire la latrina devi attendere!
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 10
   energyGiven: 0
   materialsGiven: 0

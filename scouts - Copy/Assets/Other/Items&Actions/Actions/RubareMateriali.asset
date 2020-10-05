@@ -15,12 +15,9 @@ MonoBehaviour:
   name: Rubare materiali alle altre squadriglie
   description: Eheh, piccolo furfante, ti ho scoperto!
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
+  conditions: []
+  hasInfoPanel: 1
   timeNeeded: 10
-  energyNeeded: 0
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 0
   materialsGiven: 30
   pointsGiven: 0

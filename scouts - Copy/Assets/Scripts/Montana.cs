@@ -1,46 +1,20 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 
 public class Montana : ObjectWithActions
 {
-	[HideInInspector]
-	public bool canDance;
-
-	protected override void Start()
-	{
-		base.Start();
-		canDance = true;
-	}
 	void Dance()
 	{
-		canDance = false;
 		RefreshButtonsState();
-		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
+		StartWaitToUseAgain(buttons[0]);
 	}
 
-	private void OnWaitEnd()
-	{
-		canDance = true;
-	}
-
-	protected override bool GetConditionValue(ConditionType t)
-	{
-		switch (t)
-		{
-			case ConditionType.ConditionCanDance: return canDance;
-			default: return base.GetConditionValue(t);
-		}
-	}
-
-
-	protected override void DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Dance);
 				ChangeCounter(1);
-				break;
+				return Dance;
 			default:
 				throw new NotImplementedException();
 		}

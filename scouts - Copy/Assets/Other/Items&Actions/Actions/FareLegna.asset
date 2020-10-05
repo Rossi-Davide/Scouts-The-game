@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: FareLegna
   m_EditorClassIdentifier: 
   name: Fare Legna
+  description: 
   neededItems: []
   conditions:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 3
   energyGiven: 0
   materialsGiven: 20

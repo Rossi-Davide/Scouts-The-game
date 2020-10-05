@@ -454,12 +454,14 @@ public class GameManager : MonoBehaviour
 		isDay = true;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
+		inGameObjects = FindObjectsOfType<InGameObject>();
 		SpawnDecorations();
 		InvokeRepeating("SpawnDecorations", 30, Random.Range(45, 75));
 		InvokeRepeating("PeriodicItemActionSlow", 60, 60);
 		InvokeRepeating("PeriodicItemActionMedium", 30, 30);
 		InvokeRepeating("PeriodicItemActionFast", 15, 15);
 		InvokeRepeating("GenerateRainProbability", 30, 10);
+		InvokeRepeating("RefreshWaitToUseObjects", 1, 1);
 		if (!coroutineStarted)
 		{
 			coroutineStarted = true;
@@ -472,6 +474,7 @@ public class GameManager : MonoBehaviour
 			RefreshCounterText();
 		}
 	}
+
 	private void Update()
 	{
 		if (currentDay == totalDays)
@@ -507,6 +510,23 @@ public class GameManager : MonoBehaviour
 		Blue,
 		LightBlue,
 		LightGray,
+	}
+	#endregion
+	#region Objects
+	InGameObject[] inGameObjects;
+
+	void RefreshWaitToUseObjects()
+	{
+		foreach (var o in inGameObjects)
+		{
+			foreach (var b in o.buttons)
+			{
+				if (b.isWaiting)
+				{
+					o.CountDownTime(b);
+				}
+			}
+		}
 	}
 	#endregion
 }

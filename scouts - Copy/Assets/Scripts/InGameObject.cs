@@ -1,26 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
 using TMPro;
 using System.Linq;
-using UnityEngine.UI;
 
 
 public abstract class InGameObject : MonoBehaviour
 {
-    public string objectName;
-    protected TextMeshProUGUI buttonsText;
-    public ActionButton[] buttons;
-    public float maxDistanceFromPlayer;
-    protected bool hasBeenClicked;
+	public string objectName;
+	protected TextMeshProUGUI buttonsText;
+	public ActionButton[] buttons;
+	public float maxDistanceFromPlayer;
+	protected bool hasBeenClicked;
+
 
 	protected virtual void Start()
 	{
-		InvokeRepeating("RefreshButtonsState", 0f, .4f);
+		InvokeRepeating("RefreshButtonsState", 0f, .2f);
 		for (int b = 0; b < buttons.Length; b++)
 		{
 			CalculatePriceOrPrize(buttons[b]);
 			buttons[b].buttonNum = b + 1;
 			buttons[b].obj = GameManager.instance.actionButtons[b];
+			buttons[b].canDo = true;
 		} //change price or prize string in buttons
 		buttonsText = GameManager.instance.buttonsText;
 	}
@@ -101,7 +101,7 @@ public abstract class InGameObject : MonoBehaviour
 			b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(b.isWaiting);
 		}
 		RefreshButtonsState();
-	} 
+	}
 
 	public virtual void Deselect()
 	{
@@ -123,18 +123,24 @@ public abstract class InGameObject : MonoBehaviour
 			if (c == null)
 			{
 				var i = CheckGeneralAction(b);
-				if (CheckActionManager(n - 1) && i == null)
-				{
-					DoAction(b);
-					GameManager.instance.ActionDone(b.generalAction);
-				}
-				else if (!CheckActionManager(n - 1))
+				if (!CheckActionManager(n - 1))
 				{
 					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
 				}
 				else if (i != null)
 				{
 					GameManager.instance.WarningMessage($"Prima di svolgere l'azione {b.generalAction.name}, devi acquistare {i}");
+				}
+				else if (!b.canDo)
+				{
+					GameManager.instance.WarningMessage("Hai appena fatto o stai ancora facendo questa azione!");
+				}
+				else
+				{
+					var onEnd = DoAction(b);
+					GameManager.instance.ActionDone(b.generalAction);
+					ActuallyAddAction(n - 1, onEnd);
+					b.canDo = false;
 				}
 			}
 			else
@@ -145,8 +151,9 @@ public abstract class InGameObject : MonoBehaviour
 
 	}
 
-	protected virtual bool CheckActionManager(int buttonIndex) { return true;  }
+	protected virtual bool CheckActionManager(int buttonIndex) { return true; }
 
+	protected virtual void ActuallyAddAction(int buttonIndex, System.Action onEnd) {  }
 
 	protected virtual void RefreshButtonsState()
 	{
@@ -155,9 +162,11 @@ public abstract class InGameObject : MonoBehaviour
 			buttonsText.text = objectName;
 			foreach (var b in buttons)
 			{
+				b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(b.isWaiting);
 				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
+				b.obj.transform.Find("InfoButton").gameObject.SetActive(b.generalAction.hasInfoPanel);
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.generalAction.conditions) == null && CheckGeneralAction(b) == null && ActionManager.instance.CheckIfTooManyActions())
+				if (FindNotVerified(b.generalAction.conditions) == null && CheckGeneralAction(b) == null && ActionManager.instance.CheckIfTooManyActions() && b.canDo)
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -171,7 +180,7 @@ public abstract class InGameObject : MonoBehaviour
 
 
 
-	protected abstract void DoAction(ActionButton b);
+	protected abstract System.Action DoAction(ActionButton b);
 
 
 	/// <summary> Restituisce null se sono tutte verificate. </summary>
@@ -203,21 +212,28 @@ public abstract class InGameObject : MonoBehaviour
 
 
 	#region Wait To Use Again
-	protected virtual IEnumerator WaitToUseAgain(ActionButton b, System.Action onEnd)
+	protected virtual void StartWaitToUseAgain(ActionButton b)
 	{
 		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(true);
 		b.isWaiting = true;
 		b.timeLeft = b.generalAction.timeBeforeRedo;
-		while (b.timeLeft > 0)
-		{
-			RefreshTimeLeft(b);
-			yield return new WaitForSeconds(1);
-			b.timeLeft--;
-		}
-		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(false);
-		b.isWaiting = false;
-		onEnd();
+		b.isWaiting = true;
 	}
+
+	public void CountDownTime(ActionButton b)
+	{
+		if (b.timeLeft <= 0)
+		{
+			b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(false);
+			b.isWaiting = false;
+			b.canDo = true;
+			return;
+		}
+		RefreshTimeLeft(b);
+		b.timeLeft--;
+	}
+
+
 
 	protected void RefreshTimeLeft(ActionButton b)
 	{
@@ -250,6 +266,8 @@ public class ActionButton
 	public int timeLeft;
 	[HideInInspector]
 	public bool isWaiting;
+	[HideInInspector]
+	public bool canDo;
 	public PlayerAction generalAction;
 }
 
@@ -260,26 +278,13 @@ public enum ConditionType
 	ConditionIsPlayerCloseEnough,
 	ConditionIsDaytime,
 	ConditionIsRaining,
-	ConditionCanEat,
-	ConditionCanDance,
-	ConditionCanCleanLatrina,
-	ConditionCanCleanLavaggi,
-	ConditionPuoLavarePanni,
-	ConditionPuoLavarePiatti,
-	ConditionPuoFareLegnaPerFuoco,
-	ConditionPuoAttaccareLaCambusa,
-	ConditionPuoFareAlzabandiera,
-	ConditionCanCook,
-	ConditionCanSleepOnAmaca,
-	ConditionStaFacendoLegna,
 	ConditionCanDoActionOnBuilding,
-	ConditionCanTalkAI,
 	ConditionHasAnythingToSayAI,
-	ConditionPuoMandareAFareLegna,
 	ConditionEDellaStessaSquadriglia,
-	ConditionStaFacendoLegnaAI,
 	ConditionCanUnlockNegozioDelFurfante,
-	ConditionPuoSfidareSquadriglia,
+	ConditionHasEnoughMaterials,
+	ConditionCookBundle,
+	ConditionStaFacendoLegnaAI,
 }
 
 [System.Serializable]

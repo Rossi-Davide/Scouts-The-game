@@ -7,12 +7,14 @@ public class PlayerAction : ScriptableObject
     public string description;
     public Item[] neededItems;
     public Condition[] conditions;
+    public bool hasInfoPanel;
 
     [Header("Parameters")]
     public int timeNeeded;
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0
     public int timeBeforeRedo;
-    
+
+
     public enum ActionParams
 	{
         None,

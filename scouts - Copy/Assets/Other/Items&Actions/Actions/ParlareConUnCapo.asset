@@ -16,12 +16,10 @@ MonoBehaviour:
   description: Chiaccherare con un capo reparto.
   neededItems: []
   conditions:
-  - type: 19
+  - type: 6
     desiredValue: 1
     warning: "Questa persona ha gi\xE0 detto tutto ci\xF2 che voleva dirti!"
-  - type: 18
-    desiredValue: 1
-    warning: Prima di parlare ancora con questa persona devi attendere!
+  hasInfoPanel: 1
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

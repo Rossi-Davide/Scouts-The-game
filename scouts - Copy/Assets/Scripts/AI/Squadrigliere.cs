@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 
 public class Squadrigliere : BaseAI
 {
     [HideInInspector]
     public Transform tent;
-    bool staFacendoLegna, homeCoroutineStarted, puoMandareAFareLegna;
+    bool staFacendoLegna, homeCoroutineStarted;
     [HideInInspector]
     public Squadriglia sq;
     [HideInInspector]
@@ -22,7 +20,6 @@ public class Squadrigliere : BaseAI
 	protected override void Start()
 	{
         base.Start();
-        puoMandareAFareLegna = true;
         sqText.gameObject.SetActive(sq == Player.instance.squadriglia);
         ruolo.gameObject.SetActive(sq == Player.instance.squadriglia);
     }
@@ -31,7 +28,7 @@ public class Squadrigliere : BaseAI
 	{
         staFacendoLegna = true;
         Debug.Log("sto facendo legna");
-        StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
+        StartWaitToUseAgain(buttons[0]);
         staFacendoLegna = false;
 	}
 
@@ -50,31 +47,23 @@ public class Squadrigliere : BaseAI
         ruolo.gameObject.SetActive(sq == Player.instance.squadriglia);
     }
 
-
-
-    private void OnWaitEnd()
-    {
-        puoMandareAFareLegna = true;
-    }
-
     protected override bool GetConditionValue(ConditionType t)
     {
         switch (t)
         {
-            case ConditionType.ConditionPuoMandareAFareLegna: return puoMandareAFareLegna;
-            case ConditionType.ConditionEDellaStessaSquadriglia: return sq == Player.instance.squadriglia;
             case ConditionType.ConditionStaFacendoLegnaAI: return staFacendoLegna;
+            case ConditionType.ConditionEDellaStessaSquadriglia: return sq == Player.instance.squadriglia;
             default: return base.GetConditionValue(t);
         }
     }
 
-    protected override void DoAction(ActionButton b)
+    protected override System.Action DoAction(ActionButton b)
     {
         switch (b.buttonNum)
         {
             case 1:
                 FaiLegna();
-                break;
+                return null;
             default:
                 throw new System.NotImplementedException();
         }

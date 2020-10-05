@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DormireDiNotte
   m_EditorClassIdentifier: 
   name: Dormire di notte
+  description: 
   neededItems:
   - {fileID: 0}
   conditions:
@@ -25,10 +26,11 @@ MonoBehaviour:
   - type: 3
     desiredValue: 0
     warning: Puoi dormire solo di notte!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 10
   energyGiven: 20
   materialsGiven: 0

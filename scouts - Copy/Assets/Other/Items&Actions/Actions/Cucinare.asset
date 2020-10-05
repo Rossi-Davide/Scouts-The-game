@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cucinare
   m_EditorClassIdentifier: 
   name: Cucinare
+  description: 
   neededItems:
   - {fileID: 0}
   conditions:
@@ -25,19 +26,14 @@ MonoBehaviour:
   - type: 3
     desiredValue: 1
     warning: Puoi cucinare solo di giorno!
-  - type: 14
-    desiredValue: 1
-    warning: Prima di cucinare devi attendere!
-  - type: 5
-    desiredValue: 0
-    warning: "Hai gi\xE0 preparato il pasto!"
   - type: 10
-    desiredValue: 0
-    warning: Prima di cucinare di nuovo devi lavare i piatti!
-  - type: 17
+    desiredValue: 1
+    warning: 'Devi rispettare l''ordine: cucinare, mangiare, lavare i piatti!'
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 20
   energyGiven: 0
   materialsGiven: 0

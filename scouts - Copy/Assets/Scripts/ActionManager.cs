@@ -50,6 +50,9 @@ public class ActionManager : MonoBehaviour
 			{
 				currentActions[i] = action;
 				currentActions[i].timeLeft = currentActions[i].totalTime;
+				currentActions[i].loadingBar.gameObject.SetActive(true);
+				currentActions[i].loadingBar.slider.maxValue = currentActions[i].totalTime;
+				currentActions[i].loadingBar.value.text = GameManager.IntToMinuteSeconds(currentActions[i].totalTime);
 				return;
 			}
 		}
@@ -97,29 +100,21 @@ public class ActionManager : MonoBehaviour
 			var a = currentActions[i];
 			if (a != null)
 			{
-				a.timeLeft--;
-				actionSpots[i].transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
+				var actualTimeLeft = GameManager.IntToMinuteSeconds(a.timeLeft);
+				actionSpots[i].transform.Find("Time").GetComponent<TextMeshProUGUI>().text = actualTimeLeft;
+				a.loadingBar.value.text = actualTimeLeft;
+				a.loadingBar.slider.value = a.totalTime - a.timeLeft;
 				if (a.timeLeft <= 0)
 				{
 					currentActions[i] = null;
 					actionSpots[i].SetActive(false);
+					a.loadingBar.gameObject.SetActive(false);
+					a.OnEnd?.Invoke();
 				}
+				a.timeLeft--;
 			}
 		}
 	}
-
-	public int GetTimeLeft(TimeAction action)
-	{
-		foreach (var a in currentActions)
-		{
-			if (a == action)
-			{
-				return a.timeLeft;
-			}
-		}
-		return 0;
-	}
-
 }
 
 public class TimeAction
@@ -128,11 +123,15 @@ public class TimeAction
 	public string building;
 	public int totalTime;
 	public int timeLeft;
+	public TimeLeftBar loadingBar;
+	public System.Action OnEnd;
 
-	public TimeAction(string name, string building, int time)
+	public TimeAction(string name, string building, int totalTime, TimeLeftBar bar, System.Action OnEnd)
 	{
 		this.name = name;
 		this.building = building;
-		this.totalTime = time;
+		this.totalTime = totalTime;
+		loadingBar = bar;
+		this.OnEnd = OnEnd;
 	}
 }

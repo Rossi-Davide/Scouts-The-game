@@ -1,14 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-using System.Collections;
 using System;
-using UnityEngine.Audio;
 
 public class Campfire : ObjectWithActions
 {
-
-	[HideInInspector]
-	public bool puoFareLegna;
 	[HideInInspector]
 	public AudioSource aud;
 
@@ -31,36 +26,28 @@ public class Campfire : ObjectWithActions
 	{
 		aud = GetComponent<AudioSource>();
 		base.Start();
-		puoFareLegna = true;
 		GameManager.instance.OnDayEndOrStart += ChangeLight;
 	}
 	void FaiLegna()
 	{
 		ChangeCounter(1);
-		puoFareLegna = false;
 		RefreshButtonsState();
-		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
-	}
-
-	private void OnWaitEnd()
-	{
-		puoFareLegna = true;
+		StartWaitToUseAgain(buttons[0]);
 	}
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionPuoFareLegnaPerFuoco: return puoFareLegna && GameManager.instance.materialsValue >= 100;
+			case ConditionType.ConditionHasEnoughMaterials: return GameManager.instance.materialsValue >= Mathf.Abs(buttons[0].generalAction.materialsGiven);
 			default: return base.GetConditionValue(t);
 		}
 	}
-	protected override void DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, FaiLegna);
-				break;
+				return FaiLegna;
 			default:
 				throw new NotImplementedException();
 		}

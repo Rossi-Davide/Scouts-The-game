@@ -1,55 +1,18 @@
-﻿using System.Collections;
-using System;
-using UnityEngine.SceneManagement;
-using UnityEngine;
-
+﻿using System;
 public class Cambusa : ObjectWithActions
 {
-	[HideInInspector]
-	public bool canAttack;
-	protected override void Start()
-	{
-		base.Start();
-		canAttack = true;
-	}
-
-	void EntraNelloShop()
-	{
-		Shop.instance.ToggleShop();
-	}
-	
 	void Attack()
 	{
-		canAttack = false;
 		RefreshButtonsState();
-		StartCoroutine(WaitToUseAgain(buttons[1], OnWaitEnd));
+		StartWaitToUseAgain(buttons[1]);
 	}
-
-	private void OnWaitEnd()
-	{
-		canAttack = true;
-	}
-
-	protected override bool GetConditionValue(ConditionType t)
-	{
-		switch (t)
-		{
-			case ConditionType.ConditionPuoAttaccareLaCambusa: return canAttack;
-			default: return base.GetConditionValue(t);
-		}
-	}
-	protected override void DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, null);
-				EntraNelloShop();
-				break;
-			case 2:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, Attack);
 				ChangeCounter(2);
-				break;
+				return Attack;
 			default:
 				throw new NotImplementedException();
 		}

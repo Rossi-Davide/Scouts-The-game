@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Alzabandiera
   m_EditorClassIdentifier: 
   name: Alzabandiera
+  description: 
   neededItems: []
   conditions:
   - type: 3
@@ -21,13 +22,11 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano dall'alzabandiera!
-  - type: 13
-    desiredValue: 1
-    warning: Devi attendere prima di fare l'alzabandiera di nuovo!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 10
   energyGiven: 0
   materialsGiven: 0

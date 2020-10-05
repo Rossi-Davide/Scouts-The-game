@@ -22,9 +22,10 @@ MonoBehaviour:
   - type: 3
     desiredValue: 0
     warning: Puoi usare la cassa del furfante solo di notte!
-  - type: 23
+  - type: 8
     desiredValue: 1
     warning: "Hai gi\xE0 sbloccato il negozio illegale!"
+  hasInfoPanel: 1
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

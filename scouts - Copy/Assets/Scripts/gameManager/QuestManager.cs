@@ -1,10 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 public class QuestManager : MonoBehaviour
 {
 	public GameObject questPanel, overlay;
-	QuestUI[] quests;
+	[HideInInspector]
+	public QuestUI[] quests;
+	public PlayerAction[] actionDatabase;
 	bool isOpen;
+
+	#region Singleton
+	public static QuestManager instance;
+	private void Awake()
+	{
+		if (instance != null)
+			throw new System.Exception("QuestManager is not a singleton");
+		instance = this;
+	}
+	#endregion
+
+
 
 	private void Start()
 	{
@@ -12,7 +27,6 @@ public class QuestManager : MonoBehaviour
 		GameManager.instance.OnActionDo += RefreshQuests;
 		GameManager.instance.OnInventoryChange += RefreshActions;
 	}
-
 
 	void RefreshQuests(PlayerAction a)
 	{

@@ -102,9 +102,9 @@ public class Shop : MonoBehaviour
 	public void ToggleShop()
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
 		itemsPanel.SetActive(!itemsPanel.activeSelf);
 		shopPanel.SetActive(!shopPanel.activeSelf);
+		Camera.main.GetComponent<PanZoom>().enabled = shopPanel.activeSelf;
 		pioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Pioneristica);
 		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);
 		altreCassePanel.SetActive(currentScreen == GameManager.ShopScreen.Infermieristica || currentScreen == GameManager.ShopScreen.Topografia || currentScreen == GameManager.ShopScreen.Espressione);

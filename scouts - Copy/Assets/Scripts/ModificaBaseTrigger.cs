@@ -39,6 +39,10 @@ public class ModificaBaseTrigger : MonoBehaviour
 		cam.GetComponent<FollowPlayer>().SetTarget(isModifying ? angolo : player);
 		cam.GetComponent<PanZoom>().enabled = !isModifying;
 		cam.GetComponent<FollowPlayer>().EnableFollow();
+		if (ActionButtons.instance.selected != null)
+		{
+			ActionButtons.instance.selected.Deselect();
+		}
 		GetComponent<Animator>().Play(isModifying ? "SalvaEdEsci" : "Modifica");
 	}
 }

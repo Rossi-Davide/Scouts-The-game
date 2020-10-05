@@ -28,13 +28,13 @@ public class CassaDelFurfante : ObjectWithActions
 		}
 	}
 
-	protected override void DoAction(ActionButton b)
+	protected override System.Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, SbloccaScreen);
-				break;
+				SbloccaScreen();
+				return null;
 			default:
 				throw new System.NotImplementedException();
 		}

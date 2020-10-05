@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LavareIPiatti
   m_EditorClassIdentifier: 
   name: Lavare i piatti
+  description: 
   neededItems: []
   conditions:
   - type: 2
@@ -20,11 +21,12 @@ MonoBehaviour:
     warning: Sei troppo lontano!
   - type: 10
     desiredValue: 1
-    warning: Devi mangiare prima di lavare i panni!
-  - type: 17
+    warning: 'Devi rispettare l''ordine: cucinare, mangiare, lavare i piatti!'
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 45
   energyGiven: -3
   materialsGiven: 0

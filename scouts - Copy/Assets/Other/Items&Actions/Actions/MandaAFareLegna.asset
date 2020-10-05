@@ -16,12 +16,10 @@ MonoBehaviour:
   description: 
   neededItems: []
   conditions:
-  - type: 20
-    desiredValue: 1
-    warning: Prima di mandare a fare legna devi attendere!
-  - type: 21
+  - type: 7
     desiredValue: 1
     warning: Puoi mandare a fare legna solo chi fa parte della tua squadriglia
+  hasInfoPanel: 1
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

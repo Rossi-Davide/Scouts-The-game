@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CapieCambu : BaseAI
 {
@@ -15,7 +11,7 @@ public class CapieCambu : BaseAI
 	public GameObject blackOverlay;
 	GameObject nextButton, answer1Button, answer2Button;
 	TextMeshProUGUI answer1Text, answer2Text, title, sentenceText;
-	bool canAnswer, canTalk;
+	bool canAnswer;
 	public Dialogue[] dialoguesArray;
 	int pointsToAdd;
 
@@ -28,7 +24,6 @@ public class CapieCambu : BaseAI
 		sentenceText = dialoguePanel.transform.Find("Sentence").GetComponent<TextMeshProUGUI>();
 		answer1Text = answer1Button.transform.Find("Text").GetComponent<TextMeshProUGUI>();
 		answer2Text = answer2Button.transform.Find("Text").GetComponent<TextMeshProUGUI>();
-		canTalk = true;
 	}
 
 	void ShowSentence(Sentence s)
@@ -80,18 +75,12 @@ public class CapieCambu : BaseAI
 		ClosePanel();
 	}
 
-	protected override void Start()
-	{
-		base.Start();
-		canTalk = true;
-	}
 	void EndTalk()
 	{
 		ClosePanel();
 		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, pointsToAdd);
-		canTalk = false;
 		dialoguesDone++;
-		StartCoroutine(WaitToUseAgain(buttons[0], OnWaitEnd));
+		StartWaitToUseAgain(buttons[0]);
 	}
 
 	void ClosePanel()
@@ -113,28 +102,22 @@ public class CapieCambu : BaseAI
 		pointsToAdd = dialoguesArray[dialoguesDone].basePointsDelta;
 	}
 
-	private void OnWaitEnd()
-	{
-		canTalk = true;
-	}
-
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionCanTalkAI: return canTalk;
 			case ConditionType.ConditionHasAnythingToSayAI: return dialoguesDone < dialoguesArray.Length;
 			default: return base.GetConditionValue(t);
 		}
 	}
 
-	protected override void DoAction(ActionButton b)
+	protected override System.Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
 				Talk();
-				break;
+				return null;
 			default:
 				throw new NotImplementedException();
 		}

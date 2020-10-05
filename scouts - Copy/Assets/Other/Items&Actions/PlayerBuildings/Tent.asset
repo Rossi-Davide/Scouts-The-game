@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe616d4a7b2b4445a8fc0786e86c44a, type: 3}
   m_Name: Tent
   m_EditorClassIdentifier: 
-  name: 
+  name: Tent
   maxLevel: 0
   maxHealth: 64000000
   healthLossInterval: 05000000

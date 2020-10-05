@@ -9,7 +9,9 @@ public abstract class ObjectWithActions : InGameObject
 	[HideInInspector]
 	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
 	[HideInInspector]
-    public GameObject loadingBar, nameText;
+	public TimeLeftBar loadingBar;
+	[HideInInspector]
+	public GameObject nameText;
 
 	protected TimeAction action;
 	public bool isInstantiating;
@@ -19,7 +21,7 @@ public abstract class ObjectWithActions : InGameObject
     {
 		wpCanvas = GameManager.instance.wpCanvas;
 		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
-		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform);
+		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.GetComponent<TextMeshProUGUI>().text = objectName;
 		if (clickListener != null && !isInstantiating)
 			clickListener.onClick.AddListener(OnClick);
@@ -38,10 +40,8 @@ public abstract class ObjectWithActions : InGameObject
 	}
 	protected override bool CheckActionManager(int buttonIndex)
 	{
-		action = new TimeAction(buttons[buttonIndex].generalAction.name, objectName, buttons[buttonIndex].generalAction.timeNeeded);
 		if (ActionManager.instance.CheckIfTooManyActions())
 		{
-			ActionManager.instance.AddAction(action);
 			return true;
 		}
 		else
@@ -49,6 +49,11 @@ public abstract class ObjectWithActions : InGameObject
 			return false;
 		}
 		
+	}
+	protected override void ActuallyAddAction(int buttonIndex, System.Action onEnd)
+	{
+		action = new TimeAction(buttons[buttonIndex].generalAction.name, objectName, buttons[buttonIndex].generalAction.timeNeeded, loadingBar, onEnd);
+		ActionManager.instance.AddAction(action);
 	}
 
 

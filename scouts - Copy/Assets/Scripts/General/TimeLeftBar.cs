@@ -4,46 +4,14 @@ using UnityEngine.UI;
 
 public class TimeLeftBar : MonoBehaviour
 {
-	public int totalTime;
 	[HideInInspector]
-	public int timeLeft;
-	private Slider slider;
-	private TextMeshProUGUI value;
+	public Slider slider;
 	[HideInInspector]
-	public TimeAction action;
-	[HideInInspector]
-	public System.Action OnEnd;
+	public TextMeshProUGUI value;
 
-	void OnEnable()
+	void Awake()
 	{
 		slider = GetComponent<Slider>();
 		value = transform.Find("TimeLeft").GetComponent<TextMeshProUGUI>();
-		slider.maxValue = totalTime;
-		slider.value = 0;
-		timeLeft = totalTime;
-		InvokeRepeating("RefreshTime", 0, .3f);
-	}
-	void OnDisable()
-	{
-		CancelInvoke("RefreshTime");
-	}
-	void RefreshTime()
-	{
-		if (timeLeft == 0)
-		{
-			gameObject.SetActive(false);
-			OnEnd?.Invoke();
-		}
-		timeLeft = ActionManager.instance.GetTimeLeft(action);
-		value.text = GameManager.IntToMinuteSeconds(timeLeft);
-		slider.value = totalTime - timeLeft;
-	}
-
-	public void InitializeValues(TimeAction action, System.Action OnEnd)
-	{
-		this.action = action;
-		this.OnEnd = OnEnd;
-		this.totalTime = action.totalTime;
-		gameObject.SetActive(true);
 	}
 }

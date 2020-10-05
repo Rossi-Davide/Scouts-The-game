@@ -20,19 +20,17 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
-  - type: 5
-    desiredValue: 1
-    warning: Prima di mangiare devi preparare il pasto!
   - type: 10
-    desiredValue: 0
-    warning: "Hai gi\xE0 mangiato!"
+    desiredValue: 1
+    warning: 'Devi rispettare l''ordine: cucinare, mangiare, lavare i piatti!'
   - type: 1
     desiredValue: 0
     warning: "Non puoi mangiare perch\xE8 il refettorio \xE8 distrutto!"
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 5
   energyGiven: 20
   materialsGiven: 0

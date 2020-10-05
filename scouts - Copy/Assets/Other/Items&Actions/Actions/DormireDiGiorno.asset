@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DormireDiGiorno
   m_EditorClassIdentifier: 
   name: Dormire di giorno
+  description: 
   neededItems:
   - {fileID: 0}
   conditions:
@@ -25,13 +26,11 @@ MonoBehaviour:
   - type: 3
     desiredValue: 1
     warning: Puoi dormire sull'amaca solo di giorno!
-  - type: 15
-    desiredValue: 1
-    warning: Prima di dormire sull'amaca di nuovo devi attendere!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 10
   energyGiven: 15
   materialsGiven: 0

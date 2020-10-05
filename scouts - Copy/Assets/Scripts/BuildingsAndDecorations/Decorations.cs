@@ -47,14 +47,13 @@ public class Decorations : ObjectWithActions
 			default: return base.GetConditionValue(t);
 		}
 	}
-	protected override void DoAction(ActionButton b)
+	protected override System.Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				loadingBar.GetComponent<TimeLeftBar>().InitializeValues(action, EndPunch);
 				PlayerHandPunch();
-				break;
+				return EndPunch;
 			default:
 				throw new NotImplementedException();
 		}

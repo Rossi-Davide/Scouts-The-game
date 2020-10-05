@@ -15,12 +15,9 @@ MonoBehaviour:
   name: Fare la catechesi
   description: Pregare e scrivere preghiere per gli altri.
   neededItems: []
-  optionalItems: []
-  canBeDone: 0
+  conditions: []
+  hasInfoPanel: 1
   timeNeeded: 10
-  energyNeeded: 7
-  materialsNeeded: 0
-  pointsNeeded: 0
   energyGiven: 0
   materialsGiven: 0
   pointsGiven: 10

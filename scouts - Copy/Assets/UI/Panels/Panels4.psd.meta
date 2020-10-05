@@ -14,6 +14,15 @@ TextureImporter:
   - first:
       213: 9084645681661229257
     second: Panels4_2
+  - first:
+      213: 5453413236503787221
+    second: Panels4_1
+  - first:
+      213: 7253495515207858367
+    second: Panels4_2
+  - first:
+      213: -3966890173206847096
+    second: Panels4_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,8 +123,8 @@ TextureImporter:
       name: Panels4_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 40
+        x: 12
+        y: 190
         width: 256
         height: 220
       alignment: 0
@@ -135,8 +144,8 @@ TextureImporter:
       name: Panels4_1
       rect:
         serializedVersion: 2
-        x: 332
-        y: 131
+        x: 331
+        y: 281
         width: 68
         height: 62
       alignment: 0
@@ -146,8 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3334681ceb7d73f10800000000000000
-      internalID: 2249503753185411891
+      spriteID: 5d6b837f17a6eab40800000000000000
+      internalID: 5453413236503787221
       vertices: []
       indices: 
       edges: []
@@ -156,8 +165,8 @@ TextureImporter:
       name: Panels4_2
       rect:
         serializedVersion: 2
-        x: 411
-        y: 135
+        x: 410
+        y: 285
         width: 68
         height: 59
       alignment: 0
@@ -167,8 +176,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c834bd6d15231e70800000000000000
-      internalID: 9084645681661229257
+      spriteID: fb87adb8db799a460800000000000000
+      internalID: 7253495515207858367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panels4_3
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 170
+        width: 550
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881a40ba766c2f8c0800000000000000
+      internalID: -3966890173206847096
       vertices: []
       indices: 
       edges: []

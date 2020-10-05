@@ -18,7 +18,8 @@ MonoBehaviour:
   conditions:
   - type: 2
     desiredValue: 1
-    warning: 
+    warning: Sei troppo lontano!
+  hasInfoPanel: 1
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

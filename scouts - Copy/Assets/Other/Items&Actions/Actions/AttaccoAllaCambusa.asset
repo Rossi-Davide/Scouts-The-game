@@ -13,21 +13,20 @@ MonoBehaviour:
   m_Name: AttaccoAllaCambusa
   m_EditorClassIdentifier: 
   name: AttaccoAllaCambusa
+  description: 
   neededItems: []
   conditions:
-  - type: 12
-    desiredValue: 1
-    warning: Prima di attaccare la cambusa di nuovo devi attendere!
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano dalla cambusa!
   - type: 3
     desiredValue: 0
     warning: Puoi attaccare la cambusa solo di notte!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 30
   energyGiven: 0
   materialsGiven: 200

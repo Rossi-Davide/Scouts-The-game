@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Discotenda
   m_EditorClassIdentifier: 
   name: Discotenda
+  description: 
   neededItems: []
   conditions:
   - type: 2
@@ -21,13 +22,11 @@ MonoBehaviour:
   - type: 3
     desiredValue: 0
     warning: Puoi ballare solo di notte!
-  - type: 6
-    desiredValue: 1
-    warning: Prima di ballare devi attendere!
-  - type: 17
+  - type: 5
     desiredValue: 1
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
+  hasInfoPanel: 1
   timeNeeded: 20
   energyGiven: 15
   materialsGiven: 0
