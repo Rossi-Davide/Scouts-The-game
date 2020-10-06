@@ -11,7 +11,7 @@ public class NascondinoEnemyCollisionDetection : MonoBehaviour
     void Start()
     {
          manager= GameObject.Find("GameManager").gameObject.GetComponent<nascondinoManager>();
-        
+       
     }
 
     // Update is called once per frame
@@ -25,9 +25,10 @@ public class NascondinoEnemyCollisionDetection : MonoBehaviour
     {
         if(collision.collider.name== "playerNascondino")
         {
-            Debug.Log("hai perso");
-            
-            manager.Sconfitta();
+            //Debug.Log("hai perso");
+
+            manager.Idiota(); 
+                
         }
        
     }

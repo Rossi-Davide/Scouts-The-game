@@ -5,11 +5,12 @@ using TMPro;
 
 public class nascondinoManager : MonoBehaviour
 {
-    public Animator luceGlobale, pointLight,regole,titolo;
-    public GameObject luce1, luce2, testo1, testo2,joystick,player,enemy,haisec;
+    public Animator luceGlobale, pointLight,regole,titolo,pannelloTimer,Timer;
+    public GameObject luce1, luce2, testo1, testo2,joystick,player,enemy,haisec,victoryText,score;
     bool countdownStart = false, countdownStartGrande=false, countdownGiocoInSe=false;
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
     Transform spawnPoint;
+    public Transform bottoneTornaAlGioco;
     [HideInInspector]
     public bool aumentoDifficoltà=false;
     GameObject[] enemies;
@@ -41,45 +42,14 @@ public class nascondinoManager : MonoBehaviour
         StartCoroutine(Iniziale());
         spawnPoint = transform.Find("spawnPoint");
         InvokeRepeating("CountDown", 1, 1);
-        seconds = 10;
+        seconds = 2;
         secondsInizioGioco = 3;
     }
 
     // Update is called once per frame
    
 
-    IEnumerator Iniziale()
-    {
-        editorCountdown.transform.parent.gameObject.SetActive(false);
-        player.SetActive(false);
-        joystick.SetActive(false);
-        luce1.SetActive(true);
-        yield return new  WaitForSeconds(0.5f);
-
-
-        luce2.SetActive(true);
-        yield return new WaitForSeconds(0.5f); // era 2
-        testo1.SetActive(true);
-        yield return new WaitForSeconds(2f); // era 4
-        titolo.SetBool("uscitaTesto", true);
-        yield return new WaitForSeconds(1f);
-        testo1.SetActive(false);
-        testo2.SetActive(true);
-        yield return new WaitForSeconds(5f); // era 7
-        regole.SetBool("fadeOut", true);
-        yield return new WaitForSeconds(1f);
-        testo2.SetActive(false);
-        pointLight.SetBool("inizioGioco", true);
-        yield return new WaitForSeconds(1f);
-        luceGlobale.SetBool("inizioGioco", true);
-        yield return new WaitForSeconds(2f);
-        haisec.SetActive(true);
-        yield return new WaitForSeconds(2f); // era 4
-        haisec.SetActive(false);
-        countdownStart = true;
-        countdownSecondsInizio.gameObject.SetActive(true);
-        countdownSecondsInizio.text = secondsInizioGioco.ToString();
-    }
+  
 
    
     void CountDown()
@@ -105,7 +75,7 @@ public class nascondinoManager : MonoBehaviour
             seconds--;
             if (seconds < 0)
             {
-                seconds = 120;
+                seconds = 10;
                 countdownGiocoInSe = true;
                 countdownStartGrande = false;
                 InizioGioco();
@@ -121,7 +91,7 @@ public class nascondinoManager : MonoBehaviour
             editorCountdown.text = IntToMinutesColonSeconds(seconds);
             if (seconds <= 0)
             {
-                StartCoroutine("Vittoria");
+                StartCoroutine(Vittoria());
             }
         }
     }
@@ -140,21 +110,32 @@ public class nascondinoManager : MonoBehaviour
     }
 
 
-
-    IEnumerator Vittoria()
+    #region Animazioni
+    public IEnumerator Vittoria()
     {
-        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        countdownGiocoInSe = false;
+        /*Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        joystick.SetActive(false);
+        joystick.SetActive(false);*/
         foreach (GameObject item in enemies)
         {
-            Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
+            //Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
             AImaster movement = item.GetComponent<AImaster>();
             movement.enabled = false;
-            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
+            //enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        Debug.Log("hai vinto");
+        //Debug.Log("hai vinto");
         //animazione da decidere
+
+        luceGlobale.SetBool("inizioGioco", false);
+        countdownGiocoInSe = false;
+        yield return new WaitForSeconds(0.5f);
+        Animator victoryTextAn = victoryText.GetComponent<Animator>();
+        victoryTextAn.SetBool("vinto", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator scoreAn = score.GetComponent<Animator>();
+
+
         yield return null;
 
     }
@@ -164,6 +145,8 @@ public class nascondinoManager : MonoBehaviour
      public  IEnumerator Sconfitta()
     {
         Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        playerNascondino pN = player.GetComponent<playerNascondino>();
+        pN.enabled = false;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         joystick.SetActive(false);
         foreach (GameObject item in enemies)
@@ -173,8 +156,63 @@ public class nascondinoManager : MonoBehaviour
             movement.enabled = false;
             enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        Debug.Log("hai perso");
+        //Debug.Log("hai perso");
         //animazione da decidere
+
+        luceGlobale.SetBool("inizioGioco", false);
+        countdownGiocoInSe = false;
+        yield return new WaitForSeconds(0.5f);
+       
+        pannelloTimer.SetBool("perditaGioco", true);
+        Timer.SetBool("perditaGioco", true);
+
+        
         yield return null;
     }
+
+
+
+    public void Idiota() //non sono riuscito a lanciare la coroutine sconfitta da un altro script, perciò sono passato da un void
+    {
+        //Debug.Log("sei un idiota");
+        StartCoroutine(Sconfitta());
+    }
+
+    IEnumerator Iniziale()
+    {
+        editorCountdown.transform.parent.gameObject.SetActive(false);
+        player.SetActive(false);
+        joystick.SetActive(false);
+        luce1.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+
+
+        luce2.SetActive(true);
+        yield return new WaitForSeconds(0.5f); // era 2
+        testo1.SetActive(true);
+        yield return new WaitForSeconds(2f); // era 4
+        titolo.SetBool("uscitaTesto", true);
+        yield return new WaitForSeconds(1f);
+        testo1.SetActive(false);
+        testo2.SetActive(true);
+        yield return new WaitForSeconds(5f); // era 7
+        regole.SetBool("fadeOut", true);
+        yield return new WaitForSeconds(1f);
+        testo2.SetActive(false);
+        pointLight.SetBool("inizioGioco", true);
+        yield return new WaitForSeconds(1f);
+        luceGlobale.SetBool("inizioGioco", true);
+        yield return new WaitForSeconds(2f);
+        haisec.SetActive(true);
+        yield return new WaitForSeconds(2f); // era 4
+        haisec.SetActive(false);
+        countdownStart = true;
+        countdownSecondsInizio.gameObject.SetActive(true);
+        countdownSecondsInizio.text = secondsInizioGioco.ToString();
+    }
+    #endregion
 }
+
+
+
+
