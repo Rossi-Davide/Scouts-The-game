@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Tent
   m_EditorClassIdentifier: 
   name: Tent
-  maxLevel: 0
+  description: 
+  icon: {fileID: -7811504096720598664, guid: ab09ab7242fd93841a6ea497a248d73a, type: 3}
+  maxLevel: 1
+  currentLevel: 0
   maxHealth: 64000000
   healthLossInterval: 05000000
   prices: 0a000000
+  priceTypes: 01000000
   clickListenerOffset: {x: 0, y: 0, z: 0}
   pointsGiven: 01000000
+  properties: []

@@ -26,31 +26,28 @@ public class BuildingsManager : MonoBehaviour
 		{
 			var b = playerSq.buildings[i];
 			var button = buttons[i].transform.Find("Button");
-			button.GetComponent<Animator>().Play(b.currentLevelIndex >= b.building.maxLevel && b.gameObject.activeSelf ? "Disabled" : "Enabled");
-			button.transform.Find("Text").GetComponent<TextMeshProUGUI>().color = b.building.prices[b.currentLevelIndex] > GameManager.instance.materialsValue ? Color.red : Color.white;
-			button.parent.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = b.building.prices[b.currentLevelIndex].ToString();
+			button.GetComponent<Animator>().Play(b.building.currentLevel >= b.building.maxLevel ? "Disabled" : "Enabled");
+			button.transform.Find("Text").GetComponent<TextMeshProUGUI>().color = b.building.prices[b.building.currentLevel] > GameManager.instance.materialsValue ? Color.red : Color.white;
+			button.parent.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = b.building.prices[b.building.currentLevel].ToString();
 			button.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.gameObject.activeSelf ? "Migliora" : "Costruisci";
 		}
 	}
 	public void BuildOrImprove(int index)
 	{
 		var b = playerSq.buildings[index];
-		if (b.currentLevelIndex >= b.building.maxLevel && b.gameObject.activeSelf)
+		if (b.building.currentLevel >= b.building.maxLevel)
 		{
 			GameManager.instance.WarningMessage($"La costruzione {b.objectName} è già al livello massimo!");
 			return;
 		}
-		else if (GameManager.instance.materialsValue < b.building.prices[b.currentLevelIndex])
+		else if (GameManager.instance.materialsValue < b.building.prices[b.building.currentLevel])
 		{
 			GameManager.instance.WarningMessage("Non hai abbastanza materiali!");
 			return;
 		}
-		else if (b.gameObject.activeSelf)
-		{
-			b.currentLevelIndex++;
-		}
 		else
 		{
+			b.building.currentLevel++;
 			b.gameObject.SetActive(true);
 			b.instanceOfListener.SetActive(true);
 		}

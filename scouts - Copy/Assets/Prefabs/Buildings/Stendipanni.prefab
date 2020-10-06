@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1211702829405868564
 Transform:
   m_ObjectHideFlags: 0
@@ -102,7 +102,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   healthBarOffset: {x: 0, y: -0.2, z: 0}
   health: 100
-  currentLevelIndex: 0
   building: {fileID: 11400000, guid: 9031e06bb5f172147a22359690c09a05, type: 2}
   instanceOfListener: {fileID: 0}
 --- !u!114 &1211702829405868561

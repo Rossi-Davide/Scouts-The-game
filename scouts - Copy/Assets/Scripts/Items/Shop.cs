@@ -5,11 +5,20 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
 	[HideInInspector]
-	public GameManager.ShopScreen currentScreen;
-	public GameObject itemsPanel, shopPanel, pioneristicaPanel, cucinaPanel, altreCassePanel, negozioIllegalePanel, closeButton;
+	public GameManager.SpecificShopScreen currentSpecificScreen;
+	[HideInInspector]
+	public GameManager.MainShopScreen currentMainScreen;
+	public GameObject shopPanel, pioneristica, cucina, infermieristica, topografia, espressione, negozioIllegale, costruzioni, decorazioni;
 	bool hasEnoughMoney, canBuy;
 	[HideInInspector]
 	public bool negozioIllegaleUnlocked;
+
+
+	TextMeshProUGUI itemName, description, price, amount;
+	public GameObject infoPanel;
+	GameObject materialsLogo, pointsLogo, energyLogo, icon, buyButton;
+
+
 
 	Item selectedItem;
 	#region Singleton
@@ -25,7 +34,8 @@ public class Shop : MonoBehaviour
 	#endregion
 	private void Start()
 	{
-		currentScreen = GameManager.ShopScreen.Pioneristica;
+		currentMainScreen = GameManager.MainShopScreen.Costruzioni;
+		currentSpecificScreen = GameManager.SpecificShopScreen.Pioneristica;
 		buyButton = infoPanel.transform.Find("BuyButton").gameObject;
 		materialsLogo = buyButton.transform.Find("MaterialsLogo").gameObject;
 		energyLogo = buyButton.transform.Find("EnergyLogo").gameObject;
@@ -64,10 +74,6 @@ public class Shop : MonoBehaviour
 		CloseInfoPanel();
 	}
 
-	TextMeshProUGUI itemName, description, price, amount;
-	public GameObject infoPanel;
-	GameObject materialsLogo, pointsLogo, energyLogo, icon, buyButton;
-
 	public void DisplayItemInfo(Item item)
 	{
 		itemName.text = item.name;
@@ -80,7 +86,7 @@ public class Shop : MonoBehaviour
 		materialsLogo.SetActive(item.priceType == GameManager.Counter.Materiali);
 		pointsLogo.SetActive(item.priceType == GameManager.Counter.Punti);
 		selectedItem = item;
-		if (GameManager.instance.CheckCounterValue(item.priceType) < item.price)
+		if (GameManager.instance.GetCounterValue(item.priceType) < item.price)
 			hasEnoughMoney = false;
 		else
 			hasEnoughMoney = true;
@@ -102,27 +108,51 @@ public class Shop : MonoBehaviour
 	public void ToggleShop()
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-		itemsPanel.SetActive(!itemsPanel.activeSelf);
 		shopPanel.SetActive(!shopPanel.activeSelf);
+		currentMainScreen = GameManager.MainShopScreen.Costruzioni;
+		currentSpecificScreen = GameManager.SpecificShopScreen.Costruzioni;
 		Camera.main.GetComponent<PanZoom>().enabled = shopPanel.activeSelf;
-		pioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Pioneristica);
-		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);
-		altreCassePanel.SetActive(currentScreen == GameManager.ShopScreen.Infermieristica || currentScreen == GameManager.ShopScreen.Topografia || currentScreen == GameManager.ShopScreen.Espressione);
-		negozioIllegalePanel.SetActive(currentScreen == GameManager.ShopScreen.NegozioIllegale);
-		closeButton.SetActive(!closeButton.activeSelf);
+		SetActivePanels();
 	}
 
-	public void ChangePanel(int n)
+	public bool ChangeSpecificScreen(int n)
 	{
-		if (!negozioIllegaleUnlocked && (GameManager.ShopScreen)n == GameManager.ShopScreen.NegozioIllegale)
+		if (!negozioIllegaleUnlocked && (GameManager.SpecificShopScreen)n == GameManager.SpecificShopScreen.NegozioIllegale)
 		{
 			GameManager.instance.WarningMessage("Per sbloccare il negozio illegale devi prima trovare la cassa del furfante!");
-			return;
+			return false;
 		}
-		currentScreen = (GameManager.ShopScreen)n;
-		pioneristicaPanel.SetActive(currentScreen == GameManager.ShopScreen.Pioneristica);
-		cucinaPanel.SetActive(currentScreen == GameManager.ShopScreen.Cucina);
-		altreCassePanel.SetActive(currentScreen == GameManager.ShopScreen.Infermieristica || currentScreen == GameManager.ShopScreen.Topografia || currentScreen == GameManager.ShopScreen.Espressione);
-		negozioIllegalePanel.SetActive(currentScreen == GameManager.ShopScreen.NegozioIllegale);
+		currentSpecificScreen = (GameManager.SpecificShopScreen)n;
+		SetActivePanels();
+		return true;
 	}
+
+	public void ChangeMainScreen(int n)
+	{
+		currentMainScreen = (GameManager.MainShopScreen)n;
+		if (currentMainScreen == GameManager.MainShopScreen.Costruzioni)
+		{
+			currentSpecificScreen = GameManager.SpecificShopScreen.Costruzioni;
+		}
+		else if (currentMainScreen == GameManager.MainShopScreen.Item)
+		{
+			currentSpecificScreen = GameManager.SpecificShopScreen.Pioneristica;
+		}
+		SetActivePanels();
+	}
+
+
+	void SetActivePanels()
+	{
+		pioneristica.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Pioneristica);
+		cucina.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Cucina);
+		topografia.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Topografia);
+		infermieristica.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Infermieristica);
+		espressione.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Espressione);
+		negozioIllegale.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.NegozioIllegale);
+		costruzioni.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Costruzioni);
+		decorazioni.SetActive(currentSpecificScreen == GameManager.SpecificShopScreen.Decorazioni);
+	}
+
+
 }

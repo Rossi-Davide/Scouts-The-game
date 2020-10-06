@@ -45,7 +45,7 @@ public class SaveSystem : MonoBehaviour
 
 	CurrentPLayerValues GetPlayerValues()
 	{
-		var it = Shop.instance.itemsPanel.GetComponentsInChildren<ShopItem>();
+		var it = Shop.instance.shopPanel.GetComponentsInChildren<ShopItem>();
 		var qt = QuestManager.instance.quests;
 		var items = new Item[it.Length];
 		var inventory = InventoryManager.instance.slots;
@@ -132,7 +132,7 @@ public class CurrentGameManagerValues
 	public int currentHour;
 	public int currentMinute;
 	
-
+	//all items and all actions
 }
 public class CurrentAppSettings
 {

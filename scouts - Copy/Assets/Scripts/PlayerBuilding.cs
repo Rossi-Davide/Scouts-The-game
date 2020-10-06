@@ -5,10 +5,14 @@
 public class PlayerBuilding : ScriptableObject
 {
     public new string name;
-    public int maxLevel; //index, not normal number
+    public string description;
+    public Sprite icon;
+    public int maxLevel;
+    public int currentLevel;
     public int[] maxHealth;
     public int[] healthLossInterval;
     public int[] prices; //a price for each level
+    public GameManager.Counter[] priceTypes;
     public Vector3 clickListenerOffset;
     public int[] pointsGiven; //different points given for each level
 

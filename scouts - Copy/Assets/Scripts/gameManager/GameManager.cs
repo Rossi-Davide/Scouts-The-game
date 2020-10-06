@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
 		return newString.ToString();
 	}
 
-	public int CheckCounterValue(Counter counter)
+	public int GetCounterValue(Counter counter)
 	{
 		switch (counter)
 		{
@@ -243,16 +243,23 @@ public class GameManager : MonoBehaviour
 		Energia,
 		Punti
 	}
-	public enum ShopScreen
+	public enum SpecificShopScreen
 	{
-		None,
 		Pioneristica,
 		Cucina,
 		Infermieristica,
 		Topografia,
 		Espressione,
 		NegozioIllegale,
+		Costruzioni,
+		Decorazioni,
 	}
+	public enum MainShopScreen
+	{
+		Costruzioni,
+		Item,
+	}
+
 	#endregion
 	#region Spawn stuff
 	public GameObject[] actionButtons;

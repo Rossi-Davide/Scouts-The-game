@@ -4,50 +4,50 @@ using UnityEngine;
 public class ShopTabs : MonoBehaviour
 {
 	[HideInInspector]
-	public int selectedScreen;
-	Animator[] animators;
-	ShopItem[] items;
+	public int selectedSpecificScreen, selectedMainScreen;
+	public ShopTab[] specificTabs; //8 long
+	public Animator[] mainTabs;
 
 
-	private void OnEnable()
+	public void OnEnable()
 	{
-		selectedScreen = (int)Shop.instance.currentScreen;
-		animators = transform.GetComponentsInChildren<Animator>();
-		for (int i = 1; i <= animators.Length; i++)
-		{
-			var a = animators[i - 1];
-			if (i == selectedScreen)
-				a.Play("Open");
-			a.transform.Find("Screen").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(((GameManager.ShopScreen)i).ToString());
-		}
-		items = transform.parent.Find("Mask/Items").GetComponentsInChildren<ShopItem>(true);
-		RefreshItems(items);
+		selectedSpecificScreen = (int)Shop.instance.currentSpecificScreen;
+		selectedMainScreen = (int)Shop.instance.currentMainScreen;
+		SetActiveTabs();
 	}
 
-	public void OnClick(int tabNum)
+	public void ChangeSpecificScreen(int tabNum)
 	{
-		selectedScreen = tabNum;
-		foreach (var a in animators)
+		if (Shop.instance.ChangeSpecificScreen(tabNum))
 		{
-			if (a.gameObject.name == "Tab" + selectedScreen)
-			{
-				a.Play("Open");
-			}
+			selectedSpecificScreen = tabNum;
+			SetActiveTabs();
+		}
+	}
+
+	public void ChangeMainScreen(int tabNum)
+	{
+		selectedMainScreen = tabNum;
+		Shop.instance.ChangeMainScreen(selectedMainScreen);
+		SetActiveTabs();
+	}
+
+
+
+	public void SetActiveTabs()
+	{
+		for (int t = 0; t < mainTabs.Length; t++)
+		{
+			if (t == selectedMainScreen)
+				mainTabs[t].Play("Green_Enabled");
 			else
-			{
-				a.Play("Close");
-			}
+				mainTabs[t].Play("Gray_Disabled");
 		}
-		Shop.instance.ChangePanel(selectedScreen);
-		RefreshItems(items);
-		
-	}
-
-	void RefreshItems(ShopItem[] items)
-	{
-		foreach (var i in items)
+		foreach (var a in specificTabs)
 		{
-			i.EnableOrDisable();
+			a.animator.gameObject.SetActive((int)a.mainScreen == selectedMainScreen);
+			if (a.animator.gameObject.activeSelf) { a.animator.Play((int)a.specificScreen == selectedSpecificScreen ? "Enabled" : "Disabled"); }
+			a.animator.transform.Find("Screen").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.specificScreen.ToString());
 		}
 	}
 }

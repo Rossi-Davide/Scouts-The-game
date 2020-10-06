@@ -8,8 +8,8 @@ public class Item : ScriptableObject
 	public Sprite icon;
 
 	[Header("Item and shop")]
-	public Type type;
-	public GameManager.ShopScreen shopScreen;
+	public ItemType type;
+	public GameManager.SpecificShopScreen shopScreen;
 	public int currentAmount;
 	public int maxAmount;
 	public Item[] neededItems;
@@ -26,9 +26,9 @@ public class Item : ScriptableObject
 	public PlayerAction.ActionParams modifiedParameter;
 	public int newValue;
 	[Header("ShopScreen")]
-	public GameManager.ShopScreen screenUnlocked;
+	public GameManager.SpecificShopScreen screenUnlocked;
 
-	public enum Type
+	public enum ItemType
 	{
 		Oggetto,
 	}

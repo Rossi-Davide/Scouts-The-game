@@ -9,7 +9,7 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 	[HideInInspector]
 	public Vector3 healthBarOffset = new Vector3(0, -0.2f, 0);
 	[HideInInspector]
-	public int health, currentLevelIndex;
+	public int health;
 	protected bool isSafe, isDestroyed;
 	GameObject buttonCanvas;
 	public PlayerBuilding building;
@@ -18,17 +18,17 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 	public GameObject instanceOfListener;
 	protected override void Start()
 	{
-		objectName = $"{building.name} (Livello {currentLevelIndex + 1})";
+		objectName = $"{building.name} (Livello {building.currentLevel})";
 		healthBar = Instantiate(wpCanvas.transform.Find("HealthBar").gameObject, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
 		healthBar.transform.SetParent(wpCanvas.transform, false);
-		health = building.maxHealth[currentLevelIndex];
+		health = building.maxHealth[building.currentLevel - 1];
 		buttonCanvas = GameManager.instance.buttonCanvas;
 		instanceOfListener = Instantiate(clickListener.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
 		instanceOfListener.transform.position = transform.position;
 		instanceOfListener.GetComponent<Button>().onClick.AddListener(OnClick);
-		healthBar.GetComponent<Slider>().maxValue = building.maxHealth[currentLevelIndex];
+		healthBar.GetComponent<Slider>().maxValue = building.maxHealth[building.currentLevel - 1];
 		healthBar.GetComponent<Slider>().value = health;
-		InvokeRepeating("LoseHealthWhenRaining", 0f, building.healthLossInterval[currentLevelIndex]);
+		InvokeRepeating("LoseHealthWhenRaining", 0f, building.healthLossInterval[building.currentLevel - 1]);
 		GameManager.instance.OnRain += RefreshIsSafe;
 		base.Start();
 	}
@@ -114,7 +114,7 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 	{
 		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
 		isDestroyed = false;
-		health = building.maxHealth[currentLevelIndex];
+		health = building.maxHealth[building.currentLevel - 1];
 		healthBar.GetComponent<Slider>().value = health;
 		healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
 		GetComponent<Animator>().Play(objectName + 2);
