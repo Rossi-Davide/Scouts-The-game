@@ -27,7 +27,7 @@ public class NascondinoEnemyCollisionDetection : MonoBehaviour
         {
             //Debug.Log("hai perso");
 
-            manager.Idiota(); 
+            manager.SconfittaVoid(); 
                 
         }
        

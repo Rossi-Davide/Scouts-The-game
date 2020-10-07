@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class nascondinoManager : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class nascondinoManager : MonoBehaviour
     bool countdownStart = false, countdownStartGrande=false, countdownGiocoInSe=false;
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
     Transform spawnPoint;
-    public Transform bottoneTornaAlGioco;
+    public GameObject bottoneTornaAlGioco;
     [HideInInspector]
     public bool aumentoDifficoltà=false;
     GameObject[] enemies;
     int seconds, secondsInizioGioco;
-
+    bool vittoriaSingletone = false;
 
 
 	#region Utility functions
@@ -113,6 +114,7 @@ public class nascondinoManager : MonoBehaviour
     #region Animazioni
     public IEnumerator Vittoria()
     {
+        vittoriaSingletone = true;
         countdownGiocoInSe = false;
         /*Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -134,8 +136,10 @@ public class nascondinoManager : MonoBehaviour
         victoryTextAn.SetBool("vinto", true);
         yield return new WaitForSeconds(0.5f);
         Animator scoreAn = score.GetComponent<Animator>();
-
-
+        scoreAn.SetBool("vinto", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
+        bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
         yield return null;
 
     }
@@ -165,17 +169,24 @@ public class nascondinoManager : MonoBehaviour
        
         pannelloTimer.SetBool("perditaGioco", true);
         Timer.SetBool("perditaGioco", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
+        bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
 
-        
         yield return null;
     }
 
 
 
-    public void Idiota() //non sono riuscito a lanciare la coroutine sconfitta da un altro script, perciò sono passato da un void
+    public void SconfittaVoid() //non sono riuscito a lanciare la coroutine sconfitta da un altro script, perciò sono passato da un void
     {
         //Debug.Log("sei un idiota");
-        StartCoroutine(Sconfitta());
+
+        if (vittoriaSingletone == false)
+        {
+            StartCoroutine(Sconfitta());
+
+        }
     }
 
     IEnumerator Iniziale()
@@ -211,6 +222,12 @@ public class nascondinoManager : MonoBehaviour
         countdownSecondsInizio.text = secondsInizioGioco.ToString();
     }
     #endregion
+
+
+    public void TornaAlGioco()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
 
 
