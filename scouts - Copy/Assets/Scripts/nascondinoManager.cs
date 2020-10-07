@@ -11,7 +11,7 @@ public class nascondinoManager : MonoBehaviour
     bool countdownStart = false, countdownStartGrande=false, countdownGiocoInSe=false;
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
     Transform spawnPoint;
-    public GameObject bottoneTornaAlGioco;
+    public GameObject bottoneTornaAlGioco,sconfitta;
     [HideInInspector]
     public bool aumentoDifficoltà=false;
     GameObject[] enemies;
@@ -172,7 +172,9 @@ public class nascondinoManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
         bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
-
+        yield return new WaitForSeconds(0.5f);
+        Animator sconfittaAn = sconfitta.GetComponent<Animator>();
+        sconfittaAn.SetBool("fineGioco", true);
         yield return null;
     }
 

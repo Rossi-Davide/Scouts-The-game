@@ -3564,7 +3564,7 @@ GameObject:
   - component: {fileID: -7721151136830924875}
   - component: {fileID: -6528351633525683464}
   m_Layer: 14
-  m_Name: 'leftRightUp room '
+  m_Name: leftRightUp room 3
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3599,7 +3599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7493f70b0a433c44a41134cbee5afab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
 --- !u!61 &-6528351633525683464
 BoxCollider2D:
   m_ObjectHideFlags: 0

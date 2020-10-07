@@ -19,6 +19,6 @@ public class followPlayerLabirinto : MonoBehaviour
     {
       
         transform.position = Vector3.Lerp(transform.position, p.position+camOff, camSpeed*Time.deltaTime);
-        Debug.LogWarning("lanciato");
+
     }
 }
