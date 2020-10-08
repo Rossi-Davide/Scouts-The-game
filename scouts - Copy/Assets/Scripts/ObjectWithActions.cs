@@ -23,8 +23,14 @@ public abstract class ObjectWithActions : InGameObject
 		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
 		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.GetComponent<TextMeshProUGUI>().text = objectName;
-		if (clickListener != null && !isInstantiating)
+		if (clickListener != null)
+		{
+			if (isInstantiating)
+			{
+				clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, wpCanvas.transform);
+			}
 			clickListener.onClick.AddListener(OnClick);
+		}
 		base.Start();
     }
 

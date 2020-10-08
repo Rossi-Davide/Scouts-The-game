@@ -11,9 +11,10 @@ public class ShopItem : ShopObjectBase
 	protected override void Awake()
 	{
 		base.Awake();
+		type = ShopObjectType.Item;
+		typeText.text = type.ToString();
 		infoText.GetComponent<TextMeshProUGUI>().text = item.description + " " + item.abilityDescription;
 		objectName.text = item.name;
-		type.text = type.ToString();
 		price.text = item.price.ToString();
 		icon.GetComponent<Image>().sprite = item.icon;
 		energyLogo.SetActive(item.priceType == GameManager.Counter.Energia);
@@ -37,8 +38,8 @@ public class ShopItem : ShopObjectBase
 
 	public override void ToggleInfo()
 	{
-		amount.gameObject.SetActive(!showingInfo);
 		base.ToggleInfo();
+		amount.gameObject.SetActive(!showingInfo);
 	}
 
 	public override void Select()

@@ -4,12 +4,14 @@ using UnityEngine;
 public class ShopObjectBase : MonoBehaviour
 {
     protected bool showingInfo;
-    protected TextMeshProUGUI objectName, type, price;
+	protected ShopObjectType type;
+    protected TextMeshProUGUI objectName, typeText, price;
     protected GameObject energyLogo, materialsLogo, pointsLogo, infoText, icon, infoButton;
 
 	protected virtual void Awake()
 	{
 		InitializeVariables();
+		RefreshInfo();
 	}
 
     public virtual void RefreshInfo()
@@ -25,7 +27,7 @@ public class ShopObjectBase : MonoBehaviour
 		infoText = transform.Find("Info").gameObject;
 		icon = transform.Find("ItemLogo").gameObject;
 		objectName = transform.Find("Name").GetComponent<TextMeshProUGUI>();
-		type = transform.Find("Type").GetComponent<TextMeshProUGUI>();
+		typeText = transform.Find("Type").GetComponent<TextMeshProUGUI>();
 		price = transform.Find("BuyButton/Price").GetComponent<TextMeshProUGUI>();
 		infoButton = transform.Find("InfoButton").gameObject;
 	}

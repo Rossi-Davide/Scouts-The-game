@@ -4,24 +4,11 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-	public GameObject ovCanvas;
-	public GameObject itemInfoBox;
-	TextMeshProUGUI itemName, description, type;
-	GameObject useButton;
 	public Image icon;
-	bool selected;
 	[HideInInspector]
 	public Item item;
 	public TextMeshProUGUI amountText;
 	public int amount;
-
-	private void Start()
-	{
-		itemName = itemInfoBox.transform.Find("Name").GetComponent<TextMeshProUGUI>();
-		description = itemInfoBox.transform.Find("Description").GetComponent<TextMeshProUGUI>();
-		type = itemInfoBox.transform.Find("Type").GetComponent<TextMeshProUGUI>();
-		useButton = itemInfoBox.transform.Find("Button").gameObject;
-	}
 
 	public void ResetSlot()
 	{
@@ -65,47 +52,19 @@ public class InventorySlot : MonoBehaviour
 	}
 	public void OnClick()
 	{
-		selected = !selected;
-		itemInfoBox.SetActive(selected);
-		if (item != null)
-		{
-			itemName.text = item.name;
-			description.text = item.description + " " + item.abilityDescription;
-			type.text = item.type.ToString();
-			useButton.SetActive(item.periodicUseInterval == GameManager.PeriodicActionInterval.Once);
-			useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Usa";
-		}
-	}
-	public void Use()
-	{
-		RemoveItem();
-		item.DoAction();
+		InventoryManager.instance.SelectItem(this);
 	}
 	public void RefreshInventoryAmount()
 	{
 		amountText.text = amount.ToString();
 		amountText.gameObject.SetActive(amount > 1);
 	}
-	int touchRadius = 40;
+
+
 	public InventoryDragAndDrop clone;
-	GameObject c;
-	private void Update()
-	{
-		if (Input.touchCount >= 1)
-		{
-			Touch t = Input.GetTouch(0);
-			if (t.phase == TouchPhase.Moved && !InventoryManager.dragging && Vector2.Distance(t.position, transform.position) < touchRadius && item != null)
-			{
-				amountText.text = (amount- 1).ToString();
-				amountText.gameObject.SetActive(amount - 1 > 1);
-				icon.enabled = amount - 1 >= 1;
-				c = Instantiate(clone.gameObject, t.position, Quaternion.identity, ovCanvas.transform);
-				c.GetComponent<Image>().sprite = item.icon;
-				c.GetComponent<InventoryDragAndDrop>().parent = this;
-				InventoryManager.dragging = true;
-			}
-		}
-	}
+	[HideInInspector]
+	public GameObject c;
+	
 
 	public void EndOfDrag()
 	{

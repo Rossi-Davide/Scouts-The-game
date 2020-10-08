@@ -1,11 +1,20 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
 	private const int maxInventoryItems = 8;
 	public static bool dragging;
+	public GameObject ovCanvas;
 	public InventorySlot[] slots;
+	int touchRadius = 60;
+
+	public GameObject itemInfoBox;
+	TextMeshProUGUI itemName, description, type;
+	GameObject useButton;
+
+	InventorySlot selectedItem, draggingSlot;
 
 	#region Singleton
 	public static InventoryManager instance;
@@ -96,11 +105,88 @@ public class InventoryManager : MonoBehaviour
 			s.RefreshInventoryAmount();
 		}
 	}
-	
+
 	#endregion
 	void Start()
 	{
+		itemName = itemInfoBox.transform.Find("Name").GetComponent<TextMeshProUGUI>();
+		description = itemInfoBox.transform.Find("Description").GetComponent<TextMeshProUGUI>();
+		type = itemInfoBox.transform.Find("Type").GetComponent<TextMeshProUGUI>();
+		useButton = itemInfoBox.transform.Find("Button").gameObject;
 		if (slots.Length != maxInventoryItems)
 			Debug.LogWarning("Inventory contains a different number of slots from the required one.");
+	}
+
+	public void SelectItem(InventorySlot slot)
+	{
+		if (slot != null)
+		{
+			if (slot == selectedItem)
+			{
+				selectedItem = null;
+				itemInfoBox.SetActive(false);
+			}
+			else
+			{
+				selectedItem = slot;
+				itemName.text = slot.item.name;
+				description.text = slot.item.description + " " + slot.item.abilityDescription;
+				type.text = slot.item.type.ToString();
+				useButton.SetActive(slot.item.periodicUseInterval == GameManager.PeriodicActionInterval.Once);
+				useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Usa";
+				itemInfoBox.SetActive(true);
+			}
+		}
+		else
+		{
+			selectedItem = null;
+			itemInfoBox.SetActive(false);
+		}
+	}
+
+	public void UseItem()
+	{
+		selectedItem.item.currentAmount--;
+		selectedItem.item.DoAction();
+		selectedItem.RemoveItem();
+		SelectItem(null);
+	}
+
+
+	private void Update()
+	{
+		if (Input.touchCount >= 1)
+		{
+			Touch t = Input.GetTouch(0);
+			draggingSlot = CheckIfNearASlot(t);
+			if (t.phase == TouchPhase.Moved && !dragging && draggingSlot != null && draggingSlot.item != null)
+			{
+				draggingSlot.amountText.text = (draggingSlot.amount - 1).ToString();
+				draggingSlot.amountText.gameObject.SetActive(draggingSlot.amount - 1 > 1);
+				draggingSlot.icon.enabled = draggingSlot.amount - 1 >= 1;
+				draggingSlot.c = Instantiate(draggingSlot.clone.gameObject, t.position, Quaternion.identity, ovCanvas.transform);
+				draggingSlot.c.GetComponent<Image>().sprite = draggingSlot.item.icon;
+				draggingSlot.c.GetComponent<InventoryDragAndDrop>().parent = draggingSlot;
+				dragging = true;
+			}
+		}
+	}
+
+
+
+
+
+
+	public InventorySlot CheckIfNearASlot(Touch t)
+	{
+		var slots = FindObjectsOfType<InventorySlot>();
+		foreach (var s in slots)
+		{
+			if (Vector2.Distance(t.position, s.transform.position) <= touchRadius)
+			{
+				return s;
+			}
+		}
+		return null;
 	}
 }

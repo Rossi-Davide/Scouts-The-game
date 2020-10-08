@@ -47,8 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8295524cf79df4cb064b9e6562f58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cespuglio
-  buttonsText: {fileID: 0}
+  objectName: 
   buttons:
   - buttonText: Fai legna
     buttonNum: 1
@@ -58,6 +57,7 @@ MonoBehaviour:
     priceOrPrizeType: 1
     timeLeft: 0
     isWaiting: 0
+    canDo: 0
     generalAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
   maxDistanceFromPlayer: 1.5
   wpCanvas: {fileID: 0}
@@ -65,9 +65,9 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0.15, z: 0}
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
-  clickListener: {fileID: 0}
-  thisObject: 19
-  button: {fileID: 4621947097978961903, guid: 41d512e912e499a4387e33cfa3ecd7ea, type: 3}
+  isInstantiating: 0
+  clickListener: {fileID: 4621947097978961903, guid: 41d512e912e499a4387e33cfa3ecd7ea,
+    type: 3}
 --- !u!95 &1323579708
 Animator:
   serializedVersion: 3

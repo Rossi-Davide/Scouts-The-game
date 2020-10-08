@@ -11,9 +11,10 @@ public class ShopBuilding : ShopObjectBase
 	protected override void Awake()
 	{
 		base.Awake();
+		type = ShopObjectType.Costruzione;
+		typeText.text = type.ToString();
 		infoText.GetComponent<TextMeshProUGUI>().text = building.description;
 		objectName.text = building.name;
-		type.text = type.ToString();
 		price.text = building.prices[building.currentLevel].ToString();
 		icon.GetComponent<Image>().sprite = building.icon;
 		RefreshInfo();
@@ -21,16 +22,34 @@ public class ShopBuilding : ShopObjectBase
 	protected override void OnEnable()
 	{
 		base.OnEnable();
-		energyLogo.SetActive(building.priceTypes[building.currentLevel] == GameManager.Counter.Energia);
-		materialsLogo.SetActive(building.priceTypes[building.currentLevel] == GameManager.Counter.Materiali);
-		pointsLogo.SetActive(building.priceTypes[building.currentLevel] == GameManager.Counter.Punti);
 	}
 	public override void RefreshInfo()
 	{
-		level.text = "Level " + building.currentLevel + "/" + building.maxLevel;
-		price.transform.parent.GetComponent<Animator>().Play(building.currentLevel < building.maxLevel ? "Enabled" : "Disabled");
-		price.color = GameManager.instance.GetCounterValue(building.priceTypes[building.currentLevel]) >= building.prices[building.currentLevel] ? Color.white : Color.red;
+		level.text = "Livello " + building.currentLevel + "/" + building.maxLevel;
+		GameManager.Counter pt = GameManager.Counter.None;
+		if (building.currentLevel < building.maxLevel)
+		{
+			if (GameManager.HasItemsToBuild(building, building.currentLevel))
+			{
+				price.transform.parent.GetComponent<Animator>().Play("Enabled");
+				price.color = GameManager.instance.GetCounterValue(building.priceTypes[building.currentLevel]) >= building.prices[building.currentLevel] ? Color.white : Color.red;
+				pt = building.priceTypes[building.currentLevel];
+			}
+			else
+			{
+				price.transform.parent.GetComponent<Animator>().Play("Disabled");
+				pt = building.priceTypes[building.currentLevel];
+			}
+		}
+		else
+		{
+			price.transform.parent.GetComponent<Animator>().Play("Disabled");
+			pt = building.priceTypes[building.currentLevel - 1];
+		}
 		text.text = building.currentLevel > 0 ? "Migliora" : "Costruisci";
+		energyLogo.SetActive(pt == GameManager.Counter.Energia);
+		materialsLogo.SetActive(pt == GameManager.Counter.Materiali);
+		pointsLogo.SetActive(pt == GameManager.Counter.Punti);
 	}
 
 	protected override void InitializeVariables()
@@ -42,13 +61,13 @@ public class ShopBuilding : ShopObjectBase
 
 	public override void ToggleInfo()
 	{
+		base.ToggleInfo();
 		level.gameObject.SetActive(!showingInfo);
 		text.gameObject.SetActive(!showingInfo);
-		base.ToggleInfo();
 	}
 
 	public override void Select()
 	{
-		//Shop.instance.DisplayItemInfo(building);
+		Shop.instance.DisplayBuildingInfo(building);
 	}
 }

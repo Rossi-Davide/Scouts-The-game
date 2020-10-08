@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Linq;
-
+using System.Collections;
+using System.Diagnostics;
 
 public abstract class InGameObject : MonoBehaviour
 {
@@ -24,7 +25,15 @@ public abstract class InGameObject : MonoBehaviour
 		} //change price or prize string in buttons
 		buttonsText = GameManager.instance.buttonsText;
 	}
-
+	void OnEnable()
+	{
+		StartCoroutine(ObjectEnabled());
+	}
+	IEnumerator ObjectEnabled()
+	{
+		yield return new WaitForEndOfFrame();
+		GameManager.instance.BuildingChanged();
+	}
 	void CalculatePriceOrPrize(ActionButton b)
 	{
 		string s = "";

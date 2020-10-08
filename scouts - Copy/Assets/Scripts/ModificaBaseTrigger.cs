@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ModificaBaseTrigger : MonoBehaviour
 {
@@ -12,8 +13,22 @@ public class ModificaBaseTrigger : MonoBehaviour
 	void Start()
 	{
 		cam = Camera.main;
-		buildings = FindObjectsOfType<MoveBuildings>();
+		StartCoroutine(GetSq());
 		player = Player.instance.transform;
+	}
+	IEnumerator GetSq()
+	{
+		var frame = new WaitForEndOfFrame();
+		yield return frame;
+		yield return frame;
+		yield return frame;
+
+		PlayerBuildingBase[] bArray = SquadrigliaManager.instance.GetPlayerSq().buildings;
+		buildings = new MoveBuildings[bArray.Length];
+		for (int b = 0; b < buildings.Length; b++)
+		{
+			buildings[b] = bArray[b].GetComponent<MoveBuildings>();
+		}
 	}
 
 	public void ToggleModificaBase()

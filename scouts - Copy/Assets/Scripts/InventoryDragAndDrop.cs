@@ -4,7 +4,8 @@ public class InventoryDragAndDrop : MonoBehaviour
 {
 	[HideInInspector]
 	public InventorySlot parent;
-	int radius = 50;
+
+
 	void Update()
 	{
 		if (Input.touchCount >= 1)
@@ -16,7 +17,7 @@ public class InventoryDragAndDrop : MonoBehaviour
 			}
 			else if (t.phase == TouchPhase.Ended)
 			{
-				var s = CheckIfNearASlot(t);
+				var s = InventoryManager.instance.CheckIfNearASlot(t);
 				if (s != null)
 				{
 					parent.Drop(s);
@@ -27,18 +28,5 @@ public class InventoryDragAndDrop : MonoBehaviour
 				}
 			}
 		}
-	}
-
-	InventorySlot CheckIfNearASlot(Touch t)
-	{
-		var slots = FindObjectsOfType<InventorySlot>();
-		foreach (var s in slots)
-		{
-			if (s.gameObject.activeSelf && Vector2.Distance(t.position, s.transform.position) <= radius)
-			{
-				return s;
-			}
-		}
-		return null;
 	}
 }

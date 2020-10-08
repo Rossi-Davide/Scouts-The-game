@@ -272,8 +272,7 @@ public class SquadrigliaManager : MonoBehaviour
 			sq.angolo.clickListener.gameObject.SetActive(sq.baseSq != Player.instance.squadriglia);
 			for (int i = 0; i < sq.buildings.Length; i++)
 			{
-				sq.buildings[i].gameObject.SetActive(false);
-				DisableComponents(sq.buildings[i], true);
+				DisableComponents(sq.buildings[i], sq.baseSq != Player.instance.squadriglia);
 			}
 			sq.tenda = tents[s];
 			sq.nomi = new string[5];

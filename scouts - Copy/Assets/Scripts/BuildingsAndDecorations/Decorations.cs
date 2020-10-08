@@ -1,19 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using System;
 
 public class Decorations : ObjectWithActions
 {
-	public Button button;
-	Button btn;
-	protected override void Start()
-	{
-		base.Start();
-		btn = Instantiate(button, transform.position, Quaternion.identity, wpCanvas.transform);
-		btn.onClick.AddListener(OnClick);
-	}
-
 	void PlayerHandPunch()
 	{
 		Player.instance.enabled = false;
@@ -37,7 +26,7 @@ public class Decorations : ObjectWithActions
 		GameManager.instance.spawnedDecorations.Remove(gameObject);
 		Deselect();
 		Destroy(gameObject);
-		Destroy(btn.gameObject);
+		Destroy(clickListener.gameObject);
 	}
 
 	protected override bool GetConditionValue(ConditionType t)

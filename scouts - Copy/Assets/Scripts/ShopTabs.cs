@@ -8,34 +8,37 @@ public class ShopTabs : MonoBehaviour
 	public ShopTab[] specificTabs; //8 long
 	public Animator[] mainTabs;
 
+	#region Singleton
+	public static ShopTabs instance;
+	private void Awake()
+	{
+		if (instance != null)
+			throw new System.Exception("ShopTabs non è un singleton!");
+		instance = this;
+	}
+	#endregion
 
 	public void OnEnable()
 	{
-		selectedSpecificScreen = (int)Shop.instance.currentSpecificScreen;
-		selectedMainScreen = (int)Shop.instance.currentMainScreen;
 		SetActiveTabs();
 	}
 
 	public void ChangeSpecificScreen(int tabNum)
 	{
-		if (Shop.instance.ChangeSpecificScreen(tabNum))
-		{
-			selectedSpecificScreen = tabNum;
-			SetActiveTabs();
-		}
+		Shop.instance.ChangeSpecificScreen(tabNum);
 	}
 
 	public void ChangeMainScreen(int tabNum)
 	{
-		selectedMainScreen = tabNum;
-		Shop.instance.ChangeMainScreen(selectedMainScreen);
-		SetActiveTabs();
+		Shop.instance.ChangeMainScreen(tabNum);
 	}
 
 
 
 	public void SetActiveTabs()
 	{
+		selectedSpecificScreen = (int)Shop.instance.currentSpecificScreen;
+		selectedMainScreen = (int)Shop.instance.currentMainScreen;
 		for (int t = 0; t < mainTabs.Length; t++)
 		{
 			if (t == selectedMainScreen)

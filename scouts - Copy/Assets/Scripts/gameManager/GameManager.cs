@@ -33,8 +33,12 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnRain;
 	public event System.Action<PlayerAction> OnActionDo;
 	public event System.Action OnInventoryChange;
+	public event System.Action OnBuildingsChange;
 
-
+	public void BuildingChanged()
+	{
+		OnBuildingsChange?.Invoke();
+	}
 	public void ActionDone(PlayerAction a)
 	{
 		OnActionDo?.Invoke(a);
@@ -184,7 +188,7 @@ public class GameManager : MonoBehaviour
 
 	public bool CanDoAction(PlayerAction a)
 	{
-		bool canDoAction = false;
+		bool canDoAction = true;
 		foreach (Item i in a.neededItems)
 		{
 			canDoAction = i.currentAmount >= 1;
@@ -192,7 +196,15 @@ public class GameManager : MonoBehaviour
 		return canDoAction;
 	}
 
-
+	public static bool HasItemsToBuild(PlayerBuilding b, int index)
+	{
+		bool canBuild = true;
+		foreach (var i in b.itemsNeeded[index].items)
+		{
+			canBuild = i.currentAmount >= 1;
+		}
+		return canBuild;
+	}
 
 
 	public static IEnumerator Wait(float time, System.Action onEnd)
@@ -461,7 +473,7 @@ public class GameManager : MonoBehaviour
 		isDay = true;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
-		inGameObjects = FindObjectsOfType<InGameObject>();
+		OnBuildingsChange += RefreshInGameObjs;
 		SpawnDecorations();
 		InvokeRepeating("SpawnDecorations", 30, Random.Range(45, 75));
 		InvokeRepeating("PeriodicItemActionSlow", 60, 60);
@@ -480,6 +492,10 @@ public class GameManager : MonoBehaviour
 			StartCoroutine(StartCounter());
 			RefreshCounterText();
 		}
+	}
+	void RefreshInGameObjs()
+	{
+		inGameObjects = FindObjectsOfType<InGameObject>();
 	}
 
 	private void Update()

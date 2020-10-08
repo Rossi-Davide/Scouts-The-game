@@ -9,6 +9,7 @@ public class PlayerBuilding : ScriptableObject
     public Sprite icon;
     public int maxLevel;
     public int currentLevel;
+    public ItemsNeeded[] itemsNeeded;
     public int[] maxHealth;
     public int[] healthLossInterval;
     public int[] prices; //a price for each level
@@ -36,4 +37,10 @@ public enum ObjectProperty
     changeEnergyTimeBeforeDrop,
     changePointsTimeBeforeIncrease,
     changeMaterialsTimeBeforeIncrease,
+}
+
+[System.Serializable]
+public class ItemsNeeded
+{
+    public Item[] items;
 }

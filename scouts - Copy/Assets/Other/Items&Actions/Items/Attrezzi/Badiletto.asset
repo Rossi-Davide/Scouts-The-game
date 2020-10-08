@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Scava il fossetto davanti alla tenda.
   abilityDescription: 
   icon: {fileID: -2230846602583954849, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
-  type: 1
+  type: 0
   shopScreen: 2
   currentAmount: 0
   maxAmount: 1
@@ -31,6 +31,3 @@ MonoBehaviour:
   modifiedParameter: 0
   newValue: 0
   screenUnlocked: 0
-  realBuilding: {fileID: 0}
-  timeRequired: 0
-  pointsGiven: 0
