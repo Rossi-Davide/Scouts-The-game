@@ -6,6 +6,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
+	[HideInInspector]
+	public InGameObject[] InGameObjects { get; private set; }
+
 	public int pointsValue, materialsValue, energyValue = 100;
 	public GameObject buttonCanvas;
 
@@ -34,10 +37,15 @@ public class GameManager : MonoBehaviour
 	public event System.Action<PlayerAction> OnActionDo;
 	public event System.Action OnInventoryChange;
 	public event System.Action OnBuildingsChange;
+	public event System.Action OnObjectArrayUpdate;
 
 	public void BuildingChanged()
 	{
 		OnBuildingsChange?.Invoke();
+	}
+	public void ObjectArrayUpdated()
+	{
+		OnObjectArrayUpdate?.Invoke();
 	}
 	public void ActionDone(PlayerAction a)
 	{
@@ -276,7 +284,8 @@ public class GameManager : MonoBehaviour
 	#region Spawn stuff
 	public GameObject[] actionButtons;
 	public TextMeshProUGUI buttonsText;
-	public Canvas wpCanvas;
+	public GameObject wpCanvas;
+	public GameObject healthBarPrefab, loadingBarPrefab, nameTextPrefab;
 
 	public GameObject[] decorations;
 	[HideInInspector]
@@ -495,7 +504,13 @@ public class GameManager : MonoBehaviour
 	}
 	void RefreshInGameObjs()
 	{
-		inGameObjects = FindObjectsOfType<InGameObject>();
+		StartCoroutine(RefreshInGameObjsCoroutine());
+	}
+	IEnumerator RefreshInGameObjsCoroutine()
+	{
+		InGameObjects = FindObjectsOfType<InGameObject>();
+		yield return new WaitForEndOfFrame();
+		ObjectArrayUpdated();
 	}
 
 	private void Update()
@@ -536,11 +551,10 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 	#region Objects
-	InGameObject[] inGameObjects;
 
 	void RefreshWaitToUseObjects()
 	{
-		foreach (var o in inGameObjects)
+		foreach (var o in InGameObjects)
 		{
 			foreach (var b in o.buttons)
 			{

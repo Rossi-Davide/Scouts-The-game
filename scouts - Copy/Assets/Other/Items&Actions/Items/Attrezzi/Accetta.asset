@@ -18,7 +18,7 @@ MonoBehaviour:
   icon: {fileID: 8033092973025764044, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   type: 0
   shopScreen: 2
-  currentAmount: 1
+  currentAmount: 0
   maxAmount: 1
   neededItems: []
   price: 100

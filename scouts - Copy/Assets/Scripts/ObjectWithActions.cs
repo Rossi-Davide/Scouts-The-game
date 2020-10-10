@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public abstract class ObjectWithActions : InGameObject
 {
 	[HideInInspector]
-	public Canvas wpCanvas;
+	public GameObject wpCanvas, buttonCanvas;
 	[HideInInspector]
 	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
 	[HideInInspector]
@@ -19,19 +20,20 @@ public abstract class ObjectWithActions : InGameObject
 
 	protected override void Start()
     {
+		base.Start();
 		wpCanvas = GameManager.instance.wpCanvas;
-		nameText = Instantiate(wpCanvas.transform.Find("Name").gameObject, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
-		loadingBar = Instantiate(wpCanvas.transform.Find("LoadingBar").gameObject, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
+		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform);
+		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.GetComponent<TextMeshProUGUI>().text = objectName;
+		buttonCanvas = GameManager.instance.buttonCanvas;
 		if (clickListener != null)
 		{
 			if (isInstantiating)
 			{
-				clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, wpCanvas.transform);
+				clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
 			}
 			clickListener.onClick.AddListener(OnClick);
 		}
-		base.Start();
     }
 
 	public override void Select()

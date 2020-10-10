@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -110,7 +109,6 @@ public class Shop : MonoBehaviour
 			GameManager.instance.WarningMessage("Non hai tutti gli item richiesti!");
 			return;
 		}
-		BuildingsManager.instance.SetBuildingActive(selectedBuilding);
 		GameManager.instance.ChangeCounter(selectedBuilding.priceTypes[selectedBuilding.currentLevel], -selectedBuilding.prices[selectedBuilding.currentLevel]);
 		selectedBuilding.currentLevel++;
 		var buildings = shopPanel.GetComponentsInChildren<ShopBuilding>();
@@ -118,7 +116,9 @@ public class Shop : MonoBehaviour
 		{
 			b.RefreshInfo();
 		}
+		ModificaBaseTrigger.instance.SetBuildingSlotInfo(selectedBuilding);
 		CloseInfoPanel();
+		ToggleShop();
 	}
 
 
@@ -214,7 +214,7 @@ public class Shop : MonoBehaviour
 		currentMainScreen = GameManager.MainShopScreen.Costruzioni;
 		currentSpecificScreen = GameManager.SpecificShopScreen.Costruzioni;
 		shopPanel.SetActive(!shopPanel.activeSelf);
-		Camera.main.GetComponent<PanZoom>().enabled = shopPanel.activeSelf;
+		Camera.main.GetComponent<PanZoom>().enabled = !shopPanel.activeSelf;
 		SetActivePanels();
 	}
 

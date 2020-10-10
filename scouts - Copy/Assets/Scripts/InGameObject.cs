@@ -3,10 +3,12 @@ using TMPro;
 using System.Linq;
 using System.Collections;
 using System.Diagnostics;
+using System.Globalization;
 
 public abstract class InGameObject : MonoBehaviour
 {
 	public string objectName;
+	protected string displayName;
 	protected TextMeshProUGUI buttonsText;
 	public ActionButton[] buttons;
 	public float maxDistanceFromPlayer;
@@ -24,6 +26,7 @@ public abstract class InGameObject : MonoBehaviour
 			buttons[b].canDo = true;
 		} //change price or prize string in buttons
 		buttonsText = GameManager.instance.buttonsText;
+		displayName = objectName;
 	}
 	void OnEnable()
 	{
@@ -168,7 +171,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		if (ActionButtons.instance.selected == this)
 		{
-			buttonsText.text = objectName;
+			buttonsText.text = displayName;
 			foreach (var b in buttons)
 			{
 				b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(b.isWaiting);

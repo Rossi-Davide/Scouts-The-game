@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: CookBundle
   m_EditorClassIdentifier: 
   objects:
-  - obj: {fileID: 2734726687380624758, guid: 20453396d3f982e42a62bb9b8c65fa10, type: 3}
+  - objectName: Piano Bidoni
+    obj: {fileID: 2734726687380624758, guid: 20453396d3f982e42a62bb9b8c65fa10, type: 3}
     buttonNum: 1
-  - obj: {fileID: 6959011011392827294, guid: d1b34e1d72397554d87c4b9fda96090c, type: 3}
+  - objectName: Refettorio
+    obj: {fileID: 6959011011392827294, guid: d1b34e1d72397554d87c4b9fda96090c, type: 3}
     buttonNum: 1
-  - obj: {fileID: 6900542347143825552, guid: 234a8b8c690781647a35808d570dc661, type: 3}
+  - objectName: Lavaggi
+    obj: {fileID: 6900542347143825552, guid: 234a8b8c690781647a35808d570dc661, type: 3}
     buttonNum: 2
-  nextAction: 1
+  nextAction: 0

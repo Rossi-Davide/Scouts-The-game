@@ -28,13 +28,13 @@ public abstract class BaseAI : InGameObject
 	public event System.Action OnPathCompleted;
 	protected override void Start()
 	{
+		base.Start();
 		instanceOfListener = Instantiate(clickListenerButton.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
 		instanceOfListener.GetComponent<Button>().onClick.AddListener(OnClick);
 		CreateNewPath();
-		base.Start();
 
 		OnPathCreated += PriorityPath;
 		OnPathCompleted += AfterPathCompletion;

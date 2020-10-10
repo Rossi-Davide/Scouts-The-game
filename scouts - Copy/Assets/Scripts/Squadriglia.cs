@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Squadriglia", menuName = "Squadriglia")]
 public class Squadriglia : ScriptableObject
@@ -14,10 +12,10 @@ public class Squadriglia : ScriptableObject
 public class ConcreteSquadriglia
 {
 	public Squadriglia baseSq;
-	public AngoloDiAltraSquadriglia angolo;
+	public Transform angolo;
 	public Transform tenda;
 	[HideInInspector]
-	public PlayerBuildingBase[] buildings;
+	public SpriteRenderer[] buildings;
 	[HideInInspector]
 	public GameManager.Ruolo[] ruoli;
 	[HideInInspector]

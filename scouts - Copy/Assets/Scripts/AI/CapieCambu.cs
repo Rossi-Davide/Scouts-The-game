@@ -15,8 +15,9 @@ public class CapieCambu : BaseAI
 	public Dialogue[] dialoguesArray;
 	int pointsToAdd;
 
-	void Awake()
+	protected override void Start()
 	{
+		base.Start();
 		nextButton = dialoguePanel.transform.Find("Next").gameObject;
 		answer1Button = dialoguePanel.transform.Find("Answer1").gameObject;
 		answer2Button = dialoguePanel.transform.Find("Answer2").gameObject;

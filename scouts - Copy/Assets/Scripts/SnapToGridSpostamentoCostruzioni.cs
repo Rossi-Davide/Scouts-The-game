@@ -2,12 +2,13 @@
 
 public class SnapToGridSpostamentoCostruzioni : MonoBehaviour
 {
+	float grid = 0.8f;
 	[HideInInspector]
-	public float grid = 0.8f;
+	public bool componentEnabled;
 
 	void Update()
 	{
-		if (grid > 0)
+		if (componentEnabled)
 		{
 			float reciprocalGrid = 1f / grid;
 			float x = Mathf.Round(transform.position.x * reciprocalGrid) / reciprocalGrid;

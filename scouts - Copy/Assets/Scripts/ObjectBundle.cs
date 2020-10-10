@@ -3,12 +3,14 @@
 public class ObjectBundle : ScriptableObject
 {
 	public IterableObjects[] objects;
-	[HideInInspector]
+	[Header("DONT MODIFY")]
 	public int nextAction; //index
 }
 [System.Serializable]
 public class IterableObjects
 {
+	public string objectName;
+	[HideInInspector]
 	public InGameObject obj;
 	public int buttonNum;
 }

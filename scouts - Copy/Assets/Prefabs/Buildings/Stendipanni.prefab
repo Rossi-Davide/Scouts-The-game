@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1211702829405868564}
   - component: {fileID: 1211702829405868559}
-  - component: {fileID: 1211702829405868558}
   - component: {fileID: 1211702829405868561}
   - component: {fileID: 1211702829405868560}
   - component: {fileID: 1211702829405868563}
   - component: {fileID: 1211702829405868562}
   - component: {fileID: 1211702829405868565}
+  - component: {fileID: 1211702829405868558}
   m_Layer: 0
   m_Name: Stendipanni
   m_TagString: oggSquadriglia1
@@ -56,7 +56,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1211702829405868558
+--- !u!114 &1211702829405868561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,58 +65,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211702829405868567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b5980e2e66493546b6a4f6dfdcc1f88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
-  buttons:
-  - buttonText: Imbraga
-    buttonNum: 1
-    color: 3
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -5
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
-    generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
-  - buttonText: Ripara
-    buttonNum: 2
-    color: 0
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -10
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
-    generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
-  maxDistanceFromPlayer: 2
-  wpCanvas: {fileID: 0}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
-  isInstantiating: 1
-  clickListener: {fileID: 1000800977015612233, guid: 8949b91dae0c0e64988cc24c3e9d6212,
-    type: 3}
-  healthBar: {fileID: 0}
-  healthBarOffset: {x: 0, y: -0.2, z: 0}
-  health: 100
-  building: {fileID: 11400000, guid: 9031e06bb5f172147a22359690c09a05, type: 2}
-  instanceOfListener: {fileID: 0}
---- !u!114 &1211702829405868561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211702829405868567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbb4c082aeaba8f42ae2236f9b457d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid: 0.5
+  componentEnabled: 0
 --- !u!50 &1211702829405868560
 Rigidbody2D:
   serializedVersion: 4
@@ -227,4 +180,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnabled: 0
+  componentEnabled: 0
+  isBeingBuilt: 0
+--- !u!114 &1211702829405868558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211702829405868567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5980e2e66493546b6a4f6dfdcc1f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  buttons:
+  - buttonText: Imbraga
+    buttonNum: 1
+    color: 3
+    obj: {fileID: 0}
+    priceOrPrizeAmount: -5
+    priceOrPrizeType: 2
+    timeLeft: 0
+    isWaiting: 0
+    canDo: 0
+    generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
+  - buttonText: Ripara
+    buttonNum: 2
+    color: 0
+    obj: {fileID: 0}
+    priceOrPrizeAmount: -10
+    priceOrPrizeType: 2
+    timeLeft: 0
+    isWaiting: 0
+    canDo: 0
+    generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
+  maxDistanceFromPlayer: 2
+  wpCanvas: {fileID: 0}
+  buttonCanvas: {fileID: 0}
+  nameTextOffset: {x: 0, y: 0.55, z: 0}
+  loadingBarOffset: {x: 0, y: 0.15, z: 0}
+  loadingBar: {fileID: 0}
+  nameText: {fileID: 0}
+  isInstantiating: 1
+  clickListener: {fileID: 1000800977015612233, guid: 8949b91dae0c0e64988cc24c3e9d6212,
+    type: 3}
+  healthBar: {fileID: 0}
+  healthBarOffset: {x: 0, y: -0.2, z: 0}
+  health: 100
+  building: {fileID: 11400000, guid: 9031e06bb5f172147a22359690c09a05, type: 2}

@@ -15,7 +15,10 @@ public class ShopBuilding : ShopObjectBase
 		typeText.text = type.ToString();
 		infoText.GetComponent<TextMeshProUGUI>().text = building.description;
 		objectName.text = building.name;
-		price.text = building.prices[building.currentLevel].ToString();
+		if (building.currentLevel < building.maxLevel)
+			price.text = building.prices[building.currentLevel].ToString();
+		else
+			price.text = building.prices[building.currentLevel - 1].ToString();
 		icon.GetComponent<Image>().sprite = building.icon;
 		RefreshInfo();
 	}

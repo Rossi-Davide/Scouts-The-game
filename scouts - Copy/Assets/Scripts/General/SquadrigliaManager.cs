@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SquadrigliaManager : MonoBehaviour
 {
@@ -26,8 +24,10 @@ public class SquadrigliaManager : MonoBehaviour
 	public Transform playerAngoloPos;
 	[HideInInspector]
 	public ConcreteSquadriglia[] squadriglieInGioco;
-	public Transform[] tents;
 	public AngoloDiAltraSquadriglia[] angoli;
+	public PlayerBuildingBase[] playerBuildingPrefabs;
+	public SpriteRenderer[] otherSqBuildingsPrefabs;
+
 	string[] nomiF = { "Sara", "Sofia", "Beatrice", "Federica", "Caterina", "Emma", "Vera", "Lucia", "Martina", "Matilde", "Letizia", "Giada", "Chiara", "Annalisa", "Francesca", "Victoria", "Giulia", "Ginevra", "Viola", "Greta", "Aurora", "Simona", "Monica", "Bianca", "Miriam", "Gloria", "Greta", "Ilaria", "Bianca", "Anita", "Gilda" };
 	string[] nomiM = { "Simone", "Lorenzo", "Nicola", "Francesco", "Michele", "Giovanni", "Fabio", "Nicolò", "Davide", "Matteo", "Tommaso", "Samuele", "Raffaele", "Giulio", "Pietro", "Luca", "Andrea", "Giacomo", "Gianluca", "Riccardo", "Filippo", "Lukas", "Gabriele" };
 	string[] cognomi = { "Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "Bruno", "Rizzo", "Moretti", "De Luca", "Marino", "Greco", "Barbieri", "Lombardi", "Giordano", "Rinaldi", "Colombo", "Mancini", "Longo", "Leone", "Martinelli", "Marchetti", "Martini", "Galli", "Gatti", "Mariani", "Ferrara", "Santoro", "Marini", "Bianco", "Conte", "Serra", "Farina", "Gentile", "Caruso", "Morelli", "Ferri", "Testa", "Ferraro", "Pellegrini", "Grassi", "Rossetti", "D'Angelo", "Bernardi", "Mazza", "Rizzi", "Silvestri", "Vitale", "Franco", "Parisi", "Martino", "Valentini", "Castelli", "Bellini", "Monti", "Lombardo", "Fiore", "Grasso", "Ferro", "Carbone", "Orlando", "Guerra", "Palmieri", "Milani", "Villa", "Viola", "Ruggeri", "De Santis", "D'Amico", "Negri", "Battaglia", "Sala", "Palumbo", "Benedetti", "Olivieri", "Giuliani", "Rosa", "Amato", "Molinari", "Alberti", "Barone", "Pellegrino", "Piazza", "Moro", "Vitali", "Spinelli", "Sartori", "Fabbri", "Vaccari", "Massari", "Medici", "Sarti", "Venturi", "Montanari", "Cappelli" };
@@ -261,47 +261,58 @@ public class SquadrigliaManager : MonoBehaviour
 		for (int s = 0; s < squadriglieInGioco.Length; s++)
 		{
 			var sq = squadriglieInGioco[s];
-			sq.angolo = angoli[s];
-			sq.angolo.objectName = "Angolo " + sq.baseSq.name;
-			sq.angolo.squadriglia = sq.baseSq;
+			sq.angolo = angoli[s].transform;
 			if (sq.baseSq == Player.instance.squadriglia)
 			{
 				playerAngoloPos.position = sq.angolo.transform.position;
+				Destroy(sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().clickListener);
+				Destroy(sq.angolo.GetComponent<AngoloDiAltraSquadriglia>());
 			}
-			sq.buildings = sq.angolo.GetComponentsInChildren<PlayerBuildingBase>(true);
-			sq.angolo.clickListener.gameObject.SetActive(sq.baseSq != Player.instance.squadriglia);
-			for (int i = 0; i < sq.buildings.Length; i++)
+			else
 			{
-				DisableComponents(sq.buildings[i], sq.baseSq != Player.instance.squadriglia);
+				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().objectName = "Angolo " + sq.baseSq.name;
+				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().squadriglia = sq.baseSq;
 			}
-			sq.tenda = tents[s];
+			
+
+			sq.tenda = sq.angolo.Find("Tent");
 			sq.nomi = new string[5];
 			sq.ruoli = new GameManager.Ruolo[5] { GameManager.Ruolo.Capo, GameManager.Ruolo.Vice, GameManager.Ruolo.Terzino, GameManager.Ruolo.Novizio, GameManager.Ruolo.Novizio };
 		}
+		InstantiateBuildings();
 		GetRandomNames();
 	}
 
 
-	void DisableComponents(PlayerBuildingBase b, bool disable)
+	void InstantiateBuildings()
 	{
-		var component = b;
-		if (disable)
+		foreach (var sq in squadriglieInGioco)
 		{
-			if (b.GetComponent<Tent>() != null)
-				component = b.GetComponent<Tent>();
-			if (b.GetComponent<PianoBidoni>() != null)
-				component = b.GetComponent<PianoBidoni>();
-			if (b.GetComponent<Stendipanni>() != null)
-				component = b.GetComponent<Stendipanni>();
-			if (b.GetComponent<Refettorio>() != null)
-				component = b.GetComponent<Refettorio>();
-			if (b.GetComponent<Portalegna>() != null)
-				component = b.GetComponent<Portalegna>();
-			if (b.GetComponent<Amaca>() != null)
-				component = b.GetComponent<Amaca>();
-			component.enabled = false;
+			if (sq.baseSq == Player.instance.squadriglia)
+			{
+				sq.buildings = new SpriteRenderer[playerBuildingPrefabs.Length];
+				for (int b = 0; b < playerBuildingPrefabs.Length; b++)
+				{
+					var build = Instantiate(playerBuildingPrefabs[b], sq.angolo.position, Quaternion.identity, sq.angolo);
+					sq.buildings[b] = build.GetComponent<SpriteRenderer>();
+					if (playerBuildingPrefabs[b].gameObject.name == "Tent")
+						sq.tenda = build.transform;
+				}
+			}
+			else
+			{
+				sq.buildings = new SpriteRenderer[otherSqBuildingsPrefabs.Length];
+				for (int b = 0; b < otherSqBuildingsPrefabs.Length; b++)
+				{
+					var build = Instantiate(otherSqBuildingsPrefabs[b], sq.angolo.position, Quaternion.identity, sq.angolo);
+					sq.buildings[b] = build.GetComponent<SpriteRenderer>();
+					if (otherSqBuildingsPrefabs[b].gameObject.name == "Tent")
+						sq.tenda = build.transform;
+				}
+			}
 		}
 	}
+
 
 
 

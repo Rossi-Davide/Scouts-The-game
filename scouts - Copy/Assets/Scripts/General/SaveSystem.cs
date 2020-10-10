@@ -172,7 +172,7 @@ public class CurrentSquadriglias
 }
 public class CurrentObjects
 {
-	//All InGameObjects scripts
+	//specific things
 	public Tent tent;
 	public Portalegna portalegna;
 	public Refettorio refettorio;
@@ -180,7 +180,17 @@ public class CurrentObjects
 	public Stendipanni stendipanni;
 	public Amaca amaca;
 
+	public AngoloDiAltraSquadriglia[] angoli;
 
+	public Lavaggi lavaggi;
+	public Latrina latrina;
+	public Campfire campfire;
+	public Cambusa cambusa;
+	public CassaDelFurfante cassaDelDurfante;
+	public Alzabandiera alzabandiera;
+	public Montana montana;
+
+	public Decorations[] decorations;
 }
 public class CurrentPLayerValues
 {

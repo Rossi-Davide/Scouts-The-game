@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class IterateMultipleObjs : MonoBehaviour
@@ -7,7 +8,42 @@ public class IterateMultipleObjs : MonoBehaviour
 	private void Start()
 	{
 		GameManager.instance.OnActionDo += RefreshActions;
-		Debug.Log(bundles[0].nextAction);
+		GameManager.instance.OnObjectArrayUpdate += FindObjectReferences;
+		StartCoroutine(GetBuild());
+	}
+
+	IEnumerator GetBuild()
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		if (Array.Exists(SquadrigliaManager.instance.GetPlayerSq().buildings, el => el == GetComponent<PlayerBuildingBase>()))
+		{
+			bundles[0].objects[0].obj = GetComponent<PlayerBuildingBase>();
+		}
+		FindObjectReferences();
+	}
+
+
+
+	void FindObjectReferences()
+	{
+		foreach (var i in bundles)
+		{
+			foreach (var o in i.objects)
+			{
+				foreach (var b in GameManager.instance.InGameObjects)
+				{
+					if (o.objectName == b.objectName)
+						o.obj = b;
+				}
+				foreach (var b in SquadrigliaManager.instance.GetPlayerSq().buildings)
+				{
+					if (o.objectName == b.GetComponent<PlayerBuildingBase>().building.name)
+						o.obj = b.GetComponent<PlayerBuildingBase>();
+				}
+			}
+		}
 	}
 
 	void RefreshActions(PlayerAction a)
@@ -16,9 +52,10 @@ public class IterateMultipleObjs : MonoBehaviour
 		{
 			foreach (var o in i.objects)
 			{
-				if (o.obj.buttons[o.buttonNum - 1].generalAction == a)
+				if (o.obj.buttons[o.buttonNum - 1 ].generalAction == a)
 				{
-					i.nextAction = Array.IndexOf(i.objects, o);
+					var num = Array.IndexOf(i.objects, o) + 1;
+					i.nextAction = num < i.objects.Length ? num : 0;
 				}
 			}
 		}
@@ -34,7 +71,6 @@ public class IterateMultipleObjs : MonoBehaviour
 		var a = bundles[bundleNum - 1];
 		if (a.nextAction == objNum - 1)
 		{
-			a.nextAction = objNum < a.objects.Length ? objNum : 0;
 			return true;
 		}
 		else

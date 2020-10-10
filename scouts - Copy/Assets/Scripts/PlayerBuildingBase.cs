@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+using System.Threading;
 
 public abstract class PlayerBuildingBase : ObjectWithActions
 {
@@ -11,29 +13,17 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 	[HideInInspector]
 	public int health;
 	protected bool isSafe, isDestroyed;
-	GameObject buttonCanvas;
 	public PlayerBuilding building;
-
-	[HideInInspector]
-	public GameObject instanceOfListener;
 	protected override void Start()
 	{
-		objectName = $"{building.name} (Livello {building.currentLevel})";
-		healthBar = Instantiate(wpCanvas.transform.Find("HealthBar").gameObject, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
-		healthBar.transform.SetParent(wpCanvas.transform, false);
+		base.Start();
+		displayName = $"{building.name} (Livello {building.currentLevel})";
+		healthBar = Instantiate(GameManager.instance.healthBarPrefab, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
 		health = building.maxHealth[building.currentLevel - 1];
-		buttonCanvas = GameManager.instance.buttonCanvas;
-		instanceOfListener = Instantiate(clickListener.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
-		instanceOfListener.transform.position = transform.position;
-		instanceOfListener.GetComponent<Button>().onClick.AddListener(OnClick);
 		healthBar.GetComponent<Slider>().maxValue = building.maxHealth[building.currentLevel - 1];
 		healthBar.GetComponent<Slider>().value = health;
-		InvokeRepeating("LoseHealthWhenRaining", 0f, building.healthLossInterval[building.currentLevel - 1]);
-		GameManager.instance.OnRain += RefreshIsSafe;
-		base.Start();
+		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthLossInterval[building.currentLevel - 1]);
 	}
-
-
 
 	public override void Select()
 	{
