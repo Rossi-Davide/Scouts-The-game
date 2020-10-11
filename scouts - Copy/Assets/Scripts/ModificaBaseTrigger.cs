@@ -81,11 +81,15 @@ public class ModificaBaseTrigger : MonoBehaviour
 		}
 		foreach (var b in buildings)
 		{
-			if (b.gameObject.activeSelf || (buildingSlot.buildingParent != null && b.GetComponent<PlayerBuildingBase>() == buildingSlot.buildingParent))
+			if (buildingSlot.buildingParent != null && b.GetComponent<PlayerBuildingBase>() == buildingSlot.buildingParent)
 			{
 				b.componentEnabled = isModifying;
 			}
-			b.GetComponent<SnapToGridSpostamentoCostruzioni>().componentEnabled = isModifying;
+			else if (b.gameObject.activeSelf)
+			{
+				b.MoveUI();
+				b.componentEnabled = isModifying;
+			}
 		}
 		modificaAngolo.instance.enabled = isModifying;
 		cam.GetComponent<FollowPlayer>().SetTarget(isModifying ? angolo : player);

@@ -12,24 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa84be6a36f035e4ea80a6f10a961f13, type: 3}
   m_Name: MazzettoDIGomma
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Mazzetto di gomma
+  description: Necessario per costruire la tenda.
   abilityDescription: 
   icon: {fileID: 0}
   type: 0
   shopScreen: 0
   currentAmount: 0
-  maxAmount: 0
-  chest: 0
+  maxAmount: 1
   neededItems: []
-  price: 0
+  price: 30
   priceType: 0
   periodicUseInterval: 0
   changedCounter: 0
   deltaPoints: 0
   modifiedAction: {fileID: 0}
+  hasToBeInInventory: 0
   modifiedParameter: 0
   newValue: 0
-  screenUnlocked: 0
-  timeRequired: 0
-  pointsGiven: 0

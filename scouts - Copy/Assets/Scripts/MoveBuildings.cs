@@ -39,7 +39,7 @@ public class MoveBuildings : MonoBehaviour
 		}
 		MoveUI();
 	}
-	void MoveUI()
+	public void MoveUI()
 	{
 		PlayerBuildingBase b = GetComponent<PlayerBuildingBase>();
 		b.healthBar.transform.position = transform.position + b.healthBarOffset;

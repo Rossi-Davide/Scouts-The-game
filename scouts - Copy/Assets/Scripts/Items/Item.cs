@@ -25,8 +25,6 @@ public class Item : ScriptableObject
 	public bool hasToBeInInventory;
 	public PlayerAction.ActionParams modifiedParameter;
 	public int newValue;
-	[Header("ShopScreen")]
-	public GameManager.SpecificShopScreen screenUnlocked;
 
 	public enum ItemType
 	{

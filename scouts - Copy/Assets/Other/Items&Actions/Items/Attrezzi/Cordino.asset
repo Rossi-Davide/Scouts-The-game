@@ -19,15 +19,14 @@ MonoBehaviour:
   type: 0
   shopScreen: 2
   currentAmount: 0
-  maxAmount: 20
+  maxAmount: 30
   neededItems: []
-  price: 10
+  price: 30
   priceType: 1
-  periodicUseInterval: 1
+  periodicUseInterval: 3
   changedCounter: 1
-  deltaPoints: 50
+  deltaPoints: 4
   modifiedAction: {fileID: 0}
   hasToBeInInventory: 0
   modifiedParameter: 0
   newValue: 0
-  screenUnlocked: 0

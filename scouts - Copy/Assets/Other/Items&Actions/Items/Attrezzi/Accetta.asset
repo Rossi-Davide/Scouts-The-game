@@ -13,21 +13,20 @@ MonoBehaviour:
   m_Name: Accetta
   m_EditorClassIdentifier: 
   name: Accetta
-  description: Usala per fare legna velocemente.
+  description: Usala per fare legna in modo efficiente.
   abilityDescription: Aumenta i materiali ottenuti facendo legna.
   icon: {fileID: 8033092973025764044, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   type: 0
-  shopScreen: 2
+  shopScreen: 0
   currentAmount: 0
   maxAmount: 1
   neededItems: []
   price: 100
   priceType: 1
-  periodicUseInterval: 1
-  changedCounter: 1
-  deltaPoints: 78
+  periodicUseInterval: 0
+  changedCounter: 0
+  deltaPoints: 0
   modifiedAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
   hasToBeInInventory: 1
   modifiedParameter: 3
   newValue: 30
-  screenUnlocked: 0

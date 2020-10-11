@@ -43,4 +43,5 @@ public enum ObjectProperty
 public class ItemsNeeded
 {
     public Item[] items;
+    public int[] amounts;
 }

@@ -19,6 +19,7 @@ MonoBehaviour:
   currentLevel: 0
   itemsNeeded:
   - items: []
+  neededItemsAmount: 
   maxHealth: 64000000
   healthLossInterval: 05000000
   prices: 0a000000

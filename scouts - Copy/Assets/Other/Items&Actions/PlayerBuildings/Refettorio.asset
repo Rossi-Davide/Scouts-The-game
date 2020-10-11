@@ -16,9 +16,10 @@ MonoBehaviour:
   description: 
   icon: {fileID: 2049916588613589399, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   maxLevel: 1
-  currentLevel: 1
+  currentLevel: 0
   itemsNeeded:
   - items: []
+  neededItemsAmount: 
   maxHealth: 64000000
   healthLossInterval: 05000000
   prices: 0a000000

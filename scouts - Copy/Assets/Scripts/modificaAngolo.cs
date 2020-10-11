@@ -56,7 +56,8 @@ public class modificaAngolo : MonoBehaviour
 					oggetto = hitInformation.collider.transform;
 					Vector2 posizioneDito = touch.position;
 					Vector3 posizioneOggetto = cam.ScreenToWorldPoint(posizioneDito);
-					oggetto.position = new Vector3(posizioneOggetto.x, posizioneOggetto.y, 0);
+					oggetto.position = posizioneOggetto;
+					oggetto.position = SnapToGrid();
 				}
 				else if (touch.phase == TouchPhase.Ended)
 				{
@@ -71,7 +72,14 @@ public class modificaAngolo : MonoBehaviour
 			}
 		}
 	}
-	
+	float grid = 0.8f;
+	Vector3 SnapToGrid()
+	{
+		float reciprocalGrid = 1f / grid;
+		float x = Mathf.Round(oggetto.position.x * reciprocalGrid) / reciprocalGrid;
+		float y = Mathf.Round(oggetto.position.y * reciprocalGrid) / reciprocalGrid;
+		return new Vector3(x, y, 0);
+	}
 
 
 	void UpdateRayCast(Touch t)
