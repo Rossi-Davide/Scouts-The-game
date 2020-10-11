@@ -10,7 +10,7 @@ public class followPlayerLabirinto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = Vector3.Lerp(transform.position, p.position + camOff,camSpeed*Time.deltaTime );
+        //transform.position = Vector3.Lerp(transform.position, p.position + camOff,camSpeed*Time.deltaTime );
 
     }
 

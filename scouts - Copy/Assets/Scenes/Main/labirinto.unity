@@ -934,6 +934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180912, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7272760714777180913, guid: b671173bcf6f52647b678007eae7e388,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48404,6 +48409,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1258659433}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &853666888
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853666879}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.14687502}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.1}
+    oldSize: {x: 0.203125, y: 0.3671875}
+    newSize: {x: 0.203125, y: 0.3515625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.203125, y: 0.3671875}
+  m_EdgeRadius: 0
 --- !u!1 &872131639
 GameObject:
   m_ObjectHideFlags: 0
@@ -48824,6 +48855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 361789451317847260, guid: f77ccf19b7525be4e945485382658856,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 361789451317847261, guid: f77ccf19b7525be4e945485382658856,
         type: 3}
