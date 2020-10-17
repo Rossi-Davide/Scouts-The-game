@@ -1,0 +1,860 @@
+fileFormatVersion: 2
+guid: f83bfe4a291f92a44a4cb0e8e57a7b30
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8322015163592470071
+    second: p4 sheet_0
+  - first:
+      213: 1837846509841316068
+    second: p4 sheet_1
+  - first:
+      213: -6803471924434157848
+    second: p4 sheet_2
+  - first:
+      213: 4974008950190464769
+    second: p4 sheet_3
+  - first:
+      213: 7722598829142657185
+    second: p4 sheet_4
+  - first:
+      213: 6589668234692790381
+    second: p4 sheet_5
+  - first:
+      213: -1950920850123938608
+    second: p4 sheet_6
+  - first:
+      213: 3321354950769619467
+    second: p4 sheet_7
+  - first:
+      213: -3619930655997801007
+    second: p4 sheet_8
+  - first:
+      213: -5730775286368910977
+    second: p4 sheet_9
+  - first:
+      213: 6668748150848313801
+    second: p4 sheet_10
+  - first:
+      213: 3861979900298236552
+    second: p4 sheet_11
+  - first:
+      213: -2951454229189185139
+    second: p4 sheet_12
+  - first:
+      213: -4222198411982096335
+    second: p4 sheet_13
+  - first:
+      213: 1829357954508554108
+    second: p4 sheet_14
+  - first:
+      213: -4433315347082163671
+    second: p4 sheet_15
+  - first:
+      213: -513535845564398745
+    second: p4 sheet_16
+  - first:
+      213: 3025827290713584917
+    second: p4 sheet_17
+  - first:
+      213: -6651179440619201009
+    second: p4 sheet_18
+  - first:
+      213: -7930056472638722068
+    second: p4 sheet_19
+  - first:
+      213: 1288573217594712167
+    second: p4 sheet_20
+  - first:
+      213: 1853275051688666488
+    second: p4 sheet_21
+  - first:
+      213: 3401461043870402586
+    second: p4 sheet_22
+  - first:
+      213: 2434354937873943896
+    second: p4 sheet_23
+  - first:
+      213: 7313942653519279610
+    second: p4 sheet_24
+  - first:
+      213: 1600920487467858348
+    second: p4 sheet_25
+  - first:
+      213: 6608258708665346741
+    second: p4 sheet_26
+  - first:
+      213: -884748516531197093
+    second: p4 sheet_27
+  - first:
+      213: 3523004446027304072
+    second: p4 sheet_28
+  - first:
+      213: -8657261152612918341
+    second: p4 sheet_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: p4 sheet_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1352
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ee75903bcbd7370800000000000000
+      internalID: 8322015163592470071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1152
+        width: 146
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e878c2d9a7518910800000000000000
+      internalID: 1837846509841316068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_2
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1152
+        width: 146
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee32c0c4563591a0800000000000000
+      internalID: -6803471924434157848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_3
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1154
+        width: 147
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f57b969ca370540800000000000000
+      internalID: 4974008950190464769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_4
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1151
+        width: 147
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a845e118be2c2b60800000000000000
+      internalID: 7722598829142657185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1351
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d680a8c8854337b50800000000000000
+      internalID: 6589668234692790381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1152
+        width: 146
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4a57fb2dfece4e0800000000000000
+      internalID: -1950920850123938608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1350
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02bb9dfab2d71e20800000000000000
+      internalID: 3321354950769619467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1151
+        width: 147
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd44b16f3c63cdc0800000000000000
+      internalID: -3619930655997801007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 1155
+        width: 118
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71c4607d323870b0800000000000000
+      internalID: -5730775286368910977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 1152
+        width: 125
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c95bd35c172c8c50800000000000000
+      internalID: 6668748150848313801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 1152
+        width: 125
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88299f6f142889530800000000000000
+      internalID: 3861979900298236552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1339
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81ba5a14045a07d0800000000000000
+      internalID: -2951454229189185139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1337
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138b69a1aecb765c0800000000000000
+      internalID: -4222198411982096335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 1336
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f74850e5f236910800000000000000
+      internalID: 1829357954508554108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_15
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 797
+        width: 125
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a41e73e23b972c0800000000000000
+      internalID: -4433315347082163671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_16
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 797
+        width: 125
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76344b98edd8fd8f0800000000000000
+      internalID: -513535845564398745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_17
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 801
+        width: 118
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5157aaea3e5edf920800000000000000
+      internalID: 3025827290713584917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_18
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 797
+        width: 120
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ed288c98342b3a0800000000000000
+      internalID: -6651179440619201009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 807
+        width: 121
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cefe49347a7c2f190800000000000000
+      internalID: -7930056472638722068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 806
+        width: 120
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760a0d5a38ee1e110800000000000000
+      internalID: 1288573217594712167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 815
+        width: 120
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8752ff627d728b910800000000000000
+      internalID: 1853275051688666488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 816
+        width: 122
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1889353cca643f20800000000000000
+      internalID: 3401461043870402586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 806
+        width: 120
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dc1311be098c120800000000000000
+      internalID: 2434354937873943896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_24
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 439
+        width: 120
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5389aa718508560800000000000000
+      internalID: 7313942653519279610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_25
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 439
+        width: 145
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9ba2983bc973610800000000000000
+      internalID: 1600920487467858348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_26
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 439
+        width: 145
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba21e1984045bb50800000000000000
+      internalID: 6608258708665346741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_27
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 439
+        width: 143
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5baa9c69edb8b3f0800000000000000
+      internalID: -884748516531197093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 439
+        width: 145
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c4493c0e934e030800000000000000
+      internalID: 3523004446027304072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4 sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 439
+        width: 121
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbd7be89da3bd780800000000000000
+      internalID: -8657261152612918341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

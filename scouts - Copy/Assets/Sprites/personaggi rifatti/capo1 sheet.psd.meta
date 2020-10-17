@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: a74876b7828a4b945a7eba7e4122ead7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3394054590579157692
+    second: capo1 sheet_0
+  - first:
+      213: -2801364683766433391
+    second: capo1 sheet_1
+  - first:
+      213: 3248542645554016450
+    second: capo1 sheet_2
+  - first:
+      213: 1003485299214451541
+    second: capo1 sheet_3
+  - first:
+      213: -1191348021833521838
+    second: capo1 sheet_4
+  - first:
+      213: 6474025224690480909
+    second: capo1 sheet_5
+  - first:
+      213: -9117446034074505124
+    second: capo1 sheet_6
+  - first:
+      213: -699040548909699529
+    second: capo1 sheet_7
+  - first:
+      213: -5475386842574660541
+    second: capo1 sheet_8
+  - first:
+      213: 4818932064218649680
+    second: capo1 sheet_9
+  - first:
+      213: -4100503780665008101
+    second: capo1 sheet_10
+  - first:
+      213: -8669395058524643628
+    second: capo1 sheet_11
+  - first:
+      213: 8419632248886679373
+    second: capo1 sheet_12
+  - first:
+      213: 5916646727720644611
+    second: capo1 sheet_13
+  - first:
+      213: -4291713122091885313
+    second: capo1 sheet_14
+  - first:
+      213: -6929234911303135931
+    second: capo1 sheet_15
+  - first:
+      213: -3080542708679306418
+    second: capo1 sheet_16
+  - first:
+      213: -4331901811076257997
+    second: capo1 sheet_17
+  - first:
+      213: -1622980041039325183
+    second: capo1 sheet_18
+  - first:
+      213: 3414271527116688603
+    second: capo1 sheet_19
+  - first:
+      213: 3977120050867052731
+    second: capo1 sheet_20
+  - first:
+      213: -6333634699177880216
+    second: capo1 sheet_21
+  - first:
+      213: -36747618958849394
+    second: capo1 sheet_22
+  - first:
+      213: 6262625643019629429
+    second: capo1 sheet_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: capo1 sheet_0
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1131
+        width: 143
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445de341555e5e0d0800000000000000
+      internalID: -3394054590579157692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_1
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1131
+        width: 143
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199f6c199ad8f19d0800000000000000
+      internalID: -2801364683766433391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_2
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1129
+        width: 143
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c074f91354251d20800000000000000
+      internalID: 3248542645554016450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_3
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1129
+        width: 143
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553010d10981ded00800000000000000
+      internalID: 1003485299214451541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1130
+        width: 144
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255afb2494b777fe0800000000000000
+      internalID: -1191348021833521838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1130
+        width: 144
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d07389814ab58d950800000000000000
+      internalID: 6474025224690480909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_6
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 741
+        width: 145
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50f1386323587180800000000000000
+      internalID: -9117446034074505124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_7
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 745
+        width: 150
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ea4ae03528c46f0800000000000000
+      internalID: -699040548909699529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_8
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 741
+        width: 150
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c5d703da48304b0800000000000000
+      internalID: -5475386842574660541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_9
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 746
+        width: 144
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0541e7c3e2940e240800000000000000
+      internalID: 4818932064218649680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 741
+        width: 149
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10e05179851817c0800000000000000
+      internalID: -4100503780665008101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 746
+        width: 150
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de9c1f602f10b780800000000000000
+      internalID: -8669395058524643628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 429
+        width: 145
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d475056dbea88d470800000000000000
+      internalID: 8419632248886679373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_13
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 430
+        width: 145
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3003443e9d62c1250800000000000000
+      internalID: 5916646727720644611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_14
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 427
+        width: 143
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc94d767a5c074c0800000000000000
+      internalID: -4291713122091885313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_15
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 430
+        width: 144
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d8a829f8966df90800000000000000
+      internalID: -6929234911303135931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 430
+        width: 145
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4310c55ab6bf35d0800000000000000
+      internalID: -3080542708679306418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 431
+        width: 143
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337ade4114ef1e3c0800000000000000
+      internalID: -4331901811076257997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_18
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 111
+        width: 144
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1085d4860440a79e0800000000000000
+      internalID: -1622980041039325183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 112
+        width: 144
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc45844ddde16f20800000000000000
+      internalID: 3414271527116688603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_20
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 111
+        width: 144
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0a3055d91913730800000000000000
+      internalID: 3977120050867052731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_21
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 112
+        width: 144
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8651a625cc86a18a0800000000000000
+      internalID: -6333634699177880216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 111
+        width: 145
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8acd993c327d7ff0800000000000000
+      internalID: -36747618958849394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: capo1 sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 112
+        width: 143
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573ff6d67d059e650800000000000000
+      internalID: 6262625643019629429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
