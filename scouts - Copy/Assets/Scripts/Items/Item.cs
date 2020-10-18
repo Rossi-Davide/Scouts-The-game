@@ -1,41 +1,25 @@
 ﻿using UnityEngine;
+
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
-public class Item : ScriptableObject
+public class Item : ObjectBase
 {
-	public new string name;
-	public string description;
-	public string abilityDescription;
-	public Sprite icon;
-
-	[Header("Item and shop")]
-	public ItemType type;
-	public GameManager.SpecificShopScreen shopScreen;
-	public int currentAmount;
-	public int maxAmount;
-	public Item[] neededItems;
-	public int price;
-	public GameManager.Counter priceType;
-
-	[Header("PeriodicUse")]
-	public GameManager.PeriodicActionInterval periodicUseInterval;
-	public GameManager.Counter changedCounter;
-	public int deltaPoints;
-	[Header("Modified Action")]
-	public PlayerAction modifiedAction;
-	public bool hasToBeInInventory;
-	public PlayerAction.ActionParams modifiedParameter;
-	public int newValue;
-
-	public enum ItemType
+	public Item(ObjectBase obj)
 	{
-		Oggetto,
-	}
-	public GameManager.PeriodicActionInterval PeriodicUse => periodicUseInterval;
-	public void DoAction()
-	{
-		if (changedCounter != GameManager.Counter.None)
-		{
-			GameManager.instance.ChangeCounter(changedCounter, deltaPoints);
-		}
+		name = obj.name;
+		description = obj.description;
+		type = obj.type;
+		icon = obj.icon;
+		shopScreen = obj.shopScreen;
+		maxAmount = obj.maxAmount;
+		maxLevel = obj.maxLevel;
+		showLevel = obj.showLevel;
+		usingAmount = obj.usingAmount;
+		itemsNeededs = obj.itemsNeededs;
+		shopInfos = obj.shopInfos;
+		periodicUses = obj.periodicUses;
+		modifiedActions = obj.modifiedActions;
+		changedMaxAmounts = obj.changedMaxAmounts;
+		currentAmount = obj.currentAmount;
+		currentLevel = obj.currentLevel;
 	}
 }

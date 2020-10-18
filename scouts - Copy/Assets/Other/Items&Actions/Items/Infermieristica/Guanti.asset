@@ -13,23 +13,25 @@ MonoBehaviour:
   m_Name: Guanti
   m_EditorClassIdentifier: 
   name: 
-  description: 
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
-  shopScreen: 0
+  description: Aiuta a guarire dalla bua.
+  icon: {fileID: 0}
+  shopScreen: 2
+  maxAmount: 5
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 200
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses:
+  - interval: 2
+    counter: 2
+    delta: 1
+  modifiedActions: []
+  changedMaxAmounts: []
   currentAmount: 0
-  maxAmount: 0
-  chest: 0
-  neededItems: []
-  price: 0
-  priceType: 0
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 0}
-  modifiedParameter: 0
-  newValue: 0
-  screenUnlocked: 0
-  timeRequired: 0
-  pointsGiven: 0
+  currentLevel: 0

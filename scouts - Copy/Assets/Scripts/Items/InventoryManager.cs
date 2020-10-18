@@ -36,7 +36,7 @@ public class InventoryManager : MonoBehaviour
 			if (i == item && i.currentAmount <= i.maxAmount)
 			{
 				s.AddItem(item);
-				GameManager.instance.InventoryChanged();
+				GameManager.instance.InventoryChanged(item);
 				return;
 			}
 		}
@@ -45,7 +45,7 @@ public class InventoryManager : MonoBehaviour
 			if (s.item == null)
 			{
 				s.AddItem(item);
-				GameManager.instance.InventoryChanged();
+				GameManager.instance.InventoryChanged(item);
 				return;
 			}
 		}
@@ -130,9 +130,9 @@ public class InventoryManager : MonoBehaviour
 			{
 				selectedItem = slot;
 				itemName.text = slot.item.name;
-				description.text = slot.item.description + " " + slot.item.abilityDescription;
+				description.text = slot.item.description;
 				type.text = slot.item.type.ToString();
-				useButton.SetActive(slot.item.periodicUseInterval == GameManager.PeriodicActionInterval.Once);
+				useButton.SetActive(slot.item.periodicUses[slot.item.currentLevel].interval == GameManager.PeriodicActionInterval.Once);
 				useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Usa";
 				itemInfoBox.SetActive(true);
 			}
@@ -148,7 +148,7 @@ public class InventoryManager : MonoBehaviour
 	{
 		selectedItem.item.currentAmount--;
 		selectedItem.item.DoAction();
-		selectedItem.RemoveItem();
+		selectedItem.RefreshInventoryAmount();
 		SelectItem(null);
 	}
 
@@ -161,9 +161,8 @@ public class InventoryManager : MonoBehaviour
 			draggingSlot = CheckIfNearASlot(t);
 			if (t.phase == TouchPhase.Moved && !dragging && draggingSlot != null && draggingSlot.item != null)
 			{
-				draggingSlot.amountText.text = (draggingSlot.amount - 1).ToString();
-				draggingSlot.amountText.gameObject.SetActive(draggingSlot.amount - 1 > 1);
-				draggingSlot.icon.enabled = draggingSlot.amount - 1 >= 1;
+				draggingSlot.amountText.gameObject.SetActive(false);
+				draggingSlot.icon.enabled = false;
 				draggingSlot.c = Instantiate(draggingSlot.clone.gameObject, t.position, Quaternion.identity, ovCanvas.transform);
 				draggingSlot.c.GetComponent<Image>().sprite = draggingSlot.item.icon;
 				draggingSlot.c.GetComponent<InventoryDragAndDrop>().parent = draggingSlot;

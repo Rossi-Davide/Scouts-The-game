@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: Cordino
   m_EditorClassIdentifier: 
   name: Cordino
-  description: E' assolutamente necessario per costruire.
-  abilityDescription: Aumenta i materiali.
-  icon: {fileID: -7458482958434878309, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   type: 0
+  description: E' assolutamente necessario per costruire.
+  icon: {fileID: -7458482958434878309, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 2
-  currentAmount: 0
   maxAmount: 30
-  neededItems: []
-  price: 30
-  priceType: 1
-  periodicUseInterval: 3
-  changedCounter: 1
-  deltaPoints: 4
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 30
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses:
+  - interval: 3
+    counter: 1
+    delta: 4
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

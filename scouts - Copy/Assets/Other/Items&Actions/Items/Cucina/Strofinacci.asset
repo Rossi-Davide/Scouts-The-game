@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Strofinacci
   m_EditorClassIdentifier: 
   name: Strofinacci
-  description: Per bellezza
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: "Troppo potente per essere comprato: \xE8 l'unico modo per scoprire
+    il portale intergalattico per raggiungere la gallassia B32"
+  icon: {fileID: 0}
   shopScreen: 1
-  currentAmount: 0
   maxAmount: 0
-  neededItems: []
-  price: 30000
-  priceType: 1
-  periodicUseInterval: 4
-  changedCounter: 1
-  deltaPoints: 1000
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 30000
+    priceCounter: 1
+    reward: 2000
+    rewardCounter: 3
+  periodicUses:
+  - interval: 4
+    counter: 1
+    delta: 1000
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

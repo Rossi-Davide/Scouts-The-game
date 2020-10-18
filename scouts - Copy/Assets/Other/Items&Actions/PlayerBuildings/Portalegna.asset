@@ -13,17 +13,36 @@ MonoBehaviour:
   m_Name: Portalegna
   m_EditorClassIdentifier: 
   name: Portalegna
+  type: 0
   description: 
   icon: {fileID: -6822941647383629172, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
+  shopScreen: 6
+  maxAmount: 0
   maxLevel: 1
+  showLevel: 1
+  usingAmount: 0
+  itemsNeededs:
+  - items:
+    - {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+    - {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
+    amounts: 0100000001000000
+  - items:
+    - {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+    - {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
+    amounts: 0100000001000000
+  - items:
+    - {fileID: 11400000, guid: 5c648984625f23149a6e1aa9fdac5578, type: 2}
+    - {fileID: 11400000, guid: 32e6b819f7220674fa98015a957ade72, type: 2}
+    amounts: 0100000001000000
+  shopInfos:
+  - price: 300
+    priceCounter: 1
+    reward: 5
+    rewardCounter: 3
+  periodicUses: []
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
   currentLevel: 0
-  itemsNeeded:
-  - items: []
-  neededItemsAmount: 
-  maxHealth: 64000000
-  healthLossInterval: 05000000
-  prices: 0a000000
-  priceTypes: 01000000
+  healthInfos: []
   clickListenerOffset: {x: 0, y: 0, z: 0}
-  pointsGiven: 01000000
-  properties: []

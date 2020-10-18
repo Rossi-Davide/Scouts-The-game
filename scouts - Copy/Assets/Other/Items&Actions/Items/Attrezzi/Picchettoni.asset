@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: Picchettoni
   m_EditorClassIdentifier: 
   name: Picchettoni
-  description: Servono per portare alcune costruzioni al livello 2.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Servono per portare alcune costruzioni al livello 2.
+  icon: {fileID: 0}
   shopScreen: 0
-  currentAmount: 0
   maxAmount: 30
-  neededItems: []
-  price: 15
-  priceType: 1
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 15
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses: []
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

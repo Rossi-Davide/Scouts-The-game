@@ -19,10 +19,10 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 		base.Start();
 		displayName = $"{building.name} (Livello {building.currentLevel})";
 		healthBar = Instantiate(GameManager.instance.healthBarPrefab, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
-		health = building.maxHealth[building.currentLevel - 1];
-		healthBar.GetComponent<Slider>().maxValue = building.maxHealth[building.currentLevel - 1];
+		health = building.healthInfos[building.currentLevel - 1].maxHealth;
+		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.currentLevel - 1].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
-		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthLossInterval[building.currentLevel - 1]);
+		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthInfos[building.currentLevel - 1].healthLossInterval);
 	}
 
 	public override void Select()
@@ -95,16 +95,16 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 
 	protected void MettiAlSicuro()
 	{
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -2);
+		GameManager.instance.ChangeCounter(Counter.Energia, -2);
 		isSafe = true;
 		RefreshButtonsState();
 	}
 
 	protected void Ripara()
 	{
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, -5);
+		GameManager.instance.ChangeCounter(Counter.Energia, -5);
 		isDestroyed = false;
-		health = building.maxHealth[building.currentLevel - 1];
+		health = building.healthInfos[building.currentLevel - 1].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
 		GetComponent<Animator>().Play(objectName + 2);

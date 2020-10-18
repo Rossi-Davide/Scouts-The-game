@@ -79,7 +79,7 @@ public class CapieCambu : BaseAI
 	void EndTalk()
 	{
 		ClosePanel();
-		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, pointsToAdd);
+		GameManager.instance.ChangeCounter(Counter.Punti, pointsToAdd);
 		dialoguesDone++;
 		StartWaitToUseAgain(buttons[0]);
 	}

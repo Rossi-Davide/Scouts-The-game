@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.Rendering;
+﻿using System;
+using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class QuestManager : MonoBehaviour
 		quests = questPanel.GetComponentsInChildren<QuestUI>();
 		GameManager.instance.OnActionDo += RefreshQuests;
 		GameManager.instance.OnInventoryChange += RefreshActions;
+		GameManager.instance.OnBuild += RefreshActions;
 	}
 
 	void RefreshQuests(PlayerAction a)
@@ -39,45 +40,47 @@ public class QuestManager : MonoBehaviour
 			}
 		}
 	}
-	void RefreshActions()
+	void RefreshActions(ObjectBase obj)
 	{
-		IterateChestOrInventory(InventoryManager.instance.slots);
-		IterateChestOrInventory(ChestManager.instance.slots);
-	}
-	void IterateChestOrInventory(InventorySlot[] items)
-	{
-		foreach (var i in items)
+		bool isABuilding = false;
+		foreach (var b in SquadrigliaManager.instance.GetPlayerSq().buildings)
 		{
-			if (i.item != null && i.item.modifiedAction != null)
+			if (b.GetComponent<PlayerBuildingBase>().building == obj)
+				isABuilding = true;
+		}
+		bool removed = !InventoryManager.instance.Contains(obj.ToItem()) && !ChestManager.instance.Contains(obj.ToItem()) && !isABuilding;
+		ChangeActionParameter(obj, removed);
+	}
+	void ChangeActionParameter(ObjectBase obj, bool removed)
+	{
+		if (obj != null && obj.modifiedActions.Length > 0)
+		{
+			var a = obj.modifiedActions[obj.currentLevel - 1].action;
+			var n = obj.modifiedActions[obj.currentLevel - 1].delta;
+			if (removed) { n = -n; }
+			if (!obj.modifiedActions[obj.currentLevel - 1].hasToBeInInventory)
 			{
-				var a = i.item.modifiedAction;
-				var n = i.item.newValue;
-				if (!i.item.hasToBeInInventory)
+				switch (obj.modifiedActions[obj.currentLevel - 1].parameter)
 				{
-					switch (i.item.modifiedParameter)
-					{
-						case PlayerAction.ActionParams.timeNeeded:
-							a.timeNeeded = n;
-							break;
-						case PlayerAction.ActionParams.energyGiven:
-							a.energyGiven = n;
-							break;
-						case PlayerAction.ActionParams.materialsGiven:
-							a.materialsGiven = n;
-							break;
-						case PlayerAction.ActionParams.pointsGiven:
-							a.pointsGiven = n;
-							break;
-						case PlayerAction.ActionParams.timeBeforeRedo:
-							a.timeBeforeRedo = n;
-							break;
-					}
+					case PlayerAction.ActionParams.timeNeeded:
+						a.timeNeeded += n;
+						break;
+					case PlayerAction.ActionParams.energyGiven:
+						a.energyGiven += n;
+						break;
+					case PlayerAction.ActionParams.materialsGiven:
+						a.materialsGiven += n;
+						break;
+					case PlayerAction.ActionParams.pointsGiven:
+						a.pointsGiven += n;
+						break;
+					case PlayerAction.ActionParams.timeBeforeRedo:
+						a.timeBeforeRedo += n;
+						break;
 				}
 			}
 		}
 	}
-
-
 
 	public void ToggleQuestPanel()
 	{

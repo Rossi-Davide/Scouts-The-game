@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: MatitaDaFalegname
   m_EditorClassIdentifier: 
   name: Matita da falegname
-  description: Serve per migliorare le costruzioni al livelll 3.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Serve per migliorare le costruzioni al livelll 3.
+  icon: {fileID: 0}
   shopScreen: 0
-  currentAmount: 0
   maxAmount: 3
-  neededItems: []
-  price: 300
-  priceType: 1
-  periodicUseInterval: 2
-  changedCounter: 1
-  deltaPoints: 10
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 300
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses:
+  - interval: 2
+    counter: 1
+    delta: 10
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

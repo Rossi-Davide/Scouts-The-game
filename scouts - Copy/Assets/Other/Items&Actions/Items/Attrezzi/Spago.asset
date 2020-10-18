@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: Spago
   m_EditorClassIdentifier: 
   name: Spago
-  description: Necessario per montare le tapparelle del refettorio.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Necessario per montare le tapparelle del refettorio.
+  icon: {fileID: 0}
   shopScreen: 0
-  currentAmount: 0
   maxAmount: 10
-  neededItems: []
-  price: 5
-  priceType: 1
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 5
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses: []
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

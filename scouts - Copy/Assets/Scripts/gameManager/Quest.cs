@@ -7,7 +7,7 @@ public class Quest : ScriptableObject
     public string description;
     [HideInInspector]
     public bool prizeTaken;
-    public GameManager.Counter prizeCounter;
+    public Counter prizeCounter;
     public int prizeAmount;
 	public PlayerAction action;
     public int timesToDo;

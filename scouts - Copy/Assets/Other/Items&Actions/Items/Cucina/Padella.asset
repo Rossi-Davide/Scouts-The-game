@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: Padella
   m_EditorClassIdentifier: 
   name: Padella
-  description: Necessaria per consumare il pasto.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Necessaria per consumare il pasto.
+  icon: {fileID: 0}
   shopScreen: 1
-  currentAmount: 0
   maxAmount: 3
-  neededItems: []
-  price: 30
-  priceType: 1
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 30
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses: []
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

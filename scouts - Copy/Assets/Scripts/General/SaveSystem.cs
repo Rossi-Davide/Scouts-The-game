@@ -47,7 +47,7 @@ public class SaveSystem : MonoBehaviour
 	{
 		var it = Shop.instance.shopPanel.GetComponentsInChildren<ShopItem>();
 		var qt = QuestManager.instance.quests;
-		var items = new Item[it.Length];
+		var items = new ObjectBase[it.Length];
 		var inventory = InventoryManager.instance.slots;
 		var chest = ChestManager.instance.slots;
 		var actions = QuestManager.instance.actionDatabase;
@@ -59,7 +59,7 @@ public class SaveSystem : MonoBehaviour
 
 		for (int i = 0; i < items.Length; i++)
 		{
-			items[i] = it[i].item;
+			items[i] = it[i].obj;
 		}
 		for (int i = 0; i < quests.Length; i++)
 		{
@@ -89,9 +89,6 @@ public class SaveSystem : MonoBehaviour
 
 		currentPlayerValues = GetPlayerValues();
 		jsonCurrentPlayerValues = JsonUtility.ToJson(currentPlayerValues);
-
-
-
 	}
 
 	public void LoadAll()
@@ -196,7 +193,7 @@ public class CurrentPLayerValues
 {
 	public InventorySlot[] inventory;
 	public InventorySlot[] chest;
-	public Item[] items;
+	public ObjectBase[] items;
 	public PlayerAction[] actions;
 	public Quest[] quests;
 	public int materials;
@@ -204,7 +201,7 @@ public class CurrentPLayerValues
 	public int energy;
 	public int points;
 
-	public CurrentPLayerValues(Item[] items, InventorySlot[] inventory, InventorySlot[] chest, PlayerAction[] actions, Quest[] quests, int materials, int maxMaterials, int energy, int points)
+	public CurrentPLayerValues(ObjectBase[] items, InventorySlot[] inventory, InventorySlot[] chest, PlayerAction[] actions, Quest[] quests, int materials, int maxMaterials, int energy, int points)
 	{
 		this.items = items;
 		this.inventory = inventory;

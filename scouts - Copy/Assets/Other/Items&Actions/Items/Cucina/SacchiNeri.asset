@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: SacchiNeri
   m_EditorClassIdentifier: 
   name: Sacchi neri
-  description: Buttare la spazzatura dopo una bella mangiata.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Buttare la spazzatura dopo una bella mangiata.
+  icon: {fileID: 0}
   shopScreen: 1
-  currentAmount: 0
   maxAmount: 30
-  neededItems: []
-  price: 90
-  priceType: 1
-  periodicUseInterval: 2
-  changedCounter: 3
-  deltaPoints: 1
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 90
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses:
+  - interval: 2
+    counter: 3
+    delta: 1
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

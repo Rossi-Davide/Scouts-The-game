@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Sega
   m_EditorClassIdentifier: 
   name: Sega
-  description: Aumenta i materiali ottenuti facendo legna.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Aumenta i materiali ottenuti facendo legna.
+  icon: {fileID: 0}
   shopScreen: 0
-  currentAmount: 0
   maxAmount: 2
-  neededItems: []
-  price: 1500
-  priceType: 1
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
-  hasToBeInInventory: 1
-  modifiedParameter: 3
-  newValue: 60
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 1500
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses: []
+  modifiedActions:
+  - action: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
+    hasToBeInInventory: 1
+    parameter: 3
+    delta: 45
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Video;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,13 +36,20 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnDayEndOrStart;
 	public event System.Action OnRain;
 	public event System.Action<PlayerAction> OnActionDo;
-	public event System.Action OnInventoryChange;
-	public event System.Action OnBuildingsChange;
+	public event System.Action<ObjectBase> OnInventoryChange;
+	public event System.Action OnInGameoObjectsChange;
+	public event System.Action<ObjectBase> OnBuild;
 	public event System.Action OnObjectArrayUpdate;
 
+
+
+	public void Built(ObjectBase obj)
+	{
+		OnBuild?.Invoke(obj);
+	}
 	public void BuildingChanged()
 	{
-		OnBuildingsChange?.Invoke();
+		OnInGameoObjectsChange?.Invoke();
 	}
 	public void ObjectArrayUpdated()
 	{
@@ -51,9 +59,9 @@ public class GameManager : MonoBehaviour
 	{
 		OnActionDo?.Invoke(a);
 	} 
-	public void InventoryChanged()
+	public void InventoryChanged(ObjectBase obj)
 	{
-		OnInventoryChange?.Invoke();
+		OnInventoryChange?.Invoke(obj);
 	}
 
 	private void EnergyChanged(int newValue)
@@ -204,14 +212,24 @@ public class GameManager : MonoBehaviour
 		return canDoAction;
 	}
 
-	public static bool HasItemsToBuild(PlayerBuilding b, int index)
+	public static bool HasItemsToBuy(ObjectBase b, int index)
 	{
 		bool canBuild = true;
-		foreach (var i in b.itemsNeeded[index].items)
+		foreach (var i in b.itemsNeededs[index].items)
 		{
-			canBuild = i.currentAmount >= 1;
+			canBuild = i.item.currentAmount >= i.amount;
 		}
 		return canBuild;
+	}
+	public static void DestroyItems(ObjectBase b)
+	{
+		foreach (var i in b.itemsNeededs[b.currentLevel].items)
+		{
+			if (i.isDestroyed)
+			{
+				i.item.currentAmount -= i.amount;
+			}
+		}
 	}
 
 
@@ -230,22 +248,29 @@ public class GameManager : MonoBehaviour
 	void PeriodicItemActionFast() => PeriodicItemAction(PeriodicActionInterval.Fast);
 	void PeriodicItemAction(PeriodicActionInterval interval)
 	{
-		foreach (InventorySlot i in InventoryManager.instance.slots)
+		foreach (var o in Shop.instance.objectDatabase)
 		{
-			for (int y = 0; y < i.amount; y++)
-				UseItem(i, interval);
-		}
-		foreach (InventorySlot i in ChestManager.instance.slots)
-		{
-			for (int y = 0; y < i.amount; y++)
-				UseItem(i, interval);
+			if (o.usingAmount)
+			{
+				if (o.currentAmount > 0 && o.periodicUses.Length > 0)
+				{
+					UseItem(o, interval);
+				}
+			}
+			else
+			{
+				if (o.currentLevel > 0 && o.periodicUses.Length > 0)
+				{
+					UseItem(o, interval);
+				}
+			}
 		}
 	}
-	void UseItem(InventorySlot i, PeriodicActionInterval interval)
+	void UseItem(ObjectBase o, PeriodicActionInterval interval)
 	{
-		if (i.item != null && i.item.periodicUseInterval == interval && i.item.currentAmount >= 1)
+		if (o != null && o.periodicUses[o.currentLevel - 1].interval == interval && o.currentAmount >= 1)
 		{
-			for (int y = 0; y < i.item.currentAmount; y++) { i.item.DoAction(); };
+			for (int y = 0; y < o.currentAmount; y++) { o.DoAction(); };
 		}
 	}
 	public enum PeriodicActionInterval
@@ -255,13 +280,6 @@ public class GameManager : MonoBehaviour
 		Slow,
 		Medium,
 		Fast,
-	}
-	public enum Counter
-	{
-		None,
-		Materiali,
-		Energia,
-		Punti
 	}
 	public enum SpecificShopScreen
 	{
@@ -482,7 +500,7 @@ public class GameManager : MonoBehaviour
 		isDay = true;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
-		OnBuildingsChange += RefreshInGameObjs;
+		OnInGameoObjectsChange += RefreshInGameObjs;
 		SpawnDecorations();
 		InvokeRepeating("SpawnDecorations", 30, Random.Range(45, 75));
 		InvokeRepeating("PeriodicItemActionSlow", 60, 60);
@@ -566,4 +584,12 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	#endregion
+}
+
+public enum Counter
+{
+	None,
+	Materiali,
+	Energia,
+	Punti
 }

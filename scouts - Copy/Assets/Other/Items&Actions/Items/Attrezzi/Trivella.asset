@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: Trivella
   m_EditorClassIdentifier: 
   name: Trivella
-  description: Serve per portare la tenda al livello 4.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Serve per portare la tenda al livello 4.
+  icon: {fileID: 0}
   shopScreen: 0
-  currentAmount: 0
   maxAmount: 2
-  neededItems: []
-  price: 2000
-  priceType: 1
-  periodicUseInterval: 2
-  changedCounter: 1
-  deltaPoints: 5
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 2000
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses:
+  - interval: 2
+    counter: 1
+    delta: 5
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

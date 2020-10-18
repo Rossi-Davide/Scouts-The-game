@@ -54,9 +54,9 @@ public class QuestUI : MonoBehaviour
 			completato.enabled = false;
 			barValue.text = quest.timesDone + "/" + quest.timesToDo;
 			prizeValue.text = quest.prizeAmount.ToString();
-			energyLogo.SetActive(quest.prizeCounter == GameManager.Counter.Energia);
-			materialsLogo.SetActive(quest.prizeCounter == GameManager.Counter.Materiali);
-			pointsLogo.SetActive(quest.prizeCounter == GameManager.Counter.Punti);
+			energyLogo.SetActive(quest.prizeCounter == Counter.Energia);
+			materialsLogo.SetActive(quest.prizeCounter == Counter.Materiali);
+			pointsLogo.SetActive(quest.prizeCounter == Counter.Punti);
 		}
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ChestManager : MonoBehaviour
@@ -54,7 +52,7 @@ public class ChestManager : MonoBehaviour
 			{
 				var s = InventoryManager.instance.slots[y];
 				fakeInventorySlots[y].ResetSlot();
-				fakeInventorySlots[y].SetAllValues(s.amount, s.item);
+				fakeInventorySlots[y].AddItem(s.item);
 				fakeInventorySlots[y].RefreshInventoryAmount();
 			}
 		}
@@ -70,7 +68,7 @@ public class ChestManager : MonoBehaviour
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{
 				var s = InventoryManager.instance.slots[y];
-				s.SetAllValues(fakeInventorySlots[y].amount, fakeInventorySlots[y].item);
+				s.AddItem(fakeInventorySlots[y].item);
 				s.RefreshInventoryAmount();
 			}
 		}

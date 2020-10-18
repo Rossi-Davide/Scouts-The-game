@@ -2,46 +2,37 @@
 
 
 [CreateAssetMenu(fileName = "New PlayerBuilding", menuName = "PlayerBuilding")]
-public class PlayerBuilding : ScriptableObject
+public class PlayerBuilding : ObjectBase
 {
-    public new string name;
-    public string description;
-    public Sprite icon;
-    public int maxLevel;
-    public int currentLevel;
-    public ItemsNeeded[] itemsNeeded;
-    public int[] maxHealth;
-    public int[] healthLossInterval;
-    public int[] prices; //a price for each level
-    public GameManager.Counter[] priceTypes;
+    public HealthInfo[] healthInfos;
     public Vector3 clickListenerOffset;
-    public int[] pointsGiven; //different points given for each level
 
-    [Header("Properties")]
-    public BuildingProperty[] properties;
+
+	public PlayerBuilding(ObjectBase obj)
+	{
+		name = obj.name;
+		description = obj.description;
+		type = obj.type;
+		icon = obj.icon;
+		shopScreen = obj.shopScreen;
+		maxAmount = obj.maxAmount;
+		maxLevel = obj.maxLevel;
+		showLevel = obj.showLevel;
+		usingAmount = obj.usingAmount;
+		itemsNeededs = obj.itemsNeededs;
+		shopInfos = obj.shopInfos;
+		periodicUses = obj.periodicUses;
+		modifiedActions = obj.modifiedActions;
+		changedMaxAmounts = obj.changedMaxAmounts;
+		currentAmount = obj.currentAmount;
+		currentLevel = obj.currentLevel;
+	}
+
+
 }
 [System.Serializable]
-public class BuildingProperty
+public class HealthInfo
 {
-    public ObjectProperty property;
-    public int[] values; //one value foreach level
-}
-public enum ObjectProperty
-{
-    changeMaterialsMaxAmount,
-    changeEnergyMaxAmount,
-    changePointsMaxAmount,
-    changeEnergyDropOverTime,
-    changePointsIncreaseOverTime,
-    changeMaterialsIncreaseOverTime,
-    changeEnergyTimeBeforeDrop,
-    changePointsTimeBeforeIncrease,
-    changeMaterialsTimeBeforeIncrease,
-}
-
-[System.Serializable]
-public class ItemsNeeded
-{
-    public Item[] items;
-    public int[] amounts;
+    public int maxHealth;
+    public int healthLossInterval;
 }

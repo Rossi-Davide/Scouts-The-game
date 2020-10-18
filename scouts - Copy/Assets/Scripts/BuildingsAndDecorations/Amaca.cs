@@ -12,7 +12,7 @@ public class Amaca : PlayerBuildingBase
 	{
 		Player.instance.gameObject.SetActive(true);
 		GetComponent<Animator>().Play("Amaca2");
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, 20);
+		GameManager.instance.ChangeCounter(Counter.Energia, 20);
 		RefreshButtonsState();
 		ChangeCounter(1);
 		StartWaitToUseAgain(buttons[0]);

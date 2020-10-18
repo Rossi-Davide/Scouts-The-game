@@ -47,22 +47,22 @@ public abstract class InGameObject : MonoBehaviour
 		if (b.generalAction.materialsGiven >= b.generalAction.energyGiven && b.generalAction.materialsGiven >= b.generalAction.energyGiven)
 		{
 			s += b.generalAction.materialsGiven.ToString();
-			b.priceOrPrizeType = GameManager.Counter.Materiali;
+			b.priceOrPrizeType = Counter.Materiali;
 		}
 		if (b.generalAction.energyGiven >= b.generalAction.materialsGiven && b.generalAction.energyGiven >= b.generalAction.pointsGiven)
 		{
 			s += b.generalAction.energyGiven.ToString();
-			b.priceOrPrizeType = GameManager.Counter.Energia;
+			b.priceOrPrizeType = Counter.Energia;
 		}
 		if (b.generalAction.pointsGiven >= b.generalAction.energyGiven && b.generalAction.pointsGiven >= b.generalAction.materialsGiven)
 		{
 			s += b.generalAction.pointsGiven.ToString();
-			b.priceOrPrizeType = GameManager.Counter.Punti;
+			b.priceOrPrizeType = Counter.Punti;
 		}
 		if (b.generalAction.materialsGiven == 0 && b.generalAction.pointsGiven == 0 && b.generalAction.pointsGiven == 0)
 		{
 			s = "";
-			b.priceOrPrizeType = GameManager.Counter.None;
+			b.priceOrPrizeType = Counter.None;
 		}
 		b.priceOrPrizeAmount = s;
 	}
@@ -107,9 +107,9 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			b.obj.SetActive(true);
 			b.obj.transform.Find("PriceOrPrizeValue").GetComponent<TextMeshProUGUI>().text = b.priceOrPrizeAmount;
-			b.obj.transform.Find("EnergyLogo").gameObject.SetActive(b.priceOrPrizeType == GameManager.Counter.Energia);
-			b.obj.transform.Find("MaterialsLogo").gameObject.SetActive(b.priceOrPrizeType == GameManager.Counter.Materiali);
-			b.obj.transform.Find("PointsLogo").gameObject.SetActive(b.priceOrPrizeType == GameManager.Counter.Punti);
+			b.obj.transform.Find("EnergyLogo").gameObject.SetActive(b.priceOrPrizeType == Counter.Energia);
+			b.obj.transform.Find("MaterialsLogo").gameObject.SetActive(b.priceOrPrizeType == Counter.Materiali);
+			b.obj.transform.Find("PointsLogo").gameObject.SetActive(b.priceOrPrizeType == Counter.Punti);
 			b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(b.isWaiting);
 		}
 		RefreshButtonsState();
@@ -214,9 +214,9 @@ public abstract class InGameObject : MonoBehaviour
 	protected void ChangeCounter(int n)
 	{
 		var b = buttons[n - 1];
-		GameManager.instance.ChangeCounter(GameManager.Counter.Energia, b.generalAction.energyGiven);
-		GameManager.instance.ChangeCounter(GameManager.Counter.Materiali, b.generalAction.materialsGiven);
-		GameManager.instance.ChangeCounter(GameManager.Counter.Punti, b.generalAction.pointsGiven);
+		GameManager.instance.ChangeCounter(Counter.Energia, b.generalAction.energyGiven);
+		GameManager.instance.ChangeCounter(Counter.Materiali, b.generalAction.materialsGiven);
+		GameManager.instance.ChangeCounter(Counter.Punti, b.generalAction.pointsGiven);
 	}
 
 
@@ -273,7 +273,7 @@ public class ActionButton
 	[HideInInspector]
 	public string priceOrPrizeAmount;
 	[HideInInspector]
-	public GameManager.Counter priceOrPrizeType;
+	public Counter priceOrPrizeType;
 	[HideInInspector]
 	public int timeLeft;
 	[HideInInspector]

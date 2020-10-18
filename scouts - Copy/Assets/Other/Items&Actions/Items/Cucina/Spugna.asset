@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: Spugna
   m_EditorClassIdentifier: 
   name: Spugna
-  description: Necessaria per lavare i piatti.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Necessaria per lavare i piatti.
+  icon: {fileID: 0}
   shopScreen: 1
-  currentAmount: 0
   maxAmount: 5
-  neededItems: []
-  price: 10
-  priceType: 1
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 0}
-  hasToBeInInventory: 0
-  modifiedParameter: 0
-  newValue: 0
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 10
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses: []
+  modifiedActions: []
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

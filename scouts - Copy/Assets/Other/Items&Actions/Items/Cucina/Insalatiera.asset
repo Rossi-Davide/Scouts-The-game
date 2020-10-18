@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Insalatiera
   m_EditorClassIdentifier: 
   name: Insalatiera
-  description: Aument l'energia ottenuta mangiando.
-  abilityDescription: 
-  icon: {fileID: 0}
   type: 0
+  description: Aument l'energia ottenuta mangiando.
+  icon: {fileID: 0}
   shopScreen: 1
-  currentAmount: 0
   maxAmount: 4
-  neededItems: []
-  price: 30
-  priceType: 1
-  periodicUseInterval: 0
-  changedCounter: 0
-  deltaPoints: 0
-  modifiedAction: {fileID: 11400000, guid: 92352b65d682046488144844375adfe0, type: 2}
-  hasToBeInInventory: 0
-  modifiedParameter: 2
-  newValue: 10
+  maxLevel: 0
+  showLevel: 0
+  usingAmount: 0
+  itemsNeededs: []
+  shopInfos:
+  - price: 30
+    priceCounter: 1
+    reward: 0
+    rewardCounter: 0
+  periodicUses: []
+  modifiedActions:
+  - action: {fileID: 11400000, guid: 92352b65d682046488144844375adfe0, type: 2}
+    hasToBeInInventory: 0
+    parameter: 2
+    delta: 3
+  changedMaxAmounts: []
+  currentAmount: 0
+  currentLevel: 0

@@ -8,56 +8,32 @@ public class InventorySlot : MonoBehaviour
 	[HideInInspector]
 	public Item item;
 	public TextMeshProUGUI amountText;
-	public int amount;
 
 	public void ResetSlot()
 	{
-		amount = 0;
 		item = null;
 		GetComponent<Image>().enabled = false;
 	}
-
-	public void SetAllValues(int a, Item i)
-	{
-		amount = a;
-		item = i;
-		GetComponent<Image>().enabled = amount > 0;
-		if (item != null)
-		{
-			icon.sprite = item.icon;
-		}
-	}
-
-
 	public void AddItem(Item i)
 	{
-		amount++;
-		GetComponent<Image>().enabled = true;
-		if (item == null)
+		if (item != null)
 		{
 			item = i;
 			icon.sprite = item.icon;
+			GetComponent<Image>().enabled = true;
 		}
 		RefreshInventoryAmount();
 	}
-	public void RemoveItem()
-	{
-		amount--;
-		RefreshInventoryAmount();
-		if (amount <= 0)
-		{
-			item = null;
-			GetComponent<Image>().enabled = false;
-		}
-	}
+
 	public void OnClick()
 	{
 		InventoryManager.instance.SelectItem(this);
 	}
 	public void RefreshInventoryAmount()
 	{
-		amountText.text = amount.ToString();
-		amountText.gameObject.SetActive(amount > 1);
+		amountText.text = item.currentAmount.ToString();
+		amountText.gameObject.SetActive(item.currentAmount > 1);
+		GetComponent<Image>().enabled = item != null;
 	}
 
 
@@ -84,13 +60,13 @@ public class InventorySlot : MonoBehaviour
 			else
 			{
 				s.AddItem(item);
-				RemoveItem();
+				ResetSlot();
 			}
 		}
 		else
 		{
 			s.AddItem(item);
-			RemoveItem();
+			ResetSlot();
 		}
 		InventoryManager.dragging = false;
 		Destroy(c);
