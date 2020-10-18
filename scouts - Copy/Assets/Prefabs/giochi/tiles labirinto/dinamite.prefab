@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2563358480870636553}
   - component: {fileID: 7572811842111669098}
+  - component: {fileID: 4826159708585845564}
+  - component: {fileID: 5822624216174456232}
   m_Layer: 0
   m_Name: dinamite
   m_TagString: Untagged
@@ -81,3 +83,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &4826159708585845564
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314134382979502102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.46875, y: -0.140625}
+      - {x: 0.390625, y: -0.0625}
+      - {x: 0.4375, y: -0.03515625}
+      - {x: 0.44921875, y: -0.0234375}
+      - {x: 0.4453125, y: -0.01171875}
+      - {x: 0.39453125, y: 0.03125}
+      - {x: 0.37109375, y: 0.0625}
+      - {x: 0.453125, y: 0.07421875}
+      - {x: 0.44921875, y: 0.10546875}
+      - {x: 0.37109375, y: 0.11328125}
+      - {x: 0.31640625, y: 0.1640625}
+      - {x: -0.28125, y: 0.1640625}
+      - {x: -0.3984375, y: 0.16015625}
+      - {x: -0.41796875, y: 0.15625}
+      - {x: -0.4453125, y: 0.1328125}
+      - {x: -0.4609375, y: 0.08984375}
+      - {x: -0.4609375, y: -0.08984375}
+      - {x: -0.47265625, y: -0.1328125}
+      - {x: -0.47265625, y: -0.1953125}
+      - {x: -0.44921875, y: -0.23046875}
+      - {x: 0.35546875, y: -0.23046875}
+      - {x: 0.41015625, y: -0.16796875}
+      - {x: 0.4609375, y: -0.1640625}
+      - {x: 0.46875, y: -0.15625}
+--- !u!114 &5822624216174456232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314134382979502102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29259f99ea17e904b9b847363f15e19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: 10
+  maxX: 90
+  minY: 10
+  maxY: 90

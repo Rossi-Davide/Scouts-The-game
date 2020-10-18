@@ -21,6 +21,6 @@ public class PlayerCollision : MonoBehaviour
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		Debug.Log("entrato");
+		//Debug.Log("entrato");
 	}
 }

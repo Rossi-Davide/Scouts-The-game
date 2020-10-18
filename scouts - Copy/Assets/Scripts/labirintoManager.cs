@@ -18,6 +18,8 @@ public class labirintoManager : MonoBehaviour
     LevelGenerator l;
     int StopScene = 15;
     bool StopSceneTrigger = false,alreadyStarted=false;
+    public int nSpilli,nDinamiti;
+    public GameObject spillo, dinamite;
 
 
     #region Utility functions
@@ -84,6 +86,14 @@ public class labirintoManager : MonoBehaviour
         countdownStart = true;
         countdownSecondsInizio.gameObject.SetActive(true);
         countdownSecondsInizio.text = secondsInizioGioco.ToString();
+        for(int i = 0; i < nSpilli; i++)
+        {
+            Instantiate(spillo);
+        }
+        for (int i = 0; i < nSpilli; i++)
+        {
+            Instantiate(dinamite);
+        }
     }
 
 
