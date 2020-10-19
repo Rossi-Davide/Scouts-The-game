@@ -1,0 +1,764 @@
+fileFormatVersion: 2
+guid: 55cb814baaa7cd644a1003e736f3df9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6157922312207120840
+    second: cambu1 sheet_0
+  - first:
+      213: 3173283345564662987
+    second: cambu1 sheet_1
+  - first:
+      213: -7939533075060796629
+    second: cambu1 sheet_2
+  - first:
+      213: -7633906477294912490
+    second: cambu1 sheet_3
+  - first:
+      213: -516767629516823791
+    second: cambu1 sheet_4
+  - first:
+      213: -2367097925708421663
+    second: cambu1 sheet_5
+  - first:
+      213: -901996511488384300
+    second: cambu1 sheet_6
+  - first:
+      213: 3027952170428428656
+    second: cambu1 sheet_7
+  - first:
+      213: -1767235908705491680
+    second: cambu1 sheet_8
+  - first:
+      213: -1665529351949163297
+    second: cambu1 sheet_9
+  - first:
+      213: 1594564139456990596
+    second: cambu1 sheet_10
+  - first:
+      213: -6295299853947248580
+    second: cambu1 sheet_11
+  - first:
+      213: -2496096309178296095
+    second: cambu1 sheet_12
+  - first:
+      213: 4141100109764483965
+    second: cambu1 sheet_13
+  - first:
+      213: 1023454856369273595
+    second: cambu1 sheet_14
+  - first:
+      213: -7720325374557096142
+    second: cambu1 sheet_15
+  - first:
+      213: -2301114520326112459
+    second: cambu1 sheet_16
+  - first:
+      213: 3886732281324785810
+    second: cambu1 sheet_17
+  - first:
+      213: -4390231027267034326
+    second: cambu1 sheet_18
+  - first:
+      213: 2824737954677157831
+    second: cambu1 sheet_19
+  - first:
+      213: -716471610602265045
+    second: cambu1 sheet_20
+  - first:
+      213: 2071684493629342750
+    second: cambu1 sheet_21
+  - first:
+      213: -562470453382413784
+    second: cambu1 sheet_22
+  - first:
+      213: 1508069430434550314
+    second: cambu1 sheet_23
+  - first:
+      213: 566784109391426642
+    second: cambu1 sheet_24
+  - first:
+      213: 7427388493103337249
+    second: cambu1 sheet_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cambu1 sheet_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1150
+        width: 120
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9be8587b5557550800000000000000
+      internalID: 6157922312207120840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_1
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1150
+        width: 123
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc7b08d364c90c20800000000000000
+      internalID: 3173283345564662987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_2
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1150
+        width: 123
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b235982dbbc11d190800000000000000
+      internalID: -7939533075060796629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1150
+        width: 123
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c784c418aee0690800000000000000
+      internalID: -7633906477294912490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1150
+        width: 120
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113aa33349214d8f0800000000000000
+      internalID: -516767629516823791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 1150
+        width: 120
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5e59d5af0662fd0800000000000000
+      internalID: -2367097925708421663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_6
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 745
+        width: 108
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2e718a3f67b73f0800000000000000
+      internalID: -901996511488384300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_7
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 745
+        width: 118
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071724bc472750a20800000000000000
+      internalID: 3027952170428428656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_8
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 745
+        width: 117
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0256b43ed448977e0800000000000000
+      internalID: -1767235908705491680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 744
+        width: 117
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd46516f0e9d2e8e0800000000000000
+      internalID: -1665529351949163297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 744
+        width: 118
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d09efe2a7012610800000000000000
+      internalID: 1594564139456990596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 744
+        width: 108
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30e7e2032a92a8a0800000000000000
+      internalID: -6295299853947248580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_12
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 416
+        width: 103
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e89346b1a51c5dd0800000000000000
+      internalID: -2496096309178296095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_13
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 416
+        width: 118
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bd7ddfb94287930800000000000000
+      internalID: 4141100109764483965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_14
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 485
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfaf985f4ca043e00800000000000000
+      internalID: 1023454856369273595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_15
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 416
+        width: 112
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237f613d9f4ebd490800000000000000
+      internalID: -7720325374557096142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 415
+        width: 112
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bf77c198cc010e0800000000000000
+      internalID: -2301114520326112459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 484
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2905865ca6270f530800000000000000
+      internalID: 3886732281324785810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 415
+        width: 118
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23a9d12424c213c0800000000000000
+      internalID: -4390231027267034326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 415
+        width: 103
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf6814243c733720800000000000000
+      internalID: 2824737954677157831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_20
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 76
+        width: 106
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26666ebdd49e06f0800000000000000
+      internalID: -716471610602265045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_21
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 75
+        width: 135
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e144679121a10cc10800000000000000
+      internalID: 2071684493629342750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_22
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 76
+        width: 130
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8220d7d4a14b138f0800000000000000
+      internalID: -562470453382413784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 77
+        width: 130
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a225da9282dbde410800000000000000
+      internalID: 1508069430434550314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 76
+        width: 135
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254bc90052f9dd700800000000000000
+      internalID: 566784109391426642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cambu1 sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 77
+        width: 106
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f8f348b72631760800000000000000
+      internalID: 7427388493103337249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
