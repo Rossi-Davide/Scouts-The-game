@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CassaDelFurfante : ObjectWithActions
+public class CassaDelFurfante : InGameObject
 {
 	public Vector3[] possiblePositions;
 	bool canUnlock;

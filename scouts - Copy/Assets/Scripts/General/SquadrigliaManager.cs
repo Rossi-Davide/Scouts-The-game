@@ -221,13 +221,13 @@ public class SquadrigliaManager : MonoBehaviour
 			var female = AIcontainers[i].transform.Find("Female").gameObject;
 			foreach (var s in female.GetComponentsInChildren<Squadrigliere>())
 			{
-				s.instanceOfListener.SetActive(sq.baseSq.femminile);
+				s.clickListener.gameObject.SetActive(sq.baseSq.femminile);
 				s.gameObject.SetActive(sq.baseSq.femminile);
 			}
 			var male = AIcontainers[i].transform.Find("Male").gameObject;
 			foreach (var s in male.GetComponentsInChildren<Squadrigliere>())
 			{
-				s.instanceOfListener.SetActive(!sq.baseSq.femminile);
+				s.clickListener.gameObject.SetActive(!sq.baseSq.femminile);
 				s.gameObject.SetActive(!sq.baseSq.femminile);
 			}
 			var squadriglieri = AIcontainers[i].GetComponentsInChildren<Squadrigliere>(false);
@@ -235,9 +235,7 @@ public class SquadrigliaManager : MonoBehaviour
 			for (int p = 0; p < squadriglieri.Length; p++)
 			{
 				squadriglieri[p].objectName = sq.nomi[p];
-				squadriglieri[p].nomeRuolo = sq.ruoli[p];
-				squadriglieri[p].sqText.text = sq.baseSq.name;
-				squadriglieri[p].ruolo.text = squadriglieri[p].nomeRuolo.ToString();
+				squadriglieri[p].objectSubName = sq.ruoli[p] + " " + sq.baseSq.name;
 				squadriglieri[p].sq = sq.baseSq;
 				squadriglieri[p].tent = sq.tenda;
 				if (sq.baseSq == Player.instance.squadriglia)
@@ -245,7 +243,7 @@ public class SquadrigliaManager : MonoBehaviour
 					if (p == 0)
 					{
 						var s = squadriglieri[p];
-						s.instanceOfListener.SetActive(false);
+						s.clickListener.gameObject.SetActive(false);
 						s.gameObject.SetActive(false);
 					}
 					p++;

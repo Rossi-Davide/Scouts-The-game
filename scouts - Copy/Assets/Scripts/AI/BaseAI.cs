@@ -17,23 +17,14 @@ public abstract class BaseAI : InGameObject
 
 	protected Transform priorityTarget;
 
-
-	public GameObject buttonCanvas;
-	public Button clickListenerButton;
-	[HideInInspector]
-	public GameObject instanceOfListener;
-
-
 	public event System.Action OnPathCreated;
 	public event System.Action OnPathCompleted;
 	protected override void Start()
 	{
 		base.Start();
-		instanceOfListener = Instantiate(clickListenerButton.gameObject, transform.position, Quaternion.identity, buttonCanvas.transform);
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
-		instanceOfListener.GetComponent<Button>().onClick.AddListener(OnClick);
 		CreateNewPath();
 
 		OnPathCreated += PriorityPath;
@@ -90,9 +81,9 @@ public abstract class BaseAI : InGameObject
 	}
 
 
-	protected void Update()
+	protected override void Update()
 	{
-		instanceOfListener.transform.position = transform.position;
+		base.Update();
 		ChangeAnimation();
 		if (currentPath == null)
 			return;

@@ -2,22 +2,50 @@
 using TMPro;
 using System.Linq;
 using System.Collections;
-using System.Diagnostics;
-using System.Globalization;
+using UnityEngine.UI;
+using System;
 
 public abstract class InGameObject : MonoBehaviour
 {
 	public string objectName;
-	protected string displayName;
+	public string objectSubName; //the subtitle which appears on screen
 	protected TextMeshProUGUI buttonsText;
 	public ActionButton[] buttons;
 	public float maxDistanceFromPlayer;
+
+	[HideInInspector]
+	public GameObject wpCanvas, buttonCanvas;
+
+	protected TimeAction action; //like local variable
+	public bool isInstantiating; //true if object creates instance of clicklistener prefab
+	public bool checkPositionEachFrame; //true if object is often moving so it needs to update click listener position frequently
+	public Button clickListener;
+
 	protected bool hasBeenClicked;
+
+	[HideInInspector]
+	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
+	[HideInInspector]
+	public TimeLeftBar loadingBar;
+	[HideInInspector]
+	public TextMeshProUGUI nameText, subNameText;
+	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
+
+
+	protected virtual void Update()
+	{
+		if (checkPositionEachFrame)
+		{
+			MoveUI();
+		}
+	}
+
 
 
 	protected virtual void Start()
 	{
 		InvokeRepeating("RefreshButtonsState", 0f, .2f);
+
 		for (int b = 0; b < buttons.Length; b++)
 		{
 			CalculatePriceOrPrize(buttons[b]);
@@ -25,8 +53,23 @@ public abstract class InGameObject : MonoBehaviour
 			buttons[b].obj = GameManager.instance.actionButtons[b];
 			buttons[b].canDo = true;
 		} //change price or prize string in buttons
+
+		wpCanvas = GameManager.instance.wpCanvas;
+		buttonCanvas = GameManager.instance.buttonCanvas;
 		buttonsText = GameManager.instance.buttonsText;
-		displayName = objectName;
+
+		if (isInstantiating) // maybe check if listener is null
+		{
+			clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
+		}
+		clickListener.onClick.AddListener(OnClick);
+
+		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
+		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
+		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
+		nameText.text = objectName;
+		subNameText.text = objectSubName;
+
 	}
 	void OnEnable()
 	{
@@ -68,7 +111,7 @@ public abstract class InGameObject : MonoBehaviour
 	}
 
 
-	protected Item[] CheckGeneralAction(ActionButton b)
+	protected Item[] CheckActionItems(ActionButton b)
 	{
 		Item[] items = new Item[b.generalAction.neededItems.Length];
 		for (int i = 0; i < items.Length; i++)
@@ -103,6 +146,8 @@ public abstract class InGameObject : MonoBehaviour
 	public virtual void Select()
 	{
 		buttonsText.enabled = true;
+		nameText.gameObject.SetActive(true);
+		subNameText.gameObject.SetActive(true);
 		foreach (var b in buttons)
 		{
 			b.obj.SetActive(true);
@@ -118,6 +163,8 @@ public abstract class InGameObject : MonoBehaviour
 	public virtual void Deselect()
 	{
 		buttonsText.enabled = false;
+		nameText.gameObject.SetActive(false);
+		subNameText.gameObject.SetActive(false);
 		foreach (var b in buttons)
 		{
 			b.obj.SetActive(false);
@@ -134,7 +181,7 @@ public abstract class InGameObject : MonoBehaviour
 			var c = FindNotVerified(b.generalAction.conditions);
 			if (c == null)
 			{
-				var i = CheckGeneralAction(b);
+				var i = CheckActionItems(b);
 				if (!CheckActionManager(n - 1))
 				{
 					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
@@ -152,6 +199,7 @@ public abstract class InGameObject : MonoBehaviour
 					var onEnd = DoAction(b);
 					GameManager.instance.ActionDone(b.generalAction);
 					ActuallyAddAction(n - 1, onEnd);
+					buttons[n - 1].generalAction.ChangeCountersOnStart();
 					b.canDo = false;
 				}
 			}
@@ -163,22 +211,37 @@ public abstract class InGameObject : MonoBehaviour
 
 	}
 
-	protected virtual bool CheckActionManager(int buttonIndex) { return true; }
+	protected virtual bool CheckActionManager(int buttonIndex)
+	{
+		if (ActionManager.instance.CheckIfNotTooManyActions() || !buttons[buttonIndex].generalAction.showInActionList)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 
-	protected virtual void ActuallyAddAction(int buttonIndex, System.Action onEnd) {  }
+	}
+
+	protected virtual void ActuallyAddAction(int buttonIndex, Action onEnd)
+	{
+		action = new TimeAction(buttons[buttonIndex].generalAction, this, buttonIndex + 1, loadingBar, onEnd);
+		ActionManager.instance.AddAction(action, buttons[buttonIndex].generalAction.showInActionList);
+	}
 
 	protected virtual void RefreshButtonsState()
 	{
 		if (ActionButtons.instance.selected == this)
 		{
-			buttonsText.text = displayName;
+			buttonsText.text = objectSubName != null ? objectName + $" ({objectSubName})" : objectName;
 			foreach (var b in buttons)
 			{
 				b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(b.isWaiting);
 				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
 				b.obj.transform.Find("InfoButton").gameObject.SetActive(b.generalAction.hasInfoPanel);
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.generalAction.conditions) == null && CheckGeneralAction(b) == null && ActionManager.instance.CheckIfTooManyActions() && b.canDo)
+				if (FindNotVerified(b.generalAction.conditions) == null && CheckActionItems(b) == null && ActionManager.instance.CheckIfNotTooManyActions() && b.canDo)
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -192,7 +255,7 @@ public abstract class InGameObject : MonoBehaviour
 
 
 
-	protected abstract System.Action DoAction(ActionButton b);
+	protected abstract Action DoAction(ActionButton b);
 
 
 	/// <summary> Restituisce null se sono tutte verificate. </summary>
@@ -202,29 +265,24 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		switch (t)
 		{
+			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(objectName);
 			case ConditionType.ConditionIsRaining: return GameManager.instance.isRaining;
 			case ConditionType.ConditionIsDaytime: return GameManager.instance.isDay;
 			case ConditionType.ConditionIsPlayerCloseEnough: if (maxDistanceFromPlayer == 0) { return true; } else { return Vector2.Distance(transform.position, Player.instance.transform.position) <= maxDistanceFromPlayer; };
-			default: throw new System.NotImplementedException(t.ToString());
+			default: throw new NotImplementedException(t.ToString());
 		}
 	}
-
-
-
-	protected void ChangeCounter(int n)
+	public virtual void MoveUI()
 	{
-		var b = buttons[n - 1];
-		GameManager.instance.ChangeCounter(Counter.Energia, b.generalAction.energyGiven);
-		GameManager.instance.ChangeCounter(Counter.Materiali, b.generalAction.materialsGiven);
-		GameManager.instance.ChangeCounter(Counter.Punti, b.generalAction.pointsGiven);
+		loadingBar.transform.position = transform.position + loadingBarOffset;
+		nameText.transform.position = transform.position + nameTextOffset;
+		subNameText.transform.position = nameText.transform.position + subNameRelativeOffset;
+		clickListener.transform.position = transform.position;
 	}
-
-
-
 
 
 	#region Wait To Use Again
-	protected virtual void StartWaitToUseAgain(ActionButton b)
+	public void StartWaitToUseAgain(ActionButton b)
 	{
 		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(true);
 		b.isWaiting = true;
@@ -261,7 +319,7 @@ public abstract class InGameObject : MonoBehaviour
 
 
 
-[System.Serializable]
+[Serializable]
 public class ActionButton
 {
 	public string buttonText;
@@ -296,10 +354,9 @@ public enum ConditionType
 	ConditionCanUnlockNegozioDelFurfante,
 	ConditionHasEnoughMaterials,
 	ConditionCookBundle,
-	ConditionStaFacendoLegnaAI,
 }
 
-[System.Serializable]
+[Serializable]
 public class Condition
 {
 	public ConditionType type;

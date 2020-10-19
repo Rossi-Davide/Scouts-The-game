@@ -132,7 +132,7 @@ public class InventoryManager : MonoBehaviour
 				itemName.text = slot.item.name;
 				description.text = slot.item.description;
 				type.text = slot.item.type.ToString();
-				useButton.SetActive(slot.item.periodicUses[slot.item.currentLevel].interval == GameManager.PeriodicActionInterval.Once);
+				useButton.SetActive(slot.item.periodicUses.Length > slot.item.level && slot.item.periodicUses[slot.item.level].interval == GameManager.PeriodicActionInterval.Once);
 				useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Usa";
 				itemInfoBox.SetActive(true);
 			}

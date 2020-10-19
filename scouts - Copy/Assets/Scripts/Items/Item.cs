@@ -12,7 +12,7 @@ public class Item : ObjectBase
 		shopScreen = obj.shopScreen;
 		maxAmount = obj.maxAmount;
 		maxLevel = obj.maxLevel;
-		showLevel = obj.showLevel;
+		usingLevel = obj.usingLevel;
 		usingAmount = obj.usingAmount;
 		itemsNeededs = obj.itemsNeededs;
 		shopInfos = obj.shopInfos;
@@ -20,6 +20,6 @@ public class Item : ObjectBase
 		modifiedActions = obj.modifiedActions;
 		changedMaxAmounts = obj.changedMaxAmounts;
 		currentAmount = obj.currentAmount;
-		currentLevel = obj.currentLevel;
+		level = obj.level;
 	}
 }

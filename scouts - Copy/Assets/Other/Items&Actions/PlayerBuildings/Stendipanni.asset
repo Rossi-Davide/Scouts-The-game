@@ -19,21 +19,16 @@ MonoBehaviour:
   shopScreen: 6
   maxAmount: 0
   maxLevel: 1
-  showLevel: 1
+  usingLevel: 1
   usingAmount: 0
   itemsNeededs:
   - items:
-    - {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
-    - {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
-    amounts: 0100000001000000
-  - items:
-    - {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
-    - {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
-    amounts: 0100000001000000
-  - items:
-    - {fileID: 11400000, guid: 5c648984625f23149a6e1aa9fdac5578, type: 2}
-    - {fileID: 11400000, guid: 32e6b819f7220674fa98015a957ade72, type: 2}
-    amounts: 0100000001000000
+    - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+      amount: 1
+      isDestroyed: 1
+    - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
+      amount: 2
+      isDestroyed: 0
   shopInfos:
   - price: 250
     priceCounter: 1
@@ -45,4 +40,3 @@ MonoBehaviour:
   currentAmount: 0
   currentLevel: 0
   healthInfos: []
-  clickListenerOffset: {x: 0, y: 0, z: 0}

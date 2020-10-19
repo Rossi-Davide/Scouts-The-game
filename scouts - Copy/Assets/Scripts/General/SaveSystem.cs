@@ -187,7 +187,7 @@ public class CurrentObjects
 	public Alzabandiera alzabandiera;
 	public Montana montana;
 
-	public Decorations[] decorations;
+	public Plant[] decorations;
 }
 public class CurrentPLayerValues
 {

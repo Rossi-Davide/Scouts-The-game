@@ -87,7 +87,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 			}
 			else if (b.gameObject.activeSelf)
 			{
-				b.MoveUI();
+				b.GetComponent<InGameObject>().MoveUI();
 				b.componentEnabled = isModifying;
 			}
 		}

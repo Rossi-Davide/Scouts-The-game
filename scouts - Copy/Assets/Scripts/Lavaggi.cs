@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Lavaggi : ObjectWithActions
+public class Lavaggi : InGameObject
 {
 	void LavaIPanni()
 	{
@@ -33,13 +33,10 @@ public class Lavaggi : ObjectWithActions
 		switch (b.buttonNum)
 		{
 			case 1:
-				ChangeCounter(1);
 				return LavaIPanni;
 			case 2:
-				ChangeCounter(2);
 				return LavaIPiatti;
 			case 3:
-				ChangeCounter(3);
 				return Pulisci;
 			default:
 				throw new NotImplementedException();

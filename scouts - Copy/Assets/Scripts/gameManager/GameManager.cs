@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 	public void ActionDone(PlayerAction a)
 	{
 		OnActionDo?.Invoke(a);
-	} 
+	}
 	public void InventoryChanged(ObjectBase obj)
 	{
 		OnInventoryChange?.Invoke(obj);
@@ -107,6 +107,8 @@ public class GameManager : MonoBehaviour
 			case Counter.Punti:
 				pointsValue = CheckRange(pointsValue + delta, 0, 100);
 				PointsChanged(pointsValue);
+				break;
+			case Counter.None:
 				break;
 			default:
 				throw new System.Exception("Counter non valido");
@@ -212,22 +214,28 @@ public class GameManager : MonoBehaviour
 		return canDoAction;
 	}
 
-	public static bool HasItemsToBuy(ObjectBase b, int index)
+	public static bool HasItemsToBuy(ObjectBase b)
 	{
 		bool canBuild = true;
-		foreach (var i in b.itemsNeededs[index].items)
+		if ((b.exists && b.itemsNeededs.Length > b.level + 1) || (!b.exists && b.itemsNeededs.Length > b.level))
 		{
-			canBuild = i.item.currentAmount >= i.amount;
+			foreach (var i in b.itemsNeededs[b.exists ? b.level + 1 : b.level].items)
+			{
+				canBuild = i.item.currentAmount >= i.amount;
+			}
 		}
 		return canBuild;
 	}
 	public static void DestroyItems(ObjectBase b)
 	{
-		foreach (var i in b.itemsNeededs[b.currentLevel].items)
+		if (b.itemsNeededs.Length > b.level)
 		{
-			if (i.isDestroyed)
+			foreach (var i in b.itemsNeededs[b.level].items)
 			{
-				i.item.currentAmount -= i.amount;
+				if (i.isDestroyed)
+				{
+					i.item.currentAmount -= i.amount;
+				}
 			}
 		}
 	}
@@ -257,18 +265,15 @@ public class GameManager : MonoBehaviour
 					UseItem(o, interval);
 				}
 			}
-			else
+			else if (o.periodicUses.Length > 0)
 			{
-				if (o.currentLevel > 0 && o.periodicUses.Length > 0)
-				{
-					UseItem(o, interval);
-				}
+				UseItem(o, interval);
 			}
 		}
 	}
 	void UseItem(ObjectBase o, PeriodicActionInterval interval)
 	{
-		if (o != null && o.periodicUses[o.currentLevel - 1].interval == interval && o.currentAmount >= 1)
+		if (o != null && o.periodicUses[o.level].interval == interval && o.currentAmount >= 1)
 		{
 			for (int y = 0; y < o.currentAmount; y++) { o.DoAction(); };
 		}
@@ -303,7 +308,7 @@ public class GameManager : MonoBehaviour
 	public GameObject[] actionButtons;
 	public TextMeshProUGUI buttonsText;
 	public GameObject wpCanvas;
-	public GameObject healthBarPrefab, loadingBarPrefab, nameTextPrefab;
+	public GameObject healthBarPrefab, loadingBarPrefab, nameTextPrefab, subNameTextPrefab;
 
 	public GameObject[] decorations;
 	[HideInInspector]
@@ -322,7 +327,7 @@ public class GameManager : MonoBehaviour
 					float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
 					float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
 					GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
-					decoration.GetComponent<Decorations>().wpCanvas = wpCanvas;
+					decoration.GetComponent<Plant>().wpCanvas = wpCanvas;
 					spawnedDecorations.Add(decoration);
 				}
 			}

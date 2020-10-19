@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AngoloDiAltraSquadriglia : ObjectWithActions
+public class AngoloDiAltraSquadriglia : InGameObject
 {
 	[HideInInspector]
 	public Squadriglia squadriglia;

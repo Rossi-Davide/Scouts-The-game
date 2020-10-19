@@ -14,7 +14,6 @@ public class Amaca : PlayerBuildingBase
 		GetComponent<Animator>().Play("Amaca2");
 		GameManager.instance.ChangeCounter(Counter.Energia, 20);
 		RefreshButtonsState();
-		ChangeCounter(1);
 		StartWaitToUseAgain(buttons[0]);
 	}
 
@@ -26,10 +25,8 @@ public class Amaca : PlayerBuildingBase
 				StartSleep();
 				return EndOfSleep;
 			case 2:
-				ChangeCounter(2);
 				return MettiAlSicuro;
 			case 3:
-				ChangeCounter(3);
 				return Ripara;
 			default:
 				throw new NotImplementedException();

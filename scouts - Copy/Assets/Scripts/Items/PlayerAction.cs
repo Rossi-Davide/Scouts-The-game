@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "New Player Action", menuName = "PlayerAction")]
-
 public class PlayerAction : ScriptableObject
 {
     public new string name;
@@ -10,20 +8,12 @@ public class PlayerAction : ScriptableObject
     public Item[] neededItems;
     public Condition[] conditions;
     public bool hasInfoPanel;
+    public bool showInActionList;
 
     [Header("Parameters")]
     public int timeNeeded;
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0
     public int timeBeforeRedo;
-
-    public void SetProperties(int timeNeeded, int energyGiven, int materialsGiven, int pointsGiven, int timeBeforeRedo)
-	{
-        this.timeNeeded = timeNeeded;
-        this.energyGiven = energyGiven;
-        this.materialsGiven = materialsGiven;
-        this.pointsGiven = pointsGiven;
-        this.timeBeforeRedo = timeBeforeRedo;
-	}
 
     public enum ActionParams
 	{
@@ -34,4 +24,25 @@ public class PlayerAction : ScriptableObject
         pointsGiven,
         timeBeforeRedo,
 	}
+
+
+    public void ChangeCountersOnStart()
+	{
+        if (energyGiven < 0)
+            GameManager.instance.ChangeCounter(Counter.Energia, energyGiven);
+        if (materialsGiven < 0)
+            GameManager.instance.ChangeCounter(Counter.Materiali, materialsGiven);
+        if (pointsGiven < 0)
+            GameManager.instance.ChangeCounter(Counter.Punti, pointsGiven);
+    }
+    public void ChangeCountersOnEnd()
+	{
+        if (energyGiven > 0)
+            GameManager.instance.ChangeCounter(Counter.Energia, energyGiven);
+        if (materialsGiven > 0)
+            GameManager.instance.ChangeCounter(Counter.Materiali, materialsGiven);
+        if (pointsGiven > 0)
+            GameManager.instance.ChangeCounter(Counter.Punti, pointsGiven);
+    }
+
 }

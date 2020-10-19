@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Latrina : ObjectWithActions
+public class Latrina : InGameObject
 {
 	void Pulisci()
 	{
@@ -12,7 +12,6 @@ public class Latrina : ObjectWithActions
 		switch (b.buttonNum)
 		{
 			case 1:
-				ChangeCounter(1);
 				return Pulisci;
 			default:
 				throw new NotImplementedException();

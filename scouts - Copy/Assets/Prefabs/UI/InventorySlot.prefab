@@ -186,7 +186,7 @@ RectTransform:
   m_GameObject: {fileID: 8772316046312900973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3000002, y: 1.3000002, z: 1}
   m_Children:
   - {fileID: 3817080075060871921}
   m_Father: {fileID: 0}
@@ -247,12 +247,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f17d2ae0a95da478b42b5523a19ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInfoBox: {fileID: 0}
   icon: {fileID: 8772316046312900968}
   item: {fileID: 0}
-  amount: {fileID: 7254280095635822881}
-  dragging: 0
+  amountText: {fileID: 7254280095635822881}
   clone: {fileID: -295575754736875453, guid: 5637b7252b361fb49a98bab6a5f8591e, type: 3}
+  c: {fileID: 0}
 --- !u!114 &6377408301467787323
 MonoBehaviour:
   m_ObjectHideFlags: 0

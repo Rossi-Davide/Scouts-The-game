@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class ShopObjectBase : MonoBehaviour
 {
 	public ObjectBase obj;
-    protected bool showingInfo;
-    protected TextMeshProUGUI objectName, typeText, price, description, level, levelHeader, amount, amountHeader;
-    protected GameObject energyLogo, materialsLogo, pointsLogo, icon, infoButton;
+	protected bool showingInfo;
+	protected TextMeshProUGUI objectName, typeText, price, description, level, levelHeader, amount, amountHeader, buyButtonText;
+	protected GameObject energyLogo, materialsLogo, pointsLogo, icon, infoButton;
 
 	protected virtual void Awake()
 	{
@@ -15,36 +15,39 @@ public class ShopObjectBase : MonoBehaviour
 		RefreshInfo();
 	}
 
-    public virtual void RefreshInfo()
+	public virtual void RefreshInfo()
 	{
-		level.text = "Livello " + obj.currentLevel + "/" + obj.maxLevel;
-		Counter pt = Counter.None;
-		if (obj.currentLevel < obj.maxLevel)
+		bool canIncreaseLevel = !obj.usingLevel || obj.level < obj.maxLevel;
+		bool canBuy = !obj.usingAmount || obj.currentAmount < obj.maxAmount;
+		Counter pt;
+		int pc, index;
+
+		if (obj.exists)
 		{
-			if (GameManager.HasItemsToBuy(obj, obj.currentLevel))
-			{
-				price.transform.parent.GetComponent<Animator>().Play("Enabled");
-				price.color = GameManager.instance.GetCounterValue(obj.shopInfos[obj.currentLevel].priceCounter) >= obj.shopInfos[obj.currentLevel].price ? Color.white : Color.red;
-				pt = obj.shopInfos[obj.currentLevel].priceCounter;
-			}
+			if (canIncreaseLevel)
+				index = obj.level;
 			else
-			{
-				price.transform.parent.GetComponent<Animator>().Play("Disabled");
-				pt = obj.shopInfos[obj.currentLevel].priceCounter;
-			}
+				index = obj.level - 1;
 		}
 		else
-		{
-			price.transform.parent.GetComponent<Animator>().Play("Disabled");
-			pt = obj.shopInfos[obj.currentLevel - 1].priceCounter;
-		}
-		levelHeader.text = obj.currentLevel > 0 ? "Migliora" : "Costruisci";
-		amount.text = obj.currentAmount + "/" + obj.maxAmount;
+			index = obj.level;
+
+		pt = obj.shopInfos[index].priceCounter;
+		pc = obj.shopInfos[index].price;
+
+		bool hasItems = GameManager.HasItemsToBuy(obj);
+		buyButtonText.text = obj.usingLevel ? (obj.exists ? "Migliora" : "Costruisci") : "Compra";
+		price.text = pc.ToString();
 		energyLogo.SetActive(pt == Counter.Energia);
 		materialsLogo.SetActive(pt == Counter.Materiali);
 		pointsLogo.SetActive(pt == Counter.Punti);
+		bool hasEnoughMoney = GameManager.instance.GetCounterValue(pt) >= pc;
+		price.color = hasEnoughMoney ? Color.white : Color.red;
+		price.transform.parent.GetComponent<Animator>().Play(canIncreaseLevel && canBuy && hasItems ? "Enabled" : "Disabled");
+		amount.text = obj.currentAmount + "/" + obj.maxAmount;
+		level.text = (obj.exists ? (obj.level + 1) : obj.level) + "/" + (obj.maxLevel + 1);
 	}
-    protected virtual void InitializeVariables()
+	protected virtual void InitializeVariables()
 	{
 		energyLogo = transform.Find("BuyButton/EnergyLogo").gameObject;
 		materialsLogo = transform.Find("BuyButton/MaterialsLogo").gameObject;
@@ -58,6 +61,7 @@ public class ShopObjectBase : MonoBehaviour
 		objectName = transform.Find("Name").GetComponent<TextMeshProUGUI>();
 		typeText = transform.Find("Type").GetComponent<TextMeshProUGUI>();
 		price = transform.Find("BuyButton/Price").GetComponent<TextMeshProUGUI>();
+		buyButtonText = transform.Find("BuyButton/Text").GetComponent<TextMeshProUGUI>();
 		infoButton = transform.Find("InfoButton").gameObject;
 		typeText.text = obj.type.ToString();
 		description.text = obj.description;
@@ -65,8 +69,8 @@ public class ShopObjectBase : MonoBehaviour
 		icon.GetComponent<Image>().sprite = obj.icon;
 		amount.gameObject.SetActive(obj.usingAmount);
 		amountHeader.gameObject.SetActive(obj.usingAmount);
-		level.gameObject.SetActive(obj.showLevel);
-		levelHeader.gameObject.SetActive(obj.showLevel);
+		level.gameObject.SetActive(obj.usingLevel);
+		levelHeader.gameObject.SetActive(obj.usingLevel);
 	}
 	protected virtual void OnEnable()
 	{
@@ -94,7 +98,7 @@ public class ShopObjectBase : MonoBehaviour
 		levelHeader.gameObject.SetActive(!showingInfo);
 	}
 
-	public virtual void Select() 
+	public virtual void Select()
 	{
 		Shop.instance.DisplayInfo(obj);
 	}

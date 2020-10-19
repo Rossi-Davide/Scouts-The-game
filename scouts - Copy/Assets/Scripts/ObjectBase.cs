@@ -8,8 +8,8 @@ public abstract class ObjectBase : ScriptableObject
     public Sprite icon;
     public GameManager.SpecificShopScreen shopScreen;
     public int maxAmount;
-    public int maxLevel;
-    public bool showLevel;
+    public int maxLevel; //index
+    public bool usingLevel;
     public bool usingAmount;
 
 
@@ -21,13 +21,14 @@ public abstract class ObjectBase : ScriptableObject
 
     [Header("Please do not modify if not testing")]
     public int currentAmount;
-    public int currentLevel; //not index but normal number
+    public int level; //index
+    public bool exists;
 
     public virtual void DoAction()
     {
-        if (periodicUses[currentLevel].counter != Counter.None)
+        if (periodicUses[level].counter != Counter.None)
         {
-            GameManager.instance.ChangeCounter(periodicUses[currentLevel].counter, periodicUses[currentLevel].delta);
+            GameManager.instance.ChangeCounter(periodicUses[level].counter, periodicUses[level].delta);
         }
     }
 

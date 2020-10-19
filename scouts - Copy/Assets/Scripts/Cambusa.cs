@@ -1,5 +1,5 @@
 ﻿using System;
-public class Cambusa : ObjectWithActions
+public class Cambusa : InGameObject
 {
 	void Attack()
 	{
@@ -11,7 +11,6 @@ public class Cambusa : ObjectWithActions
 		switch (b.buttonNum)
 		{
 			case 1:
-				ChangeCounter(2);
 				return Attack;
 			default:
 				throw new NotImplementedException();

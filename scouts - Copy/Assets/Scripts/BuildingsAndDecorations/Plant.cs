@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-public class Decorations : ObjectWithActions
+public class Plant : InGameObject
 {
 	void PlayerHandPunch()
 	{
@@ -22,21 +22,13 @@ public class Decorations : ObjectWithActions
 		GetComponent<ParticleSystem>().Stop();
 		Player.instance.GetComponent<Animator>().Play("idle");
 		Player.instance.enabled = true;
-		ChangeCounter(1);
 		GameManager.instance.spawnedDecorations.Remove(gameObject);
 		Deselect();
 		Destroy(gameObject);
 		Destroy(clickListener.gameObject);
 	}
 
-	protected override bool GetConditionValue(ConditionType t)
-	{
-		switch (t)
-		{
-			default: return base.GetConditionValue(t);
-		}
-	}
-	protected override System.Action DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{

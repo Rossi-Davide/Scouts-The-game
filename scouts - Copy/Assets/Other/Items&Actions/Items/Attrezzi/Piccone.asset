@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Piccone
   type: 0
   description: Necessario per scavare il fossetto.
-  icon: {fileID: 0}
+  icon: {fileID: -488721925442295091, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 0
   maxAmount: 1
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 750

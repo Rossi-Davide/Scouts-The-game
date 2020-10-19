@@ -55,12 +55,12 @@ public class QuestManager : MonoBehaviour
 	{
 		if (obj != null && obj.modifiedActions.Length > 0)
 		{
-			var a = obj.modifiedActions[obj.currentLevel - 1].action;
-			var n = obj.modifiedActions[obj.currentLevel - 1].delta;
+			var a = obj.modifiedActions[obj.level].action;
+			var n = obj.modifiedActions[obj.level].delta;
 			if (removed) { n = -n; }
-			if (!obj.modifiedActions[obj.currentLevel - 1].hasToBeInInventory)
+			if (!obj.modifiedActions[obj.level].hasToBeInInventory)
 			{
-				switch (obj.modifiedActions[obj.currentLevel - 1].parameter)
+				switch (obj.modifiedActions[obj.level].parameter)
 				{
 					case PlayerAction.ActionParams.timeNeeded:
 						a.timeNeeded += n;

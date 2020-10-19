@@ -19,8 +19,8 @@ MonoBehaviour:
   shopScreen: 0
   maxAmount: 1
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 60
@@ -31,4 +31,5 @@ MonoBehaviour:
   modifiedActions: []
   changedMaxAmounts: []
   currentAmount: 0
-  currentLevel: 0
+  level: 0
+  exists: 0

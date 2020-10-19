@@ -10,7 +10,6 @@ public class PianoBidoni : PlayerBuildingBase
 	void EndCucina()
 	{
 		GetComponent<Animator>().Play("PianoBidoni2");
-		ChangeCounter(1);
 		StartWaitToUseAgain(buttons[0]);
 		RefreshButtonsState();
 	}
@@ -23,7 +22,7 @@ public class PianoBidoni : PlayerBuildingBase
 			default: return base.GetConditionValue(t);
 		}
 	}
-	protected override System.Action DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
@@ -31,10 +30,8 @@ public class PianoBidoni : PlayerBuildingBase
 				CucinaStart();
 				return EndCucina;
 			case 2:
-				ChangeCounter(2);
 				return MettiAlSicuro;
 			case 3:
-				ChangeCounter(3);
 				return Ripara;
 			default:
 				throw new NotImplementedException();

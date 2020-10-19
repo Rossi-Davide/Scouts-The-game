@@ -2,7 +2,7 @@
 using UnityEngine.Experimental.Rendering.Universal;
 using System;
 
-public class Campfire : ObjectWithActions
+public class Campfire : InGameObject
 {
 	[HideInInspector]
 	public AudioSource aud;
@@ -30,7 +30,6 @@ public class Campfire : ObjectWithActions
 	}
 	void FaiLegna()
 	{
-		ChangeCounter(1);
 		RefreshButtonsState();
 		StartWaitToUseAgain(buttons[0]);
 	}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Alzabandiera : ObjectWithActions
+public class Alzabandiera : InGameObject
 {
 	void FareAlzabandiera()
 	{
@@ -11,7 +11,6 @@ public class Alzabandiera : ObjectWithActions
 		switch (b.buttonNum)
 		{
 			case 1:
-				ChangeCounter(1);
 				return FareAlzabandiera;
 			default:
 				throw new NotImplementedException();

@@ -37,14 +37,6 @@ public class MoveBuildings : MonoBehaviour
 		{
 			ResetPos(startPos);
 		}
-		MoveUI();
-	}
-	public void MoveUI()
-	{
-		PlayerBuildingBase b = GetComponent<PlayerBuildingBase>();
-		b.healthBar.transform.position = transform.position + b.healthBarOffset;
-		b.loadingBar.transform.position = transform.position + b.loadingBarOffset;
-		b.nameText.transform.position = transform.position + b.nameTextOffset;
-		b.clickListener.transform.position = transform.position + b.building.clickListenerOffset;
+		GetComponent<InGameObject>().MoveUI();
 	}
 }

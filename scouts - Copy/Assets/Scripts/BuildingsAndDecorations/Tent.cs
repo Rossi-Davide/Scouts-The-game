@@ -9,7 +9,6 @@ public class Tent : PlayerBuildingBase
 	{
 		GameManager.instance.hasSkippedNight = true;
 		Player.instance.gameObject.SetActive(true);
-		ChangeCounter(1);
 		RefreshButtonsState();
 		GameManager.Wait(.1f, SkipNight);
 	}
@@ -26,10 +25,8 @@ public class Tent : PlayerBuildingBase
 				StartSleep();
 				return EndOfSleep;
 			case 2:
-				ChangeCounter(2);
 				return MettiAlSicuro;
 			case 3:
-				ChangeCounter(3);
 				return Ripara;
 			default:
 				throw new NotImplementedException();

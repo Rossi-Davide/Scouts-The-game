@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Shop : MonoBehaviour
 {
@@ -53,10 +54,34 @@ public class Shop : MonoBehaviour
 		level = infoPanel.transform.Find("Level").GetComponent<TextMeshProUGUI>();
 		levelHeader = infoPanel.transform.Find("Level/Text").GetComponent<TextMeshProUGUI>();
 		buyButton.GetComponent<Button>().onClick.AddListener(Buy);
+		OrganizeObjects(pioneristica, GameManager.SpecificShopScreen.Pioneristica);
+		OrganizeObjects(cucina, GameManager.SpecificShopScreen.Cucina);
+		OrganizeObjects(infermieristica, GameManager.SpecificShopScreen.Infermieristica);
+		OrganizeObjects(negozioIllegale, GameManager.SpecificShopScreen.NegozioIllegale);
+		OrganizeObjects(costruzioni, GameManager.SpecificShopScreen.Costruzioni);
+		OrganizeObjects(decorazioni, GameManager.SpecificShopScreen.Decorazioni);
+		OrganizeObjects(topografia, GameManager.SpecificShopScreen.Topografia);
 	}
+
+	void OrganizeObjects(GameObject panel, GameManager.SpecificShopScreen screen)
+	{
+		int counter = 0;
+		var slots = panel.GetComponentsInChildren<ShopObjectBase>();
+		foreach (var o in objectDatabase)
+		{
+			if (o.shopScreen == screen)
+			{
+				slots[counter].obj = o;
+				counter++;
+			}
+		}
+	}
+
+
 
 	void Buy()
 	{
+		var nextIndex = selected.exists ? selected.level + 1 : selected.level;
 		if (selected.type == ObjectType.Item && InventoryManager.instance.IsInventoryFull())
 		{
 			GameManager.instance.WarningMessage("L'inventario è pieno!");
@@ -69,7 +94,7 @@ public class Shop : MonoBehaviour
 		}
 		else if (!hasEnoughMoney)
 		{
-			GameManager.instance.WarningMessage($"Non hai abbastanza {selected.shopInfos[selected.currentLevel].priceCounter} per comprare {selected.name}");
+			GameManager.instance.WarningMessage($"Non hai abbastanza {selected.shopInfos[nextIndex].priceCounter} per comprare {selected.name}");
 			return;
 		}
 		else if (!hasItems)
@@ -80,18 +105,23 @@ public class Shop : MonoBehaviour
 		else if (!canBuy)
 		{
 			GameManager.instance.WarningMessage("Hai già acquistato il numero massimo di questi oggetti!");
+			return;
 		}
+		
+		GameManager.instance.ChangeCounter(selected.shopInfos[nextIndex].priceCounter, -selected.shopInfos[nextIndex].price);
+		GameManager.instance.ChangeCounter(selected.shopInfos[nextIndex].rewardCounter, selected.shopInfos[nextIndex].reward);
 
 		if (selected.usingAmount)
 			selected.currentAmount++;
-		if (selected.showLevel)
-			selected.currentLevel++;
+		if (selected.usingLevel)
+		{
+			if (selected.exists)
+				selected.level++;
+			else
+				selected.exists = true;
+		}
 
 		GameManager.DestroyItems(selected);
-		
-		
-		GameManager.instance.ChangeCounter(selected.shopInfos[selected.currentLevel].priceCounter, -selected.shopInfos[selected.currentLevel].price);
-		GameManager.instance.ChangeCounter(selected.shopInfos[selected.currentLevel].rewardCounter, selected.shopInfos[selected.currentLevel].reward);
 
 		if (selected.type == ObjectType.Item)
 		{
@@ -103,27 +133,12 @@ public class Shop : MonoBehaviour
 			ModificaBaseTrigger.instance.SetBuildingSlotInfo(selected.ToPlayerBuilding());
 			GameManager.instance.Built(selected);
 		}
-		CloseInfoPanel();
-	}
-
-	public void BuyItem()
-	{
-		var items = shopPanel.GetComponentsInChildren<ShopItem>();
-		foreach (var i in items)
-		{
-			i.RefreshInfo();
-		}
-	}
-
-	public void BuyBuilding()
-	{
-		var buildings = shopPanel.GetComponentsInChildren<ShopBuilding>();
-		foreach (var o in buildings)
+		foreach (var o in GetComponentsInChildren<ShopObjectBase>())
 		{
 			o.RefreshInfo();
 		}
+		CloseInfoPanel();
 	}
-
 
 	public void DisplayInfo(ObjectBase o)
 	{
@@ -132,51 +147,64 @@ public class Shop : MonoBehaviour
 		description.text = o.description;
 		icon.GetComponent<Image>().sprite = o.icon;
 		infoPanel.SetActive(true);
-		canIncreaseLevel = !o.showLevel || o.currentLevel < o.maxLevel;
+		canIncreaseLevel = !o.usingLevel || o.level < o.maxLevel;
 		canBuy = !o.usingAmount || o.currentAmount < o.maxAmount;
 
 		Counter pt;
 		int pc, index;
-		ItemsNeeded itNeeded;
 
-		if (canIncreaseLevel)
-			index = o.currentLevel;
+		if (o.exists)
+		{
+			if (canIncreaseLevel)
+				index = o.level;
+			else
+				index = o.level - 1;
+		}
 		else
-			index = o.currentLevel - 1;
+			index = o.level;
 
 		pt = o.shopInfos[index].priceCounter;
 		pc = o.shopInfos[index].price;
-		itNeeded = o.itemsNeededs[index];
+		var itNeeded = (o.exists && o.itemsNeededs.Length > o.level + 1) || (!o.exists && o.itemsNeededs.Length > o.level) ? o.itemsNeededs[index] : null;
 
-		hasItems = GameManager.HasItemsToBuy(o, index);
-		price.text = (o.currentLevel > 0 ? "Migliora: " : "Costruisci: ") + pc.ToString();
+		hasItems = GameManager.HasItemsToBuy(o);
+		if (selected.type == ObjectType.Item)
+			price.text = "Compra: " + pc.ToString();
+		else if (selected.type == ObjectType.Costruzione)
+			price.text = (o.exists ? "Migliora: " : "Costruisci: ") + pc.ToString();
 		energyLogo.SetActive(pt == Counter.Energia);
 		materialsLogo.SetActive(pt == Counter.Materiali);
 		pointsLogo.SetActive(pt == Counter.Punti);
 		hasEnoughMoney = GameManager.instance.GetCounterValue(pt) >= pc;
 		buyButton.GetComponentInChildren<TextMeshProUGUI>().color = hasEnoughMoney ? Color.white : Color.red;
-		buyButton.GetComponent<Animator>().Play(canIncreaseLevel && hasItems ? "Enabled" : "Disabled");
+		buyButton.GetComponent<Animator>().Play(canIncreaseLevel && hasItems && canBuy ? "Enabled" : "Disabled");
 
 		amount.text = o.currentAmount + "/" + o.maxAmount;
+		level.text = (o.exists ? (o.level + 1) : o.level) + "/" + (o.maxLevel + 1);
 		amountHeader.text = "Al momento hai:";
-		level.text = o.currentLevel + "/" + o.maxLevel;
 		levelHeader.text = "Livello:";
-
-		string s = "Item richiesti: ";
-		if (itNeeded.items.Length == 0)
+		level.gameObject.SetActive(o.usingAmount);
+		levelHeader.gameObject.SetActive(o.usingAmount);
+		amount.gameObject.SetActive(o.usingAmount);
+		amountHeader.gameObject.SetActive(o.usingAmount);
+		if (itNeeded != null)
 		{
-			s += "nessuno";
-		}
-		else
-		{
-			for (int i = 0; i < itNeeded.items.Length - 1; i++)
+			string s = "Item richiesti: ";
+			if (itNeeded.items.Length == 0)
 			{
-				s += itNeeded.items[i].item.name + ", ";
+				s += "nessuno";
 			}
-			s += itNeeded.items[itNeeded.items.Length - 1].item.name + ".";
+			else
+			{
+				for (int i = 0; i < itNeeded.items.Length - 1; i++)
+				{
+					s += itNeeded.items[i].item.name + ", ";
+				}
+				s += itNeeded.items[itNeeded.items.Length - 1].item.name + ".";
+			}
+			itemsNeeded.text = s;
+			itemsNeeded.gameObject.SetActive(true);
 		}
-		itemsNeeded.text = s;
-		itemsNeeded.gameObject.SetActive(true);
 	}
 
 	public void CloseInfoPanel()

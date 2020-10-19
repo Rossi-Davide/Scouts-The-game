@@ -179,7 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f823f3796b2f20d4ea1ad23e0a347584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Amaca
+  objectSubName: 
   buttons:
   - buttonText: Dormi
     buttonNum: 1
@@ -214,13 +215,15 @@ MonoBehaviour:
   maxDistanceFromPlayer: 2
   wpCanvas: {fileID: 0}
   buttonCanvas: {fileID: 0}
+  isInstantiating: 1
+  checkPositionEachFrame: 0
+  clickListener: {fileID: 9052262022897325451, guid: 2c04edd749e423a4a8d4fa7092c41260,
+    type: 3}
   nameTextOffset: {x: 0, y: 0.55, z: 0}
   loadingBarOffset: {x: 0, y: 0.15, z: 0}
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
-  isInstantiating: 1
-  clickListener: {fileID: 9052262022897325451, guid: 2c04edd749e423a4a8d4fa7092c41260,
-    type: 3}
+  subNameText: {fileID: 0}
   healthBar: {fileID: 0}
   healthBarOffset: {x: 0, y: -0.2, z: 0}
   health: 100

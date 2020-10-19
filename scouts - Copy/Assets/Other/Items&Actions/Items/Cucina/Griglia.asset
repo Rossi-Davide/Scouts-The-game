@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Griglia
   type: 0
   description: Serve per cucinare alla trappeur.
-  icon: {fileID: 0}
+  icon: {fileID: -6099050445329199328, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 1
   maxAmount: 1
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 1000

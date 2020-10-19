@@ -4,7 +4,7 @@ using TMPro;
 using System.Collections;
 using System.Threading;
 
-public abstract class PlayerBuildingBase : ObjectWithActions
+public abstract class PlayerBuildingBase : InGameObject
 {
 	[HideInInspector]
 	public GameObject healthBar;
@@ -17,12 +17,13 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 	protected override void Start()
 	{
 		base.Start();
-		displayName = $"{building.name} (Livello {building.currentLevel})";
+		objectName = building.name;
+		objectSubName = "Livello " + (building.level + 1);
 		healthBar = Instantiate(GameManager.instance.healthBarPrefab, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
-		health = building.healthInfos[building.currentLevel - 1].maxHealth;
-		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.currentLevel - 1].maxHealth;
+		health = building.healthInfos[building.level].maxHealth;
+		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
-		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthInfos[building.currentLevel - 1].healthLossInterval);
+		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthInfos[building.level].healthLossInterval);
 	}
 
 	public override void Select()
@@ -104,12 +105,22 @@ public abstract class PlayerBuildingBase : ObjectWithActions
 	{
 		GameManager.instance.ChangeCounter(Counter.Energia, -5);
 		isDestroyed = false;
-		health = building.healthInfos[building.currentLevel - 1].maxHealth;
+		health = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
 		GetComponent<Animator>().Play(objectName + 2);
 		RefreshButtonsState();
 	}
+
+
+	public override void MoveUI()
+	{
+		base.MoveUI();
+		healthBar.transform.position = transform.position + healthBarOffset;
+	}
+
+
+
 }
 
 

@@ -16,11 +16,11 @@ MonoBehaviour:
   type: 0
   description: E' assolutamente necessario per costruire.
   icon: {fileID: -7458482958434878309, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
-  shopScreen: 2
+  shopScreen: 0
   maxAmount: 30
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 30
@@ -34,4 +34,5 @@ MonoBehaviour:
   modifiedActions: []
   changedMaxAmounts: []
   currentAmount: 0
-  currentLevel: 0
+  level: 0
+  exists: 0

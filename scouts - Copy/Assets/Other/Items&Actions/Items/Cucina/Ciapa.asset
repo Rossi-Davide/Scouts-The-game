@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Ciapa
   type: 0
   description: Evita ustioni. Limita la perdita di energia quando si cunina.
-  icon: {fileID: 0}
+  icon: {fileID: -7404089673344770482, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 1
   maxAmount: 4
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 60

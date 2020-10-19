@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Trivella
   type: 0
   description: Serve per portare la tenda al livello 4.
-  icon: {fileID: 0}
+  icon: {fileID: 5423029650369275977, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 0
   maxAmount: 2
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 2000

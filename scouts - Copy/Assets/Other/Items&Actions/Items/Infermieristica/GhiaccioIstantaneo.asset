@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa84be6a36f035e4ea80a6f10a961f13, type: 3}
   m_Name: GhiaccioIstantaneo
   m_EditorClassIdentifier: 
-  name: 
+  name: Ghiaccio istantaneo
   type: 0
   description: Aiuta a guarire dalla bua.
-  icon: {fileID: 0}
+  icon: {fileID: 877869178030069554, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 2
   maxAmount: 3
   maxLevel: 0
-  showLevel: 0
-  usingAmount: 0
+  usingLevel: 0
+  usingAmount: 1
   itemsNeededs: []
   shopInfos:
   - price: 90

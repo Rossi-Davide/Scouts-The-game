@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
+using System;
 
 public class ActionManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class ActionManager : MonoBehaviour
 	public GameObject panel, overlay;
 	public GameObject[] actionSpots;
 	public TimeAction[] currentActions = new TimeAction[5];
+	public List<TimeAction> currentHiddenActions = new List<TimeAction>();
 	public void TogglePanel()
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
@@ -30,7 +33,7 @@ public class ActionManager : MonoBehaviour
 			var a = currentActions[i];
 			if (a != null)
 			{
-				s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.name;
+				s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.action.name;
 				s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.building.ToString());
 				s.transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
 			}
@@ -42,24 +45,35 @@ public class ActionManager : MonoBehaviour
 
 
 
-	public void AddAction(TimeAction action)
+	public void AddAction(TimeAction action, bool show)
 	{
-		for (int i = 0; i < currentActions.Length; i++)
+		if (show)
 		{
-			if (currentActions[i] == null)
+			for (int i = 0; i < currentActions.Length; i++)
 			{
-				currentActions[i] = action;
-				currentActions[i].timeLeft = currentActions[i].totalTime;
-				currentActions[i].loadingBar.gameObject.SetActive(true);
-				currentActions[i].loadingBar.slider.maxValue = currentActions[i].totalTime;
-				currentActions[i].loadingBar.value.text = GameManager.IntToMinuteSeconds(currentActions[i].totalTime);
-				return;
+				if (currentActions[i] == null)
+				{
+					currentActions[i] = action;
+					currentActions[i].timeLeft = currentActions[i].totalTime;
+					currentActions[i].loadingBar.gameObject.SetActive(true);
+					currentActions[i].loadingBar.slider.maxValue = currentActions[i].totalTime;
+					currentActions[i].loadingBar.value.text = GameManager.IntToMinuteSeconds(currentActions[i].totalTime);
+					return;
+				}
 			}
+		}
+		else
+		{
+			currentHiddenActions.Add(action);
+			action.timeLeft = action.totalTime;
+			action.loadingBar.gameObject.SetActive(true);
+			action.loadingBar.slider.maxValue = action.totalTime;
+			action.loadingBar.value.text = GameManager.IntToMinuteSeconds(action.totalTime);
 		}
 	}
 
 
-	public bool CheckIfTooManyActions()
+	public bool CheckIfNotTooManyActions() //returns false if there are too many actions
 	{
 		for (int i = 0; i < currentActions.Length; i++)
 		{
@@ -80,7 +94,7 @@ public class ActionManager : MonoBehaviour
 	{
 		foreach (var a in currentActions)
 		{
-			if (a != null && a.building == b)
+			if (a != null && a.building.objectName == b)
 			{
 				return false;
 			}
@@ -110,27 +124,46 @@ public class ActionManager : MonoBehaviour
 					actionSpots[i].SetActive(false);
 					a.loadingBar.gameObject.SetActive(false);
 					a.OnEnd?.Invoke();
+					a.action.ChangeCountersOnEnd();
+					a.building.StartWaitToUseAgain(a.building.buttons[a.buttonNum - 1]);
 				}
 				a.timeLeft--;
 			}
+		}
+		foreach (var a in currentHiddenActions)
+		{
+			var actualTimeLeft = GameManager.IntToMinuteSeconds(a.timeLeft);
+			a.loadingBar.value.text = actualTimeLeft;
+			a.loadingBar.slider.value = a.totalTime - a.timeLeft;
+			if (a.timeLeft <= 0)
+			{
+				currentHiddenActions.Remove(a);
+				a.loadingBar.gameObject.SetActive(false);
+				a.OnEnd?.Invoke();
+				a.action.ChangeCountersOnEnd();
+				a.building.StartWaitToUseAgain(a.building.buttons[a.buttonNum - 1]);
+			}
+			a.timeLeft--;
 		}
 	}
 }
 
 public class TimeAction
 {
-	public string name;
-	public string building;
+	public PlayerAction action;
+	public InGameObject building;
+	public int buttonNum;
 	public int totalTime;
 	public int timeLeft;
 	public TimeLeftBar loadingBar;
-	public System.Action OnEnd;
+	public Action OnEnd;
 
-	public TimeAction(string name, string building, int totalTime, TimeLeftBar bar, System.Action OnEnd)
+	public TimeAction(PlayerAction action, InGameObject building, int buttonNum, TimeLeftBar bar, Action OnEnd)
 	{
-		this.name = name;
+		this.action = action;
 		this.building = building;
-		this.totalTime = totalTime;
+		this.buttonNum = buttonNum;
+		totalTime = this.action.timeNeeded;
 		loadingBar = bar;
 		this.OnEnd = OnEnd;
 	}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Montana : ObjectWithActions
+public class Montana : InGameObject
 {
 	void Dance()
 	{
@@ -13,7 +13,6 @@ public class Montana : ObjectWithActions
 		switch (b.buttonNum)
 		{
 			case 1:
-				ChangeCounter(1);
 				return Dance;
 			default:
 				throw new NotImplementedException();

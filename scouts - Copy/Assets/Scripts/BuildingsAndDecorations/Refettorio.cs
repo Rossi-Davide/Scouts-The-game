@@ -3,12 +3,6 @@ using UnityEngine.Timeline;
 
 public class Refettorio : PlayerBuildingBase
 {
-	void Eat()
-	{
-		ChangeCounter(1);
-		RefreshButtonsState();
-	}
-
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
@@ -23,12 +17,10 @@ public class Refettorio : PlayerBuildingBase
 		switch (b.buttonNum)
 		{
 			case 1:
-				return Eat;
+				return null;
 			case 2:
-				ChangeCounter(2);
 				return MettiAlSicuro;
 			case 3:
-				ChangeCounter(3);
 				return Ripara;
 			default:
 				throw new NotImplementedException();
