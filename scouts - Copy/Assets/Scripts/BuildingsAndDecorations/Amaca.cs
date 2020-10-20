@@ -14,7 +14,6 @@ public class Amaca : PlayerBuildingBase
 		GetComponent<Animator>().Play("Amaca2");
 		GameManager.instance.ChangeCounter(Counter.Energia, 20);
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[0]);
 	}
 
 	protected override Action DoAction(ActionButton b)

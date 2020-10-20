@@ -19,8 +19,11 @@ public abstract class InGameObject : MonoBehaviour
 	protected TimeAction action; //like local variable
 	public bool isInstantiating; //true if object creates instance of clicklistener prefab
 	public bool checkPositionEachFrame; //true if object is often moving so it needs to update click listener position frequently
+	public bool spawnInRandomPosition;
+	public Vector3[] possiblePositions;
 	public Button clickListener;
 
+	protected bool spawned;
 	protected bool hasBeenClicked;
 
 	[HideInInspector]
@@ -63,6 +66,12 @@ public abstract class InGameObject : MonoBehaviour
 			clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
 		}
 		clickListener.onClick.AddListener(OnClick);
+
+		if (!spawned && spawnInRandomPosition)
+		{
+			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
+			spawned = true;
+		}
 
 		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();

@@ -5,18 +5,15 @@ public class Lavaggi : InGameObject
 	void LavaIPanni()
 	{
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[0]);
 	}
 	void LavaIPiatti()
 	{
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[1]);
 	}
 
 	void Pulisci()
 	{
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[2]);
 	}
 
 	protected override bool GetConditionValue(ConditionType t)

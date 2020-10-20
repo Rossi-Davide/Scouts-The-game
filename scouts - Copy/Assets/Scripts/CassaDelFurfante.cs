@@ -2,20 +2,9 @@
 
 public class CassaDelFurfante : InGameObject
 {
-	public Vector3[] possiblePositions;
-	bool canUnlock;
-	protected override void Start()
-	{
-		base.Start();
-		canUnlock = true;
-		transform.position = possiblePositions[Random.Range(0, possiblePositions.Length - 1)];
-		clickListener.transform.position = transform.position;
-	}
-
 	void SbloccaScreen()
 	{
 		Shop.instance.negozioIllegaleUnlocked = true;
-		canUnlock = false;
 	}
 
 
@@ -23,7 +12,7 @@ public class CassaDelFurfante : InGameObject
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionCanUnlockNegozioDelFurfante: return canUnlock;
+			case ConditionType.ConditionCanUnlockNegozioDelFurfante: return !Shop.instance.negozioIllegaleUnlocked;
 			default: return base.GetConditionValue(t);
 		}
 	}

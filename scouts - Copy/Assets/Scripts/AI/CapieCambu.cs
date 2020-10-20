@@ -1,153 +1,32 @@
 ﻿using System;
-using TMPro;
 using UnityEngine;
 
 public class CapieCambu : BaseAI
 {
-	Sentence currentSentence;
 	[HideInInspector]
-	public int dialoguesDone, currentSentenceIndex;
-	public GameObject dialoguePanel;
-	public GameObject blackOverlay;
-	GameObject nextButton, answer1Button, answer2Button;
-	TextMeshProUGUI answer1Text, answer2Text, title, sentenceText;
-	bool canAnswer;
+	public int nextDialogueIndex;
+
 	public Dialogue[] dialoguesArray;
-	int pointsToAdd;
-
-	protected override void Start()
-	{
-		base.Start();
-		nextButton = dialoguePanel.transform.Find("Next").gameObject;
-		answer1Button = dialoguePanel.transform.Find("Answer1").gameObject;
-		answer2Button = dialoguePanel.transform.Find("Answer2").gameObject;
-		title = dialoguePanel.transform.Find("Name").GetComponent<TextMeshProUGUI>();
-		sentenceText = dialoguePanel.transform.Find("Sentence").GetComponent<TextMeshProUGUI>();
-		answer1Text = answer1Button.transform.Find("Text").GetComponent<TextMeshProUGUI>();
-		answer2Text = answer2Button.transform.Find("Text").GetComponent<TextMeshProUGUI>();
-	}
-
-	void ShowSentence(Sentence s)
-	{
-		title.text = objectName;
-		sentenceText.text = currentSentence.sentence;
-		if (s.canAnswer)
-		{
-			canAnswer = true;
-			answer1Button.SetActive(true);
-			answer2Button.SetActive(true);
-			nextButton.SetActive(false);
-			answer1Text.text = s.answer[0].answer;
-			answer2Text.text = s.answer[1].answer;
-		}
-		else
-		{
-			canAnswer = false;
-			answer1Button.SetActive(false);
-			answer2Button.SetActive(false);
-			nextButton.SetActive(true);
-		}
-	}
-	public void NextSentence(int answerNum)//null if no answer
-	{
-		if (canAnswer)
-		{
-			pointsToAdd += currentSentence.answer[answerNum].pointsDelta;
-			currentSentenceIndex = currentSentence.answer[answerNum].nextSentenceNum - 1;
-		}
-		else
-		{
-			currentSentenceIndex = currentSentence.nextSentenceNum - 1;
-		}
-		if (currentSentenceIndex < dialoguesArray[dialoguesDone].sentences.Length)
-		{
-			currentSentence = dialoguesArray[dialoguesDone].sentences[currentSentenceIndex];
-			ShowSentence(currentSentence);
-		}
-		else
-		{
-			EndTalk();
-		}
-	}
-
-
-	public void CancelDialogue()
-	{
-		ClosePanel();
-	}
-
-	void EndTalk()
-	{
-		ClosePanel();
-		GameManager.instance.ChangeCounter(Counter.Punti, pointsToAdd);
-		dialoguesDone++;
-		StartWaitToUseAgain(buttons[0]);
-	}
-
-	void ClosePanel()
-	{
-		dialoguePanel.SetActive(false);
-		blackOverlay.SetActive(false);
-		currentSentenceIndex = 0;
-		DialogueManager.instance.selectedCapoOrCambu = null;
-		RefreshButtonsState();
-	}
-
-	void Talk()
-	{
-		DialogueManager.instance.selectedCapoOrCambu = this;
-		dialoguePanel.SetActive(true);
-		blackOverlay.SetActive(true);
-		currentSentence = dialoguesArray[dialoguesDone].sentences[currentSentenceIndex];
-		ShowSentence(currentSentence);
-		pointsToAdd = dialoguesArray[dialoguesDone].basePointsDelta;
-	}
 
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionHasAnythingToSayAI: return dialoguesDone < dialoguesArray.Length;
+			case ConditionType.ConditionHasAnythingToSayAI: return nextDialogueIndex < dialoguesArray.Length;
 			default: return base.GetConditionValue(t);
 		}
 	}
 
-	protected override System.Action DoAction(ActionButton b)
+	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)
 		{
 			case 1:
-				Talk();
+				DialogueManager.instance.currentObjectName = objectName;
+				DialogueManager.instance.TogglePanel(dialoguesArray[nextDialogueIndex]);
 				return null;
 			default:
 				throw new NotImplementedException();
 		}
 	}
-
-}
-
-
-
-
-[System.Serializable]
-public class Dialogue
-{
-	public int basePointsDelta;
-	public Sentence[] sentences;
-}
-[System.Serializable]
-public class Sentence
-{
-	public string sentence;
-	public bool canAnswer;
-	public Answer[] answer;
-	public int nextSentenceNum; //more than 1 (it's not like an array)
-}
-
-[System.Serializable]
-public class Answer
-{
-	public string answer;
-	public int nextSentenceNum;
-	public int pointsDelta;
 }

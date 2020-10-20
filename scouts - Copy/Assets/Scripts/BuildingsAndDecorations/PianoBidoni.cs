@@ -10,7 +10,6 @@ public class PianoBidoni : PlayerBuildingBase
 	void EndCucina()
 	{
 		GetComponent<Animator>().Play("PianoBidoni2");
-		StartWaitToUseAgain(buttons[0]);
 		RefreshButtonsState();
 	}
 

@@ -4,7 +4,6 @@ public class Cambusa : InGameObject
 	void Attack()
 	{
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[1]);
 	}
 	protected override Action DoAction(ActionButton b)
 	{

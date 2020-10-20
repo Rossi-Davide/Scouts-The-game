@@ -31,13 +31,12 @@ public class Campfire : InGameObject
 	void FaiLegna()
 	{
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[0]);
 	}
 	protected override bool GetConditionValue(ConditionType t)
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionHasEnoughMaterials: return GameManager.instance.materialsValue >= Mathf.Abs(buttons[0].generalAction.materialsGiven);
+			case ConditionType.ConditionHasEnoughMaterials: return buttons[0].generalAction.materialsGiven < 0 && GameManager.instance.materialsValue >= Mathf.Abs(buttons[0].generalAction.materialsGiven);
 			default: return base.GetConditionValue(t);
 		}
 	}

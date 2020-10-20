@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnInGameoObjectsChange;
 	public event System.Action<ObjectBase> OnBuild;
 	public event System.Action OnObjectArrayUpdate;
+	public event System.Action OnNightFall;
+	public event System.Action OnDayRise;
 
 
 

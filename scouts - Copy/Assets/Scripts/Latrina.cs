@@ -5,7 +5,6 @@ public class Latrina : InGameObject
 	void Pulisci()
 	{
 		RefreshButtonsState();
-		StartWaitToUseAgain(buttons[0]);
 	}
 	protected override Action DoAction(ActionButton b)
 	{

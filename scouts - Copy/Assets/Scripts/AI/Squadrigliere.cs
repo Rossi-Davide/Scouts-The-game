@@ -5,14 +5,24 @@ public class Squadrigliere : BaseAI
 {
     [HideInInspector]
     public Transform tent;
-    bool homeCoroutineStarted;
     [HideInInspector]
     public Squadriglia sq;
+
+	protected override void SetMissingPriorityTargets()
+	{
+		foreach (var p in priorityTargets)
+		{
+            if (p.name == "Tenda")
+			{
+                p.target = tent.position;
+			}
+		}
+	}
+
 
 	void FaiLegna()
 	{
         Debug.Log("sto facendo legna");
-        StartWaitToUseAgain(buttons[0]);
 	}
 
     protected override bool GetConditionValue(ConditionType t)

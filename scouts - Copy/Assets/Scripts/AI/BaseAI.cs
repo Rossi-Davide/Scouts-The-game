@@ -1,42 +1,48 @@
 ﻿using UnityEngine;
 using Pathfinding;
-using UnityEngine.UI;
-
 
 public abstract class BaseAI : InGameObject
 {
 	public Vector3[] randomTarget;
 	public float speed;
 	public float minWayPointDistance;
-	protected Vector3 target;
 	protected Path currentPath;
 	protected int currentWayPointIndex;
 	protected Seeker seeker;
 	protected Rigidbody2D rb;
 	protected Animator animator;
 
-	protected Transform priorityTarget;
+	public PriorityTarget[] priorityTargets;
 
-	public event System.Action OnPathCreated;
-	public event System.Action OnPathCompleted;
+
 	protected override void Start()
 	{
 		base.Start();
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
-		CreateNewPath();
+		CreateNewPath(null);
 
-		OnPathCreated += PriorityPath;
-		OnPathCompleted += AfterPathCompletion;
+		InvokeRepeating("CheckPriorityPathConditions", 1f, 1f);
+
+		SetMissingPriorityTargets();
 	}
 
+	protected virtual void SetMissingPriorityTargets() { }
 
-	protected virtual void CreateNewPath()
+
+
+	protected virtual void CreateNewPath(Vector3? priorityTarget)
 	{
-		target = randomTarget[Random.Range(0, randomTarget.Length)];
-		seeker.StartPath(rb.position, target, VerifyPath);
-		OnPathCreated?.Invoke();
+		if (priorityTarget == null)
+		{
+			var t = randomTarget[Random.Range(0, randomTarget.Length)];
+			seeker.StartPath(rb.position, t, VerifyPath);
+		}
+		else
+		{
+			seeker.StartPath(rb.position, priorityTarget.Value, VerifyPath);
+		}
 	}
 	protected void VerifyPath(Path p)
 	{
@@ -47,7 +53,7 @@ public abstract class BaseAI : InGameObject
 		}
 		else
 		{
-			CreateNewPath();
+			CreateNewPath(null);
 		}
 	}
 	protected void ChangeAnimation()
@@ -59,27 +65,21 @@ public abstract class BaseAI : InGameObject
 	}
 	protected virtual void PathCompleted()
 	{
-		if (priorityTarget != null && target == priorityTarget.position)
-			priorityTarget = null;
-		CreateNewPath();
-		OnPathCompleted?.Invoke();
-	}
-
-
-	public void PriorityPath()
-	{
-		if (priorityTarget != null)
+		var max = -1;
+		Vector3? target = null;
+		foreach (var p in priorityTargets)
 		{
-			target = priorityTarget.position;
-			seeker.StartPath(rb.position, target, VerifyPath);
+			if (p.waitEndOfCurrentPath && p.priority > max)
+			{
+				if (FindNotVerified(p.conditions) == null)
+				{
+					max = p.priority;
+					target = p.target;
+				}
+			}
 		}
+		CreateNewPath(target);
 	}
-
-	public virtual void AfterPathCompletion()
-	{
-
-	}
-
 
 	protected override void Update()
 	{
@@ -104,4 +104,33 @@ public abstract class BaseAI : InGameObject
 		var nextMovement = ((Vector2)nextWayPoint - rb.position).normalized;
 		rb.AddForce(nextMovement * speed * Time.deltaTime);
 	}
+
+	void CheckPriorityPathConditions()
+	{
+		var max = -1;
+		Vector3? target = null;
+		foreach (var p in priorityTargets)
+		{
+			if (!p.waitEndOfCurrentPath && p.priority > max)
+			{
+				if (FindNotVerified(p.conditions) == null)
+				{
+					max = p.priority;
+					target = p.target;
+				}
+			}
+		}
+		CreateNewPath(target);
+	}
+}
+
+
+[CreateAssetMenu(fileName = "New Priority Target", menuName = "PriorityAITarget")]
+public class PriorityTarget : ScriptableObject
+{
+	public new string name;
+	public Vector3 target;
+	public int priority;
+	public bool waitEndOfCurrentPath;
+	public Condition[] conditions;
 }
