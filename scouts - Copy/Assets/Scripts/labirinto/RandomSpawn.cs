@@ -21,10 +21,10 @@ public class RandomSpawn : MonoBehaviour
         Vector2 posizione;
         posizione.x = Random.Range(minX,maxX+1);
         posizione.y = Random.Range(minY,maxY+1);
-        transform.position = transform.position + (Vector3)posizione;
+        transform.position = (Vector3)posizione;
         Collider2D coll = Physics2D.OverlapCircle(transform.position, 1);
 
-        if (coll == null)
+        if (coll != null)
         {
             PosizioneUpdate();
         }

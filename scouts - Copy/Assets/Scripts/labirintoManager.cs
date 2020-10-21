@@ -60,7 +60,7 @@ public class labirintoManager : MonoBehaviour
         panel.SetActive(false);
         //GameObject panel = transform.FindChild("Panel").gameObject;
         editorCountdown.transform.parent.gameObject.SetActive(false);
-        player.transform.position = spawnPoint.position;
+        //player.transform.position = spawnPoint.position;
         player.SetActive(true);
         joystick.SetActive(false);
         luce1.SetActive(true);
@@ -161,7 +161,7 @@ public class labirintoManager : MonoBehaviour
     IEnumerator ricaricaScena()
     {
         riavvioScenaErrorMessage.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

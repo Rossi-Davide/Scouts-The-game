@@ -1,0 +1,2564 @@
+fileFormatVersion: 2
+guid: b509ae3f2cb3e9d4aa860d8d1f420d32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4198882214056143539
+    second: labirinto sheet_0
+  - first:
+      213: -1683646456755348260
+    second: labirinto sheet_1
+  - first:
+      213: 2376582814527700145
+    second: labirinto sheet_2
+  - first:
+      213: 496680415194773454
+    second: labirinto sheet_3
+  - first:
+      213: 2610416045161933939
+    second: labirinto sheet_4
+  - first:
+      213: 1555714008971667227
+    second: labirinto sheet_5
+  - first:
+      213: -2950780500201469715
+    second: labirinto sheet_6
+  - first:
+      213: 854520020562948616
+    second: labirinto sheet_7
+  - first:
+      213: -1825916555833321236
+    second: labirinto sheet_8
+  - first:
+      213: 1572426099350016500
+    second: labirinto sheet_9
+  - first:
+      213: 8726686635602644857
+    second: labirinto sheet_10
+  - first:
+      213: -4788812050198046326
+    second: labirinto sheet_11
+  - first:
+      213: 6424505166479882264
+    second: labirinto sheet_12
+  - first:
+      213: -5543149896997237735
+    second: labirinto sheet_13
+  - first:
+      213: 14599824090470871
+    second: labirinto sheet_14
+  - first:
+      213: -7849804425474220096
+    second: labirinto sheet_15
+  - first:
+      213: 457542893287296382
+    second: labirinto sheet_16
+  - first:
+      213: -3495716280504761101
+    second: labirinto sheet_17
+  - first:
+      213: -5216614350834793335
+    second: labirinto sheet_18
+  - first:
+      213: 7502970231559975953
+    second: labirinto sheet_19
+  - first:
+      213: -3444126126493857397
+    second: labirinto sheet_20
+  - first:
+      213: 8042659196940060411
+    second: labirinto sheet_21
+  - first:
+      213: 7975216912824241147
+    second: labirinto sheet_22
+  - first:
+      213: -4461802340695151565
+    second: labirinto sheet_23
+  - first:
+      213: -5089814037262038958
+    second: labirinto sheet_24
+  - first:
+      213: 2317308870817733585
+    second: labirinto sheet_25
+  - first:
+      213: -5803960745680396517
+    second: labirinto sheet_26
+  - first:
+      213: -3696836298513907042
+    second: labirinto sheet_27
+  - first:
+      213: -7479549823701946173
+    second: labirinto sheet_28
+  - first:
+      213: 5854295374492292595
+    second: labirinto sheet_29
+  - first:
+      213: 1870030217011434414
+    second: labirinto sheet_30
+  - first:
+      213: 1116126186407257919
+    second: labirinto sheet_31
+  - first:
+      213: -8601265979806067746
+    second: labirinto sheet_32
+  - first:
+      213: -9049094764605187580
+    second: labirinto sheet_33
+  - first:
+      213: -1828698503416732933
+    second: labirinto sheet_34
+  - first:
+      213: 1241790661443474936
+    second: labirinto sheet_35
+  - first:
+      213: -5176344702913050491
+    second: labirinto sheet_36
+  - first:
+      213: -1622106857534938432
+    second: labirinto sheet_37
+  - first:
+      213: -7998207507136777608
+    second: labirinto sheet_38
+  - first:
+      213: 3717113366431078820
+    second: labirinto sheet_39
+  - first:
+      213: -5798222683000803662
+    second: labirinto sheet_40
+  - first:
+      213: 7187559964678252490
+    second: labirinto sheet_41
+  - first:
+      213: -2361963463578302411
+    second: labirinto sheet_42
+  - first:
+      213: 6257390309776665959
+    second: labirinto sheet_43
+  - first:
+      213: -2271067464891562399
+    second: labirinto sheet_44
+  - first:
+      213: -744222409590305013
+    second: labirinto sheet_45
+  - first:
+      213: -8617488586705042162
+    second: labirinto sheet_46
+  - first:
+      213: 8558153969055374942
+    second: labirinto sheet_47
+  - first:
+      213: -5373175034308944858
+    second: labirinto sheet_48
+  - first:
+      213: 3938119190271425493
+    second: labirinto sheet_49
+  - first:
+      213: -5741270165747384858
+    second: labirinto sheet_50
+  - first:
+      213: 1741800388305053357
+    second: labirinto sheet_51
+  - first:
+      213: -5534814217087537937
+    second: labirinto sheet_52
+  - first:
+      213: 7410448147570907109
+    second: labirinto sheet_53
+  - first:
+      213: 4448601413027044690
+    second: labirinto sheet_54
+  - first:
+      213: -6814686501434001609
+    second: labirinto sheet_55
+  - first:
+      213: -8956177994226161742
+    second: labirinto sheet_56
+  - first:
+      213: -6761317857198409117
+    second: labirinto sheet_57
+  - first:
+      213: 6039663891158057497
+    second: labirinto sheet_58
+  - first:
+      213: 1582455713968088981
+    second: labirinto sheet_59
+  - first:
+      213: 1382086252366679855
+    second: labirinto sheet_60
+  - first:
+      213: -2578597281046925
+    second: labirinto sheet_61
+  - first:
+      213: -1182517751066052006
+    second: labirinto sheet_62
+  - first:
+      213: 1674397498516542349
+    second: labirinto sheet_63
+  - first:
+      213: 1583131698239359955
+    second: labirinto sheet_64
+  - first:
+      213: -8900570526922655909
+    second: labirinto sheet_65
+  - first:
+      213: -2016012416113486366
+    second: labirinto sheet_66
+  - first:
+      213: -4459641054926384987
+    second: labirinto sheet_67
+  - first:
+      213: -6567892937661267332
+    second: labirinto sheet_68
+  - first:
+      213: -7525998486206062879
+    second: labirinto sheet_69
+  - first:
+      213: -400372320207328990
+    second: labirinto sheet_70
+  - first:
+      213: -4036967250579111223
+    second: labirinto sheet_71
+  - first:
+      213: 578381622788445972
+    second: labirinto sheet_72
+  - first:
+      213: 1150646847764046938
+    second: labirinto sheet_73
+  - first:
+      213: -3881837354130318950
+    second: labirinto sheet_74
+  - first:
+      213: -8314920574826790517
+    second: labirinto sheet_75
+  - first:
+      213: 6945610149875299357
+    second: labirinto sheet_76
+  - first:
+      213: -1470720693943823952
+    second: labirinto sheet_77
+  - first:
+      213: 4931781322991163590
+    second: labirinto sheet_78
+  - first:
+      213: -5264612352495000378
+    second: labirinto sheet_79
+  - first:
+      213: 5058827730546689889
+    second: labirinto sheet_80
+  - first:
+      213: -4117963070386086979
+    second: labirinto sheet_81
+  - first:
+      213: -8396202409352246865
+    second: labirinto sheet_82
+  - first:
+      213: 7288695416586122435
+    second: labirinto sheet_83
+  - first:
+      213: 2665682627411498752
+    second: labirinto sheet_84
+  - first:
+      213: 1677418288279409199
+    second: labirinto sheet_85
+  - first:
+      213: 1252823909998481379
+    second: labirinto sheet_86
+  - first:
+      213: 5192689828511488801
+    second: labirinto sheet_87
+  - first:
+      213: 5602726554977017148
+    second: labirinto sheet_88
+  - first:
+      213: 8404635438219688581
+    second: labirinto sheet_89
+  - first:
+      213: -7327910737455549745
+    second: labirinto sheet_90
+  - first:
+      213: -5486126736116812042
+    second: labirinto sheet_91
+  - first:
+      213: -7655253481146506038
+    second: labirinto sheet_92
+  - first:
+      213: 4701476765382541763
+    second: labirinto sheet_93
+  - first:
+      213: -6138065668333515167
+    second: labirinto sheet_94
+  - first:
+      213: -451364743122185920
+    second: labirinto sheet_95
+  - first:
+      213: -907192510770492552
+    second: labirinto sheet_96
+  - first:
+      213: -7226942719494376488
+    second: labirinto sheet_97
+  - first:
+      213: 957979898500338356
+    second: labirinto sheet_98
+  - first:
+      213: 3313450099289381206
+    second: labirinto sheet_99
+  - first:
+      213: 1108635384118855971
+    second: labirinto sheet_100
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: labirinto sheet_0
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 931
+        width: 873
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3baa586802d654a30800000000000000
+      internalID: 4198882214056143539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 922
+        width: 990
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc90c9c77c72a8e0800000000000000
+      internalID: -1683646456755348260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 86
+        width: 646
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcb8376a715bf020800000000000000
+      internalID: 2376582814527700145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 690
+        width: 250
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7f392c43094e600800000000000000
+      internalID: 496680415194773454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 700
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c6bdfff8f0a3420800000000000000
+      internalID: 2610416045161933939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 707
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17eadc06a1079510800000000000000
+      internalID: 1555714008971667227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 690
+        width: 177
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8875bd4c8bc07d0800000000000000
+      internalID: -2950780500201469715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 692
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8023d176e6ddbdb00800000000000000
+      internalID: 854520020562948616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 682
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8dc0c019a09a6e0800000000000000
+      internalID: -1825916555833321236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 676
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f19f4fc43162d510800000000000000
+      internalID: 1572426099350016500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 677
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f8e35524b6b1970800000000000000
+      internalID: 8726686635602644857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 671
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89d5d300d8ba8db0800000000000000
+      internalID: -4788812050198046326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 671
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818f1b1196d682950800000000000000
+      internalID: 6424505166479882264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 672
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c8cbc9986c213b0800000000000000
+      internalID: -5543149896997237735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 670
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d912b0767ed33000800000000000000
+      internalID: 14599824090470871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 657
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfd15f0774ef0390800000000000000
+      internalID: -7849804425474220096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 669
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dc4e756d4895600800000000000000
+      internalID: 457542893287296382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 669
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4c6f06098bc7fc0800000000000000
+      internalID: -3495716280504761101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 672
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984894003ecda97b0800000000000000
+      internalID: -5216614350834793335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 665
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11476745ca7ef1860800000000000000
+      internalID: 7502970231559975953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 664
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8901b429810430d0800000000000000
+      internalID: -3444126126493857397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 660
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf604238de34d9f60800000000000000
+      internalID: 8042659196940060411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 662
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb83971789adae60800000000000000
+      internalID: 7975216912824241147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 660
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cebd8296e7412c0800000000000000
+      internalID: -4461802340695151565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 666
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2580330a9195d59b0800000000000000
+      internalID: -5089814037262038958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 665
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbd3ffe32cb82020800000000000000
+      internalID: 2317308870817733585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 661
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f9867d370347fa0800000000000000
+      internalID: -5803960745680396517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 665
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e920f4229f232bcc0800000000000000
+      internalID: -3696836298513907042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 657
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0f86e401d433890800000000000000
+      internalID: -7479549823701946173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 654
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f553de20a2ae3150800000000000000
+      internalID: 5854295374492292595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 661
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea39634139ea3f910800000000000000
+      internalID: 1870030217011434414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 657
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37e0516ad64d7f00800000000000000
+      internalID: 1116126186407257919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 661
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3d10fa92a22a880800000000000000
+      internalID: -8601265979806067746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 662
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a5cd871482b6280800000000000000
+      internalID: -9049094764605187580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 656
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2ae8666682f96e0800000000000000
+      internalID: -1828698503416732933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 660
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f55cbcf60abb3110800000000000000
+      internalID: 1241790661443474936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 657
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58884eb0bede928b0800000000000000
+      internalID: -5176344702913050491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 660
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2a7e8486e1d79e0800000000000000
+      internalID: -1622106857534938432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 659
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872ff3906a8a00190800000000000000
+      internalID: -7998207507136777608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 656
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a91bf3a9e6d59330800000000000000
+      internalID: 3717113366431078820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 656
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2beef1ba033988fa0800000000000000
+      internalID: -5798222683000803662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 651
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac76770e4b75fb360800000000000000
+      internalID: 7187559964678252490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 654
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538c6fc7ebe983fd0800000000000000
+      internalID: -2361963463578302411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 656
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76da53b6557b6d650800000000000000
+      internalID: 6257390309776665959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_44
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 219
+        width: 351
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166013e5c2c8b70e0800000000000000
+      internalID: -2271067464891562399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_45
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 440
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f0c7a59adfba5f0800000000000000
+      internalID: -744222409590305013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 406
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05867da9c7886880800000000000000
+      internalID: -8617488586705042162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 410
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e15aa11bba4c670800000000000000
+      internalID: 8558153969055374942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 390
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c940c46c5ae65b0800000000000000
+      internalID: -5373175034308944858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 390
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbf64bd98207a630800000000000000
+      internalID: 3938119190271425493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 386
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed341be339e250b0800000000000000
+      internalID: -5741270165747384858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_51
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 154
+        width: 312
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da66f86893e1c2810800000000000000
+      internalID: 1741800388305053357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 371
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec27b45bc36033b0800000000000000
+      internalID: -5534814217087537937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_53
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 371
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e75a66f35337d660800000000000000
+      internalID: 7410448147570907109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_54
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 364
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d17ca5a6b9cbd30800000000000000
+      internalID: 4448601413027044690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_55
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 360
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73770629bbe5d61a0800000000000000
+      internalID: -6814686501434001609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 355
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7aafce09345b380800000000000000
+      internalID: -8956177994226161742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_57
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 356
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36afe2c5b39fa22a0800000000000000
+      internalID: -6761317857198409117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_58
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 349
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912ca3b3f4231d350800000000000000
+      internalID: 6039663891158057497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 347
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597eadf661306f510800000000000000
+      internalID: 1582455713968088981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_60
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 342
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f4449bf182e2310800000000000000
+      internalID: 1382086252366679855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 337
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e5b0987c6d6fff0800000000000000
+      internalID: -2578597281046925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 339
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a3d13ee5ad69fe0800000000000000
+      internalID: -1182517751066052006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 342
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8391ef47a7ac3710800000000000000
+      internalID: 1674397498516542349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_64
+      rect:
+        serializedVersion: 2
+        x: 2110
+        y: 336
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbc73a44e968f510800000000000000
+      internalID: 1583131698239359955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_65
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 342
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57b6745342da7480800000000000000
+      internalID: -8900570526922655909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_66
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 332
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e557ca836fa504e0800000000000000
+      internalID: -2016012416113486366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_67
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 335
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a05d57b61c2c12c0800000000000000
+      internalID: -4459641054926384987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_68
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 330
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7247efdb282ad4a0800000000000000
+      internalID: -6567892937661267332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_69
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 330
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee5f8150484e8790800000000000000
+      internalID: -7525998486206062879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_70
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 326
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229a42cfe77917af0800000000000000
+      internalID: -400372320207328990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_71
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 316
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2c853acafc9f7c0800000000000000
+      internalID: -4036967250579111223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_72
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 317
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4175be28503d60800800000000000000
+      internalID: 578381622788445972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_73
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 311
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5426ee263be7ff00800000000000000
+      internalID: 1150646847764046938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_74
+      rect:
+        serializedVersion: 2
+        x: 2126
+        y: 309
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9958374e71f02ac0800000000000000
+      internalID: -3881837354130318950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_75
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 300
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81ccd1aac77b9c80800000000000000
+      internalID: -8314920574826790517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_76
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 295
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d143aa3c1a3c36060800000000000000
+      internalID: 6945610149875299357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_77
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 295
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b199a13253f69be0800000000000000
+      internalID: -1470720693943823952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_78
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 287
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c85bcacbf4317440800000000000000
+      internalID: 4931781322991163590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_79
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 291
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4e66165f650f6b0800000000000000
+      internalID: -5264612352495000378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_80
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 284
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1678123a401943640800000000000000
+      internalID: 5058827730546689889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_81
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 286
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbd577c76e0ad6c0800000000000000
+      internalID: -4117963070386086979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_82
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 280
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9c748c462ba7b80800000000000000
+      internalID: -8396202409352246865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_83
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 280
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c432ad3dd5a62560800000000000000
+      internalID: 7288695416586122435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_84
+      rect:
+        serializedVersion: 2
+        x: 2129
+        y: 279
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007dacae9386ef420800000000000000
+      internalID: 2665682627411498752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_85
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 274
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2253acbb03674710800000000000000
+      internalID: 1677418288279409199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_86
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 269
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef439955bce26110800000000000000
+      internalID: 1252823909998481379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_87
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 267
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b163113e3201840800000000000000
+      internalID: 5192689828511488801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_88
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 267
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d9d030e12e0cd40800000000000000
+      internalID: 5602726554977017148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_89
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 261
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a7eb1c66343a470800000000000000
+      internalID: 8404635438219688581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_90
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 262
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2f03c52080e4a90800000000000000
+      internalID: -7327910737455549745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_91
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 257
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6fbfcdccc5dd3b0800000000000000
+      internalID: -5486126736116812042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_92
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 251
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4a0b6a48313c590800000000000000
+      internalID: -7655253481146506038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_93
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 247
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1016865300f3140800000000000000
+      internalID: 4701476765382541763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_94
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 250
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ec5f6abc531daa0800000000000000
+      internalID: -6138065668333515167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_95
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 232
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0411116582e6cb9f0800000000000000
+      internalID: -451364743122185920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_96
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 221
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b41acc7310963f0800000000000000
+      internalID: -907192510770492552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_97
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 222
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d33178f2edb4bb90800000000000000
+      internalID: -7226942719494376488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_98
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 212
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2d31064ad6b4d00800000000000000
+      internalID: 957979898500338356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_99
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 206
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65950255f4dbbfd20800000000000000
+      internalID: 3313450099289381206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labirinto sheet_100
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 200
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32945df020aa26f00800000000000000
+      internalID: 1108635384118855971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
