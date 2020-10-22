@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-using UnityEngine.Video;
 
 public class GameManager : MonoBehaviour
 {
 	[HideInInspector]
 	public InGameObject[] InGameObjects { get; private set; }
 
-	public int pointsValue, materialsValue, energyValue = 100;
+	public int pointsValue, materialsValue, energyValue;
 	public GameObject buttonCanvas;
 
 	#region Singleton
@@ -27,23 +26,18 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 	#region Events
-	public event System.Action<int> OnEnergyChange;
-	public event System.Action<int> OnMaterialsChange;
-	public event System.Action<int> OnPointsChange;
+	public event System.Action<Counter, int> OnCounterValueChange;
 	public event System.Action OnPlayerDeath;
 	public event System.Action OnCampEnd;
 	public event System.Action OnCampStart;
-	public event System.Action OnDayEndOrStart;
+	public event System.Action<bool> OnDayEndOrStart;
 	public event System.Action OnRain;
 	public event System.Action<PlayerAction> OnActionDo;
 	public event System.Action<ObjectBase> OnInventoryChange;
 	public event System.Action OnInGameoObjectsChange;
 	public event System.Action<ObjectBase> OnBuild;
 	public event System.Action OnObjectArrayUpdate;
-	public event System.Action OnNightFall;
-	public event System.Action OnDayRise;
-
-
+	public event System.Action<Counter, int> OnCounterMaxValueChange;
 
 	public void Built(ObjectBase obj)
 	{
@@ -57,6 +51,10 @@ public class GameManager : MonoBehaviour
 	{
 		OnObjectArrayUpdate?.Invoke();
 	}
+	public void DayEndedOrStarted(bool d)
+	{
+		OnDayEndOrStart?.Invoke(d);
+	}
 	public void ActionDone(PlayerAction a)
 	{
 		OnActionDo?.Invoke(a);
@@ -66,19 +64,16 @@ public class GameManager : MonoBehaviour
 		OnInventoryChange?.Invoke(obj);
 	}
 
-	private void EnergyChanged(int newValue)
+	public void ChangeCounter(Counter counter, int newValue)
 	{
-		OnEnergyChange?.Invoke(newValue);
+		OnCounterValueChange?.Invoke(counter, newValue);
 	}
-	private void MaterialsChanged(int newValue)
+	public void CounterMaxValueChanged(Counter counter, int delta)
 	{
-		OnMaterialsChange?.Invoke(newValue);
+		OnCounterMaxValueChange?.Invoke(counter, delta);
 	}
-	private void PointsChanged(int newValue)
-	{
-		OnPointsChange?.Invoke(newValue);
-	}
-	private void PlayerIsDead()
+
+	private void PlayerDied()
 	{
 		OnPlayerDeath?.Invoke();
 	}
@@ -86,36 +81,11 @@ public class GameManager : MonoBehaviour
 	{
 		OnCampEnd?.Invoke();
 	}
-
 	void CampStarted()
 	{
 		OnCampStart?.Invoke();
 	}
 
-
-
-	public void ChangeCounter(Counter counter, int delta)
-	{
-		switch (counter)
-		{
-			case Counter.Materiali:
-				materialsValue = CheckRange(materialsValue + delta, 0, 1000);
-				MaterialsChanged(materialsValue);
-				break;
-			case Counter.Energia:
-				energyValue = CheckRange(energyValue + delta, 0, 100);
-				EnergyChanged(energyValue);
-				break;
-			case Counter.Punti:
-				pointsValue = CheckRange(pointsValue + delta, 0, 100);
-				PointsChanged(pointsValue);
-				break;
-			case Counter.None:
-				break;
-			default:
-				throw new System.Exception("Counter non valido");
-		}
-	}
 	#endregion
 	#region UtilityFunctions
 	private static int CheckRange(int value, int min, int max)
@@ -205,7 +175,6 @@ public class GameManager : MonoBehaviour
 		return max;
 	}
 
-
 	public bool CanDoAction(PlayerAction a)
 	{
 		bool canDoAction = true;
@@ -258,21 +227,30 @@ public class GameManager : MonoBehaviour
 	void PeriodicItemActionFast() => PeriodicItemAction(PeriodicActionInterval.Fast);
 	void PeriodicItemAction(PeriodicActionInterval interval)
 	{
-		foreach (var o in Shop.instance.objectDatabase)
+		foreach (var o in Shop.instance.itemDatabase)
 		{
-			if (o.usingAmount)
-			{
-				if (o.currentAmount > 0 && o.periodicUses.Length > 0)
-				{
-					UseItem(o, interval);
-				}
-			}
-			else if (o.periodicUses.Length > 0)
+			CheckPeriodicUse(o, interval);
+		}
+		foreach (var o in Shop.instance.buildingDatabase)
+		{
+			CheckPeriodicUse(o, interval);
+		}
+	}
+	void CheckPeriodicUse(ObjectBase o, PeriodicActionInterval interval)
+	{
+		if (o.usingAmount)
+		{
+			if (o.currentAmount > 0 && o.periodicUses.Length > 0)
 			{
 				UseItem(o, interval);
 			}
 		}
+		else if (o.periodicUses.Length > 0)
+		{
+			UseItem(o, interval);
+		}
 	}
+
 	void UseItem(ObjectBase o, PeriodicActionInterval interval)
 	{
 		if (o != null && o.periodicUses[o.level].interval == interval && o.currentAmount >= 1)
@@ -339,11 +317,52 @@ public class GameManager : MonoBehaviour
 
 	#endregion
 	#region DayNightCycle & Rain
-	private bool coroutineStarted;
+	float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
 	[HideInInspector]
-	public bool hasSkippedNight, isDay = true;
+	public int currentMinute, currentHour, currentDay;
+	[HideInInspector]
+	public int totalDays = 14;
+	void IncreaseTime()
+	{
+		currentMinute++;
+		if (currentMinute >= 60)
+			currentHour++;
+		if (currentHour >= 24)
+			currentDay++;
+		CheckTimeConditions();
+		RefreshCounterText();
+	}
+
+	public void SkipNight()
+	{
+		if (currentHour < 7 || currentHour > 20)
+		{
+			currentHour = 7;
+			currentMinute = 0;
+		}
+	}
+
+	void CheckTimeConditions()
+	{
+		if (currentDay > totalDays)
+		{
+			CampEnded();
+		}
+		if (currentHour > 20 || currentHour < 7)
+		{
+			isDay = false;
+			ChangeLight();
+		}
+		else
+		{
+			isDay = true;
+			ChangeLight();
+		}
+	}
+
+	[HideInInspector]
+	public bool isDay = true;
 	private bool hasOpenedCounter = false;
-	private int secondsPast = 0, totalHourDuration = 3, currentHour = 7, totalDays = 14, currentDay = 1;
 	public GameObject closeDayCounter, openDayCounter;
 	public void ToggleDayCounter()
 	{
@@ -353,90 +372,11 @@ public class GameManager : MonoBehaviour
 		closeDayCounter.SetActive(!hasOpenedCounter);
 		openDayCounter.SetActive(hasOpenedCounter);
 		RefreshCounterText();
-
-	}
-
-	IEnumerator StartCounter()
-	{
-		yield return new WaitForSeconds(totalHourDuration - secondsPast);
-		currentHour += 1;
-		if (currentHour == 24)
-		{
-			isDay = false;
-			currentHour = 0;
-		}
-		else if (currentHour == 7)
-		{
-			isDay = true;
-		}
-		if (isDay)
-		{
-			StartCoroutine(DayCounter());
-		}
-		else
-		{
-			StartCoroutine(NightCounter());
-		}
 	}
 	private Light2D globalLight;
-	IEnumerator DayCounter()
-	{
-		for (int t = currentHour; t < 24; t++)
-		{
-			for (int i = 0; i < totalHourDuration; i++)
-			{
-				yield return new WaitForSeconds(1f);
-				secondsPast++;
-			}
-			if (currentHour == 21)
-			{
-				StartCoroutine(ChangeLight());
-				isDay = false;
-				OnDayEndOrStart?.Invoke();
-			}
-			currentHour++;
-			RefreshCounterText();
-		}
-		currentHour = 0;
-		currentDay++;
-		RefreshCounterText();
-		StartCoroutine(NightCounter());
-	}
-	IEnumerator NightCounter()
-	{
-		while (!hasSkippedNight && currentHour < 7)
-		{
-			for (int i = 0; i < totalHourDuration; i++)
-			{
-				if (!hasSkippedNight)
-				{
-					yield return new WaitForSeconds(1f);
-					secondsPast++;
-				}
-				else
-				{
-					break;
-				}
-			}
-			if (currentHour == 5)
-			{
-				StartCoroutine(ChangeLight());
-				isDay = true;
-				OnDayEndOrStart?.Invoke();
-			}
-			currentHour++;
-			RefreshCounterText();
-		}
-		currentHour = 7;
-		isDay = true;
-		StartCoroutine(ChangeLight());
-		OnDayEndOrStart?.Invoke();
-		RefreshCounterText();
-		StartCoroutine(DayCounter());
-	}
 	IEnumerator ChangeLight()
 	{
-		if (globalLight.intensity > .7f)
+		if (isDay)
 		{
 			while (globalLight.intensity > .6f)
 			{
@@ -444,7 +384,7 @@ public class GameManager : MonoBehaviour
 				yield return new WaitForSeconds(.08f);
 			}
 		}
-		else if (globalLight.intensity < .7f)
+		else
 		{
 			while (globalLight.intensity < 1)
 			{
@@ -455,31 +395,15 @@ public class GameManager : MonoBehaviour
 	}
 	void RefreshCounterText()
 	{
-		if (hasOpenedCounter)
-		{
-			if (isDay)
-			{
-				openDayCounter.GetComponent<Animator>().Play("OpenDay");
-			}
-			else
-			{
-				openDayCounter.GetComponent<Animator>().Play("OpenNight");
-			}
-			openDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = "Giorno " + currentDay + ", " + currentHour + ":00";
-		}
-		else
-		{
-			if (isDay)
-			{
-				closeDayCounter.GetComponent<Animator>().Play("Day");
-			}
-			else
-			{
-				closeDayCounter.GetComponent<Animator>().Play("Night");
-			}
-			closeDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = currentDay.ToString();
-		}
+		closeDayCounter.SetActive(!hasOpenedCounter);
+		openDayCounter.SetActive(hasOpenedCounter);
+		closeDayCounter.GetComponent<Animator>().Play(isDay ? "OpenDay" : "OpenNight");
+		openDayCounter.GetComponent<Animator>().Play(isDay ? "Day" : "Night");
+		string s = "Giorno " + currentDay + ", " + (currentHour >= 10 ? currentHour.ToString() : "0" + currentHour) + ":" + (currentMinute >= 10 ? currentMinute.ToString() : "0" + currentMinute);
+		openDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = s;
+		closeDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = currentDay.ToString();
 	}
+	[HideInInspector]
 	public bool isRaining;
 	IEnumerator Rain()
 	{
@@ -508,6 +432,7 @@ public class GameManager : MonoBehaviour
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
 		OnInGameoObjectsChange += RefreshInGameObjs;
+		OnCounterValueChange += CheckPlayerDeath;
 		SpawnDecorations();
 		InvokeRepeating("SpawnDecorations", 30, Random.Range(45, 75));
 		InvokeRepeating("PeriodicItemActionSlow", 60, 60);
@@ -515,17 +440,7 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating("PeriodicItemActionFast", 15, 15);
 		InvokeRepeating("GenerateRainProbability", 30, 10);
 		InvokeRepeating("RefreshWaitToUseObjects", 1, 1);
-		if (!coroutineStarted)
-		{
-			coroutineStarted = true;
-			RefreshCounterText();
-			StartCoroutine(DayCounter());
-		}
-		else
-		{
-			StartCoroutine(StartCounter());
-			RefreshCounterText();
-		}
+		InvokeRepeating("IncreaseTime", minuteDuration, minuteDuration);
 	}
 	void RefreshInGameObjs()
 	{
@@ -537,18 +452,12 @@ public class GameManager : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 		ObjectArrayUpdated();
 	}
-
-	private void Update()
+	void CheckPlayerDeath(Counter c, int delta)
 	{
-		if (currentDay == totalDays)
-		{
-			CampEnded();
-		}
-		if (energyValue == 0)
-		{
-			PlayerIsDead();
-		}
+		if (c == Counter.Energia && energyValue <= 0)
+			PlayerDied();
 	}
+
 	public enum Ruolo
 	{
 		Novizio,

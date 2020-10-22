@@ -60,7 +60,7 @@ public class SfidaManager : MonoBehaviour
 		{
 			selectChallengeButtons[i].GetComponent<Animator>().Play((int)selectedChallenge == i ? "Enabled" : "Disabled");
 		}
-		topArrow.GetComponent<Animator>().Play(points + 1 > GameManager.instance.pointsValue ? "Disabled" : "Enabled");
+		topArrow.GetComponent<Animator>().Play(points + 1 > GameManager.instance.GetCounterValue(Counter.Punti) ? "Disabled" : "Enabled");
 		bottomArrow.GetComponent<Animator>().Play(points - 1 < 0 ? "Disabled" : "Enabled");
 		panel.transform.Find("Texts/Punti/Value").GetComponent<TextMeshProUGUI>().text = points.ToString();
 	}
@@ -73,7 +73,7 @@ public class SfidaManager : MonoBehaviour
 	public void ChangePoints(int delta)
 	{
 		points += delta;
-		if (points > GameManager.instance.pointsValue)
+		if (points > GameManager.instance.GetCounterValue(Counter.Punti))
 			points--;
 		if (points < 0)
 			points++;

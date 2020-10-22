@@ -5,7 +5,8 @@ using UnityEngine.XR;
 
 public class Shop : MonoBehaviour
 {
-	public ObjectBase[] objectDatabase;
+	public Item[] itemDatabase;
+	public PlayerBuilding[] buildingDatabase;
 	[HideInInspector]
 	public GameManager.SpecificShopScreen currentSpecificScreen;
 	[HideInInspector]
@@ -67,7 +68,15 @@ public class Shop : MonoBehaviour
 	{
 		int counter = 0;
 		var slots = panel.GetComponentsInChildren<ShopObjectBase>();
-		foreach (var o in objectDatabase)
+		foreach (var o in itemDatabase)
+		{
+			if (o.shopScreen == screen)
+			{
+				slots[counter].obj = o;
+				counter++;
+			}
+		}
+		foreach (var o in buildingDatabase)
 		{
 			if (o.shopScreen == screen)
 			{

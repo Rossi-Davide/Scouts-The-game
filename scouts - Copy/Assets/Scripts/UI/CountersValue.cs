@@ -8,36 +8,49 @@ public class CountersValue : MonoBehaviour
 	public GameObject energyValue, materialsValue, pointsValue;
 	private void Start()
 	{
-		GameManager.instance.OnEnergyChange += GetEnergyValue;
-		GameManager.instance.OnMaterialsChange += GetMaterialsValue;
-		GameManager.instance.OnPointsChange += GetPointsValue;
-		GetEnergyValue(GameManager.instance.energyValue);
-		GetMaterialsValue(GameManager.instance.materialsValue);
-		GetPointsValue(GameManager.instance.pointsValue);
+		GameManager.instance.OnCounterValueChange += GetCounterValue;
+		GameManager.instance.OnCounterMaxValueChange += GetCounterMaxValue;
+		GetCounterValue(Counter.Energia, GameManager.instance.energyValue);
+		GetCounterValue(Counter.Materiali, GameManager.instance.materialsValue);
+		GetCounterValue(Counter.Punti, GameManager.instance.pointsValue);
 	}
-	private void OnDestroy()
+
+	void GetCounterValue(Counter counter, int newValue)
 	{
-		if (GameManager.instance != null)
+		switch (counter)
 		{
-			GameManager.instance.OnEnergyChange -= GetEnergyValue;
-			GameManager.instance.OnMaterialsChange -= GetMaterialsValue;
-			GameManager.instance.OnPointsChange -= GetPointsValue;
+			case Counter.Energia:
+				energyCounter.value = newValue;
+				energyValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
+				break;
+			case Counter.Materiali:
+				materialsCounter.value = newValue;
+				materialsValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
+				break;
+			case Counter.Punti:
+				pointsCounter.value = newValue;
+				pointsValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
+				break;
+			default:
+				throw new System.Exception("Il counter ricercato non esiste");
 		}
 	}
 
-	private void GetEnergyValue(int newValue)
+	void GetCounterMaxValue(Counter counter, int delta)
 	{
-		energyCounter.value = newValue;
-		energyValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
-	}
-	private void GetMaterialsValue(int newValue)
-	{
-		materialsCounter.value = newValue;
-		materialsValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
-	}
-	private void GetPointsValue(int newValue)
-	{
-		pointsCounter.value = newValue;
-		pointsValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
+		switch (counter)
+		{
+			case Counter.Energia:
+				energyCounter.maxValue += delta;
+				break;
+			case Counter.Materiali:
+				materialsCounter.maxValue += delta;
+				break;
+			case Counter.Punti:
+				pointsCounter.maxValue += delta;
+				break;
+			default:
+				throw new System.Exception("Il counter ricercato non esiste");
+		}
 	}
 }

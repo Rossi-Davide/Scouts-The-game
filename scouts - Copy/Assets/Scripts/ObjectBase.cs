@@ -86,7 +86,7 @@ public class ModifiedAction
 public class ChangedCounterMaxAmount
 {
     public Counter counter;
-    int delta;
+    public int delta;
 }
 public enum ObjectType
 {

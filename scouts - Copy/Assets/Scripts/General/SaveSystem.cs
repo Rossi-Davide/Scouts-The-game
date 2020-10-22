@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Boo.Lang;
+using System;
+using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -13,12 +15,12 @@ public class SaveSystem : MonoBehaviour
 	#endregion
 
 
-	public static System.Action ReadyToLoadData;
+	public static Action ReadyToLoadData;
 
 
 	private void Start()
 	{
-		InvokeRepeating("SaveAll", (int)CampManager.instance.newCamp.settings.savingInterval, 10);
+		InvokeRepeating("SaveAll", 15, (int)CampManager.instance.newCamp.settings.savingInterval);
 	}
 
 
@@ -45,30 +47,46 @@ public class SaveSystem : MonoBehaviour
 
 	CurrentPLayerValues GetPlayerValues()
 	{
-		var it = Shop.instance.shopPanel.GetComponentsInChildren<ShopItem>();
-		var qt = QuestManager.instance.quests;
-		var items = new ObjectBase[it.Length];
+		var pos = Player.instance.transform.position;
 		var inventory = InventoryManager.instance.slots;
 		var chest = ChestManager.instance.slots;
-		var actions = QuestManager.instance.actionDatabase;
-		var quests = new Quest[qt.Length];
 		var materials = GameManager.instance.materialsValue;
 		var maxMaterials = 1000;
 		var energy = GameManager.instance.energyValue;
 		var points = GameManager.instance.pointsValue;
-
-		for (int i = 0; i < items.Length; i++)
-		{
-			items[i] = it[i].obj;
-		}
-		for (int i = 0; i < quests.Length; i++)
-		{
-			quests[i] = qt[i].quest;
-		}
-
-		return new CurrentPLayerValues(items, inventory, chest, actions, quests, materials, maxMaterials, energy, points);
+		return new CurrentPLayerValues(pos, inventory, chest, materials, maxMaterials, energy, points);
 	}
 
+	CurrentGameManagerValues GetGameManagerValues() {
+		var items = Shop.instance.itemDatabase;
+		var buildings = Shop.instance.buildingDatabase;
+		var actions = QuestManager.instance.actionDatabase;
+		var qt = QuestManager.instance.quests;
+		var spawned = GameManager.instance.spawnedDecorations;
+		var objects = GameManager.instance.InGameObjects;
+
+		var quests = new Quest[qt.Length];
+		for (int q = 0; q < qt.Length; q++)
+		{
+			quests[q] = qt[q].quest;
+		}
+		var plants = new Plant[spawned.Count];
+		for (var p = 0; p < plants.Length; p++)
+		{
+			plants[p] = spawned[p].GetComponent<Plant>();
+		}
+
+
+		return new CurrentGameManagerValues(1, 1, 1, items, buildings, actions, quests, plants, objects);
+	}
+
+	CurrentAIs GetCurrentAIs()
+	{
+		var capiECambu = AIsManager.instance.allCapiECambu;
+		var squadriglieri = AIsManager.instance.allSquadriglieri;
+
+		return new CurrentAIs(capiECambu, squadriglieri);
+	}
 
 	#endregion
 
@@ -89,6 +107,12 @@ public class SaveSystem : MonoBehaviour
 
 		currentPlayerValues = GetPlayerValues();
 		jsonCurrentPlayerValues = JsonUtility.ToJson(currentPlayerValues);
+
+		currentGameManagerValues = GetGameManagerValues();
+		jsonCurrentGameManagerValues = JsonUtility.ToJson(currentGameManagerValues);
+
+		currentAIs = GetCurrentAIs();
+		jsonCurrentAIs = JsonUtility.ToJson(currentAIs);
 	}
 
 	public void LoadAll()
@@ -97,9 +121,12 @@ public class SaveSystem : MonoBehaviour
 		currentAppSettings = JsonUtility.FromJson<CurrentAppSettings>(jsonCurrentAppSettings);
 		currentSquadriglias = JsonUtility.FromJson<CurrentSquadriglias>(jsonCurrentSquadriglias);
 		currentCamp = JsonUtility.FromJson<CurrentCamp>(jsonCurrentCamp);
+		currentGameManagerValues = JsonUtility.FromJson<CurrentGameManagerValues>(jsonCurrentGameManagerValues);
+		currentAIs = JsonUtility.FromJson<CurrentAIs>(jsonCurrentAIs);
 	}
 
 	#endregion
+
 	public CurrentTimeActions currentTimeActions;
 	public string jsonCurrentTimeActions;
 
@@ -114,6 +141,12 @@ public class SaveSystem : MonoBehaviour
 
 	public CurrentPLayerValues currentPlayerValues;
 	public string jsonCurrentPlayerValues;
+
+	public CurrentGameManagerValues currentGameManagerValues;
+	public string jsonCurrentGameManagerValues;
+
+	public CurrentAIs currentAIs;
+	public string jsonCurrentAIs;
 }
 public class CurrentTimeActions
 {
@@ -128,8 +161,28 @@ public class CurrentGameManagerValues
 	public int currentDay;
 	public int currentHour;
 	public int currentMinute;
-	
-	//all items and all actions
+
+	public Item[] allItems;
+	public PlayerBuilding[] allBuildings;
+	public PlayerAction[] allActions;
+	public Quest[] allQuests;
+
+	public Plant[] spawnedPlants;
+	public InGameObject[] allObjects;
+
+	public CurrentGameManagerValues(int currentDay, int currentHour, int currentMinute, Item[] allItems, PlayerBuilding[] allBuildings, PlayerAction[] allActions, Quest[] allQuests, Plant[] spawnedPlants, InGameObject[] allObjects)
+	{
+		this.currentDay = currentDay;
+		this.currentHour = currentHour;
+		this.currentMinute = currentMinute;
+		this.allItems = allItems;
+		this.allBuildings = allBuildings;
+		this.allActions = allActions;
+		this.allQuests = allQuests;
+		this.spawnedPlants = spawnedPlants;
+		this.allObjects = allObjects;
+	}
+
 }
 public class CurrentAppSettings
 {
@@ -167,47 +220,21 @@ public class CurrentSquadriglias
 		currentSquadriglias = squadriglias;
 	}
 }
-public class CurrentObjects
-{
-	//specific things
-	public Tent tent;
-	public Portalegna portalegna;
-	public Refettorio refettorio;
-	public PianoBidoni pianoBidoni;
-	public Stendipanni stendipanni;
-	public Amaca amaca;
-
-	public AngoloDiAltraSquadriglia[] angoli;
-
-	public Lavaggi lavaggi;
-	public Latrina latrina;
-	public Campfire campfire;
-	public Cambusa cambusa;
-	public CassaDelFurfante cassaDelDurfante;
-	public Alzabandiera alzabandiera;
-	public Montana montana;
-
-	public Plant[] decorations;
-}
 public class CurrentPLayerValues
 {
+	public Vector3 position;
 	public InventorySlot[] inventory;
 	public InventorySlot[] chest;
-	public ObjectBase[] items;
-	public PlayerAction[] actions;
-	public Quest[] quests;
 	public int materials;
 	public int maxMaterials;
 	public int energy;
 	public int points;
 
-	public CurrentPLayerValues(ObjectBase[] items, InventorySlot[] inventory, InventorySlot[] chest, PlayerAction[] actions, Quest[] quests, int materials, int maxMaterials, int energy, int points)
+	public CurrentPLayerValues(Vector3 position, InventorySlot[] inventory, InventorySlot[] chest, int materials, int maxMaterials, int energy, int points)
 	{
-		this.items = items;
+		this.position = position;
 		this.inventory = inventory;
 		this.chest = chest;
-		this.actions = actions;
-		this.quests = quests;
 		this.materials = materials;
 		this.maxMaterials = maxMaterials;
 		this.energy = energy;
@@ -216,7 +243,12 @@ public class CurrentPLayerValues
 }
 public class CurrentAIs
 {
-	//capi e cambu
-		//dialoguesDone
-	//squadriglieri con info
+	public CapieCambu[] allCapiECambu;
+	public Squadrigliere[] allSquadriglieri;
+
+	public CurrentAIs(CapieCambu[] allCapiECambu, Squadrigliere[] allSquadriglieri)
+	{
+		this.allCapiECambu = allCapiECambu;
+		this.allSquadriglieri = allSquadriglieri;
+	}
 }

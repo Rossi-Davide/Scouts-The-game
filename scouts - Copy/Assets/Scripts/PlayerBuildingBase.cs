@@ -26,6 +26,11 @@ public abstract class PlayerBuildingBase : InGameObject
 		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthInfos[building.level].healthLossInterval);
 	}
 
+	protected override string GetAnimationByLevel()
+	{
+		return "Livello" + building.level;
+	}
+
 	public override void Select()
 	{
 		healthBar.SetActive(true);

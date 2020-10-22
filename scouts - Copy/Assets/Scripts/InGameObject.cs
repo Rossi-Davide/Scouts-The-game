@@ -43,12 +43,41 @@ public abstract class InGameObject : MonoBehaviour
 		}
 	}
 
+	protected Animator animator;
+	public BuildingState[] states;
+	protected void ChangeAnimations()
+	{
+		int max = -1;
+		string animation = GetAnimationByLevel();
+		foreach (var b in buttons)
+		{
+			if (b.generalAction.state.active && b.generalAction.state.priority > max)
+			{
+				max = b.generalAction.state.priority;
+				animation = b.generalAction.state.animationSubstring;
+			}
+		}
+		foreach (var s in states)
+		{
+			if (s.active && s.priority > max)
+			{
+				max = s.priority;
+				animation = s.animationSubstring;
+			}
+		}
+		animator.Play(objectName + animation);
+	}
 
+	protected virtual string GetAnimationByLevel()
+	{
+		return "";
+	}
 
 	protected virtual void Start()
 	{
 		InvokeRepeating("RefreshButtonsState", 0f, .2f);
 
+		animator = GetComponent<Animator>();
 		for (int b = 0; b < buttons.Length; b++)
 		{
 			CalculatePriceOrPrize(buttons[b]);

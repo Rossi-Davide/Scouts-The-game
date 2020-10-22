@@ -4,17 +4,15 @@
 public class Squadrigliere : BaseAI
 {
     [HideInInspector]
-    public Transform tent;
-    [HideInInspector]
     public Squadriglia sq;
 
-	protected override void SetMissingPriorityTargets()
+	public override void SetMissingPriorityTarget(string targetName, Vector3 pos)
 	{
 		foreach (var p in priorityTargets)
 		{
-            if (p.name == "Tenda")
+            if (p.name == targetName)
 			{
-                p.target = tent.position;
+                p.target = pos;
 			}
 		}
 	}

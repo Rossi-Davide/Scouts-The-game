@@ -11,9 +11,11 @@ public abstract class BaseAI : InGameObject
 	protected Seeker seeker;
 	protected Rigidbody2D rb;
 	protected Animator animator;
+	Vector3 currentTarget;
 
 	public PriorityTarget[] priorityTargets;
 
+	bool extremePriority;
 
 	protected override void Start()
 	{
@@ -25,10 +27,9 @@ public abstract class BaseAI : InGameObject
 
 		InvokeRepeating("CheckPriorityPathConditions", 1f, 1f);
 
-		SetMissingPriorityTargets();
 	}
 
-	protected virtual void SetMissingPriorityTargets() { }
+	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
 
 
 
@@ -36,12 +37,13 @@ public abstract class BaseAI : InGameObject
 	{
 		if (priorityTarget == null)
 		{
-			var t = randomTarget[Random.Range(0, randomTarget.Length)];
-			seeker.StartPath(rb.position, t, VerifyPath);
+			currentTarget = randomTarget[Random.Range(0, randomTarget.Length)];
+			seeker.StartPath(rb.position, currentTarget, VerifyPath);
 		}
-		else
+		else if (!extremePriority)
 		{
 			seeker.StartPath(rb.position, priorityTarget.Value, VerifyPath);
+			currentTarget = priorityTarget.Value;
 		}
 	}
 	protected void VerifyPath(Path p)
@@ -67,6 +69,7 @@ public abstract class BaseAI : InGameObject
 	{
 		var max = -1;
 		Vector3? target = null;
+		extremePriority = false;
 		foreach (var p in priorityTargets)
 		{
 			if (p.waitEndOfCurrentPath && p.priority > max)
@@ -120,7 +123,25 @@ public abstract class BaseAI : InGameObject
 				}
 			}
 		}
+		if (target != currentTarget)
+			CreateNewPath(target);
+	}
+
+	public void ForceTarget(Vector3 target)
+	{
 		CreateNewPath(target);
+		extremePriority = true;
+	}
+	public void ForceTarget(string priorityTargetName)
+	{
+		foreach (var p in priorityTargets)
+		{
+			if (p.name == priorityTargetName)
+			{
+				CreateNewPath(p.target);
+				extremePriority = true;
+			}
+		}
 	}
 }
 

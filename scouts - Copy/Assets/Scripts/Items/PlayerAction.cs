@@ -9,6 +9,7 @@ public class PlayerAction : ScriptableObject
     public Condition[] conditions;
     public bool hasInfoPanel;
     public bool showInActionList;
+    public BuildingState state;
 
     [Header("Parameters")]
     public int timeNeeded;

@@ -7,16 +7,10 @@ public class Tent : PlayerBuildingBase
 	}
 	void EndOfSleep()
 	{
-		GameManager.instance.hasSkippedNight = true;
+		GameManager.instance.SkipNight();
 		Player.instance.gameObject.SetActive(true);
 		RefreshButtonsState();
-		GameManager.Wait(.1f, SkipNight);
 	}
-	void SkipNight()
-	{
-		GameManager.instance.hasSkippedNight = false;
-	}
-
 	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)

@@ -7,9 +7,9 @@ public class Campfire : InGameObject
 	[HideInInspector]
 	public AudioSource aud;
 
-    void ChangeLight()
+    void ChangeLight(bool day)
     {
-        if (!GameManager.instance.isDay)
+        if (!day)
 		{
 			aud.Play();
             GetComponent<Light2D>().enabled = true;

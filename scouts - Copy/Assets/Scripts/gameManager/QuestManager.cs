@@ -50,7 +50,19 @@ public class QuestManager : MonoBehaviour
 		}
 		bool removed = !InventoryManager.instance.Contains(obj.ToItem()) && !ChestManager.instance.Contains(obj.ToItem()) && !isABuilding;
 		ChangeActionParameter(obj, removed);
+		ChangeCountersMaxValue(obj, removed);
 	}
+	void ChangeCountersMaxValue(ObjectBase obj, bool removed)
+	{
+		if (obj != null && obj.changedMaxAmounts.Length > 0)
+		{
+			var o = obj.changedMaxAmounts[obj.level];
+			GameManager.instance.CounterMaxValueChanged(o.counter, removed ? -o.delta : o.delta);
+		}
+	}
+
+
+
 	void ChangeActionParameter(ObjectBase obj, bool removed)
 	{
 		if (obj != null && obj.modifiedActions.Length > 0)
