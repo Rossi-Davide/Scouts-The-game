@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Pathfinding;
+using System.Collections;
 
 public abstract class BaseAI : InGameObject
 {
@@ -14,7 +15,8 @@ public abstract class BaseAI : InGameObject
 
 	public PriorityTarget[] priorityTargets;
 
-	bool extremePriority;
+	bool extremePriority, disable;
+	int keepTarget;
 
 	protected override void Start()
 	{
@@ -64,11 +66,23 @@ public abstract class BaseAI : InGameObject
 		animator.SetFloat("XMovement", xMovement);
 		animator.SetFloat("YMovement", yMovement);
 	}
-	protected virtual void PathCompleted()
+	protected void PathCompleted()
+	{
+		extremePriority = false;
+		if (keepTarget > 0)
+		{
+			if (disable)
+				gameObject.SetActive(false);
+			StartCoroutine(GameManager.Wait(keepTarget, CheckPriorityTargetsThatWait));
+		}
+		else
+			CheckPriorityTargetsThatWait();
+	}
+	
+	void CheckPriorityTargetsThatWait()
 	{
 		var max = -1;
 		Vector3? target = null;
-		extremePriority = false;
 		foreach (var p in priorityTargets)
 		{
 			if (p.waitEndOfCurrentPath && p.priority > max)
@@ -126,12 +140,14 @@ public abstract class BaseAI : InGameObject
 			CreateNewPath(target);
 	}
 
-	public void ForceTarget(Vector3 target)
+	public void ForceTarget(Vector3 target, int stay, bool setInactive)
 	{
 		CreateNewPath(target);
 		extremePriority = true;
+		keepTarget = stay;
+		disable = setInactive;
 	}
-	public void ForceTarget(string priorityTargetName)
+	public void ForceTarget(string priorityTargetName, int stay, bool setInactive)
 	{
 		foreach (var p in priorityTargets)
 		{
@@ -139,6 +155,8 @@ public abstract class BaseAI : InGameObject
 			{
 				CreateNewPath(p.target);
 				extremePriority = true;
+				keepTarget = stay;
+				disable = setInactive;
 			}
 		}
 	}

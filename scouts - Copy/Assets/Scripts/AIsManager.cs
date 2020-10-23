@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AIsManager : MonoBehaviour
 {
-	public int maxActiveAIs;
-
 	public CapieCambu[] allCapiECambu;
 	[HideInInspector]
 	public Squadrigliere[] allSquadriglieri;
@@ -37,7 +35,7 @@ public class AIsManager : MonoBehaviour
 		{
 			if (sq.sq != Player.instance.squadriglia && GetProbability(40))
 			{
-				sq.ForceTarget("Tenda"); //set inactive
+				sq.ForceTarget("Tenda", Random.Range(13, 45), true); //set inactive
 			}
 		}
 	}
