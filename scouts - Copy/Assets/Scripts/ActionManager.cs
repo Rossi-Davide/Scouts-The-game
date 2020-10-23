@@ -104,7 +104,7 @@ public class ActionManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating("RefreshTimesLeft", 0, 1);
+		InvokeRepeating(nameof(RefreshTimesLeft), 0, 1);
 		isOpen = false;
 	}
 	void RefreshTimesLeft()

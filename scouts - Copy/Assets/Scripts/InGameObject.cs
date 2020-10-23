@@ -20,6 +20,7 @@ public abstract class InGameObject : MonoBehaviour
 	public bool isInstantiating; //true if object creates instance of clicklistener prefab
 	public bool checkPositionEachFrame; //true if object is often moving so it needs to update click listener position frequently
 	public bool spawnInRandomPosition;
+	public bool manageAnimationsAutomatically; //true for AIs, for example, because they need to change their animations once per frame so they dont need the standard methods.
 	public Vector3[] possiblePositions;
 	public Button clickListener;
 
@@ -48,10 +49,10 @@ public abstract class InGameObject : MonoBehaviour
 	protected void ChangeAnimations()
 	{
 		int max = -1;
-		string animation = GetAnimationByLevel();
+		string animation = "";
 		foreach (var b in buttons)
 		{
-			if (b.generalAction.state.active && b.generalAction.state.priority > max)
+			if (b.generalAction.state != null && b.generalAction.state.active && b.generalAction.state.priority > max)
 			{
 				max = b.generalAction.state.priority;
 				animation = b.generalAction.state.animationSubstring;
@@ -65,6 +66,7 @@ public abstract class InGameObject : MonoBehaviour
 				animation = s.animationSubstring;
 			}
 		}
+		animation += GetAnimationByLevel();
 		animator.Play(objectName + animation);
 	}
 
@@ -75,9 +77,10 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual void Start()
 	{
-		InvokeRepeating("RefreshButtonsState", 0f, .2f);
-
 		animator = GetComponent<Animator>();
+		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
+		InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
+
 		for (int b = 0; b < buttons.Length; b++)
 		{
 			CalculatePriceOrPrize(buttons[b]);
@@ -107,7 +110,6 @@ public abstract class InGameObject : MonoBehaviour
 		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.text = objectName;
 		subNameText.text = objectSubName;
-
 	}
 	void OnEnable()
 	{
@@ -222,15 +224,15 @@ public abstract class InGameObject : MonoBehaviour
 				var i = CheckActionItems(b);
 				if (!CheckActionManager(n - 1))
 				{
-					GameManager.instance.WarningMessage("Non puoi eseguire più di 5 azioni contemporaneamente!");
+					GameManager.instance.WarningOrMessage("Non puoi eseguire più di 5 azioni contemporaneamente!", true);
 				}
 				else if (i != null)
 				{
-					GameManager.instance.WarningMessage($"Prima di svolgere l'azione {b.generalAction.name}, devi acquistare {i}");
+					GameManager.instance.WarningOrMessage($"Prima di svolgere l'azione {b.generalAction.name}, devi acquistare {i}", true);
 				}
 				else if (!b.canDo)
 				{
-					GameManager.instance.WarningMessage("Hai appena fatto o stai ancora facendo questa azione!");
+					GameManager.instance.WarningOrMessage("Hai appena fatto o stai ancora facendo questa azione!", true);
 				}
 				else
 				{
@@ -243,7 +245,7 @@ public abstract class InGameObject : MonoBehaviour
 			}
 			else
 			{
-				GameManager.instance.WarningMessage(c.warning);
+				GameManager.instance.WarningOrMessage(c.warning, true);
 			}
 		}
 

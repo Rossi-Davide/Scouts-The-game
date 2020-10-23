@@ -10,7 +10,7 @@ public class MoveBuildings : MonoBehaviour
 		if (collision.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = true;
-			GameManager.instance.WarningMessage("Non puoi piazzare l'oggetto qui!");
+			GameManager.instance.WarningOrMessage("Non puoi piazzare l'oggetto qui!", true);
 		}
 	}
 	void OnTriggerExit2D(Collider2D collision)
@@ -18,7 +18,7 @@ public class MoveBuildings : MonoBehaviour
 		if (collision.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = false;
-			GameManager.instance.WarningMessage("");
+			GameManager.instance.CleanWarningOrMessage();
 		}
 	}
 	public void ResetPos(Vector3 startPos)

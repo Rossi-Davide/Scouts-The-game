@@ -10,7 +10,6 @@ public abstract class BaseAI : InGameObject
 	protected int currentWayPointIndex;
 	protected Seeker seeker;
 	protected Rigidbody2D rb;
-	protected Animator animator;
 	Vector3 currentTarget;
 
 	public PriorityTarget[] priorityTargets;
@@ -25,7 +24,7 @@ public abstract class BaseAI : InGameObject
 		animator = GetComponentInChildren<Animator>();
 		CreateNewPath(null);
 
-		InvokeRepeating("CheckPriorityPathConditions", 1f, 1f);
+		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
 
 	}
 

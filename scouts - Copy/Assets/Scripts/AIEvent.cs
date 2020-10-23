@@ -9,6 +9,10 @@ public class AIEvent : ScriptableObject
 	public int duration;
 	public int day;
 	public int hour;
+	[HideInInspector]
+	public int timeLeft;
+	[HideInInspector]
+	public bool running;
 
 	public CapieCambu[] mainAIs;
 }

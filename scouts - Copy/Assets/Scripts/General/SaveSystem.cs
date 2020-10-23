@@ -1,6 +1,7 @@
 ﻿using Boo.Lang;
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class SaveSystem : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating("SaveAll", 15, (int)CampManager.instance.newCamp.settings.savingInterval);
+		InvokeRepeating(nameof(SaveAll), 15, (int)CampManager.instance.newCamp.settings.savingInterval);
 	}
 
 

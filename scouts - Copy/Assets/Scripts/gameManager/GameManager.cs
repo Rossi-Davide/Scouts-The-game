@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnPlayerDeath;
 	public event System.Action OnCampEnd;
 	public event System.Action OnCampStart;
-	public event System.Action<bool> OnDayEndOrStart;
+	public event System.Action<bool> OnSunsetOrSunrise;
+	public event System.Action<int> OnHourChange;
 	public event System.Action OnRain;
 	public event System.Action<PlayerAction> OnActionDo;
 	public event System.Action<ObjectBase> OnInventoryChange;
@@ -53,8 +54,13 @@ public class GameManager : MonoBehaviour
 	}
 	public void DayEndedOrStarted(bool d)
 	{
-		OnDayEndOrStart?.Invoke(d);
+		OnSunsetOrSunrise?.Invoke(d);
 	}
+	public void HourChanged(int h)
+	{
+		OnHourChange?.Invoke(h);
+	}
+
 	public void ActionDone(PlayerAction a)
 	{
 		OnActionDo?.Invoke(a);
@@ -92,22 +98,34 @@ public class GameManager : MonoBehaviour
 	{
 		return Mathf.Min(Mathf.Max(min, value), max);
 	}
-	public TextMeshProUGUI warning;
-	List<Coroutine> currentWarningCoroutines = new List<Coroutine>();
-	public void WarningMessage(string text)
+	public TextMeshProUGUI warning, message;
+	List<Coroutine> currentWarningOrMessageCoroutines = new List<Coroutine>();
+	public void WarningOrMessage(string text, bool isWarning)
 	{
 		warning.text = text;
-		foreach (var i in currentWarningCoroutines)
+		message.text = text;
+		foreach (var i in currentWarningOrMessageCoroutines)
 		{
 			StopCoroutine(i);
 		}
-		currentWarningCoroutines.Add(StartCoroutine(Warning()));
+		currentWarningOrMessageCoroutines.Add(isWarning ? StartCoroutine(Warning()) : StartCoroutine(Message()));
+	}
+	public void CleanWarningOrMessage()
+	{
+		warning.gameObject.SetActive(false);
+		message.gameObject.SetActive(false);
 	}
 	IEnumerator Warning()
 	{
 		warning.gameObject.SetActive(true);
 		yield return new WaitForSeconds(3f);
 		warning.gameObject.SetActive(false);
+	}
+	IEnumerator Message()
+	{
+		message.gameObject.SetActive(true);
+		yield return new WaitForSeconds(3f);
+		message.gameObject.SetActive(false);
 	}
 
 	public static string ChangeToFriendlyString(string text)
@@ -317,7 +335,7 @@ public class GameManager : MonoBehaviour
 
 	#endregion
 	#region DayNightCycle & Rain
-	float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
+	const float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
 	[HideInInspector]
 	public int currentMinute, currentHour, currentDay;
 	[HideInInspector]
@@ -326,7 +344,10 @@ public class GameManager : MonoBehaviour
 	{
 		currentMinute++;
 		if (currentMinute >= 60)
+		{
 			currentHour++;
+			HourChanged(currentHour);
+		}
 		if (currentHour >= 24)
 			currentDay++;
 		CheckTimeConditions();
@@ -348,16 +369,8 @@ public class GameManager : MonoBehaviour
 		{
 			CampEnded();
 		}
-		if (currentHour > 20 || currentHour < 7)
-		{
-			isDay = false;
-			ChangeLight();
-		}
-		else
-		{
-			isDay = true;
-			ChangeLight();
-		}
+		isDay = !(currentHour > 20 || currentHour < 7);
+		if (currentHour > 20 || currentHour < 7) { ChangeLight(); };
 	}
 
 	[HideInInspector]
@@ -434,13 +447,13 @@ public class GameManager : MonoBehaviour
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
 		SpawnDecorations();
-		InvokeRepeating("SpawnDecorations", 30, Random.Range(45, 75));
-		InvokeRepeating("PeriodicItemActionSlow", 60, 60);
-		InvokeRepeating("PeriodicItemActionMedium", 30, 30);
-		InvokeRepeating("PeriodicItemActionFast", 15, 15);
-		InvokeRepeating("GenerateRainProbability", 30, 10);
-		InvokeRepeating("RefreshWaitToUseObjects", 1, 1);
-		InvokeRepeating("IncreaseTime", minuteDuration, minuteDuration);
+		InvokeRepeating(nameof(SpawnDecorations), 30, Random.Range(45, 75));
+		InvokeRepeating(nameof(PeriodicItemActionSlow), 60, 60);
+		InvokeRepeating(nameof(PeriodicItemActionMedium), 30, 30);
+		InvokeRepeating(nameof(PeriodicItemActionFast), 15, 15);
+		InvokeRepeating(nameof(GenerateRainProbability), 30, 10);
+		InvokeRepeating(nameof(RefreshWaitToUseObjects), 1, 1);
+		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
 	}
 	void RefreshInGameObjs()
 	{

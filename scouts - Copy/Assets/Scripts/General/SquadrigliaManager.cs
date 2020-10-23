@@ -125,8 +125,8 @@ public class SquadrigliaManager : MonoBehaviour
 	private void Start()
 	{
 		GameManager.instance.OnCounterValueChange += RefreshPlayerCounters;
-		InvokeRepeating("ChangeOtherSqCounters", 30, Random.Range(10, 30));
-		InvokeRepeating("OtherSQBuildBuildings", 30, Random.Range(30, 60));
+		InvokeRepeating(nameof(ChangeOtherSqCounters), 30, Random.Range(10, 30));
+		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, Random.Range(30, 60));
 		CampManager.instance.InitializeSquadrigliaManager();
 	}
 

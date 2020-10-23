@@ -93,27 +93,27 @@ public class Shop : MonoBehaviour
 		var nextIndex = selected.exists ? selected.level + 1 : selected.level;
 		if (selected.type == ObjectType.Item && InventoryManager.instance.IsInventoryFull())
 		{
-			GameManager.instance.WarningMessage("L'inventario è pieno!");
+			GameManager.instance.WarningOrMessage("L'inventario è pieno!", true);
 			return;
 		}
 		else if (!canIncreaseLevel)
 		{
-			GameManager.instance.WarningMessage("Questo oggetto ha già raggiunto il livello massimo!");
+			GameManager.instance.WarningOrMessage("Questo oggetto ha già raggiunto il livello massimo!", true);
 			return;
 		}
 		else if (!hasEnoughMoney)
 		{
-			GameManager.instance.WarningMessage($"Non hai abbastanza {selected.shopInfos[nextIndex].priceCounter} per comprare {selected.name}");
+			GameManager.instance.WarningOrMessage($"Non hai abbastanza {selected.shopInfos[nextIndex].priceCounter} per comprare {selected.name}", true);
 			return;
 		}
 		else if (!hasItems)
 		{
-			GameManager.instance.WarningMessage("Non hai tutti gli item richiesti!");
+			GameManager.instance.WarningOrMessage("Non hai tutti gli item richiesti!", true);
 			return;
 		}
 		else if (!canBuy)
 		{
-			GameManager.instance.WarningMessage("Hai già acquistato il numero massimo di questi oggetti!");
+			GameManager.instance.WarningOrMessage("Hai già acquistato il numero massimo di questi oggetti!", true);
 			return;
 		}
 		
@@ -237,7 +237,7 @@ public class Shop : MonoBehaviour
 	{
 		if (!negozioIllegaleUnlocked && (GameManager.SpecificShopScreen)n == GameManager.SpecificShopScreen.NegozioIllegale)
 		{
-			GameManager.instance.WarningMessage("Per sbloccare il negozio illegale devi prima trovare la cassa del furfante!");
+			GameManager.instance.WarningOrMessage("Per sbloccare il negozio illegale devi prima trovare la cassa del furfante!", true);
 			return;
 		}
 		currentSpecificScreen = (GameManager.SpecificShopScreen)n;

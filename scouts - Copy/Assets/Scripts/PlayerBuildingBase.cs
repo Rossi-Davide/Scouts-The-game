@@ -23,7 +23,7 @@ public abstract class PlayerBuildingBase : InGameObject
 		health = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
-		InvokeRepeating("LoseHealthWhenRaining", 1f, building.healthInfos[building.level].healthLossInterval);
+		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, building.healthInfos[building.level].healthLossInterval);
 	}
 
 	protected override string GetAnimationByLevel()
