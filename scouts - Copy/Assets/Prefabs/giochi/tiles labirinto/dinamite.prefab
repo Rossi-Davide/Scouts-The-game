@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7572811842111669098}
   - component: {fileID: 4826159708585845564}
   - component: {fileID: 5822624216174456232}
+  - component: {fileID: 8134314456353169188}
   m_Layer: 0
   m_Name: dinamite
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7314134382979502102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.32, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,7 +101,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,3 +149,15 @@ MonoBehaviour:
   maxX: 90
   minY: 10
   maxY: 90
+--- !u!114 &8134314456353169188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314134382979502102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f3389a81e48b3498982d7fb5bfaa7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
