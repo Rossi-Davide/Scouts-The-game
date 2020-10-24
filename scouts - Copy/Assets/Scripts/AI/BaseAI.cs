@@ -15,7 +15,7 @@ public abstract class BaseAI : InGameObject
 
 	public PriorityTarget[] priorityTargets;
 
-	bool extremePriority, disable;
+	bool extremePriority, disable, stayUntil;
 	int keepTarget;
 
 	protected override void Start()
@@ -71,14 +71,27 @@ public abstract class BaseAI : InGameObject
 		extremePriority = false;
 		if (keepTarget > 0)
 		{
+			StartCoroutine(GameManager.Wait(keepTarget, Unlock));
 			if (disable)
 				gameObject.SetActive(false);
-			StartCoroutine(GameManager.Wait(keepTarget, CheckPriorityTargetsThatWait));
+		}
+		else if (stayUntil)
+		{
+			gameObject.SetActive(false);
 		}
 		else
 			CheckPriorityTargetsThatWait();
 	}
 	
+	public void Unlock() //call method from another script if stayUntil is true
+	{
+		gameObject.SetActive(true);
+		keepTarget = 0;
+		stayUntil = false;
+		disable = false;
+		CheckPriorityTargetsThatWait();
+	}
+
 	void CheckPriorityTargetsThatWait()
 	{
 		var max = -1;
@@ -147,6 +160,13 @@ public abstract class BaseAI : InGameObject
 		keepTarget = stay;
 		disable = setInactive;
 	}
+	public void ForceTarget(Vector3 target, bool stay, bool setInactive)
+	{
+		CreateNewPath(target);
+		extremePriority = true;
+		stayUntil = stay;
+		disable = setInactive;
+	}
 	public void ForceTarget(string priorityTargetName, int stay, bool setInactive)
 	{
 		foreach (var p in priorityTargets)
@@ -160,15 +180,4 @@ public abstract class BaseAI : InGameObject
 			}
 		}
 	}
-}
-
-
-[CreateAssetMenu(fileName = "New Priority Target", menuName = "PriorityAITarget")]
-public class PriorityTarget : ScriptableObject
-{
-	public new string name;
-	public Vector3 target;
-	public int priority;
-	public bool waitEndOfCurrentPath;
-	public Condition[] conditions;
 }

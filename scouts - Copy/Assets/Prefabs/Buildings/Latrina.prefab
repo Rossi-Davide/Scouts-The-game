@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 49430548393194578}
   - component: {fileID: 49430548393194579}
   - component: {fileID: 49430548393194542}
+  - component: {fileID: -511174862936809132}
   m_Layer: 0
   m_Name: Latrina
   m_TagString: Untagged
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Latrina
+  objectSubName: 
   buttons:
   - buttonText: Pulisci
     buttonNum: 1
@@ -109,9 +111,35 @@ MonoBehaviour:
     generalAction: {fileID: 11400000, guid: 159f8ce337b0d834c873fb2cced2f3bc, type: 2}
   maxDistanceFromPlayer: 2
   wpCanvas: {fileID: 0}
+  buttonCanvas: {fileID: 0}
+  isInstantiating: 0
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  possiblePositions: []
+  clickListener: {fileID: 0}
   nameTextOffset: {x: 0, y: 0.55, z: 0}
   loadingBarOffset: {x: 0, y: 0.15, z: 0}
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
-  isInstantiating: 0
-  clickListener: {fileID: 0}
+  subNameText: {fileID: 0}
+  states: []
+--- !u!95 &-511174862936809132
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49430548393194577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

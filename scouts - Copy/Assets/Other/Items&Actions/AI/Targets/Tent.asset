@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e8a36ca1a5664ce48a0037dc355ce129, type: 3}
   m_Name: Tent
-  m_EditorClassIdentifier: Assembly-CSharp::PriorityTarget
+  m_EditorClassIdentifier: 
   name: Tenda
-  target: {x: 0, y: 0, z: 0}
+  target: {x: -16.33, y: 0.46, z: 0}
   priority: 0
   waitEndOfCurrentPath: 1
-  conditions:
-  - type: 3
-    desiredValue: 0
-    warning: 
+  conditions: []

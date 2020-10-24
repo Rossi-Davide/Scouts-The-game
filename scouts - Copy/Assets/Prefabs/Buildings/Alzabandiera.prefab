@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8453646315859407838}
   - component: {fileID: 8453646315859407839}
   - component: {fileID: 8453646315859407810}
+  - component: {fileID: -18796684580131741}
   m_Layer: 0
   m_Name: Alzabandiera
   m_TagString: Untagged
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Alzabandiera
+  objectSubName: 
   buttons:
   - buttonText: Fai l'alzabandiera
     buttonNum: 1
@@ -109,9 +111,35 @@ MonoBehaviour:
     generalAction: {fileID: 11400000, guid: 3462591e35e97f84fa5cbfe584e31197, type: 2}
   maxDistanceFromPlayer: 3
   wpCanvas: {fileID: 0}
+  buttonCanvas: {fileID: 0}
+  isInstantiating: 0
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  possiblePositions: []
+  clickListener: {fileID: 0}
   nameTextOffset: {x: 0, y: 0.55, z: 0}
   loadingBarOffset: {x: 0, y: 0.15, z: 0}
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
-  isInstantiating: 0
-  clickListener: {fileID: 0}
+  subNameText: {fileID: 0}
+  states: []
+--- !u!95 &-18796684580131741
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453646315859407837}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

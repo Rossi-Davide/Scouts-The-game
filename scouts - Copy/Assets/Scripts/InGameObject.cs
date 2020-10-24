@@ -79,7 +79,8 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
-		InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
+		if (manageAnimationsAutomatically)
+			InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
 
 		for (int b = 0; b < buttons.Length; b++)
 		{

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4708544776255143190}
   - component: {fileID: 4708544776255143185}
   - component: {fileID: 4708544776255143184}
+  - component: {fileID: -8688225233702778496}
   m_Layer: 0
   m_Name: CassaDelFurfante
   m_TagString: Untagged
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Cassa del Furfante
+  objectSubName: 
   buttons:
   - buttonText: Sblocca il negozio illegale
     buttonNum: 0
@@ -108,11 +110,36 @@ MonoBehaviour:
     generalAction: {fileID: 11400000, guid: e34bfd65c9ccf87459adae1381c18884, type: 2}
   maxDistanceFromPlayer: 3
   wpCanvas: {fileID: 0}
+  buttonCanvas: {fileID: 0}
+  isInstantiating: 0
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  possiblePositions:
+  - {x: 57, y: -17, z: 0}
+  clickListener: {fileID: 0}
   nameTextOffset: {x: 0, y: 0.55, z: 0}
   loadingBarOffset: {x: 0, y: 0.15, z: 0}
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
-  isInstantiating: 0
-  clickListener: {fileID: 0}
-  possiblePositions:
-  - {x: 57, y: -17, z: 0}
+  subNameText: {fileID: 0}
+  states: []
+--- !u!95 &-8688225233702778496
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708544776255143191}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

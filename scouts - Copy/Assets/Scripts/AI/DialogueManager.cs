@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
 
 	[HideInInspector]
-	public string currentObjectName;
+	public CapieCambu currentObject;
 
 
 	int deltaPoints, deltaMaterials, deltaEnergy, currentSentenceIndex;
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
 
 	void ShowSentence(Sentence s)
 	{
-		title.text = currentObjectName;
+		title.text = currentObject.name;
 		sentenceText.text = s.sentence;
 
 		canAnswer = s.canAnswer;
@@ -105,6 +105,8 @@ public class DialogueManager : MonoBehaviour
 		else
 		{
 			TogglePanel(null);
+			currentObject.nextDialogueIndex++;
+			currentObject.Unlock();
 			GameManager.instance.ChangeCounter(Counter.Punti, deltaPoints);
 			GameManager.instance.ChangeCounter(Counter.Materiali, deltaMaterials);
 			GameManager.instance.ChangeCounter(Counter.Energia, deltaEnergy);

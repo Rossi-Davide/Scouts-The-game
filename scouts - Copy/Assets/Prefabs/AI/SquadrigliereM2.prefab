@@ -116,6 +116,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 1
   spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
   possiblePositions: []
   clickListener: {fileID: 6925112430229956604, guid: 65ed6bdba6f23fa469e2d084e03a41af,
     type: 3}
@@ -124,6 +125,7 @@ MonoBehaviour:
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
   subNameText: {fileID: 0}
+  states: []
   randomTarget:
   - {x: -7.1, y: 0, z: 0}
   - {x: 1.2, y: 16.5, z: 0}
@@ -135,10 +137,10 @@ MonoBehaviour:
   - {x: 29, y: 5.9, z: 0}
   - {x: -33.5, y: 1, z: 0}
   - {x: 32.9, y: 11.1, z: 0}
-  speed: 70
+  speed: 60
   minWayPointDistance: 2
-  priorityTargets: []
-  tent: {fileID: 0}
+  priorityTargets:
+  - {fileID: 11400000, guid: cb71d8f84cbfdd543a92c6825bd0c172, type: 2}
   sq: {fileID: 0}
 --- !u!1 &5661232252060916091
 GameObject:

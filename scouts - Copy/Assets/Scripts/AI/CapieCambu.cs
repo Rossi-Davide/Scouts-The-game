@@ -22,8 +22,8 @@ public class CapieCambu : BaseAI
 		switch (b.buttonNum)
 		{
 			case 1:
-				DialogueManager.instance.currentObjectName = objectName;
-				ForceTarget(Player.instance.transform.position, 10, false);
+				DialogueManager.instance.currentObject = this;
+				ForceTarget(Player.instance.transform.position, true, false);
 				DialogueManager.instance.TogglePanel(dialoguesArray[nextDialogueIndex]);
 				return null;
 			default:

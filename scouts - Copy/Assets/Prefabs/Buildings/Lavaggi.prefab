@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6900542347143825557}
   - component: {fileID: 6900542347143825552}
   - component: {fileID: 6900542347143825554}
+  - component: {fileID: 1783706678037681103}
   m_Layer: 0
   m_Name: Lavaggi
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Lavaggi
+  objectSubName: 
   buttons:
   - buttonText: Lava i panni
     buttonNum: 1
@@ -130,12 +132,19 @@ MonoBehaviour:
     generalAction: {fileID: 11400000, guid: 5cd52149eed6b2046a46fb388fd61b8d, type: 2}
   maxDistanceFromPlayer: 3
   wpCanvas: {fileID: 0}
+  buttonCanvas: {fileID: 0}
+  isInstantiating: 0
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  possiblePositions: []
+  clickListener: {fileID: 0}
   nameTextOffset: {x: 0, y: 0.55, z: 0}
   loadingBarOffset: {x: 0, y: 0.15, z: 0}
   loadingBar: {fileID: 0}
   nameText: {fileID: 0}
-  isInstantiating: 0
-  clickListener: {fileID: 0}
+  subNameText: {fileID: 0}
+  states: []
 --- !u!114 &6900542347143825554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +159,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bundles:
   - {fileID: 11400000, guid: 7403aad2f5cf7664c95c0fdf1dfe16d3, type: 2}
+--- !u!95 &1783706678037681103
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900542347143825559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

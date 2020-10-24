@@ -200,10 +200,11 @@ public class SquadrigliaManager : MonoBehaviour
 	IEnumerator AssegnazioneAI()
 	{
 		yield return new WaitForEndOfFrame();
+		AIsManager.instance.allSquadriglieri = new Squadrigliere[squadriglieInGioco.Length * squadriglieInGioco[0].ruoli.Length - 1];
 		for (int i = 0; i < squadriglieInGioco.Length; i++)
 		{
 			var sq = squadriglieInGioco[i];
-			
+
 			for (int p = 0; p < sq.ruoli.Length; p++)
 			{
 				if (sq.baseSq.femminile)
@@ -211,24 +212,23 @@ public class SquadrigliaManager : MonoBehaviour
 				else
 					Instantiate(squadriglieriAIMalePrefabs[Random.Range(0, squadriglieriAIMalePrefabs.Length)], sq.angolo.position, Quaternion.identity, AIcontainers[i].transform);
 			}
-
 			var squadriglieri = AIcontainers[i].GetComponentsInChildren<Squadrigliere>(true);
 			AIcontainers[i].transform.position = sq.angolo.transform.position;
+			bool hasDestroyed = false;
 			for (int p = 0; p < squadriglieri.Length; p++)
 			{
-				squadriglieri[p].objectName = sq.nomi[p];
 				squadriglieri[p].objectSubName = sq.ruoli[p] + " " + sq.baseSq.name;
 				squadriglieri[p].sq = sq.baseSq;
 				squadriglieri[p].SetMissingPriorityTarget("Tenda", sq.tenda.position);
-				if (sq.baseSq == Player.instance.squadriglia)
+				squadriglieri[p].objectName = sq.nomi[p];
+				if (sq.baseSq == Player.instance.squadriglia && p == 0)
 				{
-					if (p == 0)
-					{
-						var s = squadriglieri[p];
-						s.clickListener.gameObject.SetActive(false);
-						s.gameObject.SetActive(false);
-					}
-					p++;
+					Destroy(squadriglieri[p]);
+					hasDestroyed = true;
+				}
+				else
+				{
+					AIsManager.instance.allSquadriglieri[hasDestroyed ? p + (i - 1) * sq.ruoli.Length + sq.ruoli.Length - 1 : p + i * sq.ruoli.Length] = squadriglieri[p];
 				}
 			}
 		}
@@ -253,7 +253,7 @@ public class SquadrigliaManager : MonoBehaviour
 				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().objectName = "Angolo " + sq.baseSq.name;
 				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().squadriglia = sq.baseSq;
 			}
-			
+
 
 			sq.tenda = sq.angolo.Find("Tent");
 			sq.nomi = new string[5];
@@ -308,7 +308,7 @@ public class SquadrigliaManager : MonoBehaviour
 			instance.squadriglieInGioco[s + femaleSqs.Length].baseSq = possibleMaleSqs[maleSqs[s]];
 		}
 		StartCoroutine(AssegnazioneSquadriglieInGioco());
-		
+
 	}
 	#endregion
 
