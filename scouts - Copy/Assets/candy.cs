@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class candy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    LIfeNascondino lf;
+    GameObject player;
+    public Animator an;
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.collider.name == "Player")
+        {
+            an.SetBool("taken", true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void AggiornaCounter()
     {
-        
+        lf.CaramelleCounter();
+
+    }
+
+
+    private void Start()
+    {
+        player = GameObject.Find("/Player");
+        lf = player.GetComponent<LIfeNascondino>();
     }
 }

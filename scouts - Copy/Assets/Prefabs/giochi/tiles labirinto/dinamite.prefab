@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4826159708585845564}
   - component: {fileID: 5822624216174456232}
   - component: {fileID: 8134314456353169188}
+  - component: {fileID: 5086154754939505639}
   m_Layer: 0
   m_Name: dinamite
   m_TagString: Untagged
@@ -161,3 +162,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f3389a81e48b3498982d7fb5bfaa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  an: {fileID: 5086154754939505639}
+--- !u!95 &5086154754939505639
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314134382979502102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
