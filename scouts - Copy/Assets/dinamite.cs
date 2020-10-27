@@ -34,6 +34,8 @@ public class dinamite : MonoBehaviour
             if (colls[i].name == "Player")
             {
                 an.SetBool("ka-boom", true);
+                Debug.Log("ka-boom");
+                break;
             }
         }
     }
@@ -42,5 +44,6 @@ public class dinamite : MonoBehaviour
     void Esplosione()
     {
         life.Dinamite();
+        Destroy(gameObject);
     }
 }

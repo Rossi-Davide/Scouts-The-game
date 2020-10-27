@@ -19,6 +19,7 @@ public class LIfeNascondino : MonoBehaviour
         bar = GameObject.Find("/Canvas/healthbar").GetComponent<HealthBar>();
         counterText = GameObject.Find("/Canvas/caramCounter/counter").GetComponent<TextMeshProUGUI>();
         counterText.text = nCaramelleTrovate.ToString();
+        bar.Health(life);
     }
 
     public void Spillo()

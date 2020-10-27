@@ -19,7 +19,7 @@ public class candy : MonoBehaviour
     void AggiornaCounter()
     {
         lf.CaramelleCounter();
-
+        Destroy(gameObject);
     }
 
 

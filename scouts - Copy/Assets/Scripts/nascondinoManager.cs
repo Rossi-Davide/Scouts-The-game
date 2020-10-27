@@ -43,7 +43,7 @@ public class nascondinoManager : MonoBehaviour
         StartCoroutine(Iniziale());
         spawnPoint = transform.Find("spawnPoint");
         InvokeRepeating("CountDown", 1, 1);
-        seconds = 2;
+        seconds = 10;
         secondsInizioGioco = 3;
     }
 
