@@ -76,7 +76,7 @@ public class nascondinoManager : MonoBehaviour
             seconds--;
             if (seconds < 0)
             {
-                seconds = 10;
+                seconds = 120;
                 countdownGiocoInSe = true;
                 countdownStartGrande = false;
                 InizioGioco();
@@ -106,7 +106,8 @@ public class nascondinoManager : MonoBehaviour
         enemies = new GameObject[5];
         for(int i = 0; i < 5; i++)
         {
-           enemies[i] =(GameObject)Instantiate(enemy,spawnPoint.position, Quaternion.identity);
+            int r = Random.Range(0, 360);
+           enemies[i] =(GameObject)Instantiate(enemy,spawnPoint.position,Quaternion.AngleAxis(r,Vector3.forward));
         }
     }
 
@@ -217,7 +218,9 @@ public class nascondinoManager : MonoBehaviour
         luceGlobale.SetBool("inizioGioco", true);
         yield return new WaitForSeconds(2f);
         haisec.SetActive(true);
-        yield return new WaitForSeconds(2f); // era 4
+        yield return new WaitForSeconds(0.5f);
+        haisec.GetComponent<Animator>().SetBool("rise", true);
+        yield return new WaitForSeconds(4f); // era 4
         haisec.SetActive(false);
         countdownStart = true;
         countdownSecondsInizio.gameObject.SetActive(true);
