@@ -16,6 +16,9 @@ MonoBehaviour:
   description: Apre il pannello "sfida".
   neededItems: []
   conditions: []
+  hasInfoPanel: 0
+  showInActionList: 1
+  state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

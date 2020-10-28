@@ -346,10 +346,14 @@ public class GameManager : MonoBehaviour
 		if (currentMinute >= 60)
 		{
 			currentHour++;
+			currentMinute = 0;
 			HourChanged(currentHour);
 		}
 		if (currentHour >= 24)
+		{
 			currentDay++;
+			currentHour = 0;
+		}
 		CheckTimeConditions();
 		RefreshCounterText();
 	}
@@ -442,6 +446,7 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		isDay = true;
+		currentDay = 1;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
 		OnInGameoObjectsChange += RefreshInGameObjs;

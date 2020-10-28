@@ -92,10 +92,11 @@ public class ShopObjectBase : MonoBehaviour
 		price.transform.parent.gameObject.SetActive(!showingInfo);
 		icon.SetActive(!showingInfo);
 		infoButton.SetActive(!showingInfo);
-		amount.gameObject.SetActive(!showingInfo);
-		amountHeader.gameObject.SetActive(!showingInfo);
-		level.gameObject.SetActive(!showingInfo);
-		levelHeader.gameObject.SetActive(!showingInfo);
+		amount.gameObject.SetActive(!showingInfo && obj.usingAmount);
+		amountHeader.gameObject.SetActive(!showingInfo && obj.usingAmount);
+		level.gameObject.SetActive(!showingInfo && obj.usingLevel);
+		levelHeader.gameObject.SetActive(!showingInfo && obj.usingLevel);
+		RefreshInfo();
 	}
 
 	public virtual void Select()

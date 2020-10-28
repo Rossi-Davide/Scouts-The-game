@@ -27,6 +27,8 @@ MonoBehaviour:
     desiredValue: 1
     warning: Puoi pulire i lavaggi solo di giorno!
   hasInfoPanel: 1
+  showInActionList: 1
+  state: {fileID: 0}
   timeNeeded: 45
   energyGiven: -5
   materialsGiven: 0

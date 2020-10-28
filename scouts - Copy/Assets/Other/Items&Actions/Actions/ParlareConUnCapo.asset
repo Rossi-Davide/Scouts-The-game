@@ -20,6 +20,8 @@ MonoBehaviour:
     desiredValue: 1
     warning: "Questa persona ha gi\xE0 detto tutto ci\xF2 che voleva dirti!"
   hasInfoPanel: 1
+  showInActionList: 1
+  state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

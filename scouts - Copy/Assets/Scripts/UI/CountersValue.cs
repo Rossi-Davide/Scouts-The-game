@@ -31,6 +31,8 @@ public class CountersValue : MonoBehaviour
 				pointsCounter.value = newValue;
 				pointsValue.GetComponent<TextMeshProUGUI>().text = newValue.ToString();
 				break;
+			case Counter.None:
+				break;
 			default:
 				throw new System.Exception("Il counter ricercato non esiste");
 		}

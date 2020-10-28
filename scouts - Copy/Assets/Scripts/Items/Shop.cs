@@ -192,8 +192,8 @@ public class Shop : MonoBehaviour
 		level.text = (o.exists ? (o.level + 1) : o.level) + "/" + (o.maxLevel + 1);
 		amountHeader.text = "Al momento hai:";
 		levelHeader.text = "Livello:";
-		level.gameObject.SetActive(o.usingAmount);
-		levelHeader.gameObject.SetActive(o.usingAmount);
+		level.gameObject.SetActive(o.usingLevel);
+		levelHeader.gameObject.SetActive(o.usingLevel);
 		amount.gameObject.SetActive(o.usingAmount);
 		amountHeader.gameObject.SetActive(o.usingAmount);
 		if (itNeeded != null)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIsManager : MonoBehaviour
 {
-	public int percentageOfActiveAIs;
+	int percentageOfActiveAIs = 5;
 	public CapieCambu[] allCapiECambu;
 	[HideInInspector]
 	public Squadrigliere[] allSquadriglieri;

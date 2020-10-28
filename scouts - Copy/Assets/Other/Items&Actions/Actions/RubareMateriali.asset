@@ -17,6 +17,8 @@ MonoBehaviour:
   neededItems: []
   conditions: []
   hasInfoPanel: 1
+  showInActionList: 1
+  state: {fileID: 0}
   timeNeeded: 10
   energyGiven: 0
   materialsGiven: 30

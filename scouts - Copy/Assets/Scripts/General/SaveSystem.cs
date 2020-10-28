@@ -15,7 +15,6 @@ public class SaveSystem : MonoBehaviour
 	}
 	#endregion
 
-
 	public static Action ReadyToLoadData;
 
 
