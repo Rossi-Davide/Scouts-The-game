@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
@@ -21,8 +22,6 @@ public class GameManager : MonoBehaviour
 			throw new System.Exception("GameManager singleton has been created more than once!");
 		}
 		instance = this;
-		DontDestroyOnLoad(this);
-		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 	#endregion
 	#region Events
@@ -374,11 +373,11 @@ public class GameManager : MonoBehaviour
 			CampEnded();
 		}
 		isDay = !(currentHour > 20 || currentHour < 7);
-		if (currentHour > 20 || currentHour < 7) { ChangeLight(); };
+		if (!isDay) { StartCoroutine(ChangeLight()); };
 	}
 
 	[HideInInspector]
-	public bool isDay = true;
+	public bool isDay;
 	private bool hasOpenedCounter = false;
 	public GameObject closeDayCounter, openDayCounter;
 	public void ToggleDayCounter()
@@ -414,8 +413,8 @@ public class GameManager : MonoBehaviour
 	{
 		closeDayCounter.SetActive(!hasOpenedCounter);
 		openDayCounter.SetActive(hasOpenedCounter);
-		closeDayCounter.GetComponent<Animator>().Play(isDay ? "OpenDay" : "OpenNight");
-		openDayCounter.GetComponent<Animator>().Play(isDay ? "Day" : "Night");
+		if (closeDayCounter.activeSelf) { closeDayCounter.GetComponent<Animator>().Play(isDay ? "Day" : "Night"); }
+		if (openDayCounter.activeSelf) { openDayCounter.GetComponent<Animator>().Play(isDay ? "OpenDay" : "OpenNight"); }
 		string s = "Giorno " + currentDay + ", " + (currentHour >= 10 ? currentHour.ToString() : "0" + currentHour) + ":" + (currentMinute >= 10 ? currentMinute.ToString() : "0" + currentMinute);
 		openDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = s;
 		closeDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = currentDay.ToString();
@@ -445,8 +444,8 @@ public class GameManager : MonoBehaviour
 	#region General
 	void Start()
 	{
-		isDay = true;
 		currentDay = 1;
+		currentHour = 7;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		toSpawnPerType = Random.Range(5, 8);
 		OnInGameoObjectsChange += RefreshInGameObjs;

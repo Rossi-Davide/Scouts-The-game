@@ -11,7 +11,6 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			throw new System.Exception("SquadrigliaManager non è un singleton!");
 		}
-		DontDestroyOnLoad(this);
 		instance = this;
 		squadriglieInGioco = new ConcreteSquadriglia[6];
 		for (int s = 0; s < squadriglieInGioco.Length; s++)

@@ -12,6 +12,7 @@ public class SaveSystem : MonoBehaviour
 		if (instance != null)
 			throw new System.Exception("Savesystem is not a singleton");
 		instance = this;
+		LoadAll();
 	}
 	#endregion
 
@@ -22,16 +23,28 @@ public class SaveSystem : MonoBehaviour
 	{
 		InvokeRepeating(nameof(SaveAll), 15, (int)CampManager.instance.newCamp.settings.savingInterval);
 	}
-
-
-
+	private void OnApplicationQuit()
+	{
+		SaveAll();
+	}
+	private void OnApplicationPause(bool pause)
+	{
+		SaveAll();
+	}
+	private void OnApplicationFocus(bool focus)
+	{
+		LoadAll();
+	}
 	#region GetInfo
-	TimeAction[] GetTimeActions()
+	CurrentTimeActions GetTimeActions()
 	{
 		var timeActionArray = new TimeAction[ActionManager.instance.currentActions.Length];
 		for (int i = 0; i < ActionManager.instance.currentActions.Length; i++)
 			timeActionArray[i] = ActionManager.instance.currentActions[i];
-		return timeActionArray;
+		var hiddeinActionArray = new TimeAction[ActionManager.instance.currentHiddenActions.Count];
+		for (int i = 0; i < ActionManager.instance.currentHiddenActions.Count; i++)
+			hiddeinActionArray[i] = ActionManager.instance.currentHiddenActions[i];
+		return new CurrentTimeActions(timeActionArray, hiddeinActionArray);
 	}
 
 	CurrentAppSettings GetAppSettings()
@@ -93,7 +106,7 @@ public class SaveSystem : MonoBehaviour
 	#region Save and load all
 	public void SaveAll()
 	{
-		currentTimeActions = new CurrentTimeActions(GetTimeActions());
+		currentTimeActions = GetTimeActions();
 		jsonCurrentTimeActions = JsonUtility.ToJson(currentTimeActions);
 
 		currentAppSettings = GetAppSettings();
@@ -123,6 +136,7 @@ public class SaveSystem : MonoBehaviour
 		currentCamp = JsonUtility.FromJson<CurrentCamp>(jsonCurrentCamp);
 		currentGameManagerValues = JsonUtility.FromJson<CurrentGameManagerValues>(jsonCurrentGameManagerValues);
 		currentAIs = JsonUtility.FromJson<CurrentAIs>(jsonCurrentAIs);
+		UnityEngine.Debug.Log("loadded");
 	}
 
 	#endregion
@@ -150,10 +164,12 @@ public class SaveSystem : MonoBehaviour
 }
 public class CurrentTimeActions
 {
-	public TimeAction[] actions;
-	public CurrentTimeActions(TimeAction[] actions)
+	public TimeAction[] shownActions;
+	public TimeAction[] hiddenActions;
+	public CurrentTimeActions(TimeAction[] shownActions, TimeAction[] hiddenActions)
 	{
-		this.actions = actions;
+		this.shownActions = shownActions;
+		this.hiddenActions = hiddenActions;
 	}
 }
 public class CurrentGameManagerValues

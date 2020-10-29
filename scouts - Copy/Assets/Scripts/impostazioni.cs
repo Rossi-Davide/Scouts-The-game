@@ -18,6 +18,7 @@ public class impostazioni : MonoBehaviour
         if (instance != null)
             throw new System.Exception("impostazioni non è un singleton!");
         instance = this;
+        DontDestroyOnLoad(instance);
 	}
 	#endregion
 

@@ -10,8 +10,9 @@ public class CampManager : MonoBehaviour
 	private void Awake()
 	{
 		if (instance != null)
-			throw new System.Exception("CampSettings non è un singleton!");
+			throw new System.Exception("CampManager non è un singleton!");
 		instance = this;
+		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 	#endregion
 
