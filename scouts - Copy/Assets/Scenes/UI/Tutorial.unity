@@ -1708,10 +1708,26 @@ MonoBehaviour:
   types:
     type: up
     sentences:
-    - "Benvenuto in \" \", lo scopo del gioco \xE8 semplice: riuscire a vincere il
-      campo con il maggior numero di punti possibile"
-    - "Le singole partite sono chiamate campi. A inizio gioco si pu\xF2 specificare
-      la squadriglia di partenza"
+    - "Benvenuto in \"Scouts \", lo scopo del gioco \xE8 semplice: riuscire a vincere
+      il campo con il maggior numero di punti possibile"
+    - "Le singole partite sono chiamate campi. A inizio gioco si possono specificare
+      i parametri mostrati, che non potranno essere pi\xF9  cambiati. Una volta creato
+      il campo apparir\xE0 nell'elenco"
+    - "Usando il joystick ci si pu\xF2 muovere per la mappa. Si pu\xF2 usare lo zoom,
+      muovere la camera per il campo o\n allontanarsi. Con il mirino ci si\n pu\xF2
+      riallineare al giocatore "
+    - "Le 3 barre indicano i tuoi parametri, tienile sempre d'occhio.\nLa barra blu
+      indica l'energia, pu\xF2 essere ricaricata e scaricata svolgendo determinate
+      azioni. Non azzerarla mai\n"
+    - 'La barra marrone indica i materiali, possono essere guadagnati facendo determinate
+      azioni e poi usati per comprare oggetti
+
+'
+    - "La barra gialla indica la progressione della sqaudriglia. Sar\xE0 quella a
+      determinare la vittoria della partita. Fai tutto ci\xF2 che \xE8 in tuo potere
+      per vincere il campo e comportati bene o potrebbero esserci conseguenze\n"
+    - 
+    - 
     - 
   up: {fileID: 205062407}
 --- !u!4 &2058702027
