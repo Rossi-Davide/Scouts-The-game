@@ -1,8 +1,4 @@
-﻿using Boo.Lang;
-using System;
-using UnityEngine;
-using UnityEngine.AI;
-
+﻿using UnityEngine;
 public class SaveSystem : MonoBehaviour
 {
 	#region Singleton
