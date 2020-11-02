@@ -9,18 +9,12 @@ public class CampManager : MonoBehaviour
 	public static CampManager instance;
 	private void Awake()
 	{
-		if (instance != null)
-			throw new System.Exception("CampManager non è un singleton!");
-		instance = this;
+		if (instance == null)
+			instance = this;
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 	#endregion
 
-	bool isCreating;
-	[Header("UI")]
-	public GameObject panel;
-	public GameObject noCampPanel;
-	public GameObject[] settingsPanels;
 	[Header("Information")]
 	public Settings standardSettings;
 	public Squadriglia[] possibleFemaleSqs;
@@ -29,208 +23,19 @@ public class CampManager : MonoBehaviour
 
 	[HideInInspector]
 	public Camp newCamp;
+	[HideInInspector]
+	public CurrentAppSettings appSettings;
+	public CurrentAppSettings standardAppSettings;
 
-	int currentPanelIndex;
-
-	public void ToggleCampo()
+	public void CreateCamp(Camp c)
 	{
-		isCreating = !isCreating;
-		panel.SetActive(isCreating);
-		settingsPanels[currentPanelIndex].SetActive(isCreating);
-		noCampPanel.SetActive(!isCreating);
-		ResetSettings();
+		newCamp = c;
 	}
-	public void SwitchPanel()
-	{
-		settingsPanels[currentPanelIndex].SetActive(false);
-		currentPanelIndex = currentPanelIndex == settingsPanels.Length - 1 ? 0 : currentPanelIndex + 1;
-		settingsPanels[currentPanelIndex].SetActive(true);
-	}
-
-	public void ResetSettings()
-	{
-		newCamp.settings = standardSettings.Clone();
-		RefreshUI();
-	}
-	public void CreateCamp()
-	{
-		Debug.Log("created");
-	}
-
-	Button campName, playerName, playerSq, gender, hair, difficulty, rain, dayCycle, map, savingInterval;
-	Button[] femaleSqs, maleSqs;
 	private void Start()
 	{
+		appSettings = new CurrentAppSettings(standardAppSettings.generalVolume, standardAppSettings.musicVolume, standardAppSettings.effectsVolume, standardAppSettings.qualityIndex, standardAppSettings.resIndex, standardAppSettings.fullScreen);
 		DontDestroyOnLoad(this);
-		campName = panel.transform.Find("Base/NomeCampo/Button").GetComponent<Button>();
-		playerName = panel.transform.Find("Base/NomePlayer/Button").GetComponent<Button>();
-		playerSq = panel.transform.Find("Base/Squadriglia/Button").GetComponent<Button>();
-		gender = panel.transform.Find("Base/Genere/Button").GetComponent<Button>();
-		hair = panel.transform.Find("Base/Aspetto/Button").GetComponent<Button>();
-		difficulty = panel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
-		femaleSqs = panel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
-		maleSqs = panel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
-		savingInterval = panel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
-		map = panel.transform.Find("Advanced/Mappa/Button").GetComponent<Button>();
-		dayCycle = panel.transform.Find("Advanced/CicloDelGiorno/Button").GetComponent<Button>();
 	}
-	void RefreshUI()
-	{
-		//base settings
-		campName.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.campName;
-		playerName.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.playerName;
-		playerSq.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = RefreshPlayerSq();
-		gender.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.gender.ToString();
-		hair.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.hair.ToString();
-		difficulty.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.difficulty.ToString();
-		//advanced settings 1
-		for (int sq = 0; sq < femaleSqs.Length; sq++)
-		{
-			femaleSqs[sq].transform.Find("Text").GetComponent<TextMeshProUGUI>().text = possibleFemaleSqs[newCamp.settings.femaleSqs[sq]].name;
-		}
-		for (int sq = 0; sq < maleSqs.Length; sq++)
-		{
-			maleSqs[sq].transform.Find("Text").GetComponent<TextMeshProUGUI>().text = possibleMaleSqs[newCamp.settings.maleSqs[sq]].name;
-		}
-		savingInterval.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.savingInterval.ToString();
-		map.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.map.ToString();
-		dayCycle.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = newCamp.settings.dayCycle.ToString();
-		//advanced settings 2
-	}
-
-	#region mobile keyboard
-	TouchScreenKeyboard keyboard;
-	bool editingCampName;
-	bool editingPlayerName;
-	public void ChangeCampName()
-	{
-		keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del campo", 15);
-		editingCampName = true;
-	}
-	public void ChangePlayerName()
-	{
-		keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del giocatore", 15);
-		editingPlayerName = true;
-	}
-	private void Update()
-	{
-		if (keyboard.status == TouchScreenKeyboard.Status.Done)
-		{
-			if (editingCampName)
-			{
-				newCamp.settings.campName = keyboard.text;
-				editingCampName = false;
-			}
-			else if (editingPlayerName)
-			{
-				newCamp.settings.playerName = keyboard.text;
-				editingPlayerName = false;
-			}
-			RefreshUI();
-		}
-	}
-	#endregion
-
-	#region change settings
-	int NextInArray(int current, int lenght)
-	{
-		return current < lenght - 1 ? current + 1 : 0;
-	}
-	public void SwitchSavingInterval()
-	{
-		newCamp.settings.savingInterval = (SavingInterval)NextInArray((int)newCamp.settings.savingInterval, Enum.GetNames(typeof(SavingInterval)).Length);
-		RefreshUI();
-	}
-	public void SwitchDayCycle()
-	{
-		newCamp.settings.dayCycle = (DaylightCycle)NextInArray((int)newCamp.settings.dayCycle, Enum.GetNames(typeof(DaylightCycle)).Length);
-		RefreshUI();
-	}
-	public void SwitchMap()
-	{
-		newCamp.settings.map = (Map)NextInArray((int)newCamp.settings.map, Enum.GetNames(typeof(Map)).Length);
-		RefreshUI();
-	}
-	public void SwitchDifficulty()
-	{
-		newCamp.settings.difficulty = (Difficulty)NextInArray((int)newCamp.settings.difficulty, Enum.GetNames(typeof(Difficulty)).Length);
-		RefreshUI();
-	}
-	public void SwitchHair()
-	{
-		newCamp.settings.hair = (Hair)NextInArray((int)newCamp.settings.hair, Enum.GetNames(typeof(Hair)).Length);
-		RefreshUI();
-	}
-	public void SwitchGender()
-	{
-		newCamp.settings.gender = (Gender)NextInArray((int)newCamp.settings.gender, Enum.GetNames(typeof(Gender)).Length);
-		RefreshUI();
-	}
-	public void ChangePlayerSq()
-	{
-		if (newCamp.settings.gender == Gender.Femmina)
-		{
-			newCamp.settings.playerSqIndex = NextInArray(newCamp.settings.playerSqIndex, newCamp.settings.femaleSqs.Length);
-		}
-		else if (newCamp.settings.gender == Gender.Maschio)
-		{
-			newCamp.settings.playerSqIndex = NextInArray(newCamp.settings.playerSqIndex, newCamp.settings.maleSqs.Length);
-		}
-		RefreshUI();
-		RefreshPlayerSq();
-	}
-
-	public void ChangeFemaleSqs(int index)
-	{
-		int c = Array.IndexOf(possibleFemaleSqs, possibleFemaleSqs[newCamp.settings.femaleSqs[index]]);
-		for (int i = 0; i < possibleFemaleSqs.Length; i++)
-		{
-			if (!Array.Exists(newCamp.settings.femaleSqs, element => element == c))
-			{
-				newCamp.settings.femaleSqs[index] = c;
-				RefreshUI();
-				return;
-			}
-			c++;
-			if (c > possibleFemaleSqs.Length - 1)
-				c = 0;
-		}
-		RefreshPlayerSq();
-	}
-	public void ChangeMaleSqs(int index)
-	{
-		int c = Array.IndexOf(possibleMaleSqs, possibleMaleSqs[newCamp.settings.maleSqs[index]]);
-		for (int i = 0; i < possibleMaleSqs.Length; i++)
-		{
-			if (!Array.Exists(newCamp.settings.maleSqs, element => element == c))
-			{
-				newCamp.settings.maleSqs[index] = c;
-				RefreshUI();
-				return;
-			}
-			c++;
-			if (c > possibleMaleSqs.Length - 1)
-				c = 0;
-		}
-		RefreshPlayerSq();
-	}
-
-	#endregion
-
-	#region Other
-	string RefreshPlayerSq()
-	{
-		if (newCamp.settings.gender == Gender.Femmina)
-		{
-			return possibleFemaleSqs[newCamp.settings.femaleSqs[newCamp.settings.playerSqIndex]].name;
-		}
-		if (newCamp.settings.gender == Gender.Maschio)
-		{
-			return possibleMaleSqs[newCamp.settings.maleSqs[newCamp.settings.playerSqIndex]].name;
-		}
-		return null;
-	}
-	#endregion
 
 	#region Initialize in game
 	public void InitializeSquadrigliaManager()

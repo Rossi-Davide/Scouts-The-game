@@ -26,7 +26,7 @@ public class levelLoader : MonoBehaviour
 		Sound s = Array.Find(audio.sounds, item => item.name == "musicaGioco");
 		s.source.volume = 0.6f;
 
-		AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+		AsyncOperation operation = SceneManager.LoadSceneAsync("MainScene");
 		menu.SetActive(true);
 		while (!operation.isDone)
 		{

@@ -24,7 +24,6 @@ public abstract class InGameObject : MonoBehaviour
 	public Vector3[] possiblePositions;
 	public Button clickListener;
 
-	protected bool spawned;
 	protected bool hasBeenClicked;
 
 	[HideInInspector]
@@ -77,6 +76,7 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual void Start()
 	{
+		GameManager.instance.OnCampStart += WhenCampStarts;
 		animator = GetComponent<Animator>();
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
 		if (manageAnimationsAutomatically)
@@ -100,18 +100,21 @@ public abstract class InGameObject : MonoBehaviour
 		}
 		clickListener.onClick.AddListener(OnClick);
 
-		if (!spawned && spawnInRandomPosition)
-		{
-			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
-			spawned = true;
-		}
-
 		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.text = objectName;
 		subNameText.text = objectSubName;
 	}
+
+	void WhenCampStarts()
+	{
+		if (spawnInRandomPosition)
+		{
+			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
+		}
+	}
+
 	void OnEnable()
 	{
 		StartCoroutine(ObjectEnabled());

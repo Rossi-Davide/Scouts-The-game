@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.Audio;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class impostazioni : MonoBehaviour
 {
     Resolution[] resolutions;
     public AudioMixer mixer;
     public TMP_Dropdown resDrop;
+
+    public Button homeButton;
 
     #region Singleton
     public static impostazioni instance;
@@ -22,13 +25,12 @@ public class impostazioni : MonoBehaviour
 	}*/
 	#endregion
 
-
-
-
 	public TextMeshProUGUI masterValue, musicValue, effectsValue;
 
     private void Start()
     {
+        homeButton.onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
+
         resolutions = Screen.resolutions;
 
         resDrop.ClearOptions();
@@ -50,6 +52,14 @@ public class impostazioni : MonoBehaviour
         resDrop.AddOptions(options);
         resDrop.value = defResolution;
         resDrop.RefreshShownValue();
+
+        generalVolume = CampManager.instance.appSettings.generalVolume;
+        musicVolume = CampManager.instance.appSettings.musicVolume;
+        effectsVolume = CampManager.instance.appSettings.effectsVolume;
+        qualityIndex = CampManager.instance.appSettings.qualityIndex;
+        resIndex = CampManager.instance.appSettings.resIndex;
+        fullscreen = CampManager.instance.appSettings.fullScreen;
+
     }
 
     [HideInInspector]
@@ -115,6 +125,8 @@ public class impostazioni : MonoBehaviour
     public void tornaAlMenu()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
+
+        CampManager.instance.appSettings = new CurrentAppSettings(generalVolume, musicVolume, effectsVolume, qualityIndex, resIndex, fullscreen);
 
         SceneManager.LoadScene(0);
     }

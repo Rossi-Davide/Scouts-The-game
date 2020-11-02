@@ -19,6 +19,7 @@ public class ActionManager : MonoBehaviour
 	public GameObject[] actionSpots;
 	public TimeAction[] currentActions = new TimeAction[5];
 	public List<TimeAction> currentHiddenActions = new List<TimeAction>();
+
 	public void TogglePanel()
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
