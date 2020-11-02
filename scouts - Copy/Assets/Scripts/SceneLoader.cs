@@ -40,7 +40,7 @@ public class SceneLoader : MonoBehaviour
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene(4);
     }
     public void LoadCampCreateScene()
     {
