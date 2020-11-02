@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/CreateCamp.unity
     guid: 5c6a2868fccf63841b670ede05890382
+  - enabled: 1
+    path: Assets/Scenes/UI/Tutorial.unity
+    guid: 1dfb42c890e0b5a469481a19f76cedee
   m_configObjects: {}

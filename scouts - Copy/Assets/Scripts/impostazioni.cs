@@ -13,13 +13,13 @@ public class impostazioni : MonoBehaviour
 
     #region Singleton
     public static impostazioni instance;
-	private void Awake()
+	/*private void Awake()
 	{
         if (instance != null)
             throw new System.Exception("impostazioni non è un singleton!");
         instance = this;
         DontDestroyOnLoad(instance);
-	}
+	}*/
 	#endregion
 
 

@@ -22,11 +22,13 @@ public class mainMenu : MonoBehaviour
 
     public void Options()
     {
-        //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
         SceneManager.LoadScene(2);
     }
-
+    public void Tutorial()
+    {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+        SceneManager.LoadScene(5);
+    }
 
     public void GoToMenu()
     {
