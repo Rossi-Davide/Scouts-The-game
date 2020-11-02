@@ -1708,8 +1708,10 @@ MonoBehaviour:
   types:
     type: up
     sentences:
-    - 
-    - 
+    - "Benvenuto in \" \", lo scopo del gioco \xE8 semplice: riuscire a vincere il
+      campo con il maggior numero di punti possibile"
+    - "Le singole partite sono chiamate campi. A inizio gioco si pu\xF2 specificare
+      la squadriglia di partenza"
     - 
   up: {fileID: 205062407}
 --- !u!4 &2058702027
