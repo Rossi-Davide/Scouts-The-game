@@ -11,16 +11,12 @@ public class dialogueManagerTutorial : MonoBehaviour
     int contatore = -1;
     bool typing;
     GameObject bongia, cesco, fumo, tommi, fra;
-    Light pointCapi;
-    Color bongiaColor,cescoColor,tommiColor,fraColor;
+    public Animator pointLight;
 
     // Start is called before the first frame update
     void Start()
     {
-        bongiaColor= new Color(255, 247,136);
-        cescoColor = new Color(222, 161, 141);
-        tommiColor = new Color(101, 183, 161);
-        fraColor = new Color(221, 141, 208);
+            
         bongia = GameObject.Find("/bongia1");
         cesco = GameObject.Find("/cesco1");
         tommi = GameObject.Find("/tommaso1");
@@ -55,6 +51,8 @@ public class dialogueManagerTutorial : MonoBehaviour
                 }
                 else if (contatore == 3)
                 {
+                    pointLight.SetBool("bongia", false);
+                    pointLight.SetBool("cesco", true);
                     bongia.SetActive(false);
                     cesco.SetActive(true);
                     fumo.SetActive(true);
@@ -63,6 +61,8 @@ public class dialogueManagerTutorial : MonoBehaviour
                 }
                 else if (contatore == 6)
                 {
+                    pointLight.SetBool("cesco", false);
+                    pointLight.SetBool("tommi", true);
                     cesco.SetActive(false);
                     fumo.SetActive(false);
                     tommi.SetActive(true);
@@ -76,6 +76,8 @@ public class dialogueManagerTutorial : MonoBehaviour
                 }
                 else if (contatore == 9)
                 {
+                    pointLight.SetBool("tommi", false);
+                    pointLight.SetBool("fra", true);
                     tommi.SetActive(false);
                     fra.SetActive(true);
                     fra.GetComponent<Animator>().SetBool("pausa", false);
@@ -118,6 +120,8 @@ public class dialogueManagerTutorial : MonoBehaviour
                 }
                 else if (contatore == 2)
                 {
+                    pointLight.SetBool("cesco", false);
+                    pointLight.SetBool("bongia", true);
                     cesco.SetActive(false);
                     fumo.SetActive(false);
                     bongia.SetActive(true);
@@ -126,6 +130,8 @@ public class dialogueManagerTutorial : MonoBehaviour
                 }
                 else if (contatore == 5)
                 {
+                    pointLight.SetBool("tommi", false);
+                    pointLight.SetBool("cesco", true);
                     tommi.SetActive(false);
                     cesco.SetActive(true);
                     fumo.SetActive(true);
@@ -138,6 +144,8 @@ public class dialogueManagerTutorial : MonoBehaviour
                 }
                 else if (contatore == 8)
                 {
+                    pointLight.SetBool("fra", false);
+                    pointLight.SetBool("tommi", true);
                     fra.SetActive(false);
                     tommi.SetActive(true);
                     tommi.GetComponent<Animator>().SetBool("pausa", false);

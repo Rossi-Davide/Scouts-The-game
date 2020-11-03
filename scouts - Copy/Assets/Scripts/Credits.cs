@@ -11,4 +11,9 @@ public class Credits : MonoBehaviour
 	{
 		homeButton.onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
 	}
+
+	public void InstagramDavide()
+	{
+		System.Diagnostics.Process.Start("https://youtube.com/");
+	}
 }
