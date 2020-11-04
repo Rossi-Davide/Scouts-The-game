@@ -14,6 +14,22 @@ public class Credits : MonoBehaviour
 
 	public void InstagramDavide()
 	{
-		System.Diagnostics.Process.Start("https://youtube.com/");
+		System.Diagnostics.Process.Start("https://www.instagram.com/big_baddave/");
+	}
+	public void InstagramSara()
+	{
+		System.Diagnostics.Process.Start("https://www.instagram.com/sara_cappe22/");
+	}
+	public void InstagramSimo()
+	{
+		System.Diagnostics.Process.Start("https://www.instagram.com/simone_ceccarelli__/");
+	}
+	public void InstagramPietro()
+	{
+		System.Diagnostics.Process.Start("https://www.instagram.com/pietropappo/");
+	}
+	public void InstagramReparto()
+	{
+		System.Diagnostics.Process.Start("https://www.instagram.com/repartolaquercia/");
 	}
 }
