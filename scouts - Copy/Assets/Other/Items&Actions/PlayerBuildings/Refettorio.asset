@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Refettorio
   type: 1
-  description: 
+  description: Non vorrai mica mangiare per terra?!
   icon: {fileID: 2049916588613589399, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 6
   maxAmount: 0

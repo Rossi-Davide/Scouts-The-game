@@ -21,6 +21,8 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadSettingsScene()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+
         SceneManager.LoadScene("Impostazioni");
     }
     public void LoadTutorialScene()

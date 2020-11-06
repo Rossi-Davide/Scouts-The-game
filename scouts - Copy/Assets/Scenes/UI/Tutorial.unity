@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -492,7 +492,6 @@ GameObject:
   - component: {fileID: 382419248}
   - component: {fileID: 382419247}
   - component: {fileID: 382419246}
-  - component: {fileID: 382419250}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -580,18 +579,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &382419250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382419245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f06aeecdb33fa784a83d4beebfbe101a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &441440965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1249,7 @@ GameObject:
   - component: {fileID: 1086999460}
   - component: {fileID: 1086999459}
   - component: {fileID: 1086999458}
+  - component: {fileID: 1086999461}
   m_Layer: 5
   m_Name: TornaAlmenu
   m_TagString: Untagged
@@ -1331,8 +1319,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 382419250}
-        m_MethodName: GoToMenu
+      - m_Target: {fileID: 1086999461}
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1379,6 +1367,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086999456}
   m_CullTransparentMesh: 0
+--- !u!114 &1086999461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086999456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e6181112eef0540ade722ff4eaf554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1377789492
 GameObject:
   m_ObjectHideFlags: 0

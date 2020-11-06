@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Amaca
   type: 1
-  description: 
+  description: Per quando si vuole schiacciare un pisolino
   icon: {fileID: 612596470744354101, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 6
   maxAmount: 0

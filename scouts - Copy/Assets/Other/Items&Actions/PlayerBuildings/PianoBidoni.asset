@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: PianoBidoni
   type: 1
-  description: 
+  description: "Il cibo \xE8 pi\xF9 buono se caldo"
   icon: {fileID: -4676655390728407469, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 6
   maxAmount: 0

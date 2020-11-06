@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
@@ -9,27 +10,32 @@ public class Credits : MonoBehaviour
 
 	private void Start()
 	{
-		homeButton.onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
+		//homeButton.onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
 	}
 
 	public void InstagramDavide()
 	{
-		System.Diagnostics.Process.Start("https://www.instagram.com/big_baddave/");
+		Application.OpenURL("https://www.instagram.com/big_baddave/");
 	}
 	public void InstagramSara()
 	{
-		System.Diagnostics.Process.Start("https://www.instagram.com/sara_cappe22/");
+		Application.OpenURL("https://www.instagram.com/sara_cappe22/");
 	}
 	public void InstagramSimo()
 	{
-		System.Diagnostics.Process.Start("https://www.instagram.com/simone_ceccarelli__/");
+		Application.OpenURL("https://www.instagram.com/simone_ceccarelli__/");
 	}
 	public void InstagramPietro()
 	{
-		System.Diagnostics.Process.Start("https://www.instagram.com/pietropappo/");
+		Application.OpenURL("https://www.instagram.com/pietropappo/");
 	}
 	public void InstagramReparto()
 	{
-		System.Diagnostics.Process.Start("https://www.instagram.com/repartolaquercia/");
+		Application.OpenURL("https://www.instagram.com/repartolaquercia/");
+	}
+
+	public void Menu()
+	{
+		SceneManager.LoadScene(0);
 	}
 }

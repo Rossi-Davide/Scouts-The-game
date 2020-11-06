@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 1
+  m_FalloffIntensity: 0.44
   m_Color: {r: 0, g: 0.23238325, b: 1, a: 1}
   m_Intensity: 3.52
   m_LightVolumeOpacity: 0.1
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 120
+  m_PointLightInnerAngle: 76.51
   m_PointLightOuterAngle: 120
   m_PointLightInnerRadius: 1.0706781
   m_PointLightOuterRadius: 2.59
