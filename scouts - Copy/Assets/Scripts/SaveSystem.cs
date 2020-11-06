@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Data;
+using UnityEngine;
 public class SaveSystem : MonoBehaviour
 {
 	#region Singleton
@@ -12,10 +13,11 @@ public class SaveSystem : MonoBehaviour
 	}
 	#endregion
 
+	public event System.Action onReadyToLoad;
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(SaveAll), 15, (int)CampManager.instance.newCamp.settings.savingInterval);
+		InvokeRepeating(nameof(SaveAll), 15, (int)CampManager.instance.camp.settings.savingInterval);
 	}
 	private void OnApplicationQuit()
 	{
@@ -103,7 +105,7 @@ public class SaveSystem : MonoBehaviour
 		currentSquadriglias = new CurrentSquadriglias(SquadrigliaManager.instance.GetInfo());
 		jsonCurrentSquadriglias = JsonUtility.ToJson(currentSquadriglias);
 
-		currentCamp = new CurrentCamp(CampManager.instance.newCamp);
+		currentCamp = new CurrentCamp(CampManager.instance.camp);
 		jsonCurrentCamp = JsonUtility.ToJson(currentCamp);
 
 		currentPlayerValues = GetPlayerValues();
@@ -124,7 +126,28 @@ public class SaveSystem : MonoBehaviour
 		currentCamp = JsonUtility.FromJson<CurrentCamp>(jsonCurrentCamp);
 		currentGameManagerValues = JsonUtility.FromJson<CurrentGameManagerValues>(jsonCurrentGameManagerValues);
 		currentAIs = JsonUtility.FromJson<CurrentAIs>(jsonCurrentAIs);
+		onReadyToLoad?.Invoke();
 		UnityEngine.Debug.Log("loaded data");
+
+	}
+
+	public object RequestData(DataCategory category, DataKey key)
+	{
+		switch (category)
+		{
+			//ActionButtons - selected
+			//
+		}
+		throw new System.NotImplementedException("The category or key you're looking for does not exist.");
+	}
+	public object RequestData(DataCategory category, DataKey key, DataParameter param, int index)
+	{
+		switch (category)
+		{
+			//ActionButtons - selected
+			//
+		}
+		throw new System.NotImplementedException("The category or key you're looking for does not exist.");
 	}
 
 	#endregion
@@ -256,4 +279,37 @@ public class CurrentAIs
 		this.allCapiECambu = allCapiECambu;
 		this.allSquadriglieri = allSquadriglieri;
 	}
+}
+
+public enum DataCategory
+{
+	ActionButtons,
+	ActionManager,
+	AIsManager,
+	CampManager,
+	ChestManager,
+	InventoryManager,
+	IterateMultipleObjs,
+	Player,
+	QuestManager,
+}
+public enum DataKey
+{
+	selected, //ActionButtons
+	currentActions, //ActionManager
+	currentHiddenActions, //ActionManager
+	allSquadriglieri, //AIsManager
+	events, //AIsManager
+	allCapiECambu, //AIsManager
+	camp, //CampManager
+	slots, //InventoryManager, ChestManager
+	bundles, //IterateMultipleObjs
+	position, //Player
+	quests, //QuestManager
+}
+public enum DataParameter
+{
+	nextAction, //IterateMultipleObjs
+	prizeTaken, //QuestManager
+	timesDone, //QuestManager
 }

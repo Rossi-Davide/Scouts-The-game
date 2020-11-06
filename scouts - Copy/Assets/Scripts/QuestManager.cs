@@ -8,7 +8,7 @@ public class QuestManager : MonoBehaviour
 	public QuestUI[] quests;
 	public PlayerAction[] actionDatabase;
 	bool isOpen;
-
+	SaveSystem saveSystem;
 	#region Singleton
 	public static QuestManager instance;
 	private void Awake()
@@ -27,6 +27,17 @@ public class QuestManager : MonoBehaviour
 		GameManager.instance.OnActionDo += RefreshQuests;
 		GameManager.instance.OnInventoryChange += RefreshActions;
 		GameManager.instance.OnBuild += RefreshActions;
+		saveSystem = SaveSystem.instance;
+		saveSystem.onReadyToLoad += ReceiveSavedData;
+	}
+
+	void ReceiveSavedData()
+	{
+		for (int i = 0; i < quests.Length; i++)
+		{
+			quests[i].quest.timesDone = (int)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.timesDone, i);
+			quests[i].quest.prizeTaken = (bool)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.prizeTaken, i);
+		}
 	}
 
 	void RefreshQuests(PlayerAction a)

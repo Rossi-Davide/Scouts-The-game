@@ -5,11 +5,21 @@ using UnityEngine;
 public class IterateMultipleObjs : MonoBehaviour
 {
 	public ObjectBundle[] bundles;
+	SaveSystem saveSystem;
 	private void Start()
 	{
 		GameManager.instance.OnActionDo += RefreshActions;
 		GameManager.instance.OnObjectArrayUpdate += FindObjectReferences;
 		StartCoroutine(GetBuild());
+		saveSystem = SaveSystem.instance;
+		saveSystem.onReadyToLoad += ReceiveSavedData;
+	}
+	void ReceiveSavedData()
+	{
+		for (int i = 0; i < bundles.Length; i++)
+		{
+			bundles[i].nextAction = (int)saveSystem.RequestData(DataCategory.IterateMultipleObjs, DataKey.bundles, DataParameter.nextAction, i);
+		}
 	}
 
 	IEnumerator GetBuild()

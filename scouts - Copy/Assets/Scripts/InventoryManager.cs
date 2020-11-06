@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
 	public static bool dragging;
 	public GameObject ovCanvas;
 	public InventorySlot[] slots;
-	int touchRadius = 60;
+	readonly int touchRadius = 60;
 
 	public GameObject itemInfoBox;
 	TextMeshProUGUI itemName, description, type;
@@ -115,6 +115,12 @@ public class InventoryManager : MonoBehaviour
 		useButton = itemInfoBox.transform.Find("Button").gameObject;
 		if (slots.Length != maxInventoryItems)
 			Debug.LogWarning("Inventory contains a different number of slots from the required one.");
+		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+	}
+
+	void ReceiveSavedData()
+	{
+		slots = (InventorySlot[])SaveSystem.instance.RequestData(DataCategory.InventoryManager, DataKey.slots);
 	}
 
 	public void SelectItem(InventorySlot slot)
@@ -155,7 +161,7 @@ public class InventoryManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.touchCount >= 1)
+		if (isOpen && Input.touchCount >= 1)
 		{
 			Touch t = Input.GetTouch(0);
 			draggingSlot = CheckIfNearASlot(t);

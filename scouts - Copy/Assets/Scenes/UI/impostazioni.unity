@@ -2683,6 +2683,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Home
       objectReference: {fileID: 0}
+    - target: {fileID: 3960756955882274920, guid: 95b53116246cd0c498d919ce6e387cb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1273224477}
+    - target: {fileID: 3960756955882274920, guid: 95b53116246cd0c498d919ce6e387cb0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TornaAlMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3960756955882274921, guid: 95b53116246cd0c498d919ce6e387cb0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2796,18 +2806,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1185035852}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1185035854 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3960756955882274920, guid: 95b53116246cd0c498d919ce6e387cb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1185035852}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1202827716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,7 +3265,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: d2c21433200a7e44ebb94f957911670d, type: 2}
   resDrop: {fileID: 2010826095}
-  homeButton: {fileID: 1185035854}
   masterValue: {fileID: 322971920}
   musicValue: {fileID: 987551914}
   effectsValue: {fileID: 1072541901}

@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
-    public Button homeButton;
-
-	private void Start()
-	{
-		//homeButton.onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
-	}
 
 	public void InstagramDavide()
 	{
@@ -34,8 +28,8 @@ public class Credits : MonoBehaviour
 		Application.OpenURL("https://www.instagram.com/repartolaquercia/");
 	}
 
-	public void Menu()
+	public void BackToMenu()
 	{
-		SceneManager.LoadScene(0);
+		SceneLoader.instance.LoadMainMenuScene();
 	}
 }

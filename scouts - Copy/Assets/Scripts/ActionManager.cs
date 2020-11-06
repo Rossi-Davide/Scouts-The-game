@@ -107,7 +107,15 @@ public class ActionManager : MonoBehaviour
 	{
 		InvokeRepeating(nameof(RefreshTimesLeft), 0, 1);
 		isOpen = false;
+		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
 	}
+
+	void ReceiveSavedData()
+	{
+		currentActions = (TimeAction[])SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentActions);
+		currentHiddenActions = (List<TimeAction>)SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentHiddenActions);
+	}
+
 	void RefreshTimesLeft()
 	{
 		for (int i = 0; i < currentActions.Length; i++)

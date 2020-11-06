@@ -3,6 +3,8 @@
 public class ActionButtons : MonoBehaviour
 {
 	public InGameObject selected;
+
+	#region Singleton
 	public static ActionButtons instance;
 	private void Awake()
 	{
@@ -11,11 +13,17 @@ public class ActionButtons : MonoBehaviour
 			throw new System.Exception("ActionButtons non è un singleton");
 		}
 		instance = this;
+		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+	}
+	#endregion
+
+	void ReceiveSavedData()
+	{
+		selected = (InGameObject)SaveSystem.instance.RequestData(DataCategory.ActionButtons, DataKey.selected);
 	}
 
 	public void ChangeSelectedObject(InGameObject b)
 	{
-
 		if (b != null)
 		{
 			if (selected == null)

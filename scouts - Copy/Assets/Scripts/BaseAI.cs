@@ -27,7 +27,6 @@ public abstract class BaseAI : InGameObject
 		CreateNewPath(null);
 
 		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
-
 	}
 
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }

@@ -15,8 +15,14 @@ public class CreateCamp : MonoBehaviour
 	int currentPanelIndex;
 	CampManager campManager;
 
-	Button campName, playerName, playerSq, gender, hair, difficulty, rain, dayCycle, map, savingInterval;
+	Button campName, playerName, playerSq, gender, hair, difficulty, dayCycle, map, savingInterval;
 	Button[] femaleSqs, maleSqs;
+
+	public void BackToMenu()
+	{
+		SceneLoader.instance.LoadMainMenuScene();
+	}
+
 
 	public void ToggleCampo()
 	{
@@ -42,7 +48,6 @@ public class CreateCamp : MonoBehaviour
 	private void Start()
 	{
 		campManager = CampManager.instance;
-		camp = new Camp(campManager.standardSettings.Clone());
 		panel.transform.parent.Find("General/Home").GetComponent<Button>().onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
 		campName = panel.transform.Find("Base/NomeCampo/Button").GetComponent<Button>();
 		playerName = panel.transform.Find("Base/NomePlayer/Button").GetComponent<Button>();
@@ -55,6 +60,7 @@ public class CreateCamp : MonoBehaviour
 		savingInterval = panel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
 		map = panel.transform.Find("Advanced/Mappa/Button").GetComponent<Button>();
 		dayCycle = panel.transform.Find("Advanced/CicloDelGiorno/Button").GetComponent<Button>();
+		//if ()
 	}
 
 	void RefreshUI()

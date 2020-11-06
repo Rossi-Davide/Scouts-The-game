@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class AImaster : MonoBehaviour
 {
-     GameObject targetObj;
+    GameObject targetObj;
     public Transform target;
     public float speed = 200f;
     public float nextWayPointDistance = 3f;

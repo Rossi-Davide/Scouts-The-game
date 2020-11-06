@@ -22,25 +22,31 @@ public class CampManager : MonoBehaviour
 
 
 	[HideInInspector]
-	public Camp newCamp;
+	public Camp camp;
 	[HideInInspector]
 	public CurrentAppSettings appSettings;
 	public CurrentAppSettings standardAppSettings;
 
 	public void CreateCamp(Camp c)
 	{
-		newCamp = c;
+		camp = c;
 	}
 	private void Start()
 	{
 		appSettings = new CurrentAppSettings(standardAppSettings.generalVolume, standardAppSettings.musicVolume, standardAppSettings.effectsVolume, standardAppSettings.qualityIndex, standardAppSettings.resIndex, standardAppSettings.fullScreen);
 		DontDestroyOnLoad(this);
+		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+	}
+
+	void ReceiveSavedData()
+	{
+		camp = (Camp)SaveSystem.instance.RequestData(DataCategory.CampManager, DataKey.camp);
 	}
 
 	#region Initialize in game
 	public void InitializeSquadrigliaManager()
 	{
-		SquadrigliaManager.instance.InitializeSquadrigliaManager(newCamp.settings.gender, possibleFemaleSqs, possibleMaleSqs, newCamp.settings.femaleSqs, newCamp.settings.maleSqs, newCamp.settings.playerSqIndex);
+		SquadrigliaManager.instance.InitializeSquadrigliaManager(camp.settings.gender, possibleFemaleSqs, possibleMaleSqs, camp.settings.femaleSqs, camp.settings.maleSqs, camp.settings.playerSqIndex);
 	}
 	#endregion
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIsManager : MonoBehaviour
 {
-	int percentageOfActiveAIs = 5;
+	int percentageOfActiveAIs = 15;
 	public CapieCambu[] allCapiECambu;
 	[HideInInspector]
 	public Squadrigliere[] allSquadriglieri;
@@ -28,6 +28,14 @@ public class AIsManager : MonoBehaviour
 		InvokeRepeating(nameof(SetActiveOrInactiveAI), .5f, Random.Range(6, 13));
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
+		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+	}
+
+	void ReceiveSavedData()
+	{
+		allSquadriglieri = (Squadrigliere[])SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.allSquadriglieri);
+		events = (AIEvent[])SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.events);
+		allCapiECambu = (CapieCambu[])SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.allCapiECambu);
 	}
 
 	void SetActiveOrInactiveAI()

@@ -26,6 +26,7 @@ public class Campfire : InGameObject
 	{
 		aud = GetComponent<AudioSource>();
 		base.Start();
+		ChangeLight(GameManager.instance.isDay);
 		GameManager.instance.OnSunsetOrSunrise += ChangeLight;
 	}
 	void FaiLegna()

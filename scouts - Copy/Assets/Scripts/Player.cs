@@ -18,7 +18,12 @@ public class Player : MonoBehaviour
 	private void Start()
     {
         animator = GetComponent<Animator>();
+		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
     }
+	void ReceiveSavedData()
+	{
+		transform.position = (Vector3)SaveSystem.instance.RequestData(DataCategory.Player, DataKey.position);
+	}
 	#region Movement
 	public float playerSpeed; 
     float lastX, lastY;

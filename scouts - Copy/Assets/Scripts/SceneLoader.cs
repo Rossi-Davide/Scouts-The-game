@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
-        SceneManager.LoadScene("Impostazioni");
+        SceneManager.LoadScene("impostazioni");
     }
     public void LoadTutorialScene()
     {
@@ -42,7 +42,7 @@ public class SceneLoader : MonoBehaviour
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Crediti");
     }
     public void LoadCampCreateScene()
     {

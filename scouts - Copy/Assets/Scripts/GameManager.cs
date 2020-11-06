@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 			throw new System.Exception("GameManager singleton has been created more than once!");
 		}
 		instance = this;
-		if (CampManager.instance.newCamp != null)
+		if (CampManager.instance.camp != null)
 		{
 			CampStarted();
 		}
@@ -194,16 +194,6 @@ public class GameManager : MonoBehaviour
 				max = i;
 		}
 		return max;
-	}
-
-	public bool CanDoAction(PlayerAction a)
-	{
-		bool canDoAction = true;
-		foreach (Item i in a.neededItems)
-		{
-			canDoAction = i.currentAmount >= 1;
-		}
-		return canDoAction;
 	}
 
 	public static bool HasItemsToBuy(ObjectBase b)

@@ -12,7 +12,6 @@ public class impostazioni : MonoBehaviour
     public AudioMixer mixer;
     public TMP_Dropdown resDrop;
 
-    public Button homeButton;
 
     #region Singleton
     public static impostazioni instance;
@@ -29,8 +28,6 @@ public class impostazioni : MonoBehaviour
 
     private void Start()
     {
-        homeButton.onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
-
         resolutions = Screen.resolutions;
 
         resDrop.ClearOptions();
@@ -122,12 +119,12 @@ public class impostazioni : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void tornaAlMenu()
+    public void TornaAlMenu()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
 
         CampManager.instance.appSettings = new CurrentAppSettings(generalVolume, musicVolume, effectsVolume, qualityIndex, resIndex, fullscreen);
 
-        SceneManager.LoadScene(0);
+        SceneLoader.instance.LoadMainMenuScene();
     }
 }
