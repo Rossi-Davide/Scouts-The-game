@@ -33,9 +33,25 @@ public abstract class InGameObject : MonoBehaviour
 	[HideInInspector]
 	public TextMeshProUGUI nameText, subNameText;
 	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
+	protected SaveSystem saveSystem;
+
+	protected virtual void ReceiveSavedData()
+	{
+		transform.position = (Vector3)saveSystem.RequestData(DataCategory.InGameObject, DataKey.position);
+		gameObject.SetActive((bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.active));
+		objectName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectName);
+		objectSubName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectSubName);
+		for (int b = 0; b < buttons.Length; b++)
+		{
+			buttons[b].canDo = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.canDo, b);
+			buttons[b].isWaiting = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.isWaiting, b);
+			buttons[b].timeLeft = (int)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.timeLeft, b);
+		}
+		MoveUI();
+	}
 
 
-	protected virtual void Update()
+	protected virtual void FixedUpdate()
 	{
 		if (checkPositionEachFrame)
 		{
@@ -51,7 +67,7 @@ public abstract class InGameObject : MonoBehaviour
 		string animation = "";
 		foreach (var b in buttons)
 		{
-			if (b.generalAction.state != null && b.generalAction.state.active && b.generalAction.state.priority > max)
+			if (b.generalAction.state != null && b.generalAction.state.priority > max)
 			{
 				max = b.generalAction.state.priority;
 				animation = b.generalAction.state.animationSubstring;
@@ -59,7 +75,7 @@ public abstract class InGameObject : MonoBehaviour
 		}
 		foreach (var s in states)
 		{
-			if (s.active && s.priority > max)
+			if (s.priority > max)
 			{
 				max = s.priority;
 				animation = s.animationSubstring;
@@ -76,6 +92,8 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual void Start()
 	{
+		saveSystem = SaveSystem.instance;
+		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		GameManager.instance.OnCampStart += WhenCampStarts;
 		animator = GetComponent<Animator>();
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
@@ -112,6 +130,7 @@ public abstract class InGameObject : MonoBehaviour
 		if (spawnInRandomPosition)
 		{
 			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
+			MoveUI();
 		}
 	}
 
@@ -369,7 +388,7 @@ public class ActionButton
 	public string buttonText;
 	[HideInInspector]
 	public int buttonNum;
-	public GameManager.Color color;
+	public GameColor color;
 	[HideInInspector]
 	public GameObject obj;
 	[HideInInspector]

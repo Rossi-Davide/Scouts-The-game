@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using TMPro;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	public InGameObject[] InGameObjects { get; private set; }
 
 	public int pointsValue, materialsValue, energyValue;
+	public int energyMaxValue = 100, materialsMaxValue = 300, pointsMaxValue = 70;
 	public GameObject buttonCanvas;
 
 	#region Singleton
@@ -35,7 +36,6 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnCampStart;
 	public event System.Action<bool> OnSunsetOrSunrise;
 	public event System.Action<int> OnHourChange;
-	public event System.Action OnRain;
 	public event System.Action<PlayerAction> OnActionDo;
 	public event System.Action<ObjectBase> OnInventoryChange;
 	public event System.Action OnInGameoObjectsChange;
@@ -73,12 +73,42 @@ public class GameManager : MonoBehaviour
 		OnInventoryChange?.Invoke(obj);
 	}
 
-	public void ChangeCounter(Counter counter, int newValue)
+	public void ChangeCounter(Counter counter, int delta)
 	{
-		OnCounterValueChange?.Invoke(counter, newValue);
+		switch (counter)
+		{
+			case Counter.None:
+				break;
+			case Counter.Materiali:
+				materialsValue += delta;
+				break;
+			case Counter.Energia:
+				energyValue += delta;
+				break;
+			case Counter.Punti:
+				pointsValue += delta;
+				break;
+			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
+		}
+		OnCounterValueChange?.Invoke(counter, delta);
 	}
 	public void CounterMaxValueChanged(Counter counter, int delta)
 	{
+		switch (counter)
+		{
+			case Counter.None:
+				break;
+			case Counter.Materiali:
+				materialsMaxValue += delta;
+				break;
+			case Counter.Energia:
+				energyMaxValue += delta;
+				break;
+			case Counter.Punti:
+				pointsMaxValue += delta;
+				break;
+			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
+		}
 		OnCounterMaxValueChange?.Invoke(counter, delta);
 	}
 
@@ -97,6 +127,10 @@ public class GameManager : MonoBehaviour
 
 	#endregion
 	#region UtilityFunctions
+	public static bool DoIfPercentage(float percentage)
+	{
+		return Random.Range(1f, 101f) <= percentage;
+	}
 	private static int CheckRange(int value, int min, int max)
 	{
 		return Mathf.Min(Mathf.Max(min, value), max);
@@ -269,31 +303,6 @@ public class GameManager : MonoBehaviour
 			for (int y = 0; y < o.currentAmount; y++) { o.DoAction(); };
 		}
 	}
-	public enum PeriodicActionInterval
-	{
-		None,
-		Once,
-		Slow,
-		Medium,
-		Fast,
-	}
-	public enum SpecificShopScreen
-	{
-		Pioneristica,
-		Cucina,
-		Infermieristica,
-		Topografia,
-		Espressione,
-		NegozioIllegale,
-		Costruzioni,
-		Decorazioni,
-	}
-	public enum MainShopScreen
-	{
-		Costruzioni,
-		Item,
-	}
-
 	#endregion
 	#region Spawn stuff
 	public GameObject[] actionButtons;
@@ -302,24 +311,18 @@ public class GameManager : MonoBehaviour
 	public GameObject healthBarPrefab, loadingBarPrefab, nameTextPrefab, subNameTextPrefab;
 
 	public GameObject[] decorations;
-	[HideInInspector]
-	public List<GameObject> spawnedDecorations = new List<GameObject>();
 	public Vector2[] startAreaSpawn, endAreaSpawn;
 	void SpawnDecorations()
 	{
-		if (spawnedDecorations.Count <= 10)
+		foreach (var d in decorations)
 		{
-			foreach (var d in decorations)
+			for (int spawned = 0; spawned < Random.Range(5, 8); spawned++)
 			{
-				for (int spawned = 0; spawned < UnityEngine.Random.Range(5, 8); spawned++)
-				{
-					int currentArea = Random.Range(0, startAreaSpawn.Length);
-					float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
-					float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
-					GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
-					decoration.GetComponent<Plant>().wpCanvas = wpCanvas;
-					spawnedDecorations.Add(decoration);
-				}
+				int currentArea = Random.Range(0, startAreaSpawn.Length);
+				float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
+				float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
+				GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
+				decoration.GetComponent<Plant>().wpCanvas = wpCanvas;
 			}
 		}
 	}
@@ -412,31 +415,44 @@ public class GameManager : MonoBehaviour
 		openDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = s;
 		closeDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = currentDay.ToString();
 	}
+
 	[HideInInspector]
 	public bool isRaining;
-	IEnumerator Rain()
+	[HideInInspector]
+	public int rainingTimeLeft, rainingWaitTimeLeft;
+	void CheckRain()
 	{
-		isRaining = true;
-		OnRain?.Invoke();
-		transform.Find("ParticleManager/pioggia").gameObject.SetActive(true);
-		yield return new WaitForSeconds(Random.Range(20, 80));
-		transform.Find("ParticleManager/pioggia").gameObject.SetActive(false);
-		isRaining = false;
-		OnRain?.Invoke();
-	}
-	private int rainProbability = 50;
-	void GenerateRainProbability()
-	{
-		int randomValue = Random.Range(0, 100);
-		if (randomValue <= rainProbability && !isRaining)
+		if (!isRaining)
 		{
-			StartCoroutine(Rain());
+			if (rainingTimeLeft > 0)
+			{
+				rainingWaitTimeLeft--;
+			}
+			else if (DoIfPercentage(0.6f))
+			{
+				isRaining = true;
+				transform.Find("ParticleManager/pioggia").gameObject.SetActive(true);
+				rainingTimeLeft = Random.Range(30, 75);
+				rainingWaitTimeLeft = Random.Range(25, 40);
+			}
+		}
+		else
+		{
+			rainingTimeLeft--;
+			if (rainingTimeLeft <= 0)
+			{
+				isRaining = false;
+				transform.Find("ParticleManager/pioggia").gameObject.SetActive(false);
+			}
 		}
 	}
 	#endregion
 	#region General
+	SaveSystem saveSystem;
 	void Start()
 	{
+		saveSystem = SaveSystem.instance;
+		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		OnCampStart += WhenCampStarts;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		OnInGameoObjectsChange += RefreshInGameObjs;
@@ -446,9 +462,27 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating(nameof(PeriodicItemActionSlow), 60, 60);
 		InvokeRepeating(nameof(PeriodicItemActionMedium), 30, 30);
 		InvokeRepeating(nameof(PeriodicItemActionFast), 15, 15);
-		InvokeRepeating(nameof(GenerateRainProbability), 30, 10);
+		InvokeRepeating(nameof(CheckRain), 1, 1);
 		InvokeRepeating(nameof(RefreshWaitToUseObjects), 1, 1);
 		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
+	}
+
+	void ReceiveSavedData(LoadPriority p)
+	{
+		if (p == LoadPriority.Highest)
+		{
+			energyValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.energyValue);
+			materialsValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.materialsValue);
+			pointsValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.pointsValue);
+			energyMaxValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.energyMaxValue);
+			materialsMaxValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.materialsMaxValue);
+			isRaining = (bool)saveSystem.RequestData(DataCategory.GameManager, DataKey.isRaining);
+			rainingTimeLeft = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.rainTimeLeft);
+			rainingWaitTimeLeft = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.rainWaitTimeLeft);
+			currentMinute = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.currentMinute);
+			currentHour = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.currentHour);
+			currentDay = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.currentDay);
+		}
 	}
 
 	void WhenCampStarts()
@@ -471,32 +505,6 @@ public class GameManager : MonoBehaviour
 	{
 		if (c == Counter.Energia && energyValue <= 0)
 			PlayerDied();
-	}
-
-	public enum Ruolo
-	{
-		Novizio,
-		Terzino,
-		Vice,
-		Capo,
-	}
-
-
-	public enum Color
-	{
-		Red,
-		Yellow,
-		Green,
-		Orange,
-		Brown,
-		Gray,
-		Black,
-		White,
-		Pink,
-		Purple,
-		Blue,
-		LightBlue,
-		LightGray,
 	}
 	#endregion
 	#region Objects
@@ -523,4 +531,54 @@ public enum Counter
 	Materiali,
 	Energia,
 	Punti
+}
+
+public enum Ruolo
+{
+	Novizio,
+	Terzino,
+	Vice,
+	Capo,
+}
+
+
+public enum GameColor
+{
+	Red,
+	Yellow,
+	Green,
+	Orange,
+	Brown,
+	Gray,
+	Black,
+	White,
+	Pink,
+	Purple,
+	Blue,
+	LightBlue,
+	LightGray,
+}
+public enum PeriodicActionInterval
+{
+	None,
+	Once,
+	Slow,
+	Medium,
+	Fast,
+}
+public enum SpecificShopScreen
+{
+	Pioneristica,
+	Cucina,
+	Infermieristica,
+	Topografia,
+	Espressione,
+	NegozioIllegale,
+	Costruzioni,
+	Decorazioni,
+}
+public enum MainShopScreen
+{
+	Costruzioni,
+	Item,
 }

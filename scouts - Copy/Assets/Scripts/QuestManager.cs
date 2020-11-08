@@ -28,7 +28,7 @@ public class QuestManager : MonoBehaviour
 		GameManager.instance.OnInventoryChange += RefreshActions;
 		GameManager.instance.OnBuild += RefreshActions;
 		saveSystem = SaveSystem.instance;
-		saveSystem.onReadyToLoad += ReceiveSavedData;
+		saveSystem.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	void ReceiveSavedData()

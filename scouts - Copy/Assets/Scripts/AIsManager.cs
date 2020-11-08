@@ -28,7 +28,7 @@ public class AIsManager : MonoBehaviour
 		InvokeRepeating(nameof(SetActiveOrInactiveAI), .5f, Random.Range(6, 13));
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
-		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	void ReceiveSavedData()

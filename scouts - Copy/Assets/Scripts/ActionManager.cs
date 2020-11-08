@@ -107,7 +107,7 @@ public class ActionManager : MonoBehaviour
 	{
 		InvokeRepeating(nameof(RefreshTimesLeft), 0, 1);
 		isOpen = false;
-		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	void ReceiveSavedData()

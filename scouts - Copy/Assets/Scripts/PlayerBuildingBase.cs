@@ -26,6 +26,14 @@ public abstract class PlayerBuildingBase : InGameObject
 		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, building.healthInfos[building.level].healthLossInterval);
 	}
 
+	protected override void ReceiveSavedData()
+	{
+		base.ReceiveSavedData();
+		health = (int)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.health);
+		isSafe = (bool)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.isSafe);
+		isDestroyed = (bool)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.isDestroyed);
+	}
+
 	protected override string GetAnimationByLevel()
 	{
 		return "Livello" + building.level;

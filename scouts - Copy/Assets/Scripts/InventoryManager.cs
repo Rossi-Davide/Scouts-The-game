@@ -115,7 +115,7 @@ public class InventoryManager : MonoBehaviour
 		useButton = itemInfoBox.transform.Find("Button").gameObject;
 		if (slots.Length != maxInventoryItems)
 			Debug.LogWarning("Inventory contains a different number of slots from the required one.");
-		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	void ReceiveSavedData()
@@ -138,7 +138,7 @@ public class InventoryManager : MonoBehaviour
 				itemName.text = slot.item.name;
 				description.text = slot.item.description;
 				type.text = slot.item.type.ToString();
-				useButton.SetActive(slot.item.periodicUses.Length > slot.item.level && slot.item.periodicUses[slot.item.level].interval == GameManager.PeriodicActionInterval.Once);
+				useButton.SetActive(slot.item.periodicUses.Length > slot.item.level && slot.item.periodicUses[slot.item.level].interval == PeriodicActionInterval.Once);
 				useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Usa";
 				itemInfoBox.SetActive(true);
 			}

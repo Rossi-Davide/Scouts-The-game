@@ -17,9 +17,11 @@ public class ConcreteSquadriglia
 	[HideInInspector]
 	public SpriteRenderer[] buildings;
 	[HideInInspector]
-	public GameManager.Ruolo[] ruoli;
+	public Ruolo[] ruoli;
 	[HideInInspector]
 	public string[] nomi = new string[5];
+	[HideInInspector]
+	public int[] AIPrefabTypes;
 	[HideInInspector]
 	public int materials;
 	[HideInInspector]

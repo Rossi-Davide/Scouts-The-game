@@ -35,20 +35,13 @@ public class CampManager : MonoBehaviour
 	{
 		appSettings = new CurrentAppSettings(standardAppSettings.generalVolume, standardAppSettings.musicVolume, standardAppSettings.effectsVolume, standardAppSettings.qualityIndex, standardAppSettings.resIndex, standardAppSettings.fullScreen);
 		DontDestroyOnLoad(this);
-		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	void ReceiveSavedData()
 	{
 		camp = (Camp)SaveSystem.instance.RequestData(DataCategory.CampManager, DataKey.camp);
 	}
-
-	#region Initialize in game
-	public void InitializeSquadrigliaManager()
-	{
-		SquadrigliaManager.instance.InitializeSquadrigliaManager(camp.settings.gender, possibleFemaleSqs, possibleMaleSqs, camp.settings.femaleSqs, camp.settings.maleSqs, camp.settings.playerSqIndex);
-	}
-	#endregion
 }
 
 [System.Serializable]

@@ -13,7 +13,7 @@ public class ActionButtons : MonoBehaviour
 			throw new System.Exception("ActionButtons non è un singleton");
 		}
 		instance = this;
-		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 	#endregion
 

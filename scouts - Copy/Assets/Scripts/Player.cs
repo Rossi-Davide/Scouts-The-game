@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 	private void Start()
     {
         animator = GetComponent<Animator>();
-		SaveSystem.instance.onReadyToLoad += ReceiveSavedData;
+		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
     }
 	void ReceiveSavedData()
 	{

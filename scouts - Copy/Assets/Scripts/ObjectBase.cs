@@ -6,7 +6,7 @@ public abstract class ObjectBase : ScriptableObject
     public ObjectType type;
     public string description;
     public Sprite icon;
-    public GameManager.SpecificShopScreen shopScreen;
+    public SpecificShopScreen shopScreen;
     public int maxAmount;
     public int maxLevel; //index
     public bool usingLevel;
@@ -68,7 +68,7 @@ public class ShopInfo
 [System.Serializable]
 public class PeriodicUse
 {
-    public GameManager.PeriodicActionInterval interval;
+    public PeriodicActionInterval interval;
     public Counter counter;
     public int delta;
 }

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections;
+using System.Data;
 using UnityEngine;
 public class SaveSystem : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class SaveSystem : MonoBehaviour
 	}
 	#endregion
 
-	public event System.Action onReadyToLoad;
+	public event System.Action<LoadPriority> OnReadyToLoad;
 
 	private void Start()
 	{
 		InvokeRepeating(nameof(SaveAll), 15, (int)CampManager.instance.camp.settings.savingInterval);
+		if (CampManager.instance.camp != null)
+		{
+			LoadAll();
+		}
 	}
 	private void OnApplicationQuit()
 	{
@@ -27,10 +32,7 @@ public class SaveSystem : MonoBehaviour
 	{
 		SaveAll();
 	}
-	private void OnApplicationFocus(bool focus)
-	{
-		LoadAll();
-	}
+
 	#region GetInfo
 	CurrentTimeActions GetTimeActions()
 	{
@@ -65,22 +67,13 @@ public class SaveSystem : MonoBehaviour
 		var buildings = Shop.instance.buildingDatabase;
 		var actions = QuestManager.instance.actionDatabase;
 		var qt = QuestManager.instance.quests;
-		var spawned = GameManager.instance.spawnedDecorations;
-		var objects = GameManager.instance.InGameObjects;
 
 		var quests = new Quest[qt.Length];
 		for (int q = 0; q < qt.Length; q++)
 		{
 			quests[q] = qt[q].quest;
 		}
-		var plants = new Plant[spawned.Count];
-		for (var p = 0; p < plants.Length; p++)
-		{
-			plants[p] = spawned[p].GetComponent<Plant>();
-		}
-
-
-		return new CurrentGameManagerValues(1, 1, 1, items, buildings, actions, quests, plants, objects);
+		return new CurrentGameManagerValues(1, 1, 1, items, buildings, actions, quests);
 	}
 
 	CurrentAIs GetCurrentAIs()
@@ -126,9 +119,20 @@ public class SaveSystem : MonoBehaviour
 		currentCamp = JsonUtility.FromJson<CurrentCamp>(jsonCurrentCamp);
 		currentGameManagerValues = JsonUtility.FromJson<CurrentGameManagerValues>(jsonCurrentGameManagerValues);
 		currentAIs = JsonUtility.FromJson<CurrentAIs>(jsonCurrentAIs);
-		onReadyToLoad?.Invoke();
 		UnityEngine.Debug.Log("loaded data");
+		StartCoroutine(LoadWithPrioritization());
+	}
 
+	IEnumerator LoadWithPrioritization()
+	{
+		var f = new WaitForEndOfFrame();
+		OnReadyToLoad?.Invoke(LoadPriority.Highest);
+		yield return f;
+		OnReadyToLoad?.Invoke(LoadPriority.High);
+		yield return f;
+		OnReadyToLoad?.Invoke(LoadPriority.Normal);
+		yield return f;
+		OnReadyToLoad?.Invoke(LoadPriority.Low);
 	}
 
 	public object RequestData(DataCategory category, DataKey key)
@@ -194,10 +198,7 @@ public class CurrentGameManagerValues
 	public PlayerAction[] allActions;
 	public Quest[] allQuests;
 
-	public Plant[] spawnedPlants;
-	public InGameObject[] allObjects;
-
-	public CurrentGameManagerValues(int currentDay, int currentHour, int currentMinute, Item[] allItems, PlayerBuilding[] allBuildings, PlayerAction[] allActions, Quest[] allQuests, Plant[] spawnedPlants, InGameObject[] allObjects)
+	public CurrentGameManagerValues(int currentDay, int currentHour, int currentMinute, Item[] allItems, PlayerBuilding[] allBuildings, PlayerAction[] allActions, Quest[] allQuests)
 	{
 		this.currentDay = currentDay;
 		this.currentHour = currentHour;
@@ -206,8 +207,6 @@ public class CurrentGameManagerValues
 		this.allBuildings = allBuildings;
 		this.allActions = allActions;
 		this.allQuests = allQuests;
-		this.spawnedPlants = spawnedPlants;
-		this.allObjects = allObjects;
 	}
 
 }
@@ -292,6 +291,11 @@ public enum DataCategory
 	IterateMultipleObjs,
 	Player,
 	QuestManager,
+	SquadrigliaManager,
+	Shop,
+	InGameObject,
+	PlayerBuildingBase,
+	GameManager,
 }
 public enum DataKey
 {
@@ -304,12 +308,58 @@ public enum DataKey
 	camp, //CampManager
 	slots, //InventoryManager, ChestManager
 	bundles, //IterateMultipleObjs
-	position, //Player
+	objects, //IterateMultipleObjs
+	position, //Player, InGameObject
+	active, //InGameObject
 	quests, //QuestManager
+	squadriglieInGioco, //SquadrigliaManager
+	sq, //SquadrigliaManager
+	itemDatabase, //Shop
+	buildingDatabase, //Shop
+	objectName, //InGameObject
+	objectSubName, //InGameObject
+	buttons, //InGameObject
+	health, //PlaterBuildingBase
+	isDestroyed, //PlaterBuildingBase
+	isSafe, //PlaterBuildingBase
+	energyValue, //GameManager
+	materialsValue, //GameManager
+	pointsValue, //GameManager
+	energyMaxValue, //GameManager
+	materialsMaxValue, //GameManager
+	pointsMaxValue, //GameManager
+	currentDay, //GameManager
+	currentHour, //GameManager
+	currentMinute, //GameManager
+	isRaining, //GameManager
+	rainingTimeLeft, //GameManager
+	rainingWaitTimeLeft, //GameManager
 }
 public enum DataParameter
 {
 	nextAction, //IterateMultipleObjs
+	obj, //IterateMultipleObjs
 	prizeTaken, //QuestManager
 	timesDone, //QuestManager
+	baseSq, //SquadrigliaManager
+	angolo, //SquadrigliaManager
+	buildings, //SquadrigliaManager
+	ruoli, //SquadrigliaManager
+	nomi, //SquadrigliaManager
+	materials, //SquadrigliaManager
+	points, //SquadrigliaManager
+	AIPrefabTypes, //SquadrigliaManager
+	item, //Shop
+	building, //Shop
+	canDo, //InGameObject
+	isWaiting, //InGameObject
+	timeLeft, //InGameObject
+}
+
+public enum LoadPriority
+{
+	Highest,
+	High,
+	Normal,
+	Low,
 }

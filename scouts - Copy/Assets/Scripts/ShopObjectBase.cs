@@ -42,7 +42,7 @@ public class ShopObjectBase : MonoBehaviour
 		materialsLogo.SetActive(pt == Counter.Materiali);
 		pointsLogo.SetActive(pt == Counter.Punti);
 		bool hasEnoughMoney = GameManager.instance.GetCounterValue(pt) >= pc;
-		price.color = hasEnoughMoney ? Color.white : Color.red;
+		price.color = hasEnoughMoney ? UnityEngine.Color.white : UnityEngine.Color.red;
 		price.transform.parent.GetComponent<Animator>().Play(canIncreaseLevel && canBuy && hasItems ? "Enabled" : "Disabled");
 		amount.text = obj.currentAmount + "/" + obj.maxAmount;
 		level.text = (obj.exists ? (obj.level + 1) : obj.level) + "/" + (obj.maxLevel + 1);

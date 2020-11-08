@@ -109,9 +109,9 @@ public abstract class BaseAI : InGameObject
 		CreateNewPath(target);
 	}
 
-	protected override void Update()
+	protected override void FixedUpdate()
 	{
-		base.Update();
+		base.FixedUpdate();
 		ChangeAnimation();
 		if (currentPath == null)
 			return;
