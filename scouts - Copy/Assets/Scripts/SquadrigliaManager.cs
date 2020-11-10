@@ -101,20 +101,23 @@ public class SquadrigliaManager : MonoBehaviour
 		InstantiateStuff();
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		squadriglieInGioco = new ConcreteSquadriglia[(int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.squadriglieInGioco))];
-		for (int i = 0; i < squadriglieInGioco.Length; i++)
+		if (p == LoadPriority.High)
 		{
-			var sq = squadriglieInGioco[i];
-			sq.AIPrefabTypes = (int[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.AIPrefabTypes, i));
-			sq.angolo = (Transform)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.angolo, i));
-			sq.baseSq = (Squadriglia)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.baseSq, i));
-			sq.buildings = (SpriteRenderer[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.buildings, i));
-			sq.materials = (int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.materials, i));
-			sq.points = (int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.points, i));
-			sq.ruoli = (Ruolo[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.ruoli, i));
-			sq.nomi = (string[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.nomi, i));
+			squadriglieInGioco = new ConcreteSquadriglia[(int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.squadriglieInGioco))];
+			for (int i = 0; i < squadriglieInGioco.Length; i++)
+			{
+				var sq = squadriglieInGioco[i];
+				sq.AIPrefabTypes = (int[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.AIPrefabTypes, i));
+				sq.angolo = (Transform)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.angolo, i));
+				sq.baseSq = (Squadriglia)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.baseSq, i));
+				sq.buildings = (SpriteRenderer[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.buildings, i));
+				sq.materials = (int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.materials, i));
+				sq.points = (int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.points, i));
+				sq.ruoli = (Ruolo[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.ruoli, i));
+				sq.nomi = (string[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.nomi, i));
+			}
 		}
 	}
 

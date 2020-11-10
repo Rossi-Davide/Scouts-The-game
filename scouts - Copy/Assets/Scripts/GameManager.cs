@@ -469,7 +469,7 @@ public class GameManager : MonoBehaviour
 
 	void ReceiveSavedData(LoadPriority p)
 	{
-		if (p == LoadPriority.Highest)
+		if (p == LoadPriority.High)
 		{
 			energyValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.energyValue);
 			materialsValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.materialsValue);

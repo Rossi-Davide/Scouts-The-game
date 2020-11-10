@@ -110,10 +110,13 @@ public class ActionManager : MonoBehaviour
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		currentActions = (TimeAction[])SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentActions);
-		currentHiddenActions = (List<TimeAction>)SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentHiddenActions);
+		if (p == LoadPriority.Normal)
+		{
+			currentActions = (TimeAction[])SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentActions);
+			currentHiddenActions = (List<TimeAction>)SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentHiddenActions);
+		}
 	}
 
 	void RefreshTimesLeft()

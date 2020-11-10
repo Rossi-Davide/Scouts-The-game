@@ -67,15 +67,18 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		for (int i = 0; i < itemDatabase.Length; i++)
+		if (p == LoadPriority.Normal)
 		{
-			itemDatabase[i] = (Item)saveSystem.RequestData(DataCategory.Shop, DataKey.itemDatabase, DataParameter.item, i);
-		}
-		for (int i = 0; i < buildingDatabase.Length; i++)
-		{
-			buildingDatabase[i] = (PlayerBuilding)saveSystem.RequestData(DataCategory.Shop, DataKey.buildingDatabase, DataParameter.building, i);
+			for (int i = 0; i < itemDatabase.Length; i++)
+			{
+				itemDatabase[i] = (Item)saveSystem.RequestData(DataCategory.Shop, DataKey.itemDatabase, DataParameter.item, i);
+			}
+			for (int i = 0; i < buildingDatabase.Length; i++)
+			{
+				buildingDatabase[i] = (PlayerBuilding)saveSystem.RequestData(DataCategory.Shop, DataKey.buildingDatabase, DataParameter.building, i);
+			}
 		}
 	}
 

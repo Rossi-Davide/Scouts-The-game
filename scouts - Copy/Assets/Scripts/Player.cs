@@ -20,10 +20,14 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
     }
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		transform.position = (Vector3)SaveSystem.instance.RequestData(DataCategory.Player, DataKey.position);
+		if (p == LoadPriority.Normal)
+		{
+			transform.position = (Vector3)SaveSystem.instance.RequestData(DataCategory.Player, DataKey.position);
+		}
 	}
+
 	#region Movement
 	public float playerSpeed; 
     float lastX, lastY;

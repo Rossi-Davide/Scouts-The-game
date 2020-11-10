@@ -31,12 +31,15 @@ public class QuestManager : MonoBehaviour
 		saveSystem.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		for (int i = 0; i < quests.Length; i++)
+		if (p == LoadPriority.Low)
 		{
-			quests[i].quest.timesDone = (int)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.timesDone, i);
-			quests[i].quest.prizeTaken = (bool)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.prizeTaken, i);
+			for (int i = 0; i < quests.Length; i++)
+			{
+				quests[i].quest.timesDone = (int)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.timesDone, i);
+				quests[i].quest.prizeTaken = (bool)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.prizeTaken, i);
+			}
 		}
 	}
 

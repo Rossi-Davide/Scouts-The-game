@@ -39,6 +39,7 @@ public class InventorySlot : MonoBehaviour
 	{
 		if (item != null)
 		{
+			icon.sprite = item.icon;
 			amountText.text = item.currentAmount.ToString();
 			amountText.gameObject.SetActive(item.currentAmount > 1);
 		}

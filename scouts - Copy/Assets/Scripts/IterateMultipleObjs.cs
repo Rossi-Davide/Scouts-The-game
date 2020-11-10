@@ -14,14 +14,17 @@ public class IterateMultipleObjs : MonoBehaviour
 		saveSystem = SaveSystem.instance;
 		saveSystem.OnReadyToLoad += ReceiveSavedData;
 	}
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		for (int i = 0; i < bundles.Length; i++)
+		if (p == LoadPriority.Low)
 		{
-			bundles[i].nextAction = (int)saveSystem.RequestData(DataCategory.IterateMultipleObjs, DataKey.bundles, DataParameter.nextAction, i);
-			for (int o = 0; o < bundles[i].objects.Length; o++)
+			for (int i = 0; i < bundles.Length; i++)
 			{
-				bundles[i].objects[o].obj = (InGameObject)saveSystem.RequestData(DataCategory.IterateMultipleObjs, DataKey.objects, DataParameter.obj, i);
+				bundles[i].nextAction = (int)saveSystem.RequestData(DataCategory.IterateMultipleObjs, DataKey.bundles, DataParameter.nextAction, i);
+				for (int o = 0; o < bundles[i].objects.Length; o++)
+				{
+					bundles[i].objects[o].obj = (InGameObject)saveSystem.RequestData(DataCategory.IterateMultipleObjs, DataKey.objects, DataParameter.obj, i);
+				}
 			}
 		}
 	}

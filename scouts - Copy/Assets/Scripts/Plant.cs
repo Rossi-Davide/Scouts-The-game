@@ -22,7 +22,6 @@ public class Plant : InGameObject
 		GetComponent<ParticleSystem>().Stop();
 		Player.instance.GetComponent<Animator>().Play("idle");
 		Player.instance.enabled = true;
-		GameManager.instance.spawnedDecorations.Remove(gameObject);
 		Deselect();
 		Destroy(gameObject);
 		Destroy(clickListener.gameObject);

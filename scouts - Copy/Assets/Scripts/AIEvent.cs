@@ -10,7 +10,7 @@ public class AIEvent : ScriptableObject
 	public int day;
 	public int hour;
 	[HideInInspector]
-	public int timeLeft;
+	public int timeLeft, countDownLeft;
 	[HideInInspector]
 	public bool running;
 

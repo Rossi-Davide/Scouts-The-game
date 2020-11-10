@@ -99,8 +99,14 @@ public class ChestManager : MonoBehaviour
 			Debug.LogWarning("Chest fake inventory contains a different number of slots from the required one.");
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		slots = (InventorySlot[])SaveSystem.instance.RequestData(DataCategory.ChestManager, DataKey.slots);
+		if (p == LoadPriority.Low)
+		{
+			for (int i = 0; i < slots.Length; i++)
+			{
+				slots[i].item = (Item)SaveSystem.instance.RequestData(DataCategory.ChestManager, DataKey.slots, DataParameter.item, i);
+			}
+		}
 	}
 }

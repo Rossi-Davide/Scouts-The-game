@@ -7,7 +7,9 @@ public class CreateCamp : MonoBehaviour
 {
 	bool isCreating;
 	[Header("UI")]
-	public GameObject panel;
+	public GameObject createCampPanel;
+	public GameObject existingCampPanel;
+	public GameObject confirmationWindow;
 	public GameObject noCampPanel;
 	public GameObject[] settingsPanels;
 
@@ -23,45 +25,43 @@ public class CreateCamp : MonoBehaviour
 		SceneLoader.instance.LoadMainMenuScene();
 	}
 
-
-	public void ToggleCampo()
-	{
-		isCreating = !isCreating;
-		panel.SetActive(isCreating);
-		settingsPanels[currentPanelIndex].SetActive(isCreating);
-		noCampPanel.SetActive(!isCreating);
-		ResetSettings();
-	}
-	public void SwitchPanel()
-	{
-		settingsPanels[currentPanelIndex].SetActive(false);
-		currentPanelIndex = currentPanelIndex == settingsPanels.Length - 1 ? 0 : currentPanelIndex + 1;
-		settingsPanels[currentPanelIndex].SetActive(true);
-	}
-
-	public void ResetSettings()
-	{
-		camp.settings = campManager.standardSettings.Clone();
-		RefreshUI();
-	}
-
 	private void Start()
 	{
 		campManager = CampManager.instance;
-		panel.transform.parent.Find("General/Home").GetComponent<Button>().onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
-		campName = panel.transform.Find("Base/NomeCampo/Button").GetComponent<Button>();
-		playerName = panel.transform.Find("Base/NomePlayer/Button").GetComponent<Button>();
-		playerSq = panel.transform.Find("Base/Squadriglia/Button").GetComponent<Button>();
-		gender = panel.transform.Find("Base/Genere/Button").GetComponent<Button>();
-		hair = panel.transform.Find("Base/Aspetto/Button").GetComponent<Button>();
-		difficulty = panel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
-		femaleSqs = panel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
-		maleSqs = panel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
-		savingInterval = panel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
-		map = panel.transform.Find("Advanced/Mappa/Button").GetComponent<Button>();
-		dayCycle = panel.transform.Find("Advanced/CicloDelGiorno/Button").GetComponent<Button>();
-		//if ()
+		camp = campManager.camp;
+		existingCampPanel.SetActive(camp != null);
+		noCampPanel.SetActive(camp == null);
+		createCampPanel.transform.parent.Find("General/Home").GetComponent<Button>().onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
+		campName = createCampPanel.transform.Find("Base/NomeCampo/Button").GetComponent<Button>();
+		playerName = createCampPanel.transform.Find("Base/NomePlayer/Button").GetComponent<Button>();
+		playerSq = createCampPanel.transform.Find("Base/Squadriglia/Button").GetComponent<Button>();
+		gender = createCampPanel.transform.Find("Base/Genere/Button").GetComponent<Button>();
+		hair = createCampPanel.transform.Find("Base/Aspetto/Button").GetComponent<Button>();
+		difficulty = createCampPanel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
+		femaleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
+		maleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
+		savingInterval = createCampPanel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
+		map = createCampPanel.transform.Find("Advanced/Mappa/Button").GetComponent<Button>();
+		dayCycle = createCampPanel.transform.Find("Advanced/CicloDelGiorno/Button").GetComponent<Button>();
+		
 	}
+
+	public void PartialDeleteCamp()
+	{
+		confirmationWindow.SetActive(true);
+	}
+	public void CancelDelete()
+	{
+		confirmationWindow.SetActive(false);
+	}
+	public void DeleteCamp()
+	{
+		campManager.camp = null;
+		confirmationWindow.SetActive(false);
+		existingCampPanel.SetActive(false);
+		noCampPanel.SetActive(true);
+	}
+
 
 	void RefreshUI()
 	{
@@ -86,18 +86,9 @@ public class CreateCamp : MonoBehaviour
 		dayCycle.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.dayCycle.ToString();
 	}
 
-	string RefreshPlayerSq()
-	{
-		if (camp.settings.gender == Gender.Femmina)
-		{
-			return campManager.possibleFemaleSqs[camp.settings.femaleSqs[camp.settings.playerSqIndex]].name;
-		}
-		if (camp.settings.gender == Gender.Maschio)
-		{
-			return campManager.possibleMaleSqs[camp.settings.maleSqs[camp.settings.playerSqIndex]].name;
-		}
-		return null;
-	}
+
+
+
 
 	#region mobile keyboard
 	TouchScreenKeyboard keyboard;
@@ -219,6 +210,44 @@ public class CreateCamp : MonoBehaviour
 	public void Create()
 	{
 		campManager.CreateCamp(camp);
+	}
+
+	#endregion
+
+	#region Create camp general
+
+	public void ToggleCampo()
+	{
+		isCreating = !isCreating;
+		createCampPanel.SetActive(isCreating);
+		settingsPanels[currentPanelIndex].SetActive(isCreating);
+		noCampPanel.SetActive(!isCreating);
+		camp = campManager.camp;
+		ResetSettings();
+	}
+	public void SwitchPanel()
+	{
+		settingsPanels[currentPanelIndex].SetActive(false);
+		currentPanelIndex = currentPanelIndex == settingsPanels.Length - 1 ? 0 : currentPanelIndex + 1;
+		settingsPanels[currentPanelIndex].SetActive(true);
+	}
+
+	public void ResetSettings()
+	{
+		camp.settings = campManager.standardSettings.Clone();
+		RefreshUI();
+	}
+	string RefreshPlayerSq()
+	{
+		if (camp.settings.gender == Gender.Femmina)
+		{
+			return campManager.possibleFemaleSqs[camp.settings.femaleSqs[camp.settings.playerSqIndex]].name;
+		}
+		if (camp.settings.gender == Gender.Maschio)
+		{
+			return campManager.possibleMaleSqs[camp.settings.maleSqs[camp.settings.playerSqIndex]].name;
+		}
+		return null;
 	}
 
 	#endregion

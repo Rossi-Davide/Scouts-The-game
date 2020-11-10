@@ -35,19 +35,22 @@ public abstract class InGameObject : MonoBehaviour
 	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
 	protected SaveSystem saveSystem;
 
-	protected virtual void ReceiveSavedData()
+	protected virtual void ReceiveSavedData(LoadPriority p)
 	{
-		transform.position = (Vector3)saveSystem.RequestData(DataCategory.InGameObject, DataKey.position);
-		gameObject.SetActive((bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.active));
-		objectName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectName);
-		objectSubName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectSubName);
-		for (int b = 0; b < buttons.Length; b++)
+		if (p == LoadPriority.Low)
 		{
-			buttons[b].canDo = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.canDo, b);
-			buttons[b].isWaiting = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.isWaiting, b);
-			buttons[b].timeLeft = (int)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.timeLeft, b);
+			transform.position = (Vector3)saveSystem.RequestData(DataCategory.InGameObject, DataKey.position);
+			gameObject.SetActive((bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.active));
+			objectName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectName);
+			objectSubName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectSubName);
+			for (int b = 0; b < buttons.Length; b++)
+			{
+				buttons[b].canDo = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.canDo, b);
+				buttons[b].isWaiting = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.isWaiting, b);
+				buttons[b].timeLeft = (int)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.timeLeft, b);
+			}
+			MoveUI();
 		}
-		MoveUI();
 	}
 
 
@@ -342,6 +345,14 @@ public abstract class InGameObject : MonoBehaviour
 		subNameText.transform.position = nameText.transform.position + subNameRelativeOffset;
 		clickListener.transform.position = transform.position;
 	}
+	public virtual void ToggleUI(bool active)
+	{
+		loadingBar.gameObject.SetActive(active);
+		nameText.gameObject.SetActive(active);
+		subNameText.gameObject.SetActive(active);
+		clickListener.gameObject.SetActive(active);
+	}
+
 
 
 	#region Wait To Use Again

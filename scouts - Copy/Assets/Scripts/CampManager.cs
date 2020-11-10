@@ -38,9 +38,12 @@ public class CampManager : MonoBehaviour
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		camp = (Camp)SaveSystem.instance.RequestData(DataCategory.CampManager, DataKey.camp);
+		if (p == LoadPriority.Highest)
+		{
+			camp = (Camp)SaveSystem.instance.RequestData(DataCategory.CampManager, DataKey.camp);
+		}
 	}
 }
 

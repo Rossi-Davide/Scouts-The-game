@@ -31,27 +31,34 @@ public class AIsManager : MonoBehaviour
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		allSquadriglieri = (Squadrigliere[])SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.allSquadriglieri);
-		events = (AIEvent[])SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.events);
-		allCapiECambu = (CapieCambu[])SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.allCapiECambu);
+		if (p == LoadPriority.Normal)
+		{
+			for (int i = 0; i < allCapiECambu.Length; i++)
+			{
+				allCapiECambu[i].nextDialogueIndex = (int)SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.allCapiECambu, DataParameter.nextDialogueIndex, i);
+			}
+			for (int i = 0; i < events.Length; i++)
+			{
+				events[i].timeLeft = (int)SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.events, DataParameter.timeLeft, i);
+				events[i].running = (bool)SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.events, DataParameter.running, i);
+			}
+		}
 	}
 
 	void SetActiveOrInactiveAI()
 	{
 		foreach (var sq in allSquadriglieri)
 		{
-			if (sq.sq != Player.instance.squadriglia && GetProbability(100 - percentageOfActiveAIs))
+			sq.gameObject.SetActive(true);
+			sq.ToggleUI(true);
+			if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(100 - percentageOfActiveAIs))
 			{
 				sq.ForceTarget("Tenda", Random.Range(6, 13), true);
+				sq.ToggleUI(false);
 			}
 		}
-	}
-
-	bool GetProbability(int percentage)
-	{
-		return Random.Range(1, 101) <= percentage;
 	}
 
 	void CheckAIEvents(int hour)
@@ -60,30 +67,27 @@ public class AIsManager : MonoBehaviour
 		{
 			if (GameManager.instance.currentDay == e.day && hour == e.hour)
 			{
-				StartCoroutine(EventCountDown(e));
+				e.countDownLeft = e.countDownLenght;
+				GameManager.instance.WarningOrMessage($"L'evento {e.name} comincia tra...", false);
 			}
 		}
-	}
-
-	IEnumerator EventCountDown(AIEvent e)
-	{
-		var g = GameManager.instance;
-		g.WarningOrMessage($"L'evento {e.name} comincia tra...", false);
-		yield return new WaitForSeconds(1f);
-		for (int i = e.countDownLenght; i > 0; i--)
-		{
-			g.WarningOrMessage(i.ToString(), false);
-			yield return new WaitForSeconds(1f);
-		}
-		e.running = true;
-		e.timeLeft = e.duration;
 	}
 
 	void RefreshEventTimeLeft()
 	{
 		foreach (var e in events)
 		{
-			if (e.running)
+			if (e.countDownLeft > 0)
+			{
+				e.countDownLeft--;
+				GameManager.instance.WarningOrMessage(e.countDownLeft.ToString(), false);
+				if (e.countDownLeft <= 0)
+				{
+					e.running = true;
+					e.timeLeft = e.duration;
+				}
+			}
+			else if (e.running)
 			{
 				e.timeLeft--;
 				if (e.timeLeft <= 0)

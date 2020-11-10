@@ -41,7 +41,7 @@ public class CountersValue : MonoBehaviour
 		}
 	}
 
-	void GetCounterMaxValue(Counter counter)
+	void GetCounterMaxValue(Counter counter, int delta)
 	{
 		switch (counter)
 		{

@@ -332,8 +332,8 @@ public enum DataKey
 	currentHour, //GameManager
 	currentMinute, //GameManager
 	isRaining, //GameManager
-	rainingTimeLeft, //GameManager
-	rainingWaitTimeLeft, //GameManager
+	rainTimeLeft, //GameManager
+	rainWaitTimeLeft, //GameManager
 }
 public enum DataParameter
 {
@@ -349,11 +349,13 @@ public enum DataParameter
 	materials, //SquadrigliaManager
 	points, //SquadrigliaManager
 	AIPrefabTypes, //SquadrigliaManager
-	item, //Shop
+	item, //Shop, InventoryManager, ChestManager
 	building, //Shop
 	canDo, //InGameObject
 	isWaiting, //InGameObject
-	timeLeft, //InGameObject
+	timeLeft, //InGameObject, AIsManager
+	nextDialogueIndex, //AIsManager
+	running, //AIsManager
 }
 
 public enum LoadPriority

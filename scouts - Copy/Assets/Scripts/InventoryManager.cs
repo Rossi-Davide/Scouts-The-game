@@ -118,9 +118,15 @@ public class InventoryManager : MonoBehaviour
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData()
+	void ReceiveSavedData(LoadPriority p)
 	{
-		slots = (InventorySlot[])SaveSystem.instance.RequestData(DataCategory.InventoryManager, DataKey.slots);
+		if (p == LoadPriority.Low)
+		{
+			for (int i = 0; i < slots.Length; i++)
+			{
+				slots[i].item = (Item)SaveSystem.instance.RequestData(DataCategory.InventoryManager, DataKey.slots, DataParameter.item, i);
+			}
+		}
 	}
 
 	public void SelectItem(InventorySlot slot)

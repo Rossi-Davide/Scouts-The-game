@@ -13,14 +13,8 @@ public class ActionButtons : MonoBehaviour
 			throw new System.Exception("ActionButtons non è un singleton");
 		}
 		instance = this;
-		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 	#endregion
-
-	void ReceiveSavedData()
-	{
-		selected = (InGameObject)SaveSystem.instance.RequestData(DataCategory.ActionButtons, DataKey.selected);
-	}
 
 	public void ChangeSelectedObject(InGameObject b)
 	{
