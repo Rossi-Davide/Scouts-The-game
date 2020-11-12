@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_bloomPlayer
-  m_Shader: {fileID: -6465566751694194690, guid: d720e4e1ce99d2840a0c311270536633,
+  m_Name: Shader Graphs_playerNascondino nuova 2
+  m_Shader: {fileID: -6465566751694194690, guid: 09058b2f04bfee74abe975f3cd854584,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -20,14 +20,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Emission:
-        m_Texture: {fileID: 0}
+    - _Texture2DAsset_CF4B8A1_Out_0:
+        m_Texture: {fileID: 2800000, guid: 8874faddd3349dd4e81dc033e19be70e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
+    - _Texture2DAsset_F3C4E19B_Out_0:
+        m_Texture: {fileID: 2800000, guid: ef380a3cba702e1479b17a95480438d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
-    m_Colors:
-    - Color_25E17B17: {r: 0.4433962, g: 0.06483623, b: 0.06483623, a: 0}
+    m_Colors: []
