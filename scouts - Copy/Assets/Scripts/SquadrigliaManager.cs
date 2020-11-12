@@ -13,7 +13,6 @@ public class SquadrigliaManager : MonoBehaviour
 			throw new System.Exception("SquadrigliaManager non è un singleton!");
 		}
 		instance = this;
-		saveSystem.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	#endregion
@@ -93,6 +92,7 @@ public class SquadrigliaManager : MonoBehaviour
 
 	private void Start()
 	{
+		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		GameManager.instance.OnCounterValueChange += RefreshPlayerCounters;
 		InvokeRepeating(nameof(ChangeOtherSqCounters), 30, Random.Range(10, 30));
 		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, Random.Range(30, 60));

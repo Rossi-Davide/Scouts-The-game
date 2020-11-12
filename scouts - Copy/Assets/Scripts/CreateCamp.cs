@@ -17,7 +17,8 @@ public class CreateCamp : MonoBehaviour
 	int currentPanelIndex;
 	CampManager campManager;
 
-	Button campName, playerName, playerSq, gender, hair, difficulty, dayCycle, map, savingInterval;
+	Button campName, playerName, playerSq, gender, hair, difficulty, savingInterval;
+	TextMeshProUGUI exCampName, exPlayerName, exPlayerSq, exGender, exHair, exDifficulty, exSavingInterval, exSqs; //"ex" stands for "existing"
 	Button[] femaleSqs, maleSqs;
 
 	public void BackToMenu()
@@ -27,10 +28,6 @@ public class CreateCamp : MonoBehaviour
 
 	private void Start()
 	{
-		campManager = CampManager.instance;
-		camp = campManager.camp;
-		existingCampPanel.SetActive(camp != null);
-		noCampPanel.SetActive(camp == null);
 		createCampPanel.transform.parent.Find("General/Home").GetComponent<Button>().onClick.AddListener(SceneLoader.instance.LoadMainMenuScene);
 		campName = createCampPanel.transform.Find("Base/NomeCampo/Button").GetComponent<Button>();
 		playerName = createCampPanel.transform.Find("Base/NomePlayer/Button").GetComponent<Button>();
@@ -41,9 +38,29 @@ public class CreateCamp : MonoBehaviour
 		femaleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
 		maleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
 		savingInterval = createCampPanel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
-		map = createCampPanel.transform.Find("Advanced/Mappa/Button").GetComponent<Button>();
-		dayCycle = createCampPanel.transform.Find("Advanced/CicloDelGiorno/Button").GetComponent<Button>();
-		
+
+		exCampName = existingCampPanel.transform.Find("Info/Campo").GetComponent<TextMeshProUGUI>();
+		exPlayerName = existingCampPanel.transform.Find("Info/Player").GetComponent<TextMeshProUGUI>();
+		exPlayerSq = existingCampPanel.transform.Find("Info/Squadriglia").GetComponent<TextMeshProUGUI>();
+		exGender = existingCampPanel.transform.Find("Info/Genere").GetComponent<TextMeshProUGUI>();
+		exHair = existingCampPanel.transform.Find("Info/Aspetto").GetComponent<TextMeshProUGUI>();
+		exSqs = existingCampPanel.transform.Find("Info/Squadriglie").GetComponent<TextMeshProUGUI>();
+		exDifficulty = existingCampPanel.transform.Find("Info/Difficoltà").GetComponent<TextMeshProUGUI>();
+		exSavingInterval = existingCampPanel.transform.Find("Info/Salvataggio").GetComponent<TextMeshProUGUI>();
+
+		campManager = CampManager.instance;
+		camp = campManager.camp;
+		if (camp != null)
+		{
+			existingCampPanel.SetActive(true);
+			noCampPanel.SetActive(false);
+			RefreshExistingCampUI();
+		}
+		else
+		{
+			existingCampPanel.SetActive(false);
+			noCampPanel.SetActive(camp == null);
+		}
 	}
 
 	public void PartialDeleteCamp()
@@ -62,6 +79,26 @@ public class CreateCamp : MonoBehaviour
 		noCampPanel.SetActive(true);
 	}
 
+	void RefreshExistingCampUI()
+	{
+		exCampName.text = "Nome del campo: " + camp.settings.campName;
+		exPlayerName.text = "Nome del player: " + camp.settings.playerName;
+		exPlayerSq.text = "Squadriglia del player: " + RefreshPlayerSq();
+		exSqs.text = "Squadriglie: ";
+		exGender.text = "Genere: " + camp.settings.gender;
+		exHair.text = "Aspetto: " + camp.settings.hair;
+		exDifficulty.text = "Difficoltà: " + camp.settings.difficulty;
+		exSavingInterval.text = "Salvataggio: " + camp.settings.savingInterval;
+
+		for (int s = 0; s < femaleSqs.Length; s++)
+		{
+			exSqs.text += campManager.possibleFemaleSqs[campManager.camp.settings.femaleSqs[s]].name + "; ";
+		}
+		for (int s = 0; s < maleSqs.Length; s++)
+		{
+			exSqs.text += campManager.possibleMaleSqs[campManager.camp.settings.maleSqs[s]].name + "; ";
+		}
+	}
 
 	void RefreshUI()
 	{
@@ -82,8 +119,6 @@ public class CreateCamp : MonoBehaviour
 			maleSqs[sq].transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleMaleSqs[camp.settings.maleSqs[sq]].name;
 		}
 		savingInterval.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.savingInterval.ToString();
-		map.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.map.ToString();
-		dayCycle.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.dayCycle.ToString();
 	}
 
 
@@ -131,16 +166,6 @@ public class CreateCamp : MonoBehaviour
 	public void SwitchSavingInterval()
 	{
 		camp.settings.savingInterval = (SavingInterval)NextInArray((int)camp.settings.savingInterval, Enum.GetNames(typeof(SavingInterval)).Length);
-		RefreshUI();
-	}
-	public void SwitchDayCycle()
-	{
-		camp.settings.dayCycle = (DaylightCycle)NextInArray((int)camp.settings.dayCycle, Enum.GetNames(typeof(DaylightCycle)).Length);
-		RefreshUI();
-	}
-	public void SwitchMap()
-	{
-		camp.settings.map = (Map)NextInArray((int)camp.settings.map, Enum.GetNames(typeof(Map)).Length);
 		RefreshUI();
 	}
 	public void SwitchDifficulty()
@@ -223,7 +248,9 @@ public class CreateCamp : MonoBehaviour
 		settingsPanels[currentPanelIndex].SetActive(isCreating);
 		noCampPanel.SetActive(!isCreating);
 		camp = campManager.camp;
-		ResetSettings();
+		if (camp == null)
+			camp = new Camp(campManager.standardSettings);
+		RefreshUI();
 	}
 	public void SwitchPanel()
 	{

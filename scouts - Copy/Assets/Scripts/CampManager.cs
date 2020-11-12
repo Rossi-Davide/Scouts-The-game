@@ -33,12 +33,13 @@ public class CampManager : MonoBehaviour
 	}
 	private void Start()
 	{
+		camp = null;
 		appSettings = new CurrentAppSettings(standardAppSettings.generalVolume, standardAppSettings.musicVolume, standardAppSettings.effectsVolume, standardAppSettings.qualityIndex, standardAppSettings.resIndex, standardAppSettings.fullScreen);
 		DontDestroyOnLoad(this);
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData(LoadPriority p)
+	public void ReceiveSavedData(LoadPriority p)
 	{
 		if (p == LoadPriority.Highest)
 		{
@@ -69,8 +70,6 @@ public class Settings
 	public Gender gender;
 	public Hair hair;
 	public Difficulty difficulty;
-	public Map map;
-	public DaylightCycle dayCycle;
 
 	public Settings Clone()
 	{
@@ -95,8 +94,6 @@ public class Settings
 			gender = this.gender,
 			hair = this.hair,
 			difficulty = this.difficulty,
-			map = this.map,
-			dayCycle = this.dayCycle,
 		};
 	}
 }
@@ -104,19 +101,6 @@ public enum Gender
 {
 	Femmina,
 	Maschio,
-}
-public enum DaylightCycle
-{
-	Normale,
-	SoloNotte,
-	SoloGiorno,
-}
-
-public enum Map
-{
-	Hill,
-	Magma,
-	Snowy,
 }
 public enum Difficulty
 {

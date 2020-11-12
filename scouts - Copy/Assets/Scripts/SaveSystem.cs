@@ -142,7 +142,7 @@ public class SaveSystem : MonoBehaviour
 			//ActionButtons - selected
 			//
 		}
-		throw new System.NotImplementedException("The category or key you're looking for does not exist.");
+		throw new System.NotImplementedException("Non esiste");
 	}
 	public object RequestData(DataCategory category, DataKey key, DataParameter param, int index)
 	{
@@ -151,7 +151,7 @@ public class SaveSystem : MonoBehaviour
 			//ActionButtons - selected
 			//
 		}
-		throw new System.NotImplementedException("The category or key you're looking for does not exist.");
+		throw new System.NotImplementedException("Non esiste");
 	}
 
 	#endregion
