@@ -55,16 +55,16 @@ public class impostazioni : MonoBehaviour
         effectsVolume = CampManager.instance.appSettings.effectsVolume;
         qualityIndex = CampManager.instance.appSettings.qualityIndex;
         resIndex = CampManager.instance.appSettings.resIndex;
-        fullscreen = CampManager.instance.appSettings.fullScreen;
+        fullscreen = CampManager.instance.appSettings.fullscreen;
 
     }
 
     [HideInInspector]
-    public float generalVolume;
+    public int generalVolume;
     [HideInInspector]
-    public float musicVolume;
+    public int musicVolume;
     [HideInInspector]
-    public float effectsVolume;
+    public int effectsVolume;
     [HideInInspector]
     public int resIndex;
     [HideInInspector]
@@ -74,7 +74,7 @@ public class impostazioni : MonoBehaviour
 
 
 
-    public void SetVolumeMaster(float volume)
+    public void SetVolumeMaster(int volume)
     {
         generalVolume = volume - 80;
         mixer.SetFloat("master", generalVolume);
@@ -82,14 +82,14 @@ public class impostazioni : MonoBehaviour
     }
 
 
-    public void SetVolumeMusic(float volume)
+    public void SetVolumeMusic(int volume)
     {
         musicVolume = volume - 80;
         mixer.SetFloat("music", musicVolume);
         musicValue.text = Mathf.Round(volume / 80 * 100) + "%";
     }
 
-    public void SetVolumeSounds(float volume)
+    public void SetVolumeSounds(int volume)
     {
         effectsVolume = volume - 80;
         mixer.SetFloat("sounds", effectsVolume);
@@ -123,7 +123,7 @@ public class impostazioni : MonoBehaviour
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
 
-        CampManager.instance.appSettings = new CurrentAppSettings(generalVolume, musicVolume, effectsVolume, qualityIndex, resIndex, fullscreen);
+        CampManager.instance.appSettings = new AppSettings { generalVolume = this.generalVolume, musicVolume = this.musicVolume, effectsVolume = this.effectsVolume, qualityIndex = this.qualityIndex, resIndex = this.resIndex, fullscreen = this.fullscreen };
 
         SceneLoader.instance.LoadMainMenuScene();
     }

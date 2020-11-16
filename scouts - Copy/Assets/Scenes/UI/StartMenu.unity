@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2107,7 +2107,6 @@ MonoBehaviour:
     playerSqIndex: 0
     femaleSqs: 000000000200000004000000
     maleSqs: 010000000200000003000000
-    savingInterval: 2
     gender: 1
     hair: 1
     difficulty: 0
@@ -2130,7 +2129,6 @@ MonoBehaviour:
       playerSqIndex: 0
       femaleSqs: 
       maleSqs: 
-      savingInterval: 0
       gender: 0
       hair: 0
       difficulty: 0
@@ -2140,14 +2138,14 @@ MonoBehaviour:
     effectsVolume: 0
     qualityIndex: 0
     resIndex: 0
-    fullScreen: 0
+    fullscreen: 0
   standardAppSettings:
     generalVolume: 100
     musicVolume: 100
     effectsVolume: 100
     qualityIndex: 0
     resIndex: 0
-    fullScreen: 0
+    fullscreen: 0
 --- !u!4 &1760348607
 Transform:
   m_ObjectHideFlags: 0
@@ -2183,7 +2181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1760348605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca39139738f07642954de889f6cb4ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 4da106684e6c17c4590a82cee1cea6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1883883494

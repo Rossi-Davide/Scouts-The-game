@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class CampManager : MonoBehaviour
 {
@@ -12,39 +13,92 @@ public class CampManager : MonoBehaviour
 		if (instance == null)
 			instance = this;
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
+		DontDestroyOnLoad(instance);
 	}
 	#endregion
 
 	[Header("Information")]
-	public Settings standardSettings;
 	public Squadriglia[] possibleFemaleSqs;
 	public Squadriglia[] possibleMaleSqs;
 
 
 	[HideInInspector]
+	[NonSerialized]
 	public Camp camp;
+	
 	[HideInInspector]
-	public CurrentAppSettings appSettings;
-	public CurrentAppSettings standardAppSettings;
+	[NonSerialized]
+	public AppSettings appSettings;
+
+	[HideInInspector]
+	[NonSerialized]
+	public bool campCreated;
+
+	void Start()
+	{
+		campCreated = true;
+		camp = new Camp(CreateDefaultSettings());
+		appSettings = new AppSettings
+		{
+			generalVolume = 100,
+			musicVolume = 100,
+			effectsVolume = 100,
+			resIndex = 0,
+			qualityIndex = 0,
+			fullscreen = false
+		};
+	}
+
+	public static Settings CreateDefaultSettings()
+	{
+		return new Settings
+		{
+			campName = "NuovoCampo",
+			playerName = "Player",
+			playerSqIndex = 0,
+			hair = Hair.Castano,
+			gender = Gender.Maschio,
+			difficulty = Difficulty.Facile,
+			femaleSqs = new int[] { 0, 2, 4 },
+			maleSqs = new int[] { 1, 2, 3 },
+		};
+	}
 
 	public void CreateCamp(Camp c)
 	{
 		camp = c;
+		StartCoroutine(CallCampStarted());
 	}
-	private void Start()
+	IEnumerator CallCampStarted()
 	{
-		camp = null;
-		appSettings = new CurrentAppSettings(standardAppSettings.generalVolume, standardAppSettings.musicVolume, standardAppSettings.effectsVolume, standardAppSettings.qualityIndex, standardAppSettings.resIndex, standardAppSettings.fullScreen);
-		DontDestroyOnLoad(this);
-		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
+		WaitForEndOfFrame f = new WaitForEndOfFrame();
+		while (GameManager.instance == null)
+		{
+			yield return f;
+		}
+		GameManager.instance.CampStarted();
 	}
 
-	public void ReceiveSavedData(LoadPriority p)
+	public Status GetStatus()
 	{
-		if (p == LoadPriority.Highest)
+		return new Status
 		{
-			camp = (Camp)SaveSystem.instance.RequestData(DataCategory.CampManager, DataKey.camp);
-		}
+			camp = camp,
+			campCreated = campCreated,
+			appSettings = appSettings
+		};
+	}
+	public void SetStatus(Status status)
+	{
+		camp.settings = status.camp.settings;
+		campCreated = status.campCreated;
+		appSettings = status.appSettings;
+	}
+	public class Status
+	{
+		public Camp camp;
+		public bool campCreated;
+		public AppSettings appSettings;
 	}
 }
 
@@ -66,7 +120,6 @@ public class Settings
 	public int playerSqIndex;
 	public int[] femaleSqs;
 	public int[] maleSqs;
-	public SavingInterval savingInterval;
 	public Gender gender;
 	public Hair hair;
 	public Difficulty difficulty;
@@ -85,15 +138,38 @@ public class Settings
 		}
 		return new Settings
 		{
-			campName = this.campName.Clone().ToString(),
-			playerName = this.playerName.Clone().ToString(),
+			campName = this.campName,
+			playerName = this.playerName,
 			playerSqIndex = this.playerSqIndex,
 			maleSqs = maleSqsTemp,
 			femaleSqs = femaleSqsTemp,
-			savingInterval = this.savingInterval,
 			gender = this.gender,
 			hair = this.hair,
 			difficulty = this.difficulty,
+		};
+	}
+}
+
+[System.Serializable]
+public class AppSettings
+{
+	public int generalVolume;
+	public int musicVolume;
+	public int effectsVolume;
+	public int qualityIndex;
+	public int resIndex;
+	public bool fullscreen;
+
+	public AppSettings Clone()
+	{
+		return new AppSettings
+		{
+			generalVolume = generalVolume,
+			musicVolume = musicVolume,
+			effectsVolume = effectsVolume,
+			resIndex = resIndex,
+			qualityIndex = qualityIndex,
+			fullscreen = fullscreen,
 		};
 	}
 }
@@ -113,12 +189,4 @@ public enum Hair
 {
 	Biondo,
 	Castano,
-}
-public enum SavingInterval
-{
-	Slow,
-	Medium,
-	Fast,
-	VeryFast,
-	Fastest,
 }

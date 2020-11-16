@@ -23,10 +23,6 @@ public class GameManager : MonoBehaviour
 			throw new System.Exception("GameManager singleton has been created more than once!");
 		}
 		instance = this;
-		if (CampManager.instance.camp != null)
-		{
-			CampStarted();
-		}
 	}
 	#endregion
 	#region Events
@@ -120,7 +116,7 @@ public class GameManager : MonoBehaviour
 	{
 		OnCampEnd?.Invoke();
 	}
-	void CampStarted()
+	public void CampStarted()
 	{
 		OnCampStart?.Invoke();
 	}
@@ -451,8 +447,6 @@ public class GameManager : MonoBehaviour
 	SaveSystem saveSystem;
 	void Start()
 	{
-		saveSystem = SaveSystem.instance;
-		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		OnCampStart += WhenCampStarts;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		OnInGameoObjectsChange += RefreshInGameObjs;
@@ -467,23 +461,60 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
 	}
 
-	void ReceiveSavedData(LoadPriority p)
+	public Status GetStatus()
 	{
-		if (p == LoadPriority.High)
+		return new Status
 		{
-			energyValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.energyValue);
-			materialsValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.materialsValue);
-			pointsValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.pointsValue);
-			energyMaxValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.energyMaxValue);
-			materialsMaxValue = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.materialsMaxValue);
-			isRaining = (bool)saveSystem.RequestData(DataCategory.GameManager, DataKey.isRaining);
-			rainingTimeLeft = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.rainTimeLeft);
-			rainingWaitTimeLeft = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.rainWaitTimeLeft);
-			currentMinute = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.currentMinute);
-			currentHour = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.currentHour);
-			currentDay = (int)saveSystem.RequestData(DataCategory.GameManager, DataKey.currentDay);
-		}
+			energyValue = energyValue,
+			materialsValue = materialsValue,
+			pointsValue = pointsValue,
+			energyMaxValue = energyMaxValue,
+			materialsMaxValue = materialsMaxValue,
+			pointsMaxValue = pointsMaxValue,
+			isRaining = isRaining,
+			rainingTimeLeft = rainingTimeLeft,
+			rainingWaitTimeLeft = rainingWaitTimeLeft,
+			currentMinute = currentMinute,
+			currentHour = currentHour,
+			currentDay = currentDay
+		};
 	}
+	public void SetStatus(Status status)
+	{
+		energyValue = status.energyValue;
+		materialsValue = status.materialsValue;
+		pointsValue = status.pointsValue;
+		energyMaxValue = status.energyMaxValue;
+		materialsMaxValue = status.materialsMaxValue;
+		pointsMaxValue = status.pointsMaxValue;
+		isRaining = status.isRaining;
+		rainingTimeLeft = status.rainingTimeLeft;
+		rainingWaitTimeLeft = status.rainingWaitTimeLeft;
+		currentMinute = status.currentMinute;
+		currentHour = status.currentHour;
+		currentDay = status.currentDay;
+	}
+	public class Status
+	{
+		public int energyValue;
+		public int materialsValue;
+		public int pointsValue;
+		public int energyMaxValue;
+		public int materialsMaxValue;
+		public int pointsMaxValue;
+		public bool isRaining;
+		public int rainingTimeLeft;
+		public int rainingWaitTimeLeft;
+		public int currentMinute;
+		public int currentHour;
+		public int currentDay;
+	}
+
+
+
+
+
+
 
 	void WhenCampStarts()
 	{

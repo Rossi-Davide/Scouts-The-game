@@ -37,7 +37,6 @@ public class CreateCamp : MonoBehaviour
 		difficulty = createCampPanel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
 		femaleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
 		maleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
-		savingInterval = createCampPanel.transform.Find("Advanced/Salvataggio/Button").GetComponent<Button>();
 
 		exCampName = existingCampPanel.transform.Find("Info/Campo").GetComponent<TextMeshProUGUI>();
 		exPlayerName = existingCampPanel.transform.Find("Info/Player").GetComponent<TextMeshProUGUI>();
@@ -46,7 +45,6 @@ public class CreateCamp : MonoBehaviour
 		exHair = existingCampPanel.transform.Find("Info/Aspetto").GetComponent<TextMeshProUGUI>();
 		exSqs = existingCampPanel.transform.Find("Info/Squadriglie").GetComponent<TextMeshProUGUI>();
 		exDifficulty = existingCampPanel.transform.Find("Info/Difficoltà").GetComponent<TextMeshProUGUI>();
-		exSavingInterval = existingCampPanel.transform.Find("Info/Salvataggio").GetComponent<TextMeshProUGUI>();
 
 		campManager = CampManager.instance;
 		camp = campManager.camp;
@@ -88,7 +86,6 @@ public class CreateCamp : MonoBehaviour
 		exGender.text = "Genere: " + camp.settings.gender;
 		exHair.text = "Aspetto: " + camp.settings.hair;
 		exDifficulty.text = "Difficoltà: " + camp.settings.difficulty;
-		exSavingInterval.text = "Salvataggio: " + camp.settings.savingInterval;
 
 		for (int s = 0; s < femaleSqs.Length; s++)
 		{
@@ -118,7 +115,6 @@ public class CreateCamp : MonoBehaviour
 		{
 			maleSqs[sq].transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleMaleSqs[camp.settings.maleSqs[sq]].name;
 		}
-		savingInterval.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.savingInterval.ToString();
 	}
 
 
@@ -162,11 +158,6 @@ public class CreateCamp : MonoBehaviour
 	int NextInArray(int current, int lenght)
 	{
 		return current < lenght - 1 ? current + 1 : 0;
-	}
-	public void SwitchSavingInterval()
-	{
-		camp.settings.savingInterval = (SavingInterval)NextInArray((int)camp.settings.savingInterval, Enum.GetNames(typeof(SavingInterval)).Length);
-		RefreshUI();
 	}
 	public void SwitchDifficulty()
 	{
@@ -248,8 +239,6 @@ public class CreateCamp : MonoBehaviour
 		settingsPanels[currentPanelIndex].SetActive(isCreating);
 		noCampPanel.SetActive(!isCreating);
 		camp = campManager.camp;
-		if (camp == null)
-			camp = new Camp(campManager.standardSettings);
 		RefreshUI();
 	}
 	public void SwitchPanel()
@@ -261,7 +250,7 @@ public class CreateCamp : MonoBehaviour
 
 	public void ResetSettings()
 	{
-		camp.settings = campManager.standardSettings.Clone();
+		camp.settings = CampManager.CreateDefaultSettings();
 		RefreshUI();
 	}
 	string RefreshPlayerSq()
