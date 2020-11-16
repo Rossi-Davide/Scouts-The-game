@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -400,7 +400,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1123,6 +1123,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577831990}
   m_CullTransparentMesh: 0
+--- !u!1 &579206299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 579206301}
+  - component: {fileID: 579206300}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &579206300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579206299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a6cabf0bf4d2ff242b9473cfbdf8982b, type: 2}
+--- !u!4 &579206301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579206299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6516495, y: -0.07875268, z: -32.5459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745117000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,7 +1693,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 52.95
+  m_fontSize: 37.55
   m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2101,15 +2149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316f464385e829548b64544edb16af5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardSettings:
-    campName: NuovoCampo
-    playerName: Player
-    playerSqIndex: 0
-    femaleSqs: 000000000200000004000000
-    maleSqs: 010000000200000003000000
-    gender: 1
-    hair: 1
-    difficulty: 0
   possibleFemaleSqs:
   - {fileID: 11400000, guid: 55cdfa8aeaa85cf4188c89ff92903b31, type: 2}
   - {fileID: 11400000, guid: b941bf0a121da8748b9d20677372fdb8, type: 2}
@@ -2122,30 +2161,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5643c46ee1ea73b408f23ad80f964720, type: 2}
   - {fileID: 11400000, guid: 8133e59fe5a79bc48bb47811526c30dd, type: 2}
   - {fileID: 11400000, guid: 64fba83b946927d40a5794ba53e19e31, type: 2}
-  camp:
-    settings:
-      campName: 
-      playerName: 
-      playerSqIndex: 0
-      femaleSqs: 
-      maleSqs: 
-      gender: 0
-      hair: 0
-      difficulty: 0
-  appSettings:
-    generalVolume: 0
-    musicVolume: 0
-    effectsVolume: 0
-    qualityIndex: 0
-    resIndex: 0
-    fullscreen: 0
-  standardAppSettings:
-    generalVolume: 100
-    musicVolume: 100
-    effectsVolume: 100
-    qualityIndex: 0
-    resIndex: 0
-    fullscreen: 0
 --- !u!4 &1760348607
 Transform:
   m_ObjectHideFlags: 0
