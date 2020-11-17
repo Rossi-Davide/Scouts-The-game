@@ -47,6 +47,7 @@ public class CampManager : MonoBehaviour
 			qualityIndex = 0,
 			fullscreen = false
 		};
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.campManagerFileName));
 	}
 
 	public static Settings CreateDefaultSettings()
@@ -79,7 +80,7 @@ public class CampManager : MonoBehaviour
 		GameManager.instance.CampStarted();
 	}
 
-	public Status GetStatus()
+	public Status SendStatus()
 	{
 		return new Status
 		{
@@ -88,11 +89,14 @@ public class CampManager : MonoBehaviour
 			appSettings = appSettings
 		};
 	}
-	public void SetStatus(Status status)
+	void SetStatus(Status status)
 	{
-		camp.settings = status.camp.settings;
-		campCreated = status.campCreated;
-		appSettings = status.appSettings;
+		if (status != null)
+		{
+			camp.settings = status.camp.settings;
+			campCreated = status.campCreated;
+			appSettings = status.appSettings;
+		}
 	}
 	public class Status
 	{

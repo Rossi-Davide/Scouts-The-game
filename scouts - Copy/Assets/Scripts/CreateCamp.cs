@@ -48,7 +48,7 @@ public class CreateCamp : MonoBehaviour
 
 		campManager = CampManager.instance;
 		camp = campManager.camp;
-		if (camp != null)
+		if (campManager.campCreated)
 		{
 			existingCampPanel.SetActive(true);
 			noCampPanel.SetActive(false);

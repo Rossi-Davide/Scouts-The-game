@@ -20,8 +20,6 @@ public class SaveSystem : MonoBehaviour
 
 	private void Start()
 	{
-		LoadAll();
-
 		InvokeRepeating(nameof(GetSaveAll), 5, 20);
 	}
 	private void OnApplicationQuit()
@@ -36,7 +34,7 @@ public class SaveSystem : MonoBehaviour
 		Debug.Log($"SaveData: {json}");
 		System.IO.File.WriteAllText(path, json);
 	}
-	T LoadData<T>(string fileName)
+	public T LoadData<T>(string fileName)
 	{
 		try
 		{
@@ -57,22 +55,26 @@ public class SaveSystem : MonoBehaviour
 	}
 	public void GetSaveAll()
 	{
-		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.GetStatus(), "CampManager"); }
+		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName); }
 		Debug.Log("saved data");
 	}
-	public void LoadAll()
-	{
-		var campManager = CampManager.instance;
-		if (campManager != null)
-		{
-			var data = LoadData<CampManager.Status>("CampManager");
-			if (data != null)
-			{
-				campManager.SetStatus(data);
-			}
-		}
-		Debug.Log("loaded data");
-	}
+
+
+	public string campManagerFileName = "CampManager";
+	public string actionButtonsFileName = "ActionButtons";
+	public string actionManagerFileName = "ActionManager";
+	public string aisManagerFileName = "AIsManager";
+	public string chestManagerFileName = "ChestManager";
+	public string inventoryManagerFileName = "InventoryManager";
+	public string playerFileName = "PLayer";
+	public string questManagerFileName = "QuestManager";
+	public string squadrigliaManagerFileName = "SquadrigliaManager";
+	public string shopFileName = "Shop";
+	public string gameManagerFileName = "GameManager";
+
+	public string inGameObjectFileName = "InGameObject";
+	public string iterateMultipleObjsFileName = "IterateMultipleObjs";
+	public string playerBuildingBaseFileName = "PlayerBuildingBase"; 
 }
 
 public enum DataCategory
