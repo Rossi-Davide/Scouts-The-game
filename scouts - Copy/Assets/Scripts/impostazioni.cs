@@ -59,17 +59,17 @@ public class impostazioni : MonoBehaviour
 
     }
 
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public int generalVolume;
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public int musicVolume;
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public int effectsVolume;
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public int resIndex;
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public int qualityIndex;
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public bool fullscreen;
 
 

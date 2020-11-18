@@ -13,7 +13,7 @@ public abstract class InGameObject : MonoBehaviour
 	public ActionButton[] buttons;
 	public float maxDistanceFromPlayer;
 
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public GameObject wpCanvas, buttonCanvas;
 
 	protected TimeAction action; //like local variable
@@ -26,11 +26,11 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected bool hasBeenClicked;
 
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public TimeLeftBar loadingBar;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public TextMeshProUGUI nameText, subNameText;
 	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
 	protected SaveSystem saveSystem;
@@ -397,20 +397,20 @@ public abstract class InGameObject : MonoBehaviour
 public class ActionButton
 {
 	public string buttonText;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int buttonNum;
 	public GameColor color;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public GameObject obj;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public string priceOrPrizeAmount;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Counter priceOrPrizeType;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int timeLeft;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool isWaiting;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool canDo;
 	public PlayerAction generalAction;
 }

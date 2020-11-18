@@ -17,8 +17,8 @@ public class CreateCamp : MonoBehaviour
 	int currentPanelIndex;
 	CampManager campManager;
 
-	Button campName, playerName, playerSq, gender, hair, difficulty, savingInterval;
-	TextMeshProUGUI exCampName, exPlayerName, exPlayerSq, exGender, exHair, exDifficulty, exSavingInterval, exSqs; //"ex" stands for "existing"
+	Button campName, playerName, playerSq, gender, hair, difficulty;
+	TextMeshProUGUI exCampName, exPlayerName, exPlayerSq, exGender, exHair, exDifficulty, exSqs; //"ex" stands for "existing"
 	Button[] femaleSqs, maleSqs;
 
 	public void BackToMenu()
@@ -48,17 +48,9 @@ public class CreateCamp : MonoBehaviour
 
 		campManager = CampManager.instance;
 		camp = campManager.camp;
-		if (campManager.campCreated)
-		{
-			existingCampPanel.SetActive(true);
-			noCampPanel.SetActive(false);
-			RefreshExistingCampUI();
-		}
-		else
-		{
-			existingCampPanel.SetActive(false);
-			noCampPanel.SetActive(camp == null);
-		}
+		existingCampPanel.SetActive(campManager.campCreated);
+		noCampPanel.SetActive(!campManager.campCreated);
+		RefreshExistingCampUI();
 	}
 
 	public void PartialDeleteCamp()
@@ -71,7 +63,8 @@ public class CreateCamp : MonoBehaviour
 	}
 	public void DeleteCamp()
 	{
-		campManager.camp = null;
+		campManager.campCreated = false;
+		SaveSystem.instance.DeleteAllFiles();
 		confirmationWindow.SetActive(false);
 		existingCampPanel.SetActive(false);
 		noCampPanel.SetActive(true);

@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
 
 	#endregion
 	#region General
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Squadriglia squadriglia;
 	#endregion
 }

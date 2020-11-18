@@ -6,9 +6,9 @@ public class Joystick : MonoBehaviour
 {
 	GameObject circle;
 	const float maxCircleRadius = 50, maxTouchRadius = 80; 
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Vector2 direction;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool isUsingJoystick;
 
 	#region Singleton

@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Image icon;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Item item;
 	public TextMeshProUGUI amountText;
 
@@ -48,7 +48,7 @@ public class InventorySlot : MonoBehaviour
 
 
 	public InventoryDragAndDrop clone;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public GameObject c;
 
 

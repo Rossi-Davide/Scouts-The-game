@@ -5,7 +5,7 @@ public class Quest : ScriptableObject
 {
     public new string name;
     public string description;
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public bool prizeTaken;
     public Counter prizeCounter;
     public int prizeAmount;

@@ -2,7 +2,7 @@
 
 public class AngoloDiAltraSquadriglia : InGameObject
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Squadriglia squadriglia;
 
 	void Sfida()

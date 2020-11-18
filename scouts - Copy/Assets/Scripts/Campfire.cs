@@ -4,7 +4,7 @@ using System;
 
 public class Campfire : InGameObject
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public AudioSource aud;
 
     void ChangeLight(bool day)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Dialogue currentDialogue;
 
 	#region Singleton
@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
 	public TextMeshProUGUI[] answerTexts;
 
 
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public CapieCambu currentObject;
 
 

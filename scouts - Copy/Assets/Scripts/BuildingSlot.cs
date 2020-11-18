@@ -2,9 +2,9 @@
 
 public class BuildingSlot : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
     public PlayerBuilding building;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
     public PlayerBuildingBase buildingParent;
 	int touchRadius = 80;
 

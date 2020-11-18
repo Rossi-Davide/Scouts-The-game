@@ -3,7 +3,7 @@
 public class MoveBuildings : MonoBehaviour
 {
 	bool isTouching;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool componentEnabled, isBeingBuilt;
 	void OnTriggerEnter2D(Collider2D collision)
 	{

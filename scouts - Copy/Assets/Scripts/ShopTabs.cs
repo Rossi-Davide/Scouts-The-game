@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShopTabs : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int selectedSpecificScreen, selectedMainScreen;
 	public ShopTab[] specificTabs; //8 long
 	public Animator[] mainTabs;

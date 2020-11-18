@@ -4,7 +4,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
 	public GameObject questPanel, overlay;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public QuestUI[] quests;
 	public PlayerAction[] actionDatabase;
 	bool isOpen;

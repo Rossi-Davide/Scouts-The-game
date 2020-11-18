@@ -6,11 +6,11 @@ using System.Threading;
 
 public abstract class PlayerBuildingBase : InGameObject
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public GameObject healthBar;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Vector3 healthBarOffset = new Vector3(0, -0.2f, 0);
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int health;
 	protected bool isSafe, isDestroyed;
 	public PlayerBuilding building;

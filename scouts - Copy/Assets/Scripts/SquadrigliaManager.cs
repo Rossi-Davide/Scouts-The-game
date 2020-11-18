@@ -19,7 +19,7 @@ public class SquadrigliaManager : MonoBehaviour
 
 
 	public Transform playerAngoloPos;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public ConcreteSquadriglia[] squadriglieInGioco;
 	public AngoloDiAltraSquadriglia[] angoli;
 	public PlayerBuildingBase[] playerBuildingPrefabs;
@@ -98,33 +98,56 @@ public class SquadrigliaManager : MonoBehaviour
 		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, Random.Range(30, 60));
 		GameManager.instance.OnCampStart += WhenCampStarts;
 		saveSystem = SaveSystem.instance;
+		var campManager = CampManager.instance;
+		InitializeSquadriglias(campManager.camp.settings.gender, campManager.possibleFemaleSqs, campManager.possibleMaleSqs, campManager.camp.settings.femaleSqs, campManager.camp.settings.maleSqs, campManager.camp.settings.playerSqIndex);
 		InstantiateStuff();
+	}
+
+	public Status SendStatus()
+	{
+		var s = new CompactSquadriglia[squadriglieInGioco.Length];
+		for (int i = 0; i < squadriglieInGioco.Length; i++)
+			s[i] = squadriglieInGioco[i].ToCompactSquadriglia();
+		return new Status
+		{
+			squadriglieInGioco = s
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			squadriglieInGioco = new ConcreteSquadriglia[status.squadriglieInGioco.Length];
+			for (int i = 0; i < squadriglieInGioco.Length; i++)
+			{
+				var sq = squadriglieInGioco[i];
+				var stSq = status.squadriglieInGioco[i];
+				sq.AIPrefabTypes = (stSq.AIPrefabTypes);
+				sq.baseSq = (stSq.baseSq);
+				sq.materials = (stSq.materials);
+				sq.points = (stSq.points);
+				sq.ruoli = (stSq.ruoli);
+				sq.nomi = (stSq.nomi);
+			}
+		}
+	}
+	public class Status
+	{
+		public CompactSquadriglia[] squadriglieInGioco;
 	}
 
 	void ReceiveSavedData(LoadPriority p)
 	{
 		if (p == LoadPriority.High)
 		{
-			squadriglieInGioco = new ConcreteSquadriglia[(int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.squadriglieInGioco))];
-			for (int i = 0; i < squadriglieInGioco.Length; i++)
-			{
-				var sq = squadriglieInGioco[i];
-				sq.AIPrefabTypes = (int[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.AIPrefabTypes, i));
-				sq.angolo = (Transform)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.angolo, i));
-				sq.baseSq = (Squadriglia)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.baseSq, i));
-				sq.buildings = (SpriteRenderer[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.buildings, i));
-				sq.materials = (int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.materials, i));
-				sq.points = (int)(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.points, i));
-				sq.ruoli = (Ruolo[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.ruoli, i));
-				sq.nomi = (string[])(saveSystem.RequestData(DataCategory.SquadrigliaManager, DataKey.sq, DataParameter.nomi, i));
-			}
+			
 		}
 	}
 
 	void WhenCampStarts()
 	{
 		var campManager = CampManager.instance;
-		InitializeSquadriglias(campManager.camp.settings.gender, campManager.possibleFemaleSqs, campManager.possibleMaleSqs, campManager.camp.settings.femaleSqs, campManager.camp.settings.maleSqs, campManager.camp.settings.playerSqIndex);
+		
 	}
 
 	void InstantiateStuff()

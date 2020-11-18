@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CapieCambu : BaseAI
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int nextDialogueIndex;
 
 	public Dialogue[] dialoguesArray;

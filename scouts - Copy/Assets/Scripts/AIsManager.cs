@@ -6,7 +6,7 @@ public class AIsManager : MonoBehaviour
 {
 	int percentageOfActiveAIs = 15;
 	public CapieCambu[] allCapiECambu;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Squadrigliere[] allSquadriglieri;
 	public GameObject AIContainer;
 

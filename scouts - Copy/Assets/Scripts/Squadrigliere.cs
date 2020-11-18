@@ -3,7 +3,7 @@
 
 public class Squadrigliere : BaseAI
 {
-    [HideInInspector]
+    [HideInInspector] [System.NonSerialized]
     public Squadriglia sq;
 
 	public override void SetMissingPriorityTarget(string targetName, Vector3 pos)

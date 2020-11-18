@@ -9,9 +9,9 @@ public class AIEvent : ScriptableObject
 	public int duration;
 	public int day;
 	public int hour;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int timeLeft, countDownLeft;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool running;
 
 	public CapieCambu[] mainAIs;

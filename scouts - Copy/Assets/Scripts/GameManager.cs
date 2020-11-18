@@ -7,7 +7,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public InGameObject[] InGameObjects { get; private set; }
 
 	public int pointsValue, materialsValue, energyValue;
@@ -327,9 +327,9 @@ public class GameManager : MonoBehaviour
 	#endregion
 	#region DayNightCycle & Rain
 	const float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int currentMinute, currentHour, currentDay;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int totalDays = 14;
 	void IncreaseTime()
 	{
@@ -368,7 +368,7 @@ public class GameManager : MonoBehaviour
 		if (!isDay) { StartCoroutine(ChangeLight()); };
 	}
 
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool isDay;
 	private bool hasOpenedCounter = false;
 	public GameObject closeDayCounter, openDayCounter;
@@ -412,9 +412,9 @@ public class GameManager : MonoBehaviour
 		closeDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = currentDay.ToString();
 	}
 
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool isRaining;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int rainingTimeLeft, rainingWaitTimeLeft;
 	void CheckRain()
 	{

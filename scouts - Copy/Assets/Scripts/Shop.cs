@@ -7,13 +7,13 @@ public class Shop : MonoBehaviour
 {
 	public Item[] itemDatabase;
 	public PlayerBuilding[] buildingDatabase;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public SpecificShopScreen currentSpecificScreen;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public MainShopScreen currentMainScreen;
 	public GameObject shopPanel, pioneristica, cucina, infermieristica, topografia, espressione, negozioIllegale, costruzioni, decorazioni;
 	bool hasEnoughMoney, canIncreaseLevel, hasItems, canBuy;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public bool negozioIllegaleUnlocked;
 
 

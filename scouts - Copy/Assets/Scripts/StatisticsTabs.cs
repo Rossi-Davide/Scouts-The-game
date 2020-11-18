@@ -4,7 +4,7 @@ using TMPro;
 
 public class StatisticsTabs : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public int selectedTab = 1;
 	public TextMeshProUGUI nomeSq, description, materials, points;
 	public void OnClick(int tabNum)

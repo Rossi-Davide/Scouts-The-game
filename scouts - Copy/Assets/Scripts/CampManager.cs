@@ -22,21 +22,18 @@ public class CampManager : MonoBehaviour
 	public Squadriglia[] possibleMaleSqs;
 
 
-	[HideInInspector]
-	[NonSerialized]
+	[HideInInspector] [System.NonSerialized]
 	public Camp camp;
 	
-	[HideInInspector]
-	[NonSerialized]
+	[HideInInspector] [System.NonSerialized]
 	public AppSettings appSettings;
 
-	[HideInInspector]
-	[NonSerialized]
+	[HideInInspector] [System.NonSerialized]
 	public bool campCreated;
 
 	void Start()
 	{
-		campCreated = true;
+		campCreated = false;
 		camp = new Camp(CreateDefaultSettings());
 		appSettings = new AppSettings
 		{
@@ -68,6 +65,7 @@ public class CampManager : MonoBehaviour
 	public void CreateCamp(Camp c)
 	{
 		camp = c;
+		campCreated = true;
 		StartCoroutine(CallCampStarted());
 	}
 	IEnumerator CallCampStarted()

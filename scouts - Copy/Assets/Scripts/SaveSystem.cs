@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Data;
 using UnityEngine;
 public class SaveSystem : MonoBehaviour
@@ -20,11 +21,16 @@ public class SaveSystem : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(GetSaveAll), 5, 20);
+		InvokeRepeating(nameof(GetSaveAll), 5, 5);
 	}
 	private void OnApplicationQuit()
 	{
 		GetSaveAll();
+	}
+
+	public void DeleteAllFiles()
+	{
+		Array.ForEach(System.IO.Directory.GetFiles(Application.persistentDataPath), System.IO.File.Delete);
 	}
 
 	void SaveData(object o, string fileName)

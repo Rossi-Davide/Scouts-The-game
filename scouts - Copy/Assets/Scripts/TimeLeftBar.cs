@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class TimeLeftBar : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Slider slider;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public TextMeshProUGUI value;
 
 	void Awake()

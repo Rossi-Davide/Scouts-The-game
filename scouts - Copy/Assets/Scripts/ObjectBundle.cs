@@ -10,7 +10,7 @@ public class ObjectBundle : ScriptableObject
 public class IterableObjects
 {
 	public string objectName;
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public InGameObject obj;
 	public int buttonNum;
 }

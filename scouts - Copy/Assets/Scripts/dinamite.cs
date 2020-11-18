@@ -43,6 +43,7 @@ public class dinamite : MonoBehaviour
 
     void Esplosione()
     {
+        GetComponent<ParticleSystem>().Play();
         life.Dinamite();
         Destroy(gameObject);
     }

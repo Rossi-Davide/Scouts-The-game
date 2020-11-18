@@ -2,7 +2,7 @@
 
 public class InventoryDragAndDrop : MonoBehaviour
 {
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public InventorySlot parent;
 
 

@@ -18,7 +18,7 @@ public class modificaAngolo : MonoBehaviour
 		instance = this;
 	}
 	#endregion
-	[HideInInspector]
+	[HideInInspector] [System.NonSerialized]
 	public Transform oggetto;
 	void Start()
 	{
