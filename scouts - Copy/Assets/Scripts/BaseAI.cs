@@ -130,7 +130,8 @@ public abstract class BaseAI : InGameObject
 			nextWayPoint = currentPath.vectorPath[currentWayPointIndex];
 		}
 		var nextMovement = ((Vector2)nextWayPoint - rb.position).normalized;
-		rb.AddForce(nextMovement * speed * Time.deltaTime);
+		rb.velocity=nextMovement * speed * Time.deltaTime;
+		
 	}
 
 	void CheckPriorityPathConditions()
