@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class labirintoManager : MonoBehaviour
 {
-    public Animator luceGlobale, pointLight, regole, titolo;
+    public Animator luceGlobale, pointLight, regole, titolo,pannelloTimer,timer;
     public GameObject luce1, luce2, testo1, testo2, joystick, player, enemy, haisec,riavvioScenaErrorMessage,levGen,panel;
     bool countdownStart = false, countdownStartGrande = false;
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
@@ -19,7 +19,7 @@ public class labirintoManager : MonoBehaviour
     int StopScene = 15;
     bool StopSceneTrigger = false,alreadyStarted=false;
     public int nSpilli,nDinamiti,nCaramelle;
-    public GameObject spillo, dinamite,candy;
+    public GameObject spillo, dinamite,candy,bottoneTornaAlGioco,sconfitta,victoryText,score;
 
 
     #region Utility functions
@@ -170,29 +170,15 @@ public class labirintoManager : MonoBehaviour
     }
 
 
-    IEnumerator Vittoria()
-    {
-        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        joystick.SetActive(false);
-        foreach (GameObject item in enemies)
-        {
-            Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
-            AImaster movement = item.GetComponent<AImaster>();
-            movement.enabled = false;
-            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-        Debug.Log("hai vinto");
-        //animazione da decidere
-        yield return null;
-
-    }
+   
 
 
 
     public IEnumerator Sconfitta()
     {
         Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        playerNascondino pN = player.GetComponent<playerNascondino>();
+        pN.enabled = false;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         joystick.SetActive(false);
         foreach (GameObject item in enemies)
@@ -202,8 +188,52 @@ public class labirintoManager : MonoBehaviour
             movement.enabled = false;
             enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        Debug.Log("hai perso");
+        //Debug.Log("hai perso");
         //animazione da decidere
+
+        luceGlobale.SetBool("inizioGioco", false);
+        countdownStartGrande = false;
+        yield return new WaitForSeconds(0.5f);
+
+        pannelloTimer.SetBool("perditaGioco", true);
+        timer.SetBool("perditaGioco", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
+        bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator sconfittaAn = sconfitta.GetComponent<Animator>();
+        sconfittaAn.SetBool("fineGioco", true);
         yield return null;
+    }
+
+    public IEnumerator Vittoria()
+    {
+        
+        /*Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        joystick.SetActive(false);*/
+        foreach (GameObject item in enemies)
+        {
+            //Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
+            AImaster movement = item.GetComponent<AImaster>();
+            movement.enabled = false;
+            //enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        //Debug.Log("hai vinto");
+        //animazione da decidere
+
+        luceGlobale.SetBool("inizioGioco", false);
+        countdownStartGrande = false;
+        yield return new WaitForSeconds(0.5f);
+        Animator victoryTextAn = victoryText.GetComponent<Animator>();
+        victoryTextAn.SetBool("vinto", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator scoreAn = score.GetComponent<Animator>();
+        scoreAn.SetBool("vinto", true);
+        yield return new WaitForSeconds(0.5f);
+        Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
+        bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
+        yield return null;
+
     }
 }
