@@ -4,8 +4,20 @@ using System.Collections;
 
 public abstract class BaseAI : InGameObject
 {
-	public Vector3[] randomTarget;
-	public float speed;
+	public Vector3[] randomTarget = { 
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+		new Vector3(1, 1, 0),
+	}; //set all the different targets
+	protected float speed = 50;
+
 	public float minWayPointDistance;
 	protected Path currentPath;
 	protected int currentWayPointIndex;
@@ -15,7 +27,7 @@ public abstract class BaseAI : InGameObject
 
 	public PriorityTarget[] priorityTargets;
 
-	bool extremePriority, disable, stayUntil;
+	bool disable, stayUntil;
 	int keepTarget;
 
 	protected override void Start()
@@ -31,20 +43,11 @@ public abstract class BaseAI : InGameObject
 
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
 
-
-
 	protected virtual void CreateNewPath(Vector3? priorityTarget)
 	{
-		if (priorityTarget == null)
-		{
-			currentTarget = randomTarget[Random.Range(0, randomTarget.Length)];
-			seeker.StartPath(rb.position, currentTarget, VerifyPath);
-		}
-		else if (!extremePriority)
-		{
-			seeker.StartPath(rb.position, priorityTarget.Value, VerifyPath);
-			currentTarget = priorityTarget.Value;
-		}
+		currentTarget = priorityTarget != null ? priorityTarget.Value : randomTarget[Random.Range(0, randomTarget.Length)];
+		seeker.StartPath(rb.position, currentTarget, VerifyPath);
+		Debug.Log("I'm going to " + currentTarget);
 	}
 	protected void VerifyPath(Path p)
 	{
@@ -67,16 +70,19 @@ public abstract class BaseAI : InGameObject
 	}
 	protected void PathCompleted()
 	{
-		extremePriority = false;
 		if (keepTarget > 0)
 		{
 			StartCoroutine(GameManager.Wait(keepTarget, Unlock));
 			if (disable)
+			{
 				gameObject.SetActive(false);
+				ToggleUI(false);
+			}
 		}
-		else if (stayUntil)
+		if (stayUntil)
 		{
 			gameObject.SetActive(false);
+			ToggleUI(false);
 		}
 		else
 			CheckPriorityTargetsThatWait();
@@ -85,6 +91,7 @@ public abstract class BaseAI : InGameObject
 	public void Unlock() //call method from another script if stayUntil is true
 	{
 		gameObject.SetActive(true);
+		ToggleUI(true);
 		keepTarget = 0;
 		stayUntil = false;
 		disable = false;
@@ -97,7 +104,7 @@ public abstract class BaseAI : InGameObject
 		Vector3? target = null;
 		foreach (var p in priorityTargets)
 		{
-			if (p.waitEndOfCurrentPath && p.priority > max)
+			if (p.waitEndOfCurrentPath && p.automatic && p.priority > max)
 			{
 				if (FindNotVerified(p.conditions) == null)
 				{
@@ -130,7 +137,7 @@ public abstract class BaseAI : InGameObject
 			nextWayPoint = currentPath.vectorPath[currentWayPointIndex];
 		}
 		var nextMovement = ((Vector2)nextWayPoint - rb.position).normalized;
-		rb.velocity=nextMovement * speed * Time.deltaTime;
+		rb.velocity = nextMovement * speed * Time.deltaTime;
 		
 	}
 
@@ -140,7 +147,7 @@ public abstract class BaseAI : InGameObject
 		Vector3? target = null;
 		foreach (var p in priorityTargets)
 		{
-			if (!p.waitEndOfCurrentPath && p.priority > max)
+			if (!p.waitEndOfCurrentPath && p.automatic && p.priority > max)
 			{
 				if (FindNotVerified(p.conditions) == null)
 				{
@@ -156,15 +163,13 @@ public abstract class BaseAI : InGameObject
 	public void ForceTarget(Vector3 target, int stay, bool setInactive)
 	{
 		CreateNewPath(target);
-		extremePriority = true;
 		keepTarget = stay;
 		disable = setInactive;
 	}
-	public void ForceTarget(Vector3 target, bool stay, bool setInactive)
+	public void ForceTarget(Vector3 target, bool stayUntil, bool setInactive)
 	{
 		CreateNewPath(target);
-		extremePriority = true;
-		stayUntil = stay;
+		this.stayUntil = stayUntil;
 		disable = setInactive;
 	}
 	public void ForceTarget(string priorityTargetName, int stay, bool setInactive)
@@ -174,8 +179,19 @@ public abstract class BaseAI : InGameObject
 			if (p.name == priorityTargetName)
 			{
 				CreateNewPath(p.target);
-				extremePriority = true;
 				keepTarget = stay;
+				disable = setInactive;
+			}
+		}
+	}
+	public void ForceTarget(string priorityTargetName, bool stayUntil, bool setInactive)
+	{
+		foreach (var p in priorityTargets)
+		{
+			if (p.name == priorityTargetName)
+			{
+				CreateNewPath(p.target);
+				this.stayUntil = stayUntil;
 				disable = setInactive;
 			}
 		}

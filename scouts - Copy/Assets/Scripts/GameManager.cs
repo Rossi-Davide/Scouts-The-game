@@ -7,8 +7,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
-	[HideInInspector] [System.NonSerialized]
-	public InGameObject[] InGameObjects { get; private set; }
+	[HideInInspector]
+	[System.NonSerialized]
+	public InGameObject[] inGameObjects;
 
 	public int pointsValue, materialsValue, energyValue;
 	public int energyMaxValue = 100, materialsMaxValue = 300, pointsMaxValue = 70;
@@ -528,7 +529,7 @@ public class GameManager : MonoBehaviour
 	}
 	IEnumerator RefreshInGameObjsCoroutine()
 	{
-		InGameObjects = FindObjectsOfType<InGameObject>();
+		inGameObjects = FindObjectsOfType<InGameObject>();
 		yield return new WaitForEndOfFrame();
 		ObjectArrayUpdated();
 	}
@@ -542,7 +543,7 @@ public class GameManager : MonoBehaviour
 
 	void RefreshWaitToUseObjects()
 	{
-		foreach (var o in InGameObjects)
+		foreach (var o in inGameObjects)
 		{
 			foreach (var b in o.buttons)
 			{

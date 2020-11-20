@@ -19,7 +19,7 @@ public class SquadrigliaManager : MonoBehaviour
 
 
 	public Transform playerAngoloPos;
-	[HideInInspector] [System.NonSerialized]
+	[System.NonSerialized]
 	public ConcreteSquadriglia[] squadriglieInGioco;
 	public AngoloDiAltraSquadriglia[] angoli;
 	public PlayerBuildingBase[] playerBuildingPrefabs;
@@ -28,9 +28,9 @@ public class SquadrigliaManager : MonoBehaviour
 	public GameObject[] squadriglieriAIMalePrefabs;
 	public GameObject[] squadriglieriAIFemalePrefabs;
 
-	string[] nomiF = { "Sara", "Sofia", "Beatrice", "Federica", "Caterina", "Emma", "Vera", "Lucia", "Martina", "Matilde", "Letizia", "Giada", "Chiara", "Annalisa", "Francesca", "Victoria", "Giulia", "Ginevra", "Viola", "Greta", "Aurora", "Simona", "Monica", "Bianca", "Miriam", "Gloria", "Greta", "Ilaria", "Bianca", "Anita", "Gilda" };
-	string[] nomiM = { "Simone", "Lorenzo", "Nicola", "Francesco", "Michele", "Giovanni", "Fabio", "Nicolò", "Davide", "Matteo", "Tommaso", "Samuele", "Raffaele", "Giulio", "Pietro", "Luca", "Andrea", "Giacomo", "Gianluca", "Riccardo", "Filippo", "Lukas", "Gabriele" };
-	string[] cognomi = { "Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "Bruno", "Rizzo", "Moretti", "De Luca", "Marino", "Greco", "Barbieri", "Lombardi", "Giordano", "Rinaldi", "Colombo", "Mancini", "Longo", "Leone", "Martinelli", "Marchetti", "Martini", "Galli", "Gatti", "Mariani", "Ferrara", "Santoro", "Marini", "Bianco", "Conte", "Serra", "Farina", "Gentile", "Caruso", "Morelli", "Ferri", "Testa", "Ferraro", "Pellegrini", "Grassi", "Rossetti", "D'Angelo", "Bernardi", "Mazza", "Rizzi", "Silvestri", "Vitale", "Franco", "Parisi", "Martino", "Valentini", "Castelli", "Bellini", "Monti", "Lombardo", "Fiore", "Grasso", "Ferro", "Carbone", "Orlando", "Guerra", "Palmieri", "Milani", "Villa", "Viola", "Ruggeri", "De Santis", "D'Amico", "Negri", "Battaglia", "Sala", "Palumbo", "Benedetti", "Olivieri", "Giuliani", "Rosa", "Amato", "Molinari", "Alberti", "Barone", "Pellegrino", "Piazza", "Moro", "Vitali", "Spinelli", "Sartori", "Fabbri", "Vaccari", "Massari", "Medici", "Sarti", "Venturi", "Montanari", "Cappelli" };
+	readonly string[] nomiF = { "Sara", "Sofia", "Beatrice", "Federica", "Caterina", "Emma", "Vera", "Lucia", "Martina", "Matilde", "Letizia", "Giada", "Chiara", "Annalisa", "Francesca", "Victoria", "Giulia", "Ginevra", "Viola", "Greta", "Aurora", "Simona", "Monica", "Bianca", "Miriam", "Gloria", "Greta", "Ilaria", "Bianca", "Anita", "Gilda" };
+	readonly string[] nomiM = { "Simone", "Lorenzo", "Nicola", "Francesco", "Michele", "Giovanni", "Fabio", "Nicolò", "Davide", "Matteo", "Tommaso", "Samuele", "Raffaele", "Giulio", "Pietro", "Luca", "Andrea", "Giacomo", "Gianluca", "Riccardo", "Filippo", "Lukas", "Gabriele" };
+	readonly string[] cognomi = { "Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "Bruno", "Rizzo", "Moretti", "De Luca", "Marino", "Greco", "Barbieri", "Lombardi", "Giordano", "Rinaldi", "Colombo", "Mancini", "Longo", "Leone", "Martinelli", "Marchetti", "Martini", "Galli", "Gatti", "Mariani", "Ferrara", "Santoro", "Marini", "Bianco", "Conte", "Serra", "Farina", "Gentile", "Caruso", "Morelli", "Ferri", "Testa", "Ferraro", "Pellegrini", "Grassi", "Rossetti", "D'Angelo", "Bernardi", "Mazza", "Rizzi", "Silvestri", "Vitale", "Franco", "Parisi", "Martino", "Valentini", "Castelli", "Bellini", "Monti", "Lombardo", "Fiore", "Grasso", "Ferro", "Carbone", "Orlando", "Guerra", "Palmieri", "Milani", "Villa", "Viola", "Ruggeri", "De Santis", "D'Amico", "Negri", "Battaglia", "Sala", "Palumbo", "Benedetti", "Olivieri", "Giuliani", "Rosa", "Amato", "Molinari", "Alberti", "Barone", "Pellegrino", "Piazza", "Moro", "Vitali", "Spinelli", "Sartori", "Fabbri", "Vaccari", "Massari", "Medici", "Sarti", "Venturi", "Montanari", "Cappelli" };
 
 	public GameObject[] AIcontainers;
 	SaveSystem saveSystem;
@@ -92,14 +92,12 @@ public class SquadrigliaManager : MonoBehaviour
 
 	private void Start()
 	{
-		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		GameManager.instance.OnCounterValueChange += RefreshPlayerCounters;
 		InvokeRepeating(nameof(ChangeOtherSqCounters), 30, Random.Range(10, 30));
 		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, Random.Range(30, 60));
-		GameManager.instance.OnCampStart += WhenCampStarts;
-		saveSystem = SaveSystem.instance;
 		var campManager = CampManager.instance;
 		InitializeSquadriglias(campManager.camp.settings.gender, campManager.possibleFemaleSqs, campManager.possibleMaleSqs, campManager.camp.settings.femaleSqs, campManager.camp.settings.maleSqs, campManager.camp.settings.playerSqIndex);
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.squadrigliaManagerFileName));
 		InstantiateStuff();
 	}
 
@@ -117,17 +115,20 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		if (status != null)
 		{
-			squadriglieInGioco = new ConcreteSquadriglia[status.squadriglieInGioco.Length];
 			for (int i = 0; i < squadriglieInGioco.Length; i++)
 			{
 				var sq = squadriglieInGioco[i];
 				var stSq = status.squadriglieInGioco[i];
-				sq.AIPrefabTypes = (stSq.AIPrefabTypes);
-				sq.baseSq = (stSq.baseSq);
-				sq.materials = (stSq.materials);
-				sq.points = (stSq.points);
-				sq.ruoli = (stSq.ruoli);
-				sq.nomi = (stSq.nomi);
+				sq.AIPrefabTypes = stSq.AIPrefabTypes;
+				sq.baseSq.name = stSq.name;
+				sq.baseSq.femminile = stSq.femminile;
+				sq.materials = stSq.materials;
+				sq.points = stSq.points;
+				sq.nomi = stSq.nomi;
+				for (int b = 0; b < sq.buildings.Length; b++)
+				{
+					sq.buildings[b].gameObject.SetActive(stSq.activeBuildings[b]);
+				}
 			}
 		}
 	}
@@ -135,54 +136,39 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		public CompactSquadriglia[] squadriglieInGioco;
 	}
-
-	void ReceiveSavedData(LoadPriority p)
-	{
-		if (p == LoadPriority.High)
-		{
-			
-		}
-	}
-
-	void WhenCampStarts()
-	{
-		var campManager = CampManager.instance;
-		
-	}
-
 	void InstantiateStuff()
 	{
-		AIsManager.instance.allSquadriglieri = new Squadrigliere[squadriglieInGioco.Length * squadriglieInGioco[0].ruoli.Length - 1];
+		AIsManager.instance.allSquadriglieri = new Squadrigliere[squadriglieInGioco.Length * 5 - 1];
+		bool hasDestroyed = false;
 		for (int s = 0; s < squadriglieInGioco.Length; s++)
 		{
 			var sq = squadriglieInGioco[s];
 			for (int p = 0; p < sq.ruoli.Length; p++)
 			{
 				if (sq.baseSq.femminile) { Instantiate(squadriglieriAIFemalePrefabs[sq.AIPrefabTypes[p]], sq.angolo.position, Quaternion.identity, AIcontainers[s].transform); }
-				else { Instantiate(squadriglieriAIMalePrefabs[Random.Range(0, squadriglieriAIMalePrefabs.Length)], sq.angolo.position, Quaternion.identity, AIcontainers[s].transform); }
+				else { Instantiate(squadriglieriAIMalePrefabs[sq.AIPrefabTypes[p]], sq.angolo.position, Quaternion.identity, AIcontainers[s].transform); }
 			}
+
 			var squadriglieri = AIcontainers[s].GetComponentsInChildren<Squadrigliere>(true);
 			AIcontainers[s].transform.position = sq.angolo.transform.position;
-			bool hasDestroyed = false;
+
 			for (int p = 0; p < squadriglieri.Length; p++)
 			{
+				squadriglieri[p].objectName = sq.nomi[p];
 				squadriglieri[p].objectSubName = sq.ruoli[p] + " " + sq.baseSq.name;
 				squadriglieri[p].sq = sq.baseSq;
 				squadriglieri[p].SetMissingPriorityTarget("Tenda", sq.tenda.position);
-				squadriglieri[p].objectName = sq.nomi[p];
-				if (sq.baseSq == Player.instance.squadriglia)
+
+				if (sq.baseSq == Player.instance.squadriglia && p == 0)
 				{
 					Destroy(sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().clickListener);
 					Destroy(sq.angolo.GetComponent<AngoloDiAltraSquadriglia>());
-					if (p == 0)
-					{
-						Destroy(squadriglieri[p]);
-						hasDestroyed = true;
-					}
+					Destroy(squadriglieri[p]);
+					hasDestroyed = true;
 				}
 				else
 				{
-					AIsManager.instance.allSquadriglieri[hasDestroyed ? p + (s - 1) * sq.ruoli.Length + sq.ruoli.Length - 1 : p + s * sq.ruoli.Length] = squadriglieri[p];
+					AIsManager.instance.allSquadriglieri[p + s * sq.ruoli.Length - (hasDestroyed ? 1 : 0)] = squadriglieri[p];
 				}
 			}
 		}
@@ -191,54 +177,56 @@ public class SquadrigliaManager : MonoBehaviour
 	public void InitializeSquadriglias(Gender gender, Squadriglia[] possibleFemaleSqs, Squadriglia[] possibleMaleSqs, int[] femaleSqs, int[] maleSqs, int playerSqIndex)
 	{
 		squadriglieInGioco = new ConcreteSquadriglia[6];
-		/*     Section 1     */
 		Player.instance.squadriglia = gender == Gender.Femmina ? possibleFemaleSqs[femaleSqs[playerSqIndex]] : possibleMaleSqs[maleSqs[playerSqIndex]];
-		for (int s = 0; s < femaleSqs.Length; s++)
-		{
-			squadriglieInGioco[s].baseSq = possibleFemaleSqs[femaleSqs[s]];
-		}
-		for (int s = 0; s < maleSqs.Length; s++)
-		{
-			instance.squadriglieInGioco[s + femaleSqs.Length].baseSq = possibleMaleSqs[maleSqs[s]];
-		}
-		/*   Section 2    */
 		int currentNum = 1;
-		
+
 		for (int s = 0; s < squadriglieInGioco.Length; s++)
 		{
+			squadriglieInGioco[s] = new ConcreteSquadriglia();
 			var sq = squadriglieInGioco[s];
-			sq = new ConcreteSquadriglia();
-			sq.angolo = angoli[s].transform;
 			sq.nomi = new string[5];
+			sq.angolo = angoli[s].transform;
+
+			if (s < femaleSqs.Length)
+				sq.baseSq = possibleFemaleSqs[femaleSqs[s]];
+			else
+				sq.baseSq = possibleMaleSqs[maleSqs[s - femaleSqs.Length]];
+
 			for (int p = 0; p < sq.nomi.Length; p++)
 			{
 				sq.nomi[p] = sq.baseSq.femminile ? nomiF[Random.Range(0, nomiF.Length)] : nomiM[Random.Range(0, nomiM.Length)];
 				sq.nomi[p] += $" {cognomi[Random.Range(0, cognomi.Length)]}";
 			}
+
 			if (sq.baseSq == Player.instance.squadriglia)
 			{
-				playerAngoloPos.position = sq.angolo.transform.position;
 				sq.nomi[0] = Player.instance.playerName + " (Tu)";
 				sq.baseSq.num = squadriglieInGioco.Length;
+				playerAngoloPos.position = sq.angolo.transform.position;
 			}
 			else
 			{
-				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().objectName = "Angolo " + sq.baseSq.name;
-				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().squadriglia = sq.baseSq;
-				sq.buildings = new SpriteRenderer[otherSqBuildingsPrefabs.Length];
 				sq.baseSq.num = currentNum;
 				currentNum++;
+				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().objectName = "Angolo " + sq.baseSq.name;
+				sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().squadriglia = sq.baseSq;
 			}
-			for (int b = 0; b < otherSqBuildingsPrefabs.Length; b++)
+
+			sq.buildings = new SpriteRenderer[otherSqBuildingsPrefabs.Length];
+			for (int b = 0; b < sq.buildings.Length; b++)
 			{
 				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], sq.angolo.position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
 			}
+			foreach (var sp in sq.angolo.GetComponentsInChildren<SpriteRenderer>(true))
+			{
+				if (sp.gameObject.name == "Tent(Clone)")
+					sq.tenda = sp.transform;
+			}
 
-			sq.tenda = sq.angolo.Find("Tent");
 			sq.ruoli = new Ruolo[5] { Ruolo.Capo, Ruolo.Vice, Ruolo.Terzino, Ruolo.Novizio, Ruolo.Novizio };
 
-			/* Section 3 */
-			for (int p = 0; p < sq.ruoli.Length; p++)
+			sq.AIPrefabTypes = new int[sq.ruoli.Length];
+			for (int p = 0; p < sq.AIPrefabTypes.Length; p++)
 			{
 				sq.AIPrefabTypes[p] = Random.Range(0, sq.baseSq.femminile ? squadriglieriAIFemalePrefabs.Length : squadriglieriAIMalePrefabs.Length);
 			}
@@ -298,7 +286,7 @@ public class SquadrigliaManager : MonoBehaviour
 	}
 	#endregion
 
-	
+
 
 
 	public ConcreteSquadriglia[] GetInfo()

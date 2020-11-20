@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AIsManager : MonoBehaviour
 {
-	int percentageOfActiveAIs = 15;
+	const int percentageOfActiveAIs = 15;
 	public CapieCambu[] allCapiECambu;
-	[HideInInspector] [System.NonSerialized]
+	[System.NonSerialized]
 	public Squadrigliere[] allSquadriglieri;
 	public GameObject AIContainer;
 
@@ -25,7 +25,7 @@ public class AIsManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(SetActiveOrInactiveAI), .5f, Random.Range(6, 13));
+		InvokeRepeating(nameof(SetActiveOrInactiveAI), 1f, 30f);
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
@@ -51,12 +51,10 @@ public class AIsManager : MonoBehaviour
 	{
 		foreach (var sq in allSquadriglieri)
 		{
-			sq.gameObject.SetActive(true);
-			sq.ToggleUI(true);
+			sq.Unlock();
 			if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(100 - percentageOfActiveAIs))
 			{
-				sq.ForceTarget("Tenda", Random.Range(6, 13), true);
-				sq.ToggleUI(false);
+				sq.ForceTarget("Tenda", true, true);
 			}
 		}
 	}

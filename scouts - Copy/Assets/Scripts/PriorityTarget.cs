@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Priority Target", menuName = "PriorityAITarget")]
-public class PriorityTarget : ScriptableObject
+[System.Serializable]
+public class PriorityTarget
 {
-	public new string name;
+	public string name;
 	public Vector3 target;
 	public int priority;
 	public bool waitEndOfCurrentPath;
+	public bool automatic;
 	public Condition[] conditions;
 }

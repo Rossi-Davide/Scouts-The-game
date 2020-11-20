@@ -49,7 +49,7 @@ public class IterateMultipleObjs : MonoBehaviour
 		{
 			foreach (var o in i.objects)
 			{
-				foreach (var b in GameManager.instance.InGameObjects)
+				foreach (var b in GameManager.instance.inGameObjects)
 				{
 					if (o.objectName == b.objectName)
 						o.obj = b;

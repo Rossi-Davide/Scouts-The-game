@@ -8,10 +8,10 @@ public class SaveSystem : MonoBehaviour
 	public static SaveSystem instance;
 	private void Awake()
 	{
+		DontDestroyOnLoad(this);
 		if (instance != null)
 			throw new System.Exception("Savesystem is not a singleton");
 		instance = this;
-		DontDestroyOnLoad(this);
 	}
 	#endregion
 
@@ -62,6 +62,7 @@ public class SaveSystem : MonoBehaviour
 	public void GetSaveAll()
 	{
 		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName); }
+		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName); }
 		Debug.Log("saved data");
 	}
 
