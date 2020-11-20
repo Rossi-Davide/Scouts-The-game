@@ -64,7 +64,7 @@ public abstract class BaseAI : InGameObject
 	protected void ChangeAnimation()
 	{
 		float xMovement = rb.velocity.x, yMovement = rb.velocity.y;
-		animator.SetFloat("Speed", (xMovement > 0.01 || yMovement > 0.01) ? 1 : 0);
+		animator.SetFloat("Speed", 1);//accrocco
 		animator.SetFloat("XMovement", xMovement);
 		animator.SetFloat("YMovement", yMovement);
 	}
@@ -119,7 +119,6 @@ public abstract class BaseAI : InGameObject
 	protected override void FixedUpdate()
 	{
 		base.FixedUpdate();
-		ChangeAnimation();
 		if (currentPath == null)
 			return;
 		var nextWayPoint = currentPath.vectorPath[currentWayPointIndex];
@@ -138,7 +137,7 @@ public abstract class BaseAI : InGameObject
 		}
 		var nextMovement = ((Vector2)nextWayPoint - rb.position).normalized;
 		rb.velocity = nextMovement * speed * Time.deltaTime;
-		
+		ChangeAnimation();
 	}
 
 	void CheckPriorityPathConditions()
