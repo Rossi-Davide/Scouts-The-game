@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: 0166ef1b2555cce49b09127782bebbe5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1129572121346378178
+    second: tenda lvl3-1_0
+  - first:
+      213: -6993059338023466796
+    second: tenda lvl3-1_1
+  - first:
+      213: -5251853727570017721
+    second: tenda lvl3-1_2
+  - first:
+      213: 1089639929429167868
+    second: tenda lvl3-1_3
+  - first:
+      213: -8543970553802412397
+    second: tenda lvl3-1_4
+  - first:
+      213: -3825104116981196336
+    second: tenda lvl3-1_5
+  - first:
+      213: -446647632870336817
+    second: tenda lvl3-1_6
+  - first:
+      213: -8333754321942722
+    second: tenda lvl3-1_7
+  - first:
+      213: -4826131829799043895
+    second: tenda lvl3-1_8
+  - first:
+      213: -3989235312418448926
+    second: tenda lvl3-1_9
+  - first:
+      213: -8588621082864963316
+    second: tenda lvl3-1_10
+  - first:
+      213: 7854611854419047034
+    second: tenda lvl3-1_11
+  - first:
+      213: 1407917497816843882
+    second: tenda lvl3-1_12
+  - first:
+      213: 1760758913335459649
+    second: tenda lvl3-1_13
+  - first:
+      213: -8660808056815407589
+    second: tenda lvl3-1_14
+  - first:
+      213: -1711585456292415551
+    second: tenda lvl3-1_15
+  - first:
+      213: 6663745936061197480
+    second: tenda lvl3-1_16
+  - first:
+      213: 7930763965700423489
+    second: tenda lvl3-1_17
+  - first:
+      213: 865990771241588791
+    second: tenda lvl3-1_18
+  - first:
+      213: 7210119783603388528
+    second: tenda lvl3-1_19
+  - first:
+      213: -171718233889925755
+    second: tenda lvl3-1_20
+  - first:
+      213: -9173088800209841927
+    second: tenda lvl3-1_21
+  - first:
+      213: 5055067034359137788
+    second: tenda lvl3-1_22
+  - first:
+      213: -2036316197852547568
+    second: tenda lvl3-1_23
+  - first:
+      213: 5142491197074447486
+    second: tenda lvl3-1_24
+  - first:
+      213: -7574691551448761283
+    second: tenda lvl3-1_25
+  - first:
+      213: 3755812323550568248
+    second: tenda lvl3-1_26
+  - first:
+      213: -8574482437280038113
+    second: tenda lvl3-1_27
+  - first:
+      213: -6934133662276975579
+    second: tenda lvl3-1_28
+  - first:
+      213: 303092066505716997
+    second: tenda lvl3-1_29
+  - first:
+      213: -231256072264274486
+    second: tenda lvl3-1_30
+  - first:
+      213: -6828695560004906118
+    second: tenda lvl3-1_31
+  - first:
+      213: 1269847078022639773
+    second: tenda lvl3-1_32
+  - first:
+      213: -8350306083730971317
+    second: tenda lvl3-1_33
+  - first:
+      213: 3185486883427376401
+    second: tenda lvl3-1_34
+  - first:
+      213: 1818226275338279030
+    second: tenda lvl3-1_35
+  - first:
+      213: -7790289532861603617
+    second: tenda lvl3-1_36
+  - first:
+      213: 4769081596012739571
+    second: tenda lvl3-1_37
+  - first:
+      213: -1726911956741058788
+    second: tenda lvl3-1_38
+  - first:
+      213: -1398042516371582752
+    second: tenda lvl3-1_39
+  - first:
+      213: 2366978176992424856
+    second: tenda lvl3-1_40
+  - first:
+      213: -5595174054907096952
+    second: tenda lvl3-1_41
+  - first:
+      213: -5686954836872129249
+    second: tenda lvl3-1_42
+  - first:
+      213: 4469466032407654682
+    second: tenda lvl3-1_43
+  - first:
+      213: 6301118373536692884
+    second: tenda lvl3-1_44
+  - first:
+      213: -3169412975934995858
+    second: tenda lvl3-1_45
+  - first:
+      213: 3796686511649421994
+    second: tenda lvl3-1_46
+  - first:
+      213: 7536089317656727792
+    second: tenda lvl3-1_47
+  - first:
+      213: -4798408331139956449
+    second: tenda lvl3-1_48
+  - first:
+      213: 6240742143485766266
+    second: tenda lvl3-1_49
+  - first:
+      213: -1758173990088077381
+    second: tenda lvl3-1_50
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tenda lvl3-1_0
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 226
+        width: 617
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 400, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36f6fee324f250f0800000000000000
+      internalID: -1129572121346378178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

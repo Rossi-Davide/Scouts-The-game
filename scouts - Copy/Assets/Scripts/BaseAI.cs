@@ -64,7 +64,6 @@ public abstract class BaseAI : InGameObject
 	protected void ChangeAnimation()
 	{
 		float xMovement = rb.velocity.x, yMovement = rb.velocity.y;
-		animator.SetFloat("Speed", 1);//accrocco
 		animator.SetFloat("XMovement", xMovement);
 		animator.SetFloat("YMovement", yMovement);
 	}
@@ -138,6 +137,14 @@ public abstract class BaseAI : InGameObject
 		var nextMovement = ((Vector2)nextWayPoint - rb.position).normalized;
 		rb.velocity = nextMovement * speed * Time.deltaTime;
 		ChangeAnimation();
+
+		if("mettere condizione di inizio dialogo"){
+			animator.SetBool("move", false);//accrocco
+		}
+		else
+		{
+			animator.SetBool("move", true);//accrocco
+		}
 	}
 
 	void CheckPriorityPathConditions()

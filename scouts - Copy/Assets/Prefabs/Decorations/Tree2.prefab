@@ -48,26 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: 
+  objectSubName: 
   buttons:
   - buttonText: Fai legna
-    buttonNum: 1
     color: 2
-    obj: {fileID: 0}
-    priceOrPrizeAmount: 15
-    priceOrPrizeType: 1
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
   maxDistanceFromPlayer: 1.5
-  wpCanvas: {fileID: 0}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
   isInstantiating: 0
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  possiblePositions: []
   clickListener: {fileID: 7904486559790620936, guid: cd50b1e6d57cd3d47a5b74c51aab48b7,
     type: 3}
+  states: []
 --- !u!95 &2578781
 Animator:
   serializedVersion: 3
@@ -4848,8 +4842,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 5354429476588687777, guid: b3b92152df6f6174b90b6b313e9f3c94,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65c41a2cf222a11449d0aa7eac27443a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
