@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 	public InGameObject[] inGameObjects;
 
 	public int pointsValue, materialsValue, energyValue;
-	public int energyMaxValue = 100, materialsMaxValue = 300, pointsMaxValue = 70;
+	public int energyMaxValue, materialsMaxValue, pointsMaxValue;
 	public GameObject buttonCanvas;
 
 	#region Singleton
@@ -445,10 +445,9 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 	#region General
-	SaveSystem saveSystem;
+	
 	void Start()
 	{
-		OnCampStart += WhenCampStarts;
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
@@ -460,9 +459,17 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating(nameof(CheckRain), 1, 1);
 		InvokeRepeating(nameof(RefreshWaitToUseObjects), 1, 1);
 		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
+
+		currentDay = 1;
+		currentHour = 7;
+		energyMaxValue = 100;
+		materialsMaxValue = 500;
+		pointsMaxValue = 70;
+		energyValue = 100;
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName));
 	}
 
-	public Status GetStatus()
+	public Status SendStatus()
 	{
 		return new Status
 		{
@@ -509,18 +516,6 @@ public class GameManager : MonoBehaviour
 		public int currentMinute;
 		public int currentHour;
 		public int currentDay;
-	}
-
-
-
-
-
-
-
-	void WhenCampStarts()
-	{
-		currentDay = 1;
-		currentHour = 7;
 	}
 
 	void RefreshInGameObjs()

@@ -72,16 +72,17 @@ public abstract class BaseAI : InGameObject
 		if (keepTarget > 0)
 		{
 			StartCoroutine(GameManager.Wait(keepTarget, Unlock));
-			if (disable)
-			{
-				gameObject.SetActive(false);
-				ToggleUI(false);
-			}
+			animator.SetBool("move", false);
+		}
+		if (disable)
+		{
+			gameObject.SetActive(false);
+			animator.SetBool("move", false);
+			ToggleUI(false);
 		}
 		if (stayUntil)
 		{
-			gameObject.SetActive(false);
-			ToggleUI(false);
+			animator.SetBool("move", false);
 		}
 		else
 			CheckPriorityTargetsThatWait();
@@ -94,6 +95,7 @@ public abstract class BaseAI : InGameObject
 		keepTarget = 0;
 		stayUntil = false;
 		disable = false;
+		animator.SetBool("move", true);
 		CheckPriorityTargetsThatWait();
 	}
 
@@ -137,14 +139,6 @@ public abstract class BaseAI : InGameObject
 		var nextMovement = ((Vector2)nextWayPoint - rb.position).normalized;
 		rb.velocity = nextMovement * speed * Time.deltaTime;
 		ChangeAnimation();
-
-		if("mettere condizione di inizio dialogo"){
-			animator.SetBool("move", false);//accrocco
-		}
-		else
-		{
-			animator.SetBool("move", true);//accrocco
-		}
 	}
 
 	void CheckPriorityPathConditions()

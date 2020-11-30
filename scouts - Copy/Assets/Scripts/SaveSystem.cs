@@ -63,6 +63,7 @@ public class SaveSystem : MonoBehaviour
 	{
 		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName); }
 		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName); }
+		if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName); }
 		Debug.Log("saved data");
 	}
 
