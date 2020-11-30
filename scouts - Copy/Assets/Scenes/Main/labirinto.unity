@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -438,6 +438,8 @@ MonoBehaviour:
   pointLight: {fileID: 344764942}
   regole: {fileID: 1480515615}
   titolo: {fileID: 1480515614}
+  pannelloTimer: {fileID: 0}
+  timer: {fileID: 0}
   luce1: {fileID: 2095918650}
   luce2: {fileID: 344764939}
   testo1: {fileID: 1480515612}
@@ -459,6 +461,10 @@ MonoBehaviour:
   dinamite: {fileID: 7314134382979502102, guid: 8ffa93fd8e9761946a2e77ed7f46615c,
     type: 3}
   candy: {fileID: 379072847283506073, guid: e6d4d823e99edee4b8d45aea04779518, type: 3}
+  bottoneTornaAlGioco: {fileID: 0}
+  sconfitta: {fileID: 0}
+  victoryText: {fileID: 0}
+  score: {fileID: 0}
 --- !u!1 &198380620
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +691,7 @@ RectTransform:
   - {fileID: 2136843678}
   - {fileID: 547192844}
   m_Father: {fileID: 545030168}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1566,8 +1572,8 @@ RectTransform:
   - {fileID: 1357184205}
   - {fileID: 1332473949}
   - {fileID: 2137808496}
-  - {fileID: 1480515610}
   - {fileID: 261266086}
+  - {fileID: 1480515610}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49725,7 +49731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159155559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.023, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 770181060}
@@ -50459,7 +50465,7 @@ PrefabInstance:
     - target: {fileID: 3992244354773688064, guid: 934331e6ae3d52f40ba4f7d00e54e240,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3992244354773688064, guid: 934331e6ae3d52f40ba4f7d00e54e240,
         type: 3}
