@@ -8,7 +8,7 @@ public abstract class ObjectBase : ScriptableObject
     public Sprite icon;
     public SpecificShopScreen shopScreen;
     public int maxAmount;
-    public int maxLevel; //index
+    public int maxLevel; //num
     public bool usingLevel;
     public bool usingAmount;
 
@@ -21,7 +21,7 @@ public abstract class ObjectBase : ScriptableObject
 
     [Header("Please do not modify if not testing")]
     public int currentAmount;
-    public int level; //index
+    public int level; //num
     public bool exists;
 
     public virtual void DoAction()
@@ -40,6 +40,23 @@ public abstract class ObjectBase : ScriptableObject
     {
         return new PlayerBuilding(this);
     }
+    public ObjectBaseCompact ToObjectBaseCompact()
+	{
+        return new ObjectBaseCompact
+        {
+            currentAmount = currentAmount,
+            level = level,
+            exists = exists,
+        };
+	}
+
+}
+[System.Serializable]
+public class ObjectBaseCompact {
+
+    public int currentAmount;
+    public int level; //index
+    public bool exists;
 
 }
 

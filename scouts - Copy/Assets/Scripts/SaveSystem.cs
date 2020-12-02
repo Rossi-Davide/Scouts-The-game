@@ -9,9 +9,8 @@ public class SaveSystem : MonoBehaviour
 	private void Awake()
 	{
 		DontDestroyOnLoad(this);
-		if (instance != null)
-			throw new System.Exception("Savesystem is not a singleton");
-		instance = this;
+		if (instance == null)
+			instance = this;
 	}
 	#endregion
 
@@ -64,6 +63,7 @@ public class SaveSystem : MonoBehaviour
 		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName); }
 		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName); }
 		if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName); }
+		if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName); }
 		Debug.Log("saved data");
 	}
 

@@ -489,18 +489,21 @@ public class GameManager : MonoBehaviour
 	}
 	public void SetStatus(Status status)
 	{
-		energyValue = status.energyValue;
-		materialsValue = status.materialsValue;
-		pointsValue = status.pointsValue;
-		energyMaxValue = status.energyMaxValue;
-		materialsMaxValue = status.materialsMaxValue;
-		pointsMaxValue = status.pointsMaxValue;
-		isRaining = status.isRaining;
-		rainingTimeLeft = status.rainingTimeLeft;
-		rainingWaitTimeLeft = status.rainingWaitTimeLeft;
-		currentMinute = status.currentMinute;
-		currentHour = status.currentHour;
-		currentDay = status.currentDay;
+		if (status != null)
+		{
+			energyValue = status.energyValue;
+			materialsValue = status.materialsValue;
+			pointsValue = status.pointsValue;
+			energyMaxValue = status.energyMaxValue;
+			materialsMaxValue = status.materialsMaxValue;
+			pointsMaxValue = status.pointsMaxValue;
+			isRaining = status.isRaining;
+			rainingTimeLeft = status.rainingTimeLeft;
+			rainingWaitTimeLeft = status.rainingWaitTimeLeft;
+			currentMinute = status.currentMinute;
+			currentHour = status.currentHour;
+			currentDay = status.currentDay;
+		}
 	}
 	public class Status
 	{

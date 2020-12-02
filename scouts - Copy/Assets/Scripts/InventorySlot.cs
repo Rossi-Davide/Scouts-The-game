@@ -10,7 +10,7 @@ public class InventorySlot : MonoBehaviour
 	public Item item;
 	public TextMeshProUGUI amountText;
 
-	private void Awake()
+	private void Start()
 	{
 		icon = GetComponent<Image>();
 	}

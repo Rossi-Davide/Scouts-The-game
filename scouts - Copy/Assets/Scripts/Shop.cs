@@ -65,6 +65,40 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(costruzioni, SpecificShopScreen.Costruzioni);
 		OrganizeObjects(decorazioni, SpecificShopScreen.Decorazioni);
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
+
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.shopFileName));
+	}
+
+	public Status SendStatus()
+	{
+		var items = new ObjectBaseCompact[itemDatabase.Length];
+		for (int i = 0; i < items.Length; i++)
+			items[i] = itemDatabase[i].ToObjectBaseCompact();
+		var buildings = new ObjectBaseCompact[buildingDatabase.Length];
+		for (int i = 0; i < buildings.Length; i++)
+			buildings[i] = buildingDatabase[i].ToObjectBaseCompact();
+		return new Status
+		{
+			itemDatabase = items,
+			buildingDatabase = buildings
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			for (int i = 0; i < itemDatabase.Length; i++)
+			{
+				itemDatabase[i].currentAmount = status.itemDatabase[i].currentAmount;
+				itemDatabase[i].level = status.itemDatabase[i].level;
+				itemDatabase[i].exists = status.itemDatabase[i].exists;
+			}
+		}
+	}
+	public class Status
+	{
+		public ObjectBaseCompact[] itemDatabase;
+		public ObjectBaseCompact[] buildingDatabase;
 	}
 
 	void ReceiveSavedData(LoadPriority p)

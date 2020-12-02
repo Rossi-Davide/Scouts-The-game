@@ -27,7 +27,7 @@ MonoBehaviour:
     warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
       oggetto!"
   hasInfoPanel: 1
-  showInActionList: 1
+  showInActionList: 0
   state: {fileID: 0}
   timeNeeded: 10
   energyGiven: 0

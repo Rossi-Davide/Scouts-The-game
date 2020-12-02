@@ -27,7 +27,7 @@ public class ActionManager : MonoBehaviour
 		isOpen = !isOpen;
 		panel.SetActive(isOpen);
 		overlay.SetActive(isOpen);
-		PanZoom.instance.enabled = !isOpen;
+		PanZoom.instance.canDo = !isOpen;
 		for (int i = 0; i < currentActions.Length; i++)
 		{
 			var s = actionSpots[i];
