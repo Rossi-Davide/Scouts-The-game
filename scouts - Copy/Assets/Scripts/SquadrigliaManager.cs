@@ -163,7 +163,7 @@ public class SquadrigliaManager : MonoBehaviour
 				{
 					Destroy(sq.angolo.GetComponent<AngoloDiAltraSquadriglia>().clickListener);
 					Destroy(sq.angolo.GetComponent<AngoloDiAltraSquadriglia>());
-					Destroy(squadriglieri[p]);
+					Destroy(squadriglieri[p].gameObject);
 					hasDestroyed = true;
 				}
 				else

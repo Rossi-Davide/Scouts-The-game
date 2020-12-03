@@ -53,7 +53,6 @@ public class ChestManager : MonoBehaviour
 				var s = InventoryManager.instance.slots[y];
 				fakeInventorySlots[y].ResetSlot();
 				fakeInventorySlots[y].AddItem(s.item);
-				fakeInventorySlots[y].RefreshInventoryAmount();
 			}
 		}
 		else

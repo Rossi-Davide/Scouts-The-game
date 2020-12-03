@@ -53,15 +53,6 @@ public abstract class InGameObject : MonoBehaviour
 		}
 	}
 
-
-	protected virtual void FixedUpdate()
-	{
-		if (checkPositionEachFrame)
-		{
-			MoveUI();
-		}
-	}
-
 	protected Animator animator;
 	public BuildingState[] states;
 	protected void ChangeAnimations()
@@ -120,6 +111,9 @@ public abstract class InGameObject : MonoBehaviour
 			clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
 		}
 		clickListener.onClick.AddListener(OnClick);
+
+		if (checkPositionEachFrame)
+			InvokeRepeating(nameof(MoveUI), Time.deltaTime, Time.deltaTime);
 
 		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
@@ -300,7 +294,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		if (ActionButtons.instance.selected == this)
 		{
-			buttonsText.text = objectSubName != null ? objectName + $" ({objectSubName})" : objectName;
+			buttonsText.text = objectSubName != "" ? objectName + $" ({objectSubName})" : objectName;
 			foreach (var b in buttons)
 			{
 				b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(b.isWaiting);

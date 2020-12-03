@@ -20,7 +20,7 @@ public class SaveSystem : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(GetSaveAll), 5, 5);
+		InvokeRepeating(nameof(GetSaveAll), 5, 20);
 	}
 	private void OnApplicationQuit()
 	{

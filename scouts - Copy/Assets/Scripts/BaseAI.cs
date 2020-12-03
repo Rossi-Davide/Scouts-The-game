@@ -4,26 +4,20 @@ using System.Collections;
 
 public abstract class BaseAI : InGameObject
 {
-	public Vector3[] randomTarget = { 
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
-		new Vector3(1, 1, 0),
+	protected Vector3[] randomTarget = {
+		new Vector3(-1, -1, 0),
+		new Vector3(5, 5, 0),
 	}; //set all the different targets
 	protected float speed = 50;
 
-	public float minWayPointDistance;
-	protected Path currentPath;
-	protected int currentWayPointIndex;
+	protected float minWayPointDistance = 4;
 	protected Seeker seeker;
 	protected Rigidbody2D rb;
+
+	//current stuff
 	Vector3 currentTarget;
+	protected Path currentPath;
+	protected int currentWayPointIndex;
 
 	public PriorityTarget[] priorityTargets;
 
@@ -36,6 +30,8 @@ public abstract class BaseAI : InGameObject
 		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponentInChildren<Animator>();
+		animator.SetBool("move", true);
+
 		CreateNewPath(null);
 
 		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
@@ -117,9 +113,8 @@ public abstract class BaseAI : InGameObject
 		CreateNewPath(target);
 	}
 
-	protected override void FixedUpdate()
+	protected void FixedUpdate()
 	{
-		base.FixedUpdate();
 		if (currentPath == null)
 			return;
 		var nextWayPoint = currentPath.vectorPath[currentWayPointIndex];

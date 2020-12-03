@@ -43,14 +43,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230d8fc718e3ea343944c929e9cc8422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 24300002, guid: d2c21433200a7e44ebb94f957911670d, type: 2}
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: musicaGioco
+    clip: {fileID: 8300000, guid: 39d085ac76afd74439d2947e6af474b1, type: 3}
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 8601028313873911329, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: click
+    clip: {fileID: 8300000, guid: f53b888800a4e5846939c73fac61fa9f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: clickDepitched
+    clip: {fileID: 8300000, guid: f53b888800a4e5846939c73fac61fa9f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 0.7
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: whoosh
+    clip: {fileID: 8300000, guid: 974d806547d3b82429fec58ab29d5518, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: walking
+    clip: {fileID: 8300000, guid: cbe63f0dc70be07489a0837664f27839, type: 3}
+    volume: 0.7
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: rain
+    clip: {fileID: 8300000, guid: 9af7a9f1dba87d347b40a968a9d013df, type: 3}
+    volume: 0.7
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: fire
+    clip: {fileID: 8300000, guid: 656cbb0493e045849bf0f7575821470f, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
+  - name: nature
+    clip: {fileID: 8300000, guid: 3a9b868112c572c41b51bdfa1f9591da, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
     source: {fileID: 0}

@@ -307,30 +307,38 @@ public class GameManager : MonoBehaviour
 	public GameObject wpCanvas;
 	public GameObject healthBarPrefab, loadingBarPrefab, nameTextPrefab, subNameTextPrefab;
 
-	public GameObject[] decorations;
-	public Vector2[] startAreaSpawn, endAreaSpawn;
-	void SpawnDecorations()
+	public Plant[] plantPrefabs;
+	public PlantSpawnArea[] spawnAreas;
+	public Plant[] spawnedPlants;
+	void SpawnDecorations(int? toSpawn)
 	{
-		foreach (var d in decorations)
+		if (toSpawn == null) { toSpawn = Random.Range(20, 30); }
+		for (int spawned = 0; spawned < toSpawn; spawned++)
 		{
-			for (int spawned = 0; spawned < Random.Range(5, 8); spawned++)
-			{
-				int currentArea = Random.Range(0, startAreaSpawn.Length);
-				float posX = Random.Range(startAreaSpawn[currentArea].x, endAreaSpawn[currentArea].x);
-				float posY = Random.Range(startAreaSpawn[currentArea].y, endAreaSpawn[currentArea].y);
-				GameObject decoration = Instantiate(d, new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
-				decoration.GetComponent<Plant>().wpCanvas = wpCanvas;
-			}
+			int currentArea = Random.Range(0, spawnAreas.Length);
+			float posX = Random.Range(spawnAreas[currentArea].start.x, spawnAreas[currentArea].end.x);
+			float posY = Random.Range(spawnAreas[currentArea].start.y, spawnAreas[currentArea].end.y);
+			Plant decoration = Instantiate(plantPrefabs[Random.Range(0, plantPrefabs.Length)], new Vector3(posX, posY, 0), Quaternion.identity, wpCanvas.transform);
+			decoration.wpCanvas = wpCanvas;
 		}
+	}
+
+	[System.Serializable]
+	public class PlantSpawnArea
+	{
+		public Vector2 start;
+		public Vector2 end;
 	}
 
 
 	#endregion
 	#region DayNightCycle & Rain
 	const float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public int currentMinute, currentHour, currentDay;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public int totalDays = 14;
 	void IncreaseTime()
 	{
@@ -366,10 +374,11 @@ public class GameManager : MonoBehaviour
 			CampEnded();
 		}
 		isDay = !(currentHour > 20 || currentHour < 7);
-		if (!isDay) { StartCoroutine(ChangeLight()); };
+		ChangeLight();
 	}
 
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public bool isDay;
 	private bool hasOpenedCounter = false;
 	public GameObject closeDayCounter, openDayCounter;
@@ -383,23 +392,15 @@ public class GameManager : MonoBehaviour
 		RefreshCounterText();
 	}
 	private Light2D globalLight;
-	IEnumerator ChangeLight()
+	void ChangeLight()
 	{
-		if (isDay)
+		if (!isDay && globalLight.intensity > .6f)
 		{
-			while (globalLight.intensity > .6f)
-			{
-				globalLight.intensity -= .01f;
-				yield return new WaitForSeconds(.08f);
-			}
+			globalLight.intensity -= .01f;
 		}
-		else
+		else if (isDay && globalLight.intensity < 1)
 		{
-			while (globalLight.intensity < 1)
-			{
-				globalLight.intensity += .01f;
-				yield return new WaitForSeconds(.08f);
-			}
+			globalLight.intensity += .01f;
 		}
 	}
 	void RefreshCounterText()
@@ -413,9 +414,11 @@ public class GameManager : MonoBehaviour
 		closeDayCounter.GetComponentInChildren<TextMeshProUGUI>().text = currentDay.ToString();
 	}
 
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public bool isRaining;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public int rainingTimeLeft, rainingWaitTimeLeft;
 	void CheckRain()
 	{
@@ -445,14 +448,14 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 	#region General
-	
+
 	void Start()
 	{
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
-		SpawnDecorations();
-		InvokeRepeating(nameof(SpawnDecorations), 30, Random.Range(45, 75));
+		SpawnDecorations(null);
+		InvokeRepeating(nameof(SpawnDecorations), 55f, 55);
 		InvokeRepeating(nameof(PeriodicItemActionSlow), 60, 60);
 		InvokeRepeating(nameof(PeriodicItemActionMedium), 30, 30);
 		InvokeRepeating(nameof(PeriodicItemActionFast), 15, 15);
@@ -466,6 +469,7 @@ public class GameManager : MonoBehaviour
 		materialsMaxValue = 500;
 		pointsMaxValue = 70;
 		energyValue = 100;
+		globalLight.intensity = 1f;
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName));
 	}
 
@@ -484,7 +488,9 @@ public class GameManager : MonoBehaviour
 			rainingWaitTimeLeft = rainingWaitTimeLeft,
 			currentMinute = currentMinute,
 			currentHour = currentHour,
-			currentDay = currentDay
+			currentDay = currentDay,
+			globalLight = globalLight.intensity,
+			totalPlantsSpawned = spawnedPlants.Length,
 		};
 	}
 	public void SetStatus(Status status)
@@ -503,6 +509,8 @@ public class GameManager : MonoBehaviour
 			currentMinute = status.currentMinute;
 			currentHour = status.currentHour;
 			currentDay = status.currentDay;
+			globalLight.intensity = status.globalLight;
+			if (status.totalPlantsSpawned > spawnedPlants.Length) { SpawnDecorations(status.totalPlantsSpawned - spawnedPlants.Length); }
 		}
 	}
 	public class Status
@@ -519,17 +527,15 @@ public class GameManager : MonoBehaviour
 		public int currentMinute;
 		public int currentHour;
 		public int currentDay;
+		public float globalLight;
+		public int totalPlantsSpawned;
 	}
 
 	void RefreshInGameObjs()
 	{
-		StartCoroutine(RefreshInGameObjsCoroutine());
-	}
-	IEnumerator RefreshInGameObjsCoroutine()
-	{
 		inGameObjects = FindObjectsOfType<InGameObject>();
-		yield return new WaitForEndOfFrame();
 		ObjectArrayUpdated();
+		spawnedPlants = FindObjectsOfType<Plant>();
 	}
 	void CheckPlayerDeath(Counter c, int delta)
 	{
