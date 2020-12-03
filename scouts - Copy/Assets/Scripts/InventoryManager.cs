@@ -174,7 +174,7 @@ public class InventoryManager : MonoBehaviour
 			if (t.phase == TouchPhase.Moved && !dragging && draggingSlot != null && draggingSlot.item != null)
 			{
 				draggingSlot.amountText.gameObject.SetActive(false);
-				draggingSlot.icon.enabled = false;
+				draggingSlot.GetComponent<Image>().enabled = false;
 				draggingSlot.c = Instantiate(draggingSlot.clone.gameObject, t.position, Quaternion.identity, ovCanvas.transform);
 				draggingSlot.c.GetComponent<Image>().sprite = draggingSlot.item.icon;
 				draggingSlot.c.GetComponent<InventoryDragAndDrop>().parent = draggingSlot;

@@ -5,15 +5,8 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
 	[HideInInspector] [System.NonSerialized]
-	public Image icon;
-	[HideInInspector] [System.NonSerialized]
 	public Item item;
 	public TextMeshProUGUI amountText;
-
-	private void Start()
-	{
-		icon = GetComponent<Image>();
-	}
 
 	public void ResetSlot()
 	{
@@ -25,9 +18,9 @@ public class InventorySlot : MonoBehaviour
 		if (i != null)
 		{
 			item = i;
-			icon.sprite = item.icon;
+			GetComponent<Image>().sprite = item.icon;
 		}
-		icon.enabled = item != null;
+		GetComponent<Image>().enabled = item != null;
 		RefreshInventoryAmount();
 	}
 
@@ -39,11 +32,11 @@ public class InventorySlot : MonoBehaviour
 	{
 		if (item != null)
 		{
-			icon.sprite = item.icon;
+			GetComponent<Image>().sprite = item.icon;
 			amountText.text = item.currentAmount.ToString();
 			amountText.gameObject.SetActive(item.currentAmount > 1);
 		}
-		icon.enabled = item != null;
+		GetComponent<Image>().enabled = item != null;
 	}
 
 
@@ -56,7 +49,7 @@ public class InventorySlot : MonoBehaviour
 	{
 		RefreshInventoryAmount();
 		InventoryManager.dragging = false;
-		icon.enabled = true;
+		GetComponent<Image>().enabled = true;
 		Destroy(c);
 	}
 	public void Drop(InventorySlot s)

@@ -454,7 +454,7 @@ public class GameManager : MonoBehaviour
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
-		SpawnDecorations(null);
+
 		InvokeRepeating(nameof(SpawnDecorations), 55f, 55);
 		InvokeRepeating(nameof(PeriodicItemActionSlow), 60, 60);
 		InvokeRepeating(nameof(PeriodicItemActionMedium), 30, 30);
@@ -510,8 +510,10 @@ public class GameManager : MonoBehaviour
 			currentHour = status.currentHour;
 			currentDay = status.currentDay;
 			globalLight.intensity = status.globalLight;
-			if (status.totalPlantsSpawned > spawnedPlants.Length) { SpawnDecorations(status.totalPlantsSpawned - spawnedPlants.Length); }
+			SpawnDecorations(status.totalPlantsSpawned);
 		}
+		else
+			SpawnDecorations(null);
 	}
 	public class Status
 	{
