@@ -155,6 +155,9 @@ TextureImporter:
   - first:
       213: -1758173990088077381
     second: tenda lvl3-1_50
+  - first:
+      213: 1917462562545782907
+    second: tenda lvl3-1_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -279,19 +282,229 @@ TextureImporter:
       name: tenda lvl3-1_0
       rect:
         serializedVersion: 2
-        x: 203
-        y: 226
-        width: 617
-        height: 368
+        x: 58
+        y: 258
+        width: 230
+        height: 330
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 400, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e36f6fee324f250f0800000000000000
-      internalID: -1129572121346378178
+      spriteID: b70d6ae9a023c9a10800000000000000
+      internalID: 1917462562545782907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 506
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d802e73599a3fe90800000000000000
+      internalID: -6993059338023466796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 226
+        width: 405
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742c0eb3cdaad17b0800000000000000
+      internalID: -5251853727570017721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 431
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe05be1ebd2f1f00800000000000000
+      internalID: 1089639929429167868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 368
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ea5399c08bd6980800000000000000
+      internalID: -8543970553802412397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 363
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9937662108aeac0800000000000000
+      internalID: -3825104116981196336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 356
+        width: 27
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc69ef628503dc9f0800000000000000
+      internalID: -446647632870336817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_7
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37cefd9e7462eff0800000000000000
+      internalID: -8333754321942722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_8
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 295
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc3f95bba2260db0800000000000000
+      internalID: -4826131829799043895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 270
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e99ad58e9363a8c0800000000000000
+      internalID: -3989235312418448926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tenda lvl3-1_10
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 271
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01376d21a61fc880800000000000000
+      internalID: -8588621082864963316
       vertices: []
       indices: 
       edges: []
