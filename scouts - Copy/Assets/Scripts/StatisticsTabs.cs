@@ -28,7 +28,7 @@ public class StatisticsTabs : MonoBehaviour
 	{
 		nomeSq.text = SquadrigliaManager.instance.GetSquadrigliaName(selectedTab);
 		description.text = SquadrigliaManager.instance.GetSquadrigliaDescription(selectedTab);
-		materials.text = SquadrigliaManager.instance.GetSquadrigliaMaterials(selectedTab);
-		points.text = SquadrigliaManager.instance.GetSquadrigliaPoints(selectedTab);
+		materials.text = SquadrigliaManager.instance.GetSquadrigliaMaterials(selectedTab).ToString();
+		points.text = SquadrigliaManager.instance.GetSquadrigliaPoints(selectedTab).ToString();
 	}
 }

@@ -66,24 +66,24 @@ public class SquadrigliaManager : MonoBehaviour
 		}
 		throw new System.Exception("La squadriglia ricercata non esiste" + n);
 	}
-	public string GetSquadrigliaMaterials(int n)
+	public int GetSquadrigliaMaterials(int n)
 	{
 		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq.baseSq.num == n)
 			{
-				return sq.materials.ToString();
+				return sq.materials;
 			}
 		}
 		throw new System.Exception("La squadriglia ricercata non esiste");
 	}
-	public string GetSquadrigliaPoints(int n)
+	public int GetSquadrigliaPoints(int n)
 	{
 		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
 			if (sq.baseSq.num == n)
 			{
-				return sq.points.ToString();
+				return sq.points;
 			}
 		}
 		throw new System.Exception("La squadriglia ricercata non esiste");

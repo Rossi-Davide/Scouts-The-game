@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
 	#endregion
 	#region Events
 	public event System.Action<Counter, int> OnCounterValueChange;
-	public event System.Action OnPlayerDeath;
 	public event System.Action OnCampEnd;
 	public event System.Action OnCampStart;
 	public event System.Action<bool> OnSunsetOrSunrise;
@@ -107,15 +106,6 @@ public class GameManager : MonoBehaviour
 			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
 		}
 		OnCounterMaxValueChange?.Invoke(counter, delta);
-	}
-
-	private void PlayerDied()
-	{
-		OnPlayerDeath?.Invoke();
-	}
-	private void CampEnded()
-	{
-		OnCampEnd?.Invoke();
 	}
 	public void CampStarted()
 	{
@@ -471,6 +461,28 @@ public class GameManager : MonoBehaviour
 		energyValue = 100;
 		globalLight.intensity = 1f;
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName));
+	}
+
+
+	public GameObject victoryPanel, deathPanel, overlay;
+	private void CampEnded()
+	{
+		Time.timeScale = 0;
+
+		var positions = victoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
+		for (int i = 0; i < positions.Length; i++)
+		{
+			
+		}
+
+		victoryPanel.SetActive(true);
+		overlay.SetActive(true);
+	}
+	void PlayerDied()
+	{
+		Time.timeScale = 0;
+		deathPanel.SetActive(true);
+		overlay.SetActive(true);
 	}
 
 	public Status SendStatus()
