@@ -4,6 +4,8 @@ using TMPro;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class GameManager : MonoBehaviour
 	public int pointsValue, materialsValue, energyValue;
 	public int energyMaxValue, materialsMaxValue, pointsMaxValue;
 	public GameObject buttonCanvas;
-
+	public Volume mainScene;
 	#region Singleton
 	public static GameManager instance;
 	private void Awake()
@@ -382,8 +384,11 @@ public class GameManager : MonoBehaviour
 		RefreshCounterText();
 	}
 	private Light2D globalLight;
+	
 	void ChangeLight()
 	{
+		VolumeProfile mainSceneProf = mainScene.sharedProfile;
+
 		if (!isDay && globalLight.intensity > .6f)
 		{
 			globalLight.intensity -= .01f;

@@ -4,10 +4,6 @@ using System.Collections;
 
 public abstract class BaseAI : InGameObject
 {
-	protected Vector3[] randomTarget = {
-		new Vector3(-1, -1, 0),
-		new Vector3(5, 5, 0),
-	}; //set all the different targets
 	protected float speed = 50;
 
 	protected float minWayPointDistance = 4;
@@ -41,7 +37,11 @@ public abstract class BaseAI : InGameObject
 
 	protected virtual void CreateNewPath(Vector3? priorityTarget)
 	{
-		currentTarget = priorityTarget != null ? priorityTarget.Value : randomTarget[Random.Range(0, randomTarget.Length)];
+		int n1, n2;
+		n1 = Random.Range(-45, 45);
+		n2 = Random.Range(-45, 30);
+		Vector3 a = new Vector3(n1, n2, 0);
+		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);
 		Debug.Log("I'm going to " + currentTarget);
 	}

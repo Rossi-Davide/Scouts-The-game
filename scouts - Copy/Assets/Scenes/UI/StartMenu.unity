@@ -1693,7 +1693,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 66.25
+  m_fontSize: 33.75
   m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2438,6 +2438,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[8].name
+      value: musicaGiochi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f650699fff8619e4f9ff0f917a559568, type: 3}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[8].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[8].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272760714777180914, guid: b671173bcf6f52647b678007eae7e388,
+        type: 3}
+      propertyPath: sounds.Array.data[8].mixerGroup
+      value: 
+      objectReference: {fileID: 8601028313873911329, guid: d2c21433200a7e44ebb94f957911670d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b671173bcf6f52647b678007eae7e388, type: 3}
 --- !u!1 &1905618986

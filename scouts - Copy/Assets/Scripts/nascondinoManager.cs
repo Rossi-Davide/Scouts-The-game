@@ -45,6 +45,16 @@ public class nascondinoManager : MonoBehaviour
         InvokeRepeating("CountDown", 1, 1);
         seconds = 10;
         secondsInizioGioco = 3;
+        GameObject audio= GameObject.Find("/AudioManager");
+
+        if (audio != null)
+        {
+            audio.GetComponent<AudioManager>().Play("musicaGiochi");
+        }
+        else
+        {
+            Debug.Log("audioManager non trovato");
+        }
     }
 
     // Update is called once per frame
