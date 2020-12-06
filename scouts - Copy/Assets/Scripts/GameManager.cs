@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using UnityEngine.Experimental.Rendering.Universal;
+
 
 
 public class GameManager : MonoBehaviour
@@ -16,7 +18,8 @@ public class GameManager : MonoBehaviour
 	public int pointsValue, materialsValue, energyValue;
 	public int energyMaxValue, materialsMaxValue, pointsMaxValue;
 	public GameObject buttonCanvas;
-	public Volume mainScene;
+	public VolumeProfile mainSceneProf;
+	ColorCurves night;
 	#region Singleton
 	public static GameManager instance;
 	private void Awake()
@@ -304,7 +307,7 @@ public class GameManager : MonoBehaviour
 	public Plant[] spawnedPlants;
 	void SpawnDecorations(int? toSpawn)
 	{
-		if (toSpawn == null) { toSpawn = Random.Range(20, 30); }
+		if (toSpawn == null) { toSpawn = Random.Range(35, 50); }
 		for (int spawned = 0; spawned < toSpawn; spawned++)
 		{
 			int currentArea = Random.Range(0, spawnAreas.Length);
@@ -366,6 +369,12 @@ public class GameManager : MonoBehaviour
 			CampEnded();
 		}
 		isDay = !(currentHour > 20 || currentHour < 7);
+		if (!isDay)
+		{
+			
+			mainSceneProf.TryGet<ColorCurves>(out night);
+			night.active = true;
+		}
 		ChangeLight();
 	}
 
@@ -387,7 +396,6 @@ public class GameManager : MonoBehaviour
 	
 	void ChangeLight()
 	{
-		VolumeProfile mainSceneProf = mainScene.sharedProfile;
 
 		if (!isDay && globalLight.intensity > .6f)
 		{
