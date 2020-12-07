@@ -5,7 +5,7 @@ public class PanZoom : MonoBehaviour
 	Vector3 t1Pos, previousCamPos;
 	public float zoomSpeed, panSpeed;
 	public float minCameraSize, maxCameraSize;
-	public float leftLimit, rightLimit, bottomLimit, topLimit;
+	float leftLimit, rightLimit, bottomLimit, topLimit, horzExtent, vertExtent;
 	public bool panningOrZooming;
 	public bool canDo;
 
@@ -62,7 +62,17 @@ public class PanZoom : MonoBehaviour
 		}
 		if (Camera.main.transform.position != previousCamPos)
 		{
-			Vector3 camPos = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, leftLimit, rightLimit), Mathf.Clamp(Camera.main.transform.position.y, bottomLimit, topLimit), Camera.main.transform.position.z);
+			vertExtent = Camera.main.orthographicSize;
+			horzExtent = vertExtent * Camera.main.aspect;
+
+			leftLimit = horzExtent - 68;
+			rightLimit = 85 - horzExtent;
+			bottomLimit = vertExtent - 69;
+			topLimit = 39 - vertExtent;
+
+			var camX = Camera.main.transform.position.x;
+			var camY = Camera.main.transform.position.y;
+			Vector3 camPos = new Vector3(Mathf.Clamp(camX, leftLimit, rightLimit), Mathf.Clamp(camY, bottomLimit, topLimit), Camera.main.transform.position.z);
 			Camera.main.transform.position = camPos;
 		}
 		previousCamPos = Camera.main.transform.position;

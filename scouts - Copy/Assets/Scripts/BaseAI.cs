@@ -43,7 +43,6 @@ public abstract class BaseAI : InGameObject
 		Vector3 a = new Vector3(n1, n2, 0);
 		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);
-		Debug.Log("I'm going to " + currentTarget);
 	}
 	protected void VerifyPath(Path p)
 	{
@@ -139,7 +138,7 @@ public abstract class BaseAI : InGameObject
 	void CheckPriorityPathConditions()
 	{
 		var max = -1;
-		Vector3? target = null;
+		Vector3 target = currentTarget;
 		foreach (var p in priorityTargets)
 		{
 			if (!p.waitEndOfCurrentPath && p.automatic && p.priority > max)

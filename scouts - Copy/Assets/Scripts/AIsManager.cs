@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIsManager : MonoBehaviour
 {
-	const int percentageOfActiveAIs = 15;
+	const int percentageOfActiveAIs = 50;
 	public CapieCambu[] allCapiECambu;
 	[System.NonSerialized]
 	public Squadrigliere[] allSquadriglieri;

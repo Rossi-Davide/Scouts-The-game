@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
 	#endregion
 	#region Events
 	public event System.Action<Counter, int> OnCounterValueChange;
-	public event System.Action OnCampEnd;
 	public event System.Action OnCampStart;
 	public event System.Action<bool> OnSunsetOrSunrise;
 	public event System.Action<int> OnHourChange;
@@ -332,9 +331,6 @@ public class GameManager : MonoBehaviour
 	[HideInInspector]
 	[System.NonSerialized]
 	public int currentMinute, currentHour, currentDay;
-	[HideInInspector]
-	[System.NonSerialized]
-	public int totalDays = 14;
 	void IncreaseTime()
 	{
 		currentMinute++;
@@ -364,17 +360,11 @@ public class GameManager : MonoBehaviour
 
 	void CheckTimeConditions()
 	{
-		if (currentDay > totalDays)
+		if (currentDay > 14)
 		{
 			CampEnded();
 		}
 		isDay = !(currentHour > 20 || currentHour < 7);
-		if (!isDay)
-		{
-			
-			mainSceneProf.TryGet<ColorCurves>(out night);
-			night.active = true;
-		}
 		ChangeLight();
 	}
 
@@ -396,10 +386,12 @@ public class GameManager : MonoBehaviour
 	
 	void ChangeLight()
 	{
-
-		if (!isDay && globalLight.intensity > .6f)
+		if (!isDay)
 		{
-			globalLight.intensity -= .01f;
+			mainSceneProf.TryGet<ColorCurves>(out night);
+			night.active = true;
+			if (globalLight.intensity > .6f)
+				globalLight.intensity -= .01f;
 		}
 		else if (isDay && globalLight.intensity < 1)
 		{
@@ -482,20 +474,41 @@ public class GameManager : MonoBehaviour
 	{
 		Time.timeScale = 0;
 
-		var positions = victoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
+		var manager = SquadrigliaManager.instance;
+
+		var arr = (ConcreteSquadriglia[])manager.squadriglieInGioco.Clone();
+		System.Array.Sort(arr, new SquadrigliaComparer());
+		System.Array.Reverse(arr);
+
+		var positions = victoryPanel.transform.Find("Texts/Positions").GetComponentsInChildren<TextMeshProUGUI>();
 		for (int i = 0; i < positions.Length; i++)
 		{
-			
+			var sq = arr[i];
+			positions[i].text = $"#{i + 1}: {sq.baseSq.name} " + (sq.baseSq == Player.instance.squadriglia ? "(Tu) " : "") + $"con {sq.points} punti";
 		}
 
 		victoryPanel.SetActive(true);
 		overlay.SetActive(true);
 	}
+	class SquadrigliaComparer : IComparer
+	{
+		public int Compare(object x, object y)
+		{
+			return new CaseInsensitiveComparer().Compare(((ConcreteSquadriglia)x).points, ((ConcreteSquadriglia)y).points);
+		}
+	}
+
 	void PlayerDied()
 	{
 		Time.timeScale = 0;
 		deathPanel.SetActive(true);
 		overlay.SetActive(true);
+	}
+	public void MenuAndDestroyCamp()
+	{
+		SceneLoader.instance.LoadMainMenuScene();
+		SaveSystem.instance.DeleteAllFiles();
+		CampManager.instance.campCreated = false;
 	}
 
 	public Status SendStatus()
