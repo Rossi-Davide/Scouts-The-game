@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb4b772797da9440885e8bd939e9560, type: 3}
   m_Name: ColorCurves
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   master:
     m_OverrideState: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
   blue:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 4
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -248,6 +248,15 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
+          inSlope: 0
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.10869565
+          value: 0.8335261
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -255,28 +264,10 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.045045044
-          value: 0.4851485
-          inSlope: 4.216037
-          outSlope: 4.216037
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.42119566
-          value: 0.81040466
-          inSlope: 1.1602737
-          outSlope: 1.1602737
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: -0
-          outSlope: -0
+          inSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0

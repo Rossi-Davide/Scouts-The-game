@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 	public GameObject buttonCanvas;
 	public VolumeProfile mainSceneProf;
 	ColorCurves night;
+	ColorAdjustments night2;
 	#region Singleton
 	public static GameManager instance;
 	private void Awake()
@@ -386,15 +387,26 @@ public class GameManager : MonoBehaviour
 	
 	void ChangeLight()
 	{
-		if (!isDay)
+		if (globalLight.intensity <= .7f)
 		{
 			mainSceneProf.TryGet<ColorCurves>(out night);
 			night.active = true;
+			mainSceneProf.TryGet<ColorAdjustments>(out night2);
+			night2.active = false;
+		}
+
+		if (!isDay)
+		{
+			
 			if (globalLight.intensity > .6f)
 				globalLight.intensity -= .01f;
 		}
 		else if (isDay && globalLight.intensity < 1)
 		{
+			mainSceneProf.TryGet<ColorCurves>(out night);
+			night.active = false;
+			mainSceneProf.TryGet<ColorAdjustments>(out night2);
+			night2.active = true;
 			globalLight.intensity += .01f;
 		}
 	}
