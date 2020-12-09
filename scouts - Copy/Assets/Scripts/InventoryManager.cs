@@ -115,18 +115,33 @@ public class InventoryManager : MonoBehaviour
 		useButton = itemInfoBox.transform.Find("Button").gameObject;
 		if (slots.Length != maxInventoryItems)
 			Debug.LogWarning("Inventory contains a different number of slots from the required one.");
-		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.inventoryManagerFileName));
 	}
-
-	void ReceiveSavedData(LoadPriority p)
+	public Status SendStatus()
 	{
-		if (p == LoadPriority.Low)
+		var it = new Item[slots.Length];
+		for (int i = 0; i < it.Length; i++)
 		{
-			for (int i = 0; i < slots.Length; i++)
+			it[i] = slots[i].item;
+		}
+		return new Status
+		{
+			items = it,
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			for (int i = 0; i < status.items.Length; i++)
 			{
-				slots[i].item = (Item)SaveSystem.instance.RequestData(DataCategory.InventoryManager, DataKey.slots, DataParameter.item, i);
+				slots[i].item = status.items[i];
 			}
 		}
+	}
+	public class Status
+	{
+		public Item[] items;
 	}
 
 	public void SelectItem(InventorySlot slot)

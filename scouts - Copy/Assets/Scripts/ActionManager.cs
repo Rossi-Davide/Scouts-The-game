@@ -2,6 +2,7 @@
 using TMPro;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 public class ActionManager : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class ActionManager : MonoBehaviour
 	bool isOpen;
 	public GameObject panel, overlay;
 	public GameObject[] actionSpots;
-	public TimeAction[] currentActions = new TimeAction[5];
-	public List<TimeAction> currentHiddenActions = new List<TimeAction>();
+	public TimeAction[] currentActions;
+	public List<TimeAction> currentHiddenActions;
 
 	public void TogglePanel()
 	{
@@ -107,16 +108,31 @@ public class ActionManager : MonoBehaviour
 	{
 		InvokeRepeating(nameof(RefreshTimesLeft), 0, 1);
 		isOpen = false;
-		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
+		currentActions = new TimeAction[5];
+		currentHiddenActions = new List<TimeAction>();
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.actionManagerFileName));
 	}
 
-	void ReceiveSavedData(LoadPriority p)
+	public Status SendStatus()
 	{
-		if (p == LoadPriority.Normal)
+		return new Status
 		{
-			currentActions = (TimeAction[])SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentActions);
-			currentHiddenActions = (List<TimeAction>)SaveSystem.instance.RequestData(DataCategory.ActionManager, DataKey.currentHiddenActions);
+			currentActions = currentActions,
+			currentHiddenActions = currentHiddenActions.ToArray(),
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			currentActions = status.currentActions;
+			Array.ForEach(status.currentHiddenActions, element => currentHiddenActions.Add(element));
 		}
+	}
+	public class Status
+	{
+		public TimeAction[] currentActions;
+		public TimeAction[] currentHiddenActions;
 	}
 
 	void RefreshTimesLeft()

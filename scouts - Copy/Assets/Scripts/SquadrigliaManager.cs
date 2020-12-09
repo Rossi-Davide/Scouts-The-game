@@ -172,6 +172,7 @@ public class SquadrigliaManager : MonoBehaviour
 				}
 			}
 		}
+		AIsManager.instance.SetStatus(SaveSystem.instance.LoadData<AIsManager.Status>(SaveSystem.instance.aisManagerFileName));
 	}
 
 	public void InitializeSquadriglias(Gender gender, Squadriglia[] possibleFemaleSqs, Squadriglia[] possibleMaleSqs, int[] femaleSqs, int[] maleSqs, int playerSqIndex)

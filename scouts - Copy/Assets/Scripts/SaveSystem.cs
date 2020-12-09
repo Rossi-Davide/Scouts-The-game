@@ -64,6 +64,10 @@ public class SaveSystem : MonoBehaviour
 		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName); }
 		if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName); }
 		if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName); }
+		if (ActionManager.instance != null) { SaveData(ActionManager.instance.SendStatus(), actionManagerFileName); }
+		if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName); }
+		if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName); }
+		if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName); }
 		Debug.Log("saved data");
 	}
 

@@ -26,9 +26,8 @@ public abstract class PlayerBuildingBase : InGameObject
 		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, building.healthInfos[building.level].healthLossInterval);
 	}
 
-	protected override void ReceiveSavedData(LoadPriority p)
+	protected void ReceiveSavedData(LoadPriority p)
 	{
-		base.ReceiveSavedData(p);
 		if (p == LoadPriority.Low)
 		{
 			health = (int)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.health);

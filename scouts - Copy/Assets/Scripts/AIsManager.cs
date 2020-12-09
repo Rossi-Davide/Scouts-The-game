@@ -31,6 +31,50 @@ public class AIsManager : MonoBehaviour
 		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
+	public Status SendStatus()
+	{
+		int[] indices = new int[allCapiECambu.Length];
+		InGameObject.Status[] c = new InGameObject.Status[allCapiECambu.Length];
+		InGameObject.Status[] s = new InGameObject.Status[allSquadriglieri.Length];
+		for (int i = 0; i < allCapiECambu.Length; i++)
+		{
+			indices[i] = allCapiECambu[i].nextDialogueIndex;
+			c[i] = allCapiECambu[i].SendStatus();
+		}
+		for (int i = 0; i < allSquadriglieri.Length; i++)
+		{
+			s[i] = allSquadriglieri[i].SendStatus();
+		}
+
+		return new Status
+		{
+			nextDialogueIndices = indices,
+			capiECambuInfo = c,
+			squadriglieriInfo = s,
+		};
+	}
+	public void SetStatus(Status status) //called by Squadriglia manager
+	{
+		if (status != null)
+		{
+			for (int s = 0; s < allSquadriglieri.Length; s++)
+			{
+				allSquadriglieri[s].SetStatus(status.squadriglieriInfo[s]);
+			}
+			for (int s = 0; s < allCapiECambu.Length; s++)
+			{
+				allCapiECambu[s].SetStatus(status.capiECambuInfo[s]);
+				allCapiECambu[s].nextDialogueIndex = status.nextDialogueIndices[s];
+			}
+		}
+	}
+	public class Status
+	{
+		public InGameObject.Status[] capiECambuInfo;
+		public int[] nextDialogueIndices;
+		public InGameObject.Status[] squadriglieriInfo;
+	}
+
 	void ReceiveSavedData(LoadPriority p)
 	{
 		if (p == LoadPriority.Normal)

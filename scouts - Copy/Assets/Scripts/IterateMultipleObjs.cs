@@ -65,17 +65,17 @@ public class IterateMultipleObjs : MonoBehaviour
 
 	void RefreshActions(PlayerAction a)
 	{
-		//foreach (var i in bundles)
-		//{
-		//	foreach (var o in i.objects)
-		//	{
-		//		if (o.obj.buttons[o.buttonNum - 1 ].generalAction == a)
-		//		{
-		//			var num = Array.IndexOf(i.objects, o) + 1;
-		//			i.nextAction = num < i.objects.Length ? num : 0;
-		//		}
-		//	}
-		//}
+		foreach (var i in bundles)
+		{
+			foreach (var o in i.objects)
+			{
+				if (o.obj.buttons[o.buttonNum - 1 ].generalAction == a)
+				{
+					var num = Array.IndexOf(i.objects, o) + 1;
+					i.nextAction = num < i.objects.Length ? num : 0;
+				}
+			}
+		}
 	}
 
 	/// <summary>

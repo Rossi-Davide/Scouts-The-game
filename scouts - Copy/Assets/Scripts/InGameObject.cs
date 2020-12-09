@@ -16,11 +16,12 @@ public abstract class InGameObject : MonoBehaviour
 	[HideInInspector] [System.NonSerialized]
 	public GameObject wpCanvas, buttonCanvas;
 
-	protected TimeAction action; //like local variable
+	protected TimeAction action;
 	public bool isInstantiating; //true if object creates instance of clicklistener prefab
 	public bool checkPositionEachFrame; //true if object is often moving so it needs to update click listener position frequently
 	public bool spawnInRandomPosition;
-	public bool manageAnimationsAutomatically; //true for AIs, for example, because they need to change their animations once per frame so they dont need the standard methods.
+	public bool manageAnimationsAutomatically; //false for AIs, for example, because they need to change their animations once per frame so they dont need the standard methods.
+	public string customDataFileName;
 	public Vector3[] possiblePositions;
 	public Button clickListener;
 
@@ -35,24 +36,6 @@ public abstract class InGameObject : MonoBehaviour
 	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
 	protected SaveSystem saveSystem;
 
-	protected virtual void ReceiveSavedData(LoadPriority p)
-	{
-		if (p == LoadPriority.Low)
-		{
-			transform.position = (Vector3)saveSystem.RequestData(DataCategory.InGameObject, DataKey.position);
-			gameObject.SetActive((bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.active));
-			objectName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectName);
-			objectSubName = (string)saveSystem.RequestData(DataCategory.InGameObject, DataKey.objectSubName);
-			for (int b = 0; b < buttons.Length; b++)
-			{
-				buttons[b].canDo = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.canDo, b);
-				buttons[b].isWaiting = (bool)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.isWaiting, b);
-				buttons[b].timeLeft = (int)saveSystem.RequestData(DataCategory.InGameObject, DataKey.buttons, DataParameter.timeLeft, b);
-			}
-			MoveUI();
-		}
-	}
-
 	protected Animator animator;
 	public BuildingState[] states;
 	protected void ChangeAnimations()
@@ -61,7 +44,7 @@ public abstract class InGameObject : MonoBehaviour
 		string animation = "";
 		foreach (var b in buttons)
 		{
-			if (b.generalAction.state != null && b.generalAction.state.priority > max)
+			if (b.generalAction.state != null && b.generalAction.state.priority > max && b.generalAction.state.active)
 			{
 				max = b.generalAction.state.priority;
 				animation = b.generalAction.state.animationSubstring;
@@ -69,7 +52,7 @@ public abstract class InGameObject : MonoBehaviour
 		}
 		foreach (var s in states)
 		{
-			if (s.priority > max)
+			if (s.priority > max && s.active)
 			{
 				max = s.priority;
 				animation = s.animationSubstring;
@@ -84,10 +67,15 @@ public abstract class InGameObject : MonoBehaviour
 		return "";
 	}
 
+
+	protected void ManageUI()
+	{
+
+	}
+
 	protected virtual void Start()
 	{
 		saveSystem = SaveSystem.instance;
-		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		GameManager.instance.OnCampStart += WhenCampStarts;
 		animator = GetComponent<Animator>();
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
@@ -99,7 +87,6 @@ public abstract class InGameObject : MonoBehaviour
 			CalculatePriceOrPrize(buttons[b]);
 			buttons[b].buttonNum = b + 1;
 			buttons[b].obj = GameManager.instance.actionButtons[b];
-			buttons[b].canDo = true;
 		} //change price or prize string in buttons
 
 		wpCanvas = GameManager.instance.wpCanvas;
@@ -120,6 +107,11 @@ public abstract class InGameObject : MonoBehaviour
 		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.text = objectName;
 		subNameText.text = objectSubName;
+
+		if (customDataFileName != "")
+		{
+			SetStatus(saveSystem.LoadData<Status>(customDataFileName));
+		}
 	}
 
 	void WhenCampStarts()
@@ -142,7 +134,7 @@ public abstract class InGameObject : MonoBehaviour
 	}
 	void CalculatePriceOrPrize(ActionButton b)
 	{
-		string s = "";
+		string s;
 		if (b.generalAction.materialsGiven > 0 || b.generalAction.energyGiven > 0 || b.generalAction.pointsGiven > 0)
 			s = "+";
 		else
@@ -273,15 +265,7 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual bool CheckActionManager(int buttonIndex)
 	{
-		if (ActionManager.instance.CheckIfNotTooManyActions() || !buttons[buttonIndex].generalAction.showInActionList)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
+		return ActionManager.instance.CheckIfNotTooManyActions() || !buttons[buttonIndex].generalAction.showInActionList;
 	}
 
 	protected virtual void ActuallyAddAction(int buttonIndex, Action onEnd)
@@ -383,6 +367,42 @@ public abstract class InGameObject : MonoBehaviour
 	#endregion
 
 
+
+
+	[Serializable]
+	public class Status
+	{
+		public Vector3 position;
+		public bool active;
+		public ActionButton.Status[] actionButtonInfos;
+	}
+	public virtual Status SendStatus()
+	{
+		var b = new ActionButton.Status[buttons.Length];
+		for (int i = 0; i < b.Length; i++)
+		{
+			b[i] = buttons[i].SendStatus();
+		}
+		return new Status
+		{
+			position = transform.position,
+			active = gameObject.activeSelf,
+			actionButtonInfos = b,
+		};
+	}
+	public virtual void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			transform.position = status.position;
+			gameObject.SetActive(status.active);
+			buttons = new ActionButton[status.actionButtonInfos.Length];
+			for (int i = 0; i < status.actionButtonInfos.Length; i++)
+			{
+				buttons[i].SetStatus(status.actionButtonInfos[i]);
+			}
+		}
+	}
 }
 
 
@@ -407,6 +427,29 @@ public class ActionButton
 	[HideInInspector] [System.NonSerialized]
 	public bool canDo;
 	public PlayerAction generalAction;
+
+	[Serializable]
+	public class Status
+	{
+		public bool canDo;
+		public bool isWaiting;
+		public int timeLeft;
+	}
+	public Status SendStatus()
+	{
+		return new Status
+		{
+			canDo = canDo,
+			isWaiting = isWaiting,
+			timeLeft = timeLeft,
+		};
+	}
+	public void SetStatus(Status status)
+	{
+		canDo = status.canDo;
+		isWaiting = status.isWaiting;
+		timeLeft = status.timeLeft;
+	}
 }
 
 public enum ConditionType
