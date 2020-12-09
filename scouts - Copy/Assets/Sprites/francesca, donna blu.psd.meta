@@ -1,0 +1,860 @@
+fileFormatVersion: 2
+guid: b03c6edb65fbf8641a1d363d29c2202d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2021492470766182906
+    second: francesca, donna blu_0
+  - first:
+      213: 1023320542509427052
+    second: francesca, donna blu_1
+  - first:
+      213: -7750907729727301741
+    second: francesca, donna blu_2
+  - first:
+      213: -8875401128032528619
+    second: francesca, donna blu_3
+  - first:
+      213: 2764766276211351013
+    second: francesca, donna blu_4
+  - first:
+      213: -1607304862451284052
+    second: francesca, donna blu_5
+  - first:
+      213: -5907860962640198643
+    second: francesca, donna blu_6
+  - first:
+      213: 8760433560089236056
+    second: francesca, donna blu_7
+  - first:
+      213: -1043008155141522103
+    second: francesca, donna blu_8
+  - first:
+      213: -4335793624309813211
+    second: francesca, donna blu_9
+  - first:
+      213: -6008694167059005508
+    second: francesca, donna blu_10
+  - first:
+      213: -6501322137809960317
+    second: francesca, donna blu_11
+  - first:
+      213: 2721665806206331235
+    second: francesca, donna blu_12
+  - first:
+      213: 4017630378965366692
+    second: francesca, donna blu_13
+  - first:
+      213: 3728940215548297576
+    second: francesca, donna blu_14
+  - first:
+      213: 1864161136884947244
+    second: francesca, donna blu_15
+  - first:
+      213: 5867234923686740493
+    second: francesca, donna blu_16
+  - first:
+      213: 5078877869136131613
+    second: francesca, donna blu_17
+  - first:
+      213: 94698058023030897
+    second: francesca, donna blu_18
+  - first:
+      213: -1940870144726841941
+    second: francesca, donna blu_19
+  - first:
+      213: 1527282876188907711
+    second: francesca, donna blu_20
+  - first:
+      213: 2438682323275169435
+    second: francesca, donna blu_21
+  - first:
+      213: -2799038977111313897
+    second: francesca, donna blu_22
+  - first:
+      213: -2070745817320278830
+    second: francesca, donna blu_23
+  - first:
+      213: 1721136877174812172
+    second: francesca, donna blu_24
+  - first:
+      213: -3268803015768158530
+    second: francesca, donna blu_25
+  - first:
+      213: -8523095748841654508
+    second: francesca, donna blu_26
+  - first:
+      213: -3778610819260052569
+    second: francesca, donna blu_27
+  - first:
+      213: 3214545090127769657
+    second: francesca, donna blu_28
+  - first:
+      213: -3228968220537762526
+    second: francesca, donna blu_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: francesca, donna blu_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1355
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60edad3ee4732f3e0800000000000000
+      internalID: -2021492470766182906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1154
+        width: 148
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6962a39c90933e00800000000000000
+      internalID: 1023320542509427052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_2
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1154
+        width: 148
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39756c26c7e3f6490800000000000000
+      internalID: -7750907729727301741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1153
+        width: 147
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517158ca2bd34d480800000000000000
+      internalID: -8875401128032528619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_4
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1153
+        width: 148
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed9e84a74c6e5620800000000000000
+      internalID: 2764766276211351013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_5
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 1353
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca745d35eb4b1b9e0800000000000000
+      internalID: -1607304862451284052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_6
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1153
+        width: 146
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d040f6371cf030ea0800000000000000
+      internalID: -5907860962640198643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_7
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 1346
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852978b78ef439970800000000000000
+      internalID: 8760433560089236056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_8
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 1147
+        width: 148
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d34f6eb9d7681f0800000000000000
+      internalID: -1043008155141522103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_9
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 1153
+        width: 118
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5203c93bbaa24d3c0800000000000000
+      internalID: -4335793624309813211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_10
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 1154
+        width: 126
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf7c709d74dc9ca0800000000000000
+      internalID: -6008694167059005508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_11
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1154
+        width: 125
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382447d06f9a6c5a0800000000000000
+      internalID: -6501322137809960317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_12
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1341
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369614871ac45c520800000000000000
+      internalID: 2721665806206331235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_13
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1339
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a77c091b8d71c730800000000000000
+      internalID: 4017630378965366692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_14
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 1333
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861cc688e5bdfb330800000000000000
+      internalID: 3728940215548297576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 794
+        width: 125
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c299d106da4ded910800000000000000
+      internalID: 1864161136884947244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_16
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 795
+        width: 126
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d024d10c31b9c6150800000000000000
+      internalID: 5867234923686740493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_17
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 793
+        width: 118
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16b37f438ccb7640800000000000000
+      internalID: 5078877869136131613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_18
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 798
+        width: 121
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170d16dc16f605100800000000000000
+      internalID: 94698058023030897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_19
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 801
+        width: 121
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba54564f2e4a015e0800000000000000
+      internalID: -1940870144726841941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_20
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 796
+        width: 121
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8d6ca1faff13510800000000000000
+      internalID: 1527282876188907711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_21
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 792
+        width: 121
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e37def6a0f7d120800000000000000
+      internalID: 2438682323275169435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_22
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 797
+        width: 123
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712bec851e0d729d0800000000000000
+      internalID: -2799038977111313897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_23
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 794
+        width: 120
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4bf7286ab3343e0800000000000000
+      internalID: -2070745817320278830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_24
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 438
+        width: 121
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e64ddeed4b2e710800000000000000
+      internalID: 1721136877174812172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_25
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 438
+        width: 145
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebec96cd9f0e2a2d0800000000000000
+      internalID: -3268803015768158530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_26
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 438
+        width: 145
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417b6afd291e7b980800000000000000
+      internalID: -8523095748841654508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_27
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 438
+        width: 145
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab8e85da7daf8bc0800000000000000
+      internalID: -3778610819260052569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_28
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 438
+        width: 145
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930ba836abb5c9c20800000000000000
+      internalID: 3214545090127769657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: francesca, donna blu_29
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 438
+        width: 121
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d42dfd2866033d0800000000000000
+      internalID: -3228968220537762526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
