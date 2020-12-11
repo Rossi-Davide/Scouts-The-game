@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
   m_Layer: 0
-  m_Name: piano bidoni
+  m_Name: porta legna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1178020443710254061, guid: 2ece8a6976974e5498d33e5e1d7321ac,
+  m_Sprite: {fileID: 3911372940414158388, guid: 1a20c9e9b52d0354c81de407ce34ab83,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 8504184329679217996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 627920a1fc6bc4241a25e957b7970b12, type: 2}
+  m_Controller: {fileID: 9100000, guid: 997dd6e5afcef704ba6fb1b4dc64924e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

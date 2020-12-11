@@ -50,6 +50,9 @@ TextureImporter:
   - first:
       213: -4194601473122121189
     second: piano bidoni lvl2_10
+  - first:
+      213: 1991808031537199614
+    second: piano bidoni lvl2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -171,6 +174,90 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: piano bidoni lvl2_6
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 453
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990a3856fa45cde80800000000000000
+      internalID: -8152548113148305255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piano bidoni lvl2_8
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 235
+        width: 188
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95933e31a89a10300800000000000000
+      internalID: 216640667594733913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piano bidoni lvl2_9
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 235
+        width: 188
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98cf7ed1a9b8a890800000000000000
+      internalID: -7446497878983325540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piano bidoni lvl2_10
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 235
+        width: 188
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ac9342f28c9c5c0800000000000000
+      internalID: -4194601473122121189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: piano bidoni lvl2_0
       rect:
         serializedVersion: 2
@@ -195,10 +282,10 @@ TextureImporter:
       name: piano bidoni lvl2_1
       rect:
         serializedVersion: 2
-        x: 431
+        x: 432
         y: 485
-        width: 51
-        height: 46
+        width: 50
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +303,10 @@ TextureImporter:
       name: piano bidoni lvl2_2
       rect:
         serializedVersion: 2
-        x: 604
-        y: 488
-        width: 47
-        height: 49
+        x: 714
+        y: 469
+        width: 46
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +324,10 @@ TextureImporter:
       name: piano bidoni lvl2_3
       rect:
         serializedVersion: 2
-        x: 646
-        y: 467
-        width: 33
-        height: 30
+        x: 995
+        y: 483
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +345,10 @@ TextureImporter:
       name: piano bidoni lvl2_4
       rect:
         serializedVersion: 2
-        x: 858
-        y: 490
-        width: 37
-        height: 37
+        x: 427
+        y: 438
+        width: 27
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +366,10 @@ TextureImporter:
       name: piano bidoni lvl2_5
       rect:
         serializedVersion: 2
-        x: 427
-        y: 438
-        width: 27
-        height: 23
+        x: 756
+        y: 447
+        width: 33
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,29 +377,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57add97cbc881de20800000000000000
-      internalID: 3373628004685961845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piano bidoni lvl2_6
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 255
-        width: 196
-        height: 293
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 990a3856fa45cde80800000000000000
-      internalID: -8152548113148305255
+      spriteID: ef97b840ad254ab10800000000000000
+      internalID: 1991808031537199614
       vertices: []
       indices: 
       edges: []
@@ -321,10 +387,10 @@ TextureImporter:
       name: piano bidoni lvl2_7
       rect:
         serializedVersion: 2
-        x: 848
-        y: 460
-        width: 25
-        height: 26
+        x: 20
+        y: 235
+        width: 188
+        height: 211
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,74 +405,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piano bidoni lvl2_8
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 232
-        width: 188
-        height: 211
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95933e31a89a10300800000000000000
-      internalID: 216640667594733913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piano bidoni lvl2_9
-      rect:
-        serializedVersion: 2
-        x: 346
-        y: 235
-        width: 189
-        height: 308
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98cf7ed1a9b8a890800000000000000
-      internalID: -7446497878983325540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piano bidoni lvl2_10
-      rect:
-        serializedVersion: 2
-        x: 781
-        y: 242
-        width: 191
-        height: 293
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1ac9342f28c9c5c0800000000000000
-      internalID: -4194601473122121189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: piano bidoni lvl2_11
       rect:
         serializedVersion: 2
-        x: 863
-        y: 440
+        x: 999
+        y: 433
         width: 16
         height: 15
       alignment: 0
