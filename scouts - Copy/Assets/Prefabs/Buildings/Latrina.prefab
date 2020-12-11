@@ -99,29 +99,18 @@ MonoBehaviour:
   objectSubName: 
   buttons:
   - buttonText: Pulisci
-    buttonNum: 1
     color: 5
-    obj: {fileID: 0}
-    priceOrPrizeAmount: +5
-    priceOrPrizeType: 3
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 159f8ce337b0d834c873fb2cced2f3bc, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 2
-  wpCanvas: {fileID: 0}
-  buttonCanvas: {fileID: 0}
   isInstantiating: 0
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
   manageAnimationsAutomatically: 0
+  customDataFileName: Latrina
   possiblePositions: []
   clickListener: {fileID: 0}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
-  subNameText: {fileID: 0}
   states: []
 --- !u!95 &-511174862936809132
 Animator:

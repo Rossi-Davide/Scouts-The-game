@@ -53,11 +53,14 @@ MonoBehaviour:
   - buttonText: Fai legna
     color: 2
     generalAction: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 1.5
-  isInstantiating: 0
+  isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
   manageAnimationsAutomatically: 0
+  customDataFileName: 
   possiblePositions: []
   clickListener: {fileID: 4621947097978961903, guid: 41d512e912e499a4387e33cfa3ecd7ea,
     type: 3}

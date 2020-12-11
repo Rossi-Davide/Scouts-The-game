@@ -24,17 +24,17 @@ public abstract class PlayerBuildingBase : InGameObject
 		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, building.healthInfos[building.level].healthLossInterval);
-	}
 
-	protected void ReceiveSavedData(LoadPriority p)
-	{
-		if (p == LoadPriority.Low)
+		if (customDataFileName != null && customDataFileName != "")
 		{
-			health = (int)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.health);
-			isSafe = (bool)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.isSafe);
-			isDestroyed = (bool)saveSystem.RequestData(DataCategory.PlayerBuildingBase, DataKey.isDestroyed);
+			SetPBStatus(SaveSystem.instance.LoadData<PBStatus>(customDataFileName));
 		}
 	}
+	protected override void SaveData()
+	{
+		SaveSystem.instance.SaveData(SendPBStatus(), customDataFileName);
+	}
+
 
 	protected override string GetAnimationByLevel()
 	{
@@ -138,6 +138,45 @@ public abstract class PlayerBuildingBase : InGameObject
 		base.ToggleUI(active);
 		healthBar.gameObject.SetActive(active);
 	}
+
+
+	public class PBStatus : Status
+	{
+		public int health;
+		public bool isSafe;
+		public bool isDestroyed;
+		public ObjectBase.Status building;
+	}
+	public virtual PBStatus SendPBStatus()
+	{
+		var b = new ActionButton.Status[buttons.Length];
+		for (int i = 0; i < b.Length; i++)
+		{
+			b[i] = buttons[i].SendStatus();
+		}
+		return new PBStatus
+		{
+			position = transform.position,
+			active = gameObject.activeSelf,
+			actionButtonInfos = b,
+			health = health,
+			isSafe = isSafe,
+			isDestroyed = isDestroyed,
+			building = building.SendStatus(),
+		};
+	}
+	public virtual void SetPBStatus(PBStatus status)
+	{
+		if (status != null)
+		{
+			health = status.health;
+			isDestroyed = status.isDestroyed;
+			isSafe = status.isSafe;
+			building.SetStatus(status.building);
+		}
+	}
+
+
 
 
 

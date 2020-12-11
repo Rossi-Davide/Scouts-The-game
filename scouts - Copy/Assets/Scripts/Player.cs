@@ -13,22 +13,41 @@ public class Player : MonoBehaviour
 		}
         instance = this;
 	}
-    #endregion
-    public string playerName;
+	#endregion
+
+	[HideInInspector]
+	[System.NonSerialized]
+	public Squadriglia squadriglia;
+
 	private void Start()
     {
         animator = GetComponent<Animator>();
-		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.playerFileName));
     }
-	void ReceiveSavedData(LoadPriority p)
+
+
+	public Status SendStatus()
 	{
-		if (p == LoadPriority.Normal)
+		return new Status
 		{
-			transform.position = (Vector3)SaveSystem.instance.RequestData(DataCategory.Player, DataKey.position);
+			position = transform.position,
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			transform.position = status.position;
 		}
 	}
+	[System.Serializable]
+	public class Status
+	{
+		public Vector3 position;
+	}
 
-	#region Movement
+
+
 	public float playerSpeed; 
     float lastX, lastY;
     Animator animator;
@@ -72,10 +91,4 @@ public class Player : MonoBehaviour
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("walking");
 
 	}
-
-	#endregion
-	#region General
-	[HideInInspector] [System.NonSerialized]
-	public Squadriglia squadriglia;
-	#endregion
 }

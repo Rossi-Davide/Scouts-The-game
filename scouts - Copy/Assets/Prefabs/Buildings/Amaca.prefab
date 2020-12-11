@@ -165,8 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentEnabled: 0
-  isBeingBuilt: 0
 --- !u!114 &2036041061251725332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,48 +181,28 @@ MonoBehaviour:
   objectSubName: 
   buttons:
   - buttonText: Dormi
-    buttonNum: 1
     color: 2
-    obj: {fileID: 0}
-    priceOrPrizeAmount: +15
-    priceOrPrizeType: 2
-    timeLeft: 180
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: bb0605a269c282a4abb791cb45be6557, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   - buttonText: Imbraga
-    buttonNum: 2
     color: 3
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -5
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   - buttonText: Ripara
-    buttonNum: 3
     color: 0
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -10
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 2
-  wpCanvas: {fileID: 0}
-  buttonCanvas: {fileID: 0}
   isInstantiating: 1
   checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  customDataFileName: Amaca
+  possiblePositions: []
   clickListener: {fileID: 9052262022897325451, guid: 2c04edd749e423a4a8d4fa7092c41260,
     type: 3}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
-  subNameText: {fileID: 0}
-  healthBar: {fileID: 0}
-  healthBarOffset: {x: 0, y: -0.2, z: 0}
-  health: 100
+  states: []
   building: {fileID: 11400000, guid: 6d9feeb00bb3d5e43a3fb3e206a8e137, type: 2}

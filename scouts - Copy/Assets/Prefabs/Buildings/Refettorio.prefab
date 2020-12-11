@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6959011011392827293}
   - component: {fileID: 6959011011392827364}
   - component: {fileID: 6959011011392827290}
-  - component: {fileID: 6959011011392827365}
   - component: {fileID: 6959011011392827289}
   - component: {fileID: 6959011011392827288}
   - component: {fileID: 6959011011392827295}
@@ -77,20 +76,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6959011011392827365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6959011011392827292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e49ef33e6309425468c4c298de5ca307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bundles:
-  - {fileID: 11400000, guid: 7403aad2f5cf7664c95c0fdf1dfe16d3, type: 2}
 --- !u!212 &6959011011392827289
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -179,8 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  componentEnabled: 0
-  isBeingBuilt: 0
 --- !u!114 &6959011011392827294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,48 +177,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: 
+  objectSubName: 
   buttons:
   - buttonText: Mangia
-    buttonNum: 1
     color: 0
-    obj: {fileID: 0}
-    priceOrPrizeAmount: +20
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 92352b65d682046488144844375adfe0, type: 2}
+    previousAction: {fileID: 11400000, guid: 5c6a513e913d27440ac9539e1ddfa92d, type: 2}
+    hasDonePreviousAction: 0
   - buttonText: Imbraga
-    buttonNum: 2
     color: 3
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -5
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   - buttonText: Ripara
-    buttonNum: 3
     color: 0
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -10
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 2
-  wpCanvas: {fileID: 0}
-  buttonCanvas: {fileID: 0}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
   isInstantiating: 1
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  customDataFileName: Refettorio
+  possiblePositions: []
   clickListener: {fileID: 875140319818992778, guid: c4c4b99128637cd4997ae7188bf9a9d7,
     type: 3}
-  healthBar: {fileID: 0}
-  healthBarOffset: {x: 0, y: -0.2, z: 0}
-  health: 250
+  states: []
   building: {fileID: 11400000, guid: cdb0c11f63246c14e86a52f672141d48, type: 2}

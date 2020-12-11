@@ -66,16 +66,6 @@ public class CampManager : MonoBehaviour
 	{
 		camp = c;
 		campCreated = true;
-		StartCoroutine(CallCampStarted());
-	}
-	IEnumerator CallCampStarted()
-	{
-		WaitForEndOfFrame f = new WaitForEndOfFrame();
-		while (GameManager.instance == null)
-		{
-			yield return f;
-		}
-		GameManager.instance.CampStarted();
 	}
 
 	public Status SendStatus()

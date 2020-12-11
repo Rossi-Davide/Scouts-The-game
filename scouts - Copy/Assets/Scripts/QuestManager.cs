@@ -28,19 +28,44 @@ public class QuestManager : MonoBehaviour
 		GameManager.instance.OnInventoryChange += RefreshActions;
 		GameManager.instance.OnBuild += RefreshActions;
 		saveSystem = SaveSystem.instance;
-		saveSystem.OnReadyToLoad += ReceiveSavedData;
 	}
 
-	void ReceiveSavedData(LoadPriority p)
+	public Status SendStatus()
 	{
-		if (p == LoadPriority.Low)
+		var qs = new Quest.Status[quests.Length];
+		for (int q = 0; q < quests.Length; q++)
 		{
-			for (int i = 0; i < quests.Length; i++)
+			qs[q] = quests[q].quest.SendStatus();
+		}
+		var actions = new PlayerAction.Status[actionDatabase.Length];
+		for (int a = 0; a < actionDatabase.Length; a++)
+		{
+			actions[a] = actionDatabase[a].SendStatus();
+		}
+		return new Status
+		{
+			quests = qs,
+			actions = actions,
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			for (int q = 0; q < status.quests.Length; q++)
 			{
-				quests[i].quest.timesDone = (int)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.timesDone, i);
-				quests[i].quest.prizeTaken = (bool)saveSystem.RequestData(DataCategory.QuestManager, DataKey.quests, DataParameter.prizeTaken, i);
+				quests[q].quest.SetStatus(status.quests[q]);
+			}
+			for (int a = 0; a < status.actions.Length; a++)
+			{
+				actionDatabase[a].SetStatus(status.actions[a]);
 			}
 		}
+	}
+	public class Status
+	{
+		public Quest.Status[] quests;
+		public PlayerAction.Status[] actions;
 	}
 
 	void RefreshQuests(PlayerAction a)

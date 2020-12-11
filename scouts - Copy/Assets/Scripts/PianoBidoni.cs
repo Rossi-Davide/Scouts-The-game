@@ -12,15 +12,6 @@ public class PianoBidoni : PlayerBuildingBase
 		GetComponent<Animator>().Play("PianoBidoni2");
 		RefreshButtonsState();
 	}
-
-	protected override bool GetConditionValue(ConditionType t)
-	{
-		switch (t)
-		{
-			case ConditionType.ConditionCookBundle: return GetComponent<IterateMultipleObjs>().CheckAction(1, 1);
-			default: return base.GetConditionValue(t);
-		}
-	}
 	protected override Action DoAction(ActionButton b)
 	{
 		switch (b.buttonNum)

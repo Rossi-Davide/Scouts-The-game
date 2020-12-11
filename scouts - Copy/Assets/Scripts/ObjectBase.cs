@@ -32,6 +32,30 @@ public abstract class ObjectBase : ScriptableObject
         }
     }
 
+    [System.Serializable]
+    public class Status
+	{
+        public int currentAmount;
+        public int level;
+        public bool exists;
+    }
+    public void SetStatus(Status status)
+	{
+        currentAmount = status.currentAmount;
+        level = status.level;
+        exists = status.exists;
+	}
+    public Status SendStatus()
+	{
+        return new Status
+        {
+            currentAmount = currentAmount,
+            level = level,
+            exists = exists,
+        };
+	}
+
+
     public Item ToItem()
 	{
         return new Item(this);
@@ -40,23 +64,6 @@ public abstract class ObjectBase : ScriptableObject
     {
         return new PlayerBuilding(this);
     }
-    public ObjectBaseCompact ToObjectBaseCompact()
-	{
-        return new ObjectBaseCompact
-        {
-            currentAmount = currentAmount,
-            level = level,
-            exists = exists,
-        };
-	}
-
-}
-[System.Serializable]
-public class ObjectBaseCompact {
-
-    public int currentAmount;
-    public int level; //index
-    public bool exists;
 
 }
 

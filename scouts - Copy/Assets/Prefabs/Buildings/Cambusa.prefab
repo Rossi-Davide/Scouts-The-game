@@ -99,29 +99,18 @@ MonoBehaviour:
   objectSubName: 
   buttons:
   - buttonText: Attacco alla cambusa
-    buttonNum: 2
     color: 0
-    obj: {fileID: 0}
-    priceOrPrizeAmount: 250
-    priceOrPrizeType: 1
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 42feaaf2f1c177546afe5109cd0b910d, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 3
-  wpCanvas: {fileID: 0}
-  buttonCanvas: {fileID: 0}
   isInstantiating: 0
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
   manageAnimationsAutomatically: 0
+  customDataFileName: Cambusa
   possiblePositions: []
   clickListener: {fileID: 0}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
-  subNameText: {fileID: 0}
   states: []
 --- !u!95 &1678470569485545660
 Animator:

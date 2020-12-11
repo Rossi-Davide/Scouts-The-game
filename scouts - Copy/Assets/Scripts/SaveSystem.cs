@@ -14,10 +14,6 @@ public class SaveSystem : MonoBehaviour
 	}
 	#endregion
 
-	public event System.Action<LoadPriority> OnReadyToLoad;
-	public object RequestData(DataCategory c, DataKey k) { return null; }
-	public object RequestData(DataCategory c, DataKey k, DataParameter p, int i) { return null; }
-
 	private void Start()
 	{
 		InvokeRepeating(nameof(GetSaveAll), 5, 20);
@@ -32,7 +28,7 @@ public class SaveSystem : MonoBehaviour
 		Array.ForEach(System.IO.Directory.GetFiles(Application.persistentDataPath), System.IO.File.Delete);
 	}
 
-	void SaveData(object o, string fileName)
+	public void SaveData(object o, string fileName)
 	{
 		string path = Application.persistentDataPath + $"/{fileName}.json";
 		var json = JsonUtility.ToJson(o);
@@ -58,6 +54,7 @@ public class SaveSystem : MonoBehaviour
 			return default;
 		}
 	}
+	public event Action OnReadyToSaveData;
 	public void GetSaveAll()
 	{
 		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName); }
@@ -68,6 +65,9 @@ public class SaveSystem : MonoBehaviour
 		if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName); }
 		if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName); }
 		if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName); }
+		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), playerFileName); }
+		if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName); }
+		OnReadyToSaveData?.Invoke();
 		Debug.Log("saved data");
 	}
 
@@ -78,99 +78,12 @@ public class SaveSystem : MonoBehaviour
 	public string aisManagerFileName = "AIsManager";
 	public string chestManagerFileName = "ChestManager";
 	public string inventoryManagerFileName = "InventoryManager";
-	public string playerFileName = "PLayer";
+	public string playerFileName = "Player";
 	public string questManagerFileName = "QuestManager";
 	public string squadrigliaManagerFileName = "SquadrigliaManager";
 	public string shopFileName = "Shop";
 	public string gameManagerFileName = "GameManager";
 
-	public string inGameObjectFileName = "InGameObject";
 	public string iterateMultipleObjsFileName = "IterateMultipleObjs";
 	public string playerBuildingBaseFileName = "PlayerBuildingBase"; 
-}
-
-public enum DataCategory
-{
-	ActionButtons,
-	ActionManager,
-	AIsManager,
-	CampManager,
-	ChestManager,
-	InventoryManager,
-	IterateMultipleObjs,
-	Player,
-	QuestManager,
-	SquadrigliaManager,
-	Shop,
-	InGameObject,
-	PlayerBuildingBase,
-	GameManager,
-}
-public enum DataKey
-{
-	selected, //ActionButtons
-	currentActions, //ActionManager
-	currentHiddenActions, //ActionManager
-	allSquadriglieri, //AIsManager
-	events, //AIsManager
-	allCapiECambu, //AIsManager
-	camp, //CampManager
-	slots, //InventoryManager, ChestManager
-	bundles, //IterateMultipleObjs
-	objects, //IterateMultipleObjs
-	position, //Player, InGameObject
-	active, //InGameObject
-	quests, //QuestManager
-	squadriglieInGioco, //SquadrigliaManager
-	sq, //SquadrigliaManager
-	itemDatabase, //Shop
-	buildingDatabase, //Shop
-	objectName, //InGameObject
-	objectSubName, //InGameObject
-	buttons, //InGameObject
-	health, //PlaterBuildingBase
-	isDestroyed, //PlaterBuildingBase
-	isSafe, //PlaterBuildingBase
-	energyValue, //GameManager
-	materialsValue, //GameManager
-	pointsValue, //GameManager
-	energyMaxValue, //GameManager
-	materialsMaxValue, //GameManager
-	pointsMaxValue, //GameManager
-	currentDay, //GameManager
-	currentHour, //GameManager
-	currentMinute, //GameManager
-	isRaining, //GameManager
-	rainTimeLeft, //GameManager
-	rainWaitTimeLeft, //GameManager
-}
-public enum DataParameter
-{
-	nextAction, //IterateMultipleObjs
-	obj, //IterateMultipleObjs
-	prizeTaken, //QuestManager
-	timesDone, //QuestManager
-	baseSq, //SquadrigliaManager
-	angolo, //SquadrigliaManager
-	buildings, //SquadrigliaManager
-	ruoli, //SquadrigliaManager
-	nomi, //SquadrigliaManager
-	materials, //SquadrigliaManager
-	points, //SquadrigliaManager
-	AIPrefabTypes, //SquadrigliaManager
-	item, //Shop, InventoryManager, ChestManager
-	building, //Shop
-	canDo, //InGameObject
-	isWaiting, //InGameObject
-	timeLeft, //InGameObject, AIsManager
-	nextDialogueIndex, //AIsManager
-	running, //AIsManager
-}
-
-public enum LoadPriority
-{
-	Highest,
-	High,
-	Normal,
-	Low,
 }

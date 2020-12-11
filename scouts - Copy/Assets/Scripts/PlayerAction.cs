@@ -16,6 +16,38 @@ public class PlayerAction : ScriptableObject
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0
     public int timeBeforeRedo;
 
+
+    public Status SendStatus()
+    {
+        return new Status
+        {
+            timeBeforeRedo = timeBeforeRedo,
+            timeNeeded = timeNeeded,
+            energyGiven = energyGiven,
+            materialsGiven = materialsGiven,
+            pointsGiven = pointsGiven,
+        };
+    }
+    public void SetStatus(Status status)
+    {
+        if (status != null)
+        {
+            timeBeforeRedo = status.timeBeforeRedo;
+            timeNeeded = status.timeNeeded;
+            energyGiven = status.energyGiven;
+            pointsGiven = status.pointsGiven;
+            materialsGiven = status.materialsGiven;
+        }
+    }
+    [System.Serializable]
+    public class Status
+    {
+        public int timeNeeded;
+        public int energyGiven, materialsGiven, pointsGiven;
+        public int timeBeforeRedo;
+    }
+
+
     public enum ActionParams
 	{
         None,

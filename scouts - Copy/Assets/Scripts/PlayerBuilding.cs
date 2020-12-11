@@ -26,8 +26,6 @@ public class PlayerBuilding : ObjectBase
 		currentAmount = obj.currentAmount;
 		level = obj.level;
 	}
-
-
 }
 [System.Serializable]
 public class HealthInfo

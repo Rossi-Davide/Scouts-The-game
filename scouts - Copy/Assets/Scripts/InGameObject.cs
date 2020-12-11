@@ -13,7 +13,8 @@ public abstract class InGameObject : MonoBehaviour
 	public ActionButton[] buttons;
 	public float maxDistanceFromPlayer;
 
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public GameObject wpCanvas, buttonCanvas;
 
 	protected TimeAction action;
@@ -27,14 +28,16 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected bool hasBeenClicked;
 
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public TimeLeftBar loadingBar;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public TextMeshProUGUI nameText, subNameText;
 	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
-	protected SaveSystem saveSystem;
 
 	protected Animator animator;
 	public BuildingState[] states;
@@ -75,9 +78,9 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual void Start()
 	{
-		saveSystem = SaveSystem.instance;
-		GameManager.instance.OnCampStart += WhenCampStarts;
 		animator = GetComponent<Animator>();
+		GameManager.instance.OnActionDo += RefreshPreviousActions;
+
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
 		if (manageAnimationsAutomatically)
 			InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
@@ -87,6 +90,7 @@ public abstract class InGameObject : MonoBehaviour
 			CalculatePriceOrPrize(buttons[b]);
 			buttons[b].buttonNum = b + 1;
 			buttons[b].obj = GameManager.instance.actionButtons[b];
+			buttons[b].canDo = true;
 		} //change price or prize string in buttons
 
 		wpCanvas = GameManager.instance.wpCanvas;
@@ -101,6 +105,8 @@ public abstract class InGameObject : MonoBehaviour
 
 		if (checkPositionEachFrame)
 			InvokeRepeating(nameof(MoveUI), Time.deltaTime, Time.deltaTime);
+		if (spawnInRandomPosition)
+			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
 
 		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
@@ -108,19 +114,28 @@ public abstract class InGameObject : MonoBehaviour
 		nameText.text = objectName;
 		subNameText.text = objectSubName;
 
-		if (customDataFileName != "")
+		if (customDataFileName != null && customDataFileName != "")
 		{
-			SetStatus(saveSystem.LoadData<Status>(customDataFileName));
+			SetStatus(SaveSystem.instance.LoadData<Status>(customDataFileName));
+			SaveSystem.instance.OnReadyToSaveData += SaveData;
 		}
 	}
 
-	void WhenCampStarts()
+
+	void RefreshPreviousActions(PlayerAction a)
 	{
-		if (spawnInRandomPosition)
+		foreach (var b in buttons)
 		{
-			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
-			MoveUI();
+			if (b.previousAction != null && b.previousAction == a)
+			{
+				b.hasDonePreviousAction = true;
+			}
 		}
+	}
+
+	protected virtual void SaveData()
+	{
+		SaveSystem.instance.SaveData(SendStatus(), customDataFileName);
 	}
 
 	void OnEnable()
@@ -246,6 +261,10 @@ public abstract class InGameObject : MonoBehaviour
 				{
 					GameManager.instance.WarningOrMessage("Hai appena fatto o stai ancora facendo questa azione!", true);
 				}
+				else if (b.previousAction != null && !b.hasDonePreviousAction)
+				{
+					GameManager.instance.WarningOrMessage($"Puoi svolgere questa azione solo dopo avere svolto l'azione {b.previousAction.name}!", true);
+				}
 				else
 				{
 					var onEnd = DoAction(b);
@@ -253,6 +272,7 @@ public abstract class InGameObject : MonoBehaviour
 					ActuallyAddAction(n - 1, onEnd);
 					buttons[n - 1].generalAction.ChangeCountersOnStart();
 					b.canDo = false;
+					b.hasDonePreviousAction = false;
 				}
 			}
 			else
@@ -285,7 +305,7 @@ public abstract class InGameObject : MonoBehaviour
 				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
 				b.obj.transform.Find("InfoButton").gameObject.SetActive(b.generalAction.hasInfoPanel);
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.generalAction.conditions) == null && CheckActionItems(b) == null && ActionManager.instance.CheckIfNotTooManyActions() && b.canDo)
+				if (FindNotVerified(b.generalAction.conditions) == null && CheckActionItems(b) == null && ActionManager.instance.CheckIfNotTooManyActions() && b.canDo && b.hasDonePreviousAction)
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -367,9 +387,7 @@ public abstract class InGameObject : MonoBehaviour
 	#endregion
 
 
-
-
-	[Serializable]
+	[System.Serializable]
 	public class Status
 	{
 		public Vector3 position;
@@ -396,7 +414,6 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			transform.position = status.position;
 			gameObject.SetActive(status.active);
-			buttons = new ActionButton[status.actionButtonInfos.Length];
 			for (int i = 0; i < status.actionButtonInfos.Length; i++)
 			{
 				buttons[i].SetStatus(status.actionButtonInfos[i]);
@@ -411,22 +428,32 @@ public abstract class InGameObject : MonoBehaviour
 public class ActionButton
 {
 	public string buttonText;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public int buttonNum;
 	public GameColor color;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public GameObject obj;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public string priceOrPrizeAmount;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public Counter priceOrPrizeType;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public int timeLeft;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public bool isWaiting;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[NonSerialized]
 	public bool canDo;
 	public PlayerAction generalAction;
+	public PlayerAction previousAction;
+	public bool hasDonePreviousAction;
+
 
 	[Serializable]
 	public class Status
@@ -434,6 +461,7 @@ public class ActionButton
 		public bool canDo;
 		public bool isWaiting;
 		public int timeLeft;
+		public bool hasDonePreviousAction;
 	}
 	public Status SendStatus()
 	{
@@ -442,6 +470,7 @@ public class ActionButton
 			canDo = canDo,
 			isWaiting = isWaiting,
 			timeLeft = timeLeft,
+			hasDonePreviousAction = hasDonePreviousAction,
 		};
 	}
 	public void SetStatus(Status status)
@@ -449,6 +478,7 @@ public class ActionButton
 		canDo = status.canDo;
 		isWaiting = status.isWaiting;
 		timeLeft = status.timeLeft;
+		hasDonePreviousAction = status.hasDonePreviousAction;
 	}
 }
 
@@ -464,7 +494,6 @@ public enum ConditionType
 	ConditionEDellaStessaSquadriglia,
 	ConditionCanUnlockNegozioDelFurfante,
 	ConditionHasEnoughMaterials,
-	ConditionCookBundle,
 }
 
 [Serializable]

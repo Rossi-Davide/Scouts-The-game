@@ -13,10 +13,35 @@ public class Quest : ScriptableObject
     public int timesToDo;
     public int timesDone;
 
-
     public void GetPrize()
 	{
         GameManager.instance.ChangeCounter(prizeCounter, prizeAmount);
         prizeTaken = true;
+	}
+
+
+
+
+	public Status SendStatus()
+	{
+		return new Status
+		{
+			timesDone = timesDone,
+			prizeTaken = prizeTaken,
+		};
+	}
+	public void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			timesDone = status.timesDone;
+			prizeTaken = status.prizeTaken;
+		}
+	}
+	[System.Serializable]
+	public class Status
+	{
+		public int timesDone;
+		public bool prizeTaken;
 	}
 }

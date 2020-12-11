@@ -103,9 +103,9 @@ public class SquadrigliaManager : MonoBehaviour
 
 	public Status SendStatus()
 	{
-		var s = new CompactSquadriglia[squadriglieInGioco.Length];
+		var s = new ConcreteSquadriglia.Status[squadriglieInGioco.Length];
 		for (int i = 0; i < squadriglieInGioco.Length; i++)
-			s[i] = squadriglieInGioco[i].ToCompactSquadriglia();
+			s[i] = squadriglieInGioco[i].SendStatus();
 		return new Status
 		{
 			squadriglieInGioco = s
@@ -117,24 +117,13 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			for (int i = 0; i < squadriglieInGioco.Length; i++)
 			{
-				var sq = squadriglieInGioco[i];
-				var stSq = status.squadriglieInGioco[i];
-				sq.AIPrefabTypes = stSq.AIPrefabTypes;
-				sq.baseSq.name = stSq.name;
-				sq.baseSq.femminile = stSq.femminile;
-				sq.materials = stSq.materials;
-				sq.points = stSq.points;
-				sq.nomi = stSq.nomi;
-				for (int b = 0; b < sq.buildings.Length; b++)
-				{
-					sq.buildings[b].gameObject.SetActive(stSq.activeBuildings[b]);
-				}
+				squadriglieInGioco[i].SetStatus(status.squadriglieInGioco[i]);
 			}
 		}
 	}
 	public class Status
 	{
-		public CompactSquadriglia[] squadriglieInGioco;
+		public ConcreteSquadriglia.Status[] squadriglieInGioco;
 	}
 	void InstantiateStuff()
 	{
@@ -201,7 +190,7 @@ public class SquadrigliaManager : MonoBehaviour
 
 			if (sq.baseSq == Player.instance.squadriglia)
 			{
-				sq.nomi[0] = Player.instance.playerName + " (Tu)";
+				sq.nomi[0] = CampManager.instance.camp.settings.playerName + " (Tu)";
 				sq.baseSq.num = squadriglieInGioco.Length;
 				playerAngoloPos.position = sq.angolo.transform.position;
 			}

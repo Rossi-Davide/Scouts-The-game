@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -41,7 +42,6 @@ public class Shop : MonoBehaviour
 	private void Start()
 	{
 		saveSystem = SaveSystem.instance;
-		saveSystem.OnReadyToLoad += ReceiveSavedData;
 		currentMainScreen = MainShopScreen.Costruzioni;
 		currentSpecificScreen = SpecificShopScreen.Pioneristica;
 		buyButton = infoPanel.transform.Find("BuyButton").gameObject;
@@ -71,12 +71,12 @@ public class Shop : MonoBehaviour
 
 	public Status SendStatus()
 	{
-		var items = new ObjectBaseCompact[itemDatabase.Length];
+		var items = new ObjectBase.Status[itemDatabase.Length];
 		for (int i = 0; i < items.Length; i++)
-			items[i] = itemDatabase[i].ToObjectBaseCompact();
-		var buildings = new ObjectBaseCompact[buildingDatabase.Length];
+			items[i] = itemDatabase[i].SendStatus();
+		var buildings = new ObjectBase.Status[buildingDatabase.Length];
 		for (int i = 0; i < buildings.Length; i++)
-			buildings[i] = buildingDatabase[i].ToObjectBaseCompact();
+			buildings[i] = buildingDatabase[i].SendStatus();
 		return new Status
 		{
 			itemDatabase = items,
@@ -89,31 +89,18 @@ public class Shop : MonoBehaviour
 		{
 			for (int i = 0; i < itemDatabase.Length; i++)
 			{
-				itemDatabase[i].currentAmount = status.itemDatabase[i].currentAmount;
-				itemDatabase[i].level = status.itemDatabase[i].level;
-				itemDatabase[i].exists = status.itemDatabase[i].exists;
+				itemDatabase[i].SetStatus(status.itemDatabase[i]);
+			}
+			for (int i = 0; i < buildingDatabase.Length; i++)
+			{
+				buildingDatabase[i].SetStatus(status.buildingDatabase[i]);
 			}
 		}
 	}
 	public class Status
 	{
-		public ObjectBaseCompact[] itemDatabase;
-		public ObjectBaseCompact[] buildingDatabase;
-	}
-
-	void ReceiveSavedData(LoadPriority p)
-	{
-		if (p == LoadPriority.Normal)
-		{
-			for (int i = 0; i < itemDatabase.Length; i++)
-			{
-				itemDatabase[i] = (Item)saveSystem.RequestData(DataCategory.Shop, DataKey.itemDatabase, DataParameter.item, i);
-			}
-			for (int i = 0; i < buildingDatabase.Length; i++)
-			{
-				buildingDatabase[i] = (PlayerBuilding)saveSystem.RequestData(DataCategory.Shop, DataKey.buildingDatabase, DataParameter.building, i);
-			}
-		}
+		public ObjectBase.Status[] itemDatabase;
+		public ObjectBase.Status[] buildingDatabase;
 	}
 
 	void OrganizeObjects(GameObject panel, SpecificShopScreen screen)

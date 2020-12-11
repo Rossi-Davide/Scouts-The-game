@@ -18,8 +18,7 @@ public class ActionManager : MonoBehaviour
 	bool isOpen;
 	public GameObject panel, overlay;
 	public GameObject[] actionSpots;
-	public TimeAction[] currentActions;
-	public List<TimeAction> currentHiddenActions;
+	public List<TimeAction> currentHiddenActions, currentActions;
 
 	public void TogglePanel()
 	{
@@ -29,7 +28,7 @@ public class ActionManager : MonoBehaviour
 		panel.SetActive(isOpen);
 		overlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		for (int i = 0; i < currentActions.Length; i++)
+		for (int i = 0; i < currentActions.Count; i++)
 		{
 			var s = actionSpots[i];
 			var a = currentActions[i];
@@ -51,40 +50,22 @@ public class ActionManager : MonoBehaviour
 	{
 		if (show)
 		{
-			for (int i = 0; i < currentActions.Length; i++)
-			{
-				if (currentActions[i] == null)
-				{
-					currentActions[i] = action;
-					currentActions[i].timeLeft = currentActions[i].totalTime;
-					currentActions[i].loadingBar.gameObject.SetActive(true);
-					currentActions[i].loadingBar.slider.maxValue = currentActions[i].totalTime;
-					currentActions[i].loadingBar.value.text = GameManager.IntToMinuteSeconds(currentActions[i].totalTime);
-					return;
-				}
-			}
+			currentActions.Add(action);
 		}
 		else
 		{
 			currentHiddenActions.Add(action);
-			action.timeLeft = action.totalTime;
-			action.loadingBar.gameObject.SetActive(true);
-			action.loadingBar.slider.maxValue = action.totalTime;
-			action.loadingBar.value.text = GameManager.IntToMinuteSeconds(action.totalTime);
 		}
+		action.timeLeft = action.totalTime;
+		action.loadingBar.gameObject.SetActive(true);
+		action.loadingBar.slider.maxValue = action.totalTime;
+		action.loadingBar.value.text = GameManager.IntToMinuteSeconds(action.totalTime);
 	}
 
 
 	public bool CheckIfNotTooManyActions() //returns false if there are too many actions
 	{
-		for (int i = 0; i < currentActions.Length; i++)
-		{
-			if (currentActions[i] == null)
-			{
-				return true;
-			}
-		}
-		return false;
+		return currentActions.Count <= 5;
 	}
 
 
@@ -108,7 +89,7 @@ public class ActionManager : MonoBehaviour
 	{
 		InvokeRepeating(nameof(RefreshTimesLeft), 0, 1);
 		isOpen = false;
-		currentActions = new TimeAction[5];
+		currentActions = new List<TimeAction>();
 		currentHiddenActions = new List<TimeAction>();
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.actionManagerFileName));
 	}
@@ -117,7 +98,7 @@ public class ActionManager : MonoBehaviour
 	{
 		return new Status
 		{
-			currentActions = currentActions,
+			currentActions = currentActions.ToArray(),
 			currentHiddenActions = currentHiddenActions.ToArray(),
 		};
 	}
@@ -125,8 +106,10 @@ public class ActionManager : MonoBehaviour
 	{
 		if (status != null)
 		{
-			currentActions = status.currentActions;
-			Array.ForEach(status.currentHiddenActions, element => currentHiddenActions.Add(element));
+			if (status.currentActions != null)
+				Array.ForEach(status.currentActions, element => currentActions.Add(element));
+			if (status.currentHiddenActions != null)
+				Array.ForEach(status.currentHiddenActions, element => currentHiddenActions.Add(element));
 		}
 	}
 	public class Status
@@ -137,26 +120,23 @@ public class ActionManager : MonoBehaviour
 
 	void RefreshTimesLeft()
 	{
-		for (int i = 0; i < currentActions.Length; i++)
+		for (int i = 0; i < currentActions.Count; i++)
 		{
 			var a = currentActions[i];
-			if (a != null)
+			var actualTimeLeft = GameManager.IntToMinuteSeconds(a.timeLeft);
+			actionSpots[i].transform.Find("Time").GetComponent<TextMeshProUGUI>().text = actualTimeLeft;
+			a.loadingBar.value.text = actualTimeLeft;
+			a.loadingBar.slider.value = a.totalTime - a.timeLeft;
+			if (a.timeLeft <= 0)
 			{
-				var actualTimeLeft = GameManager.IntToMinuteSeconds(a.timeLeft);
-				actionSpots[i].transform.Find("Time").GetComponent<TextMeshProUGUI>().text = actualTimeLeft;
-				a.loadingBar.value.text = actualTimeLeft;
-				a.loadingBar.slider.value = a.totalTime - a.timeLeft;
-				if (a.timeLeft <= 0)
-				{
-					currentActions[i] = null;
-					actionSpots[i].SetActive(false);
-					a.loadingBar.gameObject.SetActive(false);
-					a.OnEnd?.Invoke();
-					a.action.ChangeCountersOnEnd();
-					a.building.StartWaitToUseAgain(a.building.buttons[a.buttonNum - 1]);
-				}
-				a.timeLeft--;
+				currentActions.Remove(a);
+				actionSpots[i].SetActive(false);
+				a.loadingBar.gameObject.SetActive(false);
+				a.OnEnd?.Invoke();
+				a.action.ChangeCountersOnEnd();
+				a.building.StartWaitToUseAgain(a.building.buttons[a.buttonNum - 1]);
 			}
+			a.timeLeft--;
 		}
 		foreach (var a in currentHiddenActions)
 		{
@@ -176,6 +156,7 @@ public class ActionManager : MonoBehaviour
 	}
 }
 
+[System.Serializable]
 public class TimeAction
 {
 	public PlayerAction action;

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6900542347143825556}
   - component: {fileID: 6900542347143825557}
   - component: {fileID: 6900542347143825552}
-  - component: {fileID: 6900542347143825554}
   - component: {fileID: 1783706678037681103}
   m_Layer: 0
   m_Name: Lavaggi
@@ -100,64 +99,29 @@ MonoBehaviour:
   objectSubName: 
   buttons:
   - buttonText: Lava i panni
-    buttonNum: 1
     color: 2
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -5
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 94af587bce945d646b57c060bd43a3ca, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   - buttonText: Lava i piatti
-    buttonNum: 2
     color: 3
-    obj: {fileID: 0}
-    priceOrPrizeAmount: -5
-    priceOrPrizeType: 2
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 73f5938fb239be44589edb405704f44e, type: 2}
+    previousAction: {fileID: 11400000, guid: 92352b65d682046488144844375adfe0, type: 2}
+    hasDonePreviousAction: 0
   - buttonText: Pulisci
-    buttonNum: 3
     color: 5
-    obj: {fileID: 0}
-    priceOrPrizeAmount: +3
-    priceOrPrizeType: 3
-    timeLeft: 0
-    isWaiting: 0
-    canDo: 0
     generalAction: {fileID: 11400000, guid: 5cd52149eed6b2046a46fb388fd61b8d, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 3
-  wpCanvas: {fileID: 0}
-  buttonCanvas: {fileID: 0}
   isInstantiating: 0
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
   manageAnimationsAutomatically: 0
+  customDataFileName: Lavaggi
   possiblePositions: []
   clickListener: {fileID: 0}
-  nameTextOffset: {x: 0, y: 0.55, z: 0}
-  loadingBarOffset: {x: 0, y: 0.15, z: 0}
-  loadingBar: {fileID: 0}
-  nameText: {fileID: 0}
-  subNameText: {fileID: 0}
   states: []
---- !u!114 &6900542347143825554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6900542347143825559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e49ef33e6309425468c4c298de5ca307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bundles:
-  - {fileID: 11400000, guid: 7403aad2f5cf7664c95c0fdf1dfe16d3, type: 2}
 --- !u!95 &1783706678037681103
 Animator:
   serializedVersion: 3

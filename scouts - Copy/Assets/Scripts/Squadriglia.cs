@@ -27,14 +27,14 @@ public class ConcreteSquadriglia
 	[HideInInspector] [System.NonSerialized]
 	public int points;
 
-	public CompactSquadriglia ToCompactSquadriglia()
+	public Status SendStatus()
 	{
 		var aB = new bool[buildings.Length];
 		for (int i = 0; i < aB.Length; i++)
 		{
 			aB[i] = buildings[i].gameObject.activeSelf;
 		}
-		return new CompactSquadriglia
+		return new Status
 		{
 			name = baseSq.name,
 			femminile = baseSq.femminile,
@@ -45,17 +45,30 @@ public class ConcreteSquadriglia
 			points = points
 		};
 	}
+	public void SetStatus(Status status)
+	{
+		baseSq.name = status.name;
+		baseSq.femminile = status.femminile;
+		for (int i = 0; i < buildings.Length; i++)
+		{
+			buildings[i].gameObject.SetActive(status.activeBuildings[i]);
+		}
+		nomi = status.nomi;
+		AIPrefabTypes = status.AIPrefabTypes;
+		materials = status.materials;
+		points = status.points;
+	}
+	[System.Serializable]
+	public class Status
+	{
+		public string name;
+		public bool femminile;
+		public bool[] activeBuildings;
+		public string[] nomi = new string[5];
+		public int[] AIPrefabTypes;
+		public int materials;
+		public int points;
+	}
 
 
-}
-[System.Serializable]
-public class CompactSquadriglia
-{
-	public string name;
-	public bool femminile;
-	public bool[] activeBuildings;
-	public string[] nomi = new string[5];
-	public int[] AIPrefabTypes;
-	public int materials;
-	public int points;
 }

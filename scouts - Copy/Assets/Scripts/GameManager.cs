@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
 	#endregion
 	#region Events
 	public event System.Action<Counter, int> OnCounterValueChange;
-	public event System.Action OnCampStart;
 	public event System.Action<bool> OnSunsetOrSunrise;
 	public event System.Action<int> OnHourChange;
 	public event System.Action<PlayerAction> OnActionDo;
@@ -111,10 +110,6 @@ public class GameManager : MonoBehaviour
 			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
 		}
 		OnCounterMaxValueChange?.Invoke(counter, delta);
-	}
-	public void CampStarted()
-	{
-		OnCampStart?.Invoke();
 	}
 
 	#endregion

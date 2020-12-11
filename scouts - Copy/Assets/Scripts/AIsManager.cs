@@ -28,7 +28,6 @@ public class AIsManager : MonoBehaviour
 		InvokeRepeating(nameof(SetActiveOrInactiveAI), 1f, 30f);
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
-		SaveSystem.instance.OnReadyToLoad += ReceiveSavedData;
 	}
 
 	public Status SendStatus()
@@ -73,22 +72,6 @@ public class AIsManager : MonoBehaviour
 		public InGameObject.Status[] capiECambuInfo;
 		public int[] nextDialogueIndices;
 		public InGameObject.Status[] squadriglieriInfo;
-	}
-
-	void ReceiveSavedData(LoadPriority p)
-	{
-		if (p == LoadPriority.Normal)
-		{
-			for (int i = 0; i < allCapiECambu.Length; i++)
-			{
-				allCapiECambu[i].nextDialogueIndex = (int)SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.allCapiECambu, DataParameter.nextDialogueIndex, i);
-			}
-			for (int i = 0; i < events.Length; i++)
-			{
-				events[i].timeLeft = (int)SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.events, DataParameter.timeLeft, i);
-				events[i].running = (bool)SaveSystem.instance.RequestData(DataCategory.AIsManager, DataKey.events, DataParameter.running, i);
-			}
-		}
 	}
 
 	void SetActiveOrInactiveAI()
