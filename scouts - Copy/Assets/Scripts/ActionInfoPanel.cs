@@ -15,6 +15,8 @@ public class ActionInfoPanel : MonoBehaviour
 			selectedAction = ActionButtons.instance.selected.GetComponent<InGameObject>().buttons[buttonNum - 1].generalAction;
 		isOpen = !isOpen;
 		overlay.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = !isOpen;
 		panel.SetActive(isOpen);
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 		if (isOpen)

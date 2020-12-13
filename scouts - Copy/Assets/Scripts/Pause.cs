@@ -8,24 +8,14 @@ public class Pause : MonoBehaviour
 	public GameObject panel, overlay;
 	public void TogglePausePanel()
 	{
+		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "");
 
-		if (!isOpen)
-		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
-			overlay.SetActive(true);
-			panel.SetActive(true);
-			Time.timeScale = 0;
-			isOpen = true;
-		}
-		else
-		{
-
-			Time.timeScale = 1;
-			isOpen = false;
-			panel.SetActive(false);
-			overlay.SetActive(false);
-		}
+		overlay.SetActive(isOpen);
+		panel.SetActive(isOpen);
+		Time.timeScale = isOpen ? 0 : 1;
+		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = !isOpen;
 	}
 
 	public void Menu()

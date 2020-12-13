@@ -22,23 +22,20 @@ public class ActionManager : MonoBehaviour
 
 	public void TogglePanel()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
 		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 		panel.SetActive(isOpen);
 		overlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = false;
 		for (int i = 0; i < currentActions.Count; i++)
 		{
 			var s = actionSpots[i];
 			var a = currentActions[i];
-			if (a != null)
-			{
-				s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.action.name;
-				s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.building.ToString());
-				s.transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
-			}
-			s.SetActive(a != null);
+			s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.action.name;
+			s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.building.ToString());
+			s.transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
+			s.SetActive(true);
 		}
 	}
 

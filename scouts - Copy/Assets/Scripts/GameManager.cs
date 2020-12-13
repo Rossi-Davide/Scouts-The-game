@@ -496,6 +496,8 @@ public class GameManager : MonoBehaviour
 
 		victoryPanel.SetActive(true);
 		overlay.SetActive(true);
+		PanZoom.instance.canDo = false;
+		Joystick.instance.enabled = false;
 	}
 	class SquadrigliaComparer : IComparer
 	{

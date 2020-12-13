@@ -4,7 +4,8 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
 	public GameObject questPanel, overlay;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public QuestUI[] quests;
 	public PlayerAction[] actionDatabase;
 	bool isOpen;
@@ -135,26 +136,17 @@ public class QuestManager : MonoBehaviour
 
 	public void ToggleQuestPanel()
 	{
+		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 
-		if (!isOpen)
+		overlay.SetActive(isOpen);
+		questPanel.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = !isOpen;
+
+		foreach (QuestUI q in quests)
 		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
-			overlay.SetActive(true);
-			questPanel.SetActive(true);
-
-			isOpen = true;
-			foreach (QuestUI q in quests)
-			{
-				q.RefreshQuest();
-			}
-		}
-		else
-		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-			isOpen = false;
-			questPanel.SetActive(false);
-			overlay.SetActive(false);
+			q.RefreshQuest();
 		}
 	}
 }

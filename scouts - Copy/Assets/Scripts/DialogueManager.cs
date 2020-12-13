@@ -48,6 +48,8 @@ public class DialogueManager : MonoBehaviour
 		isOpen = !isOpen;
 		dialoguePanel.SetActive(isOpen);
 		blackOverlay.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = !isOpen;
 		currentSentenceIndex = 0;
 		currentDialogue = dialogue;
 		deltaPoints = currentDialogue.deltaPoints;

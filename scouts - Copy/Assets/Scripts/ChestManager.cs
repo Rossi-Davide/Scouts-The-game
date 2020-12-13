@@ -46,6 +46,7 @@ public class ChestManager : MonoBehaviour
 			chestPanelParent.SetActive(true);
 			isOpen = true;
 			PanZoom.instance.canDo = false;
+			Joystick.instance.enabled = false;
 
 
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
@@ -63,6 +64,7 @@ public class ChestManager : MonoBehaviour
 			chestPanelParent.SetActive(false);
 			overlay.SetActive(false);
 			PanZoom.instance.canDo = true;
+			Joystick.instance.enabled = false;
 
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{

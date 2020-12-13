@@ -29,23 +29,13 @@ public class SfidaManager : MonoBehaviour
 	}
 	public void ToggleChallengePanel()
 	{
-		if (!isOpen)
-		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
-			overlay.SetActive(true);
-			panel.SetActive(true);
-			isOpen = true;
-			RefreshButtons();
-		}
-		else
-		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
-			isOpen = false;
-			panel.SetActive(false);
-			overlay.SetActive(false);
-		}
+		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
+		overlay.SetActive(isOpen);
+		panel.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = !isOpen;
+		RefreshButtons();
 	}
 
 

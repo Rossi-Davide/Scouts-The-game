@@ -81,25 +81,13 @@ public class InventoryManager : MonoBehaviour
 	bool isOpen;
 	public void ToggleInventoryPanel()
 	{
-		if (!isOpen)
-		{
+		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
-			overlay.SetActive(true);
-			inventoryPanelParent.SetActive(true);
-			isOpen = true;
-			PanZoom.instance.canDo = false;
-		}
-		else
-		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
-			isOpen = false;
-			inventoryPanelParent.SetActive(false);
-			overlay.SetActive(false);
-			PanZoom.instance.canDo = true;
-		}
+		inventoryPanelParent.SetActive(isOpen);
+		overlay.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		Joystick.instance.enabled = !isOpen;
 		foreach (var s in slots)
 		{
 			s.RefreshInventoryAmount();
