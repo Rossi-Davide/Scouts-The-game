@@ -25,6 +25,8 @@ public class SquadrigliaManager : MonoBehaviour
 	public PlayerBuildingBase[] playerBuildingPrefabs;
 	public SpriteRenderer[] otherSqBuildingsPrefabs;
 
+	public Transform[] posOggetti;
+
 	public GameObject[] squadriglieriAIMalePrefabs;
 	public GameObject[] squadriglieriAIFemalePrefabs;
 
