@@ -25,7 +25,7 @@ public class SquadrigliaManager : MonoBehaviour
 	public PlayerBuildingBase[] playerBuildingPrefabs;
 	public SpriteRenderer[] otherSqBuildingsPrefabs;
 
-	public Transform[] posOggetti;
+	public posizioneOggettiAngoli[] nAngoli;
 
 	public GameObject[] squadriglieriAIMalePrefabs;
 	public GameObject[] squadriglieriAIFemalePrefabs;
@@ -178,7 +178,7 @@ public class SquadrigliaManager : MonoBehaviour
 			var sq = squadriglieInGioco[s];
 			sq.nomi = new string[5];
 			sq.angolo = angoli[s].transform;
-
+			Transform[] costruzioni = nAngoli[s].oggetti;			
 			if (s < femaleSqs.Length)
 				sq.baseSq = possibleFemaleSqs[femaleSqs[s]];
 			else
@@ -207,7 +207,7 @@ public class SquadrigliaManager : MonoBehaviour
 			sq.buildings = new SpriteRenderer[otherSqBuildingsPrefabs.Length];
 			for (int b = 0; b < sq.buildings.Length; b++)
 			{
-				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], sq.angolo.position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
+				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], costruzioni[b].position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
 			}
 			foreach (var sp in sq.angolo.GetComponentsInChildren<SpriteRenderer>(true))
 			{
