@@ -178,7 +178,6 @@ public class SquadrigliaManager : MonoBehaviour
 			var sq = squadriglieInGioco[s];
 			sq.nomi = new string[5];
 			sq.angolo = angoli[s].transform;
-			Transform[] costruzioni = nAngoli[s].oggetti;			
 			if (s < femaleSqs.Length)
 				sq.baseSq = possibleFemaleSqs[femaleSqs[s]];
 			else
@@ -207,7 +206,7 @@ public class SquadrigliaManager : MonoBehaviour
 			sq.buildings = new SpriteRenderer[otherSqBuildingsPrefabs.Length];
 			for (int b = 0; b < sq.buildings.Length; b++)
 			{
-				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], costruzioni[b].position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
+				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], sq.angolo.position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
 			}
 			foreach (var sp in sq.angolo.GetComponentsInChildren<SpriteRenderer>(true))
 			{
@@ -241,6 +240,7 @@ public class SquadrigliaManager : MonoBehaviour
 	{
 		foreach (ConcreteSquadriglia sq in squadriglieInGioco)
 		{
+
 			if (sq.baseSq != Player.instance.squadriglia)
 			{
 				if (Random.Range(0, 100) >= 50)
@@ -257,16 +257,23 @@ public class SquadrigliaManager : MonoBehaviour
 
 	void OtherSQBuildBuildings()
 	{
-		foreach (var sq in squadriglieInGioco)
+
+		for (int i = 0; i < squadriglieInGioco.Length; i++)
 		{
+			Transform[] costruzioni = nAngoli[i].oggetti;
+			var sq = squadriglieInGioco[i];
 			if (sq.baseSq != Player.instance.squadriglia)
 			{
 				if (Random.Range(0, 100) >= 80)
 				{
-					sq.buildings[Random.Range(0, sq.buildings.Length)].gameObject.SetActive(true);
+					int a = Random.Range(0, sq.buildings.Length);
+					sq.buildings[a].gameObject.SetActive(true);
+					sq.buildings[a].transform.position = costruzioni[a].position;
+
 				}
 			}
 		}
+	
 	}
 	#endregion
 
