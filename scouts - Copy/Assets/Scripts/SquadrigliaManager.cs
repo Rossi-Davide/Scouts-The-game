@@ -269,6 +269,7 @@ public class SquadrigliaManager : MonoBehaviour
 					int a = Random.Range(0, sq.buildings.Length);
 					sq.buildings[a].gameObject.SetActive(true);
 					sq.buildings[a].transform.position = costruzioni[a].position;
+					Debug.Log("entrato");
 
 				}
 			}
