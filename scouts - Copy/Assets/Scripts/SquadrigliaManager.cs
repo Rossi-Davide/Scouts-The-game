@@ -261,17 +261,9 @@ public class SquadrigliaManager : MonoBehaviour
 		{
 			if (sq.baseSq != Player.instance.squadriglia)
 			{
-				bool canBuild = true;
-				if (Random.Range(0, 100) >= 50)
+				if (Random.Range(0, 100) >= 80)
 				{
-					foreach (var b in sq.buildings)
-					{
-						if (!b.gameObject.activeSelf && Random.Range(0, 100) >= 50 && canBuild)
-						{
-							canBuild = false;
-							b.gameObject.SetActive(true);
-						}
-					}
+					sq.buildings[Random.Range(0, sq.buildings.Length)].gameObject.SetActive(true);
 				}
 			}
 		}
