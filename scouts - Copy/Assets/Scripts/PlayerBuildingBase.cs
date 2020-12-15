@@ -133,12 +133,6 @@ public abstract class PlayerBuildingBase : InGameObject
 		base.MoveUI();
 		healthBar.transform.position = transform.position + healthBarOffset;
 	}
-	public override void ToggleUI(bool active)
-	{
-		base.ToggleUI(active);
-		healthBar.gameObject.SetActive(active);
-	}
-
 
 	public class PBStatus : Status
 	{

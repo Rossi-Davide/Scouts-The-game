@@ -70,12 +70,6 @@ public abstract class InGameObject : MonoBehaviour
 		return "";
 	}
 
-
-	protected void ManageUI()
-	{
-
-	}
-
 	protected virtual void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -119,6 +113,12 @@ public abstract class InGameObject : MonoBehaviour
 			SetStatus(SaveSystem.instance.LoadData<Status>(customDataFileName));
 			SaveSystem.instance.OnReadyToSaveData += SaveData;
 		}
+		MoveUI();
+
+
+		var c = GetComponent<CapieCambu>() == null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq != Player.instance.squadriglia);
+		nameText.gameObject.SetActive(c);
+		subNameText.gameObject.SetActive(c);
 	}
 
 
@@ -230,8 +230,11 @@ public abstract class InGameObject : MonoBehaviour
 	public virtual void Deselect()
 	{
 		buttonsText.enabled = false;
-		nameText.gameObject.SetActive(false);
-		subNameText.gameObject.SetActive(false);
+		if (GetComponent<CapieCambu>() == null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq != Player.instance.squadriglia))
+		{
+			nameText.gameObject.SetActive(false);
+			subNameText.gameObject.SetActive(false);
+		}
 		foreach (var b in buttons)
 		{
 			b.obj.SetActive(false);
@@ -305,7 +308,7 @@ public abstract class InGameObject : MonoBehaviour
 				b.obj.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = b.buttonText;
 				b.obj.transform.Find("InfoButton").gameObject.SetActive(b.generalAction.hasInfoPanel);
 				RefreshTimeLeft(b);
-				if (FindNotVerified(b.generalAction.conditions) == null && CheckActionItems(b) == null && ActionManager.instance.CheckIfNotTooManyActions() && b.canDo && b.hasDonePreviousAction)
+				if (FindNotVerified(b.generalAction.conditions) == null && CheckActionItems(b) == null && ActionManager.instance.CheckIfNotTooManyActions() && b.canDo && (b.previousAction == null || b.hasDonePreviousAction))
 				{
 					b.obj.GetComponent<Animator>().Play(b.color + "_Enabled");
 				}
@@ -345,10 +348,9 @@ public abstract class InGameObject : MonoBehaviour
 	}
 	public virtual void ToggleUI(bool active)
 	{
-		loadingBar.gameObject.SetActive(active);
+		clickListener.gameObject.SetActive(active);
 		nameText.gameObject.SetActive(active);
 		subNameText.gameObject.SetActive(active);
-		clickListener.gameObject.SetActive(active);
 	}
 
 

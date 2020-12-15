@@ -32,7 +32,7 @@ public class SaveSystem : MonoBehaviour
 	{
 		string path = Application.persistentDataPath + $"/{fileName}.json";
 		var json = JsonUtility.ToJson(o);
-		Debug.Log($"SaveData: {json}");
+		//Debug.Log($"SaveData: {json}");
 		System.IO.File.WriteAllText(path, json);
 	}
 	public T LoadData<T>(string fileName)

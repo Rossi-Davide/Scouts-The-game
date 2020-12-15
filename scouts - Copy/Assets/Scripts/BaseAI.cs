@@ -86,12 +86,12 @@ public abstract class BaseAI : InGameObject
 	public void Unlock() //call method from another script if stayUntil is true
 	{
 		gameObject.SetActive(true);
-		ToggleUI(true);
 		keepTarget = 0;
 		stayUntil = false;
 		disable = false;
 		animator.SetBool("move", true);
 		CheckPriorityTargetsThatWait();
+		ToggleUI(true);
 	}
 
 	void CheckPriorityTargetsThatWait()
