@@ -22,15 +22,15 @@ public abstract class BaseAI : InGameObject
 
 	protected override void Start()
 	{
-		base.Start();
-		seeker = GetComponent<Seeker>();
 		rb = GetComponent<Rigidbody2D>();
-		animator = GetComponentInChildren<Animator>();
+		seeker = GetComponent<Seeker>();
+		base.Start();
 		animator.SetBool("move", true);
 
 		CreateNewPath(null);
 
 		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
+		InvokeRepeating(nameof(UpdateSlowed), 0.05f, 0.05f);
 	}
 
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
@@ -66,7 +66,7 @@ public abstract class BaseAI : InGameObject
 	{
 		if (keepTarget > 0)
 		{
-			StartCoroutine(GameManager.Wait(keepTarget, Unlock));
+			StartCoroutine(GameManager.instance.Wait(keepTarget, Unlock()));
 			animator.SetBool("move", false);
 		}
 		if (disable)
@@ -83,12 +83,14 @@ public abstract class BaseAI : InGameObject
 			CheckPriorityTargetsThatWait();
 	}
 	
-	public void Unlock() //call method from another script if stayUntil is true
+	public IEnumerator Unlock() //call method from another script if stayUntil is true
 	{
+		yield return new WaitForEndOfFrame();
 		gameObject.SetActive(true);
 		keepTarget = 0;
 		stayUntil = false;
 		disable = false;
+		animator = GetComponent<Animator>();
 		animator.SetBool("move", true);
 		CheckPriorityTargetsThatWait();
 		ToggleUI(true);
@@ -109,10 +111,12 @@ public abstract class BaseAI : InGameObject
 				}
 			}
 		}
+		rb = GetComponent<Rigidbody2D>();
+		seeker = GetComponent<Seeker>();
 		CreateNewPath(target);
 	}
 
-	protected void FixedUpdate()
+	protected void UpdateSlowed()
 	{
 		if (currentPath == null)
 			return;
@@ -154,20 +158,23 @@ public abstract class BaseAI : InGameObject
 			CreateNewPath(target);
 	}
 
-	public void ForceTarget(Vector3 target, int stay, bool setInactive)
+	public IEnumerator ForceTarget(Vector3 target, int stay, bool setInactive)
 	{
+		yield return new WaitForEndOfFrame();
 		CreateNewPath(target);
 		keepTarget = stay;
 		disable = setInactive;
 	}
-	public void ForceTarget(Vector3 target, bool stayUntil, bool setInactive)
+	public IEnumerator ForceTarget(Vector3 target, bool stayUntil, bool setInactive)
 	{
+		yield return new WaitForEndOfFrame();
 		CreateNewPath(target);
 		this.stayUntil = stayUntil;
 		disable = setInactive;
 	}
-	public void ForceTarget(string priorityTargetName, int stay, bool setInactive)
+	public IEnumerator ForceTarget(string priorityTargetName, int stay, bool setInactive)
 	{
+		yield return new WaitForEndOfFrame();
 		foreach (var p in priorityTargets)
 		{
 			if (p.name == priorityTargetName)
@@ -178,8 +185,9 @@ public abstract class BaseAI : InGameObject
 			}
 		}
 	}
-	public void ForceTarget(string priorityTargetName, bool stayUntil, bool setInactive)
+	public IEnumerator ForceTarget(string priorityTargetName, bool stayUntil, bool setInactive)
 	{
+		yield return new WaitForEndOfFrame();
 		foreach (var p in priorityTargets)
 		{
 			if (p.name == priorityTargetName)

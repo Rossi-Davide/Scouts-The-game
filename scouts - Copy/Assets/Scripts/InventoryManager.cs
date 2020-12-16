@@ -168,7 +168,7 @@ public class InventoryManager : MonoBehaviour
 	}
 
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (isOpen && Input.touchCount >= 1)
 		{

@@ -25,7 +25,7 @@ public class AIsManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(SetActiveOrInactiveAI), 1f, 30f);
+		InvokeRepeating(nameof(SetActiveOrInactiveAI), 2f, 30f);
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
 	}
@@ -78,10 +78,11 @@ public class AIsManager : MonoBehaviour
 	{
 		foreach (var sq in allSquadriglieri)
 		{
-			sq.Unlock();
+			StartCoroutine(sq.Unlock());
+			Debug.Log("ciao");
 			if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(100 - percentageOfActiveAIs))
 			{
-				sq.ForceTarget("Tenda", true, true);
+				StartCoroutine(sq.ForceTarget("Tenda", true, true));
 			}
 		}
 	}

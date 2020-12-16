@@ -51,7 +51,7 @@ public class GenericAI : MonoBehaviour
 	{
 		CreateNewPath();
 	}
-	protected virtual void Update()
+	protected virtual void FixedUpdate()
 	{
 		ChangeAnimation();
 		if (currentPath == null)

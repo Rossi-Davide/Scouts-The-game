@@ -20,7 +20,7 @@ public class FollowPlayer : MonoBehaviour
 	{
 		SetTarget(pl);
 	}
-	void Update()
+	void FixedUpdate()
     {
 		if (isFollowing)
 			GoToTarget();

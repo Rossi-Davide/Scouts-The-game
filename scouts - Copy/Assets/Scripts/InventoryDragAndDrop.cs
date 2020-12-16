@@ -6,7 +6,7 @@ public class InventoryDragAndDrop : MonoBehaviour
 	public InventorySlot parent;
 
 
-	void Update()
+	void FixedUpdate()
 	{
 		if (Input.touchCount >= 1)
 		{

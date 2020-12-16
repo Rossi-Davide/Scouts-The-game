@@ -75,6 +75,19 @@ public abstract class InGameObject : MonoBehaviour
 		animator = GetComponent<Animator>();
 		GameManager.instance.OnActionDo += RefreshPreviousActions;
 
+		wpCanvas = GameManager.instance.wpCanvas;
+		buttonCanvas = GameManager.instance.buttonCanvas;
+		buttonsText = GameManager.instance.buttonsText;
+
+		if (isInstantiating) // maybe check if listener is null
+		{
+			clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
+		}
+		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
+		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
+		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
+		clickListener.onClick.AddListener(OnClick);
+
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
 		if (manageAnimationsAutomatically)
 			InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
@@ -87,24 +100,12 @@ public abstract class InGameObject : MonoBehaviour
 			buttons[b].canDo = true;
 		} //change price or prize string in buttons
 
-		wpCanvas = GameManager.instance.wpCanvas;
-		buttonCanvas = GameManager.instance.buttonCanvas;
-		buttonsText = GameManager.instance.buttonsText;
-
-		if (isInstantiating) // maybe check if listener is null
-		{
-			clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
-		}
-		clickListener.onClick.AddListener(OnClick);
 
 		if (checkPositionEachFrame)
 			InvokeRepeating(nameof(MoveUI), Time.deltaTime, Time.deltaTime);
 		if (spawnInRandomPosition)
 			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
 
-		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
-		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
-		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		nameText.text = objectName;
 		subNameText.text = objectSubName;
 

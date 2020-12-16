@@ -22,7 +22,7 @@ public class PanZoom : MonoBehaviour
 	}
 	#endregion
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (!Joystick.instance.isUsingJoystick)
 		{

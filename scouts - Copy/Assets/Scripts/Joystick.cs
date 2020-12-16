@@ -23,7 +23,7 @@ public class Joystick : MonoBehaviour
 		instance = this;
 	}
 	#endregion
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (Input.touchCount >= 1)
 		{

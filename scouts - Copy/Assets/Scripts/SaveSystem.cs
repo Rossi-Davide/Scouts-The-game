@@ -45,7 +45,7 @@ public class SaveSystem : MonoBehaviour
 				return default;
 			}
 			var d = JsonUtility.FromJson<T>(System.IO.File.ReadAllText(path));
-			Debug.Log($"LoadData path: {path} Completed. The result is null: {d == null}. ");
+			//Debug.Log($"LoadData path: {path} Completed. The result is null: {d == null}. ");
 			return d;
 		}
 		catch (System.Exception ex)
@@ -65,7 +65,7 @@ public class SaveSystem : MonoBehaviour
 		if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName); }
 		if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName); }
 		if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName); }
-		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), playerFileName); }
+		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), plFileName); }
 		if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName); }
 		OnReadyToSaveData?.Invoke();
 		Debug.Log("saved data");
@@ -78,7 +78,7 @@ public class SaveSystem : MonoBehaviour
 	public string aisManagerFileName = "AIsManager";
 	public string chestManagerFileName = "ChestManager";
 	public string inventoryManagerFileName = "InventoryManager";
-	public string playerFileName = "Player";
+	public string plFileName = "Player";
 	public string questManagerFileName = "QuestManager";
 	public string squadrigliaManagerFileName = "SquadrigliaManager";
 	public string shopFileName = "Shop";

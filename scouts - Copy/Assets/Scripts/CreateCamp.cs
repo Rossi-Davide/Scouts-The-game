@@ -128,7 +128,7 @@ public class CreateCamp : MonoBehaviour
 		keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del giocatore", 15);
 		editingPlayerName = true;
 	}
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (keyboard.status == TouchScreenKeyboard.Status.Done)
 		{

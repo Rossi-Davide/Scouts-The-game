@@ -79,7 +79,7 @@ public class ChestManager : MonoBehaviour
 		}
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 		if (InventoryManager.dragging)
 		{

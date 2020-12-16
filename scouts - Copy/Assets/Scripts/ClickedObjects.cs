@@ -14,7 +14,7 @@ public class ClickedObjects : MonoBehaviour
 		instance = this;
 	}
 	#endregion
-	private void Update()
+	private void FixedUpdate()
 	{
 		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);

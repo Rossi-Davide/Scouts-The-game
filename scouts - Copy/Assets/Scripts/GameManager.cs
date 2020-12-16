@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
@@ -244,10 +243,15 @@ public class GameManager : MonoBehaviour
 	}
 
 
-	public static IEnumerator Wait(float time, System.Action onEnd)
+	public IEnumerator Wait(float time, System.Action onEnd)
 	{
 		yield return new WaitForSeconds(time);
 		onEnd();
+	}
+	public IEnumerator Wait(float time, IEnumerator onEnd)
+	{
+		yield return new WaitForSeconds(time);
+		StartCoroutine(nameof(onEnd));
 	}
 
 

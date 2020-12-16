@@ -25,7 +25,7 @@ public class modificaAngolo : MonoBehaviour
 		cam = Camera.main;
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 		var slot = ModificaBaseTrigger.instance.buildingSlot;
 		if (Input.touchCount > 0)

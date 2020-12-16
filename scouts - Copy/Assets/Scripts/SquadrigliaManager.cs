@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Data.SqlClient;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SquadrigliaManager : MonoBehaviour
 {
@@ -95,8 +93,8 @@ public class SquadrigliaManager : MonoBehaviour
 	private void Start()
 	{
 		GameManager.instance.OnCounterValueChange += RefreshPlayerCounters;
-		InvokeRepeating(nameof(ChangeOtherSqCounters), 30, Random.Range(10, 30));
-		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, Random.Range(30, 60));
+		InvokeRepeating(nameof(ChangeOtherSqCounters), 30, 30);
+		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, 30);
 		var campManager = CampManager.instance;
 		InitializeSquadriglias(campManager.camp.settings.gender, campManager.possibleFemaleSqs, campManager.possibleMaleSqs, campManager.camp.settings.femaleSqs, campManager.camp.settings.maleSqs, campManager.camp.settings.playerSqIndex);
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.squadrigliaManagerFileName));
@@ -270,7 +268,6 @@ public class SquadrigliaManager : MonoBehaviour
 					sq.buildings[a].gameObject.SetActive(true);
 					sq.buildings[a].transform.position = costruzioni[a].position;
 					Debug.Log("entrato");
-
 				}
 			}
 		}
