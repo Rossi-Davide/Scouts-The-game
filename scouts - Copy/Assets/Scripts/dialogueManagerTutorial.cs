@@ -9,7 +9,8 @@ public class dialogueManagerTutorial : MonoBehaviour
 
 	public DialogueTtutorial types;
 	public TextMeshProUGUI description;
-	int contatore = -1;
+	bool isTyping;
+	int contatore = 0;
 	public GameObject[] capi;
 	public GameObject fumo;
 	public Animator pointLight;
@@ -21,37 +22,44 @@ public class dialogueManagerTutorial : MonoBehaviour
 
 	public void NextSentence()
 	{
-		contatore++;
-		if (contatore <= types.sentences.Length - 1)
+		if (!isTyping)
 		{
-			StopAllCoroutines();
-			var sentence = types.sentences[contatore];
-			StartCoroutine(TypeSentence(sentence));
+			contatore++;
+			if (contatore <= types.sentences.Length)
+			{
+				StopAllCoroutines();
+				var sentence = types.sentences[contatore - 1];
+				StartCoroutine(TypeSentence(sentence));
+			}
+			else
+			{
+				contatore = types.sentences.Length;
+			}
+			Debug.Log(contatore);
 		}
-		else
-		{
-			contatore = types.sentences.Length - 1;
-		}
-		Debug.Log(contatore);
 	}
 
 	public void PreviousSentence()
 	{
-		contatore--;
-		if (contatore <= 0)
+		if (!isTyping)
 		{
-			var sentence = types.sentences[contatore];
-			StopAllCoroutines();
-			StartCoroutine(TypeSentence(sentence));
+			contatore--;
+			if (contatore >= 1)
+			{
+				var sentence = types.sentences[contatore - 1];
+				StopAllCoroutines();
+				StartCoroutine(TypeSentence(sentence));
+			}
+			else
+			{
+				contatore = 1;
+			}
+			Debug.Log(contatore);
 		}
-		else
-		{
-			contatore = 0;
-		}
-		Debug.Log(contatore);
 	}
 	IEnumerator TypeSentence(TutorialSentence sentence)
 	{
+		isTyping = true;
 		description.text = "";
 		GameObject capo = Array.Find(capi, el => { return el.name == sentence.capo.ToString(); });
 		Array.ForEach(capi, el => el.SetActive(el == capo));
@@ -65,5 +73,6 @@ public class dialogueManagerTutorial : MonoBehaviour
 		}
 
 		capo.GetComponent<Animator>().SetBool("staParlando", false);
+		isTyping = false;
 	}
 }
