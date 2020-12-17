@@ -49,6 +49,16 @@ public class labirintoManager : MonoBehaviour
         secondsInizioGioco = 3;
         l = levGen.GetComponent<LevelGenerator>();
         panel.SetActive(true);
+        GameObject audio = GameObject.Find("/AudioManager");
+
+        if (audio != null)
+        {
+            audio.GetComponent<AudioManager>().Play("musicaGiochi");
+        }
+        else
+        {
+            Debug.Log("audioManager non trovato");
+        }
 
     }
 
