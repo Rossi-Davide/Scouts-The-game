@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b00f67159afbaf4b952e3613a63e2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lights: {fileID: 1159155561}
+  unlitShader: {fileID: 4800000, guid: c655d7eac41bc224cb0662f310e61cac, type: 3}
 --- !u!1 &227490253
 GameObject:
   m_ObjectHideFlags: 0
@@ -58843,6 +58843,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.13265356}
   serializedVersion: 2
   m_Radius: 0.10865736
+--- !u!114 &770181055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770181052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739d8342de797c2479660a7f094cc3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderTexture: {fileID: 0}
+  material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  filterMode: 0
+  miniMapCamera: {fileID: 198380622}
+  mapTextureSize: {x: 100, y: 100}
 --- !u!4 &770181060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 361789451317847261, guid: f77ccf19b7525be4e945485382658856,
