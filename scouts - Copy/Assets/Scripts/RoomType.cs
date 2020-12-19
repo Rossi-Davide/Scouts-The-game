@@ -21,4 +21,12 @@ public class RoomType : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name == "Player")
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+    }
 }

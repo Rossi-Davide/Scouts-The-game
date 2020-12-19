@@ -8,6 +8,8 @@ public class dinamite : MonoBehaviour
     public float larghezzaCerchio = 1f;
     public Animator an;
     LIfeNascondino life;
+    bool exTrigger = false;
+    public ParticleSystem p;
     // Start is called before the first frame update
     private void Start()
     {
@@ -27,24 +29,52 @@ public class dinamite : MonoBehaviour
 
     private void Update()
     {
+        
+
         colls = Physics2D.OverlapCircleAll(transform.position, larghezzaCerchio);
 
-        for (int i = 0; i < colls.Length; i++)
+        if (!exTrigger)
         {
-            if (colls[i].name == "Player")
+            for (int i = 0; i < colls.Length; i++)
             {
-                an.SetBool("ka-boom", true);
-                Debug.Log("ka-boom");
-                break;
+                if (colls[i].name == "Player")
+                {
+                    an.SetBool("ka-boom", true);
+                    Debug.Log("ka-boom");
+                    exTrigger = true;
+                    //Invoke("Boom", 7f);
+                    GameObject audio= GameObject.Find("/AudioManager");
+
+                    if (audio != null)
+                    {
+                        audio.GetComponent<AudioManager>().Play("ticchettio dinamite");
+                    }
+                    else
+                    {
+                        Debug.Log("audio comp not found");
+                    }
+                    break;
+                }
             }
-        }
+        }    
     }
 
-
+    void Boom()
+    {
+    }
     void Esplosione()
     {
-        GetComponent<ParticleSystem>().Play();
+        
+    }
+
+    IEnumerator EsplosioneCor()
+    {
+        p.Play();
+
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("avvenuta esplosione");
         life.Dinamite();
         Destroy(gameObject);
+        yield return null;
     }
 }

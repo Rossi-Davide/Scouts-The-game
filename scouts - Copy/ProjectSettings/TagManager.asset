@@ -49,3 +49,6 @@ TagManager:
   - name: capi
     uniqueID: 274944841
     locked: 0
+  - name: oggetti
+    uniqueID: 402477635
+    locked: 0

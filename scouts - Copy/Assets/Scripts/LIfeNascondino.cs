@@ -36,6 +36,7 @@ public class LIfeNascondino : MonoBehaviour
     public void Dinamite()
     {
         life -= dinamite;
+        rb.AddForce(force);
         bar.Health(life);
         if (life <= 0)
         {
