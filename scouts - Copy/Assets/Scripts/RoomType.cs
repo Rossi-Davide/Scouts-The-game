@@ -13,7 +13,7 @@ public class RoomType : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("CheckEndGeneration", 1f);
     }
 
     // Update is called once per frame
@@ -22,11 +22,17 @@ public class RoomType : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    void CheckEndGeneration()//il metodo non è chimato nell'update per evitare il sovraccarico
     {
-        if (collision.collider.name == "Player")
+        if (GameObject.Find("/LevelGenerator").GetComponent<LevelGenerator>().stopGeneration == true)
         {
             GetComponent<BoxCollider2D>().enabled = false;
         }
+        else
+        {
+            Invoke("CheckEndGeneration", 1f);
+        }
     }
+
 }

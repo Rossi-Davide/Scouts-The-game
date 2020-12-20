@@ -22,10 +22,21 @@ public class LIfeNascondino : MonoBehaviour
         bar.Health(life);
     }
 
-    public void Spillo()
+    public void Spillo(Transform spilPos)
     {
-        life -= spillo;
+        life -= spillo; 
+        Transform pPos = this.gameObject.GetComponent<Transform>();
+        if ((spilPos.position.x - pPos.position.x) > 0)
+        {
+            force.x = -(force.x);
+        }
+
+        if ((spilPos.position.y - pPos.position.y) > 0)
+        {
+            force.y = -(force.y);
+        }
         rb.AddForce(force);
+        GameObject.Find("/Player").transform.Find("sangue").gameObject.SetActive(true);
         bar.Health(life);
         if (life <= 0)
         {
@@ -33,10 +44,21 @@ public class LIfeNascondino : MonoBehaviour
         }
     }
 
-    public void Dinamite()
+    public void Dinamite(Transform dinPos)
     {
         life -= dinamite;
+        Transform pPos = this.gameObject.GetComponent<Transform>();
+        if ((dinPos.position.x - pPos.position.x) > 0)
+        {
+            force.x = -(force.x);
+        }
+
+        if ((dinPos.position.y - pPos.position.y) > 0)
+        {
+            force.y = -(force.y);
+        }
         rb.AddForce(force);
+        GameObject.Find("/Player").transform.Find("sangue").gameObject.SetActive(true);
         bar.Health(life);
         if (life <= 0)
         {

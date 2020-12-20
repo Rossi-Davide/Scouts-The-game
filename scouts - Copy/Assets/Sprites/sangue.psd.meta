@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: c2fb391bbc45b834ea6967f6789b7d74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7806816506056805979
+    second: sangue_0
+  - first:
+      213: -653150352392063811
+    second: sangue_1
+  - first:
+      213: -7287500562527571891
+    second: sangue_2
+  - first:
+      213: 6799209799303889836
+    second: sangue_3
+  - first:
+      213: 4430610694900252224
+    second: sangue_4
+  - first:
+      213: 4862551021524268256
+    second: sangue_5
+  - first:
+      213: 370841217988504722
+    second: sangue_6
+  - first:
+      213: 3570644799849566453
+    second: sangue_7
+  - first:
+      213: 3659052065264136658
+    second: sangue_8
+  - first:
+      213: -685571351817125184
+    second: sangue_9
+  - first:
+      213: 8511209086301556772
+    second: sangue_10
+  - first:
+      213: 1795952854953978014
+    second: sangue_11
+  - first:
+      213: -5794592025304759268
+    second: sangue_12
+  - first:
+      213: -956053052727125803
+    second: sangue_13
+  - first:
+      213: 1460532122316517278
+    second: sangue_14
+  - first:
+      213: -4451511056629138478
+    second: sangue_15
+  - first:
+      213: -8169352311669455149
+    second: sangue_16
+  - first:
+      213: 8413871570604558716
+    second: sangue_17
+  - first:
+      213: 2420739486569571637
+    second: sangue_18
+  - first:
+      213: -7998153569899676202
+    second: sangue_19
+  - first:
+      213: -4010371444106527140
+    second: sangue_20
+  - first:
+      213: 3555438125997752521
+    second: sangue_21
+  - first:
+      213: -3912495851317961085
+    second: sangue_22
+  - first:
+      213: -564787199439354105
+    second: sangue_23
+  - first:
+      213: 2176610660496101952
+    second: sangue_24
+  - first:
+      213: 1944776306832431175
+    second: sangue_25
+  - first:
+      213: -1751581238039497714
+    second: sangue_26
+  - first:
+      213: 6896355437777554043
+    second: sangue_27
+  - first:
+      213: -1450900483369731621
+    second: sangue_28
+  - first:
+      213: -3991436340887981260
+    second: sangue_29
+  - first:
+      213: -2204749935546495669
+    second: sangue_30
+  - first:
+      213: -3723049046833069308
+    second: sangue_31
+  - first:
+      213: 8736413563591006327
+    second: sangue_32
+  - first:
+      213: -5537297266648745762
+    second: sangue_33
+  - first:
+      213: -5668335449768942128
+    second: sangue_34
+  - first:
+      213: -8089241814114775523
+    second: sangue_35
+  - first:
+      213: 5339250878187417841
+    second: sangue_36
+  - first:
+      213: -8409238914386805279
+    second: sangue_37
+  - first:
+      213: 3836597002135081183
+    second: sangue_38
+  - first:
+      213: 6403022989735563660
+    second: sangue_39
+  - first:
+      213: -3289798012211068777
+    second: sangue_40
+  - first:
+      213: 8834931320013982027
+    second: sangue_41
+  - first:
+      213: -4078323948377566269
+    second: sangue_42
+  - first:
+      213: -7374934306907634434
+    second: sangue_43
+  - first:
+      213: 6870839634893977881
+    second: sangue_44
+  - first:
+      213: -3895921499889787892
+    second: sangue_45
+  - first:
+      213: -2068457629024106134
+    second: sangue_46
+  - first:
+      213: 7545029887680196
+    second: sangue_47
+  - first:
+      213: 1243762661204033573
+    second: sangue_48
+  - first:
+      213: 6944294812213261043
+    second: sangue_49
+  - first:
+      213: -600921360268830324
+    second: sangue_50
+  - first:
+      213: 4243937088776760994
+    second: sangue_51
+  - first:
+      213: 2406942016871949784
+    second: sangue_52
+  - first:
+      213: -7694552343852315837
+    second: sangue_53
+  - first:
+      213: -2036275838641366261
+    second: sangue_54
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sangue_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1246
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e0c2eff32675c60800000000000000
+      internalID: 7806816506056805979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1241
+        width: 109
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4ffbc073b8fe6f0800000000000000
+      internalID: -653150352392063811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_2
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1138
+        width: 114
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40b51669d89dda90800000000000000
+      internalID: -7287500562527571891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_3
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1144
+        width: 122
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca30dd8e945ab5e50800000000000000
+      internalID: 6799209799303889836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_4
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1151
+        width: 116
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e739fd3f0bc7d30800000000000000
+      internalID: 4430610694900252224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_5
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1147
+        width: 128
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4ba2424604b7340800000000000000
+      internalID: 4862551021524268256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1154
+        width: 129
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c274a7f1e752500800000000000000
+      internalID: 370841217988504722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_7
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 1138
+        width: 198
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f01122078a7d8130800000000000000
+      internalID: 3570644799849566453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_8
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 1138
+        width: 208
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d17ab4877097c230800000000000000
+      internalID: 3659052065264136658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_9
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 876
+        width: 252
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c281c2ec7c5c76f0800000000000000
+      internalID: -685571351817125184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangue_10
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 862
+        width: 276
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420d416d193ed1670800000000000000
+      internalID: 8511209086301556772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

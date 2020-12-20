@@ -59,21 +59,28 @@ public class dinamite : MonoBehaviour
         }    
     }
 
-    void Boom()
-    {
-    }
-    void Esplosione()
-    {
-        
-    }
+  
 
     IEnumerator EsplosioneCor()
     {
-        p.Play();
-
-        yield return new WaitForSeconds(1.5f);
+        p.Play();     
         Debug.Log("avvenuta esplosione");
-        life.Dinamite();
+
+        colls = Physics2D.OverlapCircleAll(transform.position, larghezzaCerchio);// controllo che il player sia ancora nel raggio d'azione per ricevere i danni
+
+        for (int i = 0; i < colls.Length; i++)
+        {
+            if (colls[i].name == "Player")
+            {
+                Transform dinPos = this.gameObject.GetComponent<Transform>();
+                life.Dinamite(dinPos);
+                break;
+            }
+        }
+
+        SpriteRenderer s = this.gameObject.GetComponent<SpriteRenderer>();
+        s.enabled = false;
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
         yield return null;
     }

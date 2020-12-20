@@ -9,7 +9,8 @@ public class spillo : MonoBehaviour
         if (collision.collider.name == "Player")
         {
             Collider2D cl = collision.collider;
-            cl.GetComponent<LIfeNascondino>().Spillo();
+            Transform spilPos = this.gameObject.GetComponent<Transform>();
+            cl.GetComponent<LIfeNascondino>().Spillo(spilPos);
         }
     }
 }
