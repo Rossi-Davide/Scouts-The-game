@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3685,8 +3685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc14135ce1f2ad4e965e0da9bf25f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  isUsingJoystick: 0
 --- !u!1001 &3992244355713065638
 PrefabInstance:
   m_ObjectHideFlags: 0

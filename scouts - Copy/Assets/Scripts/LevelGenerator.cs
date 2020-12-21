@@ -46,6 +46,7 @@ public class LevelGenerator : MonoBehaviour
 
     void Move()
     {
+
         if (direction == 1 || direction == 2)//move right
         {
             downCounter = 0;

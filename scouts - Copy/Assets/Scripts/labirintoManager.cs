@@ -14,13 +14,13 @@ public class labirintoManager : MonoBehaviour
     [HideInInspector]
     public bool aumentoDifficoltà = false;
     GameObject[] enemies;
-    int seconds, secondsInizioGioco;
+    public int seconds, secondsInizioGioco;
     LevelGenerator l;
     int StopScene = 15;
     bool StopSceneTrigger = false,alreadyStarted=false;
     public int nSpilli,nDinamiti,nCaramelle;
     public GameObject spillo, dinamite,candy,bottoneTornaAlGioco,sconfitta,victoryText,score;
-
+    public bool endGen = false;
 
     #region Utility functions
     public static string IntToMinutesColonSeconds(int time)
@@ -39,13 +39,17 @@ public class labirintoManager : MonoBehaviour
     #endregion
 
 
+    public void CollsDisabled()
+    {
+        endGen = true;
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPoint = transform.Find("spawnPoint");
         InvokeRepeating("CountDown", 1, 1);
-        seconds = 120;
         secondsInizioGioco = 3;
         l = levGen.GetComponent<LevelGenerator>();
         panel.SetActive(true);
@@ -187,17 +191,11 @@ public class labirintoManager : MonoBehaviour
     public IEnumerator Sconfitta()
     {
         Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        playerNascondino pN = player.GetComponent<playerNascondino>();
+        Player pN = player.GetComponent<Player>();
         pN.enabled = false;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         joystick.SetActive(false);
-        foreach (GameObject item in enemies)
-        {
-            Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
-            AImaster movement = item.GetComponent<AImaster>();
-            movement.enabled = false;
-            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
+       
         //Debug.Log("hai perso");
         //animazione da decidere
 
