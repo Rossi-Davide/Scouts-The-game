@@ -9,11 +9,12 @@ public class dinamite : MonoBehaviour
     public Animator an;
     LIfeNascondino life;
     bool exTrigger = false;
-    public ParticleSystem p;
+    ParticleSystem dynamite;
     // Start is called before the first frame update
     private void Start()
     {
         life = GameObject.Find("/Player").GetComponent<LIfeNascondino>();
+        dynamite = GetComponent<ParticleSystem>();
     }
 
 
@@ -29,8 +30,6 @@ public class dinamite : MonoBehaviour
 
     private void Update()
     {
-        
-
         colls = Physics2D.OverlapCircleAll(transform.position, larghezzaCerchio);
 
         if (!exTrigger)
@@ -63,7 +62,7 @@ public class dinamite : MonoBehaviour
 
     IEnumerator EsplosioneCor()
     {
-        p.Play();     
+        dynamite.Play();     
         Debug.Log("avvenuta esplosione");
 
         colls = Physics2D.OverlapCircleAll(transform.position, larghezzaCerchio);// controllo che il player sia ancora nel raggio d'azione per ricevere i danni
