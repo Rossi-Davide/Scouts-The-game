@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1065,8 +1065,7 @@ MonoBehaviour:
   m_text: Vittoria
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: efea94aa7c958c54f9158ca84ceb4aff, type: 2}
-  m_sharedMaterial: {fileID: 6371198972698492290, guid: efea94aa7c958c54f9158ca84ceb4aff,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 938591870aef78d4cb714c7d69d0abf5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -61247,8 +61246,7 @@ MonoBehaviour:
   m_text: Sconfitta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: efea94aa7c958c54f9158ca84ceb4aff, type: 2}
-  m_sharedMaterial: {fileID: 6371198972698492290, guid: efea94aa7c958c54f9158ca84ceb4aff,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 938591870aef78d4cb714c7d69d0abf5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
