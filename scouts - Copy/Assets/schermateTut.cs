@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class schermateTut : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class schermateTut : MonoBehaviour
     public GameObject photosOut;
     public GameObject videoOut;
     public VideoPlayer player;
+    public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +30,19 @@ public class schermateTut : MonoBehaviour
     {
         switch (contatore)
         {
+            case 1:
+                photosOut.GetComponent<Image>().sprite = photos[0];
+                videoOut.SetActive(false);
+                photosOut.SetActive(true);
+                break;
             case 2:
                 photosOut.SetActive(false);
+                videoOut.SetActive(true);
+                player.clip = videi[0];
                 break;
             case 3:
+                photosOut.SetActive(false);
+                videoOut.SetActive(true);
                 player.clip = videi[1];
                 break;
 
@@ -48,6 +59,8 @@ public class schermateTut : MonoBehaviour
                 break;
             case 7:
                 photosOut.GetComponent<Image>().sprite = photos[4];
+                videoOut.SetActive(false);
+                photosOut.SetActive(true);
                 break;
             case 8:
                 photosOut.SetActive(false);
@@ -69,8 +82,20 @@ public class schermateTut : MonoBehaviour
                 photosOut.SetActive(false);
                 player.clip = videi[4];
                 videoOut.SetActive(true);
+                button.SetActive(false);
+                break;
+            case 12:
+                photosOut.SetActive(false);
+                player.clip = videi[5];
+                videoOut.SetActive(true);
+                button.SetActive(true);
                 break;
         }
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }

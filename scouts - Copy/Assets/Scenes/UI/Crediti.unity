@@ -383,8 +383,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: repartolaquercia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -542,8 +542,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Pietro Magnani: pietropappo'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -775,8 +775,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Simone Ceccarelli: simone_ceccarelli'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1080,8 +1080,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Realizzato dal reparto La Quercia come autofinanziamento
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1503,8 +1503,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Davide Rossi: big_baddave'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1660,8 +1660,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Musiche di Simone Ceccarelli; effetti sonori di Davide Rossi
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1932,8 +1932,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Prodotto da sara cappelli e davide rossi
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2091,8 +2091,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sara Cappelli: sara_cappe22'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2378,8 +2378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Contatti:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2797,8 +2797,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Per ulteriori informazioni:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3084,8 +3084,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Grafiche di Pietro Magnani, Davide Rossi e Sara Cappelli
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3378,8 +3378,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
