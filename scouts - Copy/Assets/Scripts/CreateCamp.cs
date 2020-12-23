@@ -64,7 +64,7 @@ public class CreateCamp : MonoBehaviour
 	public void DeleteCamp()
 	{
 		campManager.campCreated = false;
-		SaveSystem.instance.DeleteAllFiles();
+		SaveSystem.instance.DeleteGameFiles();
 		confirmationWindow.SetActive(false);
 		existingCampPanel.SetActive(false);
 		noCampPanel.SetActive(true);

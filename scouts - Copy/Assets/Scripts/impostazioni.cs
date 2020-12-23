@@ -15,13 +15,12 @@ public class impostazioni : MonoBehaviour
 
     #region Singleton
     public static impostazioni instance;
-	/*private void Awake()
+	private void Awake()
 	{
-        if (instance != null)
-            throw new System.Exception("impostazioni non è un singleton!");
-        instance = this;
-        DontDestroyOnLoad(instance);
-	}*/
+		if (instance != null)
+			throw new System.Exception("impostazioni non è un singleton!");
+		instance = this;
+	}
 	#endregion
 
 	public TextMeshProUGUI masterValue, musicValue, effectsValue;
@@ -50,13 +49,13 @@ public class impostazioni : MonoBehaviour
         resDrop.value = defResolution;
         resDrop.RefreshShownValue();
 
-        generalVolume = CampManager.instance.appSettings.generalVolume;
-        musicVolume = CampManager.instance.appSettings.musicVolume;
-        effectsVolume = CampManager.instance.appSettings.effectsVolume;
-        qualityIndex = CampManager.instance.appSettings.qualityIndex;
-        resIndex = CampManager.instance.appSettings.resIndex;
-        fullscreen = CampManager.instance.appSettings.fullscreen;
-
+        generalVolume = 100;
+		musicVolume = 100;
+		effectsVolume = 100;
+		resIndex = 0;
+		qualityIndex = 0;
+		fullscreen = false;
+        SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.impostazioniFileName, true));
     }
 
     [HideInInspector] [System.NonSerialized]
@@ -73,8 +72,9 @@ public class impostazioni : MonoBehaviour
     public bool fullscreen;
 
 
+	#region stuff
 
-    public void SetVolumeMaster(int volume)
+	public void SetVolumeMaster(int volume)
     {
         generalVolume = volume - 80;
         mixer.SetFloat("master", generalVolume);
@@ -118,13 +118,48 @@ public class impostazioni : MonoBehaviour
         Resolution resolution = resolutions[resIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+    #endregion
 
     public void TornaAlMenu()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
-        CampManager.instance.appSettings = new AppSettings { generalVolume = this.generalVolume, musicVolume = this.musicVolume, effectsVolume = this.effectsVolume, qualityIndex = this.qualityIndex, resIndex = this.resIndex, fullscreen = this.fullscreen };
-
+        SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.impostazioniFileName, true);
         SceneLoader.instance.LoadMainMenuScene();
     }
+
+    public Status SendStatus()
+    {
+        return new Status
+        {
+            generalVolume = generalVolume,
+            musicVolume = musicVolume,
+            effectsVolume = effectsVolume,
+            qualityIndex = qualityIndex,
+            resIndex = resIndex,
+            fullscreen = fullscreen,
+        };
+    }
+    void SetStatus(Status status)
+    {
+        if (status != null)
+        {
+            generalVolume = status.generalVolume;
+            musicVolume = status.musicVolume;
+            effectsVolume = status.effectsVolume;
+            qualityIndex = status.qualityIndex;
+            resIndex = status.resIndex;
+            fullscreen = status.fullscreen;
+        }
+    }
+    public class Status
+    {
+        public int generalVolume;
+        public int musicVolume;
+        public int effectsVolume;
+        public int qualityIndex;
+        public int resIndex;
+        public bool fullscreen;
+    }
+
+
 }

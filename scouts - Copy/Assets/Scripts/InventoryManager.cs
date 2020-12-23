@@ -103,7 +103,7 @@ public class InventoryManager : MonoBehaviour
 		useButton = itemInfoBox.transform.Find("Button").gameObject;
 		if (slots.Length != maxInventoryItems)
 			Debug.LogWarning("Inventory contains a different number of slots from the required one.");
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.inventoryManagerFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.inventoryManagerFileName, false));
 	}
 	public Status SendStatus()
 	{

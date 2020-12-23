@@ -476,7 +476,7 @@ public class GameManager : MonoBehaviour
 		pointsMaxValue = 70;
 		energyValue = 100;
 		globalLight.intensity = 1f;
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
 
 
@@ -520,7 +520,7 @@ public class GameManager : MonoBehaviour
 	public void MenuAndDestroyCamp()
 	{
 		SceneLoader.instance.LoadMainMenuScene();
-		SaveSystem.instance.DeleteAllFiles();
+		SaveSystem.instance.DeleteGameFiles();
 		CampManager.instance.campCreated = false;
 	}
 

@@ -97,7 +97,7 @@ public class SquadrigliaManager : MonoBehaviour
 		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, 30);
 		var campManager = CampManager.instance;
 		InitializeSquadriglias(campManager.camp.settings.gender, campManager.possibleFemaleSqs, campManager.possibleMaleSqs, campManager.camp.settings.femaleSqs, campManager.camp.settings.maleSqs, campManager.camp.settings.playerSqIndex);
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.squadrigliaManagerFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.squadrigliaManagerFileName, false));
 		InstantiateStuff();
 	}
 
@@ -161,7 +161,7 @@ public class SquadrigliaManager : MonoBehaviour
 				}
 			}
 		}
-		AIsManager.instance.SetStatus(SaveSystem.instance.LoadData<AIsManager.Status>(SaveSystem.instance.aisManagerFileName));
+		AIsManager.instance.SetStatus(SaveSystem.instance.LoadData<AIsManager.Status>(SaveSystem.instance.aisManagerFileName, false));
 	}
 
 	public void InitializeSquadriglias(Gender gender, Squadriglia[] possibleFemaleSqs, Squadriglia[] possibleMaleSqs, int[] femaleSqs, int[] maleSqs, int playerSqIndex)

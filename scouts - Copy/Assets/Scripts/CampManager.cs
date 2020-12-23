@@ -24,9 +24,6 @@ public class CampManager : MonoBehaviour
 
 	[HideInInspector] [System.NonSerialized]
 	public Camp camp;
-	
-	[HideInInspector] [System.NonSerialized]
-	public AppSettings appSettings;
 
 	[HideInInspector] [System.NonSerialized]
 	public bool campCreated;
@@ -35,16 +32,7 @@ public class CampManager : MonoBehaviour
 	{
 		campCreated = false;
 		camp = new Camp(CreateDefaultSettings());
-		appSettings = new AppSettings
-		{
-			generalVolume = 100,
-			musicVolume = 100,
-			effectsVolume = 100,
-			resIndex = 0,
-			qualityIndex = 0,
-			fullscreen = false
-		};
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.campManagerFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.campManagerFileName, false));
 	}
 
 	public static Settings CreateDefaultSettings()
@@ -74,7 +62,6 @@ public class CampManager : MonoBehaviour
 		{
 			camp = camp,
 			campCreated = campCreated,
-			appSettings = appSettings
 		};
 	}
 	void SetStatus(Status status)
@@ -83,14 +70,12 @@ public class CampManager : MonoBehaviour
 		{
 			camp.settings = status.camp.settings;
 			campCreated = status.campCreated;
-			appSettings = status.appSettings;
 		}
 	}
 	public class Status
 	{
 		public Camp camp;
 		public bool campCreated;
-		public AppSettings appSettings;
 	}
 }
 
@@ -138,30 +123,6 @@ public class Settings
 			gender = this.gender,
 			hair = this.hair,
 			difficulty = this.difficulty,
-		};
-	}
-}
-
-[System.Serializable]
-public class AppSettings
-{
-	public int generalVolume;
-	public int musicVolume;
-	public int effectsVolume;
-	public int qualityIndex;
-	public int resIndex;
-	public bool fullscreen;
-
-	public AppSettings Clone()
-	{
-		return new AppSettings
-		{
-			generalVolume = generalVolume,
-			musicVolume = musicVolume,
-			effectsVolume = effectsVolume,
-			resIndex = resIndex,
-			qualityIndex = qualityIndex,
-			fullscreen = fullscreen,
 		};
 	}
 }

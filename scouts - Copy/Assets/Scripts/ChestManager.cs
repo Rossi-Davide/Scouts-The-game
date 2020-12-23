@@ -98,7 +98,7 @@ public class ChestManager : MonoBehaviour
 			Debug.LogWarning("Chest contains a different number of slots from the required one.");
 		if (fakeInventorySlots.Length != InventoryManager.instance.slots.Length)
 			Debug.LogWarning("Chest fake inventory contains a different number of slots from the required one.");
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.chestManagerFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.chestManagerFileName, false));
 	}
 	public Status SendStatus()
 	{

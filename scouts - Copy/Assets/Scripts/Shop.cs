@@ -66,7 +66,7 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(decorazioni, SpecificShopScreen.Decorazioni);
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
 
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.shopFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.shopFileName, false));
 	}
 
 	public Status SendStatus()

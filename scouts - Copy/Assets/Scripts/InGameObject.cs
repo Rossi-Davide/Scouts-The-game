@@ -111,7 +111,7 @@ public abstract class InGameObject : MonoBehaviour
 
 		if (customDataFileName != null && customDataFileName != "")
 		{
-			SetStatus(SaveSystem.instance.LoadData<Status>(customDataFileName));
+			SetStatus(SaveSystem.instance.LoadData<Status>(customDataFileName, false));
 			SaveSystem.instance.OnReadyToSaveData += SaveData;
 		}
 		MoveUI();
@@ -136,7 +136,7 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual void SaveData()
 	{
-		SaveSystem.instance.SaveData(SendStatus(), customDataFileName);
+		SaveSystem.instance.SaveData(SendStatus(), customDataFileName, false);
 	}
 
 	void OnEnable()

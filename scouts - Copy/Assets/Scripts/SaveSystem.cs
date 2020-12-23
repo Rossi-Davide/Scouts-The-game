@@ -14,8 +14,19 @@ public class SaveSystem : MonoBehaviour
 	}
 	#endregion
 
+	string gameDataDirectoryName = "/GameData";
+	string persistentDataDirectoryName = "/PersistentData";
 	private void Start()
 	{
+		string p = Application.persistentDataPath;
+		if (!System.IO.Directory.Exists(p + $"{gameDataDirectoryName}"))
+		{
+			System.IO.Directory.CreateDirectory(p + $"{gameDataDirectoryName}");
+		}
+		if (!System.IO.Directory.Exists(p + $"{persistentDataDirectoryName}"))
+		{
+			System.IO.Directory.CreateDirectory(p + $"{persistentDataDirectoryName}");
+		}
 		InvokeRepeating(nameof(GetSaveAll), 5, 20);
 	}
 	private void OnApplicationQuit()
@@ -23,23 +34,24 @@ public class SaveSystem : MonoBehaviour
 		GetSaveAll();
 	}
 
-	public void DeleteAllFiles()
+	public void DeleteGameFiles()
 	{
-		Array.ForEach(System.IO.Directory.GetFiles(Application.persistentDataPath), System.IO.File.Delete);
+		Array.ForEach(System.IO.Directory.GetFiles(Application.persistentDataPath + $"{gameDataDirectoryName}"), System.IO.File.Delete);
 	}
 
-	public void SaveData(object o, string fileName)
+	public void SaveData(object o, string fileName, bool isPersistent)
 	{
-		string path = Application.persistentDataPath + $"/{fileName}.json";
+		string p = Application.persistentDataPath;
+		string path = p + (isPersistent ? $"{persistentDataDirectoryName}" : $"{gameDataDirectoryName}") + $"/{fileName}.json";
 		var json = JsonUtility.ToJson(o);
-		//Debug.Log($"SaveData: {json}");
 		System.IO.File.WriteAllText(path, json);
+		//Debug.Log($"SaveData: {json}");
 	}
-	public T LoadData<T>(string fileName)
+	public T LoadData<T>(string fileName, bool isPersistent)
 	{
 		try
 		{
-			string path = Application.persistentDataPath + $"/{fileName}.json";
+			string path = Application.persistentDataPath + (isPersistent ? $"{persistentDataDirectoryName}" : $"{gameDataDirectoryName}") + $"/{fileName}.json";
 			if (!System.IO.File.Exists(path))
 			{
 				return default;
@@ -48,7 +60,7 @@ public class SaveSystem : MonoBehaviour
 			//Debug.Log($"LoadData path: {path} Completed. The result is null: {d == null}. ");
 			return d;
 		}
-		catch (System.Exception ex)
+		catch (Exception ex)
 		{
 			Debug.Log($"Error in LoadData path: {ex.Message}");
 			return default;
@@ -57,16 +69,17 @@ public class SaveSystem : MonoBehaviour
 	public event Action OnReadyToSaveData;
 	public void GetSaveAll()
 	{
-		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName); }
-		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName); }
-		if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName); }
-		if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName); }
-		if (ActionManager.instance != null) { SaveData(ActionManager.instance.SendStatus(), actionManagerFileName); }
-		if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName); }
-		if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName); }
-		if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName); }
-		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), plFileName); }
-		if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName); }
+		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName, false); }
+		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName, false); }
+		if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName, false); }
+		if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName, false); }
+		if (ActionManager.instance != null) { SaveData(ActionManager.instance.SendStatus(), actionManagerFileName, false); }
+		if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName, false); }
+		if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName, false); }
+		if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName, false); }
+		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), plFileName, false); }
+		if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName, false); }
+		if (impostazioni.instance != null) { SaveData(impostazioni.instance.SendStatus(), impostazioniFileName, true); }
 		OnReadyToSaveData?.Invoke();
 		Debug.Log("saved data");
 	}
@@ -83,6 +96,7 @@ public class SaveSystem : MonoBehaviour
 	public string squadrigliaManagerFileName = "SquadrigliaManager";
 	public string shopFileName = "Shop";
 	public string gameManagerFileName = "GameManager";
+	public string impostazioniFileName = "Impostazioni";
 
 	public string iterateMultipleObjsFileName = "IterateMultipleObjs";
 	public string playerBuildingBaseFileName = "PlayerBuildingBase"; 

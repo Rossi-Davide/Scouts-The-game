@@ -23,6 +23,7 @@ public class Pause : MonoBehaviour
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 
 		Time.timeScale = 1;
+		SaveSystem.instance.GetSaveAll();
 		SceneLoader.instance.LoadMainMenuScene();
 	}
 

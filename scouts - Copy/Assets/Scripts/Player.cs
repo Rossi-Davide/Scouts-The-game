@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 	private void Start()
     {
         animator = GetComponent<Animator>();
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.plFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.plFileName, false));
     }
 
 

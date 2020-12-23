@@ -27,12 +27,12 @@ public abstract class PlayerBuildingBase : InGameObject
 
 		if (customDataFileName != null && customDataFileName != "")
 		{
-			SetPBStatus(SaveSystem.instance.LoadData<PBStatus>(customDataFileName));
+			SetPBStatus(SaveSystem.instance.LoadData<PBStatus>(customDataFileName, false));
 		}
 	}
 	protected override void SaveData()
 	{
-		SaveSystem.instance.SaveData(SendPBStatus(), customDataFileName);
+		SaveSystem.instance.SaveData(SendPBStatus(), customDataFileName, false);
 	}
 
 

@@ -88,7 +88,7 @@ public class ActionManager : MonoBehaviour
 		isOpen = false;
 		currentActions = new List<TimeAction>();
 		currentHiddenActions = new List<TimeAction>();
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.actionManagerFileName));
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.actionManagerFileName, false));
 	}
 
 	public Status SendStatus()
