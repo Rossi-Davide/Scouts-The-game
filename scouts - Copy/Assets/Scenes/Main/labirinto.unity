@@ -454,7 +454,7 @@ MonoBehaviour:
   editorCountdown: {fileID: 570601212}
   countdownSecondsInizio: {fileID: 1480515613}
   "aumentoDifficolt\xE0": 0
-  seconds: 180
+  seconds: 3
   secondsInizioGioco: 0
   nSpilli: 20
   nDinamiti: 10
