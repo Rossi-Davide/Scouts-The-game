@@ -11,9 +11,10 @@ public abstract class BaseAI : InGameObject
 	protected Rigidbody2D rb;
 
 	//current stuff
-	Vector3 currentTarget;
+	protected Vector3 currentTarget;
 	protected Path currentPath;
 	protected int currentWayPointIndex;
+	System.Action currentEndMethod;
 
 	public PriorityTarget[] priorityTargets;
 
@@ -64,6 +65,11 @@ public abstract class BaseAI : InGameObject
 	}
 	protected void PathCompleted()
 	{
+		if (currentEndMethod != null)
+		{
+			currentEndMethod();
+			currentEndMethod = null;
+		}
 		if (keepTarget > 0)
 		{
 			StartCoroutine(GameManager.instance.Wait(keepTarget, Unlock()));
@@ -172,6 +178,13 @@ public abstract class BaseAI : InGameObject
 		this.stayUntil = stayUntil;
 		disable = setInactive;
 	}
+	public IEnumerator ForceTarget(Vector3 target, bool setInactive, System.Action onEnd)
+	{
+		yield return new WaitForEndOfFrame();
+		CreateNewPath(target);
+		disable = setInactive;
+		currentEndMethod = onEnd;
+	}
 	public IEnumerator ForceTarget(string priorityTargetName, int stay, bool setInactive)
 	{
 		yield return new WaitForEndOfFrame();
@@ -198,4 +211,5 @@ public abstract class BaseAI : InGameObject
 			}
 		}
 	}
+
 }

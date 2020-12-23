@@ -66,8 +66,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SCOUTS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aefc5cd228b8d944789e961f6058e403, type: 2}
-  m_sharedMaterial: {fileID: 9064558808367541496, guid: aefc5cd228b8d944789e961f6058e403,
+  m_fontAsset: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31, type: 2}
+  m_sharedMaterial: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -339,7 +339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.149994, y: 0}
+  m_AnchoredPosition: {x: 7.1500244, y: 0}
   m_SizeDelta: {x: -104.17908, y: -46.28914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4425579214678199614

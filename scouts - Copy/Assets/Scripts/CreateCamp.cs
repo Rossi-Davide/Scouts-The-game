@@ -120,17 +120,31 @@ public class CreateCamp : MonoBehaviour
 	bool editingPlayerName;
 	public void ChangeCampName()
 	{
-		keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del campo", 15);
+		try
+		{
+			keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del campo", 15);
+		}
+		catch (Exception ex)
+		{
+			Debug.Log($"Errore, non è stata trovata la tastiera del telefono: {ex.Message}");
+		}
 		editingCampName = true;
 	}
 	public void ChangePlayerName()
 	{
-		keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del giocatore", 15);
+		try
+		{
+			keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, false, false, "Nome del giocatore", 15);
+		}
+		catch (Exception ex)
+		{
+			Debug.Log($"Errore, non è stata trovata la tastiera del telefono: {ex.Message}");
+		}
 		editingPlayerName = true;
 	}
 	private void FixedUpdate()
 	{
-		if (keyboard.status == TouchScreenKeyboard.Status.Done)
+		if (keyboard != null && keyboard.status == TouchScreenKeyboard.Status.Done)
 		{
 			if (editingCampName)
 			{

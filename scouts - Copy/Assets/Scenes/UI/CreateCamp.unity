@@ -10875,30 +10875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 923821379}
     m_Modifications:
-    - target: {fileID: 1108394727, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 28a89e541b38fd94fbd6badbb89e4d31,
-        type: 2}
-    - target: {fileID: 1108394727, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 9064558808367541496, guid: 28a89e541b38fd94fbd6badbb89e4d31,
-        type: 2}
-    - target: {fileID: 1108394727, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
-      propertyPath: m_fontSize
-      value: 58.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4425579214678199612, guid: d555875e1608c9c4093c98c9dbdf4102,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4425579214678199612, guid: d555875e1608c9c4093c98c9dbdf4102,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4425579215945077218, guid: d555875e1608c9c4093c98c9dbdf4102,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11008,11 +10984,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Loading
-      objectReference: {fileID: 0}
-    - target: {fileID: 4425579215945077219, guid: d555875e1608c9c4093c98c9dbdf4102,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
