@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 141, y: 141}
+  m_SizeDelta: {x: 182.99896, y: 182.99896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2845922017433241057
 CanvasRenderer:
@@ -99,7 +99,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2845922018031593088}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.2441679}
   m_Children:
@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc14135ce1f2ad4e965e0da9bf25f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  isUsingJoystick: 0
 --- !u!1 &2845922018446207885
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 256, y: 256}
+  m_SizeDelta: {x: 293.49915, y: 293.49915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2845922018446207872
 CanvasRenderer:
