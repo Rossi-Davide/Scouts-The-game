@@ -235,6 +235,8 @@ public class nascondinoManager : MonoBehaviour
         countdownStart = true;
         countdownSecondsInizio.gameObject.SetActive(true);
         countdownSecondsInizio.text = secondsInizioGioco.ToString();
+        //StartCoroutine(Vittoria());
+        yield return null;
     }
     #endregion
 

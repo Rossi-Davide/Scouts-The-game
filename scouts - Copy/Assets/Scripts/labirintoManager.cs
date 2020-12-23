@@ -21,6 +21,7 @@ public class labirintoManager : MonoBehaviour
     public int nSpilli,nDinamiti,nCaramelle;
     public GameObject spillo, dinamite,candy,bottoneTornaAlGioco,sconfitta,victoryText,score;
     public bool endGen = false;
+    public movimentoLabirinto movePlayer;
 
     #region Utility functions
     public static string IntToMinutesColonSeconds(int time)
@@ -112,6 +113,7 @@ public class labirintoManager : MonoBehaviour
         {
             Instantiate(candy);
         }
+        yield return null;
     }
 
 
@@ -191,7 +193,7 @@ public class labirintoManager : MonoBehaviour
     public IEnumerator Sconfitta()
     {
         Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        pN.enabled = false;
+        movePlayer.enabled = false;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         joystick.SetActive(false);
        
@@ -215,20 +217,7 @@ public class labirintoManager : MonoBehaviour
 
     public IEnumerator Vittoria()
     {
-        
-        /*Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        joystick.SetActive(false);*/
-        foreach (GameObject item in enemies)
-        {
-            //Rigidbody2D enemyRb = item.GetComponent<Rigidbody2D>();
-            AImaster movement = item.GetComponent<AImaster>();
-            movement.enabled = false;
-            //enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-        //Debug.Log("hai vinto");
-        //animazione da decidere
-
+        Debug.Log("vittoria");
         luceGlobale.SetBool("inizioGioco", false);
         countdownStartGrande = false;
         yield return new WaitForSeconds(0.5f);
