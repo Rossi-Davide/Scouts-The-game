@@ -191,7 +191,6 @@ public class labirintoManager : MonoBehaviour
     public IEnumerator Sconfitta()
     {
         Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        Player pN = player.GetComponent<Player>();
         pN.enabled = false;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         joystick.SetActive(false);
