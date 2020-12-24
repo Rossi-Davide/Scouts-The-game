@@ -34,6 +34,8 @@ public class Joystick : MonoBehaviour
 			}
 			if (t.phase == TouchPhase.Moved && isUsingJoystick)
 			{
+				Debug.Log("controller on");
+
 				circle.transform.position = t.position;
 				var relativePos = circle.GetComponent<RectTransform>().anchoredPosition;
 				var m = relativePos.magnitude;
