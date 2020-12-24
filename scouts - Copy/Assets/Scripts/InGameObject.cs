@@ -45,12 +45,16 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		int max = -1;
 		string animation = "";
+		animation += GetAnimationByLevel();
 		foreach (var b in buttons)
 		{
 			if (b.generalAction.state != null && b.generalAction.state.priority > max && b.generalAction.state.active)
 			{
 				max = b.generalAction.state.priority;
-				animation = b.generalAction.state.animationSubstring;
+				if (b.generalAction.state.variesWithLevel)
+					animation += b.generalAction.state.animationSubstring;
+				else 
+					animation = b.generalAction.state.animationSubstring;
 			}
 		}
 		foreach (var s in states)
@@ -58,10 +62,12 @@ public abstract class InGameObject : MonoBehaviour
 			if (s.priority > max && s.active)
 			{
 				max = s.priority;
-				animation = s.animationSubstring;
+				if (s.variesWithLevel)
+					animation += s.animationSubstring;
+				else
+					animation = s.animationSubstring;
 			}
 		}
-		animation += GetAnimationByLevel();
 		animator.Play(objectName + animation);
 	}
 
@@ -272,6 +278,8 @@ public abstract class InGameObject : MonoBehaviour
 				else
 				{
 					var onEnd = DoAction(b);
+					if (b.generalAction.state != null)
+						b.generalAction.state.active = true;
 					GameManager.instance.ActionDone(b.generalAction);
 					ActuallyAddAction(n - 1, onEnd);
 					buttons[n - 1].generalAction.ChangeCountersOnStart();

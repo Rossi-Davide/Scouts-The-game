@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7141162184970304751}
   - component: {fileID: 4027937593383754383}
   m_Layer: 0
-  m_Name: piano bidoni
+  m_Name: PianoBidoni
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e597cf31ae3cd34ba75e66c8363247d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: PianoBidoni
   objectSubName: 
   buttons:
   - buttonText: Cucina

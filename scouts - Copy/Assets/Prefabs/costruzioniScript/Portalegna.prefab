@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6509485076945021395}
   - component: {fileID: -5423069257681772924}
   m_Layer: 0
-  m_Name: porta legna
+  m_Name: Portalegna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379d389a894594a4a8ccd21188b54d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: PortaLegna
   objectSubName: 
   buttons:
   - buttonText: Imbraga
