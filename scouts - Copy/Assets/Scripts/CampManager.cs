@@ -11,10 +11,10 @@ public class CampManager : MonoBehaviour
 	private void Awake()
 	{
 		if (instance != null)
-			Destroy(this);
+			Destroy(instance.gameObject);
 		instance = this;
-		Screen.orientation = ScreenOrientation.LandscapeLeft;
 		DontDestroyOnLoad(instance);
+		Screen.orientation = ScreenOrientation.LandscapeLeft;
 	}
 	#endregion
 

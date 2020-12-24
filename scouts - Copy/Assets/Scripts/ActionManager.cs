@@ -33,7 +33,7 @@ public class ActionManager : MonoBehaviour
 			var s = actionSpots[i];
 			var a = currentActions[i];
 			s.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = a.action.name;
-			s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.building.ToString());
+			s.transform.Find("Building").GetComponent<TextMeshProUGUI>().text = GameManager.ChangeToFriendlyString(a.building.objectName + (a.building.objectSubName != "" ? $"({a.building.objectSubName})" : ""));
 			s.transform.Find("Time").GetComponent<TextMeshProUGUI>().text = GameManager.IntToMinuteSeconds(a.timeLeft);
 			s.SetActive(true);
 		}

@@ -22,7 +22,7 @@ public class ChestManager : MonoBehaviour
 	public GameObject chestPanelParent, overlay;
 	bool isOpen;
 
-	public bool Contains(Item i)
+	public bool Contains(ObjectBase i)
 	{
 		foreach (var s in slots)
 		{
@@ -102,7 +102,7 @@ public class ChestManager : MonoBehaviour
 	}
 	public Status SendStatus()
 	{
-		var it = new Item[slots.Length];
+		var it = new ObjectBase[slots.Length];
 		for (int i = 0; i < it.Length; i++)
 		{
 			it[i] = slots[i].item;
@@ -124,6 +124,6 @@ public class ChestManager : MonoBehaviour
 	}
 	public class Status
 	{
-		public Item[] items;
+		public ObjectBase[] items;
 	}
 }

@@ -28,7 +28,7 @@ public class InventoryManager : MonoBehaviour
 	}
 	#endregion
 	#region Basic Methods
-	public void Add(Item item)
+	public void Add(ObjectBase item)
 	{
 		foreach (InventorySlot s in slots)
 		{
@@ -52,7 +52,7 @@ public class InventoryManager : MonoBehaviour
 	}
 
 
-	public bool Contains(Item i)
+	public bool Contains(ObjectBase i)
 	{
 		foreach (var s in slots)
 		{
@@ -107,7 +107,7 @@ public class InventoryManager : MonoBehaviour
 	}
 	public Status SendStatus()
 	{
-		var it = new Item[slots.Length];
+		var it = new ObjectBase[slots.Length];
 		for (int i = 0; i < it.Length; i++)
 		{
 			it[i] = slots[i].item;
@@ -129,7 +129,7 @@ public class InventoryManager : MonoBehaviour
 	}
 	public class Status
 	{
-		public Item[] items;
+		public ObjectBase[] items;
 	}
 
 	public void SelectItem(InventorySlot slot)

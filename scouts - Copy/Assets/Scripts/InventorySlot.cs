@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
 	[HideInInspector] [System.NonSerialized]
-	public Item item;
+	public ObjectBase item;
 	public TextMeshProUGUI amountText;
 
 	public void ResetSlot()
@@ -13,7 +13,7 @@ public class InventorySlot : MonoBehaviour
 		item = null;
 		GetComponent<Image>().enabled = false;
 	}
-	public void AddItem(Item i)
+	public void AddItem(ObjectBase i)
 	{
 		if (i != null)
 		{

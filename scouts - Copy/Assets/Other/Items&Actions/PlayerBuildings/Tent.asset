@@ -40,4 +40,6 @@ MonoBehaviour:
   currentAmount: 0
   level: 0
   exists: 0
-  healthInfos: []
+  healthInfos:
+  - maxHealth: 100
+    healthLossInterval: 5

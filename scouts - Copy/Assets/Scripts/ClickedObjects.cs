@@ -14,7 +14,7 @@ public class ClickedObjects : MonoBehaviour
 		instance = this;
 	}
 	#endregion
-	private void FixedUpdate()
+	private void Update()
 	{
 		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
@@ -28,6 +28,7 @@ public class ClickedObjects : MonoBehaviour
 			if (!PanZoom.instance.panningOrZooming && !Joystick.instance.isUsingJoystick && ActionButtons.instance.selected != null && !EventSystem.current.IsPointerOverGameObject(0) && hit.collider == null)
 			{
 				ActionButtons.instance.ChangeSelectedObject(null);
+				Debug.Log("nieiiii");
 			}
 		}
 	}

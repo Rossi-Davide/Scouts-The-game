@@ -21,7 +21,7 @@ public abstract class ObjectBase : ScriptableObject
 
     [Header("Please do not modify if not testing")]
     public int currentAmount;
-    public int level; //num
+    public int level; //index
     public bool exists;
 
     public virtual void DoAction()
@@ -55,11 +55,6 @@ public abstract class ObjectBase : ScriptableObject
         };
 	}
 
-
-    public Item ToItem()
-	{
-        return new Item(this);
-	}
     public PlayerBuilding ToPlayerBuilding()
     {
         return new PlayerBuilding(this);

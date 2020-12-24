@@ -9,8 +9,9 @@ public class SaveSystem : MonoBehaviour
 	private void Awake()
 	{
 		DontDestroyOnLoad(this);
-		if (instance == null)
-			instance = this;
+		if (instance != null)
+			Destroy(instance.gameObject);	
+		instance = this;
 	}
 	#endregion
 

@@ -88,7 +88,7 @@ public class QuestManager : MonoBehaviour
 			if (b.GetComponent<PlayerBuildingBase>().building == obj)
 				isABuilding = true;
 		}
-		bool removed = !InventoryManager.instance.Contains(obj.ToItem()) && !ChestManager.instance.Contains(obj.ToItem()) && !isABuilding;
+		bool removed = !InventoryManager.instance.Contains(obj) && !ChestManager.instance.Contains(obj) && !isABuilding;
 		ChangeActionParameter(obj, removed);
 		ChangeCountersMaxValue(obj, removed);
 	}

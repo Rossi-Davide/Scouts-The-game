@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.6
+  m_fontSize: 62.15
   m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2193,100 +2193,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722689869}
   m_CullTransparentMesh: 0
---- !u!1 &1760348605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1760348607}
-  - component: {fileID: 1760348606}
-  - component: {fileID: 1760348608}
-  - component: {fileID: 1760348609}
-  m_Layer: 0
-  m_Name: CampManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1760348606
+--- !u!114 &1760348608 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5744616749825697554, guid: e3c2fac03a608e94da2c4496ba95b63f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5744616748094746322}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760348605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316f464385e829548b64544edb16af5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleFemaleSqs:
-  - {fileID: 11400000, guid: 55cdfa8aeaa85cf4188c89ff92903b31, type: 2}
-  - {fileID: 11400000, guid: b941bf0a121da8748b9d20677372fdb8, type: 2}
-  - {fileID: 11400000, guid: 52b5fd4640b92d44f8279415280cb473, type: 2}
-  - {fileID: 11400000, guid: a09b047bb86ba12419d695568a5befcf, type: 2}
-  - {fileID: 11400000, guid: 6804e6251ae120048b3849616a598a70, type: 2}
-  possibleMaleSqs:
-  - {fileID: 11400000, guid: 002a0c15c095d974e93b5054a5e66ca7, type: 2}
-  - {fileID: 11400000, guid: 111ef2d44de284448b40ea6b02cdbbf1, type: 2}
-  - {fileID: 11400000, guid: 5643c46ee1ea73b408f23ad80f964720, type: 2}
-  - {fileID: 11400000, guid: 8133e59fe5a79bc48bb47811526c30dd, type: 2}
-  - {fileID: 11400000, guid: 64fba83b946927d40a5794ba53e19e31, type: 2}
---- !u!4 &1760348607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760348605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 362.88354, y: 197.77469, z: -179.20613}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1760348608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760348605}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2af609474c3869d42ad13306cd67fd27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1760348609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760348605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da106684e6c17c4590a82cee1cea6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  campManagerFileName: CampManager
-  actionButtonsFileName: ActionButtons
-  actionManagerFileName: ActionManager
-  aisManagerFileName: AIsManager
-  chestManagerFileName: ChestManager
-  inventoryManagerFileName: InventoryManager
-  plFileName: Player
-  questManagerFileName: QuestManager
-  squadrigliaManagerFileName: SquadrigliaManager
-  shopFileName: Shop
-  gameManagerFileName: GameManager
-  iterateMultipleObjsFileName: IterateMultipleObjs
-  playerBuildingBaseFileName: PlayerBuildingBase
 --- !u!1 &1883883494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,3 +2880,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919887557}
   m_CullTransparentMesh: 0
+--- !u!1001 &5744616748094746322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 362.88354
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 197.77469
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -179.20613
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697647, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: m_Name
+      value: CampManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3c2fac03a608e94da2c4496ba95b63f, type: 3}

@@ -79,7 +79,6 @@ public class AIsManager : MonoBehaviour
 		foreach (var sq in allSquadriglieri)
 		{
 			StartCoroutine(sq.Unlock());
-			Debug.Log("ciao");
 			if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(100 - percentageOfActiveAIs))
 			{
 				StartCoroutine(sq.ForceTarget("Tenda", true, true));

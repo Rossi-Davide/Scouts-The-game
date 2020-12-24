@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
 		}
 		return canBuild;
 	}
-	public static void DestroyItems(ObjectBase b)
+	public static void DestroyItemsNeededToBuyItem(ObjectBase b)
 	{
 		if (b.itemsNeededs.Length > b.level)
 		{

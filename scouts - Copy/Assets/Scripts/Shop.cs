@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,6 @@ public class Shop : MonoBehaviour
 	GameObject materialsLogo, pointsLogo, energyLogo, icon, buyButton;
 
 	ObjectBase selected;
-	SaveSystem saveSystem;
 
 	#region Singleton
 	public static Shop instance;
@@ -41,7 +41,6 @@ public class Shop : MonoBehaviour
 
 	private void Start()
 	{
-		saveSystem = SaveSystem.instance;
 		currentMainScreen = MainShopScreen.Costruzioni;
 		currentSpecificScreen = SpecificShopScreen.Pioneristica;
 		buyButton = infoPanel.transform.Find("BuyButton").gameObject;
@@ -169,11 +168,11 @@ public class Shop : MonoBehaviour
 				selected.exists = true;
 		}
 
-		GameManager.DestroyItems(selected);
+		GameManager.DestroyItemsNeededToBuyItem(selected);
 
 		if (selected.type == ObjectType.Item)
 		{
-			InventoryManager.instance.Add(selected.ToItem());
+			InventoryManager.instance.Add(selected);
 		}
 		else if (selected.type == ObjectType.Costruzione)
 		{
@@ -181,7 +180,7 @@ public class Shop : MonoBehaviour
 			ModificaBaseTrigger.instance.SetBuildingSlotInfo(selected.ToPlayerBuilding());
 			GameManager.instance.Built(selected);
 		}
-		foreach (var o in GetComponentsInChildren<ShopObjectBase>())
+		foreach (var o in shopPanel.GetComponentsInChildren<ShopObjectBase>())
 		{
 			o.RefreshInfo();
 		}

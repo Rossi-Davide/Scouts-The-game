@@ -7,8 +7,9 @@ public class SceneLoader : MonoBehaviour
 	public static SceneLoader instance;
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (instance != null)
+            Destroy(instance.gameObject);    
+        instance = this;
         DontDestroyOnLoad(this);
         Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
