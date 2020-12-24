@@ -45,6 +45,7 @@ public class LIfeNascondino : MonoBehaviour
         {
             force.y = -(force.y);
         }
+        rb.AddForce(force);
         GameObject.Find("/Player").transform.Find("sangue").gameObject.SetActive(true);
         bar.Health(life);
         if (life <= 0)

@@ -454,7 +454,7 @@ MonoBehaviour:
   editorCountdown: {fileID: 570601212}
   countdownSecondsInizio: {fileID: 1480515613}
   "aumentoDifficolt\xE0": 0
-  seconds: 3
+  seconds: 180
   secondsInizioGioco: 0
   nSpilli: 20
   nDinamiti: 10
@@ -58267,6 +58267,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 361789451317847258, guid: f77ccf19b7525be4e945485382658856,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 748621181
+      objectReference: {fileID: 0}
+    - target: {fileID: 361789451317847258, guid: f77ccf19b7525be4e945485382658856,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 361789451317847260, guid: f77ccf19b7525be4e945485382658856,
         type: 3}
       propertyPath: m_Offset.y
@@ -59251,7 +59261,7 @@ MonoBehaviour:
   m_Color: {r: 0.9528302, g: 0.46353397, b: 0.18427375, a: 1}
   m_Intensity: 3.04
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 8943824b00000000495363104352fd177d0d9f2c
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -59871,7 +59881,8 @@ PrefabInstance:
     - target: {fileID: 3992244354276007839, guid: 934331e6ae3d52f40ba4f7d00e54e240,
         type: 3}
       propertyPath: m_text
-      value: 'Trova i dolci sparsi per il labirinto. Fa attenzione a cosa puoi trovare
+      value: 'Trova i 3 dolci sparsi per il labirinto. Fa attenzione a cosa puoi
+        trovare
 
 '
       objectReference: {fileID: 0}
@@ -60579,6 +60590,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8723966081886208261, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966081886208261, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 274944841
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966081886208261, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 402477635
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966081886208261, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: 748621181
+      objectReference: {fileID: 0}
     - target: {fileID: 8723966082729963440, guid: 3f499f80d22365845abee7026b3baf68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60658,6 +60689,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 7.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966083444803443, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966083444803443, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 274944841
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966083444803443, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 402477635
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723966083444803443, guid: 3f499f80d22365845abee7026b3baf68,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: 748621181
       objectReference: {fileID: 0}
     - target: {fileID: 8723966083444803445, guid: 3f499f80d22365845abee7026b3baf68,
         type: 3}
@@ -60990,8 +61041,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 748621181
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

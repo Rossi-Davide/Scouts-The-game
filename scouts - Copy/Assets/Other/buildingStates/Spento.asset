@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
-  m_Name: SpentoLevels
+  m_Name: Spento
   m_EditorClassIdentifier: 
   animationSubstring: Spento
-  variesWithLevel: 1
+  variesWithLevel: 0
   priority: 75
   active: 0

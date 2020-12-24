@@ -25,7 +25,7 @@ MonoBehaviour:
       oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
+  state: {fileID: 11400000, guid: 22a44bb106043c2449703600a60c08c2, type: 2}
   timeNeeded: 45
   energyGiven: -3
   materialsGiven: 0

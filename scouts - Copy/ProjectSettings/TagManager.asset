@@ -52,3 +52,6 @@ TagManager:
   - name: oggetti
     uniqueID: 402477635
     locked: 0
+  - name: muraNascondino
+    uniqueID: 748621181
+    locked: 0

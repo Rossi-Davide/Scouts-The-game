@@ -192,6 +192,8 @@ public class labirintoManager : MonoBehaviour
 
     public IEnumerator Sconfitta()
     {
+        seconds = 0;
+        editorCountdown.text = IntToMinutesColonSeconds(seconds);
         Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
         movePlayer.enabled = false;
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
