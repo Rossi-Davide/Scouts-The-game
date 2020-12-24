@@ -50,7 +50,8 @@ public class CreateCamp : MonoBehaviour
 		camp = campManager.camp;
 		existingCampPanel.SetActive(campManager.campCreated);
 		noCampPanel.SetActive(!campManager.campCreated);
-		RefreshExistingCampUI();
+		if (campManager.campCreated)
+			RefreshExistingCampUI();
 	}
 
 	public void PartialDeleteCamp()

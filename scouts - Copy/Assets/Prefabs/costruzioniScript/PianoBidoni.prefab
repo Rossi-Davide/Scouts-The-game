@@ -11,13 +11,15 @@ GameObject:
   - component: {fileID: 8504184329679217997}
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
+  - component: {fileID: -7141162184970304751}
+  - component: {fileID: 4027937593383754383}
   m_Layer: 0
-  m_Name: stendipanni
+  m_Name: piano bidoni
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 6983679871223510904, guid: f4cb83996307b6541a913769ca5171af,
+  m_Sprite: {fileID: -1178020443710254061, guid: 2ece8a6976974e5498d33e5e1d7321ac,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 8504184329679217996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f21eed0c15a86fa40994bbf96c79461e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 627920a1fc6bc4241a25e957b7970b12, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,3 +104,56 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7141162184970304751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e597cf31ae3cd34ba75e66c8363247d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  objectSubName: 
+  buttons:
+  - buttonText: Cucina
+    color: 10
+    generalAction: {fileID: 11400000, guid: 5c6a513e913d27440ac9539e1ddfa92d, type: 2}
+    previousAction: {fileID: 11400000, guid: 73f5938fb239be44589edb405704f44e, type: 2}
+    hasDonePreviousAction: 1
+  - buttonText: Imbraga
+    color: 3
+    generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
+  - buttonText: Ripara
+    color: 0
+    generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
+  maxDistanceFromPlayer: 2
+  isInstantiating: 1
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  customDataFileName: PianoBidoni
+  possiblePositions: []
+  clickListener: {fileID: 2299551175825671910, guid: 31ba393bd71669b4c8689477cbff8cc2,
+    type: 3}
+  states: []
+  building: {fileID: 11400000, guid: 2af9a7e66343d5d4684c0a7b535f46c9, type: 2}
+--- !u!114 &4027937593383754383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

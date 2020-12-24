@@ -11,15 +11,13 @@ GameObject:
   - component: {fileID: 8504184329679217997}
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
-  - component: {fileID: 6509485076945021395}
-  - component: {fileID: -5423069257681772924}
   m_Layer: 0
-  m_Name: porta legna
+  m_Name: tendaSq 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -73,13 +71,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 3911372940414158388, guid: 1a20c9e9b52d0354c81de407ce34ab83,
+  m_Sprite: {fileID: -7888708515065773835, guid: f11fce0a6c27ca6439b45b6f254c366c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.865, y: 0.615}
+  m_Size: {x: 0.578125, y: 0.53125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -95,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 8504184329679217996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 997dd6e5afcef704ba6fb1b4dc64924e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4c3f89efaefc71b4bbb10fe16fc8543d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -104,51 +102,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6509485076945021395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8504184329679217996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379d389a894594a4a8ccd21188b54d6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
-  objectSubName: 
-  buttons:
-  - buttonText: Imbraga
-    color: 3
-    generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
-  - buttonText: Ripara
-    color: 0
-    generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
-  maxDistanceFromPlayer: 2
-  isInstantiating: 1
-  checkPositionEachFrame: 0
-  spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
-  customDataFileName: Portalegna
-  possiblePositions: []
-  clickListener: {fileID: 1878422868812242793, guid: e36dcf8a398ea3840b0dea38926ac261,
-    type: 3}
-  states: []
-  building: {fileID: 11400000, guid: e5889dd3ae960974aaed5a59828e0ef1, type: 2}
---- !u!114 &-5423069257681772924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8504184329679217996}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

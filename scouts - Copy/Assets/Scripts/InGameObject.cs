@@ -340,15 +340,17 @@ public abstract class InGameObject : MonoBehaviour
 			default: throw new NotImplementedException(t.ToString());
 		}
 	}
-	public virtual void MoveUI()
+	public virtual IEnumerator MoveUI()
 	{
+		yield return new WaitForEndOfFrame();
 		loadingBar.transform.position = transform.position + loadingBarOffset;
 		nameText.transform.position = transform.position + nameTextOffset;
 		subNameText.transform.position = nameText.transform.position + subNameRelativeOffset;
 		clickListener.transform.position = transform.position;
 	}
-	public virtual void ToggleUI(bool active)
+	public virtual IEnumerator ToggleUI(bool active)
 	{
+		yield return new WaitForEndOfFrame();
 		clickListener.gameObject.SetActive(active);
 		nameText.gameObject.SetActive(active);
 		subNameText.gameObject.SetActive(active);

@@ -208,8 +208,10 @@ public class SquadrigliaManager : MonoBehaviour
 			}
 			foreach (var sp in sq.angolo.GetComponentsInChildren<SpriteRenderer>(true))
 			{
-				if (sp.gameObject.name == "Tent(Clone)")
+				if (sp.gameObject.name == "Tenda(Clone)")
+				{
 					sq.tenda = sp.transform;
+				}
 			}
 
 			sq.ruoli = new Ruolo[5] { Ruolo.Capo, Ruolo.Vice, Ruolo.Terzino, Ruolo.Novizio, Ruolo.Novizio };
@@ -271,7 +273,7 @@ public class SquadrigliaManager : MonoBehaviour
 				}
 			}
 		}
-	
+
 	}
 	#endregion
 

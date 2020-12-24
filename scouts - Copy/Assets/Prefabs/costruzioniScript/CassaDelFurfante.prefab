@@ -107,7 +107,7 @@ MonoBehaviour:
   isInstantiating: 0
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: CassaDelFurfante
   possiblePositions:
   - {x: 57, y: -17, z: 0}

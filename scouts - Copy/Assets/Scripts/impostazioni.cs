@@ -23,7 +23,9 @@ public class impostazioni : MonoBehaviour
 	}
 	#endregion
 
-	public TextMeshProUGUI masterValue, musicValue, effectsValue;
+	public TextMeshProUGUI masterValue, musicValue, soundsValue;
+    public Toggle fullscreenUI;
+    public TMP_Dropdown qualityUI, resUI;
 
     private void Start()
     {
@@ -49,27 +51,22 @@ public class impostazioni : MonoBehaviour
         resDrop.value = defResolution;
         resDrop.RefreshShownValue();
 
-        generalVolume = 100;
-		musicVolume = 100;
-		effectsVolume = 100;
+        generalVolume = 80;
+		musicVolume = 80;
+		soundsVolume = 80;
 		resIndex = 0;
 		qualityIndex = 0;
 		fullscreen = false;
         SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.impostazioniFileName, true));
-        SetVolumeMaster(generalVolume);
-        SetVolumeMusic(musicVolume);
-        SetVolumeSounds(effectsVolume);
-        SetQuality(qualityIndex);
-        SetFullScreen(fullscreen);
-        SetRes(resIndex);
+        RefreshUI();
     }
 
     [HideInInspector] [System.NonSerialized]
-    public int generalVolume;
+    public float generalVolume;
     [HideInInspector] [System.NonSerialized]
-    public int musicVolume;
+    public float musicVolume;
     [HideInInspector] [System.NonSerialized]
-    public int effectsVolume;
+    public float soundsVolume;
     [HideInInspector] [System.NonSerialized]
     public int resIndex;
     [HideInInspector] [System.NonSerialized]
@@ -80,49 +77,63 @@ public class impostazioni : MonoBehaviour
 
 	#region stuff
 
-	public void SetVolumeMaster(int volume)
+	public void SetVolumeMaster()
     {
-        generalVolume = volume - 80;
+        generalVolume = masterValue.transform.parent.GetComponentInChildren<Slider>().value;
         mixer.SetFloat("master", generalVolume);
-        masterValue.text = Mathf.Round(volume / 80 * 100) + "%";
+        masterValue.text = Mathf.Round(generalVolume / 80 * 100) + "%";
     }
 
 
-    public void SetVolumeMusic(int volume)
+    public void SetVolumeMusic()
     {
-        musicVolume = volume - 80;
+        musicVolume = musicValue.transform.parent.GetComponentInChildren<Slider>().value;
         mixer.SetFloat("music", musicVolume);
-        musicValue.text = Mathf.Round(volume / 80 * 100) + "%";
+        musicValue.text = Mathf.Round(musicVolume / 80 * 100) + "%";
     }
 
-    public void SetVolumeSounds(int volume)
+    public void SetVolumeSounds()
     {
-        effectsVolume = volume - 80;
-        mixer.SetFloat("sounds", effectsVolume);
-        effectsValue.text = Mathf.Round(volume / 80 * 100) + "%";
+        soundsVolume = soundsValue.transform.parent.GetComponentInChildren<Slider>().value;
+        mixer.SetFloat("sounds", soundsVolume);
+        soundsValue.text = Mathf.Round(soundsVolume / 80 * 100) + "%";
     }
 
 
-    public void SetQuality(int qi)
+    public void SetQuality()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-        qualityIndex = qi;
+        qualityIndex = qualityUI.value;
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void SetFullScreen (bool screen)
+    public void SetFullScreen()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-        fullscreen = screen;
+        fullscreen = fullscreenUI.isOn;
         Screen.fullScreen = fullscreen;
     }
 
-    public void SetRes(int ri)
+    public void SetRes()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-        resIndex = ri;
+        resIndex = resUI.value;
         Resolution resolution = resolutions[resIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+
+    void RefreshUI()
+	{
+        masterValue.text = Mathf.Round(generalVolume / 80 * 100) + "%";
+        masterValue.transform.parent.GetComponentInChildren<Slider>().value = generalVolume;
+        musicValue.text = Mathf.Round(musicVolume / 80 * 100) + "%";
+        musicValue.transform.parent.GetComponentInChildren<Slider>().value = musicVolume;
+        soundsValue.text = Mathf.Round(soundsVolume / 80 * 100) + "%";
+        soundsValue.transform.parent.GetComponentInChildren<Slider>().value = soundsVolume;
+        fullscreenUI.isOn = fullscreen;
+        qualityUI.value = qualityIndex;
+        resUI.value = resIndex;
     }
     #endregion
 
@@ -139,7 +150,7 @@ public class impostazioni : MonoBehaviour
         {
             generalVolume = generalVolume,
             musicVolume = musicVolume,
-            effectsVolume = effectsVolume,
+            soundsVolume = soundsVolume,
             qualityIndex = qualityIndex,
             resIndex = resIndex,
             fullscreen = fullscreen,
@@ -151,7 +162,7 @@ public class impostazioni : MonoBehaviour
         {
             generalVolume = status.generalVolume;
             musicVolume = status.musicVolume;
-            effectsVolume = status.effectsVolume;
+            soundsVolume = status.soundsVolume;
             qualityIndex = status.qualityIndex;
             resIndex = status.resIndex;
             fullscreen = status.fullscreen;
@@ -159,9 +170,9 @@ public class impostazioni : MonoBehaviour
     }
     public class Status
     {
-        public int generalVolume;
-        public int musicVolume;
-        public int effectsVolume;
+        public float generalVolume;
+        public float musicVolume;
+        public float soundsVolume;
         public int qualityIndex;
         public int resIndex;
         public bool fullscreen;

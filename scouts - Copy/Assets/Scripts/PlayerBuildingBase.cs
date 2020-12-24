@@ -17,6 +17,10 @@ public abstract class PlayerBuildingBase : InGameObject
 	protected override void Start()
 	{
 		base.Start();
+		if (customDataFileName != null && customDataFileName != "")
+		{
+			SetPBStatus(SaveSystem.instance.LoadData<PBStatus>(customDataFileName, false));
+		}
 		objectName = building.name;
 		objectSubName = "Livello " + (building.level + 1);
 		healthBar = Instantiate(GameManager.instance.healthBarPrefab, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
@@ -24,11 +28,6 @@ public abstract class PlayerBuildingBase : InGameObject
 		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, building.healthInfos[building.level].healthLossInterval);
-
-		if (customDataFileName != null && customDataFileName != "")
-		{
-			SetPBStatus(SaveSystem.instance.LoadData<PBStatus>(customDataFileName, false));
-		}
 	}
 	protected override void SaveData()
 	{
@@ -128,9 +127,10 @@ public abstract class PlayerBuildingBase : InGameObject
 	}
 
 
-	public override void MoveUI()
+	public override IEnumerator MoveUI()
 	{
 		base.MoveUI();
+		yield return new WaitForEndOfFrame();
 		healthBar.transform.position = transform.position + healthBarOffset;
 	}
 

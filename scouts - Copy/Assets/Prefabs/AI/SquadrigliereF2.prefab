@@ -118,9 +118,12 @@ MonoBehaviour:
   - name: Tenda
     target: {x: 0, y: 0, z: 0}
     priority: 0
-    waitEndOfCurrentPath: 0
-    automatic: 0
-    conditions: []
+    waitEndOfCurrentPath: 1
+    automatic: 1
+    conditions:
+    - type: 3
+      desiredValue: 0
+      warning: 
 --- !u!212 &7097929509582258097
 SpriteRenderer:
   m_ObjectHideFlags: 0

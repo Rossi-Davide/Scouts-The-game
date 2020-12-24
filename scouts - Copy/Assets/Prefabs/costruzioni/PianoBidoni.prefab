@@ -11,15 +11,13 @@ GameObject:
   - component: {fileID: 8504184329679217997}
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
-  - component: {fileID: -2690471122545190744}
-  - component: {fileID: -1580339835624478828}
   m_Layer: 0
-  m_Name: tendaSq
+  m_Name: piano bidoni 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -73,13 +71,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -7888708515065773835, guid: f11fce0a6c27ca6439b45b6f254c366c,
+  m_Sprite: {fileID: -1178020443710254061, guid: 2ece8a6976974e5498d33e5e1d7321ac,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.578125, y: 0.53125}
+  m_Size: {x: 0.865, y: 0.615}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -95,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 8504184329679217996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c3f89efaefc71b4bbb10fe16fc8543d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 627920a1fc6bc4241a25e957b7970b12, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -104,56 +102,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-2690471122545190744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8504184329679217996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93a50caeef19c19499186379196694a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
-  objectSubName: 
-  buttons:
-  - buttonText: Dormi
-    color: 2
-    generalAction: {fileID: 11400000, guid: 69163eb07eb476241be5cb2eef025f45, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
-  - buttonText: Imbraga
-    color: 3
-    generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
-  - buttonText: Ripara
-    color: 0
-    generalAction: {fileID: 11400000, guid: 414b697765972ba4aaa032537b0d4d1c, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
-  maxDistanceFromPlayer: 2
-  isInstantiating: 1
-  checkPositionEachFrame: 0
-  spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
-  customDataFileName: Tent
-  possiblePositions: []
-  clickListener: {fileID: 4528179396967441950, guid: aca379b0ed2c9444db9795607e7dca25,
-    type: 3}
-  states: []
-  building: {fileID: 11400000, guid: ca54f6dae88a5da498872282498007c0, type: 2}
---- !u!114 &-1580339835624478828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8504184329679217996}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

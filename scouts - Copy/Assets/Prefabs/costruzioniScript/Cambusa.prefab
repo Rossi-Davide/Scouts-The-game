@@ -107,7 +107,7 @@ MonoBehaviour:
   isInstantiating: 0
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: Cambusa
   possiblePositions: []
   clickListener: {fileID: 0}
