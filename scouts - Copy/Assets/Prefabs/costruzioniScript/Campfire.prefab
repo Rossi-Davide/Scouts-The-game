@@ -271,4 +271,6 @@ MonoBehaviour:
   customDataFileName: Campfire
   possiblePositions: []
   clickListener: {fileID: 0}
-  states: []
+  states:
+  - {fileID: 11400000, guid: f51e2c7b0c165614e95ed954854e4fd6, type: 2}
+  - {fileID: 11400000, guid: 623386b27c0f4234290cbbf4407e4a2c, type: 2}

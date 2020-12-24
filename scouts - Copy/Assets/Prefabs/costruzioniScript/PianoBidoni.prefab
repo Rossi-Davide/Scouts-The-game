@@ -143,7 +143,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 2299551175825671910, guid: 31ba393bd71669b4c8689477cbff8cc2,
     type: 3}
-  states: []
+  states:
+  - {fileID: 11400000, guid: 86d587ba11d360447844da6aeffa69b7, type: 2}
+  - {fileID: 11400000, guid: a347e06a83e5626449a80dbdcf3f658b, type: 2}
   building: {fileID: 11400000, guid: 2af9a7e66343d5d4684c0a7b535f46c9, type: 2}
 --- !u!114 &4027937593383754383
 MonoBehaviour:

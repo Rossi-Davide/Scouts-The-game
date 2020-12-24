@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2690471122545190744}
   - component: {fileID: -1580339835624478828}
   m_Layer: 0
-  m_Name: tendaSq
+  m_Name: Tenda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,8 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 4528179396967441950, guid: aca379b0ed2c9444db9795607e7dca25,
     type: 3}
-  states: []
+  states:
+  - {fileID: 11400000, guid: 4a78fd5fac10e214babe46617bc6896f, type: 2}
   building: {fileID: 11400000, guid: ca54f6dae88a5da498872282498007c0, type: 2}
 --- !u!114 &-1580339835624478828
 MonoBehaviour:

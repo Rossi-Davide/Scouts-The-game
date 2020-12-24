@@ -121,7 +121,8 @@ MonoBehaviour:
   customDataFileName: Lavaggi
   possiblePositions: []
   clickListener: {fileID: 0}
-  states: []
+  states:
+  - {fileID: 11400000, guid: 7bd5ed15095ef5948b7c3a00a4424968, type: 2}
 --- !u!95 &1783706678037681103
 Animator:
   serializedVersion: 3
