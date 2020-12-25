@@ -47,14 +47,13 @@ public class Joystick : MonoBehaviour
 				}
 				direction = relativePos / maxCircleRadius;
 			}
-			else if (t.phase == TouchPhase.Ended)
-			{
-				circle.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-				isUsingJoystick = false;
-				direction = Vector2.zero;
-			}
+			
 		}
 		else
+		{
+			circle.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 			isUsingJoystick = false;
+			direction = Vector2.zero;
+		}
 	}
 }
