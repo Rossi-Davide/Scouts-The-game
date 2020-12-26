@@ -48,7 +48,6 @@ public class Joystick : MonoBehaviour
 				}
 				direction = relativePos / maxCircleRadius;
 			}
-			
 		}
 		else
 		{

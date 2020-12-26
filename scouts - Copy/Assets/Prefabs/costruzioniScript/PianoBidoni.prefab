@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8999118345201218205}
   - component: {fileID: -7141162184970304751}
   - component: {fileID: 4027937593383754383}
+  - component: {fileID: 6050080363689858710}
   m_Layer: 0
   m_Name: PianoBidoni
   m_TagString: Untagged
@@ -159,3 +160,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6050080363689858710
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.021734953, y: -0.019964725}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5643469, y: 0.31215864}
+    oldSize: {x: 0.33777776, y: 0.33555555}
+    newSize: {x: 0.865, y: 0.615}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.33777776, y: 0.062404364}
+  m_EdgeRadius: 0
