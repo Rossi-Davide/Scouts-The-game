@@ -23,7 +23,7 @@ public class Shop : MonoBehaviour
 	public GameObject infoPanel;
 	GameObject materialsLogo, pointsLogo, energyLogo, icon, buyButton;
 
-	ObjectBase selected;
+	object selected;
 
 	#region Singleton
 	public static Shop instance;
@@ -128,8 +128,8 @@ public class Shop : MonoBehaviour
 
 	void Buy()
 	{
-		var nextIndex = selected.exists ? selected.level + 1 : selected.level;
-		if (selected.type == ObjectType.Item && InventoryManager.instance.IsInventoryFull())
+		var index = ((ObjectBase)selected).exists ? ((ObjectBase)selected).level + 1 : ((ObjectBase)selected).level;
+		if (((ObjectBase)selected).type == ObjectType.Item && InventoryManager.instance.IsInventoryFull())
 		{
 			GameManager.instance.WarningOrMessage("L'inventario è pieno!", true);
 			return;
@@ -141,7 +141,7 @@ public class Shop : MonoBehaviour
 		}
 		else if (!hasEnoughMoney)
 		{
-			GameManager.instance.WarningOrMessage($"Non hai abbastanza {selected.shopInfos[nextIndex].priceCounter} per comprare {selected.name}", true);
+			GameManager.instance.WarningOrMessage($"Non hai abbastanza {((ObjectBase)selected).shopInfos[index].priceCounter} per comprare {((ObjectBase)selected).name}", true);
 			return;
 		}
 		else if (!hasItems)
@@ -155,30 +155,31 @@ public class Shop : MonoBehaviour
 			return;
 		}
 		
-		GameManager.instance.ChangeCounter(selected.shopInfos[nextIndex].priceCounter, -selected.shopInfos[nextIndex].price);
-		GameManager.instance.ChangeCounter(selected.shopInfos[nextIndex].rewardCounter, selected.shopInfos[nextIndex].reward);
+		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].priceCounter, -((ObjectBase)selected).shopInfos[index].price);
+		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].rewardCounter, ((ObjectBase)selected).shopInfos[index].reward);
 
-		if (selected.usingAmount)
-			selected.currentAmount++;
-		if (selected.usingLevel)
+		if (((ObjectBase)selected).usingAmount)
+			((ObjectBase)selected).currentAmount++;
+		if (((ObjectBase)selected).usingLevel)
 		{
-			if (selected.exists)
-				selected.level++;
+			if (((ObjectBase)selected).exists)
+				((ObjectBase)selected).level++;
 			else
-				selected.exists = true;
+				((ObjectBase)selected).exists = true;
 		}
 
-		GameManager.DestroyItemsNeededToBuyItem(selected);
+		GameManager.DestroyItemsNeededToBuyItem(((ObjectBase)selected));
 
-		if (selected.type == ObjectType.Item)
+		if (((ObjectBase)selected).type == ObjectType.Item)
 		{
-			InventoryManager.instance.Add(selected);
+			InventoryManager.instance.Add(((ObjectBase)selected));
 		}
-		else if (selected.type == ObjectType.Costruzione)
+		else if (((ObjectBase)selected).type == ObjectType.Costruzione)
 		{
 			ToggleShop();
-			ModificaBaseTrigger.instance.SetBuildingSlotInfo(selected.ToPlayerBuilding());
-			GameManager.instance.Built(selected);
+
+			ModificaBaseTrigger.instance.SetBuildingSlotInfo((PlayerBuilding)selected);
+			GameManager.instance.Built(((ObjectBase)selected));
 		}
 		foreach (var o in shopPanel.GetComponentsInChildren<ShopObjectBase>())
 		{
@@ -215,9 +216,9 @@ public class Shop : MonoBehaviour
 		var itNeeded = (o.exists && o.itemsNeededs.Length > o.level + 1) || (!o.exists && o.itemsNeededs.Length > o.level) ? o.itemsNeededs[index] : null;
 
 		hasItems = GameManager.HasItemsToBuy(o);
-		if (selected.type == ObjectType.Item)
+		if (((ObjectBase)selected).type == ObjectType.Item)
 			price.text = "Compra: " + pc.ToString();
-		else if (selected.type == ObjectType.Costruzione)
+		else if (((ObjectBase)selected).type == ObjectType.Costruzione)
 			price.text = (o.exists ? "Migliora: " : "Costruisci: ") + pc.ToString();
 		energyLogo.SetActive(pt == Counter.Energia);
 		materialsLogo.SetActive(pt == Counter.Materiali);
@@ -245,7 +246,7 @@ public class Shop : MonoBehaviour
 			{
 				for (int i = 0; i < itNeeded.items.Length - 1; i++)
 				{
-					s += itNeeded.items[i].item.name + ", ";
+					s += itNeeded.items[i].item.name + (itNeeded.items[i].amount > 1 ? $" (x{itNeeded.items[i].amount})" : "") + ", ";
 				}
 				s += itNeeded.items[itNeeded.items.Length - 1].item.name + ".";
 			}

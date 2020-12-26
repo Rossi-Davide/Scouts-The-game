@@ -356,12 +356,10 @@ public abstract class InGameObject : MonoBehaviour
 		subNameText.transform.position = nameText.transform.position + subNameRelativeOffset;
 		clickListener.transform.position = transform.position;
 	}
-	public virtual IEnumerator ToggleUI(bool active)
+	public IEnumerator ToggleClickListener(bool active)
 	{
 		yield return new WaitForEndOfFrame();
 		clickListener.gameObject.SetActive(active);
-		nameText.gameObject.SetActive(active);
-		subNameText.gameObject.SetActive(active);
 	}
 
 
@@ -399,6 +397,7 @@ public abstract class InGameObject : MonoBehaviour
 	}
 	#endregion
 
+	#region status
 
 	[System.Serializable]
 	public class Status
@@ -433,6 +432,7 @@ public abstract class InGameObject : MonoBehaviour
 			}
 		}
 	}
+	#endregion
 }
 
 

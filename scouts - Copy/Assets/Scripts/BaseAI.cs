@@ -79,7 +79,7 @@ public abstract class BaseAI : InGameObject
 		{
 			gameObject.SetActive(false);
 			animator.SetBool("move", false);
-			ToggleUI(false);
+			ToggleClickListener(false);
 		}
 		if (stayUntil)
 		{
@@ -99,7 +99,7 @@ public abstract class BaseAI : InGameObject
 		animator = GetComponent<Animator>();
 		animator.SetBool("move", true);
 		CheckPriorityTargetsThatWait();
-		ToggleUI(true);
+		ToggleClickListener(true);
 	}
 
 	void CheckPriorityTargetsThatWait()

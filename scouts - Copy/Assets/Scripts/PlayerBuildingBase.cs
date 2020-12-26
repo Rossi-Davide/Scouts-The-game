@@ -14,6 +14,8 @@ public abstract class PlayerBuildingBase : InGameObject
 	public int health;
 	protected bool isSafe, isDestroyed;
 	public PlayerBuilding building;
+
+	int timeLeftBeforeHealthLoss; 
 	protected override void Start()
 	{
 		base.Start();
@@ -27,7 +29,8 @@ public abstract class PlayerBuildingBase : InGameObject
 		health = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
-		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, building.healthInfos[building.level].healthLossInterval);
+		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, 1f);
+
 	}
 	protected override void SaveData()
 	{
@@ -58,8 +61,13 @@ public abstract class PlayerBuildingBase : InGameObject
 	{
 		if (GameManager.instance.isRaining && !isSafe && !isDestroyed)
 		{
-			healthBar.SetActive(true);
-			health--;
+			timeLeftBeforeHealthLoss--;
+			if (timeLeftBeforeHealthLoss == 0)
+			{
+				timeLeftBeforeHealthLoss = building.healthInfos[building.level].healthLossInterval;
+				healthBar.SetActive(true);
+				health--;
+			}
 
 			if (health <= 0)
 			{
@@ -96,7 +104,6 @@ public abstract class PlayerBuildingBase : InGameObject
 			buttonsText.text = isDestroyed ? objectName + " (Distrutto)" : objectName;
 			nameText.GetComponent<TextMeshProUGUI>().text = isDestroyed ? objectName + " (Distrutto)" : objectName;
 		}
-		
 	}
 	protected override bool GetConditionValue(ConditionType t)
 	{

@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 	public event System.Action<ObjectBase> OnBuild;
 	public event System.Action OnObjectArrayUpdate;
 	public event System.Action<Counter, int> OnCounterMaxValueChange;
+	public event System.Action OnRain;
 
 	public void Built(ObjectBase obj)
 	{
@@ -430,7 +431,7 @@ public class GameManager : MonoBehaviour
 	{
 		if (!isRaining)
 		{
-			if (rainingTimeLeft > 0)
+			if (rainingWaitTimeLeft > 0)
 			{
 				rainingWaitTimeLeft--;
 			}
@@ -439,7 +440,7 @@ public class GameManager : MonoBehaviour
 				isRaining = true;
 				transform.Find("ParticleManager/pioggia").gameObject.SetActive(true);
 				rainingTimeLeft = Random.Range(30, 75);
-				rainingWaitTimeLeft = Random.Range(25, 40);
+				rainingWaitTimeLeft = Random.Range(120, 180);
 			}
 		}
 		else
