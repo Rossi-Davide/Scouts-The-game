@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 	}
 	#endregion
 
-
+	public Joystick joy;
 	public GameObject dialoguePanel;
 	public GameObject blackOverlay;
 	GameObject nextButton;
@@ -45,11 +45,11 @@ public class DialogueManager : MonoBehaviour
 
 	public void TogglePanel(Dialogue dialogue)
 	{
+		joy.canUseJoystick = isOpen;
 		isOpen = !isOpen;
 		dialoguePanel.SetActive(isOpen);
 		blackOverlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
 		currentSentenceIndex = 0;
 		currentDialogue = dialogue;
 		deltaPoints = currentDialogue.deltaPoints;
@@ -61,7 +61,15 @@ public class DialogueManager : MonoBehaviour
 			ShowSentence(currentDialogue.sentences[currentSentenceIndex]);
 		}
 	}
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 	void ShowSentence(Sentence s)
 	{
 		title.text = currentObject.name;

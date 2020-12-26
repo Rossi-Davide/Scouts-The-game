@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
 	bool hasEnoughMoney, canIncreaseLevel, hasItems, canBuy;
 	[HideInInspector] [System.NonSerialized]
 	public bool negozioIllegaleUnlocked;
-
+	public Joystick joy;
 
 	TextMeshProUGUI objName, description, price, amount, amountHeader, level, levelHeader, itemsNeeded;
 	public GameObject infoPanel;
@@ -270,7 +270,15 @@ public class Shop : MonoBehaviour
 		Camera.main.GetComponent<PanZoom>().enabled = !shopPanel.activeSelf;
 		SetActivePanels();
 	}
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 	public void ChangeSpecificScreen(int n)
 	{
 		if (!negozioIllegaleUnlocked && (SpecificShopScreen)n == SpecificShopScreen.NegozioIllegale)

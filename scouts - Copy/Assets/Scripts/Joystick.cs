@@ -10,6 +10,7 @@ public class Joystick : MonoBehaviour
 	public Vector2 direction;
 	[HideInInspector] [System.NonSerialized]
 	public bool isUsingJoystick;
+	public bool canUseJoystick=true;
 
 	#region Singleton
 	public static Joystick instance;
@@ -25,7 +26,7 @@ public class Joystick : MonoBehaviour
 	#endregion
 	private void FixedUpdate()
 	{
-		if (Input.touchCount >= 1)
+		if (Input.touchCount >= 1&&canUseJoystick==true)
 		{
 			Touch t = Input.GetTouch(0);
 			if (t.phase == TouchPhase.Began)
@@ -34,7 +35,7 @@ public class Joystick : MonoBehaviour
 			}
 			if (t.phase == TouchPhase.Moved && isUsingJoystick)
 			{
-				Debug.Log("controller on");
+				//Debug.Log("controller on");
 
 				circle.transform.position = t.position;
 				var relativePos = circle.GetComponent<RectTransform>().anchoredPosition;
@@ -56,4 +57,5 @@ public class Joystick : MonoBehaviour
 			direction = Vector2.zero;
 		}
 	}
+
 }

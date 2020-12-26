@@ -4,6 +4,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
 	public GameObject questPanel, overlay;
+	public Joystick joy;
 	[HideInInspector]
 	[System.NonSerialized]
 	public QuestUI[] quests;
@@ -20,7 +21,15 @@ public class QuestManager : MonoBehaviour
 	}
 	#endregion
 
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 
 	private void Start()
 	{
@@ -142,7 +151,6 @@ public class QuestManager : MonoBehaviour
 		overlay.SetActive(isOpen);
 		questPanel.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
 
 		foreach (QuestUI q in quests)
 		{

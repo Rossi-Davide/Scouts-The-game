@@ -6,7 +6,16 @@ public class ActionInfoPanel : MonoBehaviour
 	bool isOpen;
 	public GameObject panel, overlay;
 	PlayerAction selectedAction;
+	public Joystick joy;
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 	public void TogglePanel(int buttonNum)
 	{
 		if (buttonNum == 0)
@@ -16,7 +25,6 @@ public class ActionInfoPanel : MonoBehaviour
 		isOpen = !isOpen;
 		overlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
 		panel.SetActive(isOpen);
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 		if (isOpen)

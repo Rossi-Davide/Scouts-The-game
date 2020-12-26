@@ -16,6 +16,7 @@ public class ActionManager : MonoBehaviour
 	}
 	#endregion
 	bool isOpen;
+	public Joystick joy;
 	public GameObject panel, overlay;
 	public GameObject[] actionSpots;
 	public List<TimeAction> currentHiddenActions, currentActions;
@@ -27,7 +28,6 @@ public class ActionManager : MonoBehaviour
 		panel.SetActive(isOpen);
 		overlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = false;
 		for (int i = 0; i < currentActions.Count; i++)
 		{
 			var s = actionSpots[i];
@@ -39,7 +39,15 @@ public class ActionManager : MonoBehaviour
 		}
 	}
 
-
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
+	
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 
 
 

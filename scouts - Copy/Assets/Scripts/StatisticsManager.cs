@@ -4,8 +4,10 @@ public class StatisticsManager : MonoBehaviour
 {
 	bool isOpen;
 	public GameObject panel, overlay, nomeSq, descrizione, materiali, punti;
+	public Joystick joy;
 	public void ToggleStatisticsPanel()
 	{
+		joy.canUseJoystick = isOpen;
 		isOpen = !isOpen;
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 		panel.SetActive(isOpen);
@@ -13,6 +15,14 @@ public class StatisticsManager : MonoBehaviour
 		FindObjectOfType<StatisticsTabs>().OnClick(1);
 		FindObjectOfType<StatisticsTabs>().RefreshSqInfo();
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
+	}
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
+
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
 	}
 }

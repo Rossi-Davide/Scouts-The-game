@@ -15,7 +15,7 @@ public class SfidaManager : MonoBehaviour
 	}
 
 	#endregion
-
+	public Joystick joy;
 	bool isOpen;
 	public GameObject panel, overlay, topArrow, bottomArrow;
 	public GameObject[] selectChallengeButtons;
@@ -29,16 +29,21 @@ public class SfidaManager : MonoBehaviour
 	}
 	public void ToggleChallengePanel()
 	{
+		joy.canUseJoystick = isOpen;
 		isOpen = !isOpen;
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 		overlay.SetActive(isOpen);
 		panel.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
 		RefreshButtons();
 	}
 
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	
 	public void RefreshChallenge(Squadriglia sq)
 	{
 		panel.transform.Find("Texts/Sfidanti").GetComponent<TextMeshProUGUI>().text = sq.name + " VS " + Player.instance.squadriglia.name + " (Tu)";

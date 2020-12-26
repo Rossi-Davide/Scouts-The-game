@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
 	public GameObject itemInfoBox;
 	TextMeshProUGUI itemName, description, type;
 	GameObject useButton;
-
+	public Joystick joy;
 	InventorySlot selectedItem, draggingSlot;
 
 	#region Singleton
@@ -87,13 +87,20 @@ public class InventoryManager : MonoBehaviour
 		inventoryPanelParent.SetActive(isOpen);
 		overlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
 		foreach (var s in slots)
 		{
 			s.RefreshInventoryAmount();
 		}
 	}
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 	#endregion
 	void Start()
 	{

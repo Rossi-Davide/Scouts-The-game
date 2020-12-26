@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
+	public Joystick joy;
 	bool isOpen;
 	public GameObject panel, overlay;
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
+
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 	public void TogglePausePanel()
 	{
 		isOpen = !isOpen;
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "");
-
 		overlay.SetActive(isOpen);
 		panel.SetActive(isOpen);
 		Time.timeScale = isOpen ? 0 : 1;
 		PanZoom.instance.canDo = !isOpen;
-		Joystick.instance.enabled = !isOpen;
 	}
 
 	public void Menu()

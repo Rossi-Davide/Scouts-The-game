@@ -18,7 +18,7 @@ public class ChestManager : MonoBehaviour
 	public InventorySlot[] fakeInventorySlots;
 	private const int maxItemsPerChest = 28;
 	public InventorySlot[] slots;
-
+	public Joystick joy;
 	public GameObject chestPanelParent, overlay;
 	bool isOpen;
 
@@ -46,7 +46,6 @@ public class ChestManager : MonoBehaviour
 			chestPanelParent.SetActive(true);
 			isOpen = true;
 			PanZoom.instance.canDo = false;
-			Joystick.instance.enabled = false;
 
 
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
@@ -64,7 +63,6 @@ public class ChestManager : MonoBehaviour
 			chestPanelParent.SetActive(false);
 			overlay.SetActive(false);
 			PanZoom.instance.canDo = true;
-			Joystick.instance.enabled = false;
 
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{
@@ -78,7 +76,15 @@ public class ChestManager : MonoBehaviour
 			s.RefreshInventoryAmount();
 		}
 	}
+	public void ReEnableJoy()
+	{
+		joy.canUseJoystick = true;
+	}
 
+	public void DisableJoy()
+	{
+		joy.canUseJoystick = false;
+	}
 	void FixedUpdate()
 	{
 		if (InventoryManager.dragging)
