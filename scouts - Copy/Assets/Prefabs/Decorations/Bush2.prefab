@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1452180705}
   - component: {fileID: 4662976933813248152}
   - component: {fileID: 3334637860487349690}
+  - component: {fileID: 5718669524406430288}
   m_Layer: 0
   m_Name: Bush2
   m_TagString: Untagged
@@ -4856,3 +4857,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!68 &5718669524406430288
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353250990439466532}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.22700244, y: -0.10561931}
+  - {x: 0.059728384, y: -0.0195539}
+  - {x: -0.12406768, y: -0.09488183}
+  - {x: 0.074383125, y: -0.2091434}
+  - {x: 0.22276051, y: -0.11360717}

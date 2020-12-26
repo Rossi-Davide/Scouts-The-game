@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 65c41a2cf222a11449d0aa7eac27443a
+guid: 4ff81addbc7febe4da692b062ea1e08d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4706357270968741236
+    second: alberoFreccia_0
+  - first:
+      213: -766056326526697579
+    second: alberoFreccia_1
+  - first:
+      213: 3332492548641906627
+    second: alberoFreccia_2
+  - first:
+      213: -8395752820677438945
+    second: alberoFreccia_3
+  - first:
+      213: -3632178535786868052
+    second: alberoFreccia_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.53584594, y: 0.40209943}
-  spritePixelsToUnits: 400
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +136,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: alberoFreccia_0
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 481
+        width: 136
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d2b2aa007505140800000000000000
+      internalID: 4706357270968741236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alberoFreccia_1
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 504
+        width: 192
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f7f6b64db6e55f0800000000000000
+      internalID: -766056326526697579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alberoFreccia_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 325
+        height: 455
+      alignment: 9
+      pivot: {x: 0.5538028, y: 0.20024134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfdf6211546f3e20800000000000000
+      internalID: 3332492548641906627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alberoFreccia_3
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 0
+        width: 325
+        height: 650
+      alignment: 9
+      pivot: {x: 0.5533128, y: 0.19828494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12998dca4b4c7b80800000000000000
+      internalID: -8395752820677438945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alberoFreccia_4
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 0
+        width: 325
+        height: 683
+      alignment: 9
+      pivot: {x: 0.54100996, y: 0.20707276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca210a5add8e79dc0800000000000000
+      internalID: -3632178535786868052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -134,7 +254,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

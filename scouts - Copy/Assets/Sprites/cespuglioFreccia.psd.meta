@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 65c41a2cf222a11449d0aa7eac27443a
+guid: df591b49f3c19564faef1cb4fa903a83
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4182012374659316716
+    second: cespuglioFreccia_0
+  - first:
+      213: 787975607870100627
+    second: cespuglioFreccia_1
+  - first:
+      213: 7225105851944020886
+    second: cespuglioFreccia_2
+  - first:
+      213: -6709410468547251286
+    second: cespuglioFreccia_3
+  - first:
+      213: -4673045058917531226
+    second: cespuglioFreccia_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.53584594, y: 0.40209943}
-  spritePixelsToUnits: 400
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 650
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +136,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cespuglioFreccia_0
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 307
+        width: 136
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414c42a07e186f5c0800000000000000
+      internalID: -4182012374659316716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cespuglioFreccia_1
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 330
+        width: 262
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39415c6f3a37fea00800000000000000
+      internalID: 787975607870100627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cespuglioFreccia_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 42
+        width: 275
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b28b9fd7bb44460800000000000000
+      internalID: 7225105851944020886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cespuglioFreccia_3
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 39
+        width: 275
+        height: 466
+      alignment: 9
+      pivot: {x: 0.48728272, y: 0.21736118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa334f11ab263e2a0800000000000000
+      internalID: -6709410468547251286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cespuglioFreccia_4
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 42
+        width: 275
+        height: 471
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.20562918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a183db1742062fb0800000000000000
+      internalID: -4673045058917531226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -134,7 +254,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
