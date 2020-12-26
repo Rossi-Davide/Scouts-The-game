@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 8504184329679217997}
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
+  - component: {fileID: 6209248689380115650}
   m_Layer: 0
-  m_Name: piano bidoni 1
+  m_Name: PianoBidoni
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -102,3 +103,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &6209248689380115650
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.06594968, y: 0.06186995}
+  - {x: -0.10122919, y: -0.01593417}
+  - {x: -0.1777761, y: -0.055842012}
+  - {x: -0.1255207, y: -0.100200206}
+  - {x: 0.14663911, y: 0.027228206}
+  - {x: 0.06704736, y: 0.06186998}

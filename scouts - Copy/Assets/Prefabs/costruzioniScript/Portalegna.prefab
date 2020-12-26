@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 8999118345201218205}
   - component: {fileID: 6509485076945021395}
   - component: {fileID: -5423069257681772924}
-  - component: {fileID: -4210427115204438367}
+  - component: {fileID: 6750464384614884748}
   m_Layer: 0
   m_Name: Portalegna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &-4210427115204438367
-BoxCollider2D:
+--- !u!68 &6750464384614884748
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,19 +164,15 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022277892, y: -0.031544626}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.53480923, y: 0.19738689}
-    oldSize: {x: 0.64, y: 0.7177778}
-    newSize: {x: 0.865, y: 0.615}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.22027063}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.08833265, y: 0.12590466}
+  - {x: -0.10812116, y: 0.02666086}
+  - {x: -0.3094039, y: -0.050580934}
+  - {x: -0.10457802, y: -0.12862387}
+  - {x: 0.2904911, y: 0.0530157}
+  - {x: 0.083408594, y: 0.11598026}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6900542347143825557}
   - component: {fileID: 6900542347143825552}
   - component: {fileID: 1783706678037681103}
+  - component: {fileID: 6194157527575164880}
   m_Layer: 0
   m_Name: Lavaggi
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Animator:
   m_GameObject: {fileID: 6900542347143825559}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07729f413a3bec24ba6e968558cc2395, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -142,3 +143,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &6194157527575164880
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900542347143825559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.34037513, y: -0.04256344}
+  - {x: -0.17283785, y: -0.16685614}
+  - {x: 0.2776042, y: 0.07907939}
+  - {x: 0.117887974, y: 0.15062127}
+  - {x: -0.33555302, y: -0.032784622}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 25190415247629469}
   - component: {fileID: 25190415247629464}
   - component: {fileID: 1678470569485545660}
+  - component: {fileID: 6648318807900175356}
   m_Layer: 0
   m_Name: Cambusa
   m_TagString: Untagged
@@ -123,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 25190415247629459}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5347f39dfbc830a4bbe279b2e55e278a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -132,3 +133,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &6648318807900175356
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25190415247629459}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.3930537, y: 0.06683974}
+  - {x: -0.053590775, y: 0.26809847}
+  - {x: -0.41148123, y: 0.108956024}
+  - {x: 0.047402702, y: -0.14082965}
+  - {x: 0.4011523, y: 0.061742067}

@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 8999118345201218205}
   - component: {fileID: 3098482634519508685}
   - component: {fileID: 5678335579856955442}
-  - component: {fileID: 5255719136751690210}
+  - component: {fileID: 8178801602212756154}
   m_Layer: 0
   m_Name: stendipanni
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dce99eadc74a84e91bdc1a4b2e5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &5255719136751690210
-BoxCollider2D:
+--- !u!68 &8178801602212756154
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,19 +164,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046437114, y: -0.06235066}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.57281077, y: 0.357872}
-    oldSize: {x: 0.6377778, y: 0.5688889}
-    newSize: {x: 0.865, y: 0.615}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6377778, y: 0.20725834}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.2097733, y: 0.10008321}
+  - {x: -0.35044813, y: -0.1689446}
+  - {x: -0.32866, y: -0.1937401}
+  - {x: 0.24934816, y: 0.07768659}
+  - {x: 0.21242785, y: 0.10086797}

@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 8504184329679217997}
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
+  - component: {fileID: 811375849635254876}
   m_Layer: 0
-  m_Name: porta legna 1
+  m_Name: Portalegna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -102,3 +103,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &811375849635254876
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.08833265, y: 0.12590466}
+  - {x: -0.10812116, y: 0.02666086}
+  - {x: -0.3094039, y: -0.050580934}
+  - {x: -0.10457802, y: -0.12862387}
+  - {x: 0.2904911, y: 0.0530157}
+  - {x: 0.083408594, y: 0.11598026}

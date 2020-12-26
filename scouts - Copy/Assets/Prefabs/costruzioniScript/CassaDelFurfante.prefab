@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4708544776255143185}
   - component: {fileID: 4708544776255143184}
   - component: {fileID: -8688225233702778496}
+  - component: {fileID: 3925597194483742156}
   m_Layer: 0
   m_Name: CassaDelFurfante
   m_TagString: Untagged
@@ -143,7 +144,7 @@ Animator:
   m_GameObject: {fileID: 4708544776255143191}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05d61363614d44e43b71d42845c2b893, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,3 +153,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &3925597194483742156
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708544776255143191}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.37164605, y: 0.034802478}
+  - {x: 0.12305716, y: 0.1420419}
+  - {x: -0.34003547, y: -0.07712571}
+  - {x: -0.12368741, y: -0.21728349}
+  - {x: 0.38253617, y: 0.036492553}
