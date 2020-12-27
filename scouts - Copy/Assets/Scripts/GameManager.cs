@@ -305,7 +305,8 @@ public class GameManager : MonoBehaviour
 	public Plant[] plantPrefabs;
 	public PlantSpawnArea[] spawnAreas;
 	public Plant[] spawnedPlants;
-	void SpawnDecorations(int? toSpawn)
+	int? toSpawn = null;
+	void SpawnDecorations()
 	{
 		if (toSpawn == null) { toSpawn = Random.Range(35, 50); }
 		for (int spawned = 0; spawned < toSpawn; spawned++)
@@ -384,7 +385,7 @@ public class GameManager : MonoBehaviour
 		RefreshCounterText();
 	}
 	private Light2D globalLight;
-	
+
 	void ChangeLight()
 	{
 		if (globalLight.intensity <= .7f)
@@ -397,7 +398,7 @@ public class GameManager : MonoBehaviour
 
 		if (!isDay)
 		{
-			
+
 			if (globalLight.intensity > .6f)
 				globalLight.intensity -= .01f;
 		}
@@ -438,6 +439,7 @@ public class GameManager : MonoBehaviour
 			else if (DoIfPercentage(0.6f))
 			{
 				isRaining = true;
+				OnRain?.Invoke();
 				transform.Find("ParticleManager/pioggia").gameObject.SetActive(true);
 				rainingTimeLeft = Random.Range(30, 75);
 				rainingWaitTimeLeft = Random.Range(120, 180);
@@ -562,10 +564,15 @@ public class GameManager : MonoBehaviour
 			currentHour = status.currentHour;
 			currentDay = status.currentDay;
 			globalLight.intensity = status.globalLight;
-			SpawnDecorations(status.totalPlantsSpawned);
+			toSpawn = status.totalPlantsSpawned;
+			SpawnDecorations();
+			toSpawn = null;
 		}
 		else
-			SpawnDecorations(null);
+		{
+			toSpawn = null;
+			SpawnDecorations();
+		}
 	}
 	public class Status
 	{

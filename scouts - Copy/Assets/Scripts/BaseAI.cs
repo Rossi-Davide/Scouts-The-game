@@ -80,6 +80,7 @@ public abstract class BaseAI : InGameObject
 			gameObject.SetActive(false);
 			animator.SetBool("move", false);
 			ToggleClickListener(false);
+			ToggleNameAndSubName(false);
 		}
 		if (stayUntil)
 		{

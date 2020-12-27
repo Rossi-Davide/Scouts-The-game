@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8453646315859407839}
   - component: {fileID: 8453646315859407810}
   - component: {fileID: -18796684580131741}
-  - component: {fileID: 7730239325323929882}
   - component: {fileID: 1073560259589454027}
   m_Layer: 0
   m_Name: Alzabandiera
@@ -113,6 +112,9 @@ MonoBehaviour:
   customDataFileName: Alzabandiera
   possiblePositions: []
   clickListener: {fileID: 0}
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: 7bd5ed15095ef5948b7c3a00a4424968, type: 2}
 --- !u!95 &-18796684580131741
@@ -134,27 +136,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &7730239325323929882
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8453646315859407837}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!68 &1073560259589454027
 EdgeCollider2D:
   m_ObjectHideFlags: 0

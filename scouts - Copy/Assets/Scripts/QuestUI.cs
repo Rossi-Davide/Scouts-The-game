@@ -39,24 +39,24 @@ public class QuestUI : MonoBehaviour
 	{
 		title.text = quest.name;
 		description.text = quest.description;
+		barValue.text = quest.timesDone + "/" + quest.timesToDo;
+		prizeValue.text = quest.prizeAmount.ToString();
+		bar.maxValue = quest.timesToDo;
+		bar.value = quest.timesDone;
+		energyLogo.SetActive(quest.prizeCounter == Counter.Energia);
+		materialsLogo.SetActive(quest.prizeCounter == Counter.Materiali);
+		pointsLogo.SetActive(quest.prizeCounter == Counter.Punti);
 		if (quest.timesDone >= quest.timesToDo)
 		{
-			bar.enabled = false;
-			completato.enabled = quest.prizeTaken;
-			riscuoti.enabled = !quest.prizeTaken;
+			bar.gameObject.SetActive(false);
+			completato.gameObject.SetActive(quest.prizeTaken);
+			riscuoti.gameObject.SetActive(!quest.prizeTaken);
 		}
 		else
 		{
-			bar.enabled = true;
-			bar.maxValue = quest.timesToDo;
-			bar.value = quest.timesDone;
-			riscuoti.enabled = false;
-			completato.enabled = false;
-			barValue.text = quest.timesDone + "/" + quest.timesToDo;
-			prizeValue.text = quest.prizeAmount.ToString();
-			energyLogo.SetActive(quest.prizeCounter == Counter.Energia);
-			materialsLogo.SetActive(quest.prizeCounter == Counter.Materiali);
-			pointsLogo.SetActive(quest.prizeCounter == Counter.Punti);
+			bar.gameObject.SetActive(true);
+			completato.gameObject.SetActive(false);
+			riscuoti.gameObject.SetActive(false);
 		}
 	}
 }

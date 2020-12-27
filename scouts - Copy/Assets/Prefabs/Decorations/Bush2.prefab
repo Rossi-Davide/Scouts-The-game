@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8295524cf79df4cb064b9e6562f58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Cespuglio
   objectSubName: 
   buttons:
   - buttonText: Fai legna
@@ -65,6 +65,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 4621947097978961903, guid: 41d512e912e499a4387e33cfa3ecd7ea,
     type: 3}
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
 --- !u!95 &1452180704
 Animator:

@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8504184329679217997
 Transform:
   m_ObjectHideFlags: 0
@@ -139,6 +139,10 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 1000800977015612233, guid: 8949b91dae0c0e64988cc24c3e9d6212,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: a347e06a83e5626449a80dbdcf3f658b, type: 2}
   building: {fileID: 11400000, guid: 9031e06bb5f172147a22359690c09a05, type: 2}

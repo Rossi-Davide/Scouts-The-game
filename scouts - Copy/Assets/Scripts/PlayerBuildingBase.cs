@@ -6,16 +6,19 @@ using System.Threading;
 
 public abstract class PlayerBuildingBase : InGameObject
 {
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public GameObject healthBar;
-	[HideInInspector] [System.NonSerialized]
-	public Vector3 healthBarOffset = new Vector3(0, -0.2f, 0);
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
+	public Vector3 healthBarRelativeOffset = new Vector3(0, -0.2f, 0);
+	[HideInInspector]
+	[System.NonSerialized]
 	public int health;
 	protected bool isSafe, isDestroyed;
 	public PlayerBuilding building;
 
-	int timeLeftBeforeHealthLoss; 
+	int timeLeftBeforeHealthLoss;
 	protected override void Start()
 	{
 		base.Start();
@@ -25,12 +28,12 @@ public abstract class PlayerBuildingBase : InGameObject
 		}
 		objectName = building.name;
 		objectSubName = "Livello " + (building.level + 1);
-		healthBar = Instantiate(GameManager.instance.healthBarPrefab, transform.position + healthBarOffset, Quaternion.identity, wpCanvas.transform);
+		healthBar = Instantiate(GameManager.instance.healthBarPrefab, loadingBar.transform.position + healthBarRelativeOffset, Quaternion.identity, wpCanvas.transform);
 		health = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().maxValue = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		InvokeRepeating(nameof(LoseHealthWhenRaining), 1f, 1f);
-
+		MoveUI();
 	}
 	protected override void SaveData()
 	{
@@ -45,54 +48,52 @@ public abstract class PlayerBuildingBase : InGameObject
 
 	public override void Select()
 	{
-		healthBar.SetActive(true);
+		ToggleHealthBar(true);
 		base.Select();
 	}
 	public override void Deselect()
 	{
 		if (!GameManager.instance.isRaining)
 		{
-			healthBar.SetActive(false);
+			ToggleHealthBar(false);
 		}
 		base.Deselect();
 	}
 
 	protected virtual void LoseHealthWhenRaining()
 	{
-		if (GameManager.instance.isRaining && !isSafe && !isDestroyed)
+		if (GameManager.instance.isRaining)
 		{
-			timeLeftBeforeHealthLoss--;
-			if (timeLeftBeforeHealthLoss == 0)
+			ToggleHealthBar(true);
+			if (!isSafe && !isDestroyed)
 			{
-				timeLeftBeforeHealthLoss = building.healthInfos[building.level].healthLossInterval;
-				healthBar.SetActive(true);
-				health--;
-			}
+				timeLeftBeforeHealthLoss--;
+				if (timeLeftBeforeHealthLoss == 0)
+				{
+					timeLeftBeforeHealthLoss = building.healthInfos[building.level].healthLossInterval;
+					health--;
+				}
 
-			if (health <= 0)
-			{
-				health = 0;
-				isDestroyed = true;
-				GetComponent<Animator>().Play(objectName + "Destroyed");
-				RefreshButtonsState();
+				if (health <= 0)
+				{
+					health = 0;
+					isDestroyed = true;
+					GetComponent<Animator>().Play(objectName + "Destroyed");
+					RefreshButtonsState();
+					if (!hasBeenClicked)
+						ToggleHealthBar(false);
+				}
+				healthBar.GetComponent<Slider>().value = health;
+				healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
 			}
-			healthBar.GetComponent<Slider>().value = health;
-			healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
 		}
 		else if (!hasBeenClicked)
 		{
-			healthBar.SetActive(false);
+			ToggleHealthBar(false);
 		}
-	}
-	protected void RefreshIsSafe()
-	{
-		if (!GameManager.instance.isRaining)
+		else
 		{
 			isSafe = false;
-			if (ActionButtons.instance.selected == this)
-			{
-				healthBar.SetActive(false);
-			}
 		}
 	}
 
@@ -134,11 +135,15 @@ public abstract class PlayerBuildingBase : InGameObject
 	}
 
 
-	public override IEnumerator MoveUI()
+	public override void MoveUI()
 	{
 		base.MoveUI();
-		yield return new WaitForEndOfFrame();
-		healthBar.transform.position = transform.position + healthBarOffset;
+		healthBar.transform.position = loadingBar.transform.position + healthBarRelativeOffset;
+	}
+	public override IEnumerator ToggleHealthBar(bool active)
+	{
+		healthBar.gameObject.SetActive(active);
+		return base.ToggleHealthBar(active);
 	}
 
 	public class PBStatus : Status

@@ -27,10 +27,9 @@ public abstract class InGameObject : MonoBehaviour
 	public Button clickListener;
 
 	protected bool hasBeenClicked;
+	public bool isNameAlwaysActive;
 
-	[HideInInspector]
-	[System.NonSerialized]
-	public Vector3 nameTextOffset = new Vector3(0, 0.55f, 0), loadingBarOffset = new Vector3(0, 0.15f, 0);
+	public Vector3 nameTextOffset, loadingBarOffset, clickListenerOffset;
 	[HideInInspector]
 	[System.NonSerialized]
 	public TimeLeftBar loadingBar;
@@ -53,7 +52,7 @@ public abstract class InGameObject : MonoBehaviour
 				max = b.generalAction.state.priority;
 				if (b.generalAction.state.variesWithLevel)
 					animation += b.generalAction.state.animationSubstring;
-				else 
+				else
 					animation = b.generalAction.state.animationSubstring;
 			}
 		}
@@ -87,7 +86,7 @@ public abstract class InGameObject : MonoBehaviour
 
 		if (isInstantiating) // maybe check if listener is null
 		{
-			clickListener = Instantiate(clickListener, transform.position, Quaternion.identity, buttonCanvas.transform);
+			clickListener = Instantiate(clickListener, transform.position + clickListenerOffset, Quaternion.identity, buttonCanvas.transform);
 		}
 		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
@@ -108,7 +107,7 @@ public abstract class InGameObject : MonoBehaviour
 
 
 		if (checkPositionEachFrame)
-			InvokeRepeating(nameof(MoveUI), Time.deltaTime, Time.deltaTime);
+			InvokeRepeating(nameof(MoveUI), 0.1f, 0.1f);
 		if (spawnInRandomPosition)
 			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
 
@@ -120,12 +119,12 @@ public abstract class InGameObject : MonoBehaviour
 			SetStatus(SaveSystem.instance.LoadData<Status>(customDataFileName, false));
 			SaveSystem.instance.OnReadyToSaveData += SaveData;
 		}
-		MoveUI();
+		if (GetComponent<PlayerBuildingBase>() == null)
+			MoveUI();
 
 
-		var c = GetComponent<CapieCambu>() == null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq != Player.instance.squadriglia);
-		nameText.gameObject.SetActive(c);
-		subNameText.gameObject.SetActive(c);
+		isNameAlwaysActive = GetComponent<CapieCambu>() != null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq == Player.instance.squadriglia);
+		ToggleNameAndSubName(isNameAlwaysActive);
 	}
 
 
@@ -184,7 +183,6 @@ public abstract class InGameObject : MonoBehaviour
 		b.priceOrPrizeAmount = s;
 	}
 
-
 	protected Item[] CheckActionItems(ActionButton b)
 	{
 		Item[] items = new Item[b.generalAction.neededItems.Length];
@@ -220,8 +218,7 @@ public abstract class InGameObject : MonoBehaviour
 	public virtual void Select()
 	{
 		buttonsText.enabled = true;
-		nameText.gameObject.SetActive(true);
-		subNameText.gameObject.SetActive(true);
+		ToggleNameAndSubName(true);
 		foreach (var b in buttons)
 		{
 			b.obj.SetActive(true);
@@ -237,11 +234,7 @@ public abstract class InGameObject : MonoBehaviour
 	public virtual void Deselect()
 	{
 		buttonsText.enabled = false;
-		if (GetComponent<CapieCambu>() == null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq != Player.instance.squadriglia))
-		{
-			nameText.gameObject.SetActive(false);
-			subNameText.gameObject.SetActive(false);
-		}
+		ToggleNameAndSubName(false);
 		foreach (var b in buttons)
 		{
 			b.obj.SetActive(false);
@@ -348,18 +341,33 @@ public abstract class InGameObject : MonoBehaviour
 			default: throw new NotImplementedException(t.ToString());
 		}
 	}
-	public virtual IEnumerator MoveUI()
+	public virtual void MoveUI()
 	{
-		yield return new WaitForEndOfFrame();
 		loadingBar.transform.position = transform.position + loadingBarOffset;
 		nameText.transform.position = transform.position + nameTextOffset;
 		subNameText.transform.position = nameText.transform.position + subNameRelativeOffset;
-		clickListener.transform.position = transform.position;
+		clickListener.transform.position = transform.position + clickListenerOffset;
 	}
-	public IEnumerator ToggleClickListener(bool active)
+	public void ToggleClickListener(bool active)
+	{
+		clickListener.gameObject.SetActive(active);
+	}
+	public void ToggleNameAndSubName(bool active)
+	{
+		if ((active && isNameAlwaysActive) || !isNameAlwaysActive)
+		{
+			nameText.gameObject.SetActive(active);
+			subNameText.gameObject.SetActive(active);
+		}
+	}
+	public IEnumerator ToggleLoadingBar(bool active)
 	{
 		yield return new WaitForEndOfFrame();
-		clickListener.gameObject.SetActive(active);
+		loadingBar.gameObject.SetActive(active);
+	}
+	public virtual IEnumerator ToggleHealthBar(bool active)
+	{
+		yield return new WaitForEndOfFrame();
 	}
 
 

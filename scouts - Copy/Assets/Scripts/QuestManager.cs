@@ -85,7 +85,6 @@ public class QuestManager : MonoBehaviour
 			if (q.quest.action == a)
 			{
 				q.quest.timesDone++;
-				q.RefreshQuest();
 			}
 		}
 	}
