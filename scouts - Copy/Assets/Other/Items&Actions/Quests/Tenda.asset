@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Campeggiatore
   description: 'Monta la tenda '
-  completed: 0
-  prizeTaken: 0
   prizeCounter: 3
   prizeAmount: 5
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 3462591e35e97f84fa5cbfe584e31197, type: 2}
   timesToDo: 1
-  timesDone: 0
+  timesDone: 1

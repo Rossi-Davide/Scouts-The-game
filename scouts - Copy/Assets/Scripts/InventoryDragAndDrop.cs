@@ -17,7 +17,7 @@ public class InventoryDragAndDrop : MonoBehaviour
 			}
 			else if (t.phase == TouchPhase.Ended)
 			{
-				var s = InventoryManager.instance.CheckIfNearASlot(t);
+				var s = InventoryManager.CheckIfNearASlot(t);
 				if (s != null)
 				{
 					parent.Drop(s);

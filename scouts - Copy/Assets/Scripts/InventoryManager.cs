@@ -8,7 +8,6 @@ public class InventoryManager : MonoBehaviour
 	public static bool dragging;
 	public GameObject ovCanvas;
 	public InventorySlot[] slots;
-	readonly int touchRadius = 60;
 
 	public GameObject itemInfoBox;
 	TextMeshProUGUI itemName, description, type;
@@ -85,6 +84,7 @@ public class InventoryManager : MonoBehaviour
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 
 		inventoryPanelParent.SetActive(isOpen);
+		joy.canUseJoystick = !isOpen;
 		overlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
 		foreach (var s in slots)
@@ -92,15 +92,7 @@ public class InventoryManager : MonoBehaviour
 			s.RefreshInventoryAmount();
 		}
 	}
-	public void ReEnableJoy()
-	{
-		joy.canUseJoystick = true;
-	}
-
-	public void DisableJoy()
-	{
-		joy.canUseJoystick = false;
-	}
+	
 	#endregion
 	void Start()
 	{
@@ -112,6 +104,7 @@ public class InventoryManager : MonoBehaviour
 			Debug.LogWarning("Inventory contains a different number of slots from the required one.");
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.inventoryManagerFileName, false));
 	}
+	#region Status
 	public Status SendStatus()
 	{
 		var it = new ObjectBase[slots.Length];
@@ -138,7 +131,7 @@ public class InventoryManager : MonoBehaviour
 	{
 		public ObjectBase[] items;
 	}
-
+	#endregion
 	public void SelectItem(InventorySlot slot)
 	{
 		if (slot != null)
@@ -174,7 +167,6 @@ public class InventoryManager : MonoBehaviour
 		SelectItem(null);
 	}
 
-
 	private void FixedUpdate()
 	{
 		if (isOpen && Input.touchCount >= 1)
@@ -198,12 +190,12 @@ public class InventoryManager : MonoBehaviour
 
 
 
-	public InventorySlot CheckIfNearASlot(Touch t)
+	public static InventorySlot CheckIfNearASlot(Touch t)
 	{
 		var slots = FindObjectsOfType<InventorySlot>();
 		foreach (var s in slots)
 		{
-			if (Vector2.Distance(t.position, s.transform.position) <= touchRadius)
+			if (Vector2.Distance(t.position, s.transform.position) <= 60)
 			{
 				return s;
 			}
