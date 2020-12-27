@@ -248,7 +248,7 @@ public class Shop : MonoBehaviour
 				{
 					s += itNeeded.items[i].item.name + (itNeeded.items[i].amount > 1 ? $" (x{itNeeded.items[i].amount})" : "") + ", ";
 				}
-				s += itNeeded.items[itNeeded.items.Length - 1].item.name + ".";
+				s += itNeeded.items[itNeeded.items.Length - 1].item.name + (itNeeded.items[itNeeded.items.Length - 1].amount > 1 ? $" (x{itNeeded.items[itNeeded.items.Length - 1].amount})" : "") + ", ";
 			}
 			itemsNeeded.text = s;
 			itemsNeeded.gameObject.SetActive(true);

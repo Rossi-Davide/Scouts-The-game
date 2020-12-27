@@ -20,7 +20,8 @@ public class ChestManager : MonoBehaviour
 	public InventorySlot[] slots;
 	public Joystick joy;
 	public GameObject chestPanelParent, overlay;
-	bool isOpen;
+	InventorySlot draggingSlot;
+	bool isOpen, dragging;
 
 	public bool Contains(ObjectBase i)
 	{
@@ -37,17 +38,15 @@ public class ChestManager : MonoBehaviour
 
 	public void ToggleChestPanel()
 	{
-		if (!isOpen)
+		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(!isOpen ? "clickDepitched" : "click");
+		overlay.SetActive(isOpen);
+		chestPanelParent.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		joy.canUseJoystick = !isOpen;
+
+		if (isOpen)
 		{
-
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
-			overlay.SetActive(true);
-			chestPanelParent.SetActive(true);
-			isOpen = true;
-			PanZoom.instance.canDo = false;
-
-
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{
 				var s = InventoryManager.instance.slots[y];
@@ -55,15 +54,7 @@ public class ChestManager : MonoBehaviour
 				fakeInventorySlots[y].AddItem(s.item);
 			}
 		}
-		else
-		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-
-			isOpen = false;
-			chestPanelParent.SetActive(false);
-			overlay.SetActive(false);
-			PanZoom.instance.canDo = true;
-
+		else {
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{
 				var s = InventoryManager.instance.slots[y];
@@ -76,24 +67,23 @@ public class ChestManager : MonoBehaviour
 			s.RefreshInventoryAmount();
 		}
 	}
-	public void ReEnableJoy()
-	{
-		joy.canUseJoystick = true;
-	}
 
-	public void DisableJoy()
-	{
-		joy.canUseJoystick = false;
-	}
 	void FixedUpdate()
 	{
-		if (InventoryManager.dragging)
+		chestPanelParent.GetComponentInChildren<ScrollRect>().enabled = dragging;
+		if (isOpen && Input.touchCount >= 1)
 		{
-			chestPanelParent.GetComponentInChildren<ScrollRect>().enabled = false;
-		}
-		else
-		{
-			chestPanelParent.GetComponentInChildren<ScrollRect>().enabled = true;
+			Touch t = Input.GetTouch(0);
+			draggingSlot = InventoryManager.CheckIfNearASlot(t);
+			if (t.phase == TouchPhase.Moved && !dragging && draggingSlot != null && draggingSlot.item != null)
+			{
+				draggingSlot.amountText.gameObject.SetActive(false);
+				draggingSlot.GetComponent<Image>().enabled = false;
+				draggingSlot.c = Instantiate(draggingSlot.clone.gameObject, t.position, Quaternion.identity, InventoryManager.instance.ovCanvas.transform);
+				draggingSlot.c.GetComponent<Image>().sprite = draggingSlot.item.icon;
+				draggingSlot.c.GetComponent<InventoryDragAndDrop>().parent = draggingSlot;
+				dragging = true;
+			}
 		}
 	}
 
@@ -106,6 +96,7 @@ public class ChestManager : MonoBehaviour
 			Debug.LogWarning("Chest fake inventory contains a different number of slots from the required one.");
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.chestManagerFileName, false));
 	}
+	#region Status
 	public Status SendStatus()
 	{
 		var it = new ObjectBase[slots.Length];
@@ -115,7 +106,7 @@ public class ChestManager : MonoBehaviour
 		}
 		return new Status
 		{
-			items = it,	
+			items = it,
 		};
 	}
 	void SetStatus(Status status)
@@ -132,4 +123,5 @@ public class ChestManager : MonoBehaviour
 	{
 		public ObjectBase[] items;
 	}
+	#endregion
 }

@@ -107,7 +107,7 @@ public abstract class InGameObject : MonoBehaviour
 
 
 		if (checkPositionEachFrame)
-			InvokeRepeating(nameof(MoveUI), 0.1f, 0.1f);
+			InvokeRepeating(nameof(MoveUI), 0.1f, 0.05f);
 		if (spawnInRandomPosition)
 			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
 

@@ -16,6 +16,9 @@ MonoBehaviour:
   description: 
   neededItems: []
   conditions:
+  - type: 3
+    desiredValue: 1
+    warning: Puoi mandare a fare legna solo di giorno!
   - type: 7
     desiredValue: 1
     warning: Puoi mandare a fare legna solo chi fa parte della tua squadriglia

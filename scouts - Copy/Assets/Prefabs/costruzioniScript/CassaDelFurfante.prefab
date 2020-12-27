@@ -107,7 +107,7 @@ MonoBehaviour:
   maxDistanceFromPlayer: 3
   isInstantiating: 0
   checkPositionEachFrame: 0
-  spawnInRandomPosition: 0
+  spawnInRandomPosition: 1
   manageAnimationsAutomatically: 1
   customDataFileName: CassaDelFurfante
   possiblePositions:
@@ -132,6 +132,10 @@ MonoBehaviour:
   - {x: 21, y: -35.2, z: 0}
   - {x: 31.9, y: 18.1, z: 0}
   clickListener: {fileID: 0}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: 7bd5ed15095ef5948b7c3a00a4424968, type: 2}
 --- !u!95 &-8688225233702778496
