@@ -50,26 +50,28 @@ public class DialogueManager : MonoBehaviour
 		dialoguePanel.SetActive(isOpen);
 		blackOverlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
-		currentSentenceIndex = 0;
+		currentSentenceIndex = 0;		
+		currentDialogue = dialogue;
+		deltaPoints = currentDialogue.deltaPoints;
+		deltaMaterials = currentDialogue.deltaMaterials;
+		deltaEnergy = currentDialogue.deltaEnergy;
+		ShowSentence(currentDialogue.sentences[currentSentenceIndex]);
 		
-
-		if (isOpen) 
-		{
-			currentDialogue = dialogue;
-			deltaPoints = currentDialogue.deltaPoints;
-			deltaMaterials = currentDialogue.deltaMaterials;
-			deltaEnergy = currentDialogue.deltaEnergy;
-			ShowSentence(currentDialogue.sentences[currentSentenceIndex]);
-		}
 	}
+
+	
 	public void ReEnableJoy()
 	{
 		joy.canUseJoystick = true;
 	}
 
-	public void DisableJoy()
+	public void ChiusuraPanel()
 	{
-		joy.canUseJoystick = false;
+		joy.canUseJoystick = isOpen;
+		isOpen = !isOpen;
+		dialoguePanel.SetActive(isOpen);
+		blackOverlay.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
 	}
 	void ShowSentence(Sentence s)
 	{

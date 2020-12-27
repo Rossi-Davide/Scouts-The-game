@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
   - component: {fileID: 6209248689380115650}
+  - component: {fileID: -3343738646070577929}
   m_Layer: 0
   m_Name: PianoBidoni
   m_TagString: Untagged
@@ -125,3 +126,15 @@ EdgeCollider2D:
   - {x: -0.1255207, y: -0.100200206}
   - {x: 0.14663911, y: 0.027228206}
   - {x: 0.06704736, y: 0.06186998}
+--- !u!114 &-3343738646070577929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83846894bf47c3e42ba0422c27f8e13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

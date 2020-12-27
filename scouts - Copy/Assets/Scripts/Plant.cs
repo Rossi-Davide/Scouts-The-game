@@ -38,4 +38,16 @@ public class Plant : InGameObject
 				throw new NotImplementedException();
 		}
 	}
+
+	protected override  void Start()
+	{
+		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position,1f);
+		foreach(Collider2D c in coll)
+		{
+			if (c.name == "Player")
+			{
+				Destroy(gameObject);
+			}
+		}
+	}
 }

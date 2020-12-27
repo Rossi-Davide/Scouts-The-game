@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
   - component: {fileID: 811375849635254876}
+  - component: {fileID: 6270132783189398017}
   m_Layer: 0
   m_Name: Portalegna
   m_TagString: Untagged
@@ -125,3 +126,15 @@ EdgeCollider2D:
   - {x: -0.10457802, y: -0.12862387}
   - {x: 0.2904911, y: 0.0530157}
   - {x: 0.083408594, y: 0.11598026}
+--- !u!114 &6270132783189398017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83846894bf47c3e42ba0422c27f8e13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

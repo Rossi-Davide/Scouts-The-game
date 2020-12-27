@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Refettorio
   type: 1
   description: Non vorrai mica mangiare per terra?!
-  icon: {fileID: 2049916588613589399, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
+  icon: {fileID: 2042245844587066341, guid: 7e8dcc7117aee964399033a2ea7d0798, type: 3}
   shopScreen: 6
   maxAmount: 0
   maxLevel: 1

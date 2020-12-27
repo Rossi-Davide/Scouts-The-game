@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Portalegna
   type: 1
   description: Dove depositare la tua legna
-  icon: {fileID: -6822941647383629172, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
+  icon: {fileID: 3911372940414158388, guid: 1a20c9e9b52d0354c81de407ce34ab83, type: 3}
   shopScreen: 6
   maxAmount: 0
   maxLevel: 1

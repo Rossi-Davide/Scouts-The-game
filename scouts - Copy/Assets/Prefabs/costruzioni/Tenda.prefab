@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
   - component: {fileID: 3705207605366575970}
+  - component: {fileID: 1687344421570164346}
   m_Layer: 0
   m_Name: Tenda
   m_TagString: Untagged
@@ -121,6 +122,18 @@ EdgeCollider2D:
   m_Points:
   - {x: 0.018357038, y: 0.2529777}
   - {x: -0.3785565, y: 0.026198424}
-  - {x: -0.03197527, y: -0.118578285}
+  - {x: -0.026875734, y: -0.12877989}
   - {x: 0.3483677, y: 0.06025369}
   - {x: 0.027776718, y: 0.24343362}
+--- !u!114 &1687344421570164346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83846894bf47c3e42ba0422c27f8e13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

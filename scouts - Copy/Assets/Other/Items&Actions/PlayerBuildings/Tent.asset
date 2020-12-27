@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Tent
   type: 1
   description: Per dormire all'asciutto
-  icon: {fileID: 1013099012324604318, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
+  icon: {fileID: -7888708515065773835, guid: f11fce0a6c27ca6439b45b6f254c366c, type: 3}
   shopScreen: 6
   maxAmount: 0
   maxLevel: 1

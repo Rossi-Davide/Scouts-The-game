@@ -12,8 +12,11 @@ public class StatisticsManager : MonoBehaviour
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
 		panel.SetActive(isOpen);
 		overlay.SetActive(isOpen);
-		FindObjectOfType<StatisticsTabs>().OnClick(1);
-		FindObjectOfType<StatisticsTabs>().RefreshSqInfo();
+		if (isOpen)
+		{
+			FindObjectOfType<StatisticsTabs>().OnClick(1);
+			FindObjectOfType<StatisticsTabs>().RefreshSqInfo();
+		}		
 		PanZoom.instance.canDo = !isOpen;
 	}
 	public void ReEnableJoy()
