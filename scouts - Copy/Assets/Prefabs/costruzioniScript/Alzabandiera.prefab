@@ -112,6 +112,7 @@ MonoBehaviour:
   customDataFileName: Alzabandiera
   possiblePositions: []
   clickListener: {fileID: 0}
+  isNameAlwaysActive: 0
   nameTextOffset: {x: 0, y: 0, z: 0}
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
@@ -149,7 +150,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21}
+  m_Offset: {x: 0, y: -0.13}
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.033951443, y: 0.095303416}

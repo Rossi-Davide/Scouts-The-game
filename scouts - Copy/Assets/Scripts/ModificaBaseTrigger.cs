@@ -11,6 +11,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	public Transform angolo;
 	Transform player;
 	bool isModifying;
+	public Joystick joy;
 
 	#region Singleton
 	public static ModificaBaseTrigger instance;
@@ -65,7 +66,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	public void ToggleModificaBase(bool isBuilding)
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
+		joy.canUseJoystick = isModifying;
 		isModifying = !isModifying;
 		buildingSlot.gameObject.SetActive(isBuilding);
 		

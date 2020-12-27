@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
   m_Name: DelegareAlleAI
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  prizeCounter: 0
-  prizeAmount: 0
+  name: ' Capo organizzatore '
+  description: Manda uno squadrigliere a fare legna
+  prizeCounter: 1
+  prizeAmount: 10
   action: {fileID: 0}
-  timesToDo: 0
+  timesToDo: 1
   timesDone: 0

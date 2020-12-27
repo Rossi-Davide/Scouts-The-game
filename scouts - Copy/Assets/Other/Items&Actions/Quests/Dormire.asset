@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
   m_Name: Dormire
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  prizeCounter: 0
-  prizeAmount: 0
+  name: Una notte senza cinghiali
+  description: Passa almeno una notte nella tua tenda
+  prizeCounter: 2
+  prizeAmount: 10
   action: {fileID: 0}
-  timesToDo: 0
+  timesToDo: 1
   timesDone: 0
