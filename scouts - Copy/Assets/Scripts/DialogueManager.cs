@@ -51,13 +51,14 @@ public class DialogueManager : MonoBehaviour
 		blackOverlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
 		currentSentenceIndex = 0;
-		currentDialogue = dialogue;
-		deltaPoints = currentDialogue.deltaPoints;
-		deltaMaterials = currentDialogue.deltaMaterials;
-		deltaEnergy = currentDialogue.deltaEnergy;
+		
 
 		if (isOpen) 
-		{ 
+		{
+			currentDialogue = dialogue;
+			deltaPoints = currentDialogue.deltaPoints;
+			deltaMaterials = currentDialogue.deltaMaterials;
+			deltaEnergy = currentDialogue.deltaEnergy;
 			ShowSentence(currentDialogue.sentences[currentSentenceIndex]);
 		}
 	}

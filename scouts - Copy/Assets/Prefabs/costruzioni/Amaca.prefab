@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8504184329679217997}
   - component: {fileID: 8504184329679217994}
   - component: {fileID: 8999118345201218205}
-  - component: {fileID: 6813735445136074654}
+  - component: {fileID: 811512975490432303}
   m_Layer: 0
   m_Name: Amaca
   m_TagString: Untagged
@@ -103,7 +103,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!68 &6813735445136074654
+--- !u!68 &811512975490432303
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,8 +119,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.16564465, y: 0.03696263}
-  - {x: -0.5265479, y: -0.28256476}
-  - {x: -0.5009713, y: -0.31727558}
-  - {x: 0.23841023, y: -0.009031713}
-  - {x: 0.17834544, y: 0.044013053}
+  - {x: 0.56089306, y: -0.04868506}
+  - {x: 0.27519846, y: -0.16544303}
+  - {x: 0.6172776, y: -0.36448437}
+  - {x: 0.88148355, y: -0.21166572}
+  - {x: 0.58197546, y: -0.059382975}
