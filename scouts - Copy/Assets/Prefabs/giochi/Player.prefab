@@ -122,10 +122,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0013325028, y: -0.019176373}
+  m_Offset: {x: 0.0031252503, y: -0.07641372}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5444733, y: 0.11796984}
     oldSize: {x: 0.24023438, y: 0.48242188}
     newSize: {x: 0.203125, y: 0.3515625}
     adaptiveTilingThreshold: 0.5
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08199199, y: 0.03432439}
+  m_Size: {x: 0.09274849, y: 0.041496933}
   m_EdgeRadius: 0
 --- !u!95 &361789451317847262
 Animator:
@@ -166,9 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd6a48d1eba8f644bc501c5f8fad668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: '*Nome del Player*'
   playerSpeed: 2.5
-  squadriglia: {fileID: 0}
 --- !u!114 &361789451317847265
 MonoBehaviour:
   m_ObjectHideFlags: 0
