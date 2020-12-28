@@ -140,7 +140,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: Tent
   possiblePositions: []
   clickListener: {fileID: 4528179396967441950, guid: aca379b0ed2c9444db9795607e7dca25,

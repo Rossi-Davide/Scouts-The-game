@@ -140,7 +140,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: PianoBidoni
   possiblePositions: []
   clickListener: {fileID: 2299551175825671910, guid: 31ba393bd71669b4c8689477cbff8cc2,

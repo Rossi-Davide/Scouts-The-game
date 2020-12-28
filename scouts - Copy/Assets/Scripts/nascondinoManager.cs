@@ -17,6 +17,7 @@ public class nascondinoManager : MonoBehaviour
     GameObject[] enemies;
     int seconds, secondsInizioGioco;
     bool vittoriaSingletone = false;
+    bool hasWon;
 
 
 	#region Utility functions
@@ -56,11 +57,6 @@ public class nascondinoManager : MonoBehaviour
             Debug.Log("audioManager non trovato");
         }
     }
-
-    // Update is called once per frame
-   
-
-  
 
    
     void CountDown()
@@ -151,8 +147,8 @@ public class nascondinoManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
         bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
+        hasWon = true;
         yield return null;
-
     }
 
     
@@ -186,6 +182,7 @@ public class nascondinoManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Animator sconfittaAn = sconfitta.GetComponent<Animator>();
         sconfittaAn.SetBool("fineGioco", true);
+        hasWon = false;
         yield return null;
     }
 
@@ -243,7 +240,7 @@ public class nascondinoManager : MonoBehaviour
 
     public void TornaAlGioco()
     {
-        SceneManager.LoadScene(1);
+        CampManager.instance.GameEnded(hasWon);
     }
 }
 

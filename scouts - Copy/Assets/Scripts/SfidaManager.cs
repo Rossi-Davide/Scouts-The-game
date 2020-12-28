@@ -23,7 +23,7 @@ public class SfidaManager : MonoBehaviour
 	int points = 0;
 	private void Start()
 	{
-		selectedChallenge = Challenge.hebert;
+		selectedChallenge = Challenge.nascondino;
 		topArrow = panel.transform.Find("Texts/Punti/TopArrow").gameObject;
 		bottomArrow = panel.transform.Find("Texts/Punti/BottomArrow").gameObject;
 	}
@@ -43,7 +43,7 @@ public class SfidaManager : MonoBehaviour
 		joy.canUseJoystick = true;
 	}
 
-	
+
 	public void RefreshChallenge(Squadriglia sq)
 	{
 		panel.transform.Find("Texts/Sfidanti").GetComponent<TextMeshProUGUI>().text = sq.name + " VS " + Player.instance.squadriglia.name + " (Tu)";
@@ -61,7 +61,7 @@ public class SfidaManager : MonoBehaviour
 	}
 	public void SelectChallenge(int num)
 	{
-		selectedChallenge = (Challenge)num - 1;
+		selectedChallenge = (Challenge)(num - 1);
 		RefreshButtons();
 	}
 
@@ -76,11 +76,23 @@ public class SfidaManager : MonoBehaviour
 	}
 
 
+	public void StartChallenge()
+	{
+		if (!AIsManager.instance.AreThereAnyRunningEvents())
+		{
+			GameManager.instance.ChangeCounter(Counter.Punti, points);
+			CampManager.instance.StartChallenge(selectedChallenge, points);
+		}
+		else
+		{
+			ToggleChallengePanel();
+			GameManager.instance.WarningOrMessage("Non puoi sfidare una squadriglia durante un evento!", true);
+		}
+	}
+
 }
 public enum Challenge
 {
 	nascondino,
-	hebert,
-	sumo,
-	//labirinto,
+	labirinto,
 }

@@ -92,7 +92,7 @@ public class ActionManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(RefreshTimesLeft), 0, 1);
+		InvokeRepeating(nameof(RefreshTimesLeft), 1, 1);
 		isOpen = false;
 		currentActions = new List<TimeAction>();
 		currentHiddenActions = new List<TimeAction>();

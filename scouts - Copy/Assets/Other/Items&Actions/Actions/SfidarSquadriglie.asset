@@ -19,6 +19,9 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
+  - type: 10
+    desiredValue: 0
+    warning: Non puoi sfidare una squadriglia durante un evento!
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 0}

@@ -135,7 +135,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: Portalegna
   possiblePositions: []
   clickListener: {fileID: 1878422868812242793, guid: e36dcf8a398ea3840b0dea38926ac261,

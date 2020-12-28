@@ -94,9 +94,20 @@ public class AIsManager : MonoBehaviour
 			if (GameManager.instance.currentDay == e.day && hour == e.hour)
 			{
 				e.countDownLeft = e.countDownLenght;
+				e.running = true;
 				GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} comincia tra...", false);
 			}
 		}
+	}
+
+	public bool AreThereAnyRunningEvents()
+	{
+		foreach (var e in events)
+		{
+			if (e.running)
+				return true;
+		}
+		return false;
 	}
 
 	void RefreshEventTimeLeft()

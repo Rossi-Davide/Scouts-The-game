@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CampManager : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class CampManager : MonoBehaviour
 		camp = new Camp(CreateDefaultSettings());
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.campManagerFileName, false));
 	}
+
+	#region Status
 
 	public static CampSettings CreateDefaultSettings()
 	{
@@ -79,6 +82,27 @@ public class CampManager : MonoBehaviour
 		public Camp camp;
 		public bool campCreated;
 	}
+	#endregion
+	#region Challenges
+	int puntiRischiati;
+	public void StartChallenge(Challenge type, int puntiRischiati)
+	{
+		SaveSystem.instance.GetSaveAll();
+		this.puntiRischiati = puntiRischiati;
+		SceneManager.LoadScene(type.ToString());
+	}
+	public IEnumerator GameEnded(bool hasWon)
+	{
+		SceneManager.LoadScene("MainScene");
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		if (hasWon) { GameManager.instance.ChangeCounter(Counter.Punti, puntiRischiati * 2); }
+		GameManager.instance.WarningOrMessage(hasWon ? (puntiRischiati > 0 ? $"Hai vinto! Ottieni {puntiRischiati * 2} punti!" : "Hai vinto, ma non hai 'rischiato' nessun punto, perciò non ottieni punti aggiuntivi!") : (puntiRischiati > 0 ? $"Sei stato sconfitto! Perdi {puntiRischiati} punti." : "Hai perso! Fortunatamente non avevi 'rischiato' alcun punto!"), false);
+	}
+	#endregion
 }
 
 [System.Serializable]

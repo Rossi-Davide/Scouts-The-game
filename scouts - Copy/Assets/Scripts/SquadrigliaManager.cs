@@ -204,7 +204,7 @@ public class SquadrigliaManager : MonoBehaviour
 			sq.buildings = new SpriteRenderer[otherSqBuildingsPrefabs.Length];
 			for (int b = 0; b < sq.buildings.Length; b++)
 			{
-				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], sq.angolo.position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
+				sq.buildings[b] = Instantiate(sq.baseSq == Player.instance.squadriglia ? playerBuildingPrefabs[b].GetComponent<SpriteRenderer>() : otherSqBuildingsPrefabs[b], nAngoli[s].oggetti[b].position, Quaternion.identity, sq.angolo).GetComponent<SpriteRenderer>();
 			}
 			foreach (var sp in sq.angolo.GetComponentsInChildren<SpriteRenderer>(true))
 			{
@@ -265,10 +265,10 @@ public class SquadrigliaManager : MonoBehaviour
 			{
 				if (Random.Range(0, 100) >= 80)
 				{
-					int a = Random.Range(0, sq.buildings.Length);
-					sq.buildings[a].gameObject.SetActive(true);
-					sq.buildings[a].transform.position = costruzioni[a].position;
-					Debug.Log($"Built building {sq.buildings[a].name} for sq {sq.baseSq.name}.");
+					int b = Random.Range(0, sq.buildings.Length);
+					sq.buildings[b].gameObject.SetActive(true);
+					//sq.buildings[b].transform.position = costruzioni[b].position;
+					Debug.Log($"Built building {sq.buildings[b].name} for sq {sq.baseSq.name}.");
 				}
 			}
 		}

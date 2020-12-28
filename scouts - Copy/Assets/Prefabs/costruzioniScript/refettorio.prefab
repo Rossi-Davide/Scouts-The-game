@@ -139,7 +139,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: Refettorio
   possiblePositions: []
   clickListener: {fileID: 875140319818992778, guid: c4c4b99128637cd4997ae7188bf9a9d7,

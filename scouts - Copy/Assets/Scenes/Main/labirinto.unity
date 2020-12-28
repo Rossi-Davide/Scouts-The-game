@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1490,6 +1490,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: torna al gioco
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966860851184054052, guid: 6a501c2937201a845b4ec304fc9b68a1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 195728773}
+    - target: {fileID: 6966860851184054052, guid: 6a501c2937201a845b4ec304fc9b68a1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TornaAlGioco
       objectReference: {fileID: 0}
     - target: {fileID: 6966860851184054053, guid: 6a501c2937201a845b4ec304fc9b68a1,
         type: 3}

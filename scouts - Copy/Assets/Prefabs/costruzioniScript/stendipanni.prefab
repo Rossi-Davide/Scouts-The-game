@@ -135,7 +135,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: Stendipanni
   possiblePositions: []
   clickListener: {fileID: 1000800977015612233, guid: 8949b91dae0c0e64988cc24c3e9d6212,

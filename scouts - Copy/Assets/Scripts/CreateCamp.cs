@@ -112,7 +112,7 @@ public class CreateCamp : MonoBehaviour
 		{
 			maleSqs[sq].transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleMaleSqs[camp.settings.maleSqs[sq]].name;
 		}
-		duration.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.duration.ToString() + $"({ ((int)camp.settings.duration + 1) * 20}min)";
+		duration.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.duration.ToString() + $" ({ ((int)camp.settings.duration + 1) * 20}min)";
 	}
 
 

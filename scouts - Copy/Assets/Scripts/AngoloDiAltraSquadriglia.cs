@@ -2,13 +2,9 @@
 
 public class AngoloDiAltraSquadriglia : InGameObject
 {
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public Squadriglia squadriglia;
-
-	void Sfida()
-	{
-		
-	}
 
 	protected override System.Action DoAction(ActionButton b)
 	{

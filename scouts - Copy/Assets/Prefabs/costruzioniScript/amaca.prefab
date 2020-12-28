@@ -141,7 +141,7 @@ MonoBehaviour:
   isInstantiating: 1
   checkPositionEachFrame: 0
   spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
+  manageAnimationsAutomatically: 1
   customDataFileName: Amaca
   possiblePositions: []
   clickListener: {fileID: 9052262022897325451, guid: 2c04edd749e423a4a8d4fa7092c41260,

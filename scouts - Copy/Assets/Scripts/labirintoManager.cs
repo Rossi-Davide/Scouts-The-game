@@ -22,6 +22,7 @@ public class labirintoManager : MonoBehaviour
     public GameObject spillo, dinamite,candy,bottoneTornaAlGioco,sconfitta,victoryText,score;
     public bool endGen = false;
     public movimentoLabirinto movePlayer;
+    bool hasWon;
 
     #region Utility functions
     public static string IntToMinutesColonSeconds(int time)
@@ -157,9 +158,6 @@ public class labirintoManager : MonoBehaviour
 
     private void Update()
     {
-        
-
-
         if (StopScene < 0)
         {
             StartCoroutine(ricaricaScena());
@@ -214,6 +212,7 @@ public class labirintoManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Animator sconfittaAn = sconfitta.GetComponent<Animator>();
         sconfittaAn.SetBool("fineGioco", true);
+        hasWon = false;
         yield return null;
     }
 
@@ -231,7 +230,13 @@ public class labirintoManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Animator bottoneTornaAlGiocoAn = bottoneTornaAlGioco.GetComponent<Animator>();
         bottoneTornaAlGiocoAn.SetBool("fineGioco", true);
+        hasWon = true;
         yield return null;
 
+    }
+
+    public void TornaAlGioco()
+    {
+        CampManager.instance.GameEnded(hasWon);
     }
 }

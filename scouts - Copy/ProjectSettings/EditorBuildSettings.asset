@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/Tutorial.unity
     guid: 1dfb42c890e0b5a469481a19f76cedee
+  - enabled: 1
+    path: Assets/Scenes/Main/labirinto.unity
+    guid: 724282b64c256b944a60046b991c3650
+  - enabled: 1
+    path: Assets/Scenes/Main/nascondino.unity
+    guid: 865eff7b851b5e1408ff4a3a5ef726ff
   m_configObjects: {}
