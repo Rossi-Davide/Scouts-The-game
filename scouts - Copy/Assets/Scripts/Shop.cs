@@ -141,7 +141,7 @@ public class Shop : MonoBehaviour
 		}
 		else if (!hasEnoughMoney)
 		{
-			GameManager.instance.WarningOrMessage($"Non hai abbastanza {((ObjectBase)selected).shopInfos[index].priceCounter} per comprare {((ObjectBase)selected).name}", true);
+			GameManager.instance.WarningOrMessage($"Non hai abbastanza {((ObjectBase)selected).shopInfos[index].priceCounter.ToString().ToLower()} per comprare l'oggetto: '{((ObjectBase)selected).name.ToLower()}'", true);
 			return;
 		}
 		else if (!hasItems)
@@ -244,11 +244,11 @@ public class Shop : MonoBehaviour
 			}
 			else
 			{
-				for (int i = 0; i < itNeeded.items.Length - 1; i++)
+				for (int i = 0; i < itNeeded.items.Length; i++)
 				{
-					s += itNeeded.items[i].item.name + (itNeeded.items[i].amount > 1 ? $" (x{itNeeded.items[i].amount})" : "") + ", ";
+					var it = itNeeded.items[i];
+					s += it.item.name.ToLower() + (it.amount > 1 ? $" (x{it.amount})" : "") + (i != itNeeded.items.Length - 1 ? ", " : ".");
 				}
-				s += itNeeded.items[itNeeded.items.Length - 1].item.name + (itNeeded.items[itNeeded.items.Length - 1].amount > 1 ? $" (x{itNeeded.items[itNeeded.items.Length - 1].amount})" : "") + ", ";
 			}
 			itemsNeeded.text = s;
 			itemsNeeded.gameObject.SetActive(true);

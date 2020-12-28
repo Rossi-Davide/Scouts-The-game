@@ -29,6 +29,7 @@ public class AIsManager : MonoBehaviour
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
 	}
+	#region Status
 
 	public Status SendStatus()
 	{
@@ -73,7 +74,7 @@ public class AIsManager : MonoBehaviour
 		public int[] nextDialogueIndices;
 		public InGameObject.Status[] squadriglieriInfo;
 	}
-
+	#endregion
 	void SetActiveOrInactiveAI()
 	{
 		foreach (var sq in allSquadriglieri)
@@ -93,7 +94,7 @@ public class AIsManager : MonoBehaviour
 			if (GameManager.instance.currentDay == e.day && hour == e.hour)
 			{
 				e.countDownLeft = e.countDownLenght;
-				GameManager.instance.WarningOrMessage($"L'evento {e.name} comincia tra...", false);
+				GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} comincia tra...", false);
 			}
 		}
 	}
@@ -105,9 +106,11 @@ public class AIsManager : MonoBehaviour
 			if (e.countDownLeft > 0)
 			{
 				e.countDownLeft--;
-				GameManager.instance.WarningOrMessage(e.countDownLeft.ToString(), false);
-				if (e.countDownLeft <= 0)
+				if (e.countDownLeft >= 1)
+					GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} comincia tra... {e.countDownLeft}", false);
+				else
 				{
+					GameManager.instance.WarningOrMessage($"L'evento è cominciato!", false);
 					e.running = true;
 					e.timeLeft = e.duration;
 				}
@@ -118,6 +121,7 @@ public class AIsManager : MonoBehaviour
 				if (e.timeLeft <= 0)
 				{
 					e.running = false;
+					GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} è terminato!", false);
 				}
 			}
 		}

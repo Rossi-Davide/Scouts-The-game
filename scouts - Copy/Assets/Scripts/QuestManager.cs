@@ -105,7 +105,7 @@ public class QuestManager : MonoBehaviour
 		if (obj != null && obj.changedMaxAmounts.Length > 0)
 		{
 			var o = obj.changedMaxAmounts[obj.level];
-			GameManager.instance.CounterMaxValueChanged(o.counter, removed ? -o.delta : o.delta);
+			GameManager.instance.ChangeCounterMaxValue(o.counter, removed ? -o.delta : o.delta);
 		}
 	}
 

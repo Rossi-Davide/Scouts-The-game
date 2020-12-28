@@ -72,7 +72,7 @@ public class ItemNeeded
 {
     public Item item;
     public int amount;
-    public bool isDestroyed;
+    public bool getsDestroyed;
 }
 
 [System.Serializable]

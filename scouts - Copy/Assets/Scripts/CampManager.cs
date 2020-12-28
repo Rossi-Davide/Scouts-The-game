@@ -36,9 +36,9 @@ public class CampManager : MonoBehaviour
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.campManagerFileName, false));
 	}
 
-	public static Settings CreateDefaultSettings()
+	public static CampSettings CreateDefaultSettings()
 	{
-		return new Settings
+		return new CampSettings
 		{
 			campName = "NuovoCampo",
 			playerName = "Player",
@@ -46,6 +46,7 @@ public class CampManager : MonoBehaviour
 			hair = Hair.Castano,
 			gender = Gender.Maschio,
 			difficulty = Difficulty.Facile,
+			duration = Duration.Breve,
 			femaleSqs = new int[] { 0, 2, 4 },
 			maleSqs = new int[] { 1, 2, 3 },
 		};
@@ -83,15 +84,15 @@ public class CampManager : MonoBehaviour
 [System.Serializable]
 public class Camp
 {
-	public Settings settings;
-	public Camp(Settings settings)
+	public CampSettings settings;
+	public Camp(CampSettings settings)
 	{
 		this.settings = settings.Clone();
 	}
 }
 
 [System.Serializable]
-public class Settings
+public class CampSettings
 {
 	public string campName;
 	public string playerName;
@@ -101,8 +102,9 @@ public class Settings
 	public Gender gender;
 	public Hair hair;
 	public Difficulty difficulty;
+	public Duration duration;
 
-	public Settings Clone()
+	public CampSettings Clone()
 	{
 		int[] maleSqsTemp = new int[maleSqs.Length];
 		int[] femaleSqsTemp = new int[femaleSqs.Length];
@@ -114,16 +116,16 @@ public class Settings
 		{
 			femaleSqsTemp[m] = femaleSqs[m];
 		}
-		return new Settings
+		return new CampSettings
 		{
-			campName = this.campName,
-			playerName = this.playerName,
-			playerSqIndex = this.playerSqIndex,
+			campName = campName,
+			playerName = playerName,
+			playerSqIndex = playerSqIndex,
 			maleSqs = maleSqsTemp,
 			femaleSqs = femaleSqsTemp,
-			gender = this.gender,
-			hair = this.hair,
-			difficulty = this.difficulty,
+			gender = gender,
+			hair = hair,
+			difficulty = difficulty,
 		};
 	}
 }
@@ -143,4 +145,10 @@ public enum Hair
 {
 	Biondo,
 	Castano,
+}
+public enum Duration
+{
+	Breve,
+	Media,
+	Lunga,
 }

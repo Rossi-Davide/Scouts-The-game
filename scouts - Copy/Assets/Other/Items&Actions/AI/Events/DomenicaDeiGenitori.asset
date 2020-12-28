@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DomenicaDeiGenitori
   m_EditorClassIdentifier: 
   name: Domenica dei Genitori
-  description: 
+  description: "bla bla bla questa \xE8 una descrizione"
   countDownLenght: 15
   duration: 300
-  day: 9
+  day: 1
   hour: 10
   mainAIs: []

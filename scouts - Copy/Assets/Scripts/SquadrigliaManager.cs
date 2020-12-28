@@ -257,7 +257,6 @@ public class SquadrigliaManager : MonoBehaviour
 
 	void OtherSQBuildBuildings()
 	{
-
 		for (int i = 0; i < squadriglieInGioco.Length; i++)
 		{
 			Transform[] costruzioni = nAngoli[i].oggetti;
@@ -269,7 +268,7 @@ public class SquadrigliaManager : MonoBehaviour
 					int a = Random.Range(0, sq.buildings.Length);
 					sq.buildings[a].gameObject.SetActive(true);
 					sq.buildings[a].transform.position = costruzioni[a].position;
-					Debug.Log("entrato");
+					Debug.Log($"Built building {sq.buildings[a].name} for sq {sq.baseSq.name}.");
 				}
 			}
 		}

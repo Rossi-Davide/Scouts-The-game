@@ -28,7 +28,6 @@ public class ClickedObjects : MonoBehaviour
 			if (!PanZoom.instance.panningOrZooming && !Joystick.instance.isUsingJoystick && ActionButtons.instance.selected != null && !EventSystem.current.IsPointerOverGameObject(0) && hit.collider == null)
 			{
 				ActionButtons.instance.ChangeSelectedObject(null);
-				Debug.Log("nieiiii");
 			}
 		}
 	}

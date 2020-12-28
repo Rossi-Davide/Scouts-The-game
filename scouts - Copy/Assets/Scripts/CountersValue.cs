@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,28 +11,22 @@ public class CountersValue : MonoBehaviour
 	{
 		GameManager.instance.OnCounterValueChange += GetCounterValue;
 		GameManager.instance.OnCounterMaxValueChange += GetCounterMaxValue;
-		GetCounterValue(Counter.Energia, GameManager.instance.energyValue);
-		GetCounterValue(Counter.Materiali, GameManager.instance.materialsValue);
-		GetCounterValue(Counter.Punti, GameManager.instance.pointsValue);
-		energyCounter.maxValue = GameManager.instance.energyMaxValue;
-		materialsCounter.maxValue = GameManager.instance.materialsMaxValue;
-		pointsCounter.maxValue = GameManager.instance.pointsMaxValue;
 	}
 
-	void GetCounterValue(Counter counter, int delta)
+	void GetCounterValue(Counter counter, int newValue)
 	{
 		switch (counter)
 		{
 			case Counter.Energia:
-				energyCounter.value += delta;
+				energyCounter.value = newValue;
 				energyValue.GetComponent<TextMeshProUGUI>().text = energyCounter.value.ToString();
 				break;
 			case Counter.Materiali:
-				materialsCounter.value += delta;
+				materialsCounter.value = newValue;
 				materialsValue.GetComponent<TextMeshProUGUI>().text = materialsCounter.value.ToString();
 				break;
 			case Counter.Punti:
-				pointsCounter.value += delta;
+				pointsCounter.value = newValue;
 				pointsValue.GetComponent<TextMeshProUGUI>().text = pointsCounter.value.ToString();
 				break;
 			case Counter.None:
@@ -41,18 +36,18 @@ public class CountersValue : MonoBehaviour
 		}
 	}
 
-	void GetCounterMaxValue(Counter counter, int delta)
+	void GetCounterMaxValue(Counter counter, int newValue)
 	{
 		switch (counter)
 		{
 			case Counter.Energia:
-				energyCounter.maxValue = GameManager.instance.energyMaxValue;
+				energyCounter.maxValue = newValue;
 				break;
 			case Counter.Materiali:
-				materialsCounter.maxValue = GameManager.instance.materialsMaxValue;
+				materialsCounter.maxValue = newValue;
 				break;
 			case Counter.Punti:
-				pointsCounter.maxValue = GameManager.instance.pointsMaxValue;
+				pointsCounter.maxValue = newValue;
 				break;
 			default:
 				throw new System.Exception("Il counter ricercato non esiste");

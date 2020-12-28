@@ -18,7 +18,7 @@ public class MoveBuildings : MonoBehaviour
 		if (collision.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = false;
-			GameManager.instance.CleanWarningOrMessage();
+			GameManager.instance.ClearWarningOrMessage();
 		}
 	}
 	public void ResetPos(Vector3 startPos)

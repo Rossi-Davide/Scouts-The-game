@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 62.15
+  m_fontSize: 72
   m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2413,7 +2413,7 @@ PrefabInstance:
     - target: {fileID: 7272760714777180913, guid: b671173bcf6f52647b678007eae7e388,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7272760714777180913, guid: b671173bcf6f52647b678007eae7e388,
         type: 3}
@@ -2925,7 +2925,7 @@ PrefabInstance:
     - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
         type: 3}

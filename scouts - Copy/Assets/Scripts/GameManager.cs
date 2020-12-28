@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
 	[System.NonSerialized]
 	public InGameObject[] inGameObjects;
 
-	public int pointsValue, materialsValue, energyValue;
-	public int energyMaxValue, materialsMaxValue, pointsMaxValue;
+	int pointsValue, materialsValue, energyValue, energyMaxValue, materialsMaxValue, pointsMaxValue;
+
 	public GameObject buttonCanvas;
 	public VolumeProfile mainSceneProf;
 	ColorCurves night;
@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 	#region Events
-	public event System.Action<Counter, int> OnCounterValueChange;
 	public event System.Action<bool> OnSunsetOrSunrise;
 	public event System.Action<int> OnHourChange;
 	public event System.Action<PlayerAction> OnActionDo;
@@ -40,6 +39,7 @@ public class GameManager : MonoBehaviour
 	public event System.Action OnInGameoObjectsChange;
 	public event System.Action<ObjectBase> OnBuild;
 	public event System.Action OnObjectArrayUpdate;
+	public event System.Action<Counter, int> OnCounterValueChange;
 	public event System.Action<Counter, int> OnCounterMaxValueChange;
 	public event System.Action OnRain;
 
@@ -73,44 +73,7 @@ public class GameManager : MonoBehaviour
 		OnInventoryChange?.Invoke(obj);
 	}
 
-	public void ChangeCounter(Counter counter, int delta)
-	{
-		switch (counter)
-		{
-			case Counter.None:
-				break;
-			case Counter.Materiali:
-				materialsValue += delta;
-				break;
-			case Counter.Energia:
-				energyValue += delta;
-				break;
-			case Counter.Punti:
-				pointsValue += delta;
-				break;
-			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
-		}
-		OnCounterValueChange?.Invoke(counter, delta);
-	}
-	public void CounterMaxValueChanged(Counter counter, int delta)
-	{
-		switch (counter)
-		{
-			case Counter.None:
-				break;
-			case Counter.Materiali:
-				materialsMaxValue += delta;
-				break;
-			case Counter.Energia:
-				energyMaxValue += delta;
-				break;
-			case Counter.Punti:
-				pointsMaxValue += delta;
-				break;
-			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
-		}
-		OnCounterMaxValueChange?.Invoke(counter, delta);
-	}
+
 
 	#endregion
 	#region UtilityFunctions
@@ -134,19 +97,21 @@ public class GameManager : MonoBehaviour
 		}
 		currentWarningOrMessageCoroutines.Add(isWarning ? StartCoroutine(Warning()) : StartCoroutine(Message()));
 	}
-	public void CleanWarningOrMessage()
+	public void ClearWarningOrMessage()
 	{
 		warning.gameObject.SetActive(false);
 		message.gameObject.SetActive(false);
 	}
 	IEnumerator Warning()
 	{
+		ClearWarningOrMessage();
 		warning.gameObject.SetActive(true);
 		yield return new WaitForSeconds(3f);
 		warning.gameObject.SetActive(false);
 	}
 	IEnumerator Message()
 	{
+		ClearWarningOrMessage();
 		message.gameObject.SetActive(true);
 		yield return new WaitForSeconds(3f);
 		message.gameObject.SetActive(false);
@@ -190,7 +155,100 @@ public class GameManager : MonoBehaviour
 			default: throw new System.NotImplementedException("counter non valido");
 		}
 	}
-
+	public int GetCounterMaxValue(Counter counter)
+	{
+		switch (counter)
+		{
+			case Counter.Materiali: return materialsMaxValue;
+			case Counter.Energia: return energyMaxValue;
+			case Counter.Punti: return pointsMaxValue;
+			default: throw new System.NotImplementedException("counter non valido");
+		}
+	}
+	public void ChangeCounter(Counter counter, int delta)
+	{
+		int newValue = 0;
+		switch (counter)
+		{
+			case Counter.None:
+				break;
+			case Counter.Materiali:
+				materialsValue += delta;
+				newValue = materialsValue;
+				break;
+			case Counter.Energia:
+				energyValue += delta;
+				newValue = energyValue;
+				break;
+			case Counter.Punti:
+				pointsValue += delta;
+				newValue = pointsValue;
+				break;
+			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
+		}
+		OnCounterValueChange?.Invoke(counter, newValue);
+	}
+	public void ChangeCounter(int newValue, Counter counter)
+	{
+		switch (counter)
+		{
+			case Counter.None:
+				break;
+			case Counter.Materiali:
+				materialsValue = newValue;
+				break;
+			case Counter.Energia:
+				energyValue = newValue;
+				break;
+			case Counter.Punti:
+				pointsValue = newValue;
+				break;
+			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
+		}
+		OnCounterValueChange?.Invoke(counter, newValue);
+	}
+	public void ChangeCounterMaxValue(Counter counter, int delta)
+	{
+		var newValue = 0;
+		switch (counter)
+		{
+			case Counter.None:
+				break;
+			case Counter.Materiali:
+				materialsMaxValue += delta;
+				newValue = materialsMaxValue;
+				break;
+			case Counter.Energia:
+				energyMaxValue += delta;
+				newValue = energyMaxValue;
+				break;
+			case Counter.Punti:
+				pointsMaxValue += delta;
+				newValue = pointsMaxValue;
+				break;
+			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
+		}
+		OnCounterMaxValueChange?.Invoke(counter, newValue);
+	}
+	public void ChangeCounterMaxValue(int newValue, Counter counter)
+	{
+		switch (counter)
+		{
+			case Counter.None:
+				break;
+			case Counter.Materiali:
+				materialsMaxValue = newValue;
+				break;
+			case Counter.Energia:
+				energyMaxValue = newValue;
+				break;
+			case Counter.Punti:
+				pointsMaxValue = newValue;
+				break;
+			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
+		}
+		OnCounterMaxValueChange?.Invoke(counter, newValue);
+	}
 	public static string IntToMinuteSeconds(int time)
 	{
 		string st = "";
@@ -235,7 +293,7 @@ public class GameManager : MonoBehaviour
 		{
 			foreach (var i in b.itemsNeededs[b.level].items)
 			{
-				if (i.isDestroyed)
+				if (i.getsDestroyed)
 				{
 					i.item.currentAmount -= i.amount;
 				}
@@ -308,7 +366,9 @@ public class GameManager : MonoBehaviour
 	int? toSpawn = null;
 	void SpawnDecorations()
 	{
-		if (toSpawn == null) { toSpawn = Random.Range(35, 50); }
+		if (toSpawn == null) { toSpawn = Random.Range(15, 25); }
+		if (spawnedPlants.Length >= 60)
+			return;
 		for (int spawned = 0; spawned < toSpawn; spawned++)
 		{
 			int currentArea = Random.Range(0, spawnAreas.Length);
@@ -464,6 +524,14 @@ public class GameManager : MonoBehaviour
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
 
+		ChangeCounter(100, Counter.Materiali);
+		ChangeCounter(100, Counter.Energia);
+		currentDay = 1;
+		currentHour = 7;
+		ChangeCounterMaxValue(500, Counter.Materiali);
+		ChangeCounterMaxValue(100, Counter.Energia);
+		ChangeCounterMaxValue(70, Counter.Punti);
+
 		InvokeRepeating(nameof(SpawnDecorations), 55f, 55);
 		InvokeRepeating(nameof(PeriodicItemActionSlow), 60, 60);
 		InvokeRepeating(nameof(PeriodicItemActionMedium), 30, 30);
@@ -472,12 +540,6 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating(nameof(RefreshWaitToUseObjects), 1, 1);
 		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
 
-		currentDay = 1;
-		currentHour = 7;
-		energyMaxValue = 100;
-		materialsMaxValue = 500;
-		pointsMaxValue = 70;
-		energyValue = 100;
 		globalLight.intensity = 1f;
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
@@ -551,12 +613,12 @@ public class GameManager : MonoBehaviour
 	{
 		if (status != null)
 		{
-			energyValue = status.energyValue;
-			materialsValue = status.materialsValue;
-			pointsValue = status.pointsValue;
-			energyMaxValue = status.energyMaxValue;
-			materialsMaxValue = status.materialsMaxValue;
-			pointsMaxValue = status.pointsMaxValue;
+			ChangeCounter(status.energyValue, Counter.Energia);
+			ChangeCounter(status.materialsValue, Counter.Materiali);
+			ChangeCounter(status.pointsValue, Counter.Punti);
+			ChangeCounterMaxValue(status.energyMaxValue, Counter.Energia);
+			ChangeCounterMaxValue(status.materialsMaxValue, Counter.Materiali);
+			ChangeCounterMaxValue(status.pointsMaxValue, Counter.Punti);
 			isRaining = status.isRaining;
 			rainingTimeLeft = status.rainingTimeLeft;
 			rainingWaitTimeLeft = status.rainingWaitTimeLeft;
@@ -598,7 +660,7 @@ public class GameManager : MonoBehaviour
 		ObjectArrayUpdated();
 		spawnedPlants = FindObjectsOfType<Plant>();
 	}
-	void CheckPlayerDeath(Counter c, int delta)
+	void CheckPlayerDeath(Counter c, int newValue)
 	{
 		if (c == Counter.Energia && energyValue <= 0)
 			PlayerDied();
