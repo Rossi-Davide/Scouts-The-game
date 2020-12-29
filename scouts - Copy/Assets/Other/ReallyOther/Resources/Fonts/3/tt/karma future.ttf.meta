@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: acf0c69af7cb07849b7ee3a6c0eae8bc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Karma
+  fontNames:
+  - Karma
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0cbbdd70cce41654885c1a838ba34d72, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

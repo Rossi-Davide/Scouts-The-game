@@ -15,7 +15,7 @@ MonoBehaviour:
   name: PianoBidoni
   type: 1
   description: "Il cibo \xE8 pi\xF9 buono se caldo"
-  icon: {fileID: -4676655390728407469, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
+  icon: {fileID: -8168990104244452518, guid: 2ece8a6976974e5498d33e5e1d7321ac, type: 3}
   shopScreen: 6
   maxAmount: 0
   maxLevel: 1
@@ -25,10 +25,10 @@ MonoBehaviour:
   - items:
     - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
       amount: 1
-      isDestroyed: 1
+      getsDestroyed: 0
     - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
       amount: 2
-      isDestroyed: 0
+      getsDestroyed: 0
   shopInfos:
   - price: 150
     priceCounter: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
   changedMaxAmounts: []
   currentAmount: 0
   level: 0
-  exists: 1
+  exists: 0
   healthInfos:
   - maxHealth: 100
     healthLossInterval: 5

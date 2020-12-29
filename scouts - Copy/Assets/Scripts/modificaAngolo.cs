@@ -25,7 +25,7 @@ public class modificaAngolo : MonoBehaviour
 		cam = Camera.main;
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		var slot = ModificaBaseTrigger.instance.buildingSlot;
 		if (Input.touchCount > 0)
@@ -38,20 +38,19 @@ public class modificaAngolo : MonoBehaviour
 				{
 					slot.gameObject.SetActive(false);
 					slot.buildingParent.gameObject.SetActive(true);
-					slot.buildingParent.GetComponent<Collider2D>().enabled = true;
-					slot.buildingParent.GetComponent<SpriteRenderer>().enabled = true;
+					//slot.buildingParent.GetComponent<Collider2D>().enabled = true;
+					//slot.buildingParent.GetComponent<SpriteRenderer>().enabled = true;
 					slot.buildingParent.transform.position = cam.ScreenToWorldPoint(touch.position);
 					posizioneIniziale = slot.buildingParent.transform.position;
 					oggetto = slot.buildingParent.transform;
 					UpdateRayCast(touch);
 				}
-				else if (touch.phase == TouchPhase.Began)
+				if (touch.phase == TouchPhase.Began)
 				{
-					
 					oggetto = hitInformation.collider.transform;
 					posizioneIniziale = oggetto.position;
 				}
-				if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
 				{
 					oggetto = hitInformation.collider.transform;
 					Vector2 posizioneDito = touch.position;
