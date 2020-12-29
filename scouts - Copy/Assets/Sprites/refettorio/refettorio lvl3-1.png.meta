@@ -129,12 +129,12 @@ TextureImporter:
       name: refettorio lvl3-1_0
       rect:
         serializedVersion: 2
-        x: 173
-        y: 188
-        width: 323
-        height: 349
+        x: 129
+        y: 158
+        width: 383
+        height: 388
       alignment: 9
-      pivot: {x: 0.3540843, y: 0.17819048}
+      pivot: {x: 0.45909107, y: 0.28635076}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
