@@ -5,17 +5,17 @@ public class MoveBuildings : MonoBehaviour
 	bool isTouching;
 	[HideInInspector] [System.NonSerialized]
 	public bool componentEnabled, isBeingBuilt;
-	void OnTriggerEnter2D(Collider2D collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.tag == "oggSquadriglia1" && componentEnabled)
+		if (collision.collider.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = true;
 			GameManager.instance.WarningOrMessage("Non puoi piazzare l'oggetto qui!", true);
 		}
 	}
-	void OnTriggerExit2D(Collider2D collision)
+	void OnCollisionExit2D(Collision2D collision)
 	{
-		if (collision.tag == "oggSquadriglia1" && componentEnabled)
+		if (collision.collider.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = false;
 			GameManager.instance.ClearWarningOrMessage();

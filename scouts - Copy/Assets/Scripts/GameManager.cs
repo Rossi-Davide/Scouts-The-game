@@ -485,9 +485,7 @@ public class GameManager : MonoBehaviour
 	[HideInInspector]
 	[System.NonSerialized]
 	public bool isRaining;
-	[HideInInspector]
-	[System.NonSerialized]
-	public int rainingTimeLeft, rainingWaitTimeLeft;
+	int rainingTimeLeft, rainingWaitTimeLeft;
 	void CheckRain()
 	{
 		if (!isRaining)
@@ -496,7 +494,7 @@ public class GameManager : MonoBehaviour
 			{
 				rainingWaitTimeLeft--;
 			}
-			else if (DoIfPercentage(0.6f))
+			else if (DoIfPercentage(60))
 			{
 				isRaining = true;
 				OnRain?.Invoke();
@@ -524,7 +522,7 @@ public class GameManager : MonoBehaviour
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
 
-		ChangeCounter(100, Counter.Materiali);
+		ChangeCounter(500, Counter.Materiali);
 		ChangeCounter(100, Counter.Energia);
 		currentDay = 1;
 		currentHour = 7;
@@ -541,6 +539,9 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
 
 		globalLight.intensity = 1f;
+		isRaining = false;
+		rainingTimeLeft = 0;
+		rainingWaitTimeLeft = 80;
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
 

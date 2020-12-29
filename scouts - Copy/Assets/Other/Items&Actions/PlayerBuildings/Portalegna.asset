@@ -25,10 +25,10 @@ MonoBehaviour:
   - items:
     - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
       amount: 1
-      isDestroyed: 1
+      getsDestroyed: 0
     - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
       amount: 2
-      isDestroyed: 0
+      getsDestroyed: 0
   shopInfos:
   - price: 300
     priceCounter: 1
