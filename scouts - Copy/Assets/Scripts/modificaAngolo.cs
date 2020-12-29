@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class modificaAngolo : MonoBehaviour
 {
@@ -47,7 +48,15 @@ public class modificaAngolo : MonoBehaviour
 				}
 				if (touch.phase == TouchPhase.Began)
 				{
-					oggetto = hitInformation.collider.transform;
+					try
+					{
+						oggetto = hitInformation.collider.transform;
+						Debug.Log("called begin");
+					}
+					catch (Exception ex)
+					{
+						Debug.LogError("errore dovuto al trascinamento di oggetto appena comprato");
+					}
 					posizioneIniziale = oggetto.position;
 				}
 				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
@@ -55,8 +64,9 @@ public class modificaAngolo : MonoBehaviour
 					oggetto = hitInformation.collider.transform;
 					Vector2 posizioneDito = touch.position;
 					Vector3 posizioneOggetto = cam.ScreenToWorldPoint(posizioneDito);
-					oggetto.position = posizioneOggetto;
-					oggetto.position = SnapToGrid();
+					oggetto.position =new Vector3(posizioneOggetto.x,posizioneOggetto.y,0);
+					Debug.Log("called moved");
+					//oggetto.position = SnapToGrid(posizioneOggetto);
 				}
 				else if (touch.phase == TouchPhase.Ended)
 				{
@@ -72,7 +82,7 @@ public class modificaAngolo : MonoBehaviour
 		}
 	}
 	float grid = 0.8f;
-	Vector3 SnapToGrid()
+	Vector3 SnapToGrid(Vector3 pos)
 	{
 		float reciprocalGrid = 1f / grid;
 		float x = Mathf.Round(oggetto.position.x * reciprocalGrid) / reciprocalGrid;

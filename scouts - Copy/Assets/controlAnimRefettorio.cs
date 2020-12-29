@@ -5,15 +5,25 @@ using UnityEngine;
 public class controlAnimRefettorio : MonoBehaviour
 {
     public GameObject col1, col2, col3;
-    public Animator anim;
     // Start is called before the first frame update
-    void Start()
+    public void Liv1()
     {
-        InvokeRepeating("CheckAnim",0.1f, 0.5f);
+        col1.SetActive(true);
+        col2.SetActive(false);
+        col3.SetActive(false);
     }
 
-    void CheckAnim()
+    public void Liv2()
     {
-        
+        col1.SetActive(false);
+        col2.SetActive(true);
+        col3.SetActive(false);
+    }
+
+    public void Liv3()
+    {
+        col1.SetActive(false);
+        col2.SetActive(false);
+        col3.SetActive(true);
     }
 }
