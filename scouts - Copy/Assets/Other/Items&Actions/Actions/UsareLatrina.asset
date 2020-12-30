@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850fbf1d3d832934ebaa3c4f47d9c467, type: 3}
+  m_Name: UsareLatrina
+  m_EditorClassIdentifier: 
+  name: Usare la latrina
+  description: 
+  neededItems: []
+  conditions:
+  - type: 2
+    desiredValue: 1
+    warning: Sei troppo lontano!
+  hasInfoPanel: 1
+  showInActionList: 1
+  state: {fileID: 0}
+  timeNeeded: 10
+  energyGiven: 20
+  materialsGiven: 0
+  pointsGiven: 1
+  timeBeforeRedo: 300

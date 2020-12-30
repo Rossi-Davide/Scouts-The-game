@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Furfante
   m_EditorClassIdentifier: 
   name: Furfante
-  description: Trova la cassa del furfante
-  completed: 0
-  prizeTaken: 0
+  description: Sblocca il negozio illegale.
   prizeCounter: 3
   prizeAmount: 15
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: e34bfd65c9ccf87459adae1381c18884, type: 2}
   timesToDo: 1
   timesDone: 0

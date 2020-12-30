@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
   m_Name: Pioggia
   m_EditorClassIdentifier: 
-  name: Scout Provetto
-  description: Metti al sicuro la tenda quando piove
-  completed: 0
-  prizeTaken: 0
+  name: Scout provetto
+  description: Metti al sicuro almeno 2 costruzioni quando piove.
   prizeCounter: 3
-  prizeAmount: 10
-  action: {fileID: 0}
-  timesToDo: 1
+  prizeAmount: 5
+  action: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
+  timesToDo: 2
   timesDone: 0

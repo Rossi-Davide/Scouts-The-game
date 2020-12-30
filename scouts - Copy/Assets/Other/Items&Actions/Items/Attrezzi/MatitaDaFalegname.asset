@@ -34,4 +34,5 @@ MonoBehaviour:
   modifiedActions: []
   changedMaxAmounts: []
   currentAmount: 0
-  currentLevel: 0
+  level: 0
+  exists: 0

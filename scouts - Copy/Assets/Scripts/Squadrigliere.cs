@@ -25,13 +25,13 @@ public class Squadrigliere : BaseAI
         for (int i = 0; i < Random.Range(2, 5); i++)
 		{
             currentPlant = GameManager.instance.spawnedPlants[Random.Range(0, GameManager.instance.spawnedPlants.Length)];
-            Debug.Log("destination set");
+            Debug.Log($"destination set: {currentPlant.name}");
             ForceTarget(currentPlant.transform.position, false, EndLegna);
 		}
     }
     void EndLegna()
 	{
-        Debug.Log("hahahahah");
+        Debug.Log("ho fatto legna con successo!!!!!");
         Destroy(currentPlant);
         Destroy(currentPlant.clickListener.gameObject);
         GameManager.instance.BuildingChanged();

@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
   m_Name: Parla
   m_EditorClassIdentifier: 
-  name: "Non pi\xF9 asociale"
-  description: Parla 3 volte con un capo
-  completed: 0
-  prizeTaken: 0
+  name: "Socialit\xE0 alle stelle"
+  description: Parla 3 volte con un capo.
   prizeCounter: 3
   prizeAmount: 10
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 593a917777173f941960be1efef4bf83, type: 2}
   timesToDo: 3
   timesDone: 0

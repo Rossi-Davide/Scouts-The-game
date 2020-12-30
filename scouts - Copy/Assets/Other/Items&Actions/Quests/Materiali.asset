@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Materiali
   m_EditorClassIdentifier: 
   name: Boscaiolo professionista
-  description: Ottieni 100 materiali facendo legna.
-  completed: 0
+  description: Ottieni materiali facendo legna almeno 7 volte.
   prizeCounter: 3
-  prizeAmount: 5
-  action: {fileID: 0}
-  timesToDo: 100
+  prizeAmount: 7
+  action: {fileID: 11400000, guid: 8053dada69ef8494abe82be27a95cf63, type: 2}
+  timesToDo: 7
   timesDone: 0

@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Sfida
   m_EditorClassIdentifier: 
   name: "Sana competitivit\xE0"
-  description: Sfida un'altra squadriglia
-  completed: 0
-  prizeTaken: 0
+  description: Sfida un'altra squadriglia.
   prizeCounter: 3
-  prizeAmount: 10
-  action: {fileID: 0}
+  prizeAmount: 4
+  action: {fileID: 11400000, guid: 6829a5a93d5386c458375a1a3750453c, type: 2}
   timesToDo: 1
   timesDone: 0

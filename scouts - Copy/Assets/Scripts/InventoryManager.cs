@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
 	private const int maxInventoryItems = 8;
-	public static bool dragging;
+	[HideInInspector] [System.NonSerialized]
+	public bool dragging;
 	public GameObject ovCanvas;
 	public InventorySlot[] slots;
 
@@ -14,6 +15,7 @@ public class InventoryManager : MonoBehaviour
 	GameObject useButton;
 	public Joystick joy;
 	InventorySlot selectedItem, draggingSlot;
+	public InventoryDragAndDrop clonePrefab;
 
 	#region Singleton
 	public static InventoryManager instance;
@@ -34,7 +36,7 @@ public class InventoryManager : MonoBehaviour
 			var i = s.item;
 			if (i == item && i.currentAmount <= i.maxAmount)
 			{
-				s.AddItem(item);
+				s.AddItemOrReset(item);
 				GameManager.instance.InventoryChanged(item);
 				return;
 			}
@@ -43,7 +45,7 @@ public class InventoryManager : MonoBehaviour
 		{
 			if (s.item == null)
 			{
-				s.AddItem(item);
+				s.AddItemOrReset(item);
 				GameManager.instance.InventoryChanged(item);
 				return;
 			}
@@ -123,7 +125,7 @@ public class InventoryManager : MonoBehaviour
 		{
 			for (int i = 0; i < status.items.Length; i++)
 			{
-				slots[i].item = status.items[i];
+				slots[i].AddItemOrReset(status.items[i]);
 			}
 		}
 	}
@@ -167,7 +169,7 @@ public class InventoryManager : MonoBehaviour
 		SelectItem(null);
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		if (isOpen && Input.touchCount >= 1)
 		{
@@ -177,9 +179,9 @@ public class InventoryManager : MonoBehaviour
 			{
 				draggingSlot.amountText.gameObject.SetActive(false);
 				draggingSlot.GetComponent<Image>().enabled = false;
-				draggingSlot.c = Instantiate(draggingSlot.clone.gameObject, t.position, Quaternion.identity, ovCanvas.transform);
-				draggingSlot.c.GetComponent<Image>().sprite = draggingSlot.item.icon;
-				draggingSlot.c.GetComponent<InventoryDragAndDrop>().parent = draggingSlot;
+				var clone = Instantiate(clonePrefab, t.position, Quaternion.identity, ovCanvas.transform);
+				clone.GetComponent<Image>().sprite = draggingSlot.item.icon;
+				clone.parent = draggingSlot;
 				dragging = true;
 			}
 		}

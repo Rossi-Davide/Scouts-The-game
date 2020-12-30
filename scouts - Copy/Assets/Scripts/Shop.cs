@@ -9,13 +9,16 @@ public class Shop : MonoBehaviour
 {
 	public Item[] itemDatabase;
 	public PlayerBuilding[] buildingDatabase;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public SpecificShopScreen currentSpecificScreen;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public MainShopScreen currentMainScreen;
 	public GameObject shopPanel, pioneristica, cucina, infermieristica, topografia, espressione, negozioIllegale, costruzioni, decorazioni;
 	bool hasEnoughMoney, canIncreaseLevel, hasItems, canBuy;
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector]
+	[System.NonSerialized]
 	public bool negozioIllegaleUnlocked;
 	public Joystick joy;
 
@@ -154,7 +157,7 @@ public class Shop : MonoBehaviour
 			GameManager.instance.WarningOrMessage("Hai già acquistato il numero massimo di questi oggetti!", true);
 			return;
 		}
-		
+
 		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].priceCounter, -((ObjectBase)selected).shopInfos[index].price);
 		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].rewardCounter, ((ObjectBase)selected).shopInfos[index].reward);
 
@@ -235,24 +238,25 @@ public class Shop : MonoBehaviour
 		levelHeader.gameObject.SetActive(o.usingLevel);
 		amount.gameObject.SetActive(o.usingAmount);
 		amountHeader.gameObject.SetActive(o.usingAmount);
+		DisplayRequiredItems(itNeeded);
+	}
+	void DisplayRequiredItems(ItemsNeeded itNeeded)
+	{
+		string s = "Item richiesti: ";
 		if (itNeeded != null)
 		{
-			string s = "Item richiesti: ";
-			if (itNeeded.items.Length == 0)
+			for (int i = 0; i < itNeeded.items.Length; i++)
 			{
-				s += "nessuno";
+				var it = itNeeded.items[i];
+				s += it.item.name.ToLower() + (it.amount > 1 ? $" (x{it.amount})" : "") + (i != itNeeded.items.Length - 1 ? ", " : ".");
 			}
-			else
-			{
-				for (int i = 0; i < itNeeded.items.Length; i++)
-				{
-					var it = itNeeded.items[i];
-					s += it.item.name.ToLower() + (it.amount > 1 ? $" (x{it.amount})" : "") + (i != itNeeded.items.Length - 1 ? ", " : ".");
-				}
-			}
-			itemsNeeded.text = s;
-			itemsNeeded.gameObject.SetActive(true);
 		}
+		else
+		{
+			s += "nessuno";
+		}
+		itemsNeeded.text = s;
+		itemsNeeded.gameObject.SetActive(true);
 	}
 
 	public void CloseInfoPanel()

@@ -13,14 +13,18 @@ public class InventorySlot : MonoBehaviour
 		item = null;
 		GetComponent<Image>().enabled = false;
 	}
-	public void AddItem(ObjectBase i)
+	public void AddItemOrReset(ObjectBase i)
 	{
 		if (i != null)
 		{
 			item = i;
 			GetComponent<Image>().sprite = item.icon;
+			GetComponent<Image>().enabled = true;
 		}
-		GetComponent<Image>().enabled = item != null;
+		else
+		{
+			ResetSlot();
+		}
 		RefreshInventoryAmount();
 	}
 
@@ -39,39 +43,38 @@ public class InventorySlot : MonoBehaviour
 		GetComponent<Image>().enabled = item != null;
 	}
 
-
-	public InventoryDragAndDrop clone;
-	[HideInInspector] [System.NonSerialized]
-	public GameObject c;
-
-
-	public void EndOfDrag()
+	void CancelDrag()
 	{
 		RefreshInventoryAmount();
-		InventoryManager.dragging = false;
 		GetComponent<Image>().enabled = true;
-		Destroy(c);
 	}
 	public void Drop(InventorySlot s)
 	{
-		if (s.item != null)
+		if (s != null)
 		{
-			if (s.item != item)
+			if (s.item != null)
 			{
-				EndOfDrag();
+				if (s.item != item)
+				{
+					CancelDrag();
+				}
+				else
+				{
+					s.AddItemOrReset(item);
+					ResetSlot();
+				}
 			}
 			else
 			{
-				s.AddItem(item);
+				s.AddItemOrReset(item);
 				ResetSlot();
 			}
 		}
 		else
 		{
-			s.AddItem(item);
-			ResetSlot();
+			CancelDrag();
 		}
-		InventoryManager.dragging = false;
-		Destroy(c);
+		InventoryManager.instance.dragging = false;
+		ChestManager.instance.dragging = false;
 	}
 }

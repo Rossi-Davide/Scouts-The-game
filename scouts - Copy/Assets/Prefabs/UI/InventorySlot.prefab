@@ -247,11 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f17d2ae0a95da478b42b5523a19ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 8772316046312900968}
-  item: {fileID: 0}
   amountText: {fileID: 7254280095635822881}
   clone: {fileID: -295575754736875453, guid: 5637b7252b361fb49a98bab6a5f8591e, type: 3}
-  c: {fileID: 0}
 --- !u!114 &6377408301467787323
 MonoBehaviour:
   m_ObjectHideFlags: 0

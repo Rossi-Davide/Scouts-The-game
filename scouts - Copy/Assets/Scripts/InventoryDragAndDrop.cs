@@ -6,7 +6,7 @@ public class InventoryDragAndDrop : MonoBehaviour
 	public InventorySlot parent;
 
 
-	void FixedUpdate()
+	void Update()
 	{
 		if (Input.touchCount >= 1)
 		{
@@ -17,15 +17,13 @@ public class InventoryDragAndDrop : MonoBehaviour
 			}
 			else if (t.phase == TouchPhase.Ended)
 			{
-				var s = InventoryManager.CheckIfNearASlot(t);
-				if (s != null)
-				{
-					parent.Drop(s);
-				}
-				else
-				{
-					parent.EndOfDrag();
-				}
+				parent.Drop(InventoryManager.CheckIfNearASlot(t));
+				Destroy(gameObject);
+			}
+			else if (t.phase == TouchPhase.Canceled)
+			{
+				parent.Drop(null);
+				Destroy(gameObject);
 			}
 		}
 	}

@@ -17,15 +17,6 @@ public class AudioManager : MonoBehaviour
 			Destroy(instance.gameObject);
 		instance = this;
 		DontDestroyOnLoad(instance);
-		foreach (Sound s in sounds)
-		{
-			s.source = gameObject.AddComponent<AudioSource>();
-			s.source.clip = s.clip;
-			s.source.loop = s.loop;
-
-			s.source.outputAudioMixerGroup = s.mixerGroup;
-		}
-		
 	}
 
 	public void Play(string sound)
@@ -45,8 +36,15 @@ public class AudioManager : MonoBehaviour
 	}
 	private void Start()
 	{
-		Play("musicaGioco");
+		foreach (Sound s in sounds)
+		{
+			s.source = gameObject.AddComponent<AudioSource>();
+			s.source.clip = s.clip;
+			s.source.loop = s.loop;
 
+			s.source.outputAudioMixerGroup = s.mixerGroup;
+		}
+		Play("musicaGioco");
 	}
 
 

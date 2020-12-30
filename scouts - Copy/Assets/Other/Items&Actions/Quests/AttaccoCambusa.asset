@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AttaccoCambusa
   m_EditorClassIdentifier: 
   name: Notte insonne
-  description: esegui un attacco alla cambusa con successo
+  description: Esegui un attacco alla cambusa con successo.
   prizeCounter: 3
   prizeAmount: 5
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 42feaaf2f1c177546afe5109cd0b910d, type: 2}
   timesToDo: 1
   timesDone: 0

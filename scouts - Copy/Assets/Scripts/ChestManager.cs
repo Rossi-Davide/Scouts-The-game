@@ -16,12 +16,24 @@ public class ChestManager : MonoBehaviour
 	#endregion
 
 	public InventorySlot[] fakeInventorySlots;
-	private const int maxItemsPerChest = 28;
+	private const int maxChestItems = 28;
 	public InventorySlot[] slots;
 	public Joystick joy;
 	public GameObject chestPanelParent, overlay;
 	InventorySlot draggingSlot;
-	bool isOpen, dragging;
+	public InventoryDragAndDrop clonePrefab;
+	bool isOpen;
+	[HideInInspector] [System.NonSerialized]
+	public bool dragging;
+
+	void Start()
+	{
+		if (slots.Length != maxChestItems)
+			Debug.LogWarning("Chest contains a different number of slots from the required one.");
+		if (fakeInventorySlots.Length != InventoryManager.instance.slots.Length)
+			Debug.LogWarning("Chest fake inventory contains a different number of slots from the required one.");
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.chestManagerFileName, false));
+	}
 
 	public bool Contains(ObjectBase i)
 	{
@@ -50,16 +62,14 @@ public class ChestManager : MonoBehaviour
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{
 				var s = InventoryManager.instance.slots[y];
-				fakeInventorySlots[y].ResetSlot();
-				fakeInventorySlots[y].AddItem(s.item);
+				fakeInventorySlots[y].AddItemOrReset(s.item);
 			}
 		}
 		else {
 			for (int y = 0; y < fakeInventorySlots.Length; y++)
 			{
 				var s = InventoryManager.instance.slots[y];
-				s.AddItem(fakeInventorySlots[y].item);
-				s.RefreshInventoryAmount();
+				s.AddItemOrReset(fakeInventorySlots[y].item);
 			}
 		}
 		foreach (InventorySlot s in slots)
@@ -68,7 +78,7 @@ public class ChestManager : MonoBehaviour
 		}
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		chestPanelParent.GetComponentInChildren<ScrollRect>().enabled = dragging;
 		if (isOpen && Input.touchCount >= 1)
@@ -79,23 +89,14 @@ public class ChestManager : MonoBehaviour
 			{
 				draggingSlot.amountText.gameObject.SetActive(false);
 				draggingSlot.GetComponent<Image>().enabled = false;
-				draggingSlot.c = Instantiate(draggingSlot.clone.gameObject, t.position, Quaternion.identity, InventoryManager.instance.ovCanvas.transform);
-				draggingSlot.c.GetComponent<Image>().sprite = draggingSlot.item.icon;
-				draggingSlot.c.GetComponent<InventoryDragAndDrop>().parent = draggingSlot;
+				var clone = Instantiate(clonePrefab, t.position, Quaternion.identity, InventoryManager.instance.ovCanvas.transform);
+				clone.GetComponent<Image>().sprite = draggingSlot.item.icon;
+				clone.parent = draggingSlot;
 				dragging = true;
 			}
 		}
 	}
 
-
-	void Start()
-	{
-		if (slots.Length != maxItemsPerChest)
-			Debug.LogWarning("Chest contains a different number of slots from the required one.");
-		if (fakeInventorySlots.Length != InventoryManager.instance.slots.Length)
-			Debug.LogWarning("Chest fake inventory contains a different number of slots from the required one.");
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.chestManagerFileName, false));
-	}
 	#region Status
 	public Status SendStatus()
 	{
@@ -115,7 +116,7 @@ public class ChestManager : MonoBehaviour
 		{
 			for (int i = 0; i < status.items.Length; i++)
 			{
-				slots[i].item = status.items[i];
+				slots[i].AddItemOrReset(status.items[i]);
 			}
 		}
 	}

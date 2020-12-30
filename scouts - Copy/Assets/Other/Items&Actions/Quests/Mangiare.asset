@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
   m_Name: Mangiare
   m_EditorClassIdentifier: 
-  name: Verme Solitario
-  description: Consuma 5 pasti al refettorio del tuo angolo
-  completed: 0
-  prizeTaken: 0
+  name: Senza limite
+  description: Consuma 5 pasti al refettorio del tuo angolo.
   prizeCounter: 2
-  prizeAmount: 100
-  action: {fileID: 0}
+  prizeAmount: 50
+  action: {fileID: 11400000, guid: 92352b65d682046488144844375adfe0, type: 2}
   timesToDo: 5
   timesDone: 0

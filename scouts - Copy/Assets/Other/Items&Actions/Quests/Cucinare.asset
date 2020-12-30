@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Cucinare
   m_EditorClassIdentifier: 
   name: Chef Professionista
-  description: Prepara il pasto al piano bidoni per 3 volte
-  completed: 0
-  prizeTaken: 0
+  description: Prepara il pasto al piano bidoni per 3 volte.
   prizeCounter: 3
   prizeAmount: 10
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 5c6a513e913d27440ac9539e1ddfa92d, type: 2}
   timesToDo: 3
   timesDone: 0

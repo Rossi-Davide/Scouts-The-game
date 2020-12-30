@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366592d017758874789cb01e614e6eba, type: 3}
+  m_Name: Discotenda
+  m_EditorClassIdentifier: 
+  name: Ballerino
+  description: Partecipa alla discotenda.
+  prizeCounter: 2
+  prizeAmount: 10
+  action: {fileID: 11400000, guid: fcd4fb2725ae1d84b8b59bb37942ff64, type: 2}
+  timesToDo: 0
+  timesDone: 0

@@ -124,6 +124,16 @@ MonoBehaviour:
     mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
       type: 2}
     source: {fileID: 0}
+  - name: ticchettio dinamite
+    clip: {fileID: 8300000, guid: e0986eac78615dd4d8dcd161023f6740, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 7627163895496594192, guid: d2c21433200a7e44ebb94f957911670d,
+      type: 2}
+    source: {fileID: 0}
   - name: musicaGiochi
     clip: {fileID: 8300000, guid: f650699fff8619e4f9ff0f917a559568, type: 3}
     volume: 1

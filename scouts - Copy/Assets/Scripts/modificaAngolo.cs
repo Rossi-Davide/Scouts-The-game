@@ -53,7 +53,7 @@ public class modificaAngolo : MonoBehaviour
 						oggetto = hitInformation.collider.transform;
 						Debug.Log("called begin");
 					}
-					catch (Exception ex)
+					catch
 					{
 						Debug.LogError("errore dovuto al trascinamento di oggetto appena comprato");
 					}
