@@ -3763,6 +3763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc14135ce1f2ad4e965e0da9bf25f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canUseJoystick: 1
 --- !u!1001 &3992244355713065638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4111,7 +4112,7 @@ PrefabInstance:
     - target: {fileID: 6966860851184054053, guid: 6a501c2937201a845b4ec304fc9b68a1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 409
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 6966860851184054053, guid: 6a501c2937201a845b4ec304fc9b68a1,
         type: 3}

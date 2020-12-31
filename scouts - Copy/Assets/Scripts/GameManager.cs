@@ -471,6 +471,17 @@ public class GameManager : MonoBehaviour
 			globalLight.intensity += .01f;
 		}
 	}
+
+	public void ResetNightLight()
+	{
+		mainSceneProf.TryGet<ColorCurves>(out night);
+		night.active = false;
+		mainSceneProf.TryGet<ColorAdjustments>(out night2);
+		night2.active = true;
+	}
+
+	
+
 	void RefreshCounterText()
 	{
 		closeDayCounter.SetActive(!hasOpenedCounter);
