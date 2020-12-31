@@ -11,6 +11,7 @@ public class Joystick : MonoBehaviour
 	[HideInInspector] [System.NonSerialized]
 	public bool isUsingJoystick;
 	public bool canUseJoystick=true;
+	public GameObject actionPanel;
 
 	#region Singleton
 	public static Joystick instance;

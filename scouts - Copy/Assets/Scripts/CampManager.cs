@@ -89,11 +89,11 @@ public class CampManager : MonoBehaviour
 	{
 		SaveSystem.instance.GetSaveAll();
 		this.puntiRischiati = puntiRischiati;
-		SceneManager.LoadScene(type.ToString());
+		SceneManager.LoadSceneAsync(type.ToString());
 	}
 	public IEnumerator GameEnded(bool hasWon)
 	{
-		SceneManager.LoadScene("MainScene");
+		SceneManager.LoadSceneAsync("MainScene");
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();

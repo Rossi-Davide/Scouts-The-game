@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ActionButtons : MonoBehaviour
 {
 	public InGameObject selected;
+	[HideInInspector]
+	public bool clicking = true;
 
+	
 	#region Singleton
 	public static ActionButtons instance;
 	private void Awake()
@@ -18,6 +22,7 @@ public class ActionButtons : MonoBehaviour
 
 	public void ChangeSelectedObject(InGameObject b)
 	{
+		clicking = true;
 		if (b != null)
 		{
 			if (selected == null)
@@ -49,10 +54,16 @@ public class ActionButtons : MonoBehaviour
 	public void Click(int n)
 	{
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-
 		if (selected != null)
 		{
 			selected.ClickedButton(n);
 		}
 	}
+
+	
+		
+	
+
+
+	
 }
