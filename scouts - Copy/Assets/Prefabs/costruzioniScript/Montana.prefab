@@ -113,8 +113,8 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 0}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: -0.15, y: 1.5, z: 0}
+  loadingBarOffset: {x: -0.1, y: 1.1, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: 7bd5ed15095ef5948b7c3a00a4424968, type: 2}
@@ -150,11 +150,11 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -0.04}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.115934946, y: 0.16125736}
-  - {x: -0.50861865, y: 0.046935793}
-  - {x: -0.1112842, y: -0.1362525}
-  - {x: 0.24412704, y: 0.025810735}
-  - {x: -0.08665333, y: 0.14568123}
+  - {x: 0.34689587, y: -0.014583409}
+  - {x: -0.035771053, y: 0.15251939}
+  - {x: -0.40205002, y: 0.00019867222}
+  - {x: -0.0041418076, y: -0.18330812}
+  - {x: 0.35176343, y: -0.026967805}

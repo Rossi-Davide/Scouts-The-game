@@ -78,7 +78,7 @@ public class SfidaManager : MonoBehaviour
 
 	public void StartChallenge()
 	{
-		if (!AIsManager.instance.AreThereAnyRunningEvents())
+		if (AIsManager.instance.AreThereAnyRunningEvents == null)
 		{
 			GameManager.instance.ChangeCounter(Counter.Punti, points);
 			CampManager.instance.StartChallenge(selectedChallenge, points);

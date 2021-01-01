@@ -102,8 +102,8 @@ MonoBehaviour:
   - buttonText: Lava i panni
     color: 2
     generalAction: {fileID: 11400000, guid: 94af587bce945d646b57c060bd43a3ca, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
+    previousAction: {fileID: 11400000, guid: b719f4e5f6cdd9c42b7c1e1d8101f7b5, type: 2}
+    hasDonePreviousAction: 1
   - buttonText: Lava i piatti
     color: 3
     generalAction: {fileID: 11400000, guid: 73f5938fb239be44589edb405704f44e, type: 2}
@@ -122,6 +122,10 @@ MonoBehaviour:
   customDataFileName: Lavaggi
   possiblePositions: []
   clickListener: {fileID: 0}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: -0.15, y: 1.5, z: 0}
+  loadingBarOffset: {x: -0.1, y: 1.1, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: 7bd5ed15095ef5948b7c3a00a4424968, type: 2}
 --- !u!95 &1783706678037681103
@@ -159,8 +163,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.34037513, y: -0.04256344}
-  - {x: -0.17283785, y: -0.16685614}
-  - {x: 0.2776042, y: 0.07907939}
-  - {x: 0.117887974, y: 0.15062127}
-  - {x: -0.33555302, y: -0.032784622}
+  - {x: -0.31814453, y: -0.098139845}
+  - {x: -0.17469041, y: -0.18352906}
+  - {x: 0.28316182, y: 0.045733534}
+  - {x: 0.117887974, y: 0.113570295}
+  - {x: -0.32629034, y: -0.08650851}

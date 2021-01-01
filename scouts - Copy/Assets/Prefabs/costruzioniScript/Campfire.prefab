@@ -272,6 +272,10 @@ MonoBehaviour:
   customDataFileName: Campfire
   possiblePositions: []
   clickListener: {fileID: 0}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: -0.15, y: 0.7, z: 0}
+  loadingBarOffset: {x: -0.1, y: 0.4, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: f51e2c7b0c165614e95ed954854e4fd6, type: 2}
   - {fileID: 11400000, guid: 623386b27c0f4234290cbbf4407e4a2c, type: 2}

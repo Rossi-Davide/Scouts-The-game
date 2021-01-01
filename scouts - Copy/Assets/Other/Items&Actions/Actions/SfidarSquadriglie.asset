@@ -23,7 +23,7 @@ MonoBehaviour:
     desiredValue: 0
     warning: Non puoi sfidare una squadriglia durante un evento!
   hasInfoPanel: 1
-  showInActionList: 1
+  showInActionList: 0
   state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0

@@ -23,7 +23,7 @@ MonoBehaviour:
     desiredValue: 1
     warning: Puoi mandare a fare legna solo chi fa parte della tua squadriglia
   hasInfoPanel: 1
-  showInActionList: 1
+  showInActionList: 0
   state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0

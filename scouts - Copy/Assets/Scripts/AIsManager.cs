@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class AIsManager : MonoBehaviour
@@ -11,7 +12,8 @@ public class AIsManager : MonoBehaviour
 	public GameObject AIContainer;
 
 	public AIEvent[] events;
-	public GameObject eventButton;
+	public GameObject eventButton, eventPanel, overlay;
+	bool isOpen;
 
 	#region Singleton
 	public static AIsManager instance;
@@ -25,8 +27,9 @@ public class AIsManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(SetActiveOrInactiveAI), 2f, 30f);
+		InvokeRepeating(nameof(CallSetActiveOrInactiveAI), 2f, 30f);
 		InvokeRepeating(nameof(RefreshEventTimeLeft), 1f, 1f);
+		InvokeRepeating(nameof(RefreshPanelUI), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
 	}
 	#region Status
@@ -45,12 +48,18 @@ public class AIsManager : MonoBehaviour
 		{
 			s[i] = allSquadriglieri[i].SendStatus();
 		}
+		AIEvent.Status[] ai = new AIEvent.Status[events.Length];
+		for (int i = 0; i < events.Length; i++)
+		{
+			ai[i] = events[i].SendStatus();
+		}
 
 		return new Status
 		{
 			nextDialogueIndices = indices,
 			capiECambuInfo = c,
 			squadriglieriInfo = s,
+			aiEventsInfo = ai,
 		};
 	}
 	public void SetStatus(Status status) //called by Squadriglia manager
@@ -66,6 +75,11 @@ public class AIsManager : MonoBehaviour
 				allCapiECambu[s].SetStatus(status.capiECambuInfo[s]);
 				allCapiECambu[s].nextDialogueIndex = status.nextDialogueIndices[s];
 			}
+			for (int i = 0; i < events.Length; i++)
+			{
+				events[i].SetStatus(status.aiEventsInfo[i]);
+			}
+			eventButton.SetActive(AreThereAnyRunningEvents != null);
 		}
 	}
 	public class Status
@@ -73,16 +87,24 @@ public class AIsManager : MonoBehaviour
 		public InGameObject.Status[] capiECambuInfo;
 		public int[] nextDialogueIndices;
 		public InGameObject.Status[] squadriglieriInfo;
+		public AIEvent.Status[] aiEventsInfo;
 	}
 	#endregion
-	void SetActiveOrInactiveAI()
+	void CallSetActiveOrInactiveAI()
 	{
-		foreach (var sq in allSquadriglieri)
+		SetActiveOrInactiveAI(100 - percentageOfActiveAIs);
+	}
+	void SetActiveOrInactiveAI(int perc)
+	{
+		if (AreThereAnyRunningEvents == null)
 		{
-			StartCoroutine(sq.Unlock());
-			if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(100 - percentageOfActiveAIs))
+			foreach (var sq in allSquadriglieri)
 			{
-				StartCoroutine(sq.ForceTarget("Tenda", true, true));
+				StartCoroutine(sq.Unlock());
+				if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(perc))
+				{
+					StartCoroutine(sq.ForceTarget("Tenda", true, true));
+				}
 			}
 		}
 	}
@@ -94,20 +116,24 @@ public class AIsManager : MonoBehaviour
 			if (GameManager.instance.currentDay == e.day && hour == e.hour)
 			{
 				e.countDownLeft = e.countDownLenght;
+				SetActiveOrInactiveAI(100);
 				e.running = true;
 				GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} comincia tra...", false);
 			}
 		}
 	}
 
-	public bool AreThereAnyRunningEvents()
+	public AIEvent AreThereAnyRunningEvents
 	{
-		foreach (var e in events)
+		get
 		{
-			if (e.running)
-				return true;
+			foreach (var e in events)
+			{
+				if (e.running)
+					return e;
+			}
+			return null;
 		}
-		return false;
 	}
 
 	void RefreshEventTimeLeft()
@@ -122,8 +148,8 @@ public class AIsManager : MonoBehaviour
 				else
 				{
 					GameManager.instance.WarningOrMessage($"L'evento è cominciato!", false);
-					e.running = true;
 					e.timeLeft = e.duration;
+					eventButton.gameObject.SetActive(true);
 				}
 			}
 			else if (e.running)
@@ -133,8 +159,31 @@ public class AIsManager : MonoBehaviour
 				{
 					e.running = false;
 					GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} è terminato!", false);
+					eventButton.gameObject.SetActive(true);
 				}
 			}
+		}
+	}
+	public void ToggleEventPanel()
+	{
+		isOpen = !isOpen;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
+		eventPanel.SetActive(isOpen);
+		Joystick.instance.canUseJoystick = !isOpen;
+		overlay.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		RefreshPanelUI();
+	}
+
+	public void RefreshPanelUI()
+	{
+		var e = AreThereAnyRunningEvents;
+		if (e != null) {
+			eventPanel.transform.Find("Description1").GetComponent<TextMeshProUGUI>().text = $"Nome: {e.name}";
+			eventPanel.transform.Find("Description2").GetComponent<TextMeshProUGUI>().text = $"Descrizione: {e.description}";
+			eventPanel.transform.Find("Description3").GetComponent<TextMeshProUGUI>().text = $"Inizio: Giorno {e.day}, ore {e.hour}:00";
+			eventPanel.transform.Find("Description4").GetComponent<TextMeshProUGUI>().text = $"Durata: {GameManager.IntToMinuteSeconds(e.duration)}";
+			eventPanel.transform.Find("Description5").GetComponent<TextMeshProUGUI>().text = $"Tempo rimasto: {GameManager.IntToMinuteSeconds(e.timeLeft)}";
 		}
 	}
 }

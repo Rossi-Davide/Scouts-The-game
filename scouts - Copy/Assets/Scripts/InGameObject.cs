@@ -338,7 +338,7 @@ public abstract class InGameObject : MonoBehaviour
 			case ConditionType.ConditionIsRaining: return GameManager.instance.isRaining;
 			case ConditionType.ConditionIsDaytime: return GameManager.instance.isDay;
 			case ConditionType.ConditionIsPlayerCloseEnough: if (maxDistanceFromPlayer == 0) { return true; } else { return Vector2.Distance(transform.position, Player.instance.transform.position) <= maxDistanceFromPlayer; };
-			case ConditionType.ConditionAreThereAnyRunningEvents: return AIsManager.instance.AreThereAnyRunningEvents();
+			case ConditionType.ConditionAreThereAnyRunningEvents: return AIsManager.instance.AreThereAnyRunningEvents != null;
 			default: throw new NotImplementedException(t.ToString());
 		}
 	}

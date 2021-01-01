@@ -231,6 +231,11 @@ MonoBehaviour:
   objectName: 
   objectSubName: 
   buttons:
+  - buttonText: Stendi i panni
+    color: 2
+    generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}
+    previousAction: {fileID: 11400000, guid: 94af587bce945d646b57c060bd43a3ca, type: 2}
+    hasDonePreviousAction: 0
   - buttonText: Imbraga
     color: 3
     generalAction: {fileID: 11400000, guid: a4ee722be401d594f82e20fd4ea02da0, type: 2}

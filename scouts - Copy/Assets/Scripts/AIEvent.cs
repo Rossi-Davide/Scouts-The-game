@@ -15,4 +15,27 @@ public class AIEvent : ScriptableObject
 	public bool running;
 
 	public CapieCambu[] mainAIs;
+
+	[System.Serializable]
+	public class Status
+	{
+		public int timeLeft;
+		public int countDownLeft;
+		public bool running;
+	}
+	public void SetStatus(Status status)
+	{
+		timeLeft = status.timeLeft;
+		countDownLeft = status.countDownLeft;
+		running = status.running;
+	}
+	public Status SendStatus()
+	{
+		return new Status
+		{
+			timeLeft = timeLeft,
+			countDownLeft = countDownLeft,
+			running = running,
+		};
+	}
 }
