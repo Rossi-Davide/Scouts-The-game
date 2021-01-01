@@ -326,4 +326,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col1: {fileID: 1198159480978484955}
   col2: {fileID: 1203799300034370761}
-  col3: {fileID: 0}
+  col3: {fileID: 1198159480978484955}

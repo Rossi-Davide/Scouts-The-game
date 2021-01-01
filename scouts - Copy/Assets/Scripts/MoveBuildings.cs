@@ -5,8 +5,10 @@ public class MoveBuildings : MonoBehaviour
 	bool isTouching;
 	[HideInInspector] [System.NonSerialized]
 	public bool componentEnabled, isBeingBuilt;
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
+		Debug.Log("collision enter");
 		if (collision.collider.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = true;
@@ -15,6 +17,7 @@ public class MoveBuildings : MonoBehaviour
 	}
 	void OnCollisionExit2D(Collision2D collision)
 	{
+		Debug.Log("collision exit");
 		if (collision.collider.tag == "oggSquadriglia1" && componentEnabled)
 		{
 			isTouching = false;

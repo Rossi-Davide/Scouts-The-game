@@ -17,4 +17,9 @@ public class Refettorio : PlayerBuildingBase
 				throw new NotImplementedException();
 		}
 	}
+
+	private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+	{
+		UnityEngine.Debug.Log("collision enter");
+	}
 }
