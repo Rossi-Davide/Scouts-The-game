@@ -12,6 +12,7 @@ public class labirintoManager : MonoBehaviour
     public TextMeshProUGUI editorCountdown, countdownSecondsInizio;
     Transform spawnPoint;
     [HideInInspector]
+    [System.NonSerialized]
     public bool aumentoDifficoltà = false;
     GameObject[] enemies;
     public int seconds, secondsInizioGioco;

@@ -68,7 +68,6 @@ public class ActionButtons : MonoBehaviour
 
 	private void Check()
 	{
-		Debug.Log(clicking);
 		if (Input.touchCount > 0 && !clicking&&!IsPointerOverCollider)
 		{
 			ChangeSelectedObject(null);

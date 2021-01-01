@@ -13,6 +13,7 @@ public class nascondinoManager : MonoBehaviour
     Transform spawnPoint;
     public GameObject bottoneTornaAlGioco,sconfitta;
     [HideInInspector]
+    [System.NonSerialized]
     public bool aumentoDifficoltà=false;
     GameObject[] enemies;
     int seconds, secondsInizioGioco;

@@ -50,9 +50,7 @@ public class modificaAngolo : MonoBehaviour
 				{
 					try
 					{
-						oggetto = hitInformation.collider.transform;
-						Debug.Log("called begin");
-					}
+						oggetto = hitInformation.collider.transform;					}
 					catch
 					{
 						Debug.LogError("errore dovuto al trascinamento di oggetto appena comprato");
@@ -65,7 +63,6 @@ public class modificaAngolo : MonoBehaviour
 					Vector2 posizioneDito = touch.position;
 					Vector3 posizioneOggetto = cam.ScreenToWorldPoint(posizioneDito);
 					oggetto.position =new Vector3(posizioneOggetto.x,posizioneOggetto.y,0);
-					Debug.Log("called moved");
 					//oggetto.position = SnapToGrid(posizioneOggetto);
 				}
 				else if (touch.phase == TouchPhase.Ended)

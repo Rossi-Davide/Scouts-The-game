@@ -18,6 +18,7 @@ public class AImaster : MonoBehaviour
     Rigidbody2D rb;
     Vector3 meta;
     [HideInInspector]
+    [System.NonSerialized]
    public bool playerFound=false;
 
     // Start is called before the first frame update

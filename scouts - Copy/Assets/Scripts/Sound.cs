@@ -23,6 +23,7 @@ public class Sound {
 	public AudioMixerGroup mixerGroup;
 
 	[HideInInspector]
+	[System.NonSerialized]
 	public AudioSource source;
 
 }
