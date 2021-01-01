@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ActionButtons : MonoBehaviour
 {
 	public InGameObject selected;
-	[HideInInspector]
-	public bool clicking = true;
+	[System.NonSerialized]
+	public bool clicking = false;
 
 	
 	#region Singleton
@@ -22,7 +23,7 @@ public class ActionButtons : MonoBehaviour
 
 	public void ChangeSelectedObject(InGameObject b)
 	{
-		clicking = true;
+		//clicking = true;
 		if (b != null)
 		{
 			if (selected == null)
@@ -60,10 +61,30 @@ public class ActionButtons : MonoBehaviour
 		}
 	}
 
-	
-		
+	private void Start()
+	{
+		InvokeRepeating(nameof(Check), 0.1f, 0.5f);
+	}
+
+	private void Check()
+	{
+		Debug.Log(clicking);
+		if (Input.touchCount > 0 && !clicking&&!IsPointerOverCollider)
+		{
+			ChangeSelectedObject(null);
+			
+		}
+	}
+
 	
 
-
-	
+	public bool IsPointerOverCollider
+	{
+		get {
+			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+			RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+			return (hit.collider!=null);
+		}
+	}
 }
