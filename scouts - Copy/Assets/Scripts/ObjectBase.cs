@@ -55,9 +55,11 @@ public abstract class ObjectBase : ScriptableObject
         };
 	}
 
-    public PlayerBuilding ToPlayerBuilding()
+    public void ResetEditableInfo()
     {
-        return new PlayerBuilding(this);
+        currentAmount = 0;
+        level = 0;
+        exists = false;
     }
 
 }

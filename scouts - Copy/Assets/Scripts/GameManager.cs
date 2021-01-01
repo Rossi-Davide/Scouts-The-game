@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
 	public event System.Action<bool> OnSunsetOrSunrise;
 	public event System.Action<int> OnHourChange;
 	public event System.Action<PlayerAction> OnActionDo;
-	public event System.Action<ObjectBase> OnInventoryChange;
+	public event System.Action OnInventoryChange;
 	public event System.Action OnInGameoObjectsChange;
-	public event System.Action<ObjectBase> OnBuild;
+	public event System.Action OnBuild;
 	public event System.Action OnObjectArrayUpdate;
 	public event System.Action<Counter, int> OnCounterValueChange;
 	public event System.Action<Counter, int> OnCounterMaxValueChange;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
 	public void Built(ObjectBase obj)
 	{
-		OnBuild?.Invoke(obj);
+		OnBuild?.Invoke();
 	}
 	public void BuildingChanged()
 	{
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void InventoryChanged(ObjectBase obj)
 	{
-		OnInventoryChange?.Invoke(obj);
+		OnInventoryChange?.Invoke();
 	}
 
 

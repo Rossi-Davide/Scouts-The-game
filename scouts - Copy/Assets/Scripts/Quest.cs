@@ -44,4 +44,9 @@ public class Quest : ScriptableObject
 		public int timesDone;
 		public bool prizeTaken;
 	}
+	public void ResetEditableInfo()
+	{
+		timesDone = 0;
+		prizeTaken = false;
+	}
 }

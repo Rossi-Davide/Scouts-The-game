@@ -11,40 +11,21 @@ public class PlayerAction : ScriptableObject
     public bool showInActionList;
     public BuildingState state;
 
-    [Header("Parameters")]
     public int timeNeeded;
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0
     public int timeBeforeRedo;
+    [Header("Parameters (DONT MODIFY)")]
+    public int editableTimeNeeded;
+    public int editableEnergyGiven, editableMaterialsGiven, editablePointsGiven; // can be less than 0
+    public int editableTimeBeforeRedo;
 
-
-    public Status SendStatus()
+    public void ResetEditableInfo()
     {
-        return new Status
-        {
-            timeBeforeRedo = timeBeforeRedo,
-            timeNeeded = timeNeeded,
-            energyGiven = energyGiven,
-            materialsGiven = materialsGiven,
-            pointsGiven = pointsGiven,
-        };
-    }
-    public void SetStatus(Status status)
-    {
-        if (status != null)
-        {
-            timeBeforeRedo = status.timeBeforeRedo;
-            timeNeeded = status.timeNeeded;
-            energyGiven = status.energyGiven;
-            pointsGiven = status.pointsGiven;
-            materialsGiven = status.materialsGiven;
-        }
-    }
-    [System.Serializable]
-    public class Status
-    {
-        public int timeNeeded;
-        public int energyGiven, materialsGiven, pointsGiven;
-        public int timeBeforeRedo;
+        editableTimeBeforeRedo = timeBeforeRedo;
+        editableEnergyGiven = energyGiven;
+        editableMaterialsGiven = materialsGiven;
+        editablePointsGiven = pointsGiven;
+        editableTimeNeeded = timeNeeded;
     }
 
 
@@ -61,21 +42,21 @@ public class PlayerAction : ScriptableObject
 
     public void ChangeCountersOnStart()
 	{
-        if (energyGiven < 0)
-            GameManager.instance.ChangeCounter(Counter.Energia, energyGiven);
-        if (materialsGiven < 0)
-            GameManager.instance.ChangeCounter(Counter.Materiali, materialsGiven);
-        if (pointsGiven < 0)
-            GameManager.instance.ChangeCounter(Counter.Punti, pointsGiven);
+        if (editableEnergyGiven < 0)
+            GameManager.instance.ChangeCounter(Counter.Energia, editableEnergyGiven);
+        if (editableMaterialsGiven < 0)
+            GameManager.instance.ChangeCounter(Counter.Materiali, editableMaterialsGiven);
+        if (editablePointsGiven < 0)
+            GameManager.instance.ChangeCounter(Counter.Punti, editablePointsGiven);
     }
     public void ChangeCountersOnEnd()
 	{
-        if (energyGiven > 0)
-            GameManager.instance.ChangeCounter(Counter.Energia, energyGiven);
-        if (materialsGiven > 0)
-            GameManager.instance.ChangeCounter(Counter.Materiali, materialsGiven);
-        if (pointsGiven > 0)
-            GameManager.instance.ChangeCounter(Counter.Punti, pointsGiven);
+        if (editableEnergyGiven > 0)
+            GameManager.instance.ChangeCounter(Counter.Energia, editableEnergyGiven);
+        if (editableMaterialsGiven > 0)
+            GameManager.instance.ChangeCounter(Counter.Materiali, editableMaterialsGiven);
+        if (editablePointsGiven > 0)
+            GameManager.instance.ChangeCounter(Counter.Punti, editablePointsGiven);
     }
 
 }

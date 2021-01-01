@@ -38,4 +38,11 @@ public class AIEvent : ScriptableObject
 			running = running,
 		};
 	}
+
+	public void ResetEditableInfo()
+	{
+		timeLeft = 0;
+		countDownLeft = 0;
+		running = false;
+	}
 }

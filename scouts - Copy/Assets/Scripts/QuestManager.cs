@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -35,9 +36,29 @@ public class QuestManager : MonoBehaviour
 	{
 		quests = questPanel.GetComponentsInChildren<QuestUI>();
 		GameManager.instance.OnActionDo += RefreshQuests;
-		GameManager.instance.OnInventoryChange += RefreshActions;
-		GameManager.instance.OnBuild += RefreshActions;
+		GameManager.instance.OnInventoryChange += RefreshAllActions;
+		GameManager.instance.OnBuild += RefreshAllActions;
+		GameManager.instance.OnInventoryChange += RefreshCountersMaxValues;
+		GameManager.instance.OnBuild += RefreshCountersMaxValues;
 		saveSystem = SaveSystem.instance;
+		SetStatus(saveSystem.LoadData<Status>(saveSystem.questManagerFileName, false));
+		GetAllStartInfo();
+	}
+	IEnumerator GetAllStartInfo()
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		foreach (var a in actionDatabase)
+		{
+			a.ResetEditableInfo();
+		}
+		foreach (var q in quests)
+		{
+			q.quest.ResetEditableInfo();
+		}
+		RefreshAllActions();
+		RefreshCountersMaxValues();
 	}
 
 	public Status SendStatus()
@@ -47,15 +68,9 @@ public class QuestManager : MonoBehaviour
 		{
 			qs[q] = quests[q].quest.SendStatus();
 		}
-		var actions = new PlayerAction.Status[actionDatabase.Length];
-		for (int a = 0; a < actionDatabase.Length; a++)
-		{
-			actions[a] = actionDatabase[a].SendStatus();
-		}
 		return new Status
 		{
 			quests = qs,
-			actions = actions,
 		};
 	}
 	void SetStatus(Status status)
@@ -66,16 +81,11 @@ public class QuestManager : MonoBehaviour
 			{
 				quests[q].quest.SetStatus(status.quests[q]);
 			}
-			for (int a = 0; a < status.actions.Length; a++)
-			{
-				actionDatabase[a].SetStatus(status.actions[a]);
-			}
 		}
 	}
 	public class Status
 	{
 		public Quest.Status[] quests;
-		public PlayerAction.Status[] actions;
 	}
 
 	void RefreshQuests(PlayerAction a)
@@ -88,60 +98,97 @@ public class QuestManager : MonoBehaviour
 			}
 		}
 	}
-	void RefreshActions(ObjectBase obj)
-	{
-		bool isABuilding = false;
-		foreach (var b in SquadrigliaManager.instance.GetPlayerSq().buildings)
-		{
-			if (b.GetComponent<PlayerBuildingBase>().building == obj)
-				isABuilding = true;
-		}
-		bool removed = !InventoryManager.instance.Contains(obj) && !ChestManager.instance.Contains(obj) && !isABuilding;
-		ChangeActionParameter(obj, removed);
-		ChangeCountersMaxValue(obj, removed);
-	}
-	void ChangeCountersMaxValue(ObjectBase obj, bool removed)
-	{
-		if (obj != null && obj.changedMaxAmounts.Length > 0)
-		{
-			var o = obj.changedMaxAmounts[obj.level];
-			GameManager.instance.ChangeCounterMaxValue(o.counter, removed ? -o.delta : o.delta);
-		}
-	}
+	//void RefreshAction(ObjectBase obj)
+	//{
+	//	bool isABuilding = false;
+	//	foreach (var b in SquadrigliaManager.instance.GetPlayerSq().buildings)
+	//	{
+	//		if (b.GetComponent<PlayerBuildingBase>().building == obj)
+	//			isABuilding = true;
+	//	}
+	//	bool removed = !InventoryManager.instance.Contains(obj) && !ChestManager.instance.Contains(obj) && !isABuilding;
+	//	ChangeActionParameter(obj, removed);
+	//	ChangeCountersMaxValue(obj, removed);
+	//}
 
-
-
-	void ChangeActionParameter(ObjectBase obj, bool removed)
+	void RefreshAllActions()
 	{
-		if (obj != null && obj.modifiedActions.Length > 0)
+		foreach (var slot in InventoryManager.instance.slots)
 		{
-			var a = obj.modifiedActions[obj.level].action;
-			var n = obj.modifiedActions[obj.level].delta;
-			if (removed) { n = -n; }
-			if (!obj.modifiedActions[obj.level].hasToBeInInventory)
+			if (slot.item.modifiedActions != null)
 			{
-				switch (obj.modifiedActions[obj.level].parameter)
-				{
-					case PlayerAction.ActionParams.timeNeeded:
-						a.timeNeeded += n;
-						break;
-					case PlayerAction.ActionParams.energyGiven:
-						a.energyGiven += n;
-						break;
-					case PlayerAction.ActionParams.materialsGiven:
-						a.materialsGiven += n;
-						break;
-					case PlayerAction.ActionParams.pointsGiven:
-						a.pointsGiven += n;
-						break;
-					case PlayerAction.ActionParams.timeBeforeRedo:
-						a.timeBeforeRedo += n;
-						break;
-				}
+				var m = slot.item.modifiedActions[slot.item.level];
+				ChangeActionParameter(m.action, m.delta, m.parameter);
+			}
+		}
+		foreach (var slot in ChestManager.instance.slots)
+		{
+			if (slot.item.modifiedActions != null)
+			{
+				var m = slot.item.modifiedActions[slot.item.level];
+				ChangeActionParameter(m.action, m.delta, m.parameter);
+			}
+		}
+		foreach (var bld in SquadrigliaManager.instance.GetPlayerSq().buildings)
+		{
+			var b = bld.GetComponent<PlayerBuildingBase>().building;
+			if (b.modifiedActions != null)
+			{
+				var m = b.modifiedActions[b.level];
+				ChangeActionParameter(m.action, m.delta, m.parameter);
+			}
+		}
+	}
+	void RefreshCountersMaxValues()
+	{
+		foreach (var slot in InventoryManager.instance.slots)
+		{
+			if (slot.item.changedMaxAmounts != null)
+			{
+				var m = slot.item.changedMaxAmounts[slot.item.level];
+				GameManager.instance.ChangeCounterMaxValue(m.counter, m.delta);
+			}
+		}
+		foreach (var slot in ChestManager.instance.slots)
+		{
+			if (slot.item.changedMaxAmounts != null)
+			{
+				var m = slot.item.changedMaxAmounts[slot.item.level];
+				GameManager.instance.ChangeCounterMaxValue(m.counter, m.delta);
+			}
+		}
+		foreach (var bld in SquadrigliaManager.instance.GetPlayerSq().buildings)
+		{
+			var b = bld.GetComponent<PlayerBuildingBase>().building;
+			if (b.changedMaxAmounts != null)
+			{
+				var m = b.changedMaxAmounts[b.level];
+				GameManager.instance.ChangeCounterMaxValue(m.counter, m.delta);
 			}
 		}
 	}
 
+	void ChangeActionParameter(PlayerAction a, int delta, PlayerAction.ActionParams parameter)
+	{
+		switch (parameter)
+		{
+			case PlayerAction.ActionParams.timeNeeded:
+				a.editableTimeNeeded += delta;
+				break;
+			case PlayerAction.ActionParams.energyGiven:
+				a.editableEnergyGiven += delta;
+				break;
+			case PlayerAction.ActionParams.materialsGiven:
+				a.editableMaterialsGiven += delta;
+				break;
+			case PlayerAction.ActionParams.pointsGiven:
+				a.editablePointsGiven += delta;
+				break;
+			case PlayerAction.ActionParams.timeBeforeRedo:
+				a.editableTimeBeforeRedo += delta;
+				break;
+		}
+	}
 	public void ToggleQuestPanel()
 	{
 		isOpen = !isOpen;
