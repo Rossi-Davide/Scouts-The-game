@@ -142,8 +142,8 @@ MonoBehaviour:
   clickListener: {fileID: 1878422868812242793, guid: e36dcf8a398ea3840b0dea38926ac261,
     type: 3}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: 0, y: 2, z: 0}
+  loadingBarOffset: {x: 0, y: 1.5, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: a347e06a83e5626449a80dbdcf3f658b, type: 2}
@@ -204,10 +204,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014420152, y: 0.1363329}
+  m_Offset: {x: -0.0065032095, y: -0.019212132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.53480923, y: 0.19738689}
@@ -218,5 +218,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3849008, y: 0.40063137}
+  m_Size: {x: 0.09599766, y: 0.056942258}
   m_EdgeRadius: 0

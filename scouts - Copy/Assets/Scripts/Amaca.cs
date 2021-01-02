@@ -31,4 +31,5 @@ public class Amaca : PlayerBuildingBase
 				throw new NotImplementedException();
 		}
 	}
+	
 }

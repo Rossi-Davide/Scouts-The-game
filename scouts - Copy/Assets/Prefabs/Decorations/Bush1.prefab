@@ -66,8 +66,8 @@ MonoBehaviour:
   clickListener: {fileID: 4621947097978961903, guid: 41d512e912e499a4387e33cfa3ecd7ea,
     type: 3}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: 0, y: 1, z: 0}
+  loadingBarOffset: {x: 0, y: 0.6, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
 --- !u!95 &1323579708

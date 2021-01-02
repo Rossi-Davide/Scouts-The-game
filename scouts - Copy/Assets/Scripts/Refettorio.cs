@@ -18,8 +18,5 @@ public class Refettorio : PlayerBuildingBase
 		}
 	}
 
-	private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
-	{
-		UnityEngine.Debug.Log("collision enter");
-	}
+	
 }

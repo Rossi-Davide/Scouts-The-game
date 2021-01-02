@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 6224586131451713008}
   - component: {fileID: 4954839266600648203}
   - component: {fileID: 1753403868787978039}
+  - component: {fileID: 3571915029915577484}
   m_Layer: 0
   m_Name: amaca
   m_TagString: oggSquadriglia1
@@ -306,8 +307,8 @@ MonoBehaviour:
   clickListener: {fileID: 9052262022897325451, guid: 2c04edd749e423a4a8d4fa7092c41260,
     type: 3}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: 0, y: 1.6, z: 0}
+  loadingBarOffset: {x: 0, y: 1.2, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: 4a78fd5fac10e214babe46617bc6896f, type: 2}
@@ -346,10 +347,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.080450416, y: 0.014016256}
+  m_Offset: {x: -0.0065032095, y: -0.019212132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.66597587, y: 0.44052288}
@@ -360,7 +361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37026572, y: 0.35401946}
+  m_Size: {x: 0.09599766, y: 0.056942258}
   m_EdgeRadius: 0
 --- !u!114 &1753403868787978039
 MonoBehaviour:
@@ -377,3 +378,24 @@ MonoBehaviour:
   col1: {fileID: 5954918197737373523}
   col2: {fileID: 1764905567515756400}
   col3: {fileID: 6611386779883598089}
+--- !u!50 &3571915029915577484
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
