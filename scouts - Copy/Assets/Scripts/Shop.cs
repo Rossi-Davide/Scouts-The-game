@@ -68,6 +68,10 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(decorazioni, SpecificShopScreen.Decorazioni);
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
 
+		foreach (var i in itemDatabase)
+			i.ResetEditableInfo();
+		foreach (var b in buildingDatabase)
+			b.ResetEditableInfo();
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.shopFileName, false));
 	}
 

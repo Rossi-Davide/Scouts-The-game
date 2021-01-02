@@ -31,3 +31,8 @@ MonoBehaviour:
   materialsGiven: 20
   pointsGiven: 0
   timeBeforeRedo: 0
+  editableTimeNeeded: 3
+  editableEnergyGiven: 0
+  editableMaterialsGiven: 20
+  editablePointsGiven: 0
+  editableTimeBeforeRedo: 0

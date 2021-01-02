@@ -241,7 +241,7 @@ public class nascondinoManager : MonoBehaviour
 
     public void TornaAlGioco()
     {
-        CampManager.instance.GameEnded(hasWon);
+        StartCoroutine(CampManager.instance.GameEnded(hasWon));
     }
 }
 

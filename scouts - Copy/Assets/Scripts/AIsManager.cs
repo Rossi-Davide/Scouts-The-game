@@ -159,7 +159,9 @@ public class AIsManager : MonoBehaviour
 				{
 					e.running = false;
 					GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} è terminato!", false);
-					eventButton.gameObject.SetActive(true);
+					eventButton.gameObject.SetActive(false);
+					if (isOpen)
+						ToggleEventPanel();
 				}
 			}
 		}

@@ -14,6 +14,7 @@ public class PlayerAction : ScriptableObject
     public int timeNeeded;
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0
     public int timeBeforeRedo;
+
     [Header("Parameters (DONT MODIFY)")]
     public int editableTimeNeeded;
     public int editableEnergyGiven, editableMaterialsGiven, editablePointsGiven; // can be less than 0

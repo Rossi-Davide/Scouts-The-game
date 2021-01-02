@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
 		{
 			TogglePanel(null);
 			currentObject.nextDialogueIndex++;
-			currentObject.Unlock();
+			StartCoroutine(currentObject.Unlock());
 			GameManager.instance.ChangeCounter(Counter.Punti, deltaPoints);
 			GameManager.instance.ChangeCounter(Counter.Materiali, deltaMaterials);
 			GameManager.instance.ChangeCounter(Counter.Energia, deltaEnergy);

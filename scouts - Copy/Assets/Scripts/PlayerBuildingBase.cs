@@ -48,14 +48,14 @@ public abstract class PlayerBuildingBase : InGameObject
 
 	public override void Select()
 	{
-		ToggleHealthBar(true);
+		StartCoroutine(ToggleHealthBar(true));
 		base.Select();
 	}
 	public override void Deselect()
 	{
 		if (!GameManager.instance.isRaining)
 		{
-			ToggleHealthBar(false);
+			StartCoroutine(ToggleHealthBar(false));
 		}
 		base.Deselect();
 	}
@@ -64,7 +64,7 @@ public abstract class PlayerBuildingBase : InGameObject
 	{
 		if (GameManager.instance.isRaining)
 		{
-			ToggleHealthBar(true);
+			StartCoroutine(ToggleHealthBar(true));
 			if (!isSafe && !isDestroyed)
 			{
 				timeLeftBeforeHealthLoss--;
@@ -81,7 +81,7 @@ public abstract class PlayerBuildingBase : InGameObject
 					GetComponent<Animator>().Play(objectName + "Destroyed");
 					RefreshButtonsState();
 					if (!hasBeenClicked)
-						ToggleHealthBar(false);
+						StartCoroutine(ToggleHealthBar(false));
 				}
 				healthBar.GetComponent<Slider>().value = health;
 				healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
@@ -89,7 +89,7 @@ public abstract class PlayerBuildingBase : InGameObject
 		}
 		else if (!hasBeenClicked)
 		{
-			ToggleHealthBar(false);
+			StartCoroutine(ToggleHealthBar(false));
 		}
 		else
 		{

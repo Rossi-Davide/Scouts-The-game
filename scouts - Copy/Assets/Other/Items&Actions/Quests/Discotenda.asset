@@ -17,5 +17,5 @@ MonoBehaviour:
   prizeCounter: 2
   prizeAmount: 10
   action: {fileID: 11400000, guid: fcd4fb2725ae1d84b8b59bb37942ff64, type: 2}
-  timesToDo: 0
+  timesToDo: 1
   timesDone: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Domenica dei Genitori
   description: "bla bla bla questa \xE8 una descrizione"
   countDownLenght: 15
-  duration: 300
+  duration: 10
   day: 1
   hour: 10
   mainAIs: []

@@ -41,8 +41,8 @@ public class QuestManager : MonoBehaviour
 		GameManager.instance.OnInventoryChange += RefreshCountersMaxValues;
 		GameManager.instance.OnBuild += RefreshCountersMaxValues;
 		saveSystem = SaveSystem.instance;
+		StartCoroutine(GetAllStartInfo());
 		SetStatus(saveSystem.LoadData<Status>(saveSystem.questManagerFileName, false));
-		GetAllStartInfo();
 	}
 	IEnumerator GetAllStartInfo()
 	{
@@ -115,7 +115,7 @@ public class QuestManager : MonoBehaviour
 	{
 		foreach (var slot in InventoryManager.instance.slots)
 		{
-			if (slot.item.modifiedActions != null)
+			if (slot.item != null && slot.item.modifiedActions.Length > 0)
 			{
 				var m = slot.item.modifiedActions[slot.item.level];
 				ChangeActionParameter(m.action, m.delta, m.parameter);
@@ -123,7 +123,7 @@ public class QuestManager : MonoBehaviour
 		}
 		foreach (var slot in ChestManager.instance.slots)
 		{
-			if (slot.item.modifiedActions != null)
+			if (slot.item != null && slot.item.modifiedActions.Length > 0)
 			{
 				var m = slot.item.modifiedActions[slot.item.level];
 				ChangeActionParameter(m.action, m.delta, m.parameter);
@@ -132,7 +132,7 @@ public class QuestManager : MonoBehaviour
 		foreach (var bld in SquadrigliaManager.instance.GetPlayerSq().buildings)
 		{
 			var b = bld.GetComponent<PlayerBuildingBase>().building;
-			if (b.modifiedActions != null)
+			if (b.modifiedActions.Length > 0)
 			{
 				var m = b.modifiedActions[b.level];
 				ChangeActionParameter(m.action, m.delta, m.parameter);
@@ -143,7 +143,7 @@ public class QuestManager : MonoBehaviour
 	{
 		foreach (var slot in InventoryManager.instance.slots)
 		{
-			if (slot.item.changedMaxAmounts != null)
+			if (slot.item != null && slot.item.changedMaxAmounts.Length > 0)
 			{
 				var m = slot.item.changedMaxAmounts[slot.item.level];
 				GameManager.instance.ChangeCounterMaxValue(m.counter, m.delta);
@@ -151,7 +151,7 @@ public class QuestManager : MonoBehaviour
 		}
 		foreach (var slot in ChestManager.instance.slots)
 		{
-			if (slot.item.changedMaxAmounts != null)
+			if (slot.item != null && slot.item.changedMaxAmounts.Length > 0)
 			{
 				var m = slot.item.changedMaxAmounts[slot.item.level];
 				GameManager.instance.ChangeCounterMaxValue(m.counter, m.delta);
@@ -160,7 +160,7 @@ public class QuestManager : MonoBehaviour
 		foreach (var bld in SquadrigliaManager.instance.GetPlayerSq().buildings)
 		{
 			var b = bld.GetComponent<PlayerBuildingBase>().building;
-			if (b.changedMaxAmounts != null)
+			if (b.changedMaxAmounts.Length > 0)
 			{
 				var m = b.changedMaxAmounts[b.level];
 				GameManager.instance.ChangeCounterMaxValue(m.counter, m.delta);

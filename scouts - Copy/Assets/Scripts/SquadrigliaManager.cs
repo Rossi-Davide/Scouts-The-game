@@ -161,6 +161,8 @@ public class SquadrigliaManager : MonoBehaviour
 				}
 			}
 		}
+		foreach (var e in AIsManager.instance.events)
+			e.ResetEditableInfo();
 		AIsManager.instance.SetStatus(SaveSystem.instance.LoadData<AIsManager.Status>(SaveSystem.instance.aisManagerFileName, false));
 	}
 

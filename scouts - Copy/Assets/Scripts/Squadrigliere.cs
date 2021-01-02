@@ -26,7 +26,7 @@ public class Squadrigliere : BaseAI
 		{
             currentPlant = GameManager.instance.spawnedPlants[Random.Range(0, GameManager.instance.spawnedPlants.Length)];
             Debug.Log($"destination set: {currentPlant.name}");
-            ForceTarget(currentPlant.transform.position, false, EndLegna);
+            StartCoroutine(ForceTarget(currentPlant.transform.position, false, EndLegna));
 		}
     }
     void EndLegna()
