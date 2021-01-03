@@ -160,10 +160,10 @@ public enum Gender
 }
 public enum Difficulty
 {
-	Facile,
-	Media,
-	Difficile,
-	Impossibile,
+	Facile = 1,
+	Media = 2,
+	Difficile = 3,
+	Impossibile = 4,
 }
 public enum Hair
 {
@@ -172,7 +172,7 @@ public enum Hair
 }
 public enum Duration
 {
-	Breve,
-	Media,
-	Lunga,
+	Breve = 3,
+	Media = 2,
+	Lunga = 1,
 }
