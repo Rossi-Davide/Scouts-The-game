@@ -42,8 +42,15 @@ public class Plant : InGameObject
 	protected override  void Start()
 	{
 		base.Start();
-		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position,1f);
-		foreach(Collider2D c in coll)
+		InvokeRepeating(nameof(CheckColl), 0.1f, 1f);
+		
+	}
+
+
+	void CheckColl()
+    {
+		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+		foreach (Collider2D c in coll)
 		{
 			if (c.name == "Player")
 			{

@@ -7,12 +7,12 @@ public class accroccoCorreggiZ : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        Invoke(nameof(Aggiustino),0.1f);
     }
 
     // Update is called once per frame
-    void Update()
+    public void Aggiustino()
     {
-        
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 }

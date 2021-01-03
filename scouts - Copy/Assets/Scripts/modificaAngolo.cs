@@ -21,6 +21,8 @@ public class modificaAngolo : MonoBehaviour
 	#endregion
 	[HideInInspector] [System.NonSerialized]
 	public Transform oggetto;
+	[HideInInspector]	[System.NonSerialized]
+	public bool firstIteraction;
 	void Start()
 	{
 		cam = Camera.main;
@@ -42,7 +44,15 @@ public class modificaAngolo : MonoBehaviour
 					//slot.buildingParent.GetComponent<Collider2D>().enabled = true;
 					//slot.buildingParent.GetComponent<SpriteRenderer>().enabled = true;
 					slot.buildingParent.transform.position = cam.ScreenToWorldPoint(touch.position);
-					posizioneIniziale = slot.buildingParent.transform.position;
+                    if (!firstIteraction)
+                    {
+						posizioneIniziale = slot.buildingParent.transform.position;
+                    }
+                    else
+                    {
+						//settare la posizione dei puntini
+
+                    }
 					oggetto = slot.buildingParent.transform;
 					UpdateRayCast(touch);
 				}
@@ -72,6 +82,7 @@ public class modificaAngolo : MonoBehaviour
 				}
 				else if (touch.phase == TouchPhase.Canceled)
 				{
+					//verificare se genera bug
 					oggetto.GetComponent<MoveBuildings>().ResetPos(posizioneIniziale);
 					oggetto = null;
 				}

@@ -6,19 +6,18 @@ public class MoveBuildings : MonoBehaviour
 	[HideInInspector] [System.NonSerialized]
 	public bool componentEnabled, isBeingBuilt;
 
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		Debug.Log("collision enter");
-		if (collision.collider.tag == "oggSquadriglia1" && componentEnabled)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if (collision.tag == "oggSquadriglia1" )
 		{
 			isTouching = true;
 			GameManager.instance.WarningOrMessage("Non puoi piazzare l'oggetto qui!", true);
 		}
 	}
-	void OnCollisionExit2D(Collision2D collision)
-	{
-		Debug.Log("collision exit");
-		if (collision.collider.tag == "oggSquadriglia1" && componentEnabled)
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+		if (collision.tag == "oggSquadriglia1")
 		{
 			isTouching = false;
 			GameManager.instance.ClearWarningOrMessage();
@@ -26,13 +25,15 @@ public class MoveBuildings : MonoBehaviour
 	}
 	public void ResetPos(Vector3 startPos)
 	{
+		Debug.LogError(gameObject.name);
 		transform.position = startPos;
-		if (isBeingBuilt)
+		//gameObject.GetComponent<accroccoCorreggiZ>().Aggiustino();
+		/*if (isBeingBuilt)
 		{
 			gameObject.GetComponent<Collider2D>().enabled = false;
 			gameObject.GetComponent<SpriteRenderer>().enabled = false;
 			ModificaBaseTrigger.instance.buildingSlot.gameObject.SetActive(true);
-		}
+		}*/
 	}
 	public void OnEndDragging(Vector3 startPos)
 	{
