@@ -22,7 +22,8 @@ public class modificaAngolo : MonoBehaviour
 	[HideInInspector] [System.NonSerialized]
 	public Transform oggetto;
 	[HideInInspector]	[System.NonSerialized]
-	public bool firstIteraction;
+	public bool firstIteraction=false;
+	public string objectBought;
 	void Start()
 	{
 		cam = Camera.main;
@@ -41,18 +42,11 @@ public class modificaAngolo : MonoBehaviour
 				{
 					slot.gameObject.SetActive(false);
 					slot.buildingParent.gameObject.SetActive(true);
+					posizioneIniziale = slot.buildingParent.transform.position;
 					//slot.buildingParent.GetComponent<Collider2D>().enabled = true;
 					//slot.buildingParent.GetComponent<SpriteRenderer>().enabled = true;
 					slot.buildingParent.transform.position = cam.ScreenToWorldPoint(touch.position);
-                    if (!firstIteraction)
-                    {
-						posizioneIniziale = slot.buildingParent.transform.position;
-                    }
-                    else
-                    {
-						//settare la posizione dei puntini
-
-                    }
+                    
 					oggetto = slot.buildingParent.transform;
 					UpdateRayCast(touch);
 				}
@@ -65,7 +59,17 @@ public class modificaAngolo : MonoBehaviour
 					{
 						Debug.LogError("errore dovuto al trascinamento di oggetto appena comprato");
 					}
-					posizioneIniziale = oggetto.position;
+					if (!firstIteraction)
+					{
+						posizioneIniziale = oggetto.position;
+					}
+					else
+					{
+						//settare la posizione dei puntini
+						posizioneIniziale = slot.buildingParent.GetComponent<MoveBuildings>().SearchForPos(objectBought);
+						Debug.Log(posizioneIniziale);
+						firstIteraction = false;
+					}
 				}
 				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
 				{

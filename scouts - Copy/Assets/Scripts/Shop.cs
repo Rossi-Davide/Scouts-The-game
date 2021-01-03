@@ -184,7 +184,9 @@ public class Shop : MonoBehaviour
 		else if (((ObjectBase)selected).type == ObjectType.Costruzione)
 		{
 			ToggleShop();
-
+			//cose
+			modificaAngolo.instance.firstIteraction = true;
+			modificaAngolo.instance.objectBought = ((ObjectBase)selected).name;
 			ModificaBaseTrigger.instance.SetBuildingSlotInfo((PlayerBuilding)selected);
 			GameManager.instance.Built(((ObjectBase)selected));
 		}

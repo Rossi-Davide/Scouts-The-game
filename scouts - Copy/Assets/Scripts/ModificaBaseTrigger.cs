@@ -65,6 +65,10 @@ public class ModificaBaseTrigger : MonoBehaviour
 
 	public void ToggleModificaBase(bool isBuilding)
 	{
+        if (isModifying)
+        {
+			//controlli per collisione
+        }
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 		joy.canUseJoystick = isModifying;
 		isModifying = !isModifying;
@@ -101,5 +105,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 			ActionButtons.instance.selected.Deselect();
 		}
 		GetComponent<Animator>().Play(isModifying ? "SalvaEdEsci" : "Modifica");
+
+		//controlli per costruzione
 	}
 }
