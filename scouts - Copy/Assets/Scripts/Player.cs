@@ -18,13 +18,21 @@ public class Player : MonoBehaviour
 	[HideInInspector]
 	[System.NonSerialized]
 	public Squadriglia squadriglia;
+	public ControllerArr[] controllers;
+	Animator animator;
 
 	private void Start()
     {
         animator = GetComponent<Animator>();
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.plFileName, false));
-    }
+		animator.runtimeAnimatorController = controllers[(int)CampManager.instance.camp.settings.gender].controllers[(int)CampManager.instance.camp.settings.hair]; 
+	}
 
+	[System.Serializable]
+	public class ControllerArr
+	{
+		public RuntimeAnimatorController[] controllers;
+	}
 
 	public Status SendStatus()
 	{
@@ -50,7 +58,6 @@ public class Player : MonoBehaviour
 
 	public float playerSpeed; 
     float lastX, lastY;
-    Animator animator;
 	bool isMoving;
 	void FixedUpdate()
 	{
