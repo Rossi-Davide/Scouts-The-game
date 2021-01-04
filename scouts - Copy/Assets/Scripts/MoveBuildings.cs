@@ -49,21 +49,26 @@ public class MoveBuildings : MonoBehaviour
 
 	public Vector3 SearchForPos(string oggetto)
     {
+		//ricerca della propria base
 		punti = LayerMask.GetMask("posizioneOggetti");
 		bool objectFound = false;
 		posIniziale.z = 0;
 		oggetto = oggetto.ToLower();
+        if (oggetto == "tent")
+        {
+			oggetto = "tenda";
+        }
 		Debug.Log(oggetto);
 		GameObject posAngoloPlayer = SquadrigliaManager.instance.GetPlayerSq().angolo.gameObject;
 
 		Vector2 posV2;
 		posV2.x = posAngoloPlayer.transform.position.x;
 		posV2.y = posAngoloPlayer.transform.position.y;
-		Collider2D[] array = Physics2D.OverlapCircleAll(posV2, 20f,punti);
+		Collider2D[] array = Physics2D.OverlapCircleAll(posV2, 10f,punti);
 
 		foreach(Collider2D c in array)
         {
-			Debug.Log(c.name);
+			//Debug.Log(c.name);
             if (c.name == oggetto)
             {
 				posIniziale.x = c.transform.position.x;
@@ -73,18 +78,35 @@ public class MoveBuildings : MonoBehaviour
 			}
 		}
 
+		//Debug.Log(objectFound);
+		
+
+		//controllo che la base non sia occupata con esclusione oggetto corrente
 		posV2.x = posIniziale.x;
 		posV2.y = posIniziale.y;
 
 		punti = LayerMask.GetMask("Default");
 		Collider2D[] arrayCheckColl= Physics2D.OverlapCircleAll(posV2, 1f,punti);
 
-        if (arrayCheckColl.Length > 0)
+		string nomeOggettoAttuale = oggetto + "(clone)";
+		bool checkObjColl = false;
+
+		foreach (Collider2D c in arrayCheckColl)
         {
+			string name = c.name.ToLower();
+            if (name != nomeOggettoAttuale)
+            {
+				checkObjColl = true;
+            }
+		}
+        if (arrayCheckColl.Length > 0&&checkObjColl)
+        {
+			//Debug.Log("entered");
 			objectFound = false;
         }
-		Debug.Log(objectFound);
 
+
+		//ricerca di una nuova base 
         if (!objectFound)
 		{
 			bool ok;
@@ -92,9 +114,11 @@ public class MoveBuildings : MonoBehaviour
 			{
 				ok = true;
 
-				posIniziale.x = Random.Range(posAngoloPlayer.transform.position.x - 7, posAngoloPlayer.transform.position.x + 8);
-				posIniziale.y = Random.Range(posAngoloPlayer.transform.position.y - 7, posAngoloPlayer.transform.position.y + 8);
+				posIniziale.x = Random.Range(posAngoloPlayer.transform.position.x - 10, posAngoloPlayer.transform.position.x + 10);
+				posIniziale.y = Random.Range(posAngoloPlayer.transform.position.y - 7, posAngoloPlayer.transform.position.y + 6);
 
+
+				//controllo che non sia occupata con esclusione oggetto corrente 
 				Vector2 ricerca;
 				ricerca.x = posIniziale.x;
 				ricerca.y = posIniziale.y;
@@ -102,10 +126,18 @@ public class MoveBuildings : MonoBehaviour
 
 				punti = LayerMask.GetMask("Default");
 				Collider2D[] ar = Physics2D.OverlapCircleAll(ricerca, 1f, punti);
-
-				if (ar.Length > 0)
+				checkObjColl = false;
+				foreach (Collider2D c in ar)
 				{
-					objectFound = false;
+					string name = c.name.ToLower();
+					if (name != nomeOggettoAttuale)
+					{
+						checkObjColl = true;
+					}
+				}
+				if (ar.Length > 0&&checkObjColl)
+				{
+					ok = false;
 				}
 			} while (!ok);
 			

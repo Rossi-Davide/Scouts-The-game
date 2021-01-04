@@ -10,7 +10,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	Camera cam;
 	public Transform angolo;
 	Transform player;
-	bool isModifying;
+	public bool isModifying;
 	public Joystick joy;
 
 	#region Singleton
@@ -68,6 +68,14 @@ public class ModificaBaseTrigger : MonoBehaviour
         if (isModifying)
         {
 			//controlli per collisione
+			foreach(MoveBuildings m in buildings)
+            {
+                if (m.gameObject.activeSelf == true)
+                {
+					Vector3 startPos = modificaAngolo.instance.posizioneIniziale;
+					m.OnEndDragging(startPos);
+				}					
+            }
         }
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 		joy.canUseJoystick = isModifying;

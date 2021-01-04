@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 2300847948266798756}
   - component: {fileID: 7076370930487419475}
   - component: {fileID: 4038881481007050020}
-  - component: {fileID: 6847985427582436261}
   - component: {fileID: 6799030474086538835}
   m_Layer: 0
   m_Name: PianoBidoni
@@ -327,29 +326,6 @@ MonoBehaviour:
   col1: {fileID: 5530604601332937868}
   col2: {fileID: 6654323323725928531}
   col3: {fileID: 6654323323725928531}
---- !u!68 &6847985427582436261
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8504184329679217996}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.29599994, y: 0.13009971}
-  - {x: -0.2625444, y: 0.24569872}
-  - {x: -0.14088869, y: 0.3430453}
-  - {x: -0.31134796, y: -0.04535395}
-  - {x: 0.017603874, y: -0.16802406}
-  - {x: 0.077019215, y: 0.3004562}
-  - {x: 0.2868762, y: 0.254825}
 --- !u!50 &6799030474086538835
 Rigidbody2D:
   serializedVersion: 4

@@ -5,7 +5,8 @@ public class modificaAngolo : MonoBehaviour
 {
 	Camera cam;
 	Vector3 touchPosWorld;
-	Vector3 posizioneIniziale;
+	[HideInInspector] [System.NonSerialized]
+	public Vector3 posizioneIniziale;
 	Vector2 touchPosWorld2D;
 	RaycastHit2D hitInformation;
 

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -4552688303073444155}
   - component: {fileID: -3697600796267754068}
   - component: {fileID: -5832666899742836675}
+  - component: {fileID: 129127199385093837}
   m_Layer: 0
   m_Name: Portalegna
   m_TagString: oggSquadriglia1
@@ -242,3 +243,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &129127199385093837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504184329679217996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669657790d9f9dd4bb6fac15210d3aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col1: {fileID: 8504184329679217996}
+  col2: {fileID: 8504184329679217996}
+  col3: {fileID: 8504184329679217996}
