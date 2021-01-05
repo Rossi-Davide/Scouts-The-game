@@ -12,7 +12,8 @@ public class ModificaBaseTrigger : MonoBehaviour
 	Transform player;
 	public bool isModifying;
 	public Joystick joy;
-
+	public bool execTransition=false;
+	public string objectBought;
 	#region Singleton
 	public static ModificaBaseTrigger instance;
 	private void Awake()
@@ -31,7 +32,18 @@ public class ModificaBaseTrigger : MonoBehaviour
 		cam = Camera.main;
 		StartCoroutine(GetSq());
 		player = Player.instance.transform;
+		CheckExecTransition();
 	}
+
+	void CheckExecTransition()
+    {
+        if (execTransition)
+        {
+			//attiva objectBought
+			execTransition = !execTransition;
+        }
+    }
+
 	public void SetBuildingSlotInfo(PlayerBuilding building)
 	{
 		buildingSlot.GetComponent<Image>().sprite = building.icon;
@@ -116,4 +128,10 @@ public class ModificaBaseTrigger : MonoBehaviour
 
 		//controlli per costruzione
 	}
+
+
+	public void ToggleButtonComponent(bool toggle)
+    {
+		gameObject.GetComponent<Button>().enabled = toggle;
+    }
 }

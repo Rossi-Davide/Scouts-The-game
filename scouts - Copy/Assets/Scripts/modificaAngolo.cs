@@ -55,6 +55,9 @@ public class modificaAngolo : MonoBehaviour
 				}
 				if (touch.phase == TouchPhase.Began)
 				{
+					ModificaBaseTrigger.instance.ToggleButtonComponent(true);
+					ModificaBaseTrigger.instance.execTransition = false;
+
 					try
 					{
 						oggetto = hitInformation.collider.transform;					}

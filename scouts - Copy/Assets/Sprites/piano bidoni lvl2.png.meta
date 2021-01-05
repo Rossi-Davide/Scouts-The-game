@@ -220,9 +220,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 346
-        y: 235
+        y: 222
         width: 188
-        height: 211
+        height: 316
       alignment: 9
       pivot: {x: 0.5158274, y: 0.24755426}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: piano bidoni lvl2_9
       rect:
         serializedVersion: 2
-        x: 664
-        y: 235
-        width: 188
-        height: 211
+        x: 660
+        y: 236
+        width: 192
+        height: 302
       alignment: 9
       pivot: {x: 0.52725124, y: 0.21348506}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: piano bidoni lvl2_10
       rect:
         serializedVersion: 2
-        x: 917
-        y: 235
-        width: 188
-        height: 211
+        x: 914
+        y: 198
+        width: 191
+        height: 487
       alignment: 9
       pivot: {x: 0.52169734, y: 0.21000953}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,7 +411,7 @@ TextureImporter:
         x: 20
         y: 235
         width: 188
-        height: 211
+        height: 263
       alignment: 9
       pivot: {x: 0.50278324, y: 0.23465024}
       border: {x: 0, y: 0, z: 0, w: 0}
