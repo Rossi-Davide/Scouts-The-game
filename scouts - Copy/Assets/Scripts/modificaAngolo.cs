@@ -22,12 +22,14 @@ public class modificaAngolo : MonoBehaviour
 	#endregion
 	[HideInInspector] [System.NonSerialized]
 	public Transform oggetto;
-	[HideInInspector]	[System.NonSerialized]
-	public bool firstIteraction=false;
+	[HideInInspector] [System.NonSerialized]
+	public bool firstIteraction;
 	public string objectBought;
 	void Start()
 	{
 		cam = Camera.main;
+		firstIteraction = false;
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.modificaAngoloFileName, false));
 	}
 
 	void Update()
@@ -70,6 +72,7 @@ public class modificaAngolo : MonoBehaviour
 						posizioneIniziale = slot.buildingParent.GetComponent<MoveBuildings>().SearchForPos(objectBought);
 						Debug.Log(posizioneIniziale);
 						firstIteraction = false;
+						SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
 					}
 				}
 				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
@@ -94,14 +97,42 @@ public class modificaAngolo : MonoBehaviour
 			}
 		}
 	}
-	float grid = 0.8f;
-	Vector3 SnapToGrid(Vector3 pos)
+
+
+	//float grid = 0.8f;
+	//Vector3 SnapToGrid(Vector3 pos)
+	//{
+	//	float reciprocalGrid = 1f / grid;
+	//	float x = Mathf.Round(oggetto.position.x * reciprocalGrid) / reciprocalGrid;
+	//	float y = Mathf.Round(oggetto.position.y * reciprocalGrid) / reciprocalGrid;
+	//	return new Vector3(x, y, 0);
+	//}
+
+
+	#region Status
+	public Status SendStatus()
 	{
-		float reciprocalGrid = 1f / grid;
-		float x = Mathf.Round(oggetto.position.x * reciprocalGrid) / reciprocalGrid;
-		float y = Mathf.Round(oggetto.position.y * reciprocalGrid) / reciprocalGrid;
-		return new Vector3(x, y, 0);
+		return new Status
+		{
+			firstInteraction = firstIteraction,
+			objectBought = objectBought,
+		};
 	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			objectBought = status.objectBought;
+			firstIteraction = status.firstInteraction;
+		}
+	}
+	public class Status
+	{
+		public string objectBought;
+		public bool firstInteraction;
+	}
+
+	#endregion
 
 
 	void UpdateRayCast(Touch t)

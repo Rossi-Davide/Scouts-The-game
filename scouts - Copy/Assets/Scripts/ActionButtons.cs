@@ -68,10 +68,10 @@ public class ActionButtons : MonoBehaviour
 
 	private void Check()
 	{
-		if (Input.touchCount > 0 && !clicking&&!IsPointerOverCollider)
+		if (Input.touchCount > 0 && !clicking && !IsPointerOverCollider)
 		{
 			ChangeSelectedObject(null);
-			
+			Camera.main.GetComponent<FollowPlayer>().EnableFollow();
 		}
 	}
 

@@ -173,19 +173,19 @@ public class QuestManager : MonoBehaviour
 		switch (parameter)
 		{
 			case PlayerAction.ActionParams.timeNeeded:
-				a.editableTimeNeeded += delta;
+				a.EditableTimeNeeded += delta;
 				break;
 			case PlayerAction.ActionParams.energyGiven:
-				a.editableEnergyGiven += delta;
+				a.EditableEnergyGiven += delta;
 				break;
 			case PlayerAction.ActionParams.materialsGiven:
-				a.editableMaterialsGiven += delta;
+				a.EditableMaterialsGiven += delta;
 				break;
 			case PlayerAction.ActionParams.pointsGiven:
-				a.editablePointsGiven += delta;
+				a.EditablePointsGiven += delta;
 				break;
 			case PlayerAction.ActionParams.timeBeforeRedo:
-				a.editableTimeBeforeRedo += delta;
+				a.EditableTimeBeforeRedo += delta;
 				break;
 		}
 	}

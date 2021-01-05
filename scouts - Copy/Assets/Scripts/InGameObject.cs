@@ -156,26 +156,26 @@ public abstract class InGameObject : MonoBehaviour
 	void CalculatePriceOrPrize(ActionButton b)
 	{
 		string s;
-		if (b.generalAction.editableMaterialsGiven > 0 || b.generalAction.editableEnergyGiven > 0 || b.generalAction.editablePointsGiven > 0)
+		if (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0)
 			s = "+";
 		else
 			s = "-";
-		if (b.generalAction.editableMaterialsGiven >= b.generalAction.editableEnergyGiven && b.generalAction.editableMaterialsGiven >= b.generalAction.editableEnergyGiven)
+		if (b.generalAction.EditableMaterialsGiven >= b.generalAction.EditableEnergyGiven && b.generalAction.EditableMaterialsGiven >= b.generalAction.EditableEnergyGiven)
 		{
-			s += b.generalAction.editableMaterialsGiven.ToString();
+			s += b.generalAction.EditableMaterialsGiven.ToString();
 			b.priceOrPrizeType = Counter.Materiali;
 		}
-		if (b.generalAction.editableEnergyGiven >= b.generalAction.editableMaterialsGiven && b.generalAction.editableEnergyGiven >= b.generalAction.editablePointsGiven)
+		if (b.generalAction.EditableEnergyGiven >= b.generalAction.EditableMaterialsGiven && b.generalAction.EditableEnergyGiven >= b.generalAction.EditablePointsGiven)
 		{
-			s += b.generalAction.editableEnergyGiven.ToString();
+			s += b.generalAction.EditableEnergyGiven.ToString();
 			b.priceOrPrizeType = Counter.Energia;
 		}
-		if (b.generalAction.editablePointsGiven >= b.generalAction.editableEnergyGiven && b.generalAction.editablePointsGiven >= b.generalAction.editableMaterialsGiven)
+		if (b.generalAction.EditablePointsGiven >= b.generalAction.EditableEnergyGiven && b.generalAction.EditablePointsGiven >= b.generalAction.EditableMaterialsGiven)
 		{
-			s += b.generalAction.editablePointsGiven.ToString();
+			s += b.generalAction.EditablePointsGiven.ToString();
 			b.priceOrPrizeType = Counter.Punti;
 		}
-		if (b.generalAction.editableMaterialsGiven == 0 && b.generalAction.editablePointsGiven == 0 && b.generalAction.editablePointsGiven == 0)
+		if (b.generalAction.EditableMaterialsGiven == 0 && b.generalAction.EditablePointsGiven == 0 && b.generalAction.EditablePointsGiven == 0)
 		{
 			s = "";
 			b.priceOrPrizeType = Counter.None;
@@ -378,7 +378,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(true);
 		b.isWaiting = true;
-		b.timeLeft = b.generalAction.editableTimeBeforeRedo;
+		b.timeLeft = b.generalAction.EditableTimeBeforeRedo;
 		b.isWaiting = true;
 	}
 

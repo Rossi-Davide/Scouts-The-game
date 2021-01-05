@@ -162,8 +162,8 @@ public class Shop : MonoBehaviour
 			return;
 		}
 
-		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].priceCounter, -((ObjectBase)selected).shopInfos[index].price);
-		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].rewardCounter, ((ObjectBase)selected).shopInfos[index].reward);
+		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].priceCounter, -((ObjectBase)selected).shopInfos[index].Price);
+		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].rewardCounter, ((ObjectBase)selected).shopInfos[index].Reward);
 
 		if (((ObjectBase)selected).usingAmount)
 			((ObjectBase)selected).currentAmount++;
@@ -186,6 +186,7 @@ public class Shop : MonoBehaviour
 			ToggleShop();
 			//cose
 			modificaAngolo.instance.firstIteraction = true;
+			SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
 			modificaAngolo.instance.objectBought = ((ObjectBase)selected).name;
 			ModificaBaseTrigger.instance.SetBuildingSlotInfo((PlayerBuilding)selected);
 			GameManager.instance.Built(((ObjectBase)selected));
@@ -221,7 +222,7 @@ public class Shop : MonoBehaviour
 			index = o.level;
 
 		pt = o.shopInfos[index].priceCounter;
-		pc = o.shopInfos[index].price;
+		pc = o.shopInfos[index].Price;
 		var itNeeded = (o.exists && o.itemsNeededs.Length > o.level + 1) || (!o.exists && o.itemsNeededs.Length > o.level) ? o.itemsNeededs[index] : null;
 
 		hasItems = GameManager.HasItemsToBuy(o);

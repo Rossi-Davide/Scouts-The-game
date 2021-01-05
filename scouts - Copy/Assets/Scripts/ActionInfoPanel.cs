@@ -31,12 +31,12 @@ public class ActionInfoPanel : MonoBehaviour
 		{
 			panel.transform.Find("Title").GetComponent<TextMeshProUGUI>().text = selectedAction.name;
 			panel.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = selectedAction.description;
-			panel.transform.Find("Tempo").GetComponent<TextMeshProUGUI>().text = "Durata: " + GameManager.IntToMinuteSeconds(selectedAction.editableTimeNeeded);
-			panel.transform.Find("Attesa").GetComponent<TextMeshProUGUI>().text = "Tempo di attesa: " + GameManager.IntToMinuteSeconds(selectedAction.editableTimeBeforeRedo);
+			panel.transform.Find("Tempo").GetComponent<TextMeshProUGUI>().text = "Durata: " + GameManager.IntToMinuteSeconds(selectedAction.EditableTimeNeeded);
+			panel.transform.Find("Attesa").GetComponent<TextMeshProUGUI>().text = "Tempo di attesa: " + GameManager.IntToMinuteSeconds(selectedAction.EditableTimeBeforeRedo);
 			var neededItems = panel.transform.Find("ItemRichiesti").GetComponent<TextMeshProUGUI>();
-			panel.transform.Find("Counters/Materiali/Value").GetComponent<TextMeshProUGUI>().text = selectedAction.editableMaterialsGiven > 0 ? "+" + selectedAction.editableMaterialsGiven : selectedAction.editableMaterialsGiven.ToString();
-			panel.transform.Find("Counters/Energia/Value").GetComponent<TextMeshProUGUI>().text = selectedAction.editableEnergyGiven > 0 ? "+" + selectedAction.editableEnergyGiven : selectedAction.editableEnergyGiven.ToString();
-			panel.transform.Find("Counters/Punti/Value").GetComponent<TextMeshProUGUI>().text = selectedAction.editablePointsGiven > 0 ? "+" + selectedAction.editablePointsGiven : selectedAction.editablePointsGiven.ToString();
+			panel.transform.Find("Counters/Materiali/Value").GetComponent<TextMeshProUGUI>().text = selectedAction.EditableMaterialsGiven > 0 ? "+" + selectedAction.EditableMaterialsGiven : selectedAction.EditableMaterialsGiven.ToString();
+			panel.transform.Find("Counters/Energia/Value").GetComponent<TextMeshProUGUI>().text = selectedAction.EditableEnergyGiven > 0 ? "+" + selectedAction.EditableEnergyGiven : selectedAction.EditableEnergyGiven.ToString();
+			panel.transform.Find("Counters/Punti/Value").GetComponent<TextMeshProUGUI>().text = selectedAction.EditablePointsGiven > 0 ? "+" + selectedAction.EditablePointsGiven : selectedAction.EditablePointsGiven.ToString();
 
 			neededItems.text = "Item richiesti: ";
 			if (selectedAction.neededItems.Length == 0)

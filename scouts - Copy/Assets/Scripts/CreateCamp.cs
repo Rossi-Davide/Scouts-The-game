@@ -81,8 +81,8 @@ public class CreateCamp : MonoBehaviour
 		exSqs.text = "Squadriglie: ";
 		exGender.text = "Genere: " + camp.settings.gender;
 		exHair.text = "Aspetto: " + camp.settings.hair;
-		exDifficulty.text = "Difficoltà: " + camp.settings.difficulty;
-		exDuration.text = $"Durata: {camp.settings.duration} ({((int)camp.settings.duration + 1) * 20}min)";
+		exDifficulty.text = "Difficoltà: " + campManager.possibleDifficulties[camp.settings.difficultyIndex].name;
+		exDuration.text = $"Durata: {campManager.possibleDurations[camp.settings.durationIndex].name} ({campManager.possibleDurations[camp.settings.durationIndex].totalDays * GameManager.minuteDuration * 24}min)";
 
 		for (int s = 0; s < femaleSqs.Length; s++)
 		{
@@ -102,7 +102,7 @@ public class CreateCamp : MonoBehaviour
 		playerSq.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = RefreshPlayerSq();
 		gender.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.gender.ToString();
 		hair.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.hair.ToString();
-		difficulty.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.difficulty.ToString();
+		difficulty.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleDifficulties[camp.settings.difficultyIndex].name;
 		//advanced settings
 		for (int sq = 0; sq < femaleSqs.Length; sq++)
 		{
@@ -112,7 +112,7 @@ public class CreateCamp : MonoBehaviour
 		{
 			maleSqs[sq].transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleMaleSqs[camp.settings.maleSqs[sq]].name;
 		}
-		duration.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.duration.ToString() + $" ({ ((int)camp.settings.duration + 1) * 20}min)";
+		duration.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleDurations[camp.settings.durationIndex].name + $" ({campManager.possibleDurations[camp.settings.durationIndex].totalDays * GameManager.minuteDuration * 24}min)";
 	}
 
 
@@ -173,12 +173,12 @@ public class CreateCamp : MonoBehaviour
 	}
 	public void SwitchDifficulty()
 	{
-		camp.settings.difficulty = (Difficulty)NextInArray((int)camp.settings.difficulty, Enum.GetNames(typeof(Difficulty)).Length);
+		camp.settings.difficultyIndex = NextInArray(camp.settings.difficultyIndex, campManager.possibleDifficulties.Length);
 		RefreshUI();
 	}
 	public void SwitchDuration()
 	{
-		camp.settings.duration = (Duration)NextInArray((int)camp.settings.duration, Enum.GetNames(typeof(Duration)).Length);
+		camp.settings.durationIndex = NextInArray(camp.settings.durationIndex, campManager.possibleDurations.Length);
 		RefreshUI();
 	}
 	public void SwitchHair()

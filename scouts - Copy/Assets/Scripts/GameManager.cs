@@ -389,7 +389,8 @@ public class GameManager : MonoBehaviour
 
 	#endregion
 	#region DayNightCycle & Rain
-	const float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
+	[HideInInspector][System.NonSerialized]
+	public const float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
 	[HideInInspector]
 	[System.NonSerialized]
 	public int currentMinute, currentHour, currentDay;

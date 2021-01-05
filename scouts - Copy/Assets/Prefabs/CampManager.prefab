@@ -57,6 +57,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5643c46ee1ea73b408f23ad80f964720, type: 2}
   - {fileID: 11400000, guid: 8133e59fe5a79bc48bb47811526c30dd, type: 2}
   - {fileID: 11400000, guid: 64fba83b946927d40a5794ba53e19e31, type: 2}
+  possibleDifficulties:
+  - {fileID: 11400000, guid: 02f4f43863dcd514bb9de23a49c69f5d, type: 2}
+  - {fileID: 11400000, guid: 289187f30c012a049ab87eb978f57737, type: 2}
+  - {fileID: 11400000, guid: d80ca6d6a4205604db8d3f88cdaa2c16, type: 2}
+  possibleDurations:
+  - {fileID: 11400000, guid: 30d3295ceaeca3040a5502ef173e57b8, type: 2}
+  - {fileID: 11400000, guid: 14edf9a2b87ceee4c94657a5c51c2e2c, type: 2}
+  - {fileID: 11400000, guid: eeba5723a4b1bb74f95143d635c15460, type: 2}
 --- !u!114 &5744616749825697554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,5 +101,6 @@ MonoBehaviour:
   shopFileName: Shop
   gameManagerFileName: GameManager
   impostazioniFileName: Impostazioni
+  modificaAngoloFileName: ModificaAngolo
   iterateMultipleObjsFileName: IterateMultipleObjs
   playerBuildingBaseFileName: PlayerBuildingBase

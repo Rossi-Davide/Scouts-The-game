@@ -177,7 +177,7 @@ public class TimeAction
 		this.action = action;
 		this.building = building;
 		this.buttonNum = buttonNum;
-		totalTime = this.action.editableTimeNeeded;
+		totalTime = this.action.EditableTimeNeeded;
 		loadingBar = bar;
 		this.OnEnd = OnEnd;
 	}

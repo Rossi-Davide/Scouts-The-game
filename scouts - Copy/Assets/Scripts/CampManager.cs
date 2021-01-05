@@ -22,12 +22,14 @@ public class CampManager : MonoBehaviour
 	[Header("Information")]
 	public Squadriglia[] possibleFemaleSqs;
 	public Squadriglia[] possibleMaleSqs;
+	public Difficulty[] possibleDifficulties;
+	public Duration[] possibleDurations;
 
 
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector] [NonSerialized]
 	public Camp camp;
 
-	[HideInInspector] [System.NonSerialized]
+	[HideInInspector] [NonSerialized]
 	public bool campCreated;
 
 	void Start()
@@ -48,8 +50,8 @@ public class CampManager : MonoBehaviour
 			playerSqIndex = 0,
 			hair = Hair.Castano,
 			gender = Gender.Maschio,
-			difficulty = Difficulty.Facile,
-			duration = Duration.Breve,
+			difficultyIndex = 0,
+			durationIndex = 0,
 			femaleSqs = new int[] { 0, 2, 4 },
 			maleSqs = new int[] { 1, 2, 3 },
 		};
@@ -125,8 +127,8 @@ public class CampSettings
 	public int[] maleSqs;
 	public Gender gender;
 	public Hair hair;
-	public Difficulty difficulty;
-	public Duration duration;
+	public int difficultyIndex;
+	public int durationIndex;
 
 	public CampSettings Clone()
 	{
@@ -149,7 +151,7 @@ public class CampSettings
 			femaleSqs = femaleSqsTemp,
 			gender = gender,
 			hair = hair,
-			difficulty = difficulty,
+			difficultyIndex = difficultyIndex,
 		};
 	}
 }
@@ -158,21 +160,8 @@ public enum Gender
 	Femmina,
 	Maschio,
 }
-public enum Difficulty
-{
-	Facile = 1,
-	Media = 2,
-	Difficile = 3,
-	Impossibile = 4,
-}
 public enum Hair
 {
 	Biondo,
 	Castano,
-}
-public enum Duration
-{
-	Breve = 3,
-	Media = 2,
-	Lunga = 1,
 }

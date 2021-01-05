@@ -33,7 +33,7 @@ public class ShopObjectBase : MonoBehaviour
 			index = obj.level;
 
 		pt = obj.shopInfos[index].priceCounter;
-		pc = obj.shopInfos[index].price;
+		pc = obj.shopInfos[index].Price;
 
 		bool hasItems = GameManager.HasItemsToBuy(obj);
 		buyButtonText.text = obj.usingLevel ? (obj.exists ? "Migliora" : "Costruisci") : "Compra";

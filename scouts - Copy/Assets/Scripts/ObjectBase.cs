@@ -80,9 +80,9 @@ public class ItemNeeded
 [System.Serializable]
 public class ShopInfo
 {
-    public int price;
+    public int Price { get { return Price * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].shopPricesFactor; } }
     public Counter priceCounter;
-    public int reward;
+    public int Reward { get { return Reward * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor; } }
     public Counter rewardCounter;
 }
 

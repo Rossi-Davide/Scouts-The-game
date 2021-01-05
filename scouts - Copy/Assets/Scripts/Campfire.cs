@@ -37,7 +37,7 @@ public class Campfire : InGameObject
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionHasEnoughMaterials: return buttons[0].generalAction.editableMaterialsGiven < 0 && GameManager.instance.GetCounterValue(Counter.Materiali) >= Mathf.Abs(buttons[0].generalAction.editableMaterialsGiven);
+			case ConditionType.ConditionHasEnoughMaterials: return buttons[0].generalAction.EditableMaterialsGiven < 0 && GameManager.instance.GetCounterValue(Counter.Materiali) >= Mathf.Abs(buttons[0].generalAction.EditableMaterialsGiven);
 			default: return base.GetConditionValue(t);
 		}
 	}

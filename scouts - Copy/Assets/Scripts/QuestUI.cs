@@ -40,7 +40,7 @@ public class QuestUI : MonoBehaviour
 		title.text = quest.name;
 		description.text = quest.description;
 		barValue.text = quest.timesDone + "/" + quest.timesToDo;
-		prizeValue.text = quest.prizeAmount.ToString();
+		prizeValue.text = quest.PrizeAmount.ToString();
 		bar.maxValue = quest.timesToDo;
 		bar.value = quest.timesDone;
 		energyLogo.SetActive(quest.prizeCounter == Counter.Energia);
