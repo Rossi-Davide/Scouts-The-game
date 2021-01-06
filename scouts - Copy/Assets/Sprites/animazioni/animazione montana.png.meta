@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: 709b4d30248f9df40a665203af2cd6f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4581604457716947412
+    second: animazione montana_0
+  - first:
+      213: -6882502731178804072
+    second: animazione montana_1
+  - first:
+      213: 7966585849644114858
+    second: animazione montana_2
+  - first:
+      213: 3132625751269595041
+    second: animazione montana_3
+  - first:
+      213: 7814063386464130664
+    second: animazione montana_4
+  - first:
+      213: 5096632872942697875
+    second: animazione montana_5
+  - first:
+      213: -1279893648057466595
+    second: animazione montana_6
+  - first:
+      213: 8197219447122979244
+    second: animazione montana_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animazione montana_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 1062
+        width: 375
+        height: 319
+      alignment: 9
+      pivot: {x: 0.5114127, y: 0.3121686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c266f64250fda60c0800000000000000
+      internalID: -4581604457716947412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_1
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1043
+        width: 369
+        height: 316
+      alignment: 9
+      pivot: {x: 0.48994905, y: 0.2887388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c7e662b307c70a0800000000000000
+      internalID: -6882502731178804072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_2
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1030
+        width: 370
+        height: 318
+      alignment: 9
+      pivot: {x: 0.49713135, y: 0.29977435}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3e0b81f9ffe8e60800000000000000
+      internalID: 7966585849644114858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_3
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1025
+        width: 369
+        height: 313
+      alignment: 9
+      pivot: {x: 0.49745902, y: 0.29325384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a75aaef582597b20800000000000000
+      internalID: 3132625751269595041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 593
+        width: 366
+        height: 316
+      alignment: 9
+      pivot: {x: 0.49001166, y: 0.30043823}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8669492df31217c60800000000000000
+      internalID: 7814063386464130664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_5
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 571
+        width: 367
+        height: 313
+      alignment: 9
+      pivot: {x: 0.48476866, y: 0.30100256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39df3564890eab640800000000000000
+      internalID: 5096632872942697875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_6
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 564
+        width: 366
+        height: 317
+      alignment: 9
+      pivot: {x: 0.4857778, y: 0.30295292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11814d1287ec3ee0800000000000000
+      internalID: -1279893648057466595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animazione montana_7
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 568
+        width: 368
+        height: 385
+      alignment: 9
+      pivot: {x: 0.48550415, y: 0.25869536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca960bb08af52c170800000000000000
+      internalID: 8197219447122979244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
