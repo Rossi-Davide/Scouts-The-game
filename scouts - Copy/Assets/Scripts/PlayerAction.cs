@@ -16,11 +16,17 @@ public class PlayerAction : ScriptableObject
     public int timeBeforeRedo;
 
     //[Header("Parameters (DONT MODIFY)")]
-    public int EditableTimeNeeded { get { return EditableTimeNeeded * CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].actionDurationFactor; } set { EditableTimeNeeded = value; } }
-    public int EditableEnergyGiven { get { return EditableEnergyGiven * (EditableEnergyGiven > 0 ? CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor : CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].actionPricesFactor); } set { EditableEnergyGiven = value; } }
-    public int EditableMaterialsGiven { get { return EditableMaterialsGiven * (EditableMaterialsGiven > 0 ? CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor : CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].actionPricesFactor); } set { EditableMaterialsGiven = value; } }
-    public int EditablePointsGiven { get { return EditablePointsGiven * (EditablePointsGiven > 0 ? CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor : CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].actionPricesFactor); } set { EditablePointsGiven = value; } }
-    public int EditableTimeBeforeRedo { get { return EditableTimeBeforeRedo * CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].actionWaitTimeFactor; } set { EditableTimeBeforeRedo = value; } }
+    //public int EditableTimeNeeded { get { return EditableTimeNeeded * CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].actionDurationFactor; } set { EditableTimeNeeded = value; } }
+    //public int EditableEnergyGiven { get { return EditableEnergyGiven * (EditableEnergyGiven > 0 ? CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor : CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].actionPricesFactor); } set { EditableEnergyGiven = value; } }
+    //public int EditableMaterialsGiven { get { return EditableMaterialsGiven * (EditableMaterialsGiven > 0 ? CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor : CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].actionPricesFactor); } set { EditableMaterialsGiven = value; } }
+    //public int EditablePointsGiven { get { return EditablePointsGiven * (EditablePointsGiven > 0 ? CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor : CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].actionPricesFactor); } set { EditablePointsGiven = value; } }
+    //public int EditableTimeBeforeRedo { get { return EditableTimeBeforeRedo * CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].actionWaitTimeFactor; } set { EditableTimeBeforeRedo = value; } }
+
+    public int EditableTimeNeeded;
+    public int EditableEnergyGiven;
+    public int EditableMaterialsGiven;
+    public int EditablePointsGiven;
+    public int EditableTimeBeforeRedo;
 
     public void ResetEditableInfo()
     {

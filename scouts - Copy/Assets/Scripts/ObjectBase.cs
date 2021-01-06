@@ -81,8 +81,10 @@ public class ItemNeeded
 public class ShopInfo
 {
     public int Price { get { return Price * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].shopPricesFactor; } }
+    //public int Price;
     public Counter priceCounter;
     public int Reward { get { return Reward * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor; } }
+    //public int Reward;
     public Counter rewardCounter;
 }
 

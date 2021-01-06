@@ -8,7 +8,8 @@ public class Quest : ScriptableObject
     [HideInInspector] [System.NonSerialized]
     public bool prizeTaken;
     public Counter prizeCounter;
-    public int PrizeAmount { get { return PrizeAmount * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor; } }
+	public int PrizeAmount { get { return PrizeAmount * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor; } set { PrizeAmount = value; } }
+	//public int PrizeAmount;
 	public PlayerAction action;
     public int timesToDo;
     public int timesDone;
