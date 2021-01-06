@@ -56,6 +56,60 @@ TextureImporter:
   - first:
       213: 2439784482973551043
     second: animazione stendipanni_17
+  - first:
+      213: 4674812747364866793
+    second: animazione stendipanni_0
+  - first:
+      213: 1722911676954126577
+    second: animazione stendipanni_1
+  - first:
+      213: 8640170332605113931
+    second: animazione stendipanni_2
+  - first:
+      213: 6482997553246955046
+    second: animazione stendipanni_3
+  - first:
+      213: 5468510539631003917
+    second: animazione stendipanni_4
+  - first:
+      213: 635768479552526481
+    second: animazione stendipanni_5
+  - first:
+      213: -1921276236556596681
+    second: animazione stendipanni_6
+  - first:
+      213: -8882447791325669440
+    second: animazione stendipanni_7
+  - first:
+      213: 1957184584681331333
+    second: animazione stendipanni_8
+  - first:
+      213: -7008771671424781044
+    second: animazione stendipanni_9
+  - first:
+      213: 1997385607719444584
+    second: animazione stendipanni_10
+  - first:
+      213: 4989808887427270207
+    second: animazione stendipanni_11
+  - first:
+      213: -8437355118997328178
+    second: animazione stendipanni_12
+  - first:
+      213: 1351691656159570918
+    second: animazione stendipanni_13
+  - first:
+      213: -4627614860578312758
+    second: animazione stendipanni_14
+  - first:
+      213: -8206652500749955668
+    second: animazione stendipanni_15
+  - first:
+      213: -2734914693032515471
+    second: animazione stendipanni_16
+  - first:
+      213: 4676377963334603352
+    second: animazione stendipanni_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,7 +153,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 450
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -177,78 +231,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animazione stendipanni_0
-      rect:
-        serializedVersion: 2
-        x: 714
-        y: 500
-        width: 6
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5eac4b16e77dc2a00800000000000000
-      internalID: 733197777159637733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazione stendipanni_1
-      rect:
-        serializedVersion: 2
-        x: 689
-        y: 416
-        width: 39
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b050e2b8ee7c35780800000000000000
-      internalID: -8695386628171102965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazione stendipanni_2
-      rect:
-        serializedVersion: 2
-        x: 733
-        y: 483
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c708131dff7d9f20800000000000000
-      internalID: 3431039216049981376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: animazione stendipanni_3
       rect:
         serializedVersion: 2
         x: 1611
         y: 219
-        width: 294
-        height: 277
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 308
+        height: 391
+      alignment: 9
+      pivot: {x: 0.5390463, y: 0.22667605}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,120 +252,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animazione stendipanni_4
-      rect:
-        serializedVersion: 2
-        x: 562
-        y: 448
-        width: 10
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5eec8c4a4e7ad900800000000000000
-      internalID: 710018748841258590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazione stendipanni_5
-      rect:
-        serializedVersion: 2
-        x: 637
-        y: 451
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ca8ce8058498ea30800000000000000
-      internalID: 4244805947897973444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazione stendipanni_6
-      rect:
-        serializedVersion: 2
-        x: 670
-        y: 456
-        width: 8
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d9809e279ffc6e10800000000000000
-      internalID: 2192408143408957909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazione stendipanni_7
-      rect:
-        serializedVersion: 2
-        x: 742
-        y: 462
-        width: 17
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a3fcc3ee1cd6e410800000000000000
-      internalID: 1506133150630998951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazione stendipanni_8
-      rect:
-        serializedVersion: 2
-        x: 1047
-        y: 405
-        width: 41
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7845b5c962bad5e40800000000000000
-      internalID: 5646857690112808071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: animazione stendipanni_9
       rect:
         serializedVersion: 2
         x: 106
         y: 195
-        width: 288
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 300
+        height: 385
+      alignment: 9
+      pivot: {x: 0.53384036, y: 0.23908968}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,36 +273,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animazione stendipanni_10
-      rect:
-        serializedVersion: 2
-        x: 463
-        y: 383
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 235d6a0bedca55dd0800000000000000
-      internalID: -2497900345860631246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: animazione stendipanni_11
       rect:
         serializedVersion: 2
         x: 478
         y: 205
-        width: 288
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 319
+        height: 390
+      alignment: 9
+      pivot: {x: 0.50270736, y: 0.23550378}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -434,10 +299,10 @@ TextureImporter:
         serializedVersion: 2
         x: 837
         y: 195
-        width: 288
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 308
+        height: 381
+      alignment: 9
+      pivot: {x: 0.5216924, y: 0.2385596}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -455,10 +320,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1242
         y: 195
-        width: 294
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 308
+        height: 401
+      alignment: 9
+      pivot: {x: 0.5433848, y: 0.2187535}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -479,7 +344,7 @@ TextureImporter:
         width: 16
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -500,7 +365,7 @@ TextureImporter:
         width: 15
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -521,7 +386,7 @@ TextureImporter:
         width: 17
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -542,7 +407,7 @@ TextureImporter:
         width: 15
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
