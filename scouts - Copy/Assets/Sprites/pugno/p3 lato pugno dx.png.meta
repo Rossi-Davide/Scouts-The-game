@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 143542ece690f7444be306e45ecf5982
+guid: 2a515b3c59f45d74c8efb299f47e3c37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6299078329117085309
-    second: animazioni refettorio lvl2_0
+      213: -4835006324103119564
+    second: p3 lato pugno dx_0
   - first:
-      213: -8494638193780718447
-    second: animazioni refettorio lvl2_1
-  - first:
-      213: 1566134224901325760
-    second: animazioni refettorio lvl2_2
-  - first:
-      213: -9008756693881174065
-    second: animazioni refettorio lvl2_3
+      213: -2697318880814345992
+    second: p3 lato pugno dx_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 700
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,85 +129,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animazioni refettorio lvl2_0
+      name: p3 lato pugno dx_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 182
-        width: 368
-        height: 299
-      alignment: 9
-      pivot: {x: 0.5178694, y: 0.2807939}
+        x: 216
+        y: 159
+        width: 148
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3817d9432ad2598a0800000000000000
-      internalID: -6299078329117085309
+      spriteID: 43df01d7d5b96ecb0800000000000000
+      internalID: -4835006324103119564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animazioni refettorio lvl2_1
+      name: p3 lato pugno dx_1
       rect:
         serializedVersion: 2
-        x: 477
-        y: 185
-        width: 368
-        height: 299
-      alignment: 9
-      pivot: {x: 0.5178694, y: 0.2807939}
+        x: 597
+        y: 153
+        width: 147
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1940c3cb19bfc1a80800000000000000
-      internalID: -8494638193780718447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazioni refettorio lvl2_2
-      rect:
-        serializedVersion: 2
-        x: 876
-        y: 185
-        width: 368
-        height: 299
-      alignment: 9
-      pivot: {x: 0.5178694, y: 0.2807939}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c343d1a7c60cb510800000000000000
-      internalID: 1566134224901325760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animazioni refettorio lvl2_3
-      rect:
-        serializedVersion: 2
-        x: 1298
-        y: 185
-        width: 368
-        height: 299
-      alignment: 9
-      pivot: {x: 0.5178694, y: 0.2807939}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc74a4174877af280800000000000000
-      internalID: -9008756693881174065
+      spriteID: 8f05b17d4c2319ad0800000000000000
+      internalID: -2697318880814345992
       vertices: []
       indices: 
       edges: []

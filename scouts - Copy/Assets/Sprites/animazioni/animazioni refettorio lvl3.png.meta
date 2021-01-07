@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 975803211887649610
     second: animazioni refettorio lvl3_3
+  - first:
+      213: -7748789725009603227
+    second: animazioni refettorio lvl3_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,12 +141,12 @@ TextureImporter:
       name: animazioni refettorio lvl3_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 170
-        width: 323
-        height: 349
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 122
+        width: 449
+        height: 439
+      alignment: 9
+      pivot: {x: 0.4590911, y: 0.2863508}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,12 +162,12 @@ TextureImporter:
       name: animazioni refettorio lvl3_1
       rect:
         serializedVersion: 2
-        x: 485
-        y: 167
-        width: 323
-        height: 349
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 411
+        y: 118
+        width: 457
+        height: 443
+      alignment: 9
+      pivot: {x: 0.4590911, y: 0.2863508}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,7 +188,7 @@ TextureImporter:
         width: 323
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,7 +209,7 @@ TextureImporter:
         width: 323
         height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

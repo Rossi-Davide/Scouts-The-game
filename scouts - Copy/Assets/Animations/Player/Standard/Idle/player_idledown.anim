@@ -193,7 +193,7 @@ AnimationClip:
     - time: 0
       value: {fileID: -1034015550478735609, guid: 3d9ba857db568a94989e1f292d51aaec,
         type: 3}
-    - time: 1.4166666
+    - time: 3.1666667
       value: {fileID: 8524028040970213956, guid: 3d9ba857db568a94989e1f292d51aaec,
         type: 3}
     attribute: m_Sprite
