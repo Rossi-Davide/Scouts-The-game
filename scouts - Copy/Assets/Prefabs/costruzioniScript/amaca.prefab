@@ -281,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Amaca
   objectSubName: 
+  animationPrefix: Amaca
   buttons:
   - buttonText: Dormi
     color: 2

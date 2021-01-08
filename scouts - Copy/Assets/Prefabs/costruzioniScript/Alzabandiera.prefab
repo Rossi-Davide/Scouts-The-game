@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Alzabandiera
   objectSubName: 
+  animationPrefix: Alzabandiera
   buttons:
   - buttonText: Fai l'alzabandiera
     color: 5

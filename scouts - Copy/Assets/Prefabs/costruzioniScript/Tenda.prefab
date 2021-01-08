@@ -121,8 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a50caeef19c19499186379196694a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Tenda
   objectSubName: 
+  animationPrefix: Tenda
   buttons:
   - buttonText: Dormi
     color: 2

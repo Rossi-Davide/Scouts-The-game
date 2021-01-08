@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Montana
   objectSubName: 
+  animationPrefix: Montana
   buttons:
   - buttonText: Discotenda
     color: 3

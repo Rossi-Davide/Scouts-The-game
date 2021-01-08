@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Fuoco da Campo
   objectSubName: 
+  animationPrefix: Campfire
   buttons:
   - buttonText: Fai legna
     color: 2

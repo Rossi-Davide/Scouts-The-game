@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Latrina
   objectSubName: 
+  animationPrefix: Latrina
   buttons:
   - buttonText: Pulisci
     color: 5

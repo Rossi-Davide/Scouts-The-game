@@ -9,6 +9,7 @@ public abstract class InGameObject : MonoBehaviour
 {
 	public string objectName;
 	public string objectSubName; //the subtitle which appears on screen
+	public string animationPrefix;
 	protected TextMeshProUGUI buttonsText;
 	public ActionButton[] buttons;
 	public float maxDistanceFromPlayer;
@@ -40,40 +41,41 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected Animator animator;
 	public BuildingState[] states;
+
+	#region Animations
 	protected void ChangeAnimations()
 	{
-		int max = -1;
+		BuildingState selectedState = new BuildingState();
 		string animation = "";
-		animation += GetAnimationByLevel();
 		foreach (var b in buttons)
 		{
-			if (b.generalAction.state != null && b.generalAction.state.priority > max && b.generalAction.state.active)
+			if (b.generalAction.state != null && b.generalAction.state.priority > selectedState.priority && b.generalAction.state.active)
 			{
-				max = b.generalAction.state.priority;
-				if (b.generalAction.state.variesWithLevel)
-					animation += b.generalAction.state.animationSubstring;
-				else
-					animation = b.generalAction.state.animationSubstring;
+				selectedState = b.generalAction.state;
+				animation += b.generalAction.state.animationSubstring;
 			}
 		}
-		foreach (var s in states)
-		{
-			if (s.priority > max && s.active)
-			{
-				max = s.priority;
-				if (s.variesWithLevel)
-					animation += s.animationSubstring;
-				else
-					animation = s.animationSubstring;
-			}
-		}
-		animator.Play(objectName + animation);
+		//foreach (var s in states)
+		//{
+		//	if (s.priority > max && s.active)
+		//	{
+		//		max = s.priority;
+		//		if (s.variesWithLevel)
+		//			animation += s.animationSubstring;
+		//		else
+		//			animation = s.animationSubstring;
+		//	}
+		//}
+		
+		animation = GetAnimationByLevel() + animation;
+		animator.Play(animationPrefix + animation);
 	}
 
 	protected virtual string GetAnimationByLevel()
 	{
 		return "";
 	}
+	#endregion
 
 	protected virtual void Start()
 	{

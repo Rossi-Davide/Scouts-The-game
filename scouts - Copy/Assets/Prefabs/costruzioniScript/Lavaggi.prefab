@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Lavaggi
   objectSubName: 
+  animationPrefix: Lavaggi
   buttons:
   - buttonText: Lava i panni
     color: 2

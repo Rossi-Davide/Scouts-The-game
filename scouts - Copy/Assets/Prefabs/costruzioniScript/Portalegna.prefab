@@ -121,8 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379d389a894594a4a8ccd21188b54d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: PortaLegna
+  objectName: Portalegna
   objectSubName: 
+  animationPrefix: PortaLegna
   buttons:
   - buttonText: Imbraga
     color: 3

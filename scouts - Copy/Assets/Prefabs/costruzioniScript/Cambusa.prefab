@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Cambusa
   objectSubName: 
+  animationPrefix: Cambusa
   buttons:
   - buttonText: Attacco alla cambusa
     color: 0

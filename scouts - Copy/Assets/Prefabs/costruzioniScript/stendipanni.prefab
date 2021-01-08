@@ -229,8 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5980e2e66493546b6a4f6dfdcc1f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Stendipanni
   objectSubName: 
+  animationPrefix: Stendipanni
   buttons:
   - buttonText: Stendi i panni
     color: 2

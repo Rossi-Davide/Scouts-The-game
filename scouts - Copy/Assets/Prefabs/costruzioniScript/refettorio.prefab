@@ -228,8 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47931d7b5af819f498f9b9202e9f3945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Refettorio
   objectSubName: 
+  animationPrefix: Refettorio
   buttons:
   - buttonText: Mangia
     color: 0
