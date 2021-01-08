@@ -52,22 +52,17 @@ public abstract class InGameObject : MonoBehaviour
 			if (b.generalAction.state != null && b.generalAction.state.priority > selectedState.priority && b.generalAction.state.active)
 			{
 				selectedState = b.generalAction.state;
-				animation += b.generalAction.state.animationSubstring;
 			}
 		}
-		//foreach (var s in states)
-		//{
-		//	if (s.priority > max && s.active)
-		//	{
-		//		max = s.priority;
-		//		if (s.variesWithLevel)
-		//			animation += s.animationSubstring;
-		//		else
-		//			animation = s.animationSubstring;
-		//	}
-		//}
-		
-		animation = GetAnimationByLevel() + animation;
+		foreach (var s in states)
+		{
+			if (s.priority > selectedState.priority && s.active) //each state has to be set active manually via script
+			{
+				selectedState = s;
+			}
+		}
+		if (selectedState.variesWithLevel)
+			animation = GetAnimationByLevel() + animation;
 		animator.Play(animationPrefix + animation);
 	}
 
