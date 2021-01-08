@@ -40,6 +40,7 @@ public class controlAnimRefettorio : MonoBehaviour
             gameObject.GetComponent<Animator>().enabled = false;
             foreach(Transform t in gameObject.transform)
             {
+
                 t.gameObject.SetActive(false);
             }
 

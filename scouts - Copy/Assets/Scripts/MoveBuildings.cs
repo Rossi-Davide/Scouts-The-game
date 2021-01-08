@@ -58,7 +58,7 @@ public class MoveBuildings : MonoBehaviour
         {
 			oggetto = "tenda";
         }
-		Debug.Log(oggetto);
+		//Debug.Log(oggetto);
 		GameObject posAngoloPlayer = SquadrigliaManager.instance.GetPlayerSq().angolo.gameObject;
 
 		Vector2 posV2;

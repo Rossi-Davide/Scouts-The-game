@@ -186,9 +186,8 @@ public class Shop : MonoBehaviour
 			ToggleShop();
 			modificaAngolo.instance.firstIteraction = true;
 			ModificaBaseTrigger.instance.execTransition = true;
-			
 			//da rifare
-			SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
+			//SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
 			ModificaBaseTrigger.instance.ToggleButtonComponent(false);
 			modificaAngolo.instance.objectBought = ((ObjectBase)selected).name;
 

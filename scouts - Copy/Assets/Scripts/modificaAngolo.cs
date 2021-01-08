@@ -25,11 +25,12 @@ public class modificaAngolo : MonoBehaviour
 	[HideInInspector] [System.NonSerialized]
 	public bool firstIteraction;
 	public string objectBought;
+	public GameObject spawnPoints;
+
 	void Start()
 	{
 		cam = Camera.main;
-		firstIteraction = false;
-		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.modificaAngoloFileName, false));
+		//SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.modificaAngoloFileName, false));
 	}
 
 	void Update()
@@ -75,7 +76,9 @@ public class modificaAngolo : MonoBehaviour
 						posizioneIniziale = slot.buildingParent.GetComponent<MoveBuildings>().SearchForPos(objectBought);
 						Debug.Log(posizioneIniziale);
 						firstIteraction = false;
-						SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
+						//SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
+						//Debug.Log("called modifica angolo");
+						spawnPoints.SetActive(false);
 					}
 				}
 				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)

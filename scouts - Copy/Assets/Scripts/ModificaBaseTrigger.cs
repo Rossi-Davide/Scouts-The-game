@@ -14,6 +14,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	public Joystick joy;
 	public bool execTransition=false;
 	public string objectBought;
+	Vector3 exPos;
 	#region Singleton
 	public static ModificaBaseTrigger instance;
 	private void Awake()
@@ -87,6 +88,18 @@ public class ModificaBaseTrigger : MonoBehaviour
 					Vector3 startPos = modificaAngolo.instance.posizioneIniziale;
 					m.OnEndDragging(startPos);
 				}					
+            }
+			Player.instance.transform.position = exPos;
+			modificaAngolo.instance.spawnPoints.SetActive(true);
+        }
+        else
+        {
+			exPos = Player.instance.transform.position;
+			Player.instance.transform.position = new Vector3(0,0,0);
+
+            if (!modificaAngolo.instance.firstIteraction)
+            {
+				modificaAngolo.instance.spawnPoints.SetActive(false);
             }
         }
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
