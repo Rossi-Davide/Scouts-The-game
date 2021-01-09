@@ -45,25 +45,31 @@ public abstract class InGameObject : MonoBehaviour
 	#region Animations
 	protected void ChangeAnimations()
 	{
-		BuildingState selectedState = new BuildingState();
-		string animation = "";
+		var maxPriority = -1;
+		bool variesWithLevel = true;
+		var animation = "";
 		foreach (var b in buttons)
 		{
-			if (b.generalAction.state != null && b.generalAction.state.priority > selectedState.priority && b.generalAction.state.active)
+			if (b.generalAction.state != null && b.generalAction.state.priority > maxPriority && b.generalAction.state.active)
 			{
-				selectedState = b.generalAction.state;
+				maxPriority = b.generalAction.state.priority;
+				animation = b.generalAction.state.animationSubstring;
+				variesWithLevel = b.generalAction.state.variesWithLevel;
 			}
 		}
 		foreach (var s in states)
 		{
-			if (s.priority > selectedState.priority && s.active) //each state has to be set active manually via script
+			if (s.priority > maxPriority && s.active) //each state has to be set active manually via script
 			{
-				selectedState = s;
+				maxPriority = s.priority;
+				animation = s.animationSubstring;
+				variesWithLevel = s.variesWithLevel;
 			}
 		}
-		if (selectedState.variesWithLevel)
+		if (variesWithLevel)
 			animation = GetAnimationByLevel() + animation;
 		animator.Play(animationPrefix + animation);
+		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
 	}
 
 	protected virtual string GetAnimationByLevel()
@@ -89,8 +95,8 @@ public abstract class InGameObject : MonoBehaviour
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		clickListener.onClick.AddListener(OnClick);
-
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
+
 		if (manageAnimationsAutomatically)
 			InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
 

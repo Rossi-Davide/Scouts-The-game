@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSubstring: Spento
   variesWithLevel: 0
-  priority: 75
-  active: 0
+  priority: 0
+  active: 1

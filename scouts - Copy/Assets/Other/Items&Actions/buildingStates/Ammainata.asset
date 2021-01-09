@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSubstring: Ammainata
   variesWithLevel: 0
-  priority: 50
-  active: 0
+  priority: 0
+  active: 1

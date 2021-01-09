@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSubstring: Fuoco
   variesWithLevel: 0
-  priority: 50
+  priority: 10
   active: 0

@@ -130,7 +130,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 			}
 		}
 		modificaAngolo.instance.enabled = isModifying;
-		cam.GetComponent<FollowPlayer>().SetTarget(isModifying ? angolo : player);
+		cam.GetComponent<FollowPlayer>().SetTarget(isModifying ? angolo : player, isModifying ? 4f : 0);
 		cam.GetComponent<PanZoom>().canDo = !isModifying;
 		cam.GetComponent<FollowPlayer>().EnableFollow();
 		if (ActionButtons.instance.selected != null)

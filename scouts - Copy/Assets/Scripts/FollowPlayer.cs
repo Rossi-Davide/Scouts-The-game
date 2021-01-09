@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
 	public GameObject goToTargetButton;
 	public Vector3 camOffset;
 	public float camSpeed, zoomSpeed, roundSize;
-	float standardZoom = 3.6f;
+	float standardZoom = 3.6f, zoomDelta = 0;
 
 	public Transform target;
 	bool isFollowing;
@@ -18,7 +18,7 @@ public class FollowPlayer : MonoBehaviour
 	}
 	private void Start()
 	{
-		SetTarget(pl);
+		SetTarget(pl, 0);
 	}
 	void FixedUpdate()
     {
@@ -29,9 +29,9 @@ public class FollowPlayer : MonoBehaviour
 	public void GoToTarget()
 	{
 		transform.position = Vector3.Lerp(transform.position, target.position + camOffset, camSpeed * Time.deltaTime);
-		if (Camera.main.orthographicSize > standardZoom + roundSize)
+		if (Camera.main.orthographicSize > standardZoom + zoomDelta + roundSize)
 			Camera.main.orthographicSize -= zoomSpeed * Time.deltaTime;
-		else if (Camera.main.orthographicSize < standardZoom - roundSize)
+		else if (Camera.main.orthographicSize < standardZoom + zoomDelta - roundSize)
 			Camera.main.orthographicSize += zoomSpeed * Time.deltaTime;
 	}
 	public void EnableFollow()
@@ -48,8 +48,9 @@ public class FollowPlayer : MonoBehaviour
 		goToTargetButton.SetActive(!isFollowing);
 	}
 
-	public void SetTarget(Transform t)
+	public void SetTarget(Transform t, float zoom)
 	{
 		target = t;
+		zoomDelta = zoom;
 	}
 }

@@ -137,8 +137,7 @@ MonoBehaviour:
   nameTextOffset: {x: -0.15, y: 1.4, z: 0}
   loadingBarOffset: {x: -0.1, y: 1, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
-  states:
-  - {fileID: 11400000, guid: 7bd5ed15095ef5948b7c3a00a4424968, type: 2}
+  states: []
 --- !u!95 &-8688225233702778496
 Animator:
   serializedVersion: 3

@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.plFileName, false));
-		animator.runtimeAnimatorController = controllers[(int)CampManager.instance.camp.settings.gender].controllers[(int)CampManager.instance.camp.settings.hair]; 
+		animator.runtimeAnimatorController = controllers[(int)CampManager.instance.camp.settings.gender].controllers[(int)CampManager.instance.camp.settings.hair];
 	}
 
 	[System.Serializable]
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 	{
 		return new Status
 		{
+			active = gameObject.activeSelf,
 			position = transform.position,
 		};
 	}
@@ -45,12 +46,14 @@ public class Player : MonoBehaviour
 	{
 		if (status != null)
 		{
+			gameObject.SetActive(status.active);
 			transform.position = status.position;
 		}
 	}
 	[System.Serializable]
 	public class Status
 	{
+		public bool active;
 		public Vector3 position;
 	}
 

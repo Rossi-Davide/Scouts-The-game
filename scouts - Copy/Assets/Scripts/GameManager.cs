@@ -393,7 +393,7 @@ public class GameManager : MonoBehaviour
 	public const float minuteDuration = 0.1f; //a minute actually lasts 0.1 seconds
 	[HideInInspector]
 	[System.NonSerialized]
-	public int currentMinute, currentHour, currentDay;
+	public int currentMinute, currentHour, currentDay, totalDays;
 	void IncreaseTime()
 	{
 		currentMinute++;
@@ -423,7 +423,7 @@ public class GameManager : MonoBehaviour
 
 	void CheckTimeConditions()
 	{
-		if (currentDay > 14)
+		if (currentDay > totalDays)
 		{
 			CampEnded();
 		}
@@ -554,6 +554,8 @@ public class GameManager : MonoBehaviour
 		isRaining = false;
 		rainingTimeLeft = 0;
 		rainingWaitTimeLeft = 80;
+		totalDays = CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].totalDays;
+		
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
 
