@@ -21,6 +21,8 @@ public class modificaAngolo : MonoBehaviour
 	}
 	#endregion
 	[HideInInspector] [System.NonSerialized]
+	public Rigidbody2D rb;
+	[HideInInspector] [System.NonSerialized]
 	public Transform oggetto;
 	[HideInInspector] [System.NonSerialized]
 	public bool firstIteraction;
@@ -83,10 +85,11 @@ public class modificaAngolo : MonoBehaviour
 				}
 				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
 				{
-					oggetto = hitInformation.collider.transform;
+					Debug.Log("moved");
+					rb = hitInformation.collider.attachedRigidbody;
 					Vector2 posizioneDito = touch.position;
 					Vector3 posizioneOggetto = cam.ScreenToWorldPoint(posizioneDito);
-					oggetto.position =new Vector3(posizioneOggetto.x,posizioneOggetto.y,0);
+					rb.position =new Vector3(posizioneOggetto.x,posizioneOggetto.y,0);
 					//oggetto.position = SnapToGrid(posizioneOggetto);
 				}
 				else if (touch.phase == TouchPhase.Ended)

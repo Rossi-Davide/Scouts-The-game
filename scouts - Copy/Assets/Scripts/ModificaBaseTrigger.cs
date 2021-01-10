@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ModificaBaseTrigger : MonoBehaviour
 {
@@ -91,8 +92,7 @@ public class ModificaBaseTrigger : MonoBehaviour
             }
 			Player.instance.transform.position = exPos;
 			modificaAngolo.instance.spawnPoints.SetActive(true);
-			BaseAI.instance.ReEnableMovementAnim();
-        }
+		}
         else
         {
 			exPos = Player.instance.transform.position;
@@ -108,7 +108,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 		joy.canUseJoystick = isModifying;
 		isModifying = !isModifying;
 		buildingSlot.gameObject.SetActive(isBuilding);
-		
+
 		if (!isBuilding && buildingSlot.buildingParent != null)
 		{
 			buildingSlot.buildingParent.GetComponent<MoveBuildings>().isBeingBuilt = false;
@@ -140,6 +140,14 @@ public class ModificaBaseTrigger : MonoBehaviour
 			ActionButtons.instance.selected.Deselect();
 		}
 		GetComponent<Animator>().Play(isModifying ? "SalvaEdEsci" : "Modifica");
+
+				
+		BaseAI[] aiControllers = FindObjectsOfType(typeof(BaseAI)) as BaseAI[];
+		
+		foreach(BaseAI a in aiControllers)
+        {
+			a.ReEnableMovementAnim();
+        }
 
 		//controlli per costruzione
 	}

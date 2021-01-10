@@ -21,8 +21,6 @@ public abstract class BaseAI : InGameObject
 	bool disable, stayUntil;
 	int keepTarget;
 
-	public static BaseAI instance;
-
 
 
 	protected override void Start()
