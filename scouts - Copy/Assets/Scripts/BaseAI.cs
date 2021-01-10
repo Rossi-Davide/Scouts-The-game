@@ -21,6 +21,10 @@ public abstract class BaseAI : InGameObject
 	bool disable, stayUntil;
 	int keepTarget;
 
+	public static BaseAI instance;
+
+
+
 	protected override void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -211,6 +215,12 @@ public abstract class BaseAI : InGameObject
 				disable = setInactive;
 			}
 		}
+	}
+
+
+	public void ReEnableMovementAnim()
+    {
+		animator.SetBool("move", true);
 	}
 
 }

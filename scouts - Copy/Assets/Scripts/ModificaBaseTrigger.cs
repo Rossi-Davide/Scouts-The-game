@@ -91,6 +91,7 @@ public class ModificaBaseTrigger : MonoBehaviour
             }
 			Player.instance.transform.position = exPos;
 			modificaAngolo.instance.spawnPoints.SetActive(true);
+			BaseAI.instance.ReEnableMovementAnim();
         }
         else
         {
@@ -102,6 +103,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 				modificaAngolo.instance.spawnPoints.SetActive(false);
             }
         }
+
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
 		joy.canUseJoystick = isModifying;
 		isModifying = !isModifying;
