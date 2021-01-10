@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
-  m_Name: Acqua
+  m_Name: AcquaLavaggi
   m_EditorClassIdentifier: 
   animationSubstring: Acqua
   variesWithLevel: 0
-  priority: 50
+  priority: 1
   active: 0
+  conditions: []

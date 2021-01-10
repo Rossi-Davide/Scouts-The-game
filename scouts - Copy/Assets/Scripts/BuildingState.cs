@@ -9,6 +9,9 @@ public class BuildingState : ScriptableObject
 	public bool active;
 	[HideInInspector] [System.NonSerialized]
 	public bool editableActive;
+
+	[Header("Only for indipendent states:")]
+	public Condition[] conditions;
 	public void ResetEditableInfo()
 	{
 		editableActive = active;

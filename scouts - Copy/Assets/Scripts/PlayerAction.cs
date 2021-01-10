@@ -41,6 +41,7 @@ public class PlayerAction : ScriptableObject
         EditableMaterialsGiven = materialsGiven;
         EditablePointsGiven = pointsGiven;
         EditableTimeNeeded = timeNeeded;
+        state.ResetEditableInfo();
     }
 
 

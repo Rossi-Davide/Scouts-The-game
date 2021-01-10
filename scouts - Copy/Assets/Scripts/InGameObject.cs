@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public abstract class InGameObject : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public abstract class InGameObject : MonoBehaviour
 		}
 		foreach (var s in states)
 		{
-			if (s.priority > maxPriority && s.active) //each state has to be set active manually via script
+			if (s.priority > maxPriority && s.active)
 			{
 				maxPriority = s.priority;
 				animation = s.animationSubstring;
@@ -70,6 +71,21 @@ public abstract class InGameObject : MonoBehaviour
 			animation = GetAnimationByLevel() + animation;
 		animator.Play(animationPrefix + animation);
 		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
+	}
+
+	protected void RefreshStates()
+	{
+		foreach (var s in states)
+		{
+			s.editableActive = FindNotVerified(s.conditions) == null;
+		}
+		foreach (var b in buttons)
+		{
+			if (b.generalAction.state != null)
+			{
+				b.generalAction.state.editableActive = ActionManager.instance.currentActions.Exists(el => el.action == b.generalAction && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == b.generalAction && el.building == this);
+			}
+		}
 	}
 
 	protected virtual string GetAnimationByLevel()
@@ -98,7 +114,10 @@ public abstract class InGameObject : MonoBehaviour
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
 
 		if (manageAnimationsAutomatically)
+		{
 			InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
+			InvokeRepeating(nameof(RefreshStates), .9f, .3f);
+		}
 
 		for (int b = 0; b < buttons.Length; b++)
 		{
@@ -107,6 +126,8 @@ public abstract class InGameObject : MonoBehaviour
 			buttons[b].obj = GameManager.instance.actionButtons[b];
 			buttons[b].canDo = true;
 		} //change price or prize string in buttons
+		foreach (var s in states)
+			s.ResetEditableInfo();
 
 
 		if (checkPositionEachFrame)
