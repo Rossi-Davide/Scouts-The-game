@@ -77,13 +77,13 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		foreach (var s in states)
 		{
-			s.editableActive = FindNotVerified(s.conditions) == null;
+			s.active = FindNotVerified(s.conditions) == null;
 		}
 		foreach (var b in buttons)
 		{
 			if (b.generalAction.state != null)
 			{
-				b.generalAction.state.editableActive = ActionManager.instance.currentActions.Exists(el => el.action == b.generalAction && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == b.generalAction && el.building == this);
+				b.generalAction.state.active = ActionManager.instance.currentActions.Exists(el => el.action == b.generalAction && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == b.generalAction && el.building == this);
 			}
 		}
 	}
@@ -126,8 +126,6 @@ public abstract class InGameObject : MonoBehaviour
 			buttons[b].obj = GameManager.instance.actionButtons[b];
 			buttons[b].canDo = true;
 		} //change price or prize string in buttons
-		foreach (var s in states)
-			s.ResetEditableInfo();
 
 
 		if (checkPositionEachFrame)
@@ -525,10 +523,6 @@ public class ActionButton
 		isWaiting = status.isWaiting;
 		timeLeft = status.timeLeft;
 		hasDonePreviousAction = status.hasDonePreviousAction;
-		if (generalAction.state != null)
-		{
-			generalAction.state.active = timeLeft > 0;
-		}
 	}
 }
 

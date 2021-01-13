@@ -36,6 +36,17 @@ public abstract class BaseAI : InGameObject
 		InvokeRepeating(nameof(UpdateSlowed), 0.05f, 0.05f);
 	}
 
+	public override void Select()
+	{
+		base.Select();
+		StartCoroutine(ForceTarget(Player.instance.transform.position, true, false));
+	}
+	public override void Deselect()
+	{
+		base.Deselect();
+		StartCoroutine(Unlock());
+	}
+
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
 
 	protected virtual void CreateNewPath(Vector3? priorityTarget)

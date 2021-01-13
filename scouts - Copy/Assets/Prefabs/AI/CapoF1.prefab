@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Capo
-  objectSubName: 
+  objectSubName: Bongia
+  animationPrefix: 
   buttons:
   - buttonText: Parla
     color: 2
@@ -114,6 +115,10 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 6925112430229956604, guid: 65ed6bdba6f23fa469e2d084e03a41af,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   priorityTargets: []
   dialoguesArray:
