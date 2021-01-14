@@ -607,6 +607,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 3027aba74fd3c5141b6d86f43805a389, type: 3}
   - {fileID: 32900000, guid: 57f1b8abaabaffc4fb5e55bc633716f5, type: 3}
   - {fileID: 32900000, guid: 192e8e50dde170a4fae7b7b984e7d106, type: 3}
+  - {fileID: 32900000, guid: ced7f50ec09da3b4d99b7b0fd8bf89f0, type: 3}
   photos:
   - {fileID: 21300000, guid: a930096231b0123428c4dce511f429d6, type: 3}
   - {fileID: 21300000, guid: 772979916fa83f84b9f2267352901206, type: 3}
@@ -1427,9 +1428,9 @@ RectTransform:
   m_Father: {fileID: 640517973}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -768.7, y: 320.7}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 34.1, y: -29.9}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086999458

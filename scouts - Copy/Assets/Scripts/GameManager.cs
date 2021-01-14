@@ -449,7 +449,7 @@ public class GameManager : MonoBehaviour
 
 	void ChangeLight()
 	{
-		if (globalLight.intensity <= .7f)
+		if (globalLight.intensity <= .8f)
 		{
 			mainSceneProf.TryGet<ColorCurves>(out night);
 			night.active = true;
@@ -460,7 +460,7 @@ public class GameManager : MonoBehaviour
 		if (!isDay)
 		{
 
-			if (globalLight.intensity > .6f)
+			if (globalLight.intensity > .65f)
 				globalLight.intensity -= .01f;
 		}
 		else if (isDay && globalLight.intensity < 1)

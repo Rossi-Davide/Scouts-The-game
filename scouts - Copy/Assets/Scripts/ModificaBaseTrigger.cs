@@ -16,6 +16,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	public bool execTransition = false;
 	public string objectBought;
 	Vector3 exPos;
+	public GameObject confiniAngoli;
 	#region Singleton
 	public static ModificaBaseTrigger instance;
 	private void Awake()
@@ -65,7 +66,20 @@ public class ModificaBaseTrigger : MonoBehaviour
     {
         if (execTransition)
         {
+			objectBought = objectBought.ToLower();
+
+			//cerca l'oggetto
+			/*GameObject obj;
+
+			foreach(GameObject g in Array)
+            {
+				if(nome uguale){
+					obj = g;
+                }
+            }
+
 			//attiva objectBought
+			obj.SetActive(true);*/
 			execTransition = !execTransition;
         }
     }
@@ -123,8 +137,9 @@ public class ModificaBaseTrigger : MonoBehaviour
             }
 			Player.instance.transform.position = exPos;
 			modificaAngolo.instance.spawnPoints.SetActive(true);
+			confiniAngoli.SetActive(false);
 		}
-        else
+		else
         {
 			exPos = Player.instance.transform.position;
 			Player.instance.transform.position = new Vector3(0,0,0);
@@ -133,6 +148,7 @@ public class ModificaBaseTrigger : MonoBehaviour
             {
 				modificaAngolo.instance.spawnPoints.SetActive(false);
             }
+			confiniAngoli.SetActive(true);
         }
 
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");

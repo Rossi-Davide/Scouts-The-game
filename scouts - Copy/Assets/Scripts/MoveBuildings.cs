@@ -3,7 +3,7 @@
 public class MoveBuildings : MonoBehaviour
 {
 	[HideInInspector] [System.NonSerialized]
-	public bool isTouching;
+	public bool isTouching,insideBorders;
 	[HideInInspector] [System.NonSerialized]
 	public bool componentEnabled, isBeingBuilt;
 	LayerMask punti;
@@ -15,6 +15,11 @@ public class MoveBuildings : MonoBehaviour
 			isTouching = true;
 			GameManager.instance.WarningOrMessage("Non puoi piazzare l'oggetto qui!", true);
 		}
+
+		if (collision.name == "con")
+		{
+			insideBorders = true;
+		}
 	}
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -23,6 +28,12 @@ public class MoveBuildings : MonoBehaviour
 		{
 			isTouching = false;
 			GameManager.instance.ClearWarningOrMessage();
+		}
+
+        if (collision.name == "con")
+        {
+			insideBorders = false;
+			GameManager.instance.WarningOrMessage("Sei fuori dai bordi dell'angolo", true);
 		}
 	}
 	public void ResetPos(Vector3 startPos)
@@ -38,7 +49,7 @@ public class MoveBuildings : MonoBehaviour
 	}
 	public void OnEndDragging(Vector3 startPos)
 	{
-		if (isTouching)
+		if (isTouching||!insideBorders)
 		{
 			ResetPos(startPos);
 		}

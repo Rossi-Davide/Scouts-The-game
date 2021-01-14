@@ -58,8 +58,9 @@ public class schermateTut : MonoBehaviour
                 photosOut.GetComponent<Image>().sprite = photos[3];
                 break;
             case 7:
-                photosOut.GetComponent<Image>().sprite = photos[4];
                 videoOut.SetActive(false);
+                photosOut.GetComponent<Image>().sprite = photos[4];
+                //photosOut.GetComponent<Image>().SetNativeSize();
                 photosOut.SetActive(true);
                 break;
             case 8:
@@ -68,10 +69,9 @@ public class schermateTut : MonoBehaviour
                 videoOut.SetActive(true);
                 break;
             case 9:
-                videoOut.SetActive(false);
-                photosOut.GetComponent<Image>().sprite = photos[5];
-                photosOut.GetComponent<Image>().SetNativeSize();
-                photosOut.SetActive(true);
+                photosOut.SetActive(false);
+                videoOut.SetActive(true);
+                player.clip = videi[6];
                 break;
             case 10:
                 photosOut.SetActive(false);

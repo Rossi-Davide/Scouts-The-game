@@ -49,7 +49,7 @@ public class Plant : InGameObject
 
 	void CheckColl()
     {
-		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 10f);
 		foreach (Collider2D c in coll)
 		{
 			if (c.name == "Player")
@@ -58,6 +58,16 @@ public class Plant : InGameObject
 				Destroy(clickListener.gameObject);
 				GameManager.instance.BuildingChanged();
 			}
+		}
+
+
+		Collider2D[] coll2 = Physics2D.OverlapCircleAll(transform.position, 1f);
+
+        if (coll2.Length > 0)
+        {
+			Destroy(gameObject);
+			Destroy(clickListener.gameObject);
+			GameManager.instance.BuildingChanged();
 		}
 	}
 }

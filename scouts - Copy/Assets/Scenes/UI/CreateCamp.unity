@@ -10017,6 +10017,22 @@ PrefabInstance:
       propertyPath: m_fontColorGradient.bottomRight.b
       value: 0.65881985
       objectReference: {fileID: 0}
+    - target: {fileID: 2084480969, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.57629
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084480969, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1213.5759
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084480969, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084480969, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 571.4893
+      objectReference: {fileID: 0}
     - target: {fileID: 2084480970, guid: d555875e1608c9c4093c98c9dbdf4102, type: 3}
       propertyPath: m_Color.r
       value: 0.34435597
