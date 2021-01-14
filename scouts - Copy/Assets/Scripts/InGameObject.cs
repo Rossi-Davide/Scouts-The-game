@@ -293,7 +293,7 @@ public abstract class InGameObject : MonoBehaviour
 				else
 				{
 					var onEnd = DoAction(b);
-					if (b.generalAction.state != null)
+					if (b.generalAction.state != null && !b.generalAction.state.playAtActionEnd)
 						b.generalAction.state.active = true;
 					GameManager.instance.ActionDone(b.generalAction);
 					ActuallyAddAction(n - 1, onEnd);

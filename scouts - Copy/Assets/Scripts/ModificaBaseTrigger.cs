@@ -13,7 +13,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 	Transform player;
 	public bool isModifying;
 	public Joystick joy;
-	public bool execTransition=false;
+	public bool execTransition = false;
 	public string objectBought;
 	Vector3 exPos;
 	#region Singleton
@@ -27,7 +27,30 @@ public class ModificaBaseTrigger : MonoBehaviour
 	#endregion
 
 
+	#region Status
+	public Status SendStatus()
+	{
+		return new Status
+		{
+			execTransition = execTransition,
+			objectBought = objectBought,
+		};
+	}
+	void SetStatus(Status status)
+	{
+		if (status != null)
+		{
+			objectBought = status.objectBought;
+			execTransition = status.execTransition;
+		}
+	}
+	public class Status
+	{
+		public string objectBought;
+		public bool execTransition;
+	}
 
+	#endregion
 
 	void Start()
 	{
@@ -35,6 +58,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 		StartCoroutine(GetSq());
 		player = Player.instance.transform;
 		CheckExecTransition();
+		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.modificaBaseTriggerFileName, false));
 	}
 
 	void CheckExecTransition()

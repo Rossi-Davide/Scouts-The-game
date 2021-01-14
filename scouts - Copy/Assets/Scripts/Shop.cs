@@ -67,6 +67,7 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(costruzioni, SpecificShopScreen.Costruzioni);
 		OrganizeObjects(decorazioni, SpecificShopScreen.Decorazioni);
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
+		OrganizeObjects(espressione, SpecificShopScreen.Espressione);
 
 		foreach (var i in itemDatabase)
 			i.ResetEditableInfo();

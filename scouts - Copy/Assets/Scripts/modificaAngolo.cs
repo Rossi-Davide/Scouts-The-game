@@ -32,7 +32,6 @@ public class modificaAngolo : MonoBehaviour
 	void Start()
 	{
 		cam = Camera.main;
-		//SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.modificaAngoloFileName, false));
 	}
 
 	void Update()
@@ -78,7 +77,7 @@ public class modificaAngolo : MonoBehaviour
 						posizioneIniziale = slot.buildingParent.GetComponent<MoveBuildings>().SearchForPos(objectBought);
 						Debug.Log(posizioneIniziale);
 						firstIteraction = false;
-						//SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.modificaAngoloFileName, false);
+						SaveSystem.instance.SaveData(ModificaBaseTrigger.instance.SendStatus(), SaveSystem.instance.modificaBaseTriggerFileName, false);
 						//Debug.Log("called modifica angolo");
 						spawnPoints.SetActive(false);
 					}
@@ -116,32 +115,6 @@ public class modificaAngolo : MonoBehaviour
 	//	float y = Mathf.Round(oggetto.position.y * reciprocalGrid) / reciprocalGrid;
 	//	return new Vector3(x, y, 0);
 	//}
-
-
-	#region Status
-	public Status SendStatus()
-	{
-		return new Status
-		{
-			firstInteraction = firstIteraction,
-			objectBought = objectBought,
-		};
-	}
-	void SetStatus(Status status)
-	{
-		if (status != null)
-		{
-			objectBought = status.objectBought;
-			firstIteraction = status.firstInteraction;
-		}
-	}
-	public class Status
-	{
-		public string objectBought;
-		public bool firstInteraction;
-	}
-
-	#endregion
 
 
 	void UpdateRayCast(Touch t)

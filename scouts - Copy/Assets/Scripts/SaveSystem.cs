@@ -81,7 +81,7 @@ public class SaveSystem : MonoBehaviour
 		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), plFileName, false); }
 		if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName, false); }
 		if (impostazioni.instance != null) { SaveData(impostazioni.instance.SendStatus(), impostazioniFileName, true); }
-		if (modificaAngolo.instance != null) { SaveData(modificaAngolo.instance.SendStatus(), modificaAngoloFileName, false); }
+		if (ModificaBaseTrigger.instance != null) { SaveData(ModificaBaseTrigger.instance.SendStatus(), modificaBaseTriggerFileName, false); }
 		OnReadyToSaveData?.Invoke();
 		Debug.Log("saved data");
 	}
@@ -99,7 +99,7 @@ public class SaveSystem : MonoBehaviour
 	public string shopFileName = "Shop";
 	public string gameManagerFileName = "GameManager";
 	public string impostazioniFileName = "Impostazioni";
-	public string modificaAngoloFileName = "ModificaAngolo";
+	public string modificaBaseTriggerFileName = "ModificaBaseTrigger";
 
 	public string iterateMultipleObjsFileName = "IterateMultipleObjs";
 	public string playerBuildingBaseFileName = "PlayerBuildingBase"; 
