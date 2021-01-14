@@ -81,13 +81,20 @@ public class ModificaBaseTrigger : MonoBehaviour
 	{
         if (isModifying)
         {
+			int oneJustMoved = 0;
 			//controlli per collisione
 			foreach(MoveBuildings m in buildings)
             {
-                if (m.gameObject.activeSelf == true)
+                if (m.gameObject.activeSelf == true&&m.isTouching)
                 {
-					Vector3 startPos = modificaAngolo.instance.posizioneIniziale;
-					m.OnEndDragging(startPos);
+                    if (oneJustMoved == 1)
+                    {
+						Vector3 startPos = modificaAngolo.instance.posizioneIniziale;
+						//all'interno del metodo viene fatto un controllo per il tocco
+						m.OnEndDragging(startPos);
+					}
+					
+					oneJustMoved++;
 				}					
             }
 			Player.instance.transform.position = exPos;

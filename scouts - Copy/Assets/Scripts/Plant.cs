@@ -42,7 +42,7 @@ public class Plant : InGameObject
 	protected override  void Start()
 	{
 		base.Start();
-		Invoke(nameof(CheckColl), 0.1f);
+		CheckColl();
 		
 	}
 
