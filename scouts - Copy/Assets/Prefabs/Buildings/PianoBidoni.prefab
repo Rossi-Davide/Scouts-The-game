@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2734726687380624756}
   - component: {fileID: 2734726687380624757}
   - component: {fileID: 2734726687380624758}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PianoBidoni
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Cucina
     color: 10
@@ -204,5 +205,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 2299551175825671910, guid: 31ba393bd71669b4c8689477cbff8cc2,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   building: {fileID: 11400000, guid: 2af9a7e66343d5d4684c0a7b535f46c9, type: 2}

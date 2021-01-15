@@ -7,6 +7,7 @@ public class MoveBuildings : MonoBehaviour
 	[HideInInspector] [System.NonSerialized]
 	public bool componentEnabled, isBeingBuilt;
 	LayerMask punti;
+	bool switchV=false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class MoveBuildings : MonoBehaviour
 		if (collision.name == "con")
 		{
 			insideBorders = true;
+			Debug.LogError(insideBorders);
 		}
 	}
 
@@ -30,10 +32,22 @@ public class MoveBuildings : MonoBehaviour
 			GameManager.instance.ClearWarningOrMessage();
 		}
 
+
+
         if (collision.name == "con")
         {
-			insideBorders = false;
-			GameManager.instance.WarningOrMessage("Sei fuori dai bordi dell'angolo", true);
+            if (switchV)
+            {
+				switchV = !switchV;
+            }
+            else
+            {
+				insideBorders = false;
+				switchV = !switchV;
+				Debug.LogError(insideBorders);
+				GameManager.instance.WarningOrMessage("Sei fuori dai bordi dell'angolo", true);
+			}
+			
 		}
 	}
 	public void ResetPos(Vector3 startPos)
@@ -52,6 +66,8 @@ public class MoveBuildings : MonoBehaviour
 		if (isTouching||!insideBorders)
 		{
 			ResetPos(startPos);
+			insideBorders = true;
+			switchV = false;
 		}
 		GetComponent<InGameObject>().MoveUI();
 	}

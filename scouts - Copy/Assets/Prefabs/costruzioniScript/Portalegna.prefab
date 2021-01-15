@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -3697600796267754068}
   - component: {fileID: -5832666899742836675}
   - component: {fileID: 129127199385093837}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Portalegna
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}

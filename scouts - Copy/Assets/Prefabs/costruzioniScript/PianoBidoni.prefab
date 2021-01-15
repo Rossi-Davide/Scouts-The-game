@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7597584938580358707}
   - component: {fileID: 315744185825292163}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340861741182759907}
   - component: {fileID: 6584767030108423366}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7076370930487419475}
   - component: {fileID: 4038881481007050020}
   - component: {fileID: 6799030474086538835}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PianoBidoni
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}

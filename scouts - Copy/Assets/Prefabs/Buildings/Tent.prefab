@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4897305348519484486}
   - component: {fileID: 4897305348519484487}
   - component: {fileID: 4897305348519484488}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Tent
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Dormi
     color: 2
@@ -204,5 +205,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 4528179396967441950, guid: aca379b0ed2c9444db9795607e7dca25,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   building: {fileID: 11400000, guid: ca54f6dae88a5da498872282498007c0, type: 2}

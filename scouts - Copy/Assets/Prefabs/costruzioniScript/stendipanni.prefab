@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8081072500310032470}
   - component: {fileID: 4332577119644486982}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5187671609819912501}
   - component: {fileID: 3408767295103086231}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: -1010904166553741747}
   - component: {fileID: 184865614831149736}
   - component: {fileID: -6472743062996431048}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stendipanni
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}

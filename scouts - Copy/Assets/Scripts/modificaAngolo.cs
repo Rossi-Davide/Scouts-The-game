@@ -98,7 +98,6 @@ public class modificaAngolo : MonoBehaviour
 				}
 				else if (touch.phase == TouchPhase.Canceled)
 				{
-					//verificare se genera bug
 					oggetto.GetComponent<MoveBuildings>().ResetPos(posizioneIniziale);
 					oggetto = null;
 				}

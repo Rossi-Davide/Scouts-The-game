@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1707686020278602264}
   - component: {fileID: 2113683014935977420}
   - component: {fileID: 9084129337110583412}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Montana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3317845254023155671}
   - component: {fileID: 8437088339231023591}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2036041061251725330}
   - component: {fileID: 2036041061251725333}
   - component: {fileID: 2036041061251725332}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Amaca
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Amaca
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Dormi
     color: 2
@@ -204,5 +205,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 9052262022897325451, guid: 2c04edd749e423a4a8d4fa7092c41260,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   building: {fileID: 11400000, guid: 6d9feeb00bb3d5e43a3fb3e206a8e137, type: 2}

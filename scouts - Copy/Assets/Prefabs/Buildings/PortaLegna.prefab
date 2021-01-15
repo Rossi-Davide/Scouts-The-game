@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1507021669083840139}
   - component: {fileID: 1507021669083840138}
   - component: {fileID: 1507021669083840132}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PortaLegna
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Imbraga
     color: 3
@@ -199,5 +200,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 1878422868812242793, guid: e36dcf8a398ea3840b0dea38926ac261,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   building: {fileID: 11400000, guid: e5889dd3ae960974aaed5a59828e0ef1, type: 2}

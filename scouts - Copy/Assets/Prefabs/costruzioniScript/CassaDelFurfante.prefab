@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4708544776255143184}
   - component: {fileID: -8688225233702778496}
   - component: {fileID: 3925597194483742156}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CassaDelFurfante
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 25190415247629464}
   - component: {fileID: 1678470569485545660}
   - component: {fileID: 6648318807900175356}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Cambusa
   m_TagString: Untagged
   m_Icon: {fileID: 0}

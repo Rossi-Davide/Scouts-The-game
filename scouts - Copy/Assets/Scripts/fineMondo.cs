@@ -7,7 +7,11 @@ public class fineMondo : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.LogError("confine mondo superati,errore");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (collision.name == "Player")
+        {
+            Debug.LogError("confine mondo superati,errore");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        
     }
 }

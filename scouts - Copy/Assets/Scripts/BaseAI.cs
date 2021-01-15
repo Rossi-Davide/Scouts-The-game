@@ -54,6 +54,8 @@ public abstract class BaseAI : InGameObject
 		int n1, n2;
 		n1 = Random.Range(-45, 45);
 		n2 = Random.Range(-45, 30);
+		//evita target su collinette
+
 		Vector3 a = new Vector3(n1, n2, 0);
 		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 49430548393194542}
   - component: {fileID: -511174862936809132}
   - component: {fileID: 8997801895935393092}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Latrina
   m_TagString: Untagged
   m_Icon: {fileID: 0}

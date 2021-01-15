@@ -49,7 +49,7 @@ public class Plant : InGameObject
 
 	void CheckColl()
     {
-		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 10f);
+		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 2f);
 		foreach (Collider2D c in coll)
 		{
 			if (c.name == "Player")

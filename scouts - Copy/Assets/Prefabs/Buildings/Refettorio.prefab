@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6959011011392827288}
   - component: {fileID: 6959011011392827295}
   - component: {fileID: 6959011011392827294}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Refettorio
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}
@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: 
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Mangia
     color: 0
@@ -203,5 +204,9 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 875140319818992778, guid: c4c4b99128637cd4997ae7188bf9a9d7,
     type: 3}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   building: {fileID: 11400000, guid: cdb0c11f63246c14e86a52f672141d48, type: 2}

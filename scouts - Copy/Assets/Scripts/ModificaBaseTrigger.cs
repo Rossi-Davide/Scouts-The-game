@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Pathfinding;
 
 public class ModificaBaseTrigger : MonoBehaviour
 {
@@ -69,17 +70,22 @@ public class ModificaBaseTrigger : MonoBehaviour
 			objectBought = objectBought.ToLower();
 
 			//cerca l'oggetto
-			/*GameObject obj;
+			GameObject obj;
+			
+			SpriteRenderer [] spriteBuildings = SquadrigliaManager.instance.GetPlayerSq().buildings;
 
-			foreach(GameObject g in Array)
+
+
+			foreach (SpriteRenderer s in spriteBuildings)
             {
-				if(nome uguale){
-					obj = g;
-                }
-            }
+				string name = s.gameObject.name.ToLower();
+				if(name==objectBought){
+					obj = s.gameObject; 
+					obj.SetActive(true);
+				}
+			}
 
 			//attiva objectBought
-			obj.SetActive(true);*/
 			execTransition = !execTransition;
         }
     }
@@ -138,6 +144,10 @@ public class ModificaBaseTrigger : MonoBehaviour
 			Player.instance.transform.position = exPos;
 			modificaAngolo.instance.spawnPoints.SetActive(true);
 			confiniAngoli.SetActive(false);
+
+			//aggiornare path
+			Invoke("UpdatePath",1f);
+			
 		}
 		else
         {
@@ -199,6 +209,11 @@ public class ModificaBaseTrigger : MonoBehaviour
 		//controlli per costruzione
 	}
 
+	void UpdatePath()
+    {
+		var graphToScan = AstarPath.active.data.gridGraph;
+		AstarPath.active.Scan(graphToScan);
+	}
 
 	public void ToggleButtonComponent(bool toggle)
     {

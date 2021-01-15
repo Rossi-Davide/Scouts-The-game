@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6351748754808773804}
   - component: {fileID: 3448986663511373673}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6037259676659012898}
   - component: {fileID: 4026093379722911087}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8805272539794411174}
   - component: {fileID: 8064974656794108496}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: coll2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 5472900022841330086}
   - component: {fileID: 8351795655622746396}
   - component: {fileID: -3587560982972628480}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: refettorio
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}

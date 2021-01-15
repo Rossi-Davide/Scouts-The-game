@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5152931336649718246}
   - component: {fileID: 8884558331479668152}
   - component: {fileID: 2578135160295447680}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Tenda
   m_TagString: oggSquadriglia1
   m_Icon: {fileID: 0}

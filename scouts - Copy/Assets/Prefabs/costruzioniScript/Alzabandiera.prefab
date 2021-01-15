@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8453646315859407810}
   - component: {fileID: -18796684580131741}
   - component: {fileID: 1073560259589454027}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Alzabandiera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
