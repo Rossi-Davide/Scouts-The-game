@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System;
+using Pathfinding;
 
 public class Plant : InGameObject
 {
+	LayerMask costruzioni;
+
 	void PlayerHandPunch()
 	{
 		Player.instance.enabled = false;
@@ -41,15 +44,21 @@ public class Plant : InGameObject
 
 	protected override  void Start()
 	{
+		costruzioni = LayerMask.GetMask("costruzioni");
 		base.Start();
 		CheckColl();
+		//UpdatePath();
 		
 	}
-
+	void UpdatePath()
+	{
+		var graphToScan = AstarPath.active.data.gridGraph;
+		AstarPath.active.Scan(graphToScan);
+	}
 
 	void CheckColl()
     {
-		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 2f);
+		Collider2D[] coll = Physics2D.OverlapCircleAll(transform.position, 10f);
 		foreach (Collider2D c in coll)
 		{
 			if (c.name == "Player")
@@ -63,11 +72,15 @@ public class Plant : InGameObject
 
 		Collider2D[] coll2 = Physics2D.OverlapCircleAll(transform.position, 1f);
 
-        if (coll2.Length > 0)
+
+        foreach (Collider2D c in coll2)
         {
-			Destroy(gameObject);
-			Destroy(clickListener.gameObject);
-			GameManager.instance.BuildingChanged();
-		}
+            if (c.gameObject.layer==costruzioni)
+            {
+				Destroy(gameObject);
+				Destroy(clickListener.gameObject);
+				GameManager.instance.BuildingChanged();
+			}
+        }
 	}
 }

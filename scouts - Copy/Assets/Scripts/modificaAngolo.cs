@@ -84,7 +84,7 @@ public class modificaAngolo : MonoBehaviour
 				}
 				else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
 				{
-					Debug.Log("moved");
+					//Debug.Log("moved");
 					rb = hitInformation.collider.attachedRigidbody;
 					Vector2 posizioneDito = touch.position;
 					Vector3 posizioneOggetto = cam.ScreenToWorldPoint(posizioneDito);

@@ -17,11 +17,11 @@ public class MoveBuildings : MonoBehaviour
 			GameManager.instance.WarningOrMessage("Non puoi piazzare l'oggetto qui!", true);
 		}
 
-		if (collision.name == "con")
+		/*if (collision.name == "con")
 		{
 			insideBorders = true;
 			Debug.LogError(insideBorders);
-		}
+		}*/
 	}
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -34,7 +34,7 @@ public class MoveBuildings : MonoBehaviour
 
 
 
-        if (collision.name == "con")
+       /* if (collision.name == "con")
         {
             if (switchV)
             {
@@ -48,7 +48,7 @@ public class MoveBuildings : MonoBehaviour
 				GameManager.instance.WarningOrMessage("Sei fuori dai bordi dell'angolo", true);
 			}
 			
-		}
+		}*/
 	}
 	public void ResetPos(Vector3 startPos)
 	{
@@ -63,7 +63,7 @@ public class MoveBuildings : MonoBehaviour
 	}
 	public void OnEndDragging(Vector3 startPos)
 	{
-		if (isTouching||!insideBorders)
+		if (isTouching)
 		{
 			ResetPos(startPos);
 			insideBorders = true;

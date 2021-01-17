@@ -4,9 +4,9 @@ using System.Collections;
 
 public abstract class BaseAI : InGameObject
 {
-	protected float speed = 50;
+	protected float speed = 60;
 
-	protected float minWayPointDistance = 4;
+	protected float minWayPointDistance = 1;
 	protected Seeker seeker;
 	protected Rigidbody2D rb;
 
@@ -21,7 +21,9 @@ public abstract class BaseAI : InGameObject
 	bool disable, stayUntil;
 	int keepTarget;
 
-
+	protected Vector2 pos;
+	protected bool toggleCheckBlocco = true;
+	protected int cont = 0;
 
 	protected override void Start()
 	{
@@ -30,11 +32,31 @@ public abstract class BaseAI : InGameObject
 		base.Start();
 		animator.SetBool("move", true);
 
+		pos = rb.position;
+
 		CreateNewPath(null);
 
 		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
 		InvokeRepeating(nameof(UpdateSlowed), 0.05f, 0.05f);
+		InvokeRepeating("CheckStop",1f,3f);
 	}
+
+
+	void CheckStop()
+    {
+		if(((pos.x-0.2f)<rb.position.x&&rb.position.x<(pos.x+0.2f))&& ((pos.y - 0.2f) < rb.position.y && rb.position.y < (pos.y + 0.2f)))
+        {
+			int n1, n2;
+			n1 = Random.Range(-45, 45);
+			n2 = Random.Range(-45, 30);
+
+			Vector3 a = new Vector3(n1, n2, 0);
+			//rb.position = a;
+			CreateNewPath(null);
+		}
+		pos = rb.position;
+    }
+
 
 	public override void Select()
 	{
@@ -59,7 +81,33 @@ public abstract class BaseAI : InGameObject
 		Vector3 a = new Vector3(n1, n2, 0);
 		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);
+        if (toggleCheckBlocco)
+        {
+			CheckBlocco();
+			toggleCheckBlocco = !toggleCheckBlocco;
+        }
+		cont++;
 	}
+
+
+	IEnumerator CheckBlocco()
+    {
+		yield return new WaitForSeconds(5f);
+        if (cont >= 5)
+        {
+			int n1, n2;
+			n1 = Random.Range(-45, 45);
+			n2 = Random.Range(-45, 30);
+
+			Vector3 a = new Vector3(n1, n2, 0);
+			rb.position = a;
+		}
+		cont = 0;
+		toggleCheckBlocco = !toggleCheckBlocco;
+		yield return null;
+    }
+
+
 	protected void VerifyPath(Path p)
 	{
 		if (!p.error)

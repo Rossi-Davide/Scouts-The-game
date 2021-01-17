@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6920728192684934586}
   - component: {fileID: 3249521231569426887}
   - component: {fileID: 5947891394452837869}
+  - component: {fileID: 6651035445882164128}
   m_Layer: 0
   m_Name: SquadrigliereM1
   m_TagString: Untagged
@@ -77,13 +78,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
-  m_AngularDrag: 0.05
+  m_LinearDrag: 10
+  m_AngularDrag: 35
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3682786274997512383
 MonoBehaviour:
@@ -207,7 +208,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3682786274997512381}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -226,3 +227,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10490228, y: 0.063419715}
   m_EdgeRadius: 0
+--- !u!58 &6651035445882164128
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682786274997512381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03}
+  serializedVersion: 2
+  m_Radius: 0.052699734
