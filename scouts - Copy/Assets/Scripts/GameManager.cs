@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 	[System.NonSerialized]
 	public InGameObject[] inGameObjects;
 
+	bool toggleSleep = false;
 	int pointsValue, materialsValue, energyValue, energyMaxValue, materialsMaxValue, pointsMaxValue;
 
 	public GameObject buttonCanvas;
@@ -429,7 +430,21 @@ public class GameManager : MonoBehaviour
 		}
 		isDay = !(currentHour > 20 || currentHour < 7);
 		ChangeLight();
+		SendToSleep();
 	}
+
+	void SendToSleep()
+    {
+        if (!isDay&&!toggleSleep)
+        {
+			AIsManager.instance.SendToSleep(isDay);
+			toggleSleep = true;
+        }else if (isDay && toggleSleep)
+        {
+			AIsManager.instance.SendToSleep(isDay);
+			toggleSleep = false;         
+        }
+    }
 
 	[HideInInspector]
 	[System.NonSerialized]

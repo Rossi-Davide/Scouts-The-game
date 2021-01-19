@@ -52,6 +52,7 @@ public abstract class BaseAI : InGameObject
 
 			Vector3 a = new Vector3(n1, n2, 0);
 			//rb.position = a;
+			Debug.LogError("CheckStop");
 			CreateNewPath(null);
 		}
 		pos = rb.position;
@@ -71,8 +72,9 @@ public abstract class BaseAI : InGameObject
 
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
 
-	protected virtual void CreateNewPath(Vector3? priorityTarget)
+	protected  virtual void CreateNewPath(Vector3? priorityTarget)
 	{
+		Debug.LogError(priorityTarget+"priority");
 		int n1, n2;
 		n1 = Random.Range(-45, 45);
 		n2 = Random.Range(-45, 30);
@@ -80,14 +82,16 @@ public abstract class BaseAI : InGameObject
 
 		Vector3 a = new Vector3(n1, n2, 0);
 		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
+		//Debug.LogError(currentTarget+ "current target");
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);
         if (toggleCheckBlocco)
         {
-			CheckBlocco();
+			StartCoroutine(CheckBlocco());
 			toggleCheckBlocco = !toggleCheckBlocco;
         }
 		cont++;
 	}
+
 
 
 	IEnumerator CheckBlocco()
@@ -117,6 +121,7 @@ public abstract class BaseAI : InGameObject
 		}
 		else
 		{
+			Debug.LogError("verify path");
 			CreateNewPath(null);
 		}
 	}
@@ -183,6 +188,7 @@ public abstract class BaseAI : InGameObject
 		}
 		rb = GetComponent<Rigidbody2D>();
 		seeker = GetComponent<Seeker>();
+		Debug.LogError("CheckPriorityTargetsThatWait");
 		CreateNewPath(target);
 	}
 
@@ -225,7 +231,10 @@ public abstract class BaseAI : InGameObject
 			}
 		}
 		if (target != currentTarget)
+        {
 			CreateNewPath(target);
+			Debug.LogError("CheckPriorityPathConditions");
+		}
 	}
 
 	public IEnumerator ForceTarget(Vector3 target, int stay, bool setInactive)
@@ -237,7 +246,9 @@ public abstract class BaseAI : InGameObject
 	}
 	public IEnumerator ForceTarget(Vector3 target, bool stayUntil, bool setInactive)
 	{
+
 		yield return new WaitForEndOfFrame();
+		Debug.LogError(target);
 		CreateNewPath(target);
 		this.stayUntil = stayUntil;
 		disable = setInactive;

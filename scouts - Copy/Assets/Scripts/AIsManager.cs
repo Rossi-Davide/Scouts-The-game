@@ -14,6 +14,7 @@ public class AIsManager : MonoBehaviour
 	public AIEvent[] events;
 	public GameObject eventButton, eventPanel, overlay;
 	bool isOpen;
+	public Transform[] squadriglieAI;
 
 	#region Singleton
 	public static AIsManager instance;
@@ -122,6 +123,34 @@ public class AIsManager : MonoBehaviour
 			}
 		}
 	}
+
+
+	public void SendToSleep(bool night)
+    {
+		Debug.Log("reached AIs manager");
+        if (!night)
+        {
+			foreach (Transform a in squadriglieAI)
+			{
+				foreach (Transform b in a)
+				{
+					StartCoroutine(b.GetComponent<BaseAI>().ForceTarget(a.position, true, true));
+                    
+				}
+			}
+        }
+        else
+        {
+			foreach (Transform a in squadriglieAI)
+			{
+				foreach (Transform b in a)
+				{
+					b.GetComponent<BaseAI>().Unlock();
+				}
+			}
+		}       
+	}
+
 
 	public AIEvent AreThereAnyRunningEvents
 	{
