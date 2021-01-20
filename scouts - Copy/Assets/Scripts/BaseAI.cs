@@ -24,6 +24,9 @@ public abstract class BaseAI : InGameObject
 	protected Vector2 pos;
 	protected bool toggleCheckBlocco = true;
 	protected int cont = 0;
+	protected bool ai = false;
+	protected string[] nomiAI = { "SquadrigliereF1(Clone)", "SquadrigliereF2(Clone)", "SquadrigliereM1(Clone)", "SquadrigliereM2(Clone)" };
+	protected Vector3[] posizioneOggettiPrinc = { };
 
 	protected override void Start()
 	{
@@ -33,6 +36,15 @@ public abstract class BaseAI : InGameObject
 		animator.SetBool("move", true);
 
 		pos = rb.position;
+
+		foreach(string s in nomiAI)
+        {
+            if (gameObject.name == s)
+            {
+				//ai = true;
+            }
+        }
+
 
 		CreateNewPath(null);
 
@@ -76,9 +88,32 @@ public abstract class BaseAI : InGameObject
 	{
 		Debug.LogError(priorityTarget+"priority");
 		int n1, n2;
-		n1 = Random.Range(-45, 45);
-		n2 = Random.Range(-45, 30);
-		//evita target su collinette
+        if (ai)
+        {
+			int prob = Random.Range(1, 101);
+            if (prob <= 40)
+            {
+				//probabilità che vadano al proprio angolo
+            }else if (prob > 40 && prob <= 60)
+            {
+				//probabilità che vadano al centro
+            }else if (prob > 60 && prob <= 65)
+            {
+				//probabilità che vadano ai punti di interesse
+            }
+            else
+            {
+				n1 = Random.Range(-45, 45);
+				n2 = Random.Range(-45, 30);
+			}
+        }
+        else
+        {
+			n1 = Random.Range(-45, 45);
+			n2 = Random.Range(-45, 30);
+		}
+
+		
 
 		Vector3 a = new Vector3(n1, n2, 0);
 		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
