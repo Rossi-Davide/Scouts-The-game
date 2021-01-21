@@ -23,10 +23,12 @@ public abstract class BaseAI : InGameObject
 
 	protected Vector2 pos;
 	protected bool toggleCheckBlocco = true;
-	protected int cont = 0;
+	protected short cont = 0;
 	protected bool ai = false;
 	protected string[] nomiAI = { "SquadrigliereF1(Clone)", "SquadrigliereF2(Clone)", "SquadrigliereM1(Clone)", "SquadrigliereM2(Clone)" };
-	protected Vector3[] posizioneOggettiPrinc = { };
+	protected Vector3[] posizioneOggettiPrinc = new[] {new Vector3(16.82f,-2.69f,0f), new Vector3(13.93f,-0.84f,0f), new Vector3(21.24f,-2.97f,0f), new Vector3(2.21f,-3.67f,0f), new Vector3(11.2f,-10.79f,0f) };
+	protected short timeSpentAtAngle = 0,contTimeSpentAtAngle=9;
+	protected short prob;
 
 	protected override void Start()
 	{
@@ -41,7 +43,7 @@ public abstract class BaseAI : InGameObject
         {
             if (gameObject.name == s)
             {
-				//ai = true;
+				ai = true;
             }
         }
 
@@ -58,12 +60,7 @@ public abstract class BaseAI : InGameObject
     {
 		if(((pos.x-0.2f)<rb.position.x&&rb.position.x<(pos.x+0.2f))&& ((pos.y - 0.2f) < rb.position.y && rb.position.y < (pos.y + 0.2f)))
         {
-			int n1, n2;
-			n1 = Random.Range(-45, 45);
-			n2 = Random.Range(-45, 30);
-
-			Vector3 a = new Vector3(n1, n2, 0);
-			//rb.position = a;
+			
 			Debug.LogError("CheckStop");
 			CreateNewPath(null);
 		}
@@ -86,20 +83,40 @@ public abstract class BaseAI : InGameObject
 
 	protected  virtual void CreateNewPath(Vector3? priorityTarget)
 	{
-		Debug.LogError(priorityTarget+"priority");
+		//Debug.LogError(priorityTarget+"priority");
+		Debug.Log(transform.parent.name);
 		int n1, n2;
         if (ai)
         {
-			int prob = Random.Range(1, 101);
-            if (prob <= 40)
+            if (contTimeSpentAtAngle <= timeSpentAtAngle)
+            {
+				prob = 20;
+				contTimeSpentAtAngle++;
+            }
+            else
+            {
+				 prob =(short) Random.Range(1, 101);
+			}
+
+			if (prob <= 40)
             {
 				//probabilità che vadano al proprio angolo
+				n1 =(int) Random.Range(transform.parent.position.x - 10, transform.parent.position.x + 10);
+				n2 = (int)Random.Range(transform.parent.position.y - 10, transform.parent.position.y + 10);
+				timeSpentAtAngle = (short)Random.Range(0, 9);
+				contTimeSpentAtAngle = 0;
             }else if (prob > 40 && prob <= 60)
             {
 				//probabilità che vadano al centro
-            }else if (prob > 60 && prob <= 65)
+				n1 = Random.Range(-20, 21);
+				n2 = Random.Range(-20, 21);
+			}
+			else if (prob > 60 && prob <= 63)
             {
 				//probabilità che vadano ai punti di interesse
+				short p = (short)Random.Range(0,posizioneOggettiPrinc.Length);
+				n1 =(int) Random.Range(posizioneOggettiPrinc[p].x - 8, posizioneOggettiPrinc[p].x + 8);
+				n2 = (int)posizioneOggettiPrinc[p].y;
             }
             else
             {
