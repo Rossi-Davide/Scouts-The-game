@@ -28,7 +28,7 @@ public abstract class BaseAI : InGameObject
 	protected string[] nomiAI = { "SquadrigliereF1(Clone)", "SquadrigliereF2(Clone)", "SquadrigliereM1(Clone)", "SquadrigliereM2(Clone)" };
 	protected Vector3[] posizioneOggettiPrinc = new[] {new Vector3(16.82f,-2.69f,0f), new Vector3(13.93f,-0.84f,0f), new Vector3(21.24f,-2.97f,0f), new Vector3(2.21f,-3.67f,0f), new Vector3(11.2f,-10.79f,0f) };
 	protected short timeSpentAtAngle = 0,contTimeSpentAtAngle=9;
-	protected short prob;
+	protected short prob,stuckInCollinetta=0;
 
 	protected override void Start()
 	{
@@ -142,8 +142,23 @@ public abstract class BaseAI : InGameObject
 			toggleCheckBlocco = !toggleCheckBlocco;
         }
 		cont++;
+		stuckInCollinetta++;
+        if (stuckInCollinetta >= 5)
+        {
+			ResetPos();
+        }
 	}
 
+
+	public void ResetPos()
+    {
+		int n1, n2;
+		n1 = Random.Range(-45, 45);
+		n2 = Random.Range(-45, 30);
+
+		Vector3 a = new Vector3(n1, n2, 0);
+		rb.position = a;
+	}
 
 
 	IEnumerator CheckBlocco()
@@ -257,6 +272,7 @@ public abstract class BaseAI : InGameObject
 				currentPath = null;
 				currentWayPointIndex = 0;
 				PathCompleted();
+				stuckInCollinetta = 0;
 				return;
 			}
 			currentWayPointIndex++;
