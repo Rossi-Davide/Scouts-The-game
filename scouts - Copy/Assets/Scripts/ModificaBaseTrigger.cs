@@ -146,7 +146,7 @@ public class ModificaBaseTrigger : MonoBehaviour
 			confiniAngoli.SetActive(false);
 
 			//aggiornare path
-			Invoke("UpdatePath",1f);
+			//Invoke("UpdatePath",1f);
 			
 		}
 		else
