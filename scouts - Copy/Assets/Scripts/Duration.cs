@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Duration", menuName = "Duration")]
-public class Duration : ScriptableObject
+[System.Serializable]
+public class Duration
 {
-	public new string name;
+	public string name;
 	public int totalDays;
+	[Header("If this is the easiest and shortest duration, the following aren't calculated")]
 	public int actionDurationFactor;
 	public int actionWaitTimeFactor;
+	public int shopPricesFactor;
+	public int actionPricesFactor;
+	public int prizesFactor;
 }

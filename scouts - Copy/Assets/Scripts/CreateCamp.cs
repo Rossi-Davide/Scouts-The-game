@@ -34,7 +34,7 @@ public class CreateCamp : MonoBehaviour
 		playerSq = createCampPanel.transform.Find("Base/Squadriglia/Button").GetComponent<Button>();
 		gender = createCampPanel.transform.Find("Base/Genere/Button").GetComponent<Button>();
 		hair = createCampPanel.transform.Find("Base/Aspetto/Button").GetComponent<Button>();
-		difficulty = createCampPanel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
+		//difficulty = createCampPanel.transform.Find("Base/Difficoltà/Button").GetComponent<Button>();
 		femaleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Femminili").GetComponentsInChildren<Button>();
 		maleSqs = createCampPanel.transform.Find("Advanced/Squadriglie/Maschili").GetComponentsInChildren<Button>();
 		duration = createCampPanel.transform.Find("Advanced/Durata/Button").GetComponent<Button>();
@@ -45,7 +45,7 @@ public class CreateCamp : MonoBehaviour
 		exGender = existingCampPanel.transform.Find("Info/Genere").GetComponent<TextMeshProUGUI>();
 		exHair = existingCampPanel.transform.Find("Info/Aspetto").GetComponent<TextMeshProUGUI>();
 		exSqs = existingCampPanel.transform.Find("Info/Squadriglie").GetComponent<TextMeshProUGUI>();
-		exDifficulty = existingCampPanel.transform.Find("Info/Difficoltà").GetComponent<TextMeshProUGUI>();
+		//exDifficulty = existingCampPanel.transform.Find("Info/Difficoltà").GetComponent<TextMeshProUGUI>();
 		exDuration = existingCampPanel.transform.Find("Info/Durata").GetComponent<TextMeshProUGUI>();
 
 		campManager = CampManager.instance;
@@ -81,7 +81,7 @@ public class CreateCamp : MonoBehaviour
 		exSqs.text = "Squadriglie: ";
 		exGender.text = "Genere: " + camp.settings.gender;
 		exHair.text = "Aspetto: " + camp.settings.hair;
-		exDifficulty.text = "Difficoltà: " + campManager.possibleDifficulties[camp.settings.difficultyIndex].name;
+		//exDifficulty.text = "Difficoltà: " + campManager.possibleDifficulties[camp.settings.difficultyIndex].name;
 		exDuration.text = $"Durata: {campManager.possibleDurations[camp.settings.durationIndex].name} ({campManager.possibleDurations[camp.settings.durationIndex].totalDays * GameManager.minuteDuration * 24}min)";
 
 		for (int s = 0; s < femaleSqs.Length; s++)
@@ -102,7 +102,7 @@ public class CreateCamp : MonoBehaviour
 		playerSq.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = RefreshPlayerSq();
 		gender.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.gender.ToString();
 		hair.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = camp.settings.hair.ToString();
-		difficulty.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleDifficulties[camp.settings.difficultyIndex].name;
+		//difficulty.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = campManager.possibleDifficulties[camp.settings.difficultyIndex].name;
 		//advanced settings
 		for (int sq = 0; sq < femaleSqs.Length; sq++)
 		{
@@ -171,11 +171,11 @@ public class CreateCamp : MonoBehaviour
 	{
 		return current < lenght - 1 ? current + 1 : 0;
 	}
-	public void SwitchDifficulty()
-	{
-		camp.settings.difficultyIndex = NextInArray(camp.settings.difficultyIndex, campManager.possibleDifficulties.Length);
-		RefreshUI();
-	}
+	//public void SwitchDifficulty()
+	//{
+	//	camp.settings.difficultyIndex = NextInArray(camp.settings.difficultyIndex, campManager.possibleDifficulties.Length);
+	//	RefreshUI();
+	//}
 	public void SwitchDuration()
 	{
 		camp.settings.durationIndex = NextInArray(camp.settings.durationIndex, campManager.possibleDurations.Length);

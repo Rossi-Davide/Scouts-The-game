@@ -22,7 +22,6 @@ public class CampManager : MonoBehaviour
 	[Header("Information")]
 	public Squadriglia[] possibleFemaleSqs;
 	public Squadriglia[] possibleMaleSqs;
-	public Difficulty[] possibleDifficulties;
 	public Duration[] possibleDurations;
 
 
@@ -50,7 +49,6 @@ public class CampManager : MonoBehaviour
 			playerSqIndex = 0,
 			hair = Hair.Castano,
 			gender = Gender.Maschio,
-			difficultyIndex = 0,
 			durationIndex = 0,
 			femaleSqs = new int[] { 0, 2, 4 },
 			maleSqs = new int[] { 1, 2, 3 },
@@ -85,6 +83,29 @@ public class CampManager : MonoBehaviour
 		public bool campCreated;
 	}
 	#endregion
+
+	public int MultiplyByDurationFactor(int baseValue, DurationFactor factor)
+	{
+		int r = baseValue;
+		for (int i = 1; i <= camp.settings.durationIndex; i++)
+		{
+			r *= GetFactorValue(factor, i);
+		}
+		return r;
+	}
+	int GetFactorValue(DurationFactor factor, int durationIndex)
+	{
+		switch (factor)
+		{
+			case DurationFactor.actionDurationFactor: return possibleDurations[durationIndex].actionDurationFactor;
+			case DurationFactor.actionWaitTimeFactor: return possibleDurations[durationIndex].actionWaitTimeFactor;
+			case DurationFactor.shopPricesFactor: return possibleDurations[durationIndex].shopPricesFactor;
+			case DurationFactor.actionPricesFactor: return possibleDurations[durationIndex].actionPricesFactor;
+			case DurationFactor.prizesFactor: return possibleDurations[durationIndex].prizesFactor;
+			default: throw new System.NotImplementedException();
+		}
+	}
+
 	#region Challenges
 	int puntiRischiati;
 	public void StartChallenge(Challenge type, int puntiRischiati)
@@ -127,7 +148,6 @@ public class CampSettings
 	public int[] maleSqs;
 	public Gender gender;
 	public Hair hair;
-	public int difficultyIndex;
 	public int durationIndex;
 
 	public CampSettings Clone()
@@ -151,7 +171,6 @@ public class CampSettings
 			femaleSqs = femaleSqsTemp,
 			gender = gender,
 			hair = hair,
-			difficultyIndex = difficultyIndex,
 		};
 	}
 }
@@ -164,4 +183,12 @@ public enum Hair
 {
 	Biondo,
 	Castano,
+}
+public enum DurationFactor
+{
+	actionDurationFactor,
+	actionWaitTimeFactor,
+	shopPricesFactor,
+	actionPricesFactor,
+	prizesFactor,
 }

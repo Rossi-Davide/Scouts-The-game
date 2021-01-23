@@ -81,11 +81,11 @@ public class ItemNeeded
 public class ShopInfo
 {
     [HideInInspector]
-    public int Price { get { return price * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].shopPricesFactor; } set { price = value; } }
+    public int Price { get { return CampManager.instance.MultiplyByDurationFactor(price, DurationFactor.shopPricesFactor); } set { } }
     public int price;
     public Counter priceCounter;
     [HideInInspector]
-    public int Reward { get { return reward * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor; } set { reward = value; } }
+    public int Reward { get { return CampManager.instance.MultiplyByDurationFactor(reward, DurationFactor.prizesFactor); } set { } }
     public int reward;
     public Counter rewardCounter;
 }

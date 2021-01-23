@@ -9,7 +9,7 @@ public class Quest : ScriptableObject
     public bool prizeTaken;
     public Counter prizeCounter;
 	[HideInInspector]
-	public int PrizeAmount { get { return prizeAmount * CampManager.instance.possibleDifficulties[CampManager.instance.camp.settings.difficultyIndex].prizesFactor; } set { prizeAmount = value; } }
+	public int PrizeAmount { get { return CampManager.instance.MultiplyByDurationFactor(prizeAmount, DurationFactor.prizesFactor); } set { } }
 	public int prizeAmount;
 	public PlayerAction action;
     public int timesToDo;

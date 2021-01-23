@@ -177,31 +177,14 @@ public abstract class InGameObject : MonoBehaviour
 	}
 	void CalculatePriceOrPrize(ActionButton b)
 	{
-		string s;
-		if (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0)
-			s = "+";
-		else
-			s = "-";
-		if (b.generalAction.EditableMaterialsGiven >= b.generalAction.EditableEnergyGiven && b.generalAction.EditableMaterialsGiven >= b.generalAction.EditableEnergyGiven)
-		{
-			s += b.generalAction.EditableMaterialsGiven.ToString();
-			b.priceOrPrizeType = Counter.Materiali;
-		}
-		if (b.generalAction.EditableEnergyGiven >= b.generalAction.EditableMaterialsGiven && b.generalAction.EditableEnergyGiven >= b.generalAction.EditablePointsGiven)
-		{
-			s += b.generalAction.EditableEnergyGiven.ToString();
-			b.priceOrPrizeType = Counter.Energia;
-		}
-		if (b.generalAction.EditablePointsGiven >= b.generalAction.EditableEnergyGiven && b.generalAction.EditablePointsGiven >= b.generalAction.EditableMaterialsGiven)
-		{
-			s += b.generalAction.EditablePointsGiven.ToString();
-			b.priceOrPrizeType = Counter.Punti;
-		}
-		if (b.generalAction.EditableMaterialsGiven == 0 && b.generalAction.EditablePointsGiven == 0 && b.generalAction.EditablePointsGiven == 0)
-		{
-			s = "";
-			b.priceOrPrizeType = Counter.None;
-		}
+		var a = b.generalAction;
+		Debug.Log(objectName + (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0));
+		var p = (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0) ? Math.Max(a.EditableEnergyGiven, Math.Max(a.EditablePointsGiven, a.EditableMaterialsGiven)) : Math.Min(a.EditableEnergyGiven, Math.Min(a.EditablePointsGiven, a.EditableMaterialsGiven));
+		if (p == a.EditableEnergyGiven) b.priceOrPrizeType = Counter.Energia;
+		if (p == a.EditableMaterialsGiven) b.priceOrPrizeType = Counter.Materiali;
+		if (p == a.EditablePointsGiven) b.priceOrPrizeType = Counter.Punti;
+		var s = p >= 0 ? "+" : "";
+		s += p;
 		b.priceOrPrizeAmount = s;
 	}
 

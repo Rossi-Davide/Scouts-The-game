@@ -123,9 +123,9 @@ public class DialogueManager : MonoBehaviour
 			TogglePanel(null);
 			currentObject.nextDialogueIndex++;
 			StartCoroutine(currentObject.Unlock());
-			GameManager.instance.ChangeCounter(Counter.Punti, deltaPoints * c.possibleDifficulties[c.camp.settings.difficultyIndex].prizesFactor);
-			GameManager.instance.ChangeCounter(Counter.Materiali, deltaMaterials);
-			GameManager.instance.ChangeCounter(Counter.Energia, deltaEnergy);
+			GameManager.instance.ChangeCounter(Counter.Punti, CampManager.instance.MultiplyByDurationFactor(deltaPoints, DurationFactor.prizesFactor));
+			GameManager.instance.ChangeCounter(Counter.Materiali, CampManager.instance.MultiplyByDurationFactor(deltaMaterials, DurationFactor.prizesFactor));
+			GameManager.instance.ChangeCounter(Counter.Energia, CampManager.instance.MultiplyByDurationFactor(deltaEnergy, DurationFactor.prizesFactor));
 		}
 	}
 }

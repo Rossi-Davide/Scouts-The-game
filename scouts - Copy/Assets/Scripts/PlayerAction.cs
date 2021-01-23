@@ -10,7 +10,6 @@ public class PlayerAction : ScriptableObject
     public bool hasInfoPanel;
     public bool showInActionList;
     public BuildingState state;
-    CampManager campManager = CampManager.instance;
 
     public int timeNeeded;
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0
@@ -18,15 +17,15 @@ public class PlayerAction : ScriptableObject
 
     //[Header("Parameters (DONT MODIFY)")]
     [HideInInspector]
-    public int EditableTimeNeeded { get { return editableTimeNeeded * campManager.possibleDurations[campManager.camp.settings.durationIndex].actionDurationFactor; } set { editableTimeNeeded = value; } }
+    public int EditableTimeNeeded { get { return CampManager.instance.MultiplyByDurationFactor(editableTimeNeeded, DurationFactor.actionDurationFactor); } set { editableTimeNeeded = value; } }
     [HideInInspector]
-    public int EditableEnergyGiven { get { return editableEnergyGiven * (editableEnergyGiven > 0 ? campManager.possibleDifficulties[campManager.camp.settings.difficultyIndex].prizesFactor : campManager.possibleDifficulties[campManager.camp.settings.difficultyIndex].actionPricesFactor); } set { editableEnergyGiven = value; } }
+    public int EditableEnergyGiven { get { return editableEnergyGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableEnergyGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editableEnergyGiven, DurationFactor.prizesFactor); } set { editableEnergyGiven = value; } }
     [HideInInspector]
-    public int EditableMaterialsGiven { get { return editableMaterialsGiven * (editableMaterialsGiven > 0 ? campManager.possibleDifficulties[campManager.camp.settings.difficultyIndex].prizesFactor : campManager.possibleDifficulties[campManager.camp.settings.difficultyIndex].actionPricesFactor); } set { editableMaterialsGiven = value; } }
+    public int EditableMaterialsGiven { get { return editableMaterialsGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor); } set { editableMaterialsGiven = value; } }
     [HideInInspector]
-    public int EditablePointsGiven { get { return editablePointsGiven * (editablePointsGiven > 0 ? campManager.possibleDifficulties[campManager.camp.settings.difficultyIndex].prizesFactor : campManager.possibleDifficulties[campManager.camp.settings.difficultyIndex].actionPricesFactor); } set { editablePointsGiven = value; } }
+    public int EditablePointsGiven { get { return editablePointsGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editablePointsGiven, DurationFactor.prizesFactor); } set { editablePointsGiven = value; } }
     [HideInInspector]
-    public int EditableTimeBeforeRedo { get { return editableTimeBeforeRedo * campManager.possibleDurations[campManager.camp.settings.durationIndex].actionWaitTimeFactor; } set { editableTimeBeforeRedo = value; } }
+    public int EditableTimeBeforeRedo { get { return CampManager.instance.MultiplyByDurationFactor(editableTimeBeforeRedo, DurationFactor.prizesFactor); } set { editableTimeBeforeRedo = value; } }
 
     int editableTimeNeeded;
     int editableEnergyGiven;
