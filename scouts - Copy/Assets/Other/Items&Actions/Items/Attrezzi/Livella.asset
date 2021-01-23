@@ -23,7 +23,7 @@ MonoBehaviour:
   usingAmount: 1
   itemsNeededs: []
   shopInfos:
-  - price: 200
+  - price: 90
     priceCounter: 1
     reward: 0
     rewardCounter: 0

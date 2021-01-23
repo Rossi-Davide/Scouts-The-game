@@ -16,25 +16,25 @@ MonoBehaviour:
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Ciao, benvenuto al campo di reparto!
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 2
-  - sentence: Io sono Francesco, il capo reparto, ma puoi chiamarmi Cesco.
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 3
-  - sentence: Spero che tu possa passare dei bei momenti qui!
+  - sentence: "Ragazzi, \xE8 tutto pronto per l'attivit\xE0?"
     canAnswer: 1
     answers:
-    - answer: "Mi impegner\xF2 al massimo!"
-      nextSentenceNum: 100
+    - answer: "S\xEC, dobbiamo solo fare la chiamata"
+      nextSentenceNum: 2
       deltaPoints: 1
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: Speriamo...
-      nextSentenceNum: 100
-      deltaPoints: 0
+    - answer: No, restano da finire due cose
+      nextSentenceNum: 3
+      deltaPoints: -1
       deltaMaterials: 0
       deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Perfetto! Allora stiamo pronti!
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Ok,allora finite di prepararla. Se avete bisogno vi posso aiutare
+    canAnswer: 0
+    answers: []
     nextSentenceNum: 100

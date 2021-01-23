@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe616d4a7b2b4445a8fc0786e86c44a, type: 3}
   m_Name: PianoBidoni
   m_EditorClassIdentifier: 
-  name: PianoBidoni
+  name: Piano Bidoni
   type: 1
   description: "Il cibo \xE8 pi\xF9 buono se caldo"
   icon: {fileID: -8168990104244452518, guid: 2ece8a6976974e5498d33e5e1d7321ac, type: 3}
@@ -23,14 +23,37 @@ MonoBehaviour:
   usingAmount: 0
   itemsNeededs:
   - items:
+    - item: {fileID: 11400000, guid: ce59bcc7a75c4f647b91b1b03bb00120, type: 2}
+      amount: 5
+      getsDestroyed: 1
+    - item: {fileID: 11400000, guid: 25aff7ea2880fc4448c8c3d4e979ed95, type: 2}
+      amount: 1
+      getsDestroyed: 0
     - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+      amount: 3
+      getsDestroyed: 1
+  - items:
+    - item: {fileID: 11400000, guid: 5c648984625f23149a6e1aa9fdac5578, type: 2}
       amount: 1
       getsDestroyed: 0
     - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
-      amount: 2
+      amount: 3
       getsDestroyed: 0
+    - item: {fileID: 11400000, guid: d11f1d2d1a65e764f97572f2be4ea0e5, type: 2}
+      amount: 1
+      getsDestroyed: 0
+  - items:
+    - item: {fileID: 11400000, guid: a41e07c670dc2f146a607b34e7452b20, type: 2}
+      amount: 6
+      getsDestroyed: 1
+    - item: {fileID: 11400000, guid: 55379278afb30914284b24123f5303cd, type: 2}
+      amount: 1
+      getsDestroyed: 0
+    - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+      amount: 4
+      getsDestroyed: 1
   shopInfos:
-  - price: 150
+  - price: 75
     priceCounter: 1
     reward: 3
     rewardCounter: 3
@@ -39,7 +62,7 @@ MonoBehaviour:
   changedMaxAmounts: []
   currentAmount: 0
   level: 0
-  exists: 0
+  exists: 1
   healthInfos:
   - maxHealth: 100
     healthLossInterval: 5

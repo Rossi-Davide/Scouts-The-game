@@ -17,13 +17,13 @@ MonoBehaviour:
   description: Necessario per costruire il piano bidoni.
   icon: {fileID: 5717306226609835503, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 0
-  maxAmount: 4
+  maxAmount: 10
   maxLevel: 0
   usingLevel: 0
   usingAmount: 1
   itemsNeededs: []
   shopInfos:
-  - price: 20
+  - price: 10
     priceCounter: 1
     reward: 0
     rewardCounter: 0

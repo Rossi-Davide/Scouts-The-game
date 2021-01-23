@@ -23,14 +23,43 @@ MonoBehaviour:
   usingAmount: 0
   itemsNeededs:
   - items:
+    - item: {fileID: 11400000, guid: 88cb9f54df9366d4cad93f5bf9458ff6, type: 2}
+      amount: 5
+      getsDestroyed: 1
+    - item: {fileID: 11400000, guid: a41e07c670dc2f146a607b34e7452b20, type: 2}
+      amount: 5
+      getsDestroyed: 1
     - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
-      amount: 1
-      isDestroyed: 1
+      amount: 4
+      getsDestroyed: 1
     - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
       amount: 2
-      isDestroyed: 0
+      getsDestroyed: 0
+  - items:
+    - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
+      amount: 3
+      getsDestroyed: 0
+    - item: {fileID: 11400000, guid: eff7a76cb3f934b40b8277aaf0a22db4, type: 2}
+      amount: 1
+      getsDestroyed: 0
+    - item: {fileID: 11400000, guid: 88cb9f54df9366d4cad93f5bf9458ff6, type: 2}
+      amount: 5
+      getsDestroyed: 1
+    - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+      amount: 3
+      getsDestroyed: 1
+  - items:
+    - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
+      amount: 5
+      getsDestroyed: 0
+    - item: {fileID: 11400000, guid: 55379278afb30914284b24123f5303cd, type: 2}
+      amount: 1
+      getsDestroyed: 0
+    - item: {fileID: 11400000, guid: 37fcdc5d42ee5384a9e5412860211e8e, type: 2}
+      amount: 2
+      getsDestroyed: 1
   shopInfos:
-  - price: 150
+  - price: 85
     priceCounter: 1
     reward: 5
     rewardCounter: 3

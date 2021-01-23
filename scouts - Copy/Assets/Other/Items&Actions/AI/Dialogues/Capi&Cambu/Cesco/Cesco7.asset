@@ -10,31 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
-  m_Name: Cesco2
+  m_Name: Cesco7
   m_EditorClassIdentifier: 
-  deltaPoints: 3
+  deltaPoints: 2
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Ehi, come sta andando?
+  - sentence: Come sta andando il campo?
     canAnswer: 1
     answers:
-    - answer: Bene, grazie!
+    - answer: Bene, mi piace molto!
       nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: "Mmh cos\xEC cos\xEC"
+    - answer: "Cos\xEC cos\xEC... ho un po'nostalgia di casa"
       nextSentenceNum: 3
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Son contento!
+  - sentence: Sono felice per te
     canAnswer: 0
     answers: []
     nextSentenceNum: 100
-  - sentence: Dai,se hai bisogno di confrontarti puoi sempre fare due chiacchere
+  - sentence: "\xC9 normale sentire nostalgia ma adesso faremo tante attivit\xE0
+      divertenti e vedrai che starai meglio"
     canAnswer: 0
     answers: []
     nextSentenceNum: 100

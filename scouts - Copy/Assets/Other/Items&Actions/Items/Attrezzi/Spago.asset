@@ -17,13 +17,13 @@ MonoBehaviour:
   description: Necessario per montare le tapparelle del refettorio.
   icon: {fileID: -5479526012839602704, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 0
-  maxAmount: 10
+  maxAmount: 20
   maxLevel: 0
   usingLevel: 0
   usingAmount: 1
   itemsNeededs: []
   shopInfos:
-  - price: 5
+  - price: 2
     priceCounter: 1
     reward: 0
     rewardCounter: 0

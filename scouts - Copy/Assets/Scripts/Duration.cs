@@ -12,5 +12,5 @@ public class Duration
 	public int actionWaitTimeFactor;
 	public int shopPricesFactor;
 	public int actionPricesFactor;
-	public int prizesFactor;
+	public double prizesFactor;
 }

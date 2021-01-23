@@ -101,7 +101,7 @@ public class CampManager : MonoBehaviour
 			case DurationFactor.actionWaitTimeFactor: return possibleDurations[durationIndex].actionWaitTimeFactor;
 			case DurationFactor.shopPricesFactor: return possibleDurations[durationIndex].shopPricesFactor;
 			case DurationFactor.actionPricesFactor: return possibleDurations[durationIndex].actionPricesFactor;
-			case DurationFactor.prizesFactor: return possibleDurations[durationIndex].prizesFactor;
+			case DurationFactor.prizesFactor: return (int)possibleDurations[durationIndex].prizesFactor;
 			default: throw new System.NotImplementedException();
 		}
 	}

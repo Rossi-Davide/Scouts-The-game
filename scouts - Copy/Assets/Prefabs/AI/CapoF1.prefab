@@ -123,7 +123,7 @@ MonoBehaviour:
   states: []
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 888d3cf555a99cb4eb7efa8fa990e14e, type: 2}
 --- !u!61 &8539367628752415576
 BoxCollider2D:
   m_ObjectHideFlags: 0

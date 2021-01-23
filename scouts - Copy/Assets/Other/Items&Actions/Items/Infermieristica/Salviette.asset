@@ -23,7 +23,7 @@ MonoBehaviour:
   usingAmount: 1
   itemsNeededs: []
   shopInfos:
-  - price: 1000
+  - price: 45
     priceCounter: 1
     reward: 10
     rewardCounter: 3
@@ -31,4 +31,5 @@ MonoBehaviour:
   modifiedActions: []
   changedMaxAmounts: []
   currentAmount: 0
-  currentLevel: 0
+  level: 0
+  exists: 0

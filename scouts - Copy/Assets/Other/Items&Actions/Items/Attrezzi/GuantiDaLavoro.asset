@@ -17,13 +17,13 @@ MonoBehaviour:
   description: Necessari per costruire qualsiasi cosa.
   icon: {fileID: 665320343286433343, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 0
-  maxAmount: 6
+  maxAmount: 10
   maxLevel: 0
   usingLevel: 0
   usingAmount: 1
   itemsNeededs: []
   shopInfos:
-  - price: 30
+  - price: 14
     priceCounter: 1
     reward: 0
     rewardCounter: 0

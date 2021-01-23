@@ -23,14 +23,24 @@ MonoBehaviour:
   usingAmount: 0
   itemsNeededs:
   - items:
+    - item: {fileID: 11400000, guid: f15c2587d2ad09442851b8c87e31df64, type: 2}
+      amount: 1
+      getsDestroyed: 0
     - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+      amount: 2
+      getsDestroyed: 1
+    - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
+      amount: 1
+      getsDestroyed: 0
+  - items:
+    - item: {fileID: 11400000, guid: 9b73ab3977f0ce64ea390c28117ee52c, type: 2}
       amount: 1
       getsDestroyed: 0
     - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
-      amount: 2
+      amount: 3
       getsDestroyed: 0
   shopInfos:
-  - price: 300
+  - price: 140
     priceCounter: 1
     reward: 5
     rewardCounter: 3

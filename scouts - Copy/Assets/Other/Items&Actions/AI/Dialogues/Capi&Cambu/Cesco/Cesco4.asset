@@ -16,25 +16,27 @@ MonoBehaviour:
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Ciao, benvenuto al campo di reparto!
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 2
-  - sentence: Io sono Francesco, il capo reparto, ma puoi chiamarmi Cesco.
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 3
-  - sentence: Spero che tu possa passare dei bei momenti qui!
+  - sentence: Ciao...  mi chiamo Chiara ma tutti in reparto mi chiamano Bongia. Benvenuto
+      al campo di reparto. Sono felice che ti sia messo in gioco in questa avventura.
+      Come stai?
     canAnswer: 1
     answers:
-    - answer: "Mi impegner\xF2 al massimo!"
-      nextSentenceNum: 100
-      deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Speriamo...
-      nextSentenceNum: 100
+    - answer: Bene
+      nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
+    - answer: Sono un po' agitato
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Bravo! Questo \xE8 lo spirito giusto"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Non preoccupari, vedrai che ti divertirai un mondo
+    canAnswer: 0
+    answers: []
     nextSentenceNum: 100
