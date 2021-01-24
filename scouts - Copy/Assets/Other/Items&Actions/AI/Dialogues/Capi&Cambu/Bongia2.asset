@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
-  m_Name: Cesco5
+  m_Name: Bongia2
   m_EditorClassIdentifier: 
   deltaPoints: 2
   deltaMaterials: 0
