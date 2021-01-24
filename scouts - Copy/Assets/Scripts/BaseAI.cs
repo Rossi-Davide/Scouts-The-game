@@ -58,7 +58,7 @@ public abstract class BaseAI : InGameObject
 
 	void CheckStop()
     {
-		if(((pos.x-0.2f)<rb.position.x&&rb.position.x<(pos.x+0.2f))&& ((pos.y - 0.2f) < rb.position.y && rb.position.y < (pos.y + 0.2f)))
+		if((pos.x-0.2f)<rb.position.x&&rb.position.x<(pos.x+0.2f)&& (pos.y - 0.2f) < rb.position.y && rb.position.y < (pos.y + 0.2f))
         {
 			
 			Debug.LogError("CheckStop");
@@ -221,8 +221,10 @@ public abstract class BaseAI : InGameObject
 		{
 			animator.SetBool("move", false);
 		}
-		else
+		if (keepTarget <= 0 && !disable && !stayUntil)
+		{
 			CheckPriorityTargetsThatWait();
+		}
 	}
 	
 	public IEnumerator Unlock() //call method from another script if stayUntil is true
