@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -453,7 +453,6 @@ MonoBehaviour:
   panel: {fileID: 2137808495}
   editorCountdown: {fileID: 570601212}
   countdownSecondsInizio: {fileID: 1480515613}
-  "aumentoDifficolt\xE0": 0
   seconds: 3
   secondsInizioGioco: 0
   nSpilli: 20
@@ -481,7 +480,6 @@ GameObject:
   - component: {fileID: 198380622}
   - component: {fileID: 198380621}
   - component: {fileID: 198380624}
-  - component: {fileID: 198380625}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: Untagged
@@ -592,19 +590,6 @@ MonoBehaviour:
   p: {fileID: 770181060}
   camOff: {x: 0, y: 0, z: -100}
   camSpeed: 3
---- !u!114 &198380625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198380620}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b00f67159afbaf4b952e3613a63e2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unlitShader: {fileID: 4800000, guid: c655d7eac41bc224cb0662f310e61cac, type: 3}
 --- !u!1 &227490253
 GameObject:
   m_ObjectHideFlags: 0
