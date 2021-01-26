@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Bongia6
+  m_EditorClassIdentifier: 
+  deltaPoints: 2
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: "Sbaglio o ieri eri nell'angolo accanto al tuo?! Lo sai che \xE8 proibito
+      andare negli altri angoli"
+    canAnswer: 1
+    answers:
+    - answer: Effettvamente ammetto di essermi spostato. Mi dispiace
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Non ricordo molto bene ma credo di no
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "L'importante \xE8 ammettere i propri errori e cercare di non ripeterli
+      pi\xF9"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Che vestiti avevi?
+    canAnswer: 1
+    answers:
+    - answer: Maglia blu e pantalone rosso
+      nextSentenceNum: 4
+      deltaPoints: -3
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Maglia nera e pantaloni neri
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Allora avevo visto giusto, eri tu!!! Vedi di non dire altre bugie fino
+      alla fine del campo o saranno guai
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Ah ok allora mi sono sbagliata, mi sembrava avessi maglia blu e pantaloni
+      rossi
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100

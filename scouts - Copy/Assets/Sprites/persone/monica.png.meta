@@ -1,187 +1,97 @@
 fileFormatVersion: 2
-guid: b03c6edb65fbf8641a1d363d29c2202d
+guid: b140e2694e8c4ae46a43c283cceb44c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2021492470766182906
-    second: francesca, donna blu_0
+      213: -9163919711526219323
+    second: monica_0
   - first:
-      213: 1023320542509427052
-    second: francesca, donna blu_1
+      213: 3310398828173343950
+    second: monica_1
   - first:
-      213: -7750907729727301741
-    second: francesca, donna blu_2
+      213: -2608399807414901997
+    second: monica_2
   - first:
-      213: -8875401128032528619
-    second: francesca, donna blu_3
+      213: 8355372824840468462
+    second: monica_3
   - first:
-      213: 2764766276211351013
-    second: francesca, donna blu_4
+      213: -7011559997929451375
+    second: monica_4
   - first:
-      213: -1607304862451284052
-    second: francesca, donna blu_5
+      213: 8346031583933777162
+    second: monica_5
   - first:
-      213: -5907860962640198643
-    second: francesca, donna blu_6
+      213: 5465021052256012347
+    second: monica_6
   - first:
-      213: 8760433560089236056
-    second: francesca, donna blu_7
+      213: 3240493571640051709
+    second: monica_7
   - first:
-      213: -1043008155141522103
-    second: francesca, donna blu_8
+      213: -1067019405468760573
+    second: monica_8
   - first:
-      213: -4335793624309813211
-    second: francesca, donna blu_9
+      213: -6545765205302296327
+    second: monica_9
   - first:
-      213: -6008694167059005508
-    second: francesca, donna blu_10
+      213: -4626041350563515137
+    second: monica_10
   - first:
-      213: -6501322137809960317
-    second: francesca, donna blu_11
+      213: 5589230393902322931
+    second: monica_11
   - first:
-      213: 2721665806206331235
-    second: francesca, donna blu_12
+      213: -3463499616293855892
+    second: monica_12
   - first:
-      213: 4017630378965366692
-    second: francesca, donna blu_13
+      213: -3185753320481984910
+    second: monica_13
   - first:
-      213: 3728940215548297576
-    second: francesca, donna blu_14
+      213: -4690913695351086777
+    second: monica_14
   - first:
-      213: 1864161136884947244
-    second: francesca, donna blu_15
+      213: -7245819652840678406
+    second: monica_15
   - first:
-      213: 5867234923686740493
-    second: francesca, donna blu_16
+      213: 2254231878317394963
+    second: monica_16
   - first:
-      213: 5078877869136131613
-    second: francesca, donna blu_17
+      213: -5630379977578849668
+    second: monica_17
   - first:
-      213: 94698058023030897
-    second: francesca, donna blu_18
+      213: 3492122730387717513
+    second: monica_18
   - first:
-      213: -1940870144726841941
-    second: francesca, donna blu_19
+      213: -6450608875635209233
+    second: monica_19
   - first:
-      213: 1527282876188907711
-    second: francesca, donna blu_20
+      213: 8003582556343288287
+    second: monica_20
   - first:
-      213: 2438682323275169435
-    second: francesca, donna blu_21
+      213: -4199715327375041687
+    second: monica_21
   - first:
-      213: -2799038977111313897
-    second: francesca, donna blu_22
+      213: 2742500786141857813
+    second: monica_22
   - first:
-      213: -2070745817320278830
-    second: francesca, donna blu_23
+      213: 4537657971755051931
+    second: monica_23
   - first:
-      213: 1721136877174812172
-    second: francesca, donna blu_24
+      213: 5550138059792935666
+    second: monica_24
   - first:
-      213: -3268803015768158530
-    second: francesca, donna blu_25
+      213: -4800264614686559513
+    second: monica_25
   - first:
-      213: -8523095748841654508
-    second: francesca, donna blu_26
+      213: -5934493516535968652
+    second: monica_26
   - first:
-      213: -3778610819260052569
-    second: francesca, donna blu_27
+      213: -6724062896468466342
+    second: monica_27
   - first:
-      213: 3214545090127769657
-    second: francesca, donna blu_28
+      213: -3935276737019464981
+    second: monica_28
   - first:
-      213: -3228968220537762526
-    second: francesca, donna blu_29
-  - first:
-      213: 8132746008537360184
-    second: francesca, donna blu_0
-  - first:
-      213: -8551850270647449816
-    second: francesca, donna blu_1
-  - first:
-      213: -6874076538096187683
-    second: francesca, donna blu_2
-  - first:
-      213: 4086690813101095093
-    second: francesca, donna blu_3
-  - first:
-      213: -9102716132502622870
-    second: francesca, donna blu_4
-  - first:
-      213: -1442878112406389929
-    second: francesca, donna blu_5
-  - first:
-      213: -4180641316674990531
-    second: francesca, donna blu_6
-  - first:
-      213: -9129706697037372964
-    second: francesca, donna blu_7
-  - first:
-      213: 4346867886151251786
-    second: francesca, donna blu_8
-  - first:
-      213: -1810094210868631388
-    second: francesca, donna blu_9
-  - first:
-      213: 3005726387745670214
-    second: francesca, donna blu_10
-  - first:
-      213: -3558229184763022613
-    second: francesca, donna blu_11
-  - first:
-      213: 819245642621768318
-    second: francesca, donna blu_12
-  - first:
-      213: 7833675065295983984
-    second: francesca, donna blu_13
-  - first:
-      213: -234745565132212289
-    second: francesca, donna blu_14
-  - first:
-      213: -1001756133602312756
-    second: francesca, donna blu_15
-  - first:
-      213: -7272356396346275187
-    second: francesca, donna blu_16
-  - first:
-      213: -7645669471179488283
-    second: francesca, donna blu_17
-  - first:
-      213: 9115329585850843725
-    second: francesca, donna blu_18
-  - first:
-      213: 4057082127030826730
-    second: francesca, donna blu_19
-  - first:
-      213: 5973641693651820002
-    second: francesca, donna blu_20
-  - first:
-      213: -869178548308463529
-    second: francesca, donna blu_21
-  - first:
-      213: 4410189938513034090
-    second: francesca, donna blu_22
-  - first:
-      213: -8692549799060632074
-    second: francesca, donna blu_23
-  - first:
-      213: -4786544475269368132
-    second: francesca, donna blu_24
-  - first:
-      213: -8721860953974017230
-    second: francesca, donna blu_25
-  - first:
-      213: -8591952475766077098
-    second: francesca, donna blu_26
-  - first:
-      213: 3876212063504194103
-    second: francesca, donna blu_27
-  - first:
-      213: -6568067851554242816
-    second: francesca, donna blu_28
-  - first:
-      213: 8293299288466116005
-    second: francesca, donna blu_29
+      213: 6618293837988366639
+    second: monica_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -211,7 +121,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -303,7 +213,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: francesca, donna blu_1
+      name: monica_1
       rect:
         serializedVersion: 2
         x: 53
@@ -317,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8270bbd0d79b15980800000000000000
-      internalID: -8551850270647449816
+      spriteID: ecc342ae136e0fd20800000000000000
+      internalID: 3310398828173343950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_2
+      name: monica_2
       rect:
         serializedVersion: 2
         x: 354
@@ -338,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd60eeb1fcf5a90a0800000000000000
-      internalID: -6874076538096187683
+      spriteID: 31366dee13a1dcbd0800000000000000
+      internalID: -2608399807414901997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_3
+      name: monica_3
       rect:
         serializedVersion: 2
         x: 672
@@ -359,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b83ebd64a7d6b830800000000000000
-      internalID: 4086690813101095093
+      spriteID: ee77196c05f34f370800000000000000
+      internalID: 8355372824840468462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_4
+      name: monica_4
       rect:
         serializedVersion: 2
         x: 963
@@ -380,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6da6fed7e7aca180800000000000000
-      internalID: -9102716132502622870
+      spriteID: 190931aa45fe1be90800000000000000
+      internalID: -7011559997929451375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_6
+      name: monica_6
       rect:
         serializedVersion: 2
         x: 1206
@@ -401,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3e044a5fd06bf5c0800000000000000
-      internalID: -4180641316674990531
+      spriteID: b3840cd21b7a7db40800000000000000
+      internalID: 5465021052256012347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_8
+      name: monica_8
       rect:
         serializedVersion: 2
         x: 1479
@@ -422,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a47399fcf4d235c30800000000000000
-      internalID: 4346867886151251786
+      spriteID: 3060698018f2131f0800000000000000
+      internalID: -1067019405468760573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_9
+      name: monica_9
       rect:
         serializedVersion: 2
         x: 1730
@@ -443,14 +353,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a82f2fc7e041e6e0800000000000000
-      internalID: -1810094210868631388
+      spriteID: 9f048da0a35c825a0800000000000000
+      internalID: -6545765205302296327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_10
+      name: monica_10
       rect:
         serializedVersion: 2
         x: 2042
@@ -464,14 +374,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6444991893c76b920800000000000000
-      internalID: 3005726387745670214
+      spriteID: ff4b467c6effccfb0800000000000000
+      internalID: -4626041350563515137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_11
+      name: monica_11
       rect:
         serializedVersion: 2
         x: 2349
@@ -485,77 +395,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be2b5c4a861ae9ec0800000000000000
-      internalID: -3558229184763022613
+      spriteID: 3f45d542e6fe09d40800000000000000
+      internalID: 5589230393902322931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_12
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 1341
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e72d148429b8e5b00800000000000000
-      internalID: 819245642621768318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: francesca, donna blu_13
-      rect:
-        serializedVersion: 2
-        x: 1191
-        y: 1339
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0755dc0a7fdc6bc60800000000000000
-      internalID: 7833675065295983984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: francesca, donna blu_14
-      rect:
-        serializedVersion: 2
-        x: 1465
-        y: 1333
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb732b9f6240ebcf0800000000000000
-      internalID: -234745565132212289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: francesca, donna blu_15
+      name: monica_15
       rect:
         serializedVersion: 2
         x: 61
@@ -569,14 +416,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccdb011aa1c0912f0800000000000000
-      internalID: -1001756133602312756
+      spriteID: afb13ed6a6da17b90800000000000000
+      internalID: -7245819652840678406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_16
+      name: monica_16
       rect:
         serializedVersion: 2
         x: 353
@@ -590,14 +437,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8a8dbb5366631b90800000000000000
-      internalID: -7272356396346275187
+      spriteID: 31c487c23f3a84f10800000000000000
+      internalID: 2254231878317394963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_17
+      name: monica_17
       rect:
         serializedVersion: 2
         x: 687
@@ -611,14 +458,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e34c4cdf1025e590800000000000000
-      internalID: -7645669471179488283
+      spriteID: c7ad0fdcd3fdcd1b0800000000000000
+      internalID: -5630379977578849668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_18
+      name: monica_18
       rect:
         serializedVersion: 2
         x: 990
@@ -632,14 +479,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d428f3796f7208e70800000000000000
-      internalID: 9115329585850843725
+      spriteID: 98db3d80f13867030800000000000000
+      internalID: 3492122730387717513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_19
+      name: monica_19
       rect:
         serializedVersion: 2
         x: 1231
@@ -653,14 +500,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae6324ef2b6ad4830800000000000000
-      internalID: 4057082127030826730
+      spriteID: feb08c68765da76a0800000000000000
+      internalID: -6450608875635209233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_20
+      name: monica_20
       rect:
         serializedVersion: 2
         x: 1506
@@ -674,14 +521,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ed549d7873a6e250800000000000000
-      internalID: 5973641693651820002
+      spriteID: fd1ca512eef621f60800000000000000
+      internalID: 8003582556343288287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_21
+      name: monica_21
       rect:
         serializedVersion: 2
         x: 1729
@@ -695,14 +542,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7503fa527be00f3f0800000000000000
-      internalID: -869178548308463529
+      spriteID: 96b1c0a292d97b5c0800000000000000
+      internalID: -4199715327375041687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_22
+      name: monica_22
       rect:
         serializedVersion: 2
         x: 2003
@@ -716,14 +563,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6b32150264243d30800000000000000
-      internalID: 4410189938513034090
+      spriteID: 51807324fe15f0620800000000000000
+      internalID: 2742500786141857813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_23
+      name: monica_23
       rect:
         serializedVersion: 2
         x: 2246
@@ -737,14 +584,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fd099a430cdd5780800000000000000
-      internalID: -8692549799060632074
+      spriteID: b9bedae32eff8fe30800000000000000
+      internalID: 4537657971755051931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_24
+      name: monica_24
       rect:
         serializedVersion: 2
         x: 79
@@ -758,14 +605,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb6f5f1f827c29db0800000000000000
-      internalID: -4786544475269368132
+      spriteID: 2fa6554d82d060d40800000000000000
+      internalID: 5550138059792935666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_25
+      name: monica_25
       rect:
         serializedVersion: 2
         x: 356
@@ -779,14 +626,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 233770a3ca9b5f680800000000000000
-      internalID: -8721860953974017230
+      spriteID: 7e2fabd04c8026db0800000000000000
+      internalID: -4800264614686559513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_26
+      name: monica_26
       rect:
         serializedVersion: 2
         x: 661
@@ -800,14 +647,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 659cce2deb043c880800000000000000
-      internalID: -8591952475766077098
+      spriteID: 47cc309c69174ada0800000000000000
+      internalID: -5934493516535968652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_27
+      name: monica_27
       rect:
         serializedVersion: 2
         x: 988
@@ -821,14 +668,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73a504fa5521bc530800000000000000
-      internalID: 3876212063504194103
+      spriteID: a55ec98db645fa2a0800000000000000
+      internalID: -6724062896468466342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_28
+      name: monica_28
       rect:
         serializedVersion: 2
         x: 1293
@@ -842,14 +689,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00f327f861989d4a0800000000000000
-      internalID: -6568067851554242816
+      spriteID: be2b81d58a61369c0800000000000000
+      internalID: -3935276737019464981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: francesca, donna blu_29
+      name: monica_29
       rect:
         serializedVersion: 2
         x: 1594
@@ -863,8 +710,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5adc50953c7b71370800000000000000
-      internalID: 8293299288466116005
+      spriteID: f2904703e27e8db50800000000000000
+      internalID: 6618293837988366639
       vertices: []
       indices: 
       edges: []
@@ -881,7 +728,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

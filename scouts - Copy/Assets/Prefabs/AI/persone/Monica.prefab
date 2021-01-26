@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 179057071263113353}
   - component: {fileID: 179057071263113356}
   - component: {fileID: 179057071263113359}
-  - component: {fileID: 179057071263113358}
   - component: {fileID: 7097929509582258097}
   - component: {fileID: 1405805752366360539}
   - component: {fileID: -3420644488980352696}
+  - component: {fileID: 8274032763020763443}
   m_Layer: 0
   m_Name: Monica
   m_TagString: Untagged
@@ -85,51 +85,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &179057071263113358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179057071263113352}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca71c0d2951e2e441a8a4300eb81cb28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
-  objectSubName: 
-  animationPrefix: 
-  buttons:
-  - buttonText: Manda a fare legna
-    color: 2
-    generalAction: {fileID: 11400000, guid: e3b5aea7f1fcaf949a7d1bd2bd5a3ae3, type: 2}
-    previousAction: {fileID: 0}
-    hasDonePreviousAction: 0
-  maxDistanceFromPlayer: 0
-  isInstantiating: 1
-  checkPositionEachFrame: 1
-  spawnInRandomPosition: 0
-  manageAnimationsAutomatically: 0
-  customDataFileName: 
-  possiblePositions: []
-  clickListener: {fileID: 6925112430229956604, guid: 65ed6bdba6f23fa469e2d084e03a41af,
-    type: 3}
-  isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0.9, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
-  clickListenerOffset: {x: 0, y: 0, z: 0}
-  states: []
-  priorityTargets:
-  - name: Tenda
-    target: {x: 0, y: 0, z: 0}
-    priority: 0
-    waitEndOfCurrentPath: 1
-    automatic: 1
-    conditions:
-    - type: 3
-      desiredValue: 0
-      warning: 
 --- !u!212 &7097929509582258097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -169,13 +124,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 3310398828173343950, guid: dc21b2bbf2bde184ea0914de61278a7a,
+  m_Sprite: {fileID: 3310398828173343950, guid: b140e2694e8c4ae46a43c283cceb44c3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.203125, y: 0.3671875}
+  m_Size: {x: 0.2890625, y: 0.48437503}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -216,3 +171,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.02}
   serializedVersion: 2
   m_Radius: 0.052699734
+--- !u!114 &8274032763020763443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179057071263113352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854f267d615152d40a1c493efff6387f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
+  objectSubName: 
+  animationPrefix: 
+  buttons: []
+  maxDistanceFromPlayer: 0
+  isInstantiating: 0
+  checkPositionEachFrame: 0
+  spawnInRandomPosition: 0
+  manageAnimationsAutomatically: 0
+  customDataFileName: 
+  possiblePositions: []
+  clickListener: {fileID: 0}
+  isNameAlwaysActive: 0
+  nameTextOffset: {x: 0, y: 0, z: 0}
+  loadingBarOffset: {x: 0, y: 0, z: 0}
+  clickListenerOffset: {x: 0, y: 0, z: 0}
+  states: []
+  priorityTargets: []
+  dialoguesArray: []

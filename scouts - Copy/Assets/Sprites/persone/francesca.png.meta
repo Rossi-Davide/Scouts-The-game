@@ -1,97 +1,97 @@
 fileFormatVersion: 2
-guid: dc21b2bbf2bde184ea0914de61278a7a
+guid: 8c5472da68ccc5a4289e170bd3080edf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9163919711526219323
-    second: monica_0
+      213: 3787136508093517014
+    second: francesca_0
   - first:
-      213: 3310398828173343950
-    second: monica_1
+      213: -9114925648892185669
+    second: francesca_1
   - first:
-      213: -2608399807414901997
-    second: monica_2
+      213: 3461530328236656679
+    second: francesca_2
   - first:
-      213: 8355372824840468462
-    second: monica_3
+      213: -1587362458302264332
+    second: francesca_3
   - first:
-      213: -7011559997929451375
-    second: monica_4
+      213: -4792334006584564583
+    second: francesca_4
   - first:
-      213: 8346031583933777162
-    second: monica_5
+      213: 2362063736904785893
+    second: francesca_5
   - first:
-      213: 5465021052256012347
-    second: monica_6
+      213: -7917745223444939808
+    second: francesca_6
   - first:
-      213: 3240493571640051709
-    second: monica_7
+      213: -1714971056207213657
+    second: francesca_7
   - first:
-      213: -1067019405468760573
-    second: monica_8
+      213: 319631288978336173
+    second: francesca_8
   - first:
-      213: -6545765205302296327
-    second: monica_9
+      213: -1559698062751457400
+    second: francesca_9
   - first:
-      213: -4626041350563515137
-    second: monica_10
+      213: -2445831414446086642
+    second: francesca_10
   - first:
-      213: 5589230393902322931
-    second: monica_11
+      213: 4126457338161489050
+    second: francesca_11
   - first:
-      213: -3463499616293855892
-    second: monica_12
+      213: 4771439111370087513
+    second: francesca_12
   - first:
-      213: -3185753320481984910
-    second: monica_13
+      213: -8213772041008242461
+    second: francesca_13
   - first:
-      213: -4690913695351086777
-    second: monica_14
+      213: -1092696365426266662
+    second: francesca_14
   - first:
-      213: -7245819652840678406
-    second: monica_15
+      213: 5672169549441699995
+    second: francesca_15
   - first:
-      213: 2254231878317394963
-    second: monica_16
+      213: 3229273518185285517
+    second: francesca_16
   - first:
-      213: -5630379977578849668
-    second: monica_17
+      213: -4252566778525514744
+    second: francesca_17
   - first:
-      213: 3492122730387717513
-    second: monica_18
+      213: 2677312608664684268
+    second: francesca_18
   - first:
-      213: -6450608875635209233
-    second: monica_19
+      213: 5218609014169665824
+    second: francesca_19
   - first:
-      213: 8003582556343288287
-    second: monica_20
+      213: 6901582218839724685
+    second: francesca_20
   - first:
-      213: -4199715327375041687
-    second: monica_21
+      213: 5978176594167195329
+    second: francesca_21
   - first:
-      213: 2742500786141857813
-    second: monica_22
+      213: -3931324303009634027
+    second: francesca_22
   - first:
-      213: 4537657971755051931
-    second: monica_23
+      213: 423251171898404830
+    second: francesca_23
   - first:
-      213: 5550138059792935666
-    second: monica_24
+      213: 6774428533353075722
+    second: francesca_24
   - first:
-      213: -4800264614686559513
-    second: monica_25
+      213: 1569195212223415947
+    second: francesca_25
   - first:
-      213: -5934493516535968652
-    second: monica_26
+      213: 3601810406914644269
+    second: francesca_26
   - first:
-      213: -6724062896468466342
-    second: monica_27
+      213: 5981971026991816518
+    second: francesca_27
   - first:
-      213: -3935276737019464981
-    second: monica_28
+      213: -1623107720111900505
+    second: francesca_28
   - first:
-      213: 6618293837988366639
-    second: monica_29
+      213: -4403808752678602160
+    second: francesca_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -213,7 +213,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monica_1
+      name: francesca_1
       rect:
         serializedVersion: 2
         x: 53
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecc342ae136e0fd20800000000000000
-      internalID: 3310398828173343950
+      spriteID: bb33faf4a67418180800000000000000
+      internalID: -9114925648892185669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_2
+      name: francesca_2
       rect:
         serializedVersion: 2
         x: 354
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31366dee13a1dcbd0800000000000000
-      internalID: -2608399807414901997
+      spriteID: 72889c95e73d90030800000000000000
+      internalID: 3461530328236656679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_3
+      name: francesca_3
       rect:
         serializedVersion: 2
         x: 672
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee77196c05f34f370800000000000000
-      internalID: 8355372824840468462
+      spriteID: 4fb4a1f114e88f9e0800000000000000
+      internalID: -1587362458302264332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_4
+      name: francesca_4
       rect:
         serializedVersion: 2
         x: 963
@@ -290,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 190931aa45fe1be90800000000000000
-      internalID: -7011559997929451375
+      spriteID: 994a084ac953e7db0800000000000000
+      internalID: -4792334006584564583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_6
+      name: francesca_6
       rect:
         serializedVersion: 2
         x: 1206
@@ -311,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3840cd21b7a7db40800000000000000
-      internalID: 5465021052256012347
+      spriteID: 0ebb4865ba48e1290800000000000000
+      internalID: -7917745223444939808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_8
+      name: francesca_8
       rect:
         serializedVersion: 2
         x: 1479
@@ -332,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3060698018f2131f0800000000000000
-      internalID: -1067019405468760573
+      spriteID: da967aeb6fe8f6400800000000000000
+      internalID: 319631288978336173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_9
+      name: francesca_9
       rect:
         serializedVersion: 2
         x: 1730
@@ -353,14 +353,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f048da0a35c825a0800000000000000
-      internalID: -6545765205302296327
+      spriteID: 88f95d420e6da5ae0800000000000000
+      internalID: -1559698062751457400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_10
+      name: francesca_10
       rect:
         serializedVersion: 2
         x: 2042
@@ -374,14 +374,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff4b467c6effccfb0800000000000000
-      internalID: -4626041350563515137
+      spriteID: e0623718949ae0ed0800000000000000
+      internalID: -2445831414446086642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_11
+      name: francesca_11
       rect:
         serializedVersion: 2
         x: 2349
@@ -395,56 +395,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f45d542e6fe09d40800000000000000
-      internalID: 5589230393902322931
+      spriteID: a946bed061f144930800000000000000
+      internalID: 4126457338161489050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_12
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 1341
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6d5a1b037d2fefc0800000000000000
-      internalID: -3463499616293855892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: monica_13
-      rect:
-        serializedVersion: 2
-        x: 1191
-        y: 1339
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27e66aedb3ee9c3d0800000000000000
-      internalID: -3185753320481984910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: monica_15
+      name: francesca_15
       rect:
         serializedVersion: 2
         x: 61
@@ -458,14 +416,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afb13ed6a6da17b90800000000000000
-      internalID: -7245819652840678406
+      spriteID: b90924c172897be40800000000000000
+      internalID: 5672169549441699995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_16
+      name: francesca_16
       rect:
         serializedVersion: 2
         x: 353
@@ -479,14 +437,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31c487c23f3a84f10800000000000000
-      internalID: 2254231878317394963
+      spriteID: d878206c72fa0dc20800000000000000
+      internalID: 3229273518185285517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_17
+      name: francesca_17
       rect:
         serializedVersion: 2
         x: 687
@@ -500,14 +458,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7ad0fdcd3fdcd1b0800000000000000
-      internalID: -5630379977578849668
+      spriteID: 8040c56cb09dbf4c0800000000000000
+      internalID: -4252566778525514744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_18
+      name: francesca_18
       rect:
         serializedVersion: 2
         x: 990
@@ -521,14 +479,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98db3d80f13867030800000000000000
-      internalID: 3492122730387717513
+      spriteID: ce60220f1a9b72520800000000000000
+      internalID: 2677312608664684268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_19
+      name: francesca_19
       rect:
         serializedVersion: 2
         x: 1231
@@ -542,14 +500,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feb08c68765da76a0800000000000000
-      internalID: -6450608875635209233
+      spriteID: 0210c3fbf393c6840800000000000000
+      internalID: 5218609014169665824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_20
+      name: francesca_20
       rect:
         serializedVersion: 2
         x: 1506
@@ -563,14 +521,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd1ca512eef621f60800000000000000
-      internalID: 8003582556343288287
+      spriteID: d82181e367857cf50800000000000000
+      internalID: 6901582218839724685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_21
+      name: francesca_21
       rect:
         serializedVersion: 2
         x: 1729
@@ -584,14 +542,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96b1c0a292d97b5c0800000000000000
-      internalID: -4199715327375041687
+      spriteID: 1c6e3eb40ffb6f250800000000000000
+      internalID: 5978176594167195329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_22
+      name: francesca_22
       rect:
         serializedVersion: 2
         x: 2003
@@ -605,14 +563,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51807324fe15f0620800000000000000
-      internalID: 2742500786141857813
+      spriteID: 519204e10612179c0800000000000000
+      internalID: -3931324303009634027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_23
+      name: francesca_23
       rect:
         serializedVersion: 2
         x: 2246
@@ -626,14 +584,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9bedae32eff8fe30800000000000000
-      internalID: 4537657971755051931
+      spriteID: edfa5c7c2b0bfd500800000000000000
+      internalID: 423251171898404830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_24
+      name: francesca_24
       rect:
         serializedVersion: 2
         x: 79
@@ -647,14 +605,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fa6554d82d060d40800000000000000
-      internalID: 5550138059792935666
+      spriteID: a04d7cecbda930e50800000000000000
+      internalID: 6774428533353075722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_25
+      name: francesca_25
       rect:
         serializedVersion: 2
         x: 356
@@ -668,14 +626,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e2fabd04c8026db0800000000000000
-      internalID: -4800264614686559513
+      spriteID: b8602d74bb6e6c510800000000000000
+      internalID: 1569195212223415947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_26
+      name: francesca_26
       rect:
         serializedVersion: 2
         x: 661
@@ -689,14 +647,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47cc309c69174ada0800000000000000
-      internalID: -5934493516535968652
+      spriteID: d29d37c5b733cf130800000000000000
+      internalID: 3601810406914644269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_27
+      name: francesca_27
       rect:
         serializedVersion: 2
         x: 988
@@ -710,14 +668,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55ec98db645fa2a0800000000000000
-      internalID: -6724062896468466342
+      spriteID: 64f968884fa340350800000000000000
+      internalID: 5981971026991816518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_28
+      name: francesca_28
       rect:
         serializedVersion: 2
         x: 1293
@@ -731,14 +689,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be2b81d58a61369c0800000000000000
-      internalID: -3935276737019464981
+      spriteID: 7a8398ec0209979e0800000000000000
+      internalID: -1623107720111900505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monica_29
+      name: francesca_29
       rect:
         serializedVersion: 2
         x: 1594
@@ -752,8 +710,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2904703e27e8db50800000000000000
-      internalID: 6618293837988366639
+      spriteID: 05af5d5954782e2c0800000000000000
+      internalID: -4403808752678602160
       vertices: []
       indices: 
       edges: []
@@ -770,7 +728,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
