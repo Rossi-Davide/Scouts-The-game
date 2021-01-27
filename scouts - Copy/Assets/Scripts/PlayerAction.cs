@@ -19,13 +19,13 @@ public class PlayerAction : ScriptableObject
     [HideInInspector]
     public int EditableTimeNeeded { get { return CampManager.instance.MultiplyByDurationFactor(editableTimeNeeded, DurationFactor.actionDurationFactor); } set { editableTimeNeeded = value; } }
     [HideInInspector]
-    public int EditableEnergyGiven { get { return editableEnergyGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableEnergyGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editableEnergyGiven, DurationFactor.prizesFactor); } set { editableEnergyGiven = value; } }
+    public int EditableEnergyGiven { get { return editableEnergyGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableEnergyGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editableEnergyGiven, DurationFactor.actionPricesFactor); } set { editableEnergyGiven = value; } }
     [HideInInspector]
-    public int EditableMaterialsGiven { get { return editableMaterialsGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor); } set { editableMaterialsGiven = value; } }
+    public int EditableMaterialsGiven { get { return editableMaterialsGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.actionPricesFactor); } set { editableMaterialsGiven = value; } }
     [HideInInspector]
-    public int EditablePointsGiven { get { return editablePointsGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editableMaterialsGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editablePointsGiven, DurationFactor.prizesFactor); } set { editablePointsGiven = value; } }
+    public int EditablePointsGiven { get { return editablePointsGiven > 0 ? CampManager.instance.MultiplyByDurationFactor(editablePointsGiven, DurationFactor.prizesFactor) : CampManager.instance.MultiplyByDurationFactor(editablePointsGiven, DurationFactor.actionPricesFactor); } set { editablePointsGiven = value; } }
     [HideInInspector]
-    public int EditableTimeBeforeRedo { get { return CampManager.instance.MultiplyByDurationFactor(editableTimeBeforeRedo, DurationFactor.prizesFactor); } set { editableTimeBeforeRedo = value; } }
+    public int EditableTimeBeforeRedo { get { return CampManager.instance.MultiplyByDurationFactor(editableTimeBeforeRedo, DurationFactor.actionWaitTimeFactor); } set { editableTimeBeforeRedo = value; } }
 
     int editableTimeNeeded;
     int editableEnergyGiven;
@@ -40,6 +40,7 @@ public class PlayerAction : ScriptableObject
         EditableMaterialsGiven = materialsGiven;
         EditablePointsGiven = pointsGiven;
         EditableTimeNeeded = timeNeeded;
+        //Debug.Log($"modified values: {EditableEnergyGiven}, {EditableMaterialsGiven}, {EditablePointsGiven}; real values: {editableEnergyGiven}, {editableMaterialsGiven}, {editablePointsGiven}");
     }
 
 

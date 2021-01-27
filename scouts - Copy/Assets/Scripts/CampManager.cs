@@ -89,11 +89,13 @@ public class CampManager : MonoBehaviour
 		int r = baseValue;
 		for (int i = 1; i <= camp.settings.durationIndex; i++)
 		{
-			r *= GetFactorValue(factor, i);
+			r = (int)(r * GetFactorValue(factor, i));
+			//Debug.Log($"factor: {GetFactorValue(factor, i)}, r: {r}");
 		}
+		//Debug.Log(r);
 		return r;
 	}
-	int GetFactorValue(DurationFactor factor, int durationIndex)
+	double GetFactorValue(DurationFactor factor, int durationIndex)
 	{
 		switch (factor)
 		{
@@ -101,7 +103,7 @@ public class CampManager : MonoBehaviour
 			case DurationFactor.actionWaitTimeFactor: return possibleDurations[durationIndex].actionWaitTimeFactor;
 			case DurationFactor.shopPricesFactor: return possibleDurations[durationIndex].shopPricesFactor;
 			case DurationFactor.actionPricesFactor: return possibleDurations[durationIndex].actionPricesFactor;
-			case DurationFactor.prizesFactor: return (int)possibleDurations[durationIndex].prizesFactor;
+			case DurationFactor.prizesFactor: return possibleDurations[durationIndex].prizesFactor;
 			default: throw new System.NotImplementedException();
 		}
 	}

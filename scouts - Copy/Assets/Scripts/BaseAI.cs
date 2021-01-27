@@ -61,7 +61,7 @@ public abstract class BaseAI : InGameObject
 		if((pos.x-0.2f)<rb.position.x&&rb.position.x<(pos.x+0.2f)&& (pos.y - 0.2f) < rb.position.y && rb.position.y < (pos.y + 0.2f))
         {
 			
-			Debug.LogError("CheckStop");
+			//Debug.LogError("CheckStop");
 			CreateNewPath(null);
 		}
 		pos = rb.position;
@@ -84,7 +84,7 @@ public abstract class BaseAI : InGameObject
 	protected  virtual void CreateNewPath(Vector3? priorityTarget)
 	{
 		//Debug.LogError(priorityTarget+"priority");
-		Debug.Log(transform.parent.name);
+		//Debug.Log(transform.parent.name);
 		int n1, n2;
         if (ai)
         {
@@ -138,7 +138,7 @@ public abstract class BaseAI : InGameObject
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);
         if (toggleCheckBlocco)
         {
-			StartCoroutine(CheckBlocco());
+			if (gameObject.activeSelf) StartCoroutine(CheckBlocco());
 			toggleCheckBlocco = !toggleCheckBlocco;
         }
 		cont++;
@@ -188,7 +188,7 @@ public abstract class BaseAI : InGameObject
 		}
 		else
 		{
-			Debug.LogError("verify path");
+			//Debug.LogError("verify path");
 			CreateNewPath(null);
 		}
 	}
@@ -257,7 +257,7 @@ public abstract class BaseAI : InGameObject
 		}
 		rb = GetComponent<Rigidbody2D>();
 		seeker = GetComponent<Seeker>();
-		Debug.LogError("CheckPriorityTargetsThatWait");
+		//Debug.LogError("CheckPriorityTargetsThatWait");
 		CreateNewPath(target);
 	}
 

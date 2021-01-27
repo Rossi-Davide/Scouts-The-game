@@ -77,7 +77,8 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		foreach (var s in states)
 		{
-			s.active = FindNotVerified(s.conditions) == null;
+			if (s.conditions != null)
+				s.active = FindNotVerified(s.conditions) == null;
 		}
 		foreach (var b in buttons)
 		{
@@ -119,14 +120,12 @@ public abstract class InGameObject : MonoBehaviour
 			InvokeRepeating(nameof(RefreshStates), .9f, .3f);
 		}
 
-		for (int b = 0; b < buttons.Length; b++)
+		for (int i = 0; i < buttons.Length; i++)
 		{
-			CalculatePriceOrPrize(buttons[b]);
-			buttons[b].buttonNum = b + 1;
-			buttons[b].obj = GameManager.instance.actionButtons[b];
-			buttons[b].canDo = true;
-		} //change price or prize string in buttons
-
+			buttons[i].buttonNum = i + 1;
+			buttons[i].obj = GameManager.instance.actionButtons[i];
+			buttons[i].canDo = true;
+		}
 
 		if (checkPositionEachFrame)
 			InvokeRepeating(nameof(MoveUI), 0.1f, 0.05f);
@@ -147,6 +146,22 @@ public abstract class InGameObject : MonoBehaviour
 
 		isNameAlwaysActive = GetComponent<CapieCambu>() != null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq == Player.instance.squadriglia);
 		ToggleNameAndSubName(isNameAlwaysActive);
+
+		StartCoroutine(CalculateActionPrices());
+	}
+
+	IEnumerator CalculateActionPrices()
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		for (int b = 0; b < buttons.Length; b++)
+		{
+			CalculatePriceOrPrize(buttons[b]);
+		} //change price or prize string in buttons
 	}
 
 
@@ -178,7 +193,7 @@ public abstract class InGameObject : MonoBehaviour
 	void CalculatePriceOrPrize(ActionButton b)
 	{
 		var a = b.generalAction;
-		Debug.Log(objectName + (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0));
+		Debug.Log(objectName + $" energy: {a.EditableEnergyGiven}, points: {a.EditablePointsGiven}, materials: {a.EditableMaterialsGiven}; null: {a == null}");
 		var p = (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0) ? Math.Max(a.EditableEnergyGiven, Math.Max(a.EditablePointsGiven, a.EditableMaterialsGiven)) : Math.Min(a.EditableEnergyGiven, Math.Min(a.EditablePointsGiven, a.EditableMaterialsGiven));
 		if (p == a.EditableEnergyGiven) b.priceOrPrizeType = Counter.Energia;
 		if (p == a.EditableMaterialsGiven) b.priceOrPrizeType = Counter.Materiali;

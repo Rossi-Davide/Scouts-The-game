@@ -8,9 +8,9 @@ public class Duration
 	public string name;
 	public int totalDays;
 	[Header("If this is the easiest and shortest duration, the following aren't calculated")]
-	public int actionDurationFactor;
-	public int actionWaitTimeFactor;
-	public int shopPricesFactor;
-	public int actionPricesFactor;
+	public double actionDurationFactor;
+	public double actionWaitTimeFactor;
+	public double shopPricesFactor;
+	public double actionPricesFactor;
 	public double prizesFactor;
 }

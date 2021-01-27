@@ -9,6 +9,7 @@ public class BuildingState : ScriptableObject
 	[HideInInspector] [System.NonSerialized]
 	public bool active;
 	public bool playAtActionEnd;
+	public int keepAfterPlay;
 	[Header("Only for indipendent states:")]
 	public Condition[] conditions;
 }
