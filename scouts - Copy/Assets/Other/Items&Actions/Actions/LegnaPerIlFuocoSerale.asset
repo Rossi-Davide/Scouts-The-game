@@ -32,5 +32,5 @@ MonoBehaviour:
   timeNeeded: 10
   energyGiven: 0
   materialsGiven: -300
-  pointsGiven: 5
+  pointsGiven: 7
   timeBeforeRedo: 300
