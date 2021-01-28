@@ -19,10 +19,6 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 11400000, guid: 22a44bb106043c2449703600a60c08c2, type: 2}

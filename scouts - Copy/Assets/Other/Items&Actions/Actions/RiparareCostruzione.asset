@@ -22,10 +22,6 @@ MonoBehaviour:
   - type: 1
     desiredValue: 1
     warning: "Non puoi riparare la costruzione perch\xE8 \xE8 distrutta!"
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 0}

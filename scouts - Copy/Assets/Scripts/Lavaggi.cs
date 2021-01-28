@@ -16,9 +16,9 @@ public class Lavaggi : InGameObject
 		RefreshButtonsState();
 	}
 
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				return LavaIPanni;
@@ -30,4 +30,6 @@ public class Lavaggi : InGameObject
 				throw new NotImplementedException();
 		}
 	}
+
+	protected override void DoActionOnStart(int buttonIndex) { }
 }

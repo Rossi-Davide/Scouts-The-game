@@ -26,10 +26,6 @@ MonoBehaviour:
   - type: 3
     desiredValue: 1
     warning: Puoi cucinare solo di giorno!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 11400000, guid: 03b48a7d725ae0e45ab2040e98cd199f, type: 2}

@@ -20,12 +20,14 @@ public class Player : MonoBehaviour
 	public Squadriglia squadriglia;
 	public ControllerArr[] controllers;
 	Animator animator;
+	Joystick joystick;
 
 	private void Start()
     {
         animator = GetComponent<Animator>();
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.plFileName, false));
 		animator.runtimeAnimatorController = controllers[(int)CampManager.instance.camp.settings.gender].controllers[(int)CampManager.instance.camp.settings.hair];
+		joystick = Joystick.instance;
 	}
 
 	[System.Serializable]
@@ -64,7 +66,24 @@ public class Player : MonoBehaviour
 	bool isMoving;
 	void FixedUpdate()
 	{
-		Vector3 movement = Joystick.instance.direction; 
+		Vector3 movement = joystick.direction;
+		if (Input.GetKey(KeyCode.W))
+		{
+			movement.y = 1;
+		}
+		if (Input.GetKey(KeyCode.S))
+		{
+			movement.y = -1;
+		}
+		if (Input.GetKey(KeyCode.D))
+		{
+			movement.x = 1;
+		}
+		if (Input.GetKey(KeyCode.A))
+		{
+			movement.x = -1;
+		}
+
 		transform.position = Vector3.Lerp(transform.position, transform.position + movement, Time.deltaTime * playerSpeed);
 		if (isMoving)
 		{

@@ -41,9 +41,9 @@ public class Campfire : InGameObject
 			default: return base.GetConditionValue(t);
 		}
 	}
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				return FaiLegna;
@@ -51,4 +51,6 @@ public class Campfire : InGameObject
 				throw new NotImplementedException();
 		}
 	}
+
+	protected override void DoActionOnStart(int buttonIndex) { }
 }

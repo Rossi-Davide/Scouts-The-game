@@ -19,10 +19,6 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 0}
@@ -31,8 +27,3 @@ MonoBehaviour:
   materialsGiven: 20
   pointsGiven: 0
   timeBeforeRedo: 0
-  editableTimeNeeded: 3
-  editableEnergyGiven: 0
-  editableMaterialsGiven: 20
-  editablePointsGiven: 0
-  editableTimeBeforeRedo: 0

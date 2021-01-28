@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Collections;
 
 public class ActionManager : MonoBehaviour
 {
@@ -51,9 +52,9 @@ public class ActionManager : MonoBehaviour
 
 
 
-	public void AddAction(TimeAction action, bool show)
+	public void AddAction(TimeAction action)
 	{
-		if (show)
+		if (action.show)
 		{
 			currentActions.Add(action);
 		}
@@ -61,7 +62,6 @@ public class ActionManager : MonoBehaviour
 		{
 			currentHiddenActions.Add(action);
 		}
-		action.timeLeft = action.totalTime;
 		action.loadingBar.gameObject.SetActive(true);
 		action.loadingBar.slider.maxValue = action.totalTime;
 		action.loadingBar.value.text = GameManager.IntToMinuteSeconds(action.totalTime);
@@ -92,35 +92,50 @@ public class ActionManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(RefreshTimesLeft), 1, 1);
+		InvokeRepeating(nameof(RefreshTimesLeft), .1f, 1);
 		isOpen = false;
 		currentActions = new List<TimeAction>();
 		currentHiddenActions = new List<TimeAction>();
+		StartCoroutine(CoroutineSetStatus());
+	}
+
+	IEnumerator CoroutineSetStatus()
+	{
+		yield return new WaitForSeconds(.1f);
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.actionManagerFileName, false));
 	}
 
 	public Status SendStatus()
 	{
+		var actions = new TimeAction.Status[currentActions.Count + currentHiddenActions.Count];
+		for (int i = 0; i < currentActions.Count; i++)
+		{
+			actions[i] = currentActions[i].SendStatus();
+		}
+		for (int i = currentActions.Count; i < actions.Length; i++)
+		{
+			actions[i] = currentHiddenActions[i].SendStatus();
+		}
 		return new Status
 		{
-			currentActions = currentActions.ToArray(),
-			currentHiddenActions = currentHiddenActions.ToArray(),
+			actions = actions,
 		};
 	}
 	void SetStatus(Status status)
 	{
 		if (status != null)
 		{
-			if (status.currentActions != null)
-				Array.ForEach(status.currentActions, element => currentActions.Add(element));
-			if (status.currentHiddenActions != null)
-				Array.ForEach(status.currentHiddenActions, element => currentHiddenActions.Add(element));
+			foreach (var a in status.actions)
+			{
+				var aa = new TimeAction();
+				aa.SetStatus(a);
+				AddAction(aa);
+			}
 		}
 	}
 	public class Status
 	{
-		public TimeAction[] currentActions;
-		public TimeAction[] currentHiddenActions;
+		public TimeAction.Status[] actions;
 	}
 
 	void RefreshTimesLeft()
@@ -134,7 +149,7 @@ public class ActionManager : MonoBehaviour
 			a.loadingBar.slider.value = a.totalTime - a.timeLeft;
 			if (a.timeLeft <= 0)
 			{
-				if (a.action.state.playAtActionEnd) a.action.state.active = true;
+				if (a.action.state != null && a.action.state.playAtActionEnd) a.action.state.active = true;
 				currentActions.Remove(a);
 				actionSpots[i].SetActive(false);
 				a.loadingBar.gameObject.SetActive(false);
@@ -170,16 +185,52 @@ public class TimeAction
 	public int buttonNum;
 	public int totalTime;
 	public int timeLeft;
+	public bool show;
 	public TimeLeftBar loadingBar;
 	public Action OnEnd;
 
-	public TimeAction(PlayerAction action, InGameObject building, int buttonNum, TimeLeftBar bar, Action OnEnd)
+	public TimeAction(string actionName, string buildingId, int buttonNum, bool show)
 	{
-		this.action = action;
-		this.building = building;
-		this.buttonNum = buttonNum;
-		totalTime = this.action.EditableTimeNeeded;
-		loadingBar = bar;
-		this.OnEnd = OnEnd;
+		SetStatus(new Status
+		{ 
+			action = actionName,
+			buildingId = buildingId,
+			buttonNum = buttonNum,
+			show = show,
+		});
+		timeLeft = action.EditableTimeNeeded;
+	}
+	public TimeAction() { }
+
+	[System.Serializable]
+	public class Status
+	{
+		public string action;
+		public string buildingId;
+		public int buttonNum;
+		public int timeLeft;
+		public bool show;
+	}
+	public void SetStatus(Status status)
+	{
+		action = QuestManager.instance.GetActionByName(status.action);
+		building = GameManager.instance.GetObjectById(status.buildingId);
+		buttonNum = status.buttonNum;
+		timeLeft = status.timeLeft;
+		OnEnd = building.GetOnEndAction(buttonNum - 1);
+		totalTime = action.EditableTimeNeeded;
+		loadingBar = building.loadingBar;
+		show = status.show;
+	}
+	public Status SendStatus()
+	{
+		return new Status
+		{
+			action = action.name,
+			buildingId = building.id,
+			buttonNum = buttonNum,
+			timeLeft = timeLeft,
+			show = show,
+		};
 	}
 }

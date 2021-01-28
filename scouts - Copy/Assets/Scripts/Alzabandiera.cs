@@ -6,9 +6,9 @@ public class Alzabandiera : InGameObject
 	{
 		
 	}
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				return FareAlzabandiera;
@@ -16,4 +16,6 @@ public class Alzabandiera : InGameObject
 				throw new NotImplementedException();
 		}
 	}
+
+	protected override void DoActionOnStart(int buttonIndex) { }
 }

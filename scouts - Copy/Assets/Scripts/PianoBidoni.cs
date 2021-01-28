@@ -12,12 +12,11 @@ public class PianoBidoni : PlayerBuildingBase
 		GetComponent<Animator>().Play("PianoBidoni2");
 		RefreshButtonsState();
 	}
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
-				CucinaStart();
 				return EndCucina;
 			case 2:
 				return MettiAlSicuro;
@@ -25,6 +24,15 @@ public class PianoBidoni : PlayerBuildingBase
 				return Ripara;
 			default:
 				throw new NotImplementedException();
+		}
+	}
+	protected override void DoActionOnStart(int buttonIndex)
+	{
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				CucinaStart();
+				break;
 		}
 	}
 }

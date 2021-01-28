@@ -23,22 +23,32 @@ public class Plant : InGameObject
 	void EndPunch()
 	{
 		GetComponent<ParticleSystem>().Stop();
-		Player.instance.GetComponent<Animator>().Play("idle");
 		Player.instance.enabled = true;
+		Player.instance.GetComponent<Animator>().Play("idle");
+		Debug.Log("hhhhhheeeeeeei!!!");
 		Deselect();
 		Destroy(gameObject);
 		Destroy(clickListener.gameObject);
 	}
 
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
-				PlayerHandPunch();
 				return EndPunch;
 			default:
 				throw new NotImplementedException();
+		}
+	}
+
+	protected override void DoActionOnStart(int buttonIndex)
+	{
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				PlayerHandPunch();
+				break;
 		}
 	}
 

@@ -22,10 +22,6 @@ MonoBehaviour:
   - type: 3
     desiredValue: 0
     warning: Puoi ballare solo di notte!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 11400000, guid: e2db38508aed15d4597a3c4da947fd1b, type: 2}

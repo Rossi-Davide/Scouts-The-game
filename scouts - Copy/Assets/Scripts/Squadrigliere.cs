@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
+using System;
 public class Squadrigliere : BaseAI
 {
     [HideInInspector] [System.NonSerialized]
@@ -22,9 +22,9 @@ public class Squadrigliere : BaseAI
 	void FaiLegna()
 	{
         Debug.Log("sto facendo legna");
-        for (int i = 0; i < Random.Range(2, 5); i++)
+        for (int i = 0; i < UnityEngine.Random.Range(2, 5); i++)
 		{
-            currentPlant = GameManager.instance.spawnedPlants[Random.Range(0, GameManager.instance.spawnedPlants.Length)];
+            currentPlant = GameManager.instance.spawnedPlants[UnityEngine.Random.Range(0, GameManager.instance.spawnedPlants.Length)];
             Debug.Log($"destination set: {currentPlant.name}");
             StartCoroutine(ForceTarget(currentPlant.transform.position, false, EndLegna));
 		}
@@ -47,15 +47,23 @@ public class Squadrigliere : BaseAI
         }
     }
 
-    protected override System.Action DoAction(ActionButton b)
+    public override Action GetOnEndAction(int buttonIndex)
     {
-        switch (b.buttonNum)
+        switch (buttonIndex + 1)
         {
             case 1:
-                FaiLegna();
                 return null;
             default:
                 throw new System.NotImplementedException();
+        }
+    }
+    protected override void DoActionOnStart(int buttonIndex)
+    {
+        switch (buttonIndex + 1)
+        {
+            case 1:
+                FaiLegna();
+                break;
         }
     }
 }

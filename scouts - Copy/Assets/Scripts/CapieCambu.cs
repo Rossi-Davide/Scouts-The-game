@@ -17,17 +17,26 @@ public class CapieCambu : BaseAI
 		}
 	}
 
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				return null;
+			default:
+				throw new NotImplementedException();
+		}
+	}
+
+	protected override void DoActionOnStart(int buttonIndex)
+	{
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				DialogueManager.instance.currentObject = this;
 				StartCoroutine(ForceTarget(Player.instance.transform.position, true, false));
 				DialogueManager.instance.TogglePanel(dialoguesArray[nextDialogueIndex]);
-				return null;
-			default:
-				throw new NotImplementedException();
+				break;
 		}
 	}
 }

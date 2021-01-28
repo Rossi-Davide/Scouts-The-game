@@ -26,10 +26,6 @@ MonoBehaviour:
   - type: 3
     desiredValue: 0
     warning: Puoi dormire solo di notte!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 0}

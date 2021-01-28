@@ -44,6 +44,11 @@ public class QuestManager : MonoBehaviour
 		StartCoroutine(GetAllStartInfo());
 		SetStatus(saveSystem.LoadData<Status>(saveSystem.questManagerFileName, false));
 	}
+
+	public PlayerAction GetActionByName(string name)
+	{
+		return Array.Find(actionDatabase, el => el.name == name);
+	}
 	IEnumerator GetAllStartInfo()
 	{
 		yield return new WaitForEndOfFrame();

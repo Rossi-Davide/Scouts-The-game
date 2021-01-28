@@ -11,12 +11,12 @@ public class Tent : PlayerBuildingBase
 		Player.instance.gameObject.SetActive(true);
 		RefreshButtonsState();
 	}
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
-				StartSleep();
+				
 				return EndOfSleep;
 			case 2:
 				return MettiAlSicuro;
@@ -24,6 +24,16 @@ public class Tent : PlayerBuildingBase
 				return Ripara;
 			default:
 				throw new NotImplementedException();
+		}
+	}
+
+	protected override void DoActionOnStart(int buttonIndex)
+	{
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				StartSleep();
+				break;
 		}
 	}
 }

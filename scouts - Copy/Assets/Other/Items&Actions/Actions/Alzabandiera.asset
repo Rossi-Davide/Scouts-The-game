@@ -22,10 +22,6 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano dall'alzabandiera!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 11400000, guid: f00fc83cdbcc6bf4ebc619176c48c186, type: 2}

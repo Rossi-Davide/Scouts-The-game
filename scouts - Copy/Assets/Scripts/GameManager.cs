@@ -6,8 +6,6 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering.Universal;
 
-
-
 public class GameManager : MonoBehaviour
 {
 	[HideInInspector]
@@ -591,6 +589,8 @@ public class GameManager : MonoBehaviour
 		{
 			var sq = arr[i];
 			positions[i].text = $"#{i + 1}: {sq.baseSq.name} " + (sq.baseSq == Player.instance.squadriglia ? "(Tu) " : "") + $"con {sq.points} punti";
+			if (sq.baseSq == Player.instance.squadriglia)
+				victoryPanel.transform.Find("Posizione finale").GetComponent<TextMeshProUGUI>().text = $"Posizione finale: #{i + 1}";
 		}
 
 		victoryPanel.SetActive(true);
@@ -710,6 +710,11 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	public InGameObject GetObjectById(string id)
+	{
+		return System.Array.Find(inGameObjects, el => el.id == id);
 	}
 	#endregion
 }

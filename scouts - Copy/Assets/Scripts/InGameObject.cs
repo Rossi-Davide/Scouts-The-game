@@ -10,6 +10,8 @@ public abstract class InGameObject : MonoBehaviour
 {
 	public string objectName;
 	public string objectSubName; //the subtitle which appears on screen
+	[NonSerialized]
+	public string id;
 	public string animationPrefix;
 	protected TextMeshProUGUI buttonsText;
 	public ActionButton[] buttons;
@@ -99,6 +101,8 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		GameManager.instance.OnActionDo += RefreshPreviousActions;
+
+		id = UnityEngine.Random.Range(100000, 999999).ToString();
 
 		wpCanvas = GameManager.instance.wpCanvas;
 		buttonCanvas = GameManager.instance.buttonCanvas;
@@ -193,7 +197,7 @@ public abstract class InGameObject : MonoBehaviour
 	void CalculatePriceOrPrize(ActionButton b)
 	{
 		var a = b.generalAction;
-		Debug.Log(objectName + $" energy: {a.EditableEnergyGiven}, points: {a.EditablePointsGiven}, materials: {a.EditableMaterialsGiven}; null: {a == null}");
+		//Debug.Log(objectName + $" energy: {a.EditableEnergyGiven}, points: {a.EditablePointsGiven}, materials: {a.EditableMaterialsGiven}; null: {a == null}");
 		var p = (b.generalAction.EditableMaterialsGiven > 0 || b.generalAction.EditableEnergyGiven > 0 || b.generalAction.EditablePointsGiven > 0) ? Math.Max(a.EditableEnergyGiven, Math.Max(a.EditablePointsGiven, a.EditableMaterialsGiven)) : Math.Min(a.EditableEnergyGiven, Math.Min(a.EditablePointsGiven, a.EditableMaterialsGiven));
 		if (p == a.EditableEnergyGiven) b.priceOrPrizeType = Counter.Energia;
 		if (p == a.EditableMaterialsGiven) b.priceOrPrizeType = Counter.Materiali;
@@ -288,9 +292,14 @@ public abstract class InGameObject : MonoBehaviour
 				{
 					GameManager.instance.WarningOrMessage($"Puoi svolgere questa azione solo dopo avere svolto l'azione {b.previousAction.name}!", true);
 				}
+				else if (!ActionManager.instance.CanDoAction(objectName))
+				{
+					GameManager.instance.WarningOrMessage("Non puoi svolgere più di un'azione contemporaneamente sullo stesso oggetto!", true);
+				}
 				else
 				{
-					var onEnd = DoAction(b);
+					var onEnd = GetOnEndAction(n - 1);
+					DoActionOnStart(n - 1);
 					if (b.generalAction.state != null && !b.generalAction.state.playAtActionEnd)
 						b.generalAction.state.active = true;
 					GameManager.instance.ActionDone(b.generalAction);
@@ -315,9 +324,10 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected virtual void ActuallyAddAction(int buttonIndex, Action onEnd)
 	{
-		action = new TimeAction(buttons[buttonIndex].generalAction, this, buttonIndex + 1, loadingBar, onEnd);
-		ActionManager.instance.AddAction(action, buttons[buttonIndex].generalAction.showInActionList);
+		action = new TimeAction(buttons[buttonIndex].generalAction.name, id, buttonIndex + 1, buttons[buttonIndex].generalAction.showInActionList);
+		ActionManager.instance.AddAction(action);
 	}
+	protected abstract void DoActionOnStart(int buttonIndex);
 
 	protected virtual void RefreshButtonsState()
 	{
@@ -344,7 +354,7 @@ public abstract class InGameObject : MonoBehaviour
 
 
 
-	protected abstract Action DoAction(ActionButton b);
+	public abstract Action GetOnEndAction(int buttonIndex);
 
 
 	/// <summary> Restituisce null se sono tutte verificate. </summary>
@@ -354,7 +364,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		switch (t)
 		{
-			case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(objectName);
+			//case ConditionType.ConditionCanDoActionOnBuilding: return ActionManager.instance.CanDoAction(objectName);
 			case ConditionType.ConditionIsRaining: return GameManager.instance.isRaining;
 			case ConditionType.ConditionIsDaytime: return GameManager.instance.isDay;
 			case ConditionType.ConditionIsPlayerCloseEnough: if (maxDistanceFromPlayer == 0) { return true; } else { return Vector2.Distance(transform.position, Player.instance.transform.position) <= maxDistanceFromPlayer; };
@@ -433,6 +443,7 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		public Vector3 position;
 		public bool active;
+		public string id;
 		public ActionButton.Status[] actionButtonInfos;
 	}
 	public virtual Status SendStatus()
@@ -447,6 +458,7 @@ public abstract class InGameObject : MonoBehaviour
 			position = transform.position,
 			active = gameObject.activeSelf,
 			actionButtonInfos = b,
+			id = id,
 		};
 	}
 	public virtual void SetStatus(Status status)
@@ -455,6 +467,7 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			transform.position = status.position;
 			gameObject.SetActive(status.active);
+			id = status.id;
 			for (int i = 0; i < status.actionButtonInfos.Length; i++)
 			{
 				buttons[i].SetStatus(status.actionButtonInfos[i]);

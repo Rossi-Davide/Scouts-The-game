@@ -16,12 +16,11 @@ public class Amaca : PlayerBuildingBase
 		RefreshButtonsState();
 	}
 
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
-				StartSleep();
 				return EndOfSleep;
 			case 2:
 				return MettiAlSicuro;
@@ -31,5 +30,15 @@ public class Amaca : PlayerBuildingBase
 				throw new NotImplementedException();
 		}
 	}
-	
+
+	protected override void DoActionOnStart(int buttonIndex)
+	{
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				StartSleep();
+				break;
+		}
+	}
+
 }

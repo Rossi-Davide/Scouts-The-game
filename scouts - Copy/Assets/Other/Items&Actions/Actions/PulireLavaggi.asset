@@ -19,10 +19,6 @@ MonoBehaviour:
   - type: 2
     desiredValue: 1
     warning: Sei troppo lontano!
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   - type: 3
     desiredValue: 1
     warning: Puoi pulire i lavaggi solo di giorno!

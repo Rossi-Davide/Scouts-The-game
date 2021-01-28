@@ -17,15 +17,23 @@ public class CassaDelFurfante : InGameObject
 		}
 	}
 
-	protected override System.Action DoAction(ActionButton b)
+	public override System.Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
-				SbloccaScreen();
 				return null;
 			default:
 				throw new System.NotImplementedException();
+		}
+	}
+	protected override void DoActionOnStart(int buttonIndex) 
+	{
+		switch (buttonIndex + 1)
+		{
+			case 1: 
+				SbloccaScreen();
+				break;
 		}
 	}
 }

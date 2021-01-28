@@ -3,9 +3,9 @@ using UnityEngine.Timeline;
 
 public class Refettorio : PlayerBuildingBase
 {
-	protected override System.Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				return null;
@@ -18,5 +18,5 @@ public class Refettorio : PlayerBuildingBase
 		}
 	}
 
-	
+	protected override void DoActionOnStart(int buttonIndex) { }
 }

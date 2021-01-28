@@ -2,9 +2,9 @@
 
 public class Stendipanni : PlayerBuildingBase
 {
-	protected override Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				return MettiAlSicuro;
@@ -14,4 +14,6 @@ public class Stendipanni : PlayerBuildingBase
 				throw new NotImplementedException();
 		}
 	}
+
+	protected override void DoActionOnStart(int buttonIndex) { }
 }

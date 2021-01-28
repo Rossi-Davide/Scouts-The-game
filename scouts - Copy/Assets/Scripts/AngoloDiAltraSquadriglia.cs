@@ -1,21 +1,31 @@
 ﻿using UnityEngine;
 
+using System;
 public class AngoloDiAltraSquadriglia : InGameObject
 {
 	[HideInInspector]
 	[System.NonSerialized]
 	public Squadriglia squadriglia;
 
-	protected override System.Action DoAction(ActionButton b)
+	public override Action GetOnEndAction(int buttonIndex)
 	{
-		switch (b.buttonNum)
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				return null;
+			default:
+				throw new System.NotImplementedException();
+		}
+	}
+
+	protected override void DoActionOnStart(int buttonIndex)
+	{
+		switch (buttonIndex + 1)
 		{
 			case 1:
 				SfidaManager.instance.ToggleChallengePanel();
 				SfidaManager.instance.RefreshChallenge(squadriglia);
-				return null;
-			default:
-				throw new System.NotImplementedException();
+				break;
 		}
 	}
 }

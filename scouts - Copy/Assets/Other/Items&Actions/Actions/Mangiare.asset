@@ -23,10 +23,6 @@ MonoBehaviour:
   - type: 1
     desiredValue: 0
     warning: "Non puoi mangiare perch\xE8 il refettorio \xE8 distrutto!"
-  - type: 5
-    desiredValue: 1
-    warning: "Non puoi svolgere pi\xF9 di un'azione contemporaneamente sullo stesso
-      oggetto!"
   hasInfoPanel: 1
   showInActionList: 1
   state: {fileID: 11400000, guid: 9cca446976bae094ca368e2b71478bc5, type: 2}
