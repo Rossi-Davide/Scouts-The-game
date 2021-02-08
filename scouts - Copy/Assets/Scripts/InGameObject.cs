@@ -4,7 +4,6 @@ using System.Linq;
 using System.Collections;
 using UnityEngine.UI;
 using System;
-using System.Collections.Generic;
 
 public abstract class InGameObject : MonoBehaviour
 {
@@ -46,20 +45,11 @@ public abstract class InGameObject : MonoBehaviour
 	public BuildingState[] states;
 
 	#region Animations
-	protected void ChangeAnimations()
+	protected void PlayAnimations()
 	{
 		var maxPriority = -1;
 		bool variesWithLevel = true;
 		var animation = "";
-		foreach (var b in buttons)
-		{
-			if (b.generalAction.state != null && b.generalAction.state.priority > maxPriority && b.generalAction.state.active)
-			{
-				maxPriority = b.generalAction.state.priority;
-				animation = b.generalAction.state.animationSubstring;
-				variesWithLevel = b.generalAction.state.variesWithLevel;
-			}
-		}
 		foreach (var s in states)
 		{
 			if (s.priority > maxPriority && s.active)
@@ -75,18 +65,30 @@ public abstract class InGameObject : MonoBehaviour
 		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
 	}
 
+	public void PlayOnActionEndState(PlayerAction action)
+	{
+		foreach (var s in states)
+		{
+			if (s.playAtActionEnd && s.action != null && s.action == action)
+			{
+				s.active = true;
+				break;
+			}
+		}
+	}
+
 	protected void RefreshStates()
 	{
 		foreach (var s in states)
 		{
-			if (s.conditions != null)
-				s.active = FindNotVerified(s.conditions) == null;
-		}
-		foreach (var b in buttons)
-		{
-			if (b.generalAction.state != null)
+			if (s.action != null)
 			{
-				b.generalAction.state.active = ActionManager.instance.currentActions.Exists(el => el.action == b.generalAction && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == b.generalAction && el.building == this);
+				//b.generalAction.state.active = ActionManager.instance.currentActions.Exists(el => el.action == b.generalAction && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == b.generalAction && el.building == this);
+			}
+			else
+			{
+				if (s.conditions != null)
+					s.active = FindNotVerified(s.conditions) == null;
 			}
 		}
 	}
@@ -102,7 +104,7 @@ public abstract class InGameObject : MonoBehaviour
 		animator = GetComponent<Animator>();
 		GameManager.instance.OnActionDo += RefreshPreviousActions;
 
-		id = UnityEngine.Random.Range(100000, 999999).ToString();
+		id = UnityEngine.Random.Range(100000000, 999999999).ToString();
 
 		wpCanvas = GameManager.instance.wpCanvas;
 		buttonCanvas = GameManager.instance.buttonCanvas;
@@ -120,8 +122,8 @@ public abstract class InGameObject : MonoBehaviour
 
 		if (manageAnimationsAutomatically)
 		{
-			InvokeRepeating(nameof(ChangeAnimations), 1f, .3f);
-			InvokeRepeating(nameof(RefreshStates), .9f, .3f);
+			InvokeRepeating(nameof(PlayAnimations), 1f, .3f);
+			InvokeRepeating(nameof(RefreshStates), 1f, 1f);
 		}
 
 		for (int i = 0; i < buttons.Length; i++)
@@ -300,8 +302,8 @@ public abstract class InGameObject : MonoBehaviour
 				{
 					var onEnd = GetOnEndAction(n - 1);
 					DoActionOnStart(n - 1);
-					if (b.generalAction.state != null && !b.generalAction.state.playAtActionEnd)
-						b.generalAction.state.active = true;
+					//if (b.generalAction.state != null && !b.generalAction.state.playAtActionEnd)
+					//	b.generalAction.state.active = true;
 					GameManager.instance.ActionDone(b.generalAction);
 					ActuallyAddAction(n - 1, onEnd);
 					buttons[n - 1].generalAction.ChangeCountersOnStart();
@@ -445,6 +447,7 @@ public abstract class InGameObject : MonoBehaviour
 		public bool active;
 		public string id;
 		public ActionButton.Status[] actionButtonInfos;
+		public BuildingState.Status[] buildingStatesInfo;
 	}
 	public virtual Status SendStatus()
 	{
@@ -453,11 +456,17 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			b[i] = buttons[i].SendStatus();
 		}
+		var s = new BuildingState.Status[states.Length];
+		for (int i = 0; i < s.Length; i++)
+		{
+			s[i] = states[i].SendStatus();
+		}
 		return new Status
 		{
 			position = transform.position,
 			active = gameObject.activeSelf,
 			actionButtonInfos = b,
+			buildingStatesInfo = s,
 			id = id,
 		};
 	}
@@ -471,6 +480,10 @@ public abstract class InGameObject : MonoBehaviour
 			for (int i = 0; i < status.actionButtonInfos.Length; i++)
 			{
 				buttons[i].SetStatus(status.actionButtonInfos[i]);
+			}
+			for (int i = 0; i < status.buildingStatesInfo.Length; i++)
+			{
+				states[i].SetStatus(status.buildingStatesInfo[i]);
 			}
 		}
 	}
