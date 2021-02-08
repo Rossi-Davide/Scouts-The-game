@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: 8c29df3ac2b0046f9b97bbdc8caade4d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1343272399298063264
+    second: leonardo_0
+  - first:
+      213: 4108685917913067036
+    second: leonardo_1
+  - first:
+      213: -1034739546857153965
+    second: leonardo_2
+  - first:
+      213: -4524237079710950692
+    second: leonardo_3
+  - first:
+      213: -4259126600001473547
+    second: leonardo_4
+  - first:
+      213: -3069701612174879560
+    second: leonardo_5
+  - first:
+      213: 8488282701215464836
+    second: leonardo_6
+  - first:
+      213: -7651183933770552369
+    second: leonardo_7
+  - first:
+      213: 4428237477465865759
+    second: leonardo_8
+  - first:
+      213: -5099939430620522718
+    second: leonardo_9
+  - first:
+      213: 3775817597531609903
+    second: leonardo_10
+  - first:
+      213: -182735619777366079
+    second: leonardo_11
+  - first:
+      213: 4692327470940576845
+    second: leonardo_12
+  - first:
+      213: 8927276416064307408
+    second: leonardo_13
+  - first:
+      213: 8930429362700180372
+    second: leonardo_14
+  - first:
+      213: 4241369789043746535
+    second: leonardo_15
+  - first:
+      213: -8750256371618138988
+    second: leonardo_16
+  - first:
+      213: -3564786186944228299
+    second: leonardo_17
+  - first:
+      213: -4492090245868696186
+    second: leonardo_18
+  - first:
+      213: -5016466450152935617
+    second: leonardo_19
+  - first:
+      213: -5408150159657434477
+    second: leonardo_20
+  - first:
+      213: -6115890809574132495
+    second: leonardo_21
+  - first:
+      213: 1587800362558346720
+    second: leonardo_22
+  - first:
+      213: -2940115507243421462
+    second: leonardo_23
+  - first:
+      213: 4605829314376723036
+    second: leonardo_24
+  - first:
+      213: 3233761017682915386
+    second: leonardo_25
+  - first:
+      213: -4381496398090189630
+    second: leonardo_26
+  - first:
+      213: -3197356210413323075
+    second: leonardo_27
+  - first:
+      213: -4502558453360366311
+    second: leonardo_28
+  - first:
+      213: -2859386975579139368
+    second: leonardo_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: leonardo_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1156
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064904baedcbb5de0800000000000000
+      internalID: -1343272399298063264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1156
+        width: 125
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1eabd6d21cf40930800000000000000
+      internalID: 4108685917913067036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1154
+        width: 125
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ad78a4dddd3a1f0800000000000000
+      internalID: -1034739546857153965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1154
+        width: 126
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda9d20b85ea631c0800000000000000
+      internalID: -4524237079710950692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_4
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3be715cea84e4c0800000000000000
+      internalID: -4259126600001473547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_5
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b45fdfc5aa3665d0800000000000000
+      internalID: -3069701612174879560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_6
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1153
+        width: 122
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d7a07d4207cc570800000000000000
+      internalID: 8488282701215464836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_7
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1154
+        width: 122
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb2e6cffb881d590800000000000000
+      internalID: -7651183933770552369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_8
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1153
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ebc612682447d30800000000000000
+      internalID: 4428237477465865759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 801
+        width: 116
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2271bd5cb106939b0800000000000000
+      internalID: -5099939430620522718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_10
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b5a8d8916666430800000000000000
+      internalID: 3775817597531609903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 798
+        width: 117
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7fb570ceac67df0800000000000000
+      internalID: -182735619777366079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_12
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 798
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c583b49fe7e1140800000000000000
+      internalID: 4692327470940576845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_13
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 797
+        width: 107
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d04c370a9e04eb70800000000000000
+      internalID: 8927276416064307408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_14
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 796
+        width: 106
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b567f90324feb70800000000000000
+      internalID: 8930429362700180372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_15
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6a605f95f5cda30800000000000000
+      internalID: 4241369789043746535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_16
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4943a1cd038d09680800000000000000
+      internalID: -8750256371618138988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_17
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 799
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53458fa99d5578ec0800000000000000
+      internalID: -3564786186944228299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dcff3b8b3e8a1c0800000000000000
+      internalID: -4492090245868696186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_19
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 448
+        width: 105
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f28fa875ee16ab0800000000000000
+      internalID: -5016466450152935617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 448
+        width: 106
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39285a9551462f4b0800000000000000
+      internalID: -5408150159657434477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_21
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 448
+        width: 107
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4f14a46bdff1ba0800000000000000
+      internalID: -6115890809574132495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_22
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 450
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5d6886400090610800000000000000
+      internalID: 1587800362558346720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_23
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 449
+        width: 117
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae07328068c9237d0800000000000000
+      internalID: -2940115507243421462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_24
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 449
+        width: 109
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a6183db513bef30800000000000000
+      internalID: 4605829314376723036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_25
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 449
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30fe7b2380a0ec20800000000000000
+      internalID: 3233761017682915386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_26
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 449
+        width: 132
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c44e277d3cc133c0800000000000000
+      internalID: -4381496398090189630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 83
+        width: 133
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcbce98775b0a3d0800000000000000
+      internalID: -3197356210413323075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_28
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91de50731f2b381c0800000000000000
+      internalID: -4502558453360366311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leonardo_29
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 83
+        width: 108
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d21a3502ba6158d0800000000000000
+      internalID: -2859386975579139368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

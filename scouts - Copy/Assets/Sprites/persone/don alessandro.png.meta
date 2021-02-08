@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: 577679d3c268746f89e6048ee2fee21b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1636592501802586127
+    second: don alessandro_0
+  - first:
+      213: 2370561996213650401
+    second: don alessandro_1
+  - first:
+      213: 675300113741389041
+    second: don alessandro_2
+  - first:
+      213: -943244034036482440
+    second: don alessandro_3
+  - first:
+      213: -1106348561513080008
+    second: don alessandro_4
+  - first:
+      213: -8247211480468711280
+    second: don alessandro_5
+  - first:
+      213: 6178818725960466613
+    second: don alessandro_6
+  - first:
+      213: 4120801255413418681
+    second: don alessandro_7
+  - first:
+      213: -3901944856434673176
+    second: don alessandro_8
+  - first:
+      213: -3438029807417567236
+    second: don alessandro_9
+  - first:
+      213: -5844089682065748418
+    second: don alessandro_10
+  - first:
+      213: -7388824258626258425
+    second: don alessandro_11
+  - first:
+      213: -5432132477462847176
+    second: don alessandro_12
+  - first:
+      213: 701352956159566215
+    second: don alessandro_13
+  - first:
+      213: -446096356685466073
+    second: don alessandro_14
+  - first:
+      213: -7823341807378474776
+    second: don alessandro_15
+  - first:
+      213: 998655661165704589
+    second: don alessandro_16
+  - first:
+      213: -7967336057897880780
+    second: don alessandro_17
+  - first:
+      213: -3431034518740946701
+    second: don alessandro_18
+  - first:
+      213: 5180795164768819222
+    second: don alessandro_19
+  - first:
+      213: 5576428604251498107
+    second: don alessandro_20
+  - first:
+      213: 7937203971300905654
+    second: don alessandro_21
+  - first:
+      213: 1165848455691500163
+    second: don alessandro_22
+  - first:
+      213: 5551757549023634800
+    second: don alessandro_23
+  - first:
+      213: -4826251414201933470
+    second: don alessandro_24
+  - first:
+      213: -4328518020389829066
+    second: don alessandro_25
+  - first:
+      213: 481283441159630193
+    second: don alessandro_26
+  - first:
+      213: -6233785944728450241
+    second: don alessandro_27
+  - first:
+      213: 5585006635947278662
+    second: don alessandro_28
+  - first:
+      213: -65170785779984356
+    second: don alessandro_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: don alessandro_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1156
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff2df76ac7a949e0800000000000000
+      internalID: -1636592501802586127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1156
+        width: 125
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e30b56639de5e020800000000000000
+      internalID: 2370561996213650401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1154
+        width: 125
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc165420e52f5900800000000000000
+      internalID: 675300113741389041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1154
+        width: 126
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ebfbe6c8ce8e2f0800000000000000
+      internalID: -943244034036482440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_4
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b9f3158d575a0f0800000000000000
+      internalID: -1106348561513080008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_5
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0989327aad40c8d80800000000000000
+      internalID: -8247211480468711280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_6
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1153
+        width: 122
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0c76cf4e29fb550800000000000000
+      internalID: 6178818725960466613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_7
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1154
+        width: 122
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba86eaa8e6003930800000000000000
+      internalID: 4120801255413418681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_8
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1153
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e97c0393d189d9c0800000000000000
+      internalID: -3901944856434673176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 801
+        width: 116
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7dba90b1aa940d0800000000000000
+      internalID: -3438029807417567236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_10
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e02f0c56f95eea0800000000000000
+      internalID: -5844089682065748418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 798
+        width: 117
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70afac40c7f957990800000000000000
+      internalID: -7388824258626258425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_12
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 798
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831e6fbda403d94b0800000000000000
+      internalID: -5432132477462847176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_13
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 797
+        width: 107
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781af063cc4bbb900800000000000000
+      internalID: 701352956159566215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_14
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 796
+        width: 106
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726ba242ab52fc9f0800000000000000
+      internalID: -446096356685466073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_15
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e85eb67318ed6390800000000000000
+      internalID: -7823341807378474776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_16
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85f6b06800fbdd00800000000000000
+      internalID: 998655661165704589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_17
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 799
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433f5de61165e6190800000000000000
+      internalID: -7967336057897880780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 444
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0b75a98448260d0800000000000000
+      internalID: -3431034518740946701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_19
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 447
+        width: 105
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6185b1ad0c1e5e740800000000000000
+      internalID: 5180795164768819222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 448
+        width: 106
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76ecb73544736d40800000000000000
+      internalID: 5576428604251498107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_21
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 448
+        width: 107
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2d53375fc962e60800000000000000
+      internalID: 7937203971300905654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_22
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38afd675efced2010800000000000000
+      internalID: 1165848455691500163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_23
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 449
+        width: 117
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075a5ac831ecb0d40800000000000000
+      internalID: 5551757549023634800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_24
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 449
+        width: 109
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26164cbc8e5b50db0800000000000000
+      internalID: -4826251414201933470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_25
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 449
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63689ce3bc30ee3c0800000000000000
+      internalID: -4328518020389829066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_26
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 449
+        width: 132
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17de8926dbcdda600800000000000000
+      internalID: 481283441159630193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 83
+        width: 133
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b43a616b42d79a0800000000000000
+      internalID: -6233785944728450241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_28
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64146dbd1fde18d40800000000000000
+      internalID: 5585006635947278662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: don alessandro_29
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 83
+        width: 108
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18d9dff387781ff0800000000000000
+      internalID: -65170785779984356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
