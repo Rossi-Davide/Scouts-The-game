@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: f408c6d49e463462a859d04fa90c947d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4696530114781896736
+    second: donato_0
+  - first:
+      213: 6398267076844937693
+    second: donato_1
+  - first:
+      213: 8290962801130293291
+    second: donato_2
+  - first:
+      213: -690760112672707036
+    second: donato_3
+  - first:
+      213: -2514266378024811374
+    second: donato_4
+  - first:
+      213: -7307112884722427496
+    second: donato_5
+  - first:
+      213: -7093973647475089734
+    second: donato_6
+  - first:
+      213: 3828773806718258649
+    second: donato_7
+  - first:
+      213: 1473831830222810353
+    second: donato_8
+  - first:
+      213: 4113002191034216313
+    second: donato_15
+  - first:
+      213: 6241476965277717582
+    second: donato_16
+  - first:
+      213: -7626032439459387898
+    second: donato_17
+  - first:
+      213: 2840206294699132059
+    second: donato_18
+  - first:
+      213: -157786720719137013
+    second: donato_19
+  - first:
+      213: -222059290591788083
+    second: donato_20
+  - first:
+      213: -2264584849675011432
+    second: donato_21
+  - first:
+      213: -5711810833303452100
+    second: donato_22
+  - first:
+      213: 4641313907835668243
+    second: donato_23
+  - first:
+      213: 6969871198598161392
+    second: donato_24
+  - first:
+      213: 279894479591096598
+    second: donato_25
+  - first:
+      213: -8971643517958471854
+    second: donato_26
+  - first:
+      213: 3576078632073212700
+    second: donato_27
+  - first:
+      213: 1900959390760512686
+    second: donato_28
+  - first:
+      213: -3683646330693027966
+    second: donato_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: donato_0
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1065
+        width: 170
+        height: 335
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef108f6eb292deb0800000000000000
+      internalID: -4696530114781896736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_1
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 1064
+        width: 170
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd16b65c1063bc850800000000000000
+      internalID: 6398267076844937693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_2
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1051
+        width: 168
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28495f7dba6f0370800000000000000
+      internalID: 8290962801130293291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_3
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 1051
+        width: 172
+        height: 341
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e622b565de966f0800000000000000
+      internalID: -690760112672707036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_4
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 1049
+        width: 173
+        height: 343
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2948f13ec088b1dd0800000000000000
+      internalID: -2514266378024811374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_5
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 1049
+        width: 173
+        height: 343
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899907ccb8be79a90800000000000000
+      internalID: -7307112884722427496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_6
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1056
+        width: 146
+        height: 331
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abed3489d842d8d90800000000000000
+      internalID: -7093973647475089734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_7
+      rect:
+        serializedVersion: 2
+        x: 2391
+        y: 1057
+        width: 167
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd03c2dd79822530800000000000000
+      internalID: 3828773806718258649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_8
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 1058
+        width: 162
+        height: 331
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc281bad3a147410800000000000000
+      internalID: 1473831830222810353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 605
+        width: 135
+        height: 327
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f6ffc73b1541930800000000000000
+      internalID: 4113002191034216313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_16
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 606
+        width: 167
+        height: 325
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44592d2b3e2e9650800000000000000
+      internalID: 6241476965277717582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_17
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 605
+        width: 142
+        height: 326
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606ea6896e3ea2690800000000000000
+      internalID: -7626032439459387898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_18
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 594
+        width: 144
+        height: 333
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94ce54b3907a6720800000000000000
+      internalID: 2840206294699132059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_19
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 593
+        width: 189
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07134140dd6fcdf0800000000000000
+      internalID: -157786720719137013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_20
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 594
+        width: 180
+        height: 342
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3833170461becf0800000000000000
+      internalID: -222059290591788083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_21
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 166
+        width: 182
+        height: 342
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ab367d3149290e0800000000000000
+      internalID: -2264584849675011432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_22
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 165
+        width: 189
+        height: 339
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3648b04f429bb0b0800000000000000
+      internalID: -5711810833303452100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_23
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 166
+        width: 145
+        height: 333
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31700af8862496040800000000000000
+      internalID: 4641313907835668243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_24
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 177
+        width: 141
+        height: 326
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f36baa5de4f9b060800000000000000
+      internalID: 6969871198598161392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_25
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 178
+        width: 167
+        height: 325
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611ce96db8262e300800000000000000
+      internalID: 279894479591096598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_26
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 177
+        width: 132
+        height: 327
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f36a411c15e7380800000000000000
+      internalID: -8971643517958471854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_27
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 178
+        width: 146
+        height: 331
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13b699a198c0a130800000000000000
+      internalID: 3576078632073212700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_28
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 177
+        width: 165
+        height: 331
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac29b28e70916a10800000000000000
+      internalID: 1900959390760512686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donato_29
+      rect:
+        serializedVersion: 2
+        x: 2579
+        y: 175
+        width: 145
+        height: 331
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287fed4dd2f01ecc0800000000000000
+      internalID: -3683646330693027966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
