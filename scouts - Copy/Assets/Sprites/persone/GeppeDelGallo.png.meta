@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: d55a003b2d5cb46c29bed6d847f697ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6821664268358395616
+    second: GeppeDelGiglio_0
+  - first:
+      213: 192053769935781495
+    second: GeppeDelGiglio_1
+  - first:
+      213: 8265197457036536794
+    second: GeppeDelGiglio_2
+  - first:
+      213: -2684502674622502841
+    second: GeppeDelGiglio_3
+  - first:
+      213: -2602350607900063670
+    second: GeppeDelGiglio_4
+  - first:
+      213: -2268579735753438559
+    second: GeppeDelGiglio_5
+  - first:
+      213: -3474175857029800925
+    second: GeppeDelGiglio_6
+  - first:
+      213: 6304746007612447981
+    second: GeppeDelGiglio_7
+  - first:
+      213: 6105052283527686635
+    second: GeppeDelGiglio_8
+  - first:
+      213: -513136332229396924
+    second: GeppeDelGiglio_9
+  - first:
+      213: 7849829723607583384
+    second: GeppeDelGiglio_10
+  - first:
+      213: 6767906839496939396
+    second: GeppeDelGiglio_11
+  - first:
+      213: -5352215761283056647
+    second: GeppeDelGiglio_12
+  - first:
+      213: 1950455978985689328
+    second: GeppeDelGiglio_13
+  - first:
+      213: 7842730434846174328
+    second: GeppeDelGiglio_14
+  - first:
+      213: -5916242674681630586
+    second: GeppeDelGiglio_15
+  - first:
+      213: -5470901952788314929
+    second: GeppeDelGiglio_16
+  - first:
+      213: 7716397644647288886
+    second: GeppeDelGiglio_17
+  - first:
+      213: -6469062694459913921
+    second: GeppeDelGiglio_18
+  - first:
+      213: -5375742132230498933
+    second: GeppeDelGiglio_19
+  - first:
+      213: 205415107932719625
+    second: GeppeDelGiglio_20
+  - first:
+      213: 8874001729648855963
+    second: GeppeDelGiglio_21
+  - first:
+      213: 7494364883142672341
+    second: GeppeDelGiglio_22
+  - first:
+      213: -6923367158446535597
+    second: GeppeDelGiglio_23
+  - first:
+      213: 349530520981627407
+    second: GeppeDelGiglio_24
+  - first:
+      213: 2556542225490807872
+    second: GeppeDelGiglio_25
+  - first:
+      213: -617947961636504307
+    second: GeppeDelGiglio_26
+  - first:
+      213: -2852631258065564680
+    second: GeppeDelGiglio_27
+  - first:
+      213: -4746784155781077796
+    second: GeppeDelGiglio_28
+  - first:
+      213: 7689777420105253260
+    second: GeppeDelGiglio_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GeppeDelGiglio_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1156
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029d58b9d749451a0800000000000000
+      internalID: -6821664268358395616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1156
+        width: 125
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77efbced2ef4aa200800000000000000
+      internalID: 192053769935781495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1154
+        width: 125
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbef19db41e3b270800000000000000
+      internalID: 8265197457036536794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1154
+        width: 128
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7482a806a0bbebad0800000000000000
+      internalID: -2684502674622502841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_4
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a484813f8e792ebd0800000000000000
+      internalID: -2602350607900063670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_5
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa44c1ffb26480e0800000000000000
+      internalID: -2268579735753438559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_6
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1153
+        width: 122
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c108a077f39cfc0800000000000000
+      internalID: -3474175857029800925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_7
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 1154
+        width: 122
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec5dc60715fe7750800000000000000
+      internalID: 6304746007612447981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_8
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1153
+        width: 111
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9ead6b4b089b450800000000000000
+      internalID: 6105052283527686635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 801
+        width: 116
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446be1c7939f0e8f0800000000000000
+      internalID: -513136332229396924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_10
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 801
+        width: 120
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89aceee1b8230fc60800000000000000
+      internalID: 7849829723607583384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 798
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487d621a96f6ced50800000000000000
+      internalID: 6767906839496939396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_12
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 798
+        width: 121
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fbf9735f1c19b5b0800000000000000
+      internalID: -5352215761283056647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_13
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 796
+        width: 109
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f09a710169611b10800000000000000
+      internalID: 1950455978985689328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_14
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 797
+        width: 108
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ca62627c9f6dc60800000000000000
+      internalID: 7842730434846174328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_15
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 797
+        width: 107
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680389a02a845eda0800000000000000
+      internalID: -5916242674681630586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_16
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 801
+        width: 120
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4cf07f8a37314b0800000000000000
+      internalID: -5470901952788314929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_17
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 799
+        width: 111
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630dcda46c6261b60800000000000000
+      internalID: 7716397644647288886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 117
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f394cf201c54936a0800000000000000
+      internalID: -6469062694459913921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_19
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 448
+        width: 107
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85dc4c33078565b0800000000000000
+      internalID: -5375742132230498933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 448
+        width: 108
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a04dbc3f7c9d200800000000000000
+      internalID: 205415107932719625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_21
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 448
+        width: 108
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b0cef7e89c62b70800000000000000
+      internalID: 8874001729648855963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_22
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 121
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df71e48725510860800000000000000
+      internalID: 7494364883142672341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_23
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 449
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c403f30424bef90800000000000000
+      internalID: -6923367158446535597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_24
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 449
+        width: 110
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02644d2828c9d400800000000000000
+      internalID: 349530520981627407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_25
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 449
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c8aa3eb99aa7320800000000000000
+      internalID: 2556542225490807872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_26
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 449
+        width: 133
+        height: 252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dbaf85a9b9c67f0800000000000000
+      internalID: -617947961636504307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_27
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 83
+        width: 134
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb83d31cfa6968d0800000000000000
+      internalID: -2852631258065564680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_28
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd46739b5f8002eb0800000000000000
+      internalID: -4746784155781077796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GeppeDelGiglio_29
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 83
+        width: 110
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81813742d397ba60800000000000000
+      internalID: 7689777420105253260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
