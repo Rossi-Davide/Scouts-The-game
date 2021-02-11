@@ -3,6 +3,7 @@
 [CreateAssetMenu(fileName = "New State", menuName = "BuildingState")]
 public class BuildingState : ScriptableObject
 {
+	//the string to add to the object name
 	public string animationSubstring;
 	public bool variesWithLevel;
 	public int priority; //0 to 10 usually
