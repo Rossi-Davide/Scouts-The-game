@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: d81d2f27ffdb54ac69ad8e7a38ed9939
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5532314510582489190
+    second: michele farabegoli_0
+  - first:
+      213: -4316089926149137169
+    second: michele farabegoli_1
+  - first:
+      213: -2787896303458274352
+    second: michele farabegoli_2
+  - first:
+      213: -5856743959427720557
+    second: michele farabegoli_3
+  - first:
+      213: -7410581547558703768
+    second: michele farabegoli_4
+  - first:
+      213: 666329384505471095
+    second: michele farabegoli_5
+  - first:
+      213: 5963192648906882397
+    second: michele farabegoli_6
+  - first:
+      213: 5228952057395717602
+    second: michele farabegoli_7
+  - first:
+      213: 8289737581805299128
+    second: michele farabegoli_8
+  - first:
+      213: -8769583160774405761
+    second: michele farabegoli_9
+  - first:
+      213: -7023564005995341998
+    second: michele farabegoli_10
+  - first:
+      213: -1072570176535962790
+    second: michele farabegoli_11
+  - first:
+      213: 6930164444693136208
+    second: michele farabegoli_12
+  - first:
+      213: 8893587506558489132
+    second: michele farabegoli_13
+  - first:
+      213: 4440248160273166545
+    second: michele farabegoli_14
+  - first:
+      213: -7056820666600305617
+    second: michele farabegoli_15
+  - first:
+      213: 1602696472615794162
+    second: michele farabegoli_16
+  - first:
+      213: 2214811842378824225
+    second: michele farabegoli_17
+  - first:
+      213: -5858489131576412703
+    second: michele farabegoli_18
+  - first:
+      213: 8173033882106511430
+    second: michele farabegoli_19
+  - first:
+      213: 4179328736488020942
+    second: michele farabegoli_20
+  - first:
+      213: -5938859519081565761
+    second: michele farabegoli_21
+  - first:
+      213: 6001105779898545341
+    second: michele farabegoli_22
+  - first:
+      213: -5714489175293543510
+    second: michele farabegoli_23
+  - first:
+      213: 4395445282027361570
+    second: michele farabegoli_24
+  - first:
+      213: -6625767046990888823
+    second: michele farabegoli_25
+  - first:
+      213: -8916173681744730033
+    second: michele farabegoli_26
+  - first:
+      213: 2816182549559772623
+    second: michele farabegoli_27
+  - first:
+      213: 8295757636355396462
+    second: michele farabegoli_28
+  - first:
+      213: -904500348937650751
+    second: michele farabegoli_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: michele farabegoli_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1156
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66022056cbab6cc40800000000000000
+      internalID: 5532314510582489190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1156
+        width: 125
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec1d3d641b2a14c0800000000000000
+      internalID: -4316089926149137169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1154
+        width: 125
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3beb935176f49d0800000000000000
+      internalID: -2787896303458274352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1154
+        width: 126
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a55e5366aa8bea0800000000000000
+      internalID: -5856743959427720557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_4
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86de2be6853582990800000000000000
+      internalID: -7410581547558703768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_5
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7707ada7b074f3900800000000000000
+      internalID: 666329384505471095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_6
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1153
+        width: 122
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5db05dae1481c250800000000000000
+      internalID: 5963192648906882397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_7
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1154
+        width: 122
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5ae982138f09840800000000000000
+      internalID: 5228952057395717602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_8
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1153
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5e5b4e8601b0370800000000000000
+      internalID: 8289737581805299128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 801
+        width: 116
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f715bc9149e2c4680800000000000000
+      internalID: -8769583160774405761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_10
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2579d6dbfb9478e90800000000000000
+      internalID: -7023564005995341998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 798
+        width: 117
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b55ee6b177d11f0800000000000000
+      internalID: -1072570176535962790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_12
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 798
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0530af848d3ec2060800000000000000
+      internalID: 6930164444693136208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_13
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 797
+        width: 107
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22554b87be5c6b70800000000000000
+      internalID: 8893587506558489132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_14
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 797
+        width: 106
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0f9a32d2eee9d30800000000000000
+      internalID: 4440248160273166545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_15
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c47ab0ef2211e90800000000000000
+      internalID: -7056820666600305617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_16
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5390d43fbed3610800000000000000
+      internalID: 1602696472615794162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_17
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 799
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a7155d2a79cbe10800000000000000
+      internalID: 2214811842378824225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 444
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5b6e7ac2772bea0800000000000000
+      internalID: -5858489131576412703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_19
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 448
+        width: 105
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640c03063037c6170800000000000000
+      internalID: 8173033882106511430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 448
+        width: 106
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb53f1c755fff930800000000000000
+      internalID: 4179328736488020942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_21
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 448
+        width: 107
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1323a9bbee49da0800000000000000
+      internalID: -5938859519081565761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_22
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4756e59e5384350800000000000000
+      internalID: 6001105779898545341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_23
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 449
+        width: 117
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab30d92f5e02b0b0800000000000000
+      internalID: -5714489175293543510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_24
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 449
+        width: 109
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22558e82232cffc30800000000000000
+      internalID: 4395445282027361570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_25
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 449
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9808e9fb9fb8c04a0800000000000000
+      internalID: -6625767046990888823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_26
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 449
+        width: 132
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f482befb643634480800000000000000
+      internalID: -8916173681744730033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 83
+        width: 133
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc50a29ab17151720800000000000000
+      internalID: 2816182549559772623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_28
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6392b11e93702370800000000000000
+      internalID: 8295757636355396462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: michele farabegoli_29
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 83
+        width: 108
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cdba5299b19273f0800000000000000
+      internalID: -904500348937650751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
