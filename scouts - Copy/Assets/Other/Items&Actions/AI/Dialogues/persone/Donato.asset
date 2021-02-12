@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Donato
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: Ciao, da che angolo arrivi?
+    canAnswer: 1
+    answers:
+    - answer: "Da quello quass\xF9. Tu chi sei?"
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Sta laggi\xF9 in fondo. Tu chi sei?"
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Sono Donato, mi occupo della chiesa di Santo Stefano. La conosci?
+    canAnswer: 1
+    answers:
+    - answer: "Ah s\xEC! Ti vedo sempre la domenica mattina."
+      nextSentenceNum: 3
+      deltaPoints: 1
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: No, non mi suona familiare
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Sai, mi piace molto quando a messa suona il reparto, \xE8 un momento
+      di gioia!"
+    canAnswer: 1
+    answers:
+    - answer: "S\xEC \xE8 vero!"
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Ma no! Che palle!
+      nextSentenceNum: 4
+      deltaPoints: -2
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Beh, anche se ogni tanto stonate mi piacete!! Bravi ragazzi continuate
+      cos\xEC!"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100

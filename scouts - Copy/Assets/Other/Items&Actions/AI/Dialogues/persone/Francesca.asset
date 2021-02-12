@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Francesca
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: Ciao
+    canAnswer: 1
+    answers:
+    - answer: Ciao
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Sono la Fra, ex capo reparto!
+    canAnswer: 1
+    answers:
+    - answer: Piacere di conoscerti
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Che bello incontrarti!
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Tutto per gioco ma niente per gioco, lo sai cos\u2019\xE8? "
+    canAnswer: 1
+    answers:
+    - answer: No, non lo so
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "mmmh l'ho gi\xE0 sentito ma non ricordo"
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "\xC8 lo sguardo verso il mondo di noi scout, sorridiamo e cantiamo
+      anche nei momenti difficili, \xE8 cos\xEC che conquistiamo le vette pi\xF9
+      alte"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100

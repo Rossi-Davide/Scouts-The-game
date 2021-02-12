@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: 
-  objectSubName: 
+  objectSubName: Francesca
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
@@ -201,4 +201,5 @@ MonoBehaviour:
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   priorityTargets: []
-  dialoguesArray: []
+  dialoguesArray:
+  - {fileID: 11400000, guid: 88faa81eda3244bcda91694e29357deb, type: 2}

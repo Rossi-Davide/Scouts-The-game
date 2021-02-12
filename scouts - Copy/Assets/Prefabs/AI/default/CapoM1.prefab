@@ -122,7 +122,12 @@ MonoBehaviour:
   states: []
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 888d3cf555a99cb4eb7efa8fa990e14e, type: 2}
+  - {fileID: 11400000, guid: 58b6706104d4ff0468f9a9e672966387, type: 2}
+  - {fileID: 11400000, guid: 6643a0db6d0a308469da4a7e13f1e620, type: 2}
+  - {fileID: 11400000, guid: 218c5819cc0e1154083c12ac901e51b5, type: 2}
+  - {fileID: 11400000, guid: 36e5f1f6c53a6ec438652f422582db8d, type: 2}
+  - {fileID: 11400000, guid: 31a7a025a75d04e43a050381e6281900, type: 2}
 --- !u!212 &5784337607568803547
 SpriteRenderer:
   m_ObjectHideFlags: 0

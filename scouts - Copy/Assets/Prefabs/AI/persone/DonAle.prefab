@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: 
-  objectSubName: 
+  objectSubName: Don Ale
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
@@ -201,4 +201,5 @@ MonoBehaviour:
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   priorityTargets: []
-  dialoguesArray: []
+  dialoguesArray:
+  - {fileID: 11400000, guid: 84e047373d23c44a7aa041f53df2aff9, type: 2}
