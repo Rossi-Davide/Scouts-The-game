@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: 8faf80e0f5efe486ab79c6a8e6bfe678
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7927814476987068598
+    second: raffaele_0
+  - first:
+      213: 4013547944207608307
+    second: raffaele_1
+  - first:
+      213: 2458204040141849287
+    second: raffaele_2
+  - first:
+      213: 8241916541649475722
+    second: raffaele_3
+  - first:
+      213: -3042937742632275523
+    second: raffaele_4
+  - first:
+      213: -443461573533617273
+    second: raffaele_5
+  - first:
+      213: -2662473205229551695
+    second: raffaele_6
+  - first:
+      213: 4180644554605155228
+    second: raffaele_7
+  - first:
+      213: 8779158339085613402
+    second: raffaele_8
+  - first:
+      213: 7227765757437817308
+    second: raffaele_9
+  - first:
+      213: -4386997522598481515
+    second: raffaele_10
+  - first:
+      213: -2154733242254349618
+    second: raffaele_11
+  - first:
+      213: 3949764985674520872
+    second: raffaele_12
+  - first:
+      213: 2932824753594669199
+    second: raffaele_13
+  - first:
+      213: -6683460961474877331
+    second: raffaele_14
+  - first:
+      213: 4221624183505871818
+    second: raffaele_15
+  - first:
+      213: -1685823604437180146
+    second: raffaele_16
+  - first:
+      213: -4082070101127619732
+    second: raffaele_17
+  - first:
+      213: 194332512802269425
+    second: raffaele_18
+  - first:
+      213: 3124364704504126979
+    second: raffaele_19
+  - first:
+      213: -7380784184060384805
+    second: raffaele_20
+  - first:
+      213: -9161520670527627365
+    second: raffaele_21
+  - first:
+      213: 1651530729239465938
+    second: raffaele_22
+  - first:
+      213: 1177577529493607515
+    second: raffaele_23
+  - first:
+      213: 5932883150877380322
+    second: raffaele_24
+  - first:
+      213: 2816415192614106170
+    second: raffaele_25
+  - first:
+      213: 7525307928044414012
+    second: raffaele_26
+  - first:
+      213: -6808570066314627686
+    second: raffaele_27
+  - first:
+      213: -4079269786930595830
+    second: raffaele_28
+  - first:
+      213: -5708371551328363314
+    second: raffaele_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: raffaele_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1156
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f8cfd8cbebaf190800000000000000
+      internalID: -7927814476987068598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1156
+        width: 125
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f96e7f279cf2b730800000000000000
+      internalID: 4013547944207608307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1154
+        width: 125
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2c516ec8b4d1220800000000000000
+      internalID: 2458204040141849287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_3
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1154
+        width: 126
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88de655d6b216270800000000000000
+      internalID: 8241916541649475722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_4
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db136c8ce3055c5d0800000000000000
+      internalID: -3042937742632275523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_5
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7833ef56c0288d9f0800000000000000
+      internalID: -443461573533617273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_6
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1153
+        width: 122
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bffb4ae9befc0bd0800000000000000
+      internalID: -2662473205229551695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_7
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1154
+        width: 122
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9359698212a40a30800000000000000
+      internalID: 4180644554605155228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_8
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1153
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a593b14def5d5d970800000000000000
+      internalID: 8779158339085613402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 801
+        width: 116
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd130db79ae2e4460800000000000000
+      internalID: 7227765757437817308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_10
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591bffa1ff04e13c0800000000000000
+      internalID: -4386997522598481515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 798
+        width: 117
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca24bd4889d812e0800000000000000
+      internalID: -2154733242254349618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_12
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 798
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829d765e35260d630800000000000000
+      internalID: 3949764985674520872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_13
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 796
+        width: 109
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f889b7a139c73b820800000000000000
+      internalID: 2932824753594669199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_14
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 797
+        width: 106
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6869118aa39f33a0800000000000000
+      internalID: -6683460961474877331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_15
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3e019e3d8369a30800000000000000
+      internalID: 4221624183505871818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_16
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 801
+        width: 120
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01ad871d50ca98e0800000000000000
+      internalID: -1685823604437180146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_17
+      rect:
+        serializedVersion: 2
+        x: 2253
+        y: 799
+        width: 110
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b9b0aeed29957c0800000000000000
+      internalID: -4082070101127619732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f863e9046862b200800000000000000
+      internalID: 194332512802269425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_19
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 448
+        width: 105
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e9cb82529fb5b20800000000000000
+      internalID: 3124364704504126979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 448
+        width: 106
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd96241c3ef229990800000000000000
+      internalID: -7380784184060384805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_21
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 448
+        width: 107
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f5dce6d7dbbd080800000000000000
+      internalID: -9161520670527627365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_22
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 121
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfc5f3b27a6be610800000000000000
+      internalID: 1651530729239465938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_23
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 449
+        width: 117
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54d2f42688975010800000000000000
+      internalID: 1177577529493607515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_24
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 449
+        width: 109
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee42fdbac5d55250800000000000000
+      internalID: 5932883150877380322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_25
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 449
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34f6c712bae51720800000000000000
+      internalID: 2816415192614106170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_26
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 449
+        width: 132
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34a48490b34f6860800000000000000
+      internalID: 7525307928044414012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 83
+        width: 133
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9575f819991381a0800000000000000
+      internalID: -6808570066314627686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_28
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 83
+        width: 137
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08b40fddb58367c0800000000000000
+      internalID: -4079269786930595830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raffaele_29
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 83
+        width: 108
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc902d715ac7c0b0800000000000000
+      internalID: -5708371551328363314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

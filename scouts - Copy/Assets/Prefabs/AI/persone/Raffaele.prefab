@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: Monica
+  m_Name: Raffaele
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854f267d615152d40a1c493efff6387f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: ospite
   objectSubName: Monica
   animationPrefix: 
   buttons: []

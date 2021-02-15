@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854f267d615152d40a1c493efff6387f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: ospite
   objectSubName: Donato
   animationPrefix: 
   buttons: []

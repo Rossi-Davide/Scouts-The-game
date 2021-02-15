@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: 5d1a78c1782e347f2b9416d5ddd42027
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2616769149911111341
+    second: akela_0
+  - first:
+      213: -162001528546294812
+    second: akela_1
+  - first:
+      213: -9080057477317836746
+    second: akela_2
+  - first:
+      213: -4948715378813625876
+    second: akela_3
+  - first:
+      213: 9084116004632686557
+    second: akela_4
+  - first:
+      213: -7632389493053005524
+    second: akela_5
+  - first:
+      213: -9102780864456322326
+    second: akela_6
+  - first:
+      213: 987130431349427035
+    second: akela_7
+  - first:
+      213: 1677962257213833783
+    second: akela_8
+  - first:
+      213: 3229956210277733960
+    second: akela_9
+  - first:
+      213: -3914167016000220311
+    second: akela_10
+  - first:
+      213: -5202758277648724661
+    second: akela_11
+  - first:
+      213: 8887423172513558782
+    second: akela_12
+  - first:
+      213: -2004857836592484830
+    second: akela_13
+  - first:
+      213: -3298786012869450939
+    second: akela_14
+  - first:
+      213: -3774099275898325830
+    second: akela_15
+  - first:
+      213: -8152071159497133626
+    second: akela_16
+  - first:
+      213: -5122391785600863101
+    second: akela_17
+  - first:
+      213: 4178206475343664109
+    second: akela_18
+  - first:
+      213: -5444475428564843055
+    second: akela_19
+  - first:
+      213: -1477959486680755505
+    second: akela_20
+  - first:
+      213: 6809716926734103918
+    second: akela_21
+  - first:
+      213: -3277991600319269382
+    second: akela_22
+  - first:
+      213: -1472968425030115531
+    second: akela_23
+  - first:
+      213: -7880028545894658098
+    second: akela_24
+  - first:
+      213: -6593457950233960120
+    second: akela_25
+  - first:
+      213: 1089007206982608733
+    second: akela_26
+  - first:
+      213: -7108603013045433768
+    second: akela_27
+  - first:
+      213: -4731065372461590981
+    second: akela_28
+  - first:
+      213: 2650185998680814566
+    second: akela_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: akela_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1156
+        width: 123
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359e858825e5fabd0800000000000000
+      internalID: -2616769149911111341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_1
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1156
+        width: 123
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e38de5d77470cdf0800000000000000
+      internalID: -162001528546294812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1155
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630475425d72df180800000000000000
+      internalID: -9080057477317836746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_3
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1155
+        width: 127
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce91d471591a25bb0800000000000000
+      internalID: -4948715378813625876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_4
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf62926063411e70800000000000000
+      internalID: 9084116004632686557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_5
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21e627b13e441690800000000000000
+      internalID: -7632389493053005524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_6
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1154
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae29bd9480d6ca180800000000000000
+      internalID: -9102780864456322326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_7
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b8f83b5edf2bd00800000000000000
+      internalID: 987130431349427035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_8
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1154
+        width: 110
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7324ebf58c1594710800000000000000
+      internalID: 1677962257213833783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 801
+        width: 117
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846dba96f0c13dc20800000000000000
+      internalID: 3229956210277733960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_10
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 801
+        width: 118
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96391cb46d51ea9c0800000000000000
+      internalID: -3914167016000220311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_11
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 797
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d468079e61cc7b0800000000000000
+      internalID: -5202758277648724661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_12
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 799
+        width: 120
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0fe3ea948765b70800000000000000
+      internalID: 8887423172513558782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_13
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 796
+        width: 108
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e2fb87b605d24e0800000000000000
+      internalID: -2004857836592484830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_14
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 797
+        width: 106
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543a3e8599b5832d0800000000000000
+      internalID: -3298786012869450939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_15
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 796
+        width: 106
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4750164b4bf9bc0800000000000000
+      internalID: -3774099275898325830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_16
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 801
+        width: 119
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c17772d8760ede80800000000000000
+      internalID: -8152071159497133626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_17
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 800
+        width: 110
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384b1e28fcb99e8b0800000000000000
+      internalID: -5122391785600863101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 117
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de39819f6a8fbf930800000000000000
+      internalID: 4178206475343664109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_19
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 449
+        width: 107
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5cc0c91765174b0800000000000000
+      internalID: -5444475428564843055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_20
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 449
+        width: 106
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc299fb6dab3d7be0800000000000000
+      internalID: -1477959486680755505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_21
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 449
+        width: 106
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6573f62779f08e50800000000000000
+      internalID: 6809716926734103918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_22
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 120
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5714ec10c3282d0800000000000000
+      internalID: -3277991600319269382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_23
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 450
+        width: 118
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f96b48507fe8be0800000000000000
+      internalID: -1472968425030115531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_24
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 450
+        width: 109
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfc206a9c384a290800000000000000
+      internalID: -7880028545894658098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_25
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 450
+        width: 137
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84164da8de45f74a0800000000000000
+      internalID: -6593457950233960120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_26
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 450
+        width: 133
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57e902f84eec1f00800000000000000
+      internalID: 1089007206982608733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_27
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 84
+        width: 133
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ac72ef83b295d90800000000000000
+      internalID: -7108603013045433768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_28
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 84
+        width: 137
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3696492c11e75eb0800000000000000
+      internalID: -4731065372461590981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: akela_29
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 84
+        width: 109
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e37510ef1a57c420800000000000000
+      internalID: 2650185998680814566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
