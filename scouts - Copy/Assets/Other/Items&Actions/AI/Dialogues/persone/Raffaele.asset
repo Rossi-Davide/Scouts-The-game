@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Raffaele
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: Ehi ehi
+    canAnswer: 1
+    answers:
+    - answer: Chi sei?
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Ehi non ho fatto nulla! Stavo solo passeggiando per il campo
+      nextSentenceNum: 2
+      deltaPoints: -2
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Ti giuro che non ho le caramelle!
+      nextSentenceNum: 2
+      deltaPoints: -2
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Ok non ti arrabbiare. Mamma mia che suscettibile!
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Mi chiamo Raffaele
+    canAnswer: 1
+    answers:
+    - answer: Cosa fai nella vita?
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Come sei entrato nel videogame?
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Sono un informatico
+    canAnswer: 1
+    answers:
+    - answer: Ah forte. Addio
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Come sei entrato nel videogame?
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: L'ho hackerato
+    canAnswer: 1
+    answers:
+    - answer: E come hai fatto?
+      nextSentenceNum: 7
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Ma come \xE8 possibile?"
+      nextSentenceNum: 7
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Ciao a presto
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "E allora te lo dico! Una dei due programmatori \xE8 mia figlia! Si
+      \xE8 divertita un mondo ma.. \xE8 stato un lavoro molto complesso \xE8 ardito.
+      Sono molto orgoglioso di loro!"
+    canAnswer: 1
+    answers:
+    - answer: Ah forte. Addio
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: DonAle
+  m_Name: Akela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1636592501802586127, guid: 577679d3c268746f89e6048ee2fee21b,
+  m_Sprite: {fileID: -2616769149911111341, guid: 5d1a78c1782e347f2b9416d5ddd42027,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf66f87ca40284e57bd0ddf364ebad54, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4727833ca359340ef9e6753de13397d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: ospite
-  objectSubName: Don Ale
+  objectSubName: Akela
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0

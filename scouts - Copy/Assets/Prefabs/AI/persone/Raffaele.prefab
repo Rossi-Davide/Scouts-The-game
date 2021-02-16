@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 3310398828173343950, guid: b140e2694e8c4ae46a43c283cceb44c3,
+  m_Sprite: {fileID: -7927814476987068598, guid: 8faf80e0f5efe486ab79c6a8e6bfe678,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dc528814831310488f648076253e740, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8266f0b636d2b43ce83b9afc20e32fe6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: ospite
-  objectSubName: Monica
+  objectSubName: Raffaele
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
@@ -202,4 +202,4 @@ MonoBehaviour:
   states: []
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8cedc3a8207544fbe9e73e0e2f3b2807, type: 2}
