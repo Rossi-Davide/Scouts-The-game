@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 2698353ceae254049964ec9204471960
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -546153242831102091
+    second: chiara_0
+  - first:
+      213: -2755991938091812081
+    second: chiara_2
+  - first:
+      213: -3502224548768179953
+    second: chiara_3
+  - first:
+      213: -2308195700741729481
+    second: chiara_5
+  - first:
+      213: -1649753775656136932
+    second: chiara_6
+  - first:
+      213: 7059773624609978255
+    second: chiara_7
+  - first:
+      213: 3907626054121911226
+    second: chiara_8
+  - first:
+      213: 1006530737242476417
+    second: chiara_14
+  - first:
+      213: -1325610975245574372
+    second: chiara_15
+  - first:
+      213: 1512073763867051424
+    second: chiara_16
+  - first:
+      213: -7708985618458513456
+    second: chiara_17
+  - first:
+      213: -5564519056363797810
+    second: chiara_18
+  - first:
+      213: 636259101242391435
+    second: chiara_19
+  - first:
+      213: 4934418223066779395
+    second: chiara_20
+  - first:
+      213: -2213835741806242945
+    second: chiara_21
+  - first:
+      213: -2314244056390534888
+    second: chiara_22
+  - first:
+      213: 6456567832692202997
+    second: chiara_23
+  - first:
+      213: 8679062556601634090
+    second: chiara_24
+  - first:
+      213: 5438745093781343773
+    second: chiara_25
+  - first:
+      213: 8411734030404179026
+    second: chiara_26
+  - first:
+      213: -8594716418530244517
+    second: chiara_27
+  - first:
+      213: -5882906128723426687
+    second: chiara_28
+  - first:
+      213: -1676308743117381310
+    second: chiara_29
+  - first:
+      213: -293301106205920982
+    second: chiara_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: chiara_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1155
+        width: 131
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fdf10f48cab68f0800000000000000
+      internalID: -546153242831102091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1157
+        width: 129
+        height: 249
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b72362fefb0c9d0800000000000000
+      internalID: -2755991938091812081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_3
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1154
+        width: 128
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0915071459956fc0800000000000000
+      internalID: -3502224548768179953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_5
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1152
+        width: 126
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73394315d34a7ffd0800000000000000
+      internalID: -2308195700741729481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_6
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 1157
+        width: 124
+        height: 243
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f082b8ea5ea19e0800000000000000
+      internalID: -1649753775656136932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_7
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 1152
+        width: 135
+        height: 252
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87bc8115ba59f160800000000000000
+      internalID: 7059773624609978255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_8
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 1152
+        width: 109
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab37ff6513daa3630800000000000000
+      internalID: 3907626054121911226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_14
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 802
+        width: 106
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f89d86f5ae7fd00800000000000000
+      internalID: 1006530737242476417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_15
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 801
+        width: 119
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fd02667db7a9de0800000000000000
+      internalID: -1325610975245574372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_16
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 796
+        width: 107
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5cb71b317fbf410800000000000000
+      internalID: 1512073763867051424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_17
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 797
+        width: 122
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df6f298c6e240590800000000000000
+      internalID: -7708985618458513456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_18
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 794
+        width: 104
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec24b8b766bd6c2b0800000000000000
+      internalID: -5564519056363797810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_19
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 794
+        width: 105
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b79a2184274d800800000000000000
+      internalID: 636259101242391435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_20
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 797
+        width: 121
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f0c1fea339a7440800000000000000
+      internalID: 4934418223066779395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_21
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 796
+        width: 108
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73539a4f10e641e0800000000000000
+      internalID: -2213835741806242945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_22
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 794
+        width: 109
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8197847ca4722efd0800000000000000
+      internalID: -2314244056390534888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_23
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 457
+        width: 120
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd15d74c365a9950800000000000000
+      internalID: 6456567832692202997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_24
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 457
+        width: 107
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d42ad5969327870800000000000000
+      internalID: 8679062556601634090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_25
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 450
+        width: 141
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e4cbad8dd4a7b40800000000000000
+      internalID: 5438745093781343773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_26
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 450
+        width: 135
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2545e4b888b7cb470800000000000000
+      internalID: 8411734030404179026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_27
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 450
+        width: 107
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58894044fe69b880800000000000000
+      internalID: -8594716418530244517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_28
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 450
+        width: 107
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182c87e7b08bb5ea0800000000000000
+      internalID: -5882906128723426687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_29
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 450
+        width: 135
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2416b90641e8cb8e0800000000000000
+      internalID: -1676308743117381310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chiara_30
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 450
+        width: 140
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21fd58a23cfdebf0800000000000000
+      internalID: -293301106205920982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

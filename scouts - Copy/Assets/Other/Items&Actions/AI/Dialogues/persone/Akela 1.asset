@@ -10,32 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
-  m_Name: Tommaso3
+  m_Name: Akela 1
   m_EditorClassIdentifier: 
-  deltaPoints: 2
+  deltaPoints: 3
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Come va con le costruzioni?
+  - sentence: "La tua traccia \xE8 la mia traccia, la tua preda \xE8 la mia preda,
+      la tua tana \xE8 la mia tana. Come replichi?"
     canAnswer: 1
     answers:
-    - answer: Abbiamo costruito tutto
+    - answer: "Non fare agli altri ci\xF2 che non vuoi sia fatto a te"
+      nextSentenceNum: 2
+      deltaPoints: 2
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: pronti a servire
       nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: Ci mancano alcune cose da finire
-      nextSentenceNum: 3
+    - answer: amano e rispettano gli altri
+      nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: "Bene. RIcordati di potenziare le tue costruzioni dal men\xF9 dello
-      shop per progredire nel gioco"
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: E cosa aspettate? Che finisca il campo?!
+  - sentence: Alla prossima scout
     canAnswer: 0
     answers: []
     nextSentenceNum: 100

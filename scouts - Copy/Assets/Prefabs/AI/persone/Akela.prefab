@@ -202,4 +202,6 @@ MonoBehaviour:
   states: []
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 11400000, guid: 84e047373d23c44a7aa041f53df2aff9, type: 2}
+  - {fileID: 11400000, guid: 56de57e32c9d5464ca2ab7dd463c04ca, type: 2}
+  - {fileID: 11400000, guid: b0ce04d784ea442c0b0baea69a467f7f, type: 2}
+  - {fileID: 11400000, guid: 1b02973a301e44a41a0b6b53106c5669, type: 2}

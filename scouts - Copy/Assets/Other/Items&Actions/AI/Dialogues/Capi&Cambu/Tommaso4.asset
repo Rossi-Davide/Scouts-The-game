@@ -10,44 +10,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
-  m_Name: Akela
+  m_Name: Tommaso4
   m_EditorClassIdentifier: 
-  deltaPoints: 3
+  deltaPoints: 2
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Un cuore leale e una lingua cortese ti porteranno lontano nella giungla,
-      piacere, sono Akela
+  - sentence: Come sono andati i giochi fino ad ora?
     canAnswer: 1
     answers:
-    - answer: Siamo dello stesso sangue fratello tu ed io
+    - answer: Bene. Abbiamo vinto quasi sempre
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Male, tanto male
       nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: "La buona azione di oggi \xE8 stata aiutare le aquile ad accendere
-        il fuoco!"
-      nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: Bene, ricordati che il sorriso fa fare il doppio di strada di un brontolio
+    nextSentenceNum: 0
+  - sentence: Come sono andati i giochi fino ad ora?
     canAnswer: 1
     answers:
-    - answer: "Me lo ricorder\xF2"
-      nextSentenceNum: 100
+    - answer: Bene. Abbiamo vinto quasi sempre
+      nextSentenceNum: 0
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: "Assomiglia molto a Sorridono e cantano anche nelle difficolt\xE0"
-      nextSentenceNum: 100
+    - answer: Male, tanto male
+      nextSentenceNum: 0
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: 'oppure Sforzati sempre di guardare il sole splendere dietro le nuvole '
-      nextSentenceNum: 100
+    nextSentenceNum: 0
+  - sentence: Come sono andati i giochi fino ad ora?
+    canAnswer: 1
+    answers:
+    - answer: Bene. Abbiamo vinto quasi sempre
+      nextSentenceNum: 0
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    nextSentenceNum: 100
+    - answer: Male, tanto male
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 0
