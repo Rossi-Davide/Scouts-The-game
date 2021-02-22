@@ -43,54 +43,51 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected Animator animator;
 	public BuildingState[] states;
+	public int defaultStateIndex;
+	[System.NonSerialized]
+	public int activeStateIndex = 0;
 
 	#region Animations
 	protected void PlayAnimations()
 	{
-		var maxPriority = -1;
-		bool variesWithLevel = true;
-		var animation = "";
-		foreach (var s in states)
-		{
-			if (s.priority > maxPriority && s.active)
-			{
-				maxPriority = s.priority;
-				animation = s.animationSubstring;
-				variesWithLevel = s.variesWithLevel;
-			}
-		}
-		if (variesWithLevel)
-			animation = GetAnimationByLevel() + animation;
+		var animation = states[activeStateIndex].animationSubstring;
+		if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
 		animator.Play(animationPrefix + animation);
 		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
 	}
 
-	public void PlayOnActionEndState(PlayerAction action)
-	{
-		foreach (var s in states)
-		{
-			if (s.playAtActionEnd && s.action != null && s.action == action)
-			{
-				s.active = true;
-				break;
-			}
-		}
-	}
+	//public void PlayOnActionEndState(PlayerAction action)
+	//{
+	//	foreach (var s in states)
+	//	{
+	//		if (s.playAtActionEnd && s.action != null && s.action == action)
+	//		{
+	//			s.active = true;
+	//			break;
+	//		}
+	//	}
+	//}
 
-	protected void RefreshStates()
+	protected void RefreshActiveState()
 	{
-		foreach (var s in states)
+		var maxPriority = -1;
+		int activeIndex = -1;
+		for (int i = 0; i < states.Length; i++)
 		{
-			if (s.action != null)
+			var s = states[i];
+			if (s.priority > maxPriority) 
 			{
-				//b.generalAction.state.active = ActionManager.instance.currentActions.Exists(el => el.action == b.generalAction && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == b.generalAction && el.building == this);
-			}
-			else
-			{
-				if (s.conditions != null)
-					s.active = FindNotVerified(s.conditions) == null;
+				if (
+					(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
+					|| (s.conditions != null && FindNotVerified(s.conditions) == null) || s.conditions == null)
+				{
+					activeIndex = i;
+					maxPriority = s.priority;
+				}
 			}
 		}
+		if (activeIndex == -1) activeIndex = defaultStateIndex;
+		activeStateIndex = activeIndex;
 	}
 
 	protected virtual string GetAnimationByLevel()
@@ -123,7 +120,7 @@ public abstract class InGameObject : MonoBehaviour
 		if (manageAnimationsAutomatically)
 		{
 			InvokeRepeating(nameof(PlayAnimations), 1f, .3f);
-			InvokeRepeating(nameof(RefreshStates), 1f, 1f);
+			InvokeRepeating(nameof(RefreshActiveState), 1f, .3f);
 		}
 
 		for (int i = 0; i < buttons.Length; i++)
@@ -447,7 +444,7 @@ public abstract class InGameObject : MonoBehaviour
 		public bool active;
 		public string id;
 		public ActionButton.Status[] actionButtonInfos;
-		public BuildingState.Status[] buildingStatesInfo;
+		//public BuildingState.Status[] buildingStatesInfo;
 	}
 	public virtual Status SendStatus()
 	{
@@ -456,17 +453,17 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			b[i] = buttons[i].SendStatus();
 		}
-		var s = new BuildingState.Status[states.Length];
-		for (int i = 0; i < s.Length; i++)
-		{
-			s[i] = states[i].SendStatus();
-		}
+		//var s = new BuildingState.Status[states.Length];
+		//for (int i = 0; i < s.Length; i++)
+		//{
+		//	s[i] = states[i].SendStatus();
+		//}
 		return new Status
 		{
 			position = transform.position,
 			active = gameObject.activeSelf,
 			actionButtonInfos = b,
-			buildingStatesInfo = s,
+			//buildingStatesInfo = s,
 			id = id,
 		};
 	}
@@ -481,10 +478,10 @@ public abstract class InGameObject : MonoBehaviour
 			{
 				buttons[i].SetStatus(status.actionButtonInfos[i]);
 			}
-			for (int i = 0; i < status.buildingStatesInfo.Length; i++)
-			{
-				states[i].SetStatus(status.buildingStatesInfo[i]);
-			}
+			//for (int i = 0; i < status.buildingStatesInfo.Length; i++)
+			//{
+			//	states[i].SetStatus(status.buildingStatesInfo[i]);
+			//}
 		}
 	}
 	#endregion

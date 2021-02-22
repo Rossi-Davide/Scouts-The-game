@@ -16,6 +16,7 @@ MonoBehaviour:
   variesWithLevel: 0
   priority: 10
   action: {fileID: 11400000, guid: 3462591e35e97f84fa5cbfe584e31197, type: 2}
-  keepAfterPlay: 120
-  conditions: []
-  playAtActionEnd: 1
+  conditions:
+  - type: 3
+    desiredValue: 1
+    warning: 

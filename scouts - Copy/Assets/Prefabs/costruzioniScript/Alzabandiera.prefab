@@ -118,7 +118,11 @@ MonoBehaviour:
   nameTextOffset: {x: 0, y: 1.1, z: 0}
   loadingBarOffset: {x: 0, y: 0.5, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
-  states: []
+  states:
+  - {fileID: 11400000, guid: 1521fbd5ca2e2e8479f8e9e68f9c5019, type: 2}
+  - {fileID: 11400000, guid: f00fc83cdbcc6bf4ebc619176c48c186, type: 2}
+  - {fileID: 11400000, guid: 01c28cf51cb106243b66f779af6dfa01, type: 2}
+  defaultStateIndex: 0
 --- !u!95 &-18796684580131741
 Animator:
   serializedVersion: 3

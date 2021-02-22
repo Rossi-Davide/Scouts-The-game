@@ -149,7 +149,7 @@ public class ActionManager : MonoBehaviour
 			a.loadingBar.slider.value = a.totalTime - a.timeLeft;
 			if (a.timeLeft <= 0)
 			{
-				a.building.PlayOnActionEndState(a.action);
+				//a.building.PlayOnActionEndState(a.action);
 				currentActions.Remove(a);
 				actionSpots[i].SetActive(false);
 				a.loadingBar.gameObject.SetActive(false);

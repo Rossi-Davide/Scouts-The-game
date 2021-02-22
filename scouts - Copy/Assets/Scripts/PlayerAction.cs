@@ -9,8 +9,7 @@ public class PlayerAction : ScriptableObject
     public Condition[] conditions;
     public bool hasInfoPanel;
     public bool showInActionList;
-    public AnimationRoutine routine;
-    //public BuildingState state;
+    //public AnimationRoutine routine;
 
     public int timeNeeded;
     public int energyGiven, materialsGiven, pointsGiven; // can be less than 0

@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
 	}
 	void ShowSentence(Sentence s)
 	{
-		title.text = currentObject.name;
+		title.text = currentObject.objectName;
 		sentenceText.text = s.sentence;
 
 		canAnswer = s.canAnswer;
@@ -87,8 +87,6 @@ public class DialogueManager : MonoBehaviour
 	{
 		foreach (var b in answerButtons)
 			b.SetActive(false);
-		foreach (var t in answerTexts)
-			t.gameObject.SetActive(false);
 
 		for (int a = 0; a < s.answers.Length; a++)
 		{

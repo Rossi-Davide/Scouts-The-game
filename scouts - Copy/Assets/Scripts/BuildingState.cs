@@ -8,33 +8,14 @@ public class BuildingState : ScriptableObject
 	public bool variesWithLevel;
 	public int priority; //0 to 10 usually
 	public PlayerAction action;
-	[HideInInspector] [System.NonSerialized]
-	public bool active;
-	public int keepAfterPlay;
-	[HideInInspector] [System.NonSerialized]
-	public int keepTimeLeft;
+	//[HideInInspector] [System.NonSerialized]
+	//public bool active;
+	//public int keepAfterPlay;
+	//[HideInInspector] [System.NonSerialized]
+	//public int keepTimeLeft;
 
 	[Header("Indipendent states only:")]
 	public Condition[] conditions;
-	[Header("Action states only:")]
-	public bool playAtActionEnd;
-
-	[System.Serializable]
-	public class Status
-	{
-		public int keepTimeLeft;
-	}
-	public void SetStatus(Status status)
-	{
-		keepTimeLeft = status.keepTimeLeft;
-	}
-	public Status SendStatus()
-	{
-		return new Status
-		{
-			keepTimeLeft = keepTimeLeft,
-		};
-	}
 }
 
 
