@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -7927814476987068598, guid: 8faf80e0f5efe486ab79c6a8e6bfe678,
+  m_Sprite: {fileID: 7523915180491103514, guid: 5e59b39e7c468478282d9a019cdc145b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
   - {fileID: 11400000, guid: 3973835b9cf0546ad8377b7c4c8851af, type: 2}

@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: b9de6f47bffe7416586e357eebfdb04c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6970154499917260442
+    second: micheleBon_0
+  - first:
+      213: -3802148199778846821
+    second: micheleBon_2
+  - first:
+      213: 6594764996665331946
+    second: micheleBon_3
+  - first:
+      213: -1987955610530244631
+    second: micheleBon_4
+  - first:
+      213: -6570824648036931260
+    second: micheleBon_6
+  - first:
+      213: -5743173831515742298
+    second: micheleBon_7
+  - first:
+      213: 6219124437011980504
+    second: micheleBon_8
+  - first:
+      213: 5359635622049132537
+    second: micheleBon_9
+  - first:
+      213: 695137985360552129
+    second: micheleBon_10
+  - first:
+      213: -3733750638078825574
+    second: micheleBon_12
+  - first:
+      213: 7560192506254926482
+    second: micheleBon_13
+  - first:
+      213: 1665268991996386738
+    second: micheleBon_15
+  - first:
+      213: 1006855196695929884
+    second: micheleBon_16
+  - first:
+      213: -6385548915941103417
+    second: micheleBon_17
+  - first:
+      213: 5223903590817756865
+    second: micheleBon_18
+  - first:
+      213: -1329895563979295328
+    second: micheleBon_19
+  - first:
+      213: 2811969957727737185
+    second: micheleBon_20
+  - first:
+      213: 3942644062289978485
+    second: micheleBon_21
+  - first:
+      213: -5101192868045670010
+    second: micheleBon_28
+  - first:
+      213: 2082391894430287190
+    second: micheleBon_29
+  - first:
+      213: -2270054229553377437
+    second: micheleBon_30
+  - first:
+      213: -8372353131931891377
+    second: micheleBon_31
+  - first:
+      213: -586315822167786063
+    second: micheleBon_32
+  - first:
+      213: 2914279398321202843
+    second: micheleBon_33
+  - first:
+      213: -4861255117540886951
+    second: micheleBon_35
+  - first:
+      213: 8451783025388503214
+    second: micheleBon_36
+  - first:
+      213: 2376052894317921636
+    second: micheleBon_37
+  - first:
+      213: -8928801681521768825
+    second: micheleBon_40
+  - first:
+      213: -8707746879687860343
+    second: micheleBon_41
+  - first:
+      213: 8903915615137274899
+    second: micheleBon_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: micheleBon_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1156
+        width: 123
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66957da6969054f90800000000000000
+      internalID: -6970154499917260442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1156
+        width: 123
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b977ac06b5e0c3bc0800000000000000
+      internalID: -3802148199778846821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_3
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1155
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0da6be2df458b50800000000000000
+      internalID: 6594764996665331946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_4
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1155
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e79915a7ec5964e0800000000000000
+      internalID: -1987955610530244631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_6
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1155
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449a06cdbcdbfc4a0800000000000000
+      internalID: -6570824648036931260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_7
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af5f2134d52c40b0800000000000000
+      internalID: -5743173831515742298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_8
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1154
+        width: 122
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0ec02a9b4ce4650800000000000000
+      internalID: 6219124437011980504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_9
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffa4c1a330416a40800000000000000
+      internalID: 5359635622049132537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_10
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1154
+        width: 110
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0eb4f8050a5a900800000000000000
+      internalID: 695137985360552129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_12
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 801
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b6c61b39d0f2cc0800000000000000
+      internalID: -3733750638078825574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_13
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 801
+        width: 118
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29225e067033be860800000000000000
+      internalID: 7560192506254926482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_15
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 797
+        width: 117
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdda6343593c1710800000000000000
+      internalID: 1665268991996386738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_16
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 799
+        width: 120
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c142153877119fd00800000000000000
+      internalID: 1006855196695929884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_17
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 796
+        width: 108
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c82371d719f167a0800000000000000
+      internalID: -6385548915941103417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_18
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6749f63a80f7840800000000000000
+      internalID: 5223903590817756865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_19
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 797
+        width: 105
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a575a8d7034b8de0800000000000000
+      internalID: -1329895563979295328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_20
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 801
+        width: 119
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1659e6137cf160720800000000000000
+      internalID: 2811969957727737185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_21
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 801
+        width: 110
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574e898b2e517b630800000000000000
+      internalID: 3942644062289978485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_28
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689b1612d1ce439b0800000000000000
+      internalID: -5101192868045670010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_29
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 449
+        width: 105
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6558bae156426ec10800000000000000
+      internalID: 2082391894430287190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_30
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 449
+        width: 105
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f099a94b52f70e0800000000000000
+      internalID: -2270054229553377437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_31
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4902156f2d6fcb80800000000000000
+      internalID: -8372353131931891377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_32
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 120
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd7f7dbddcfcd7f0800000000000000
+      internalID: -586315822167786063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_33
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 450
+        width: 118
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96ac291ca9917820800000000000000
+      internalID: 2914279398321202843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_35
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 450
+        width: 108
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956fc640a3a598cb0800000000000000
+      internalID: -4861255117540886951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_36
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 450
+        width: 137
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea045f2d1e3ca4570800000000000000
+      internalID: 8451783025388503214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_37
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 450
+        width: 131
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465cb5db48f69f020800000000000000
+      internalID: 2376052894317921636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_40
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 84
+        width: 131
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7860cfe6d26861480800000000000000
+      internalID: -8928801681521768825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_41
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 84
+        width: 137
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f503a395ed72780800000000000000
+      internalID: -8707746879687860343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBon_42
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 84
+        width: 108
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c9f46b310119b70800000000000000
+      internalID: 8903915615137274899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
