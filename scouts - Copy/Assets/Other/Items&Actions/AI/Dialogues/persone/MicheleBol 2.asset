@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: MicheleBol 2
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: "D\xEC al tuo compagno di andare a prendere il cesto con il cibo"
+    canAnswer: 1
+    answers:
+    - answer: Devo fare qualcosa io?
+      nextSentenceNum: 2
+      deltaPoints: 2
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Vado subito capo
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "S\xEC, puoi andare a prendere le pringles che facciamo uno spuntino.
+      Ho ancora fame!!"
+    canAnswer: 1
+    answers:
+    - answer: Cosa, abbiamo delle pringles?!?!?!
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "ma non \xE8 illegale?"
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "S\xEC, dai che stasera ci divertiamo!!"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "Oh ma tu sei sempre cos\xEC noioso. Senti se non ti vuoi divertire
+      allora ci divertiamo noi"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100

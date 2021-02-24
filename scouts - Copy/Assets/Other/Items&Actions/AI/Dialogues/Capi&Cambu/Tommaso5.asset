@@ -10,60 +10,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
-  m_Name: MicheleBol
+  m_Name: Tommaso5
   m_EditorClassIdentifier: 
-  deltaPoints: 3
+  deltaPoints: 2
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Incominciamo a prendere i pali...
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 2
-  - sentence: Voi fate un tripode, intanto vado dalle Puma a rubare il cordino
+  - sentence: Hai fatto la doccia recentemente?
     canAnswer: 1
     answers:
-    - answer: Chiedere in prestito volevi dire...
-      nextSentenceNum: 3
+    - answer: "S\xEC"
+      nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: 'Rubare... mi piace '
-      nextSentenceNum: 4
-      deltaPoints: 0
+    - answer: No
+      nextSentenceNum: 3
+      deltaPoints: -1
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: "Ahaha certo, perch\xE8 tu credi che se glielo chiediamo gentilmente
-      loro diranno di si"
+  - sentence: Sicuro sicuro?
     canAnswer: 1
     answers:
-    - answer: Ehm... si sono persone gentili
+    - answer: "S\xEC"
       nextSentenceNum: 5
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: Ok, ora capisco
-      nextSentenceNum: 4
+    - answer: No?
+      nextSentenceNum: 3
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Magnifico!! Vai allora
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: Beh allora decidi tu
+  - sentence: Male, corri subito a darti una sciaquata ai lavaggi
     canAnswer: 1
     answers:
-    - answer: "Penso che prover\xF2 a chiederglielo"
+    - answer: Ok...
       nextSentenceNum: 100
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: Ok, rubo
+    - answer: Non ci penso nemmeno
       nextSentenceNum: 4
-      deltaPoints: -1
+      deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Non ho intenzione di discutere. Se non ti lavi ne risentirai tu e anche
+      la tua squadriglia
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "Perch\xE8 puzzi parecchio quindi non ti credo molto"
+    canAnswer: 1
+    answers:
+    - answer: IO MI SONO LAVATO
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Va bene, va bene allora ti credo. Ci si vede
+    canAnswer: 0
+    answers: []
     nextSentenceNum: 100

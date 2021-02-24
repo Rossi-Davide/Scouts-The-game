@@ -10,69 +10,66 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
-  m_Name: MicheleBon
+  m_Name: Riccardo Pieri
   m_EditorClassIdentifier: 
   deltaPoints: 3
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: 'Ciao '
+  - sentence: Avete coperto la legna?
     canAnswer: 1
     answers:
-    - answer: Ciao amico
+    - answer: No
       nextSentenceNum: 2
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: "Ehil\xE0"
-      nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: A che ora si mangia? Ho una gran fame!
-    canAnswer: 1
-    answers:
-    - answer: eeeeh non lo so
-      nextSentenceNum: 3
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: 'forse dovrei chiederlo ai capi '
+    - answer: "Perch\xE8 a cosa serve?"
       nextSentenceNum: 3
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: "Spero si sbrighino, ho una gran fame! Oggi abbiamo costruito l\u2019alzabandiera,
-      che fatica!"
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 4
-  - sentence: Sai almeno cosa si mangia?
+  - sentence: Fatelo subito! Presto potrebbe piovere
     canAnswer: 1
     answers:
-    - answer: Fagioli alla Tex
+    - answer: Accidenti, spero faremo in tempo
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Quando arriva la pioggia al campo diventa tutto pi\xF9 difficile.
+      Se non copri la legna diventer\xE0 tutta inutilizzabile"
+    canAnswer: 1
+    answers:
+    - answer: Accidenti, spero faremo in tempo
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "La pioggia \xE8 importante per\xF2, rinfresca e rinnova le foreste! "
+    canAnswer: 1
+    answers:
+    - answer: Per fortuna ora con la tenda nuova rimaremo asciutti!
       nextSentenceNum: 5
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: 'Minestrone '
-      nextSentenceNum: 6
+    - answer: "Se piove per due giorni a fila ci toccher\xE0 passare tutte le giornate
+        dentro quelle piccole tende"
+      nextSentenceNum: 5
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
-    - answer: Pasta
+    - answer: Non smetteremo mai di mangiare bastoncini Findus bagnati
       nextSentenceNum: 5
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Oh bene, mi piacciono
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: No, ancora!!!! Uffa
+  - sentence: 'Non esiste buono o cattivo tempo, ma solo buono o cattivo equipaggiamento! '
     canAnswer: 0
     answers: []
     nextSentenceNum: 100

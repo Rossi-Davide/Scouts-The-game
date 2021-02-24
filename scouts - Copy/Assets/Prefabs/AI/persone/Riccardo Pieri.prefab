@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: Michele Bollini
+  m_Name: Michele Boncaldo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7523915180491103514, guid: 5e59b39e7c468478282d9a019cdc145b,
+  m_Sprite: {fileID: -7927814476987068598, guid: 8faf80e0f5efe486ab79c6a8e6bfe678,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 962763b53cb7d40bfaa6d28f39449841, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c11a75ef1524466f905fa94d7eb5489, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: ospite
-  objectSubName: Michele Bollini
+  objectSubName: Michele Boncaldo
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
@@ -200,9 +200,6 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
-  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 11400000, guid: 9d6da2c600c5e464880ec6566268d324, type: 2}
-  - {fileID: 11400000, guid: 3e728562b1ec04a2b9b2af378f9fbe4d, type: 2}
-  - {fileID: 11400000, guid: 3973835b9cf0546ad8377b7c4c8851af, type: 2}
+  - {fileID: 11400000, guid: fcce36fdf8b224dfd8816c72b2a63283, type: 2}
