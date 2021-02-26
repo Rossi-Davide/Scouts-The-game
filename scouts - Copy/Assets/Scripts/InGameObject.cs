@@ -50,10 +50,13 @@ public abstract class InGameObject : MonoBehaviour
 	#region Animations
 	protected void PlayAnimations()
 	{
-		var animation = states[activeStateIndex].animationSubstring;
-		if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
-		animator.Play(animationPrefix + animation);
-		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
+		if (objectName == "Alzabandiera")
+		{
+			var animation = states[activeStateIndex].animationSubstring;
+			if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
+			animator.Play(animationPrefix + animation);
+			Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
+		}
 	}
 
 	//public void PlayOnActionEndState(PlayerAction action)
@@ -70,24 +73,28 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected void RefreshActiveState()
 	{
-		var maxPriority = -1;
-		int activeIndex = -1;
-		for (int i = 0; i < states.Length; i++)
+		if (objectName == "Alzabandiera")
 		{
-			var s = states[i];
-			if (s.priority > maxPriority) 
+			var maxPriority = -1;
+			int activeIndex = -1;
+			for (int i = 0; i < states.Length; i++)
 			{
-				if (
-					(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
-					|| (s.conditions != null && FindNotVerified(s.conditions) == null) || s.conditions == null)
+				var s = states[i];
+				if (s.priority > maxPriority)
 				{
-					activeIndex = i;
-					maxPriority = s.priority;
+					if (
+						(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
+						|| (s.conditions != null && FindNotVerified(s.conditions) == null)
+						|| s.conditions == null)
+					{
+						activeIndex = i;
+						maxPriority = s.priority;
+					}
 				}
 			}
+			if (activeIndex == -1) activeIndex = defaultStateIndex;
+			activeStateIndex = activeIndex;
 		}
-		if (activeIndex == -1) activeIndex = defaultStateIndex;
-		activeStateIndex = activeIndex;
 	}
 
 	protected virtual string GetAnimationByLevel()
