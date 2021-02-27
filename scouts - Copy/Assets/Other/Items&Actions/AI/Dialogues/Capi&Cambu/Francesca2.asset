@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Francesca2
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: Ehi ciao, come va in squadriglia?
+    canAnswer: 1
+    answers:
+    - answer: Bene
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Abbiamo un po'litigato ieri. Non so ora se ci riprenderemo
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Riuscite a suddividervi il lavoro?
+    canAnswer: 1
+    answers:
+    - answer: Si, funzioniamo
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Lascio fare molto al mio vice. Lui ne sa a pacchi
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Per modo di dire, in realt\xE0 \xE8 tutto nelle mie mani"
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Come mai avete litigato?
+    canAnswer: 1
+    answers:
+    - answer: "Motivi stupidi, la tenda era disordinata e non si trovavano le cose.
+        Cos\xEC abbiamo avuto da ridire"
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Il mio vice ha perso le staffe e si \xE8 incavolato con i novizi.
+        Loro non sono tipetti facili e cos\xEC gli hanno risposto"
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: Michele Boncaldo
+  m_Name: Riccardo Pieri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5c11a75ef1524466f905fa94d7eb5489, type: 2}
+  m_Controller: {fileID: 9100000, guid: a70c4894f22bb4b9bb7d56d0f889be33, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: ospite
-  objectSubName: Michele Boncaldo
+  objectSubName: Riccardo
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 11400000, guid: fcce36fdf8b224dfd8816c72b2a63283, type: 2}
+  - {fileID: 11400000, guid: e0043a49a2ba2401985f2e9d95181263, type: 2}

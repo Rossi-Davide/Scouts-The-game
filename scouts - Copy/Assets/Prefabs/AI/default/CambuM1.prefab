@@ -120,9 +120,15 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 22b4e43849a0e48c6985d290b0a5e670, type: 2}
+  - {fileID: 11400000, guid: c6b92195531344bd68317415bd91635e, type: 2}
+  - {fileID: 11400000, guid: 819343d5751c4424ba1fb98aefd78e0a, type: 2}
+  - {fileID: 11400000, guid: 786002039439e4129a0d569fe5cae8f4, type: 2}
+  - {fileID: 11400000, guid: 5d02637b28748494bb556f56b21084ad, type: 2}
+  - {fileID: 11400000, guid: 7a0b17eb65d704143a9a7186c667ab16, type: 2}
 --- !u!212 &3078868371422378586
 SpriteRenderer:
   m_ObjectHideFlags: 0
