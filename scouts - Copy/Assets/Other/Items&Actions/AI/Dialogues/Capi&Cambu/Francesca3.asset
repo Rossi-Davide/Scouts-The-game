@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Francesca3
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: Il telefono qui non prende, sono disperata non so proprio come fare!
+    canAnswer: 1
+    answers:
+    - answer: Ma non dovrebbe essere proibito il telefono?!
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Non ci sono antenne
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: E chi dovresti chiamare?
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Si ma io sono una cambusiera. Ho i cosiddetti permessi speciali. Comunque
+      devo sentire la mia famiglia che \xE8 rimasta a casa"
+    canAnswer: 1
+    answers:
+    - answer: Ah ok, ha senso
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Hai figli?
+      nextSentenceNum: 3
+      deltaPoints: 1
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: No, mi riferivo a mia mamma, vivo ancora con lei
+    canAnswer: 1
+    answers:
+    - answer: "Ah ok, b\xE8 spero il telefono riesca a funzionare allora"
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Come non ci sono antenne? Sei sicuro?!
+    canAnswer: 1
+    answers:
+    - answer: Credo che i programmatori si siano dimenticati di aggiugnerle
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Accidenti, dovr\xF2 aspettare la fine del campo allora"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Mia mamma
+    canAnswer: 1
+    answers:
+    - answer: Ma tua mamma non esiste...
+      nextSentenceNum: 7
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Ma che vai blaterando?!
+    canAnswer: 1
+    answers:
+    - answer: "Pensaci: siamo in un videogioco sospesi su un ammasso di terreno nel
+        nulla cosmico. Il mondo esterno non \xE8 stato progettato perch\xE8 il giocatore
+        non pu\xF2 uscire dal campo. Tua mamma non esiste"
+      nextSentenceNum: 8
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: System.StackOverflowException... Failed to load next sentence
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100

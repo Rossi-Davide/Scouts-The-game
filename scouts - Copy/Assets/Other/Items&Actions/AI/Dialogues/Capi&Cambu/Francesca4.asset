@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Francesca4
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: 
+    canAnswer: 1
+    answers:
+    - answer: "Che men\xF9 c'\xE8 stasera?"
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Ah ah ah. Informazione top secret
+    canAnswer: 1
+    answers:
+    - answer: Ma come?
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Perch\xE8?"
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Perch\xE8 dev' essere una sorpresa"
+    canAnswer: 1
+    answers:
+    - answer: Dai ma a me puoi dirlo ormai siamo entrati in cinfidenza
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Ma io posso essere un' eccezione. Andiamo!!
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Ma che cosa pu\xF2 andare storto?! Il misterioso e super segreto men\xF9
+        della cena \xE8 stato rivelato. Aiuto "
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
