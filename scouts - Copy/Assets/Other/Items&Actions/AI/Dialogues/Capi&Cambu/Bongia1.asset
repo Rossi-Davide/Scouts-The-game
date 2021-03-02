@@ -16,9 +16,8 @@ MonoBehaviour:
   deltaMaterials: 0
   deltaEnergy: 0
   sentences:
-  - sentence: Ciao...  mi chiamo Chiara ma tutti in reparto mi chiamano Bongia. Benvenuto
-      al campo di reparto. Sono felice che ti sia messo in gioco in questa avventura.
-      Come stai?
+  - sentence: Ciao...  mi chiamo Chiara. Benvenuto al campo di reparto. Sono felice
+      che ti sia messo in gioco in questa avventura. Come stai?
     canAnswer: 1
     answers:
     - answer: Bene

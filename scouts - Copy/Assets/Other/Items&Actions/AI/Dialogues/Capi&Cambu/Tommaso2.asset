@@ -50,24 +50,9 @@ MonoBehaviour:
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Sei pronto per la veglia alle stelle?
-    canAnswer: 1
-    answers:
-    - answer: La che?!
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Ah s\xEC, sar\xE0 una bella dormita"
-      nextSentenceNum: 0
-      deltaPoints: -3
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Ehm, tipo no?!
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+  - sentence: Not used sentence error
+    canAnswer: 0
+    answers: []
     nextSentenceNum: 100
   - sentence: "Ma non \xE8 incredibile scoprire i segreti del nostro cielo e i significati
       che stanno dietro ogni stella. Lo sai che ogni stella ha un nome diverso? E

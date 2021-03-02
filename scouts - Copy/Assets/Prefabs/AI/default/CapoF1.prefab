@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Capo
-  objectSubName: Bongia
+  objectSubName: Chiara
   animationPrefix: 
   buttons:
   - buttonText: Parla
@@ -120,6 +120,7 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
   - {fileID: 11400000, guid: e456fb07d26b9e74499a679602757e81, type: 2}

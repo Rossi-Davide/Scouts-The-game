@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Cambusiere
-  objectSubName: Francesca
+  objectSubName: Federica
   animationPrefix: 
   buttons:
   - buttonText: Parla
