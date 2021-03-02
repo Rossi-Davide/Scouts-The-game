@@ -120,9 +120,15 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cd82f886caf134f9b9aa921fc312ceb1, type: 2}
+  - {fileID: 11400000, guid: 0e2f78140f9ef4582ba5f8ccd57802e9, type: 2}
+  - {fileID: 11400000, guid: f147d825b87d34d0f96861df89f84506, type: 2}
+  - {fileID: 11400000, guid: 4c797a85354044962a2e305c7c693afc, type: 2}
+  - {fileID: 11400000, guid: b7bd79e91bec841dbb2020fc0cae90b2, type: 2}
+  - {fileID: 11400000, guid: 8a36637df3e2e4cf88f356ef7028e1ae, type: 2}
 --- !u!95 &2157547844912029123
 Animator:
   serializedVersion: 3

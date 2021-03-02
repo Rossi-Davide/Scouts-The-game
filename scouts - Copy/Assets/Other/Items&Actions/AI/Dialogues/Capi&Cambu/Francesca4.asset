@@ -53,9 +53,23 @@ MonoBehaviour:
       deltaMaterials: 0
       deltaEnergy: 0
     - answer: "Ma che cosa pu\xF2 andare storto?! Il misterioso e super segreto men\xF9
-        della cena \xE8 stato rivelato. Aiuto "
+        della cena \xE8 stato rivelato. Aiuto!!! "
       nextSentenceNum: 5
       deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Mi dispiace ma dalla mia bocca non uscir\xE0 nulla"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Uhm ,dai effettivamente hai ragione. E va bene mi hai convinto. Stasera
+      ci saranno hamburger per la festa di inaugurazione del campo
+    canAnswer: 1
+    answers:
+    - answer: "Grazie mille. Prometto che non ne far\xF2 parola"
+      nextSentenceNum: 100
+      deltaPoints: 1
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100

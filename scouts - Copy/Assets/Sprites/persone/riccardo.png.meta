@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: f567cab738f2e44b19825845f658b9c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2522373621471808707
+    second: riccardo_0
+  - first:
+      213: 1841003417094863946
+    second: riccardo_1
+  - first:
+      213: 78516974675868012
+    second: riccardo_2
+  - first:
+      213: 2510687884991888346
+    second: riccardo_4
+  - first:
+      213: 2457431068702971454
+    second: riccardo_5
+  - first:
+      213: 1632862275987249369
+    second: riccardo_6
+  - first:
+      213: 6559482406722294502
+    second: riccardo_7
+  - first:
+      213: -5426631756134424635
+    second: riccardo_8
+  - first:
+      213: 2848129529569838467
+    second: riccardo_9
+  - first:
+      213: -4250727017071875699
+    second: riccardo_10
+  - first:
+      213: -1287436960440958842
+    second: riccardo_11
+  - first:
+      213: 215336704721752817
+    second: riccardo_13
+  - first:
+      213: -549072387788054618
+    second: riccardo_14
+  - first:
+      213: 664380373836501884
+    second: riccardo_16
+  - first:
+      213: 3521825148283107943
+    second: riccardo_17
+  - first:
+      213: 2674447171832271168
+    second: riccardo_18
+  - first:
+      213: -981305773423524537
+    second: riccardo_19
+  - first:
+      213: 2911751817476147197
+    second: riccardo_20
+  - first:
+      213: -952211702214643486
+    second: riccardo_27
+  - first:
+      213: -6522058816773505714
+    second: riccardo_28
+  - first:
+      213: 4860935178569990796
+    second: riccardo_29
+  - first:
+      213: -5985198000246940744
+    second: riccardo_30
+  - first:
+      213: 2131298145168779602
+    second: riccardo_32
+  - first:
+      213: 9131681657649518760
+    second: riccardo_34
+  - first:
+      213: 8989166358333920736
+    second: riccardo_37
+  - first:
+      213: -9190000715623857061
+    second: riccardo_38
+  - first:
+      213: 3721211577225702718
+    second: riccardo_39
+  - first:
+      213: -7914466930297467893
+    second: riccardo_42
+  - first:
+      213: -4569204312396775849
+    second: riccardo_43
+  - first:
+      213: -7413234875371423154
+    second: riccardo_44
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: riccardo_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1156
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc84a2d175410320800000000000000
+      internalID: 2522373621471808707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1156
+        width: 125
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c38329ade8c8910800000000000000
+      internalID: 1841003417094863946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_2
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1155
+        width: 124
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69b460c5c2f61100800000000000000
+      internalID: 78516974675868012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_4
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 1155
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb71d64451c7d220800000000000000
+      internalID: 2510687884991888346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_5
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1155
+        width: 121
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e369c06798c8a1220800000000000000
+      internalID: 2457431068702971454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_6
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 1155
+        width: 121
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d81b57b69719a610800000000000000
+      internalID: 1632862275987249369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_7
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 1154
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e25b1bce76f70b50800000000000000
+      internalID: 6559482406722294502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_8
+      rect:
+        serializedVersion: 2
+        x: 2057
+        y: 1155
+        width: 123
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfd0c85b2bb0b4b0800000000000000
+      internalID: -5426631756134424635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_9
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1154
+        width: 108
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3858f4497b6968720800000000000000
+      internalID: 2848129529569838467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 801
+        width: 118
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89664e9c426205c0800000000000000
+      internalID: -4250727017071875699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_11
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 801
+        width: 126
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6804536d7ea122ee0800000000000000
+      internalID: -1287436960440958842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_13
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 797
+        width: 116
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f21b0097970df200800000000000000
+      internalID: 215336704721752817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_14
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 799
+        width: 120
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afdae9829d4168f0800000000000000
+      internalID: -549072387788054618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_16
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 796
+        width: 107
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7314421e6a583900800000000000000
+      internalID: 664380373836501884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_17
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ab37c105900e030800000000000000
+      internalID: 3521825148283107943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_18
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0415c9f688b8d1520800000000000000
+      internalID: 2674447171832271168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_19
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 801
+        width: 119
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7450d072993b162f0800000000000000
+      internalID: -981305773423524537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_20
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 800
+        width: 110
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df783c2d9de986820800000000000000
+      internalID: 2911751817476147197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_27
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 445
+        width: 120
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0b68a708019c2f0800000000000000
+      internalID: -952211702214643486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_28
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4db20ebf0efc75a0800000000000000
+      internalID: -6522058816773505714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_29
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c824dd26ac2857340800000000000000
+      internalID: 4860935178569990796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_30
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb17e4312e40fca0800000000000000
+      internalID: -5985198000246940744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_32
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 450
+        width: 120
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259eb35fe54e39d10800000000000000
+      internalID: 2131298145168779602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_34
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 450
+        width: 117
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8562ef5104abe70800000000000000
+      internalID: 9131681657649518760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_37
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 450
+        width: 107
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5926f1d2fefbc70800000000000000
+      internalID: 8989166358333920736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_38
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 450
+        width: 136
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5487a33a0f867080800000000000000
+      internalID: -9190000715623857061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_39
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 450
+        width: 132
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3deb92b63664a330800000000000000
+      internalID: 3721211577225702718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_42
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 84
+        width: 132
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c0b01724a2a2290800000000000000
+      internalID: -7914466930297467893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_43
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 84
+        width: 136
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e3865f2ece690c0800000000000000
+      internalID: -4569204312396775849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: riccardo_44
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 84
+        width: 108
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4af2f86826ee1990800000000000000
+      internalID: -7413234875371423154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
