@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
-  m_Name: FuocoLevels
+  m_Name: Acqua1
   m_EditorClassIdentifier: 
-  animationSubstring: Fuoco
-  variesWithLevel: 1
-  priority: 50
-  active: 0
+  animationSubstring: Acqua
+  variesWithLevel: 0
+  priority: 1
+  action: {fileID: 11400000, guid: 94af587bce945d646b57c060bd43a3ca, type: 2}
+  conditions: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LavareIPiatti
   m_EditorClassIdentifier: 
   name: Lavare i piatti
-  description: 
+  description: E' necessario farlo subito dopo aver mangiato.
   neededItems: []
   conditions:
   - type: 2
@@ -21,7 +21,6 @@ MonoBehaviour:
     warning: Sei troppo lontano!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: 22a44bb106043c2449703600a60c08c2, type: 2}
   timeNeeded: 45
   energyGiven: -3
   materialsGiven: 0

@@ -260,7 +260,9 @@ MonoBehaviour:
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: 86d587ba11d360447844da6aeffa69b7, type: 2}
-  - {fileID: 11400000, guid: a347e06a83e5626449a80dbdcf3f658b, type: 2}
+  - {fileID: 11400000, guid: 03b48a7d725ae0e45ab2040e98cd199f, type: 2}
+  - {fileID: 11400000, guid: c383740f846382a4c94da4b8d43a6ebb, type: 2}
+  defaultStateIndex: 0
   building: {fileID: 11400000, guid: 2af9a7e66343d5d4684c0a7b535f46c9, type: 2}
 --- !u!114 &4027937593383754383
 MonoBehaviour:

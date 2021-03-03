@@ -539,6 +539,19 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	#endregion
+	#region PlayerLoseEnergy
+	const int playerEnergyLossInterval = 20;
+	int plEnLossTimeLeft;
+	void ReducePlayerEnergy()
+	{
+		plEnLossTimeLeft--;
+		if (plEnLossTimeLeft < 0)
+		{
+			ChangeCounter(Counter.Energia, -1);
+			plEnLossTimeLeft = playerEnergyLossInterval;
+		}
+	}
+	#endregion
 	#region General
 
 	void Start()
@@ -562,16 +575,17 @@ public class GameManager : MonoBehaviour
 		InvokeRepeating(nameof(CheckRain), 1, 1);
 		InvokeRepeating(nameof(RefreshWaitToUseObjects), 1, 1);
 		InvokeRepeating(nameof(IncreaseTime), minuteDuration, minuteDuration);
+		InvokeRepeating(nameof(ReducePlayerEnergy), 1f, 1f);
 
 		globalLight.intensity = 1f;
 		isRaining = false;
 		rainingTimeLeft = 0;
 		rainingWaitTimeLeft = 80;
+		plEnLossTimeLeft = playerEnergyLossInterval;
 		totalDays = CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].totalDays;
 		
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
-
 
 	public GameObject victoryPanel, deathPanel, overlay;
 	private void CampEnded()
@@ -637,6 +651,7 @@ public class GameManager : MonoBehaviour
 			currentDay = currentDay,
 			globalLight = globalLight.intensity,
 			totalPlantsSpawned = spawnedPlants.Length,
+			plEnLossTimeLeft = plEnLossTimeLeft,
 		};
 	}
 	public void SetStatus(Status status)
@@ -657,6 +672,7 @@ public class GameManager : MonoBehaviour
 			currentDay = status.currentDay;
 			globalLight.intensity = status.globalLight;
 			toSpawn = status.totalPlantsSpawned;
+			plEnLossTimeLeft = status.plEnLossTimeLeft;
 			SpawnDecorations();
 			toSpawn = null;
 		}
@@ -682,6 +698,7 @@ public class GameManager : MonoBehaviour
 		public int currentDay;
 		public float globalLight;
 		public int totalPlantsSpawned;
+		public int plEnLossTimeLeft;
 	}
 
 	void RefreshInGameObjs()
@@ -769,7 +786,6 @@ public enum SpecificShopScreen
 	Espressione,
 	NegozioIllegale,
 	Costruzioni,
-	Decorazioni,
 }
 public enum MainShopScreen
 {

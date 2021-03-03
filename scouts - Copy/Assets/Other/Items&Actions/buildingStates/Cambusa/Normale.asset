@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSubstring: Normale
   variesWithLevel: 0
-  priority: 50
+  priority: 0
   action: {fileID: 0}
-  keepAfterPlay: 0
   conditions: []
-  playAtActionEnd: 0

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MandaAFareLegna
   m_EditorClassIdentifier: 
   name: Fare legna
-  description: 
+  description: "Scaricare il lavoro su chi ha meno esperienza non \xE8 una buona
+    abitudine ma pu\xF2 rivelarsi conveniente..."
   neededItems: []
   conditions:
   - type: 3
@@ -24,7 +25,6 @@ MonoBehaviour:
     warning: Puoi mandare a fare legna solo chi fa parte della tua squadriglia
   hasInfoPanel: 1
   showInActionList: 0
-  state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: FareLegna
   m_EditorClassIdentifier: 
   name: Fare Legna
-  description: 
+  description: Si tratta di certo di una delle parti fondamentali della vita di squadriglia...
+    Qualche volta anche il capo sq. deve sporcarsi le mani con faccende come questa.
   neededItems: []
   conditions:
   - type: 2
@@ -21,7 +22,6 @@ MonoBehaviour:
     warning: Sei troppo lontano!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 3
   energyGiven: 0
   materialsGiven: 20

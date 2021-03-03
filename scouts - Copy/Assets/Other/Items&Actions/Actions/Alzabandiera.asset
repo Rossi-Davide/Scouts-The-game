@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Alzabandiera
   m_EditorClassIdentifier: 
   name: Alzabandiera
-  description: 
+  description: E' un nuovo giorno! Il modo migliore per cominciarlo consiste nell'innalzare
+    la bandiera del campo.
   neededItems: []
   conditions:
   - type: 3
@@ -24,7 +25,6 @@ MonoBehaviour:
     warning: Sei troppo lontano dall'alzabandiera!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: f00fc83cdbcc6bf4ebc619176c48c186, type: 2}
   timeNeeded: 10
   energyGiven: 0
   materialsGiven: 0

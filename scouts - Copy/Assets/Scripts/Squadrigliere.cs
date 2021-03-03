@@ -6,7 +6,7 @@ public class Squadrigliere : BaseAI
 {
     [HideInInspector] [System.NonSerialized]
     public Squadriglia sq;
-    Plant currentPlant;
+    //Plant currentPlant;
 
     public override void SetMissingPriorityTarget(string targetName, Vector3 pos)
     {
@@ -19,23 +19,23 @@ public class Squadrigliere : BaseAI
         }
     }
 
-	void FaiLegna()
-	{
-        Debug.Log("sto facendo legna");
-        for (int i = 0; i < UnityEngine.Random.Range(2, 5); i++)
-		{
-            currentPlant = GameManager.instance.spawnedPlants[UnityEngine.Random.Range(0, GameManager.instance.spawnedPlants.Length)];
-            Debug.Log($"destination set: {currentPlant.name}");
-            StartCoroutine(ForceTarget(currentPlant.transform.position, false, EndLegna));
-		}
-    }
+	//void FaiLegna()
+	//{
+ //       Debug.Log("sto facendo legna");
+ //       for (int i = 0; i < UnityEngine.Random.Range(2, 5); i++)
+	//	{
+ //           currentPlant = GameManager.instance.spawnedPlants[UnityEngine.Random.Range(0, GameManager.instance.spawnedPlants.Length)];
+ //           Debug.Log($"destination set: {currentPlant.name}");
+ //           StartCoroutine(ForceTarget(currentPlant.transform.position, false, EndLegna));
+	//	}
+ //   }
     void EndLegna()
 	{
-        Debug.Log("ho fatto legna con successo!!!!!");
-        Destroy(currentPlant);
-        Destroy(currentPlant.clickListener.gameObject);
-        GameManager.instance.BuildingChanged();
-        GameManager.instance.ChangeCounter(Counter.Materiali, 15);
+        //Debug.Log("ho fatto legna con successo!!!!!");
+        //Destroy(currentPlant);
+        //Destroy(currentPlant.clickListener.gameObject);
+        //GameManager.instance.BuildingChanged();
+        GameManager.instance.ChangeCounter(Counter.Materiali, UnityEngine.Random.Range(30, 45));
     }
 
     protected override bool GetConditionValue(ConditionType t)
@@ -52,7 +52,7 @@ public class Squadrigliere : BaseAI
         switch (buttonIndex + 1)
         {
             case 1:
-                return null;
+                return EndLegna;
             default:
                 throw new System.NotImplementedException();
         }
@@ -62,7 +62,6 @@ public class Squadrigliere : BaseAI
         switch (buttonIndex + 1)
         {
             case 1:
-                FaiLegna();
                 break;
         }
     }

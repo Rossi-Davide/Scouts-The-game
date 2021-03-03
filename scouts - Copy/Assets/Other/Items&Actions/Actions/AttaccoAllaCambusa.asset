@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AttaccoAllaCambusa
   m_EditorClassIdentifier: 
   name: AttaccoAllaCambusa
-  description: 
+  description: Un po' di cioccolato che avanza non fa mai male...
   neededItems: []
   conditions:
   - type: 2
@@ -24,7 +24,6 @@ MonoBehaviour:
     warning: Puoi attaccare la cambusa solo di notte!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: fa195840dbb8f7b4db26989f416b8bd8, type: 2}
   timeNeeded: 30
   energyGiven: 0
   materialsGiven: 200

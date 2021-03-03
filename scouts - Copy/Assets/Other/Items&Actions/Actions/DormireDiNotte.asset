@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DormireDiNotte
   m_EditorClassIdentifier: 
   name: Dormire di notte
-  description: 
+  description: E' assolutamente necessario dormire per non crollare al secondo giorno!
   neededItems:
   - {fileID: 0}
   conditions:
@@ -28,7 +28,6 @@ MonoBehaviour:
     warning: Puoi dormire solo di notte!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 10
   energyGiven: 20
   materialsGiven: 0

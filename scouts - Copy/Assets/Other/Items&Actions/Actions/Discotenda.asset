@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Discotenda
   m_EditorClassIdentifier: 
   name: Discotenda
-  description: 
+  description: Riunirsi tutti, una sera, per ballare, cantare, giocare...
   neededItems: []
   conditions:
   - type: 2
@@ -24,7 +24,6 @@ MonoBehaviour:
     warning: Puoi ballare solo di notte!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: e2db38508aed15d4597a3c4da947fd1b, type: 2}
   timeNeeded: 20
   energyGiven: 15
   materialsGiven: 0

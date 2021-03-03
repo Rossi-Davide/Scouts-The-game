@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Imbragare
   m_EditorClassIdentifier: 
   name: Imbragare
-  description: 
+  description: Mettere al sicuro una costruzione in caso di pioggia.
   neededItems: []
   conditions:
   - type: 0
@@ -30,7 +30,6 @@ MonoBehaviour:
     warning: "Non puoi imbragare la costruzione perch\xE8 non sta piovendo!"
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 7
   energyGiven: 0
   materialsGiven: 0

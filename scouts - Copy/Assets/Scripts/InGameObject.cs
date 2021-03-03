@@ -50,13 +50,10 @@ public abstract class InGameObject : MonoBehaviour
 	#region Animations
 	protected void PlayAnimations()
 	{
-		if (objectName == "Alzabandiera")
-		{
-			var animation = states[activeStateIndex].animationSubstring;
-			if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
-			animator.Play(animationPrefix + animation);
-			Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
-		}
+		var animation = states[activeStateIndex].animationSubstring;
+		if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
+		animator.Play(animationPrefix + animation);
+		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
 	}
 
 	//public void PlayOnActionEndState(PlayerAction action)
@@ -73,28 +70,26 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected void RefreshActiveState()
 	{
-		if (objectName == "Alzabandiera")
+		var maxPriority = -1;
+		int activeIndex = -1;
+		for (int i = 0; i < states.Length; i++)
 		{
-			var maxPriority = -1;
-			int activeIndex = -1;
-			for (int i = 0; i < states.Length; i++)
+			var s = states[i];
+			//Debug.Log($"The state {s.animationSubstring} is {s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this))}, {(s.action == null && (s.conditions != null && s.conditions.Length > 0 && FindNotVerified(s.conditions) == null))}, {(s.action == null && (s.conditions == null || s.conditions.Length == 0))}.");
+			if (
+				(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
+				|| (s.action == null && (s.conditions != null && s.conditions.Length > 0 && FindNotVerified(s.conditions) == null))
+				|| (s.action == null && (s.conditions == null || s.conditions.Length == 0)))
 			{
-				var s = states[i];
 				if (s.priority > maxPriority)
 				{
-					if (
-						(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
-						|| (s.conditions != null && FindNotVerified(s.conditions) == null)
-						|| s.conditions == null)
-					{
-						activeIndex = i;
-						maxPriority = s.priority;
-					}
+					activeIndex = i;
+					maxPriority = s.priority;
 				}
 			}
-			if (activeIndex == -1) activeIndex = defaultStateIndex;
-			activeStateIndex = activeIndex;
 		}
+		if (activeIndex == -1) activeIndex = defaultStateIndex;
+		activeStateIndex = activeIndex;
 	}
 
 	protected virtual string GetAnimationByLevel()
@@ -126,8 +121,8 @@ public abstract class InGameObject : MonoBehaviour
 
 		if (manageAnimationsAutomatically)
 		{
-			InvokeRepeating(nameof(PlayAnimations), 1f, .3f);
-			InvokeRepeating(nameof(RefreshActiveState), 1f, .3f);
+			InvokeRepeating(nameof(PlayAnimations), .3f, .3f);
+			InvokeRepeating(nameof(RefreshActiveState), .3f, .3f);
 		}
 
 		for (int i = 0; i < buttons.Length; i++)

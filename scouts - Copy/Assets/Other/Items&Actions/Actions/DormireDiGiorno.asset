@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DormireDiGiorno
   m_EditorClassIdentifier: 
   name: Dormire di giorno
-  description: 
+  description: Lavorare duramente ti stanca non poco... Un bel riposino non fa mai
+    male.
   neededItems:
   - {fileID: 0}
   conditions:
@@ -28,7 +29,6 @@ MonoBehaviour:
     warning: Puoi dormire sull'amaca solo di giorno!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: 10e949f33d7832344be64a6ee770af21, type: 2}
   timeNeeded: 10
   energyGiven: 15
   materialsGiven: 0

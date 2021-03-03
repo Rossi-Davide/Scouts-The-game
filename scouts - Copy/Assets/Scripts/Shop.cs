@@ -15,7 +15,7 @@ public class Shop : MonoBehaviour
 	[HideInInspector]
 	[System.NonSerialized]
 	public MainShopScreen currentMainScreen;
-	public GameObject shopPanel, pioneristica, cucina, infermieristica, topografia, espressione, negozioIllegale, costruzioni, decorazioni;
+	public GameObject shopPanel, pioneristica, cucina, infermieristica, topografia, espressione, negozioIllegale, costruzioni;
 	bool hasEnoughMoney, canIncreaseLevel, hasItems, canBuy;
 	[HideInInspector]
 	[System.NonSerialized]
@@ -65,7 +65,6 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(infermieristica, SpecificShopScreen.Infermieristica);
 		OrganizeObjects(negozioIllegale, SpecificShopScreen.NegozioIllegale);
 		OrganizeObjects(costruzioni, SpecificShopScreen.Costruzioni);
-		OrganizeObjects(decorazioni, SpecificShopScreen.Decorazioni);
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
 		OrganizeObjects(espressione, SpecificShopScreen.Espressione);
 
@@ -334,6 +333,5 @@ public class Shop : MonoBehaviour
 		espressione.SetActive(currentSpecificScreen == SpecificShopScreen.Espressione);
 		negozioIllegale.SetActive(currentSpecificScreen == SpecificShopScreen.NegozioIllegale);
 		costruzioni.SetActive(currentSpecificScreen == SpecificShopScreen.Costruzioni);
-		decorazioni.SetActive(currentSpecificScreen == SpecificShopScreen.Decorazioni);
 	}
 }

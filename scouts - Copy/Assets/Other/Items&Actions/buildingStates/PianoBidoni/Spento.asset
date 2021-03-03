@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Spento
   m_EditorClassIdentifier: 
   animationSubstring: Spento
-  variesWithLevel: 0
+  variesWithLevel: 1
   priority: 0
-  active: 1
+  action: {fileID: 0}
+  conditions: []

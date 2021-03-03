@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cucinare
   m_EditorClassIdentifier: 
   name: Cucinare
-  description: 
+  description: Dimostra di essere autonomo cucinando da te il tuo cibo!
   neededItems:
   - {fileID: 0}
   conditions:
@@ -28,7 +28,6 @@ MonoBehaviour:
     warning: Puoi cucinare solo di giorno!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: 03b48a7d725ae0e45ab2040e98cd199f, type: 2}
   timeNeeded: 20
   energyGiven: 0
   materialsGiven: 0

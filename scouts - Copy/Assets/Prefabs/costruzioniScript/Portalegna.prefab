@@ -149,7 +149,9 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 1.5, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
-  - {fileID: 11400000, guid: a347e06a83e5626449a80dbdcf3f658b, type: 2}
+  - {fileID: 11400000, guid: b29a1b6b6ff132a46b20ba85f822e060, type: 2}
+  - {fileID: 11400000, guid: dd3e59d73fc16ac4887d34aea53b052d, type: 2}
+  defaultStateIndex: 0
   building: {fileID: 11400000, guid: e5889dd3ae960974aaed5a59828e0ef1, type: 2}
 --- !u!114 &-5423069257681772924
 MonoBehaviour:
