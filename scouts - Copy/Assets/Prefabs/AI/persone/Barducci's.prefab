@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: Riccardo Pieri
+  m_Name: Barducci's
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2522373621471808707, guid: f567cab738f2e44b19825845f658b9c0,
+  m_Sprite: {fileID: 7523915180491103514, guid: d6d979157731d41688e6f8ec82e06d91,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a70c4894f22bb4b9bb7d56d0f889be33, type: 2}
+  m_Controller: {fileID: 9100000, guid: 19c618bf9b2a944b58d61b2d65f2abe2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: ospite
-  objectSubName: Riccardo
+  objectSubName: Barducci's
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
@@ -202,5 +202,4 @@ MonoBehaviour:
   states: []
   defaultStateIndex: 0
   priorityTargets: []
-  dialoguesArray:
-  - {fileID: 11400000, guid: e0043a49a2ba2401985f2e9d95181263, type: 2}
+  dialoguesArray: []

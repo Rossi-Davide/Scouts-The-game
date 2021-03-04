@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: d6d979157731d41688e6f8ec82e06d91
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7523915180491103514
+    second: barduccis_0
+  - first:
+      213: -7421320463137601468
+    second: barduccis_2
+  - first:
+      213: 8155893125468017144
+    second: barduccis_3
+  - first:
+      213: -6640028522709171094
+    second: barducci_4
+  - first:
+      213: -7553139706684701772
+    second: barduccis_6
+  - first:
+      213: -8581582340741916160
+    second: barduccis_7
+  - first:
+      213: 3267346423077514396
+    second: micheleBol_8
+  - first:
+      213: -7897524329881230323
+    second: micheleBol_9
+  - first:
+      213: 8570051145538077558
+    second: barduccis_10
+  - first:
+      213: -907035828564067202
+    second: barduccis_12
+  - first:
+      213: -802832904801171249
+    second: barduccis_13
+  - first:
+      213: -5103362589908983001
+    second: barduccis_15
+  - first:
+      213: 1040997459432027787
+    second: barduccis_16
+  - first:
+      213: -5601115876595061705
+    second: barduccis_17
+  - first:
+      213: 7506337770537624240
+    second: barduccis_18
+  - first:
+      213: 9020731819701649253
+    second: barduccis_19
+  - first:
+      213: -3466449651499456257
+    second: barduccis_20
+  - first:
+      213: 5107707267804328697
+    second: barduccis_21
+  - first:
+      213: -153007989091150265
+    second: barduccis_28
+  - first:
+      213: -8112042033467590870
+    second: micheleBol_29
+  - first:
+      213: 6398165177049314207
+    second: micheleBol_30
+  - first:
+      213: -2548433407894317236
+    second: barduccis_31
+  - first:
+      213: 7102288442026883218
+    second: barduccis_32
+  - first:
+      213: 6478308725446390473
+    second: barduccis_33
+  - first:
+      213: -8020029847308736191
+    second: barduccis_35
+  - first:
+      213: -330227421476950527
+    second: barduccis_36
+  - first:
+      213: -971730447669086831
+    second: barduccis_37
+  - first:
+      213: 2475801077636965512
+    second: barduccis_40
+  - first:
+      213: -2431105305977340227
+    second: barduccis_41
+  - first:
+      213: -8901793598029027778
+    second: barduccis_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barduccis_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1156
+        width: 123
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d57554ef05a6860800000000000000
+      internalID: 7523915180491103514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1156
+        width: 123
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448885ecb5c220990800000000000000
+      internalID: -7421320463137601468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_3
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 1155
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f15299f59d8f2170800000000000000
+      internalID: 8155893125468017144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barducci_4
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1155
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64457d2d31e9d3a0800000000000000
+      internalID: -6640028522709171094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_6
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1156
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3092c747bdd2790800000000000000
+      internalID: -7553139706684701772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_7
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1155
+        width: 122
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a1059045818e880800000000000000
+      internalID: -8581582340741916160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBol_8
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1154
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9cada9b242f75d20800000000000000
+      internalID: 3267346423077514396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBol_9
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1155
+        width: 122
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04ac60077b566290800000000000000
+      internalID: -7897524329881230323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_10
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1154
+        width: 110
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6730abc5c10fee670800000000000000
+      internalID: 8570051145538077558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_12
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 801
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cf2e738bf8963f0800000000000000
+      internalID: -907035828564067202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_13
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 801
+        width: 118
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8c4570ab3cbd4f0800000000000000
+      internalID: -802832904801171249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_15
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 797
+        width: 117
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723257463c63d29b0800000000000000
+      internalID: -5103362589908983001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_16
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 799
+        width: 120
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86b7858cad527e00800000000000000
+      internalID: 1040997459432027787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_17
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 796
+        width: 108
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c20c549c6d442b0800000000000000
+      internalID: -5601115876595061705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_18
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b22ef89e6edb2860800000000000000
+      internalID: 7506337770537624240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_19
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 797
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f316fcbc3103d70800000000000000
+      internalID: 9020731819701649253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_20
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 801
+        width: 119
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff829927862b4efc0800000000000000
+      internalID: -3466449651499456257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_21
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 800
+        width: 110
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f27822c2b832e640800000000000000
+      internalID: 5107707267804328697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_28
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 117
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746dc6a6b0860edf0800000000000000
+      internalID: -153007989091150265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBol_29
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27702000cc3c6f80800000000000000
+      internalID: -8112042033467590870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micheleBol_30
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f937c406459dac850800000000000000
+      internalID: 6398165177049314207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_31
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 449
+        width: 105
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4798b4515522acd0800000000000000
+      internalID: -2548433407894317236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_32
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 451
+        width: 120
+        height: 235
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298ff5f55b5609260800000000000000
+      internalID: 7102288442026883218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_33
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 450
+        width: 118
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2bb85567397e950800000000000000
+      internalID: 6478308725446390473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_35
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 450
+        width: 108
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149e127885123b090800000000000000
+      internalID: -8020029847308736191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_36
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 450
+        width: 137
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ee5c7e8ebca6bf0800000000000000
+      internalID: -330227421476950527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_37
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 450
+        width: 131
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195b0496e48b382f0800000000000000
+      internalID: -971730447669086831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_40
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 84
+        width: 131
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884a41776ffcb5220800000000000000
+      internalID: 2475801077636965512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_41
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 84
+        width: 137
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe37a1da9af24ed0800000000000000
+      internalID: -2431105305977340227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barduccis_42
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 85
+        width: 108
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3622a5e2e9767480800000000000000
+      internalID: -8901793598029027778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
