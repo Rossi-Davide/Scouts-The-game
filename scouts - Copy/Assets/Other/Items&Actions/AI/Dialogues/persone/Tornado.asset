@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Tornado
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: Hola giovane promessa!
+    canAnswer: 1
+    answers:
+    - answer: Ehm...ok
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Hola
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Ehil\xE0"
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Hai visto la nuova tenda montana?
+    canAnswer: 0
+    answers:
+    - answer: "Certo. \xC8 enorme!"
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Diavolo no non \xE8 ancora piovuto"
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: A dire il vero non l'avevo ancora notato
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Hai visto com'\xE8 spazioso?! E il tessuto \xE8 cos\xEC resistente.
+      Io ne vado matto e tu?"
+    canAnswer: 0
+    answers:
+    - answer: "S\xEC sono  olto felice che il reparto si sia potuto permettere questo
+        potenziamento. Siamo stati molto fortunati"
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "S\xEC per\xF2 \xE8 pur sempre una tenda. Non ti sembra di esagerare
+        un pochino?"
+      nextSentenceNum: 0
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100

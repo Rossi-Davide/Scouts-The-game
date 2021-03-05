@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: Micol
+  m_Name: Micol Magnani
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19c618bf9b2a944b58d61b2d65f2abe2, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca5e6594a802642b2a8ebef0f932dd3e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
