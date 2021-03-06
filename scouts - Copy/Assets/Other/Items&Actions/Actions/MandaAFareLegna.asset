@@ -25,7 +25,7 @@ MonoBehaviour:
     warning: Puoi mandare a fare legna solo chi fa parte della tua squadriglia
   hasInfoPanel: 1
   showInActionList: 0
-  timeNeeded: 0
+  timeNeeded: 30
   energyGiven: 0
   materialsGiven: 0
   pointsGiven: 1

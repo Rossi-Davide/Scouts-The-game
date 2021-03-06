@@ -33,6 +33,7 @@ public class AIsManager : MonoBehaviour
 		InvokeRepeating(nameof(RefreshPanelUI), 1f, 1f);
 		GameManager.instance.OnHourChange += CheckAIEvents;
 	}
+
 	#region Status
 
 	public Status SendStatus()
@@ -91,6 +92,7 @@ public class AIsManager : MonoBehaviour
 		public AIEvent.Status[] aiEventsInfo;
 	}
 	#endregion
+	
 	void CallSetActiveOrInactiveAI()
 	{
 		SetActiveOrInactiveAI(100 - percentageOfActiveAIs);
@@ -118,7 +120,6 @@ public class AIsManager : MonoBehaviour
 			{
 				e.countDownLeft = e.countDownLenght;
 				SetActiveOrInactiveAI(100);
-				e.running = true;
 				GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} comincia tra...", false);
 			}
 		}
@@ -145,7 +146,7 @@ public class AIsManager : MonoBehaviour
 			{
 				foreach (Transform b in a)
 				{
-					b.GetComponent<BaseAI>().Unlock();
+					StartCoroutine(b.GetComponent<BaseAI>().Unlock());
 				}
 			}
 		}       
@@ -179,18 +180,33 @@ public class AIsManager : MonoBehaviour
 					GameManager.instance.WarningOrMessage($"L'evento è cominciato!", false);
 					e.timeLeft = e.duration;
 					eventButton.gameObject.SetActive(true);
+					e.running = true;
+					foreach (var a in e.mainAIs)
+					{
+						a.gameObject.SetActive(true);
+						a.ToggleClickListener(true);
+						a.GetComponent<Animator>().SetBool("move", true);
+						a.ForceToggleName(true);
+					}
 				}
 			}
 			else if (e.running)
 			{
 				e.timeLeft--;
+				eventButton.gameObject.SetActive(true);
 				if (e.timeLeft <= 0)
 				{
 					e.running = false;
 					GameManager.instance.WarningOrMessage($"L'evento {e.name.ToLower()} è terminato!", false);
 					eventButton.gameObject.SetActive(false);
-					if (isOpen)
-						ToggleEventPanel();
+					foreach (var a in e.mainAIs)
+					{
+						a.gameObject.SetActive(false);
+						a.ToggleClickListener(false);
+						a.GetComponent<Animator>().SetBool("move", false);
+						a.ForceToggleName(false);
+					}
+					if (isOpen) ToggleEventPanel();
 				}
 			}
 		}

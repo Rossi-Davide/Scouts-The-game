@@ -50,10 +50,13 @@ public abstract class InGameObject : MonoBehaviour
 	#region Animations
 	protected void PlayAnimations()
 	{
-		var animation = states[activeStateIndex].animationSubstring;
-		if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
-		animator.Play(animationPrefix + animation);
-		Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
+		if (states != null)
+		{
+			var animation = states[activeStateIndex].animationSubstring;
+			if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
+			animator.Play(animationPrefix + animation);
+			Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
+		}
 	}
 
 	//public void PlayOnActionEndState(PlayerAction action)
@@ -391,6 +394,11 @@ public abstract class InGameObject : MonoBehaviour
 			nameText.gameObject.SetActive(active);
 			subNameText.gameObject.SetActive(active);
 		}
+	}
+	public void ForceToggleName(bool active)
+	{
+		nameText.gameObject.SetActive(active);
+		subNameText.gameObject.SetActive(active);
 	}
 	public IEnumerator ToggleLoadingBar(bool active)
 	{

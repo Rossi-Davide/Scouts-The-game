@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Cespuglio
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Fai legna
     color: 2
@@ -70,6 +71,7 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 0.6, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
 --- !u!95 &1323579708
 Animator:
   serializedVersion: 3
@@ -4878,7 +4880,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.22700244, y: -0.10561931}
-  - {x: 0.059728384, y: -0.0195539}
+  - {x: 0.082996696, y: 0.013021737}
   - {x: -0.12406768, y: -0.09488183}
   - {x: 0.074383125, y: -0.2091434}
-  - {x: 0.22276051, y: -0.11360717}
+  - {x: 0.25068256, y: -0.09499252}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1244840181373524532}
   - component: {fileID: 7188632119082322703}
   - component: {fileID: 1242713216099773778}
+  - component: {fileID: 5953708479297248880}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Albero
   objectSubName: 
+  animationPrefix: 
   buttons:
   - buttonText: Fai legna
     color: 2
@@ -70,6 +72,7 @@ MonoBehaviour:
   loadingBarOffset: {x: 0, y: 1.5, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
 --- !u!95 &8658626518974533672
 Animator:
   serializedVersion: 3
@@ -4877,8 +4880,34 @@ EdgeCollider2D:
   m_Offset: {x: -0.13, y: 0.15}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.20645916, y: -0.18558589}
-  - {x: 0.127491, y: -0.14874333}
-  - {x: 0.013147712, y: -0.18718109}
-  - {x: 0.10136163, y: -0.23751542}
-  - {x: 0.20776427, y: -0.19534418}
+  - {x: 0.21308136, y: -0.15992478}
+  - {x: 0.1311034, y: -0.10900688}
+  - {x: 0.023984909, y: -0.16911909}
+  - {x: 0.10497403, y: -0.23751542}
+  - {x: 0.21498919, y: -0.16283253}
+--- !u!61 &5953708479297248880
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887283653716831148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.034715116, y: 0.31606823}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.53584594, y: 0.40209943}
+    oldSize: {x: 3.415, y: 1.7125}
+    newSize: {x: 0.234375, y: 0.734375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.37926662, y: 0.78154194}
+  m_EdgeRadius: 0

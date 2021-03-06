@@ -173,14 +173,17 @@ public class GameManager : MonoBehaviour
 				break;
 			case Counter.Materiali:
 				materialsValue += delta;
+				if (materialsValue > materialsMaxValue) materialsValue = materialsMaxValue;
 				newValue = materialsValue;
 				break;
 			case Counter.Energia:
 				energyValue += delta;
+				if (energyValue > energyMaxValue) energyValue = energyMaxValue;
 				newValue = energyValue;
 				break;
 			case Counter.Punti:
 				pointsValue += delta;
+				if (pointsValue > pointsMaxValue) pointsValue = pointsMaxValue;
 				newValue = pointsValue;
 				break;
 			default: throw new System.NotSupportedException("Il counter richesto non esiste!");
