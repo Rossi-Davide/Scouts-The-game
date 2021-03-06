@@ -124,8 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7523915180491103514, guid: d6d979157731d41688e6f8ec82e06d91,
-    type: 3}
+  m_Sprite: {fileID: 715368135737836640, guid: 06124ce4672334eec8a33567eecb18d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,4 +201,5 @@ MonoBehaviour:
   states: []
   defaultStateIndex: 0
   priorityTargets: []
-  dialoguesArray: []
+  dialoguesArray:
+  - {fileID: 11400000, guid: 5901bad0975444cae8f81bc8f89b32e9, type: 2}

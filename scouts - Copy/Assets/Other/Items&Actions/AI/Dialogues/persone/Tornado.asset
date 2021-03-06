@@ -36,7 +36,7 @@ MonoBehaviour:
       deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Hai visto la nuova tenda montana?
-    canAnswer: 0
+    canAnswer: 1
     answers:
     - answer: "Certo. \xC8 enorme!"
       nextSentenceNum: 3
@@ -44,29 +44,75 @@ MonoBehaviour:
       deltaMaterials: 0
       deltaEnergy: 0
     - answer: "Diavolo no non \xE8 ancora piovuto"
-      nextSentenceNum: 0
+      nextSentenceNum: 6
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     - answer: A dire il vero non l'avevo ancora notato
-      nextSentenceNum: 0
+      nextSentenceNum: 6
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Hai visto com'\xE8 spazioso?! E il tessuto \xE8 cos\xEC resistente.
       Io ne vado matto e tu?"
-    canAnswer: 0
+    canAnswer: 1
     answers:
     - answer: "S\xEC sono  olto felice che il reparto si sia potuto permettere questo
         potenziamento. Siamo stati molto fortunati"
-      nextSentenceNum: 100
+      nextSentenceNum: 4
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
     - answer: "S\xEC per\xF2 \xE8 pur sempre una tenda. Non ti sembra di esagerare
         un pochino?"
-      nextSentenceNum: 0
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Si siamo fortunati di esserci potuti permettere una tenda cos\xEC
+      bella"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Ma non dire fandonie, non sto esagerando. Penso di aver trovato l'amore
+    canAnswer: 1
+    answers:
+    - answer: Ok, se lo dici tu
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Bah
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Non l'hai ancora visto. Non hai idea di cosa ti perdi.
+    canAnswer: 1
+    answers:
+    - answer: Corro subito allora
+      nextSentenceNum: 7
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Ma quanto \xE8 grande?"
+      nextSentenceNum: 8
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Fai bene
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "\xC8 grande come mezzo campo da calcio"
+    canAnswer: 1
+    answers:
+    - answer: Wow non vedo l'ora di ammirarlo, corro subito
+      nextSentenceNum: 100
       deltaPoints: 0
       deltaMaterials: 0
       deltaEnergy: 0
