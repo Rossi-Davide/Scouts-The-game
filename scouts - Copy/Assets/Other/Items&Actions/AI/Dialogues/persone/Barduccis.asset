@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Barduccis
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  deltaMaterials: 0
+  deltaEnergy: 0
+  sentences:
+  - sentence: "D\xF9 vet, sburon?!"
+    canAnswer: 1
+    answers:
+    - answer: Non ho capito
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Non parlo la tua lingua
+      nextSentenceNum: 2
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Oh va b\xE8 poco importa. So anche l'italiano. A che ora si mangia?"
+    canAnswer: 1
+    answers:
+    - answer: Non lo so
+      nextSentenceNum: 3
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Parlate sempre di cibo qui?
+      nextSentenceNum: 4
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Non so se i capi vogliano
+      nextSentenceNum: 8
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Oh, buono a nulla! Mi arranger\xF2"
+    canAnswer: 0
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Beh nel mio caso si
+    canAnswer: 1
+    answers:
+    - answer: Ah, allora devi essere un buon gustaio
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Ok. Comprensibile come cosa
+      nextSentenceNum: 5
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Io dico sempre: a panza Pina us ras\xF3na mej! "
+    canAnswer: 1
+    answers:
+    - answer: "per me \xE8 si!"
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "te ras\xF3n!"
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Continuo a ripeterti che non capisco la tua lingua
+      nextSentenceNum: 7
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Dai d\xF3nca! Str\xE8nz e cul e tin bota! Sono felice di aver trovato
+      qualcuno che la pensa come me!"
+    canAnswer: 1
+    answers:
+    - answer: Ahahaha certo!
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "A frasi cos\xEC complicate ancora non ci arrivo. Per\xF2 nel dubbio
+        ti d\xF2 ragione!!"
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Oh lascia stare. Vuol dire che pi\xF9 cibo \xE8 migliore"
+    canAnswer: 1
+    answers:
+    - answer: Ah ok
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Ma non potete dire nemmeno quando si mangia?!
+    canAnswer: 1
+    answers:
+    - answer: Sono informazioni riservate alla cambusa. Non dovrei saperlo nemmeno
+        io
+      nextSentenceNum: 9
+      deltaPoints: -1
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: "Non \xE8 molto carino pensare sempre e solo a mangiare"
+      nextSentenceNum: 11
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Ah davvero. Beh allora non ti dispiace se vado a fare una piccola soffiata
+      alla cambusa
+    canAnswer: 1
+    answers:
+    - answer: Fermo non farlo! Va bene si mangia alle 8
+      nextSentenceNum: 10
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: Grazie piccolo amico!
+    canAnswer: 1
+    answers:
+    - answer: Uff... prego
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "E che c'\xE8 di sbagliato?!"
+    canAnswer: 1
+    answers:
+    - answer: 'Effettivamente nulla di particolare. Dai allora te lo dico: si mangia
+        alle 8'
+      nextSentenceNum: 6
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    - answer: Beh ci sono altre cose belle nella vita da campo. Tipo lo stare insieme,
+        i giochi, socializzare...
+      nextSentenceNum: 12
+      deltaPoints: -1
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
+  - sentence: "Va b\xE8 ho gi\xE0 capito. Tu non la vedi come me. Ci si vede"
+    canAnswer: 1
+    answers:
+    - answer: Oh... ehm... allora ci si vede
+      nextSentenceNum: 100
+      deltaPoints: 0
+      deltaMaterials: 0
+      deltaEnergy: 0
+    nextSentenceNum: 100
