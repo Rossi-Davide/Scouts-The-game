@@ -607,7 +607,7 @@ public class GameManager : MonoBehaviour
 			var sq = arr[i];
 			positions[i].text = $"#{i + 1}: {sq.baseSq.name} " + (sq.baseSq == Player.instance.squadriglia ? "(Tu) " : "") + $"con {sq.points} punti";
 			if (sq.baseSq == Player.instance.squadriglia)
-				victoryPanel.transform.Find("Posizione finale").GetComponent<TextMeshProUGUI>().text = $"Posizione finale: #{i + 1}";
+				victoryPanel.transform.Find("Texts/Posizione finale").GetComponent<TextMeshProUGUI>().text = $"Posizione finale: #{i + 1}";
 		}
 
 		victoryPanel.SetActive(true);

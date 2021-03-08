@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using System;
+using System.Collections;
 
 public class Campfire : InGameObject
 {
@@ -26,9 +27,15 @@ public class Campfire : InGameObject
 	{
 		aud = GetComponent<AudioSource>();
 		base.Start();
-		ChangeLight(GameManager.instance.isDay);
 		GameManager.instance.OnSunsetOrSunrise += ChangeLight;
+		StartCoroutine(CallChangeLight());
 	}
+	IEnumerator CallChangeLight()
+	{
+		yield return new WaitForSeconds(GameManager.minuteDuration + 0.05f);
+		ChangeLight(GameManager.instance.isDay);
+	}
+
 	void FaiLegna()
 	{
 		RefreshButtonsState();

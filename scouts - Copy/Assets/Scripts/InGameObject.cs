@@ -50,7 +50,7 @@ public abstract class InGameObject : MonoBehaviour
 	#region Animations
 	protected void PlayAnimations()
 	{
-		if (states != null)
+		if (states != null && states.Length > 0)
 		{
 			var animation = states[activeStateIndex].animationSubstring;
 			if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;

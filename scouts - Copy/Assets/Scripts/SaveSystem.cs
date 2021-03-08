@@ -86,21 +86,49 @@ public class SaveSystem : MonoBehaviour
 		Debug.Log("saved data");
 	}
 
-
+	[HideInInspector] [System.NonSerialized]
 	public string campManagerFileName = "CampManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string actionButtonsFileName = "ActionButtons";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string actionManagerFileName = "ActionManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string aisManagerFileName = "AIsManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string chestManagerFileName = "ChestManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string inventoryManagerFileName = "InventoryManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string plFileName = "Player";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string questManagerFileName = "QuestManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string squadrigliaManagerFileName = "SquadrigliaManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string shopFileName = "Shop";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string gameManagerFileName = "GameManager";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string impostazioniFileName = "Impostazioni";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string modificaBaseTriggerFileName = "ModificaBaseTrigger";
 
+	[HideInInspector]
+	[System.NonSerialized]
 	public string iterateMultipleObjsFileName = "IterateMultipleObjs";
+	[HideInInspector]
+	[System.NonSerialized]
 	public string playerBuildingBaseFileName = "PlayerBuildingBase"; 
 }
