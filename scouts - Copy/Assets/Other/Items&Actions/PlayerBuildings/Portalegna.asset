@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Portalegna
   type: 1
-  description: Dove depositare la tua legna
+  description: Dove depositare la tua legna.
   icon: {fileID: 3911372940414158388, guid: 1a20c9e9b52d0354c81de407ce34ab83, type: 3}
   shopScreen: 6
   maxAmount: 0

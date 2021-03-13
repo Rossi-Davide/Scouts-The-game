@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Penna
   type: 0
-  description: 
+  description: Componente fondamentale della cassa di topografia.
   icon: {fileID: -6894315672169482518, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 3
   maxAmount: 5

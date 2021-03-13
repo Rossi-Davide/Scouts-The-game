@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StendereIPanni
   m_EditorClassIdentifier: 
   name: Stendere i panni
-  description: 
+  description: Per fortuna esiste una stella in grado di asciugare i nostri bagnati.
   neededItems: []
   conditions:
   - type: 2
@@ -27,7 +27,6 @@ MonoBehaviour:
     warning: "Non puoi stendere i panni perch\xE8 lo stendipanni \xE8 distrutto!"
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 20
   energyGiven: -2
   materialsGiven: 0

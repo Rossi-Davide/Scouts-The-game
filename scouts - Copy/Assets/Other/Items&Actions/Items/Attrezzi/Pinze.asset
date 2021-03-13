@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pinze
   type: 0
-  description: Boh
+  description: Puoi usarle in vari modi, specialmente all'inizio del campo mentre
+    si costruisce.
   icon: {fileID: -1148262350419438075, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 0
   maxAmount: 2

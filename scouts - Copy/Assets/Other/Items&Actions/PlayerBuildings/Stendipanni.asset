@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Stendipanni
   type: 1
-  description: Permette il lavaggio dei panni
+  description: Permette il lavaggio dei panni.
   icon: {fileID: 6795497552666955061, guid: 2d4362f69d4ab53488eaa2f9bce25c33, type: 3}
   shopScreen: 6
   maxAmount: 0

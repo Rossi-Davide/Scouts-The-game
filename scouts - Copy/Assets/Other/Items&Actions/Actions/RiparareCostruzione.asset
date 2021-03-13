@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: RiparareCostruzione
   m_EditorClassIdentifier: 
   name: Riparare
-  description: 
+  description: "Fortunatamente \xE8 possibile, anche se con notevole sforzo, rimediare
+    quando una costruzione cade a pezzi."
   neededItems: []
   conditions:
   - type: 2
@@ -24,7 +25,6 @@ MonoBehaviour:
     warning: "Non puoi riparare la costruzione perch\xE8 \xE8 distrutta!"
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Carte da gioco
   type: 0
-  description: 
+  description: Oggetto illegale al campo. Non farti beccare!
   icon: {fileID: -9075936618163766259, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 5
   maxAmount: 2
@@ -34,4 +34,5 @@ MonoBehaviour:
   modifiedActions: []
   changedMaxAmounts: []
   currentAmount: 0
-  currentLevel: 0
+  level: 0
+  exists: 0

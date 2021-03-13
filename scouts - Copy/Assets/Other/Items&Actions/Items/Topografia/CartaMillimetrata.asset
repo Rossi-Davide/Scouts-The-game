@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Carta millimetrata
   type: 0
-  description: 
+  description: Componente fondamentale della cassa di topografia.
   icon: {fileID: -1721591505452664974, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 3
   maxAmount: 5

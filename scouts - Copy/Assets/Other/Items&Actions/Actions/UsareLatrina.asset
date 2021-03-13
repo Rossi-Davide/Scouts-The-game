@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UsareLatrina
   m_EditorClassIdentifier: 
   name: Usare la latrina
-  description: 
+  description: Tutti ne hanno bisogno di tanto in tanto.
   neededItems: []
   conditions:
   - type: 2
@@ -21,7 +21,6 @@ MonoBehaviour:
     warning: Sei troppo lontano!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 10
   energyGiven: 20
   materialsGiven: 0

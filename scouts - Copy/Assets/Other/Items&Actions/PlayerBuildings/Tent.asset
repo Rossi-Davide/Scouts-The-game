@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tenda
   type: 1
-  description: Per dormire all'asciutto
+  description: Per dormire all'asciutto.
   icon: {fileID: -7888708515065773835, guid: f11fce0a6c27ca6439b45b6f254c366c, type: 3}
   shopScreen: 6
   maxAmount: 0

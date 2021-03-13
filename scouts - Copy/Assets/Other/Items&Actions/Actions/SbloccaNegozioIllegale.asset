@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SbloccaNegozioIllegale
   m_EditorClassIdentifier: 
   name: Sblocca negozio illegale
-  description: 
+  description: "Per coloro che desiderano portare al campo le comodit\xE0 della vita
+    di tutti i giorni..."
   neededItems: []
   conditions:
   - type: 2
@@ -27,7 +28,6 @@ MonoBehaviour:
     warning: "Hai gi\xE0 sbloccato il negozio illegale!"
   hasInfoPanel: 1
   showInActionList: 0
-  state: {fileID: 0}
   timeNeeded: 0
   energyGiven: 0
   materialsGiven: 0

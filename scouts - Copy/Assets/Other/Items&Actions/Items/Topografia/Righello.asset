@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Righello
   type: 0
-  description: 
+  description: Componente fondamentale della cassa di topografia.
   icon: {fileID: -7613075911046715359, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 3
   maxAmount: 1

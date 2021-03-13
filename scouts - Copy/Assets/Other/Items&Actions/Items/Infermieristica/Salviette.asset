@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Salviette
   type: 0
-  description: Aiuta a guarire dalla bua.
+  description: Necessario per trattare vari tipi di ferite.
   icon: {fileID: 3695201799222929562, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 2
   maxAmount: 15

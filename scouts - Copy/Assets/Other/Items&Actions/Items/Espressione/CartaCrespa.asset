@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Carta crespa
   type: 0
-  description: Solo per bellezza
+  description: Componente fondamentale della cassa di espressione.
   icon: {fileID: 7386371670803391288, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 4
   maxAmount: 5
@@ -34,4 +34,5 @@ MonoBehaviour:
   modifiedActions: []
   changedMaxAmounts: []
   currentAmount: 0
-  currentLevel: 0
+  level: 0
+  exists: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cerotti
   type: 0
-  description: Aiuta a guarire dalla bua.
+  description: Necessario per trattare vari tipi di ferite.
   icon: {fileID: -3694533877916086887, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 2
   maxAmount: 30

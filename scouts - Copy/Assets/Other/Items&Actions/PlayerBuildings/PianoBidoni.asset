@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Piano Bidoni
   type: 1
-  description: "Il cibo \xE8 pi\xF9 buono se caldo"
+  description: "Il cibo \xE8 pi\xF9 buono se caldo."
   icon: {fileID: -8168990104244452518, guid: 2ece8a6976974e5498d33e5e1d7321ac, type: 3}
   shopScreen: 6
   maxAmount: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   changedMaxAmounts: []
   currentAmount: 0
   level: 0
-  exists: 1
+  exists: 0
   healthInfos:
   - maxHealth: 100
     healthLossInterval: 5

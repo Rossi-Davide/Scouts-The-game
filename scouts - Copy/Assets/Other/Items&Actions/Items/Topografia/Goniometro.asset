@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Goniometro
   type: 0
-  description: 
+  description: Componente fondamentale della cassa di topografia.
   icon: {fileID: -4261047623482395726, guid: f6c699e1aba50104ca8272bcab21ce6d, type: 3}
   shopScreen: 3
   maxAmount: 1

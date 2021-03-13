@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PulireLaLatrina
   m_EditorClassIdentifier: 
   name: Pulire la latrina
-  description: Meglio che non scriva nulla a questo riguardo.
+  description: "Di certo non il pi\xF9 piacevole dei compiti."
   neededItems: []
   conditions:
   - type: 2
@@ -21,7 +21,6 @@ MonoBehaviour:
     warning: Sei troppo lontano!
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 0}
   timeNeeded: 10
   energyGiven: 0
   materialsGiven: 0

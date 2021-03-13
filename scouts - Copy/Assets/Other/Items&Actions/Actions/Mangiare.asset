@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mangiare
   m_EditorClassIdentifier: 
   name: Mangiare
-  description: 
+  description: E' di vitale importanza rifornire il proprio corpo di energia.
   neededItems:
   - {fileID: 0}
   conditions:
@@ -25,7 +25,6 @@ MonoBehaviour:
     warning: "Non puoi mangiare perch\xE8 il refettorio \xE8 distrutto!"
   hasInfoPanel: 1
   showInActionList: 1
-  state: {fileID: 11400000, guid: 9cca446976bae094ca368e2b71478bc5, type: 2}
   timeNeeded: 5
   energyGiven: 20
   materialsGiven: 0
