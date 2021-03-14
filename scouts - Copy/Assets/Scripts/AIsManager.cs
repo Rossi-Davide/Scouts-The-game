@@ -97,17 +97,33 @@ public class AIsManager : MonoBehaviour
 	{
 		SetActiveOrInactiveAI(100 - percentageOfActiveAIs);
 	}
-	void SetActiveOrInactiveAI(int perc)
+	void SetActiveOrInactiveAI(int perc)//despawn IA
 	{
 		if (AreThereAnyRunningEvents == null)
 		{
 			foreach (var sq in allSquadriglieri)
 			{
-				StartCoroutine(sq.Unlock());
-				if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(perc))
+				Collider2D[] collidersIA = Physics2D.OverlapCircleAll(transform.position,5f);
+				bool nearPlayer = false;
+
+                foreach (Collider2D c in collidersIA)
+                {
+                    if (c.name == "Player")
+                    {
+						nearPlayer = true;
+						break;
+                    }
+                }
+
+				if (!nearPlayer)
 				{
-					StartCoroutine(sq.ForceTarget("Tenda", true, true));
-				}
+					StartCoroutine(sq.Unlock());
+
+					if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(perc))
+					{
+						StartCoroutine(sq.ForceTarget("Tenda", true, true));
+					}
+				}				
 			}
 		}
 	}
