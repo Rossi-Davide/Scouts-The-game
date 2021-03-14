@@ -142,8 +142,8 @@ public abstract class PlayerBuildingBase : InGameObject
 	}
 	public override IEnumerator ToggleHealthBar(bool active)
 	{
+		yield return new WaitForEndOfFrame();
 		healthBar.gameObject.SetActive(active);
-		return base.ToggleHealthBar(active);
 	}
 
 	public class PBStatus : Status

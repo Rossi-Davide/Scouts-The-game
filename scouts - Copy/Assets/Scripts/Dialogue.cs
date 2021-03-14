@@ -12,7 +12,6 @@ public class Dialogue : ScriptableObject
 public class Sentence
 {
 	public string sentence;
-	public bool canAnswer;
 	public Answer[] answers;
 	public int nextSentenceNum; //more than 1 (it's not like an array)
 }

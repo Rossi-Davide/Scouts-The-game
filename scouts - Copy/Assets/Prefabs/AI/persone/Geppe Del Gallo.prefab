@@ -196,10 +196,11 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 0}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: 0, y: 1.5, z: 0}
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
   - {fileID: 11400000, guid: 73edfd3e67b6949fb92755442f8d60a5, type: 2}

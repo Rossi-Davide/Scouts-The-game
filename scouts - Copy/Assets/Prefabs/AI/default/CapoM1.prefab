@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Capo
-  objectSubName: Francesco
+  objectSubName: Tommaso
   animationPrefix: 
   buttons:
   - buttonText: Parla
@@ -116,18 +116,19 @@ MonoBehaviour:
   clickListener: {fileID: 6925112430229956604, guid: 65ed6bdba6f23fa469e2d084e03a41af,
     type: 3}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: 0, y: 1.5, z: 0}
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 11400000, guid: 888d3cf555a99cb4eb7efa8fa990e14e, type: 2}
-  - {fileID: 11400000, guid: 58b6706104d4ff0468f9a9e672966387, type: 2}
-  - {fileID: 11400000, guid: 6643a0db6d0a308469da4a7e13f1e620, type: 2}
-  - {fileID: 11400000, guid: 218c5819cc0e1154083c12ac901e51b5, type: 2}
-  - {fileID: 11400000, guid: 36e5f1f6c53a6ec438652f422582db8d, type: 2}
-  - {fileID: 11400000, guid: 31a7a025a75d04e43a050381e6281900, type: 2}
+  - {fileID: 11400000, guid: 22b4e43849a0e48c6985d290b0a5e670, type: 2}
+  - {fileID: 11400000, guid: c6b92195531344bd68317415bd91635e, type: 2}
+  - {fileID: 11400000, guid: 819343d5751c4424ba1fb98aefd78e0a, type: 2}
+  - {fileID: 11400000, guid: 786002039439e4129a0d569fe5cae8f4, type: 2}
+  - {fileID: 11400000, guid: 5d02637b28748494bb556f56b21084ad, type: 2}
+  - {fileID: 11400000, guid: 7a0b17eb65d704143a9a7186c667ab16, type: 2}
 --- !u!212 &5784337607568803547
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -429,7 +429,9 @@ public class GameManager : MonoBehaviour
 		{
 			CampEnded();
 		}
+		var prev = isDay;
 		isDay = !(currentHour > 20 || currentHour < 7);
+		if (prev != isDay) DayEndedOrStarted(isDay);
 		ChangeLight();
 		SendToSleep();
 	}

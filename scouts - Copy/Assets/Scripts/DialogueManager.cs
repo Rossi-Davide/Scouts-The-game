@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
 		title.text = currentObject.objectName;
 		sentenceText.text = s.sentence;
 
-		canAnswer = s.canAnswer;
+		canAnswer = s.answers != null && s.answers.Length > 0;
 		ShowPossibleAnswers(s);
 	}
 	void ShowPossibleAnswers(Sentence s)
@@ -99,25 +99,25 @@ public class DialogueManager : MonoBehaviour
 	public void NextSentence(int answerNum)//0 or null if no answer
 	{
 		var s = currentDialogue.sentences[currentSentenceIndex];
+		int answerIndex = answerNum - 1;
 		if (canAnswer)
 		{
-			deltaPoints += s.answers[answerNum].deltaPoints;
-			deltaMaterials += s.answers[answerNum].deltaMaterials;
-			deltaEnergy += s.answers[answerNum].deltaEnergy;
-			currentSentenceIndex = s.answers[answerNum].nextSentenceNum - 1;
+			deltaPoints += s.answers[answerIndex].deltaPoints;
+			deltaMaterials += s.answers[answerIndex].deltaMaterials;
+			deltaEnergy += s.answers[answerIndex].deltaEnergy;
+			currentSentenceIndex = s.answers[answerIndex].nextSentenceNum - 1;
 		}
 		else
 		{
 			currentSentenceIndex = s.nextSentenceNum - 1;
 		}
 
-		if (currentSentenceIndex < currentDialogue.sentences.Length - 1)
+		if (currentSentenceIndex < currentDialogue.sentences.Length)
 		{
 			ShowSentence(currentDialogue.sentences[currentSentenceIndex]);
 		}
 		else
 		{
-			var c = CampManager.instance;
 			TogglePanel(null);
 			currentObject.nextDialogueIndex++;
 			StartCoroutine(currentObject.Unlock());

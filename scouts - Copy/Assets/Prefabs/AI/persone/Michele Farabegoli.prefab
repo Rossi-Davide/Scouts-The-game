@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3420644488980352696}
   - component: {fileID: 8274032763020763443}
   m_Layer: 0
-  m_Name: Michele
+  m_Name: Michele Farabegoli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,10 +196,11 @@ MonoBehaviour:
   possiblePositions: []
   clickListener: {fileID: 0}
   isNameAlwaysActive: 0
-  nameTextOffset: {x: 0, y: 0, z: 0}
+  nameTextOffset: {x: 0, y: 1.5, z: 0}
   loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
+  defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
   - {fileID: 11400000, guid: 166089b3566774d529c376bbaf21acf4, type: 2}
