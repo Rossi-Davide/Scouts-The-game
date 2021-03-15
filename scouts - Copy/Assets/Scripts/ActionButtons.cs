@@ -72,6 +72,7 @@ public class ActionButtons : MonoBehaviour
 		{
 			ChangeSelectedObject(null);
 			Camera.main.GetComponent<FollowPlayer>().EnableFollow();
+			Debug.LogWarning("check called");
 		}
 	}
 
