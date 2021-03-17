@@ -4,8 +4,6 @@
 public class Dialogue : ScriptableObject
 {
 	public int deltaPoints;
-	public int deltaMaterials;
-	public int deltaEnergy;
 	public Sentence[] sentences;
 }
 [System.Serializable]
@@ -22,6 +20,4 @@ public class Answer
 	public int nextSentenceNum;
 
 	public int deltaPoints;
-	public int deltaMaterials;
-	public int deltaEnergy;
 }

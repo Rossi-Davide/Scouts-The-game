@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
 	public CapieCambu currentObject;
 
 
-	int deltaPoints, deltaMaterials, deltaEnergy, currentSentenceIndex;
+	int deltaPoints, currentSentenceIndex;
 	bool isOpen, canAnswer;
 
 	protected void Start()
@@ -55,8 +55,6 @@ public class DialogueManager : MonoBehaviour
 		{
 			currentDialogue = dialogue;
 			deltaPoints = currentDialogue.deltaPoints;
-			deltaMaterials = currentDialogue.deltaMaterials;
-			deltaEnergy = currentDialogue.deltaEnergy;
 			ShowSentence(currentDialogue.sentences[currentSentenceIndex]);
 		}
 	}
@@ -103,8 +101,6 @@ public class DialogueManager : MonoBehaviour
 		if (canAnswer)
 		{
 			deltaPoints += s.answers[answerIndex].deltaPoints;
-			deltaMaterials += s.answers[answerIndex].deltaMaterials;
-			deltaEnergy += s.answers[answerIndex].deltaEnergy;
 			currentSentenceIndex = s.answers[answerIndex].nextSentenceNum - 1;
 		}
 		else
@@ -122,8 +118,6 @@ public class DialogueManager : MonoBehaviour
 			currentObject.nextDialogueIndex++;
 			StartCoroutine(currentObject.Unlock());
 			GameManager.instance.ChangeCounter(Counter.Punti, CampManager.instance.MultiplyByDurationFactor(deltaPoints, DurationFactor.prizesFactor));
-			GameManager.instance.ChangeCounter(Counter.Materiali, CampManager.instance.MultiplyByDurationFactor(deltaMaterials, DurationFactor.prizesFactor));
-			GameManager.instance.ChangeCounter(Counter.Energia, CampManager.instance.MultiplyByDurationFactor(deltaEnergy, DurationFactor.prizesFactor));
 		}
 	}
 }
