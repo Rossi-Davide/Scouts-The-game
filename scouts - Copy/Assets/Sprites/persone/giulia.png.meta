@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: ee5b34a7ca39343068f954f8fc3c76b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4251587236204187302
+    second: giulia_1
+  - first:
+      213: -1639416130930921066
+    second: giulia_2
+  - first:
+      213: 267697389508391601
+    second: giulia_3
+  - first:
+      213: -7597151035882174822
+    second: giulia_4
+  - first:
+      213: -4963908040966126249
+    second: giulia_6
+  - first:
+      213: -5416359175240614276
+    second: giulia_8
+  - first:
+      213: 7031602218957010093
+    second: giulia_9
+  - first:
+      213: 1561220455787889065
+    second: giulia_15
+  - first:
+      213: -7743397713651804704
+    second: giulia_16
+  - first:
+      213: 1506031043293088367
+    second: giulia_18
+  - first:
+      213: 2382309549710146641
+    second: giulia_19
+  - first:
+      213: 2189067381067062455
+    second: giulia_21
+  - first:
+      213: 1865961859263050861
+    second: giulia_22
+  - first:
+      213: -1000168999128441181
+    second: giulia_23
+  - first:
+      213: 2224803513899022963
+    second: giulia_26
+  - first:
+      213: 5192187165570812233
+    second: giulia_27
+  - first:
+      213: -3792434862474217205
+    second: giulia_29
+  - first:
+      213: -1175590626429191226
+    second: giulia_30
+  - first:
+      213: 6939593136759401430
+    second: giulia_32
+  - first:
+      213: -3775790259723630747
+    second: giulia_33
+  - first:
+      213: 1016484588704848483
+    second: giulia_34
+  - first:
+      213: -7987432342631101978
+    second: giulia_36
+  - first:
+      213: -8470808629406069140
+    second: giulia_37
+  - first:
+      213: -3842531617987899046
+    second: giulia_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: giulia_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1155
+        width: 148
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae0981c01ca00b30800000000000000
+      internalID: 4251587236204187302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_2
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1157
+        width: 146
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69131d407bf9f39e0800000000000000
+      internalID: -1639416130930921066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1155
+        width: 148
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b272f08b5d07b300800000000000000
+      internalID: 267697389508391601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_4
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1156
+        width: 147
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a968041626f719690800000000000000
+      internalID: -7597151035882174822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_6
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1155
+        width: 146
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7554288cfe7ac1bb0800000000000000
+      internalID: -4963908040966126249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_8
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 1154
+        width: 148
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7efad7f60a35d4b0800000000000000
+      internalID: -5416359175240614276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_9
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 1155
+        width: 118
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4f7ce86f4459160800000000000000
+      internalID: 7031602218957010093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_15
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 801
+        width: 125
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a18f4b9bb19aa510800000000000000
+      internalID: 1561220455787889065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_16
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 799
+        width: 126
+        height: 242
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e556334ecce98490800000000000000
+      internalID: -7743397713651804704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_18
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 799
+        width: 122
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a023c214f76e410800000000000000
+      internalID: 1506031043293088367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_19
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 799
+        width: 120
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c7e77d9e9af0120800000000000000
+      internalID: 2382309549710146641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_21
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 797
+        width: 120
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc95e55f21216e10800000000000000
+      internalID: 2189067381067062455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_22
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 800
+        width: 126
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d643dc9bc6a35e910800000000000000
+      internalID: 1865961859263050861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_23
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 799
+        width: 119
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae579b289fae12f0800000000000000
+      internalID: -1000168999128441181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_26
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 446
+        width: 126
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37afdf4220710ee10800000000000000
+      internalID: 2224803513899022963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_27
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 449
+        width: 120
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949c03bb7ba5e0840800000000000000
+      internalID: 5192187165570812233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_29
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 450
+        width: 121
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09ba64f5909e5bc0800000000000000
+      internalID: -3792434862474217205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_30
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 450
+        width: 120
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbb866cd867fafe0800000000000000
+      internalID: -1175590626429191226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_32
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 450
+        width: 120
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db684ab0336e4060800000000000000
+      internalID: 6939593136759401430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_33
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 450
+        width: 145
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5670bc683c2b99bc0800000000000000
+      internalID: -3775790259723630747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_34
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 450
+        width: 145
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a596d09574b1e00800000000000000
+      internalID: 1016484588704848483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_36
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 85
+        width: 143
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9c1068a90f62190800000000000000
+      internalID: -7987432342631101978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_37
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 85
+        width: 145
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e00fb8e64a17a80800000000000000
+      internalID: -8470808629406069140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giulia_38
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 85
+        width: 125
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51df9f1ad59caac0800000000000000
+      internalID: -3842531617987899046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
