@@ -13,86 +13,51 @@ MonoBehaviour:
   m_Name: Raffaele
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Ehi ehi
-    canAnswer: 1
     answers:
     - answer: Chi sei?
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Ehi non ho fatto nulla! Stavo solo passeggiando per il campo
       nextSentenceNum: 2
       deltaPoints: -2
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Ti giuro che non ho le caramelle!
-      nextSentenceNum: 2
-      deltaPoints: -2
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ok non ti arrabbiare. Mamma mia che suscettibile!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Mi chiamo Raffaele
-    canAnswer: 1
     answers:
     - answer: Cosa fai nella vita?
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Come sei entrato nel videogame?
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Sono un informatico
-    canAnswer: 1
     answers:
     - answer: Ah forte. Addio
       nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Come sei entrato nel videogame?
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: L'ho hackerato
-    canAnswer: 1
     answers:
     - answer: E come hai fatto?
       nextSentenceNum: 7
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Ma come \xE8 possibile?"
-      nextSentenceNum: 7
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ciao a presto
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "E allora te lo dico! Una dei due programmatori \xE8 mia figlia! Si
       \xE8 divertita un mondo ma.. \xE8 stato un lavoro molto complesso \xE8 ardito.
       Sono molto orgoglioso di loro!"
-    canAnswer: 1
     answers:
     - answer: Ah forte. Addio
       nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100

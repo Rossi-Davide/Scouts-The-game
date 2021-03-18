@@ -13,73 +13,42 @@ MonoBehaviour:
   m_Name: Chiara
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Buongiornissimo
-    canAnswer: 1
     answers:
-    - answer: Buongiorno per tutto il giorno
+    - answer: Buongiorno anche a te!
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Buongiorgio!
-      nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Hai visto dove le puma nascondono la cioccolata?
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Ehm...ok, ti piace il campo?!
-    canAnswer: 1
+  - sentence: Ti piace il campo?!
     answers:
     - answer: Si, il campo mi piace molto
       nextSentenceNum: 4
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     - answer: Si, mi sto divertendo parecchio a cercare le leccornie delle altre
         squadriglie
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Doppio fondo nel sacco nero
-    canAnswer: 1
     answers:
     - answer: Grazie mille!
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Qual \xE8 la parte migliore del campo?"
-    canAnswer: 1
     answers:
     - answer: Le notti intorno al fuoco
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: La vita di squadriglia!
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: I capi!!
-      nextSentenceNum: 5
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "\xC8 la prima volta che partecipo a un campo scout, mi sta piacendo
       molto questo mondo. Buona vita, caro amico"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

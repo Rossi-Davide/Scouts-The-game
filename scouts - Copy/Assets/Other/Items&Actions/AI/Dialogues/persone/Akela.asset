@@ -13,41 +13,24 @@ MonoBehaviour:
   m_Name: Akela
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Un cuore leale e una lingua cortese ti porteranno lontano nella giungla,
       piacere, sono Akela
-    canAnswer: 1
     answers:
     - answer: Siamo dello stesso sangue fratello tu ed io
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "La buona azione di oggi \xE8 stata aiutare le aquile ad accendere
         il fuoco!"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Bene, ricordati che il sorriso fa fare il doppio di strada di un brontolio
-    canAnswer: 1
     answers:
     - answer: "Me lo ricorder\xF2"
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Assomiglia molto a Sorridono e cantano anche nelle difficolt\xE0"
-      nextSentenceNum: 100
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: 'oppure Sforzati sempre di guardare il sole splendere dietro le nuvole '
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100

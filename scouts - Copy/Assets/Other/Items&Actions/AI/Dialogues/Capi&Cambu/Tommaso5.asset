@@ -13,66 +13,44 @@ MonoBehaviour:
   m_Name: Tommaso5
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Hai fatto la doccia recentemente?
-    canAnswer: 1
     answers:
     - answer: "S\xEC"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: No
       nextSentenceNum: 3
       deltaPoints: -1
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Sicuro sicuro?
-    canAnswer: 1
     answers:
     - answer: "S\xEC"
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: No?
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Male, corri subito a darti una sciaquata ai lavaggi
-    canAnswer: 1
     answers:
     - answer: Ok...
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Non ci penso nemmeno
       nextSentenceNum: 4
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: -2
     nextSentenceNum: 100
   - sentence: Non ho intenzione di discutere. Se non ti lavi ne risentirai tu e anche
       la tua squadriglia
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
-  - sentence: "Perch\xE8 puzzi parecchio quindi non ti credo molto"
-    canAnswer: 1
+  - sentence: "...perch\xE8 puzzi parecchio quindi non ti credo molto"
     answers:
     - answer: IO MI SONO LAVATO
       nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Va bene, va bene allora ti credo. Ci si vede
-    canAnswer: 0
+  - sentence: Va bene, va bene, allora ti credo. Ci si vede
     answers: []
     nextSentenceNum: 100

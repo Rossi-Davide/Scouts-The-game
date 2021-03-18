@@ -13,28 +13,19 @@ MonoBehaviour:
   m_Name: Cesco3
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: "Ragazzi, \xE8 tutto pronto per l'attivit\xE0?"
-    canAnswer: 1
     answers:
     - answer: "S\xEC, dobbiamo solo fare la chiamata"
       nextSentenceNum: 2
       deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: No, restano da finire due cose
       nextSentenceNum: 3
-      deltaPoints: -1
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 0
     nextSentenceNum: 100
   - sentence: Perfetto! Allora stiamo pronti!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Ok,allora finite di prepararla. Se avete bisogno vi posso aiutare
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

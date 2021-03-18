@@ -13,79 +13,57 @@ MonoBehaviour:
   m_Name: Micol
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: "Ciao, \xE8 un po\u2019 che non passavo di qui"
     answers:
     - answer: Ciao, chi sei?
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Meglio per te
       nextSentenceNum: 8
       deltaPoints: -1
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Mi chiamo Micol
     answers:
     - answer: 'Piacere di conoscerti '
       nextSentenceNum: 10
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Ti ho gi\xE0 vista da queste parti?"
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Si, mi occupo di bambini! Anche per lavoro
     answers:
     - answer: E cosa ci fai qui?
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Oggi non lavori?
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: 'Son venuta a trovare il mio fratellino, Pietro! SaLutamelo tanto se
+  - sentence: 'Son venuta a trovare il mio fratellino, Pietro! Salutamelo tanto se
       lo vedi! '
     answers:
     - answer: "Lo far\xF2 con piacere"
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: No oggi sono riuscita a prendermi una pausa. Per fortuna!
     answers:
     - answer: Magnifico. Beh allora benvenuta!
       nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Grazie. Sai per caso dove si trovano i lavaggi?
     answers:
     - answer: A destra
       nextSentenceNum: 7
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: A sinistra
       nextSentenceNum: 7
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Perfetto. A dopo
+  - sentence: Grazie, a dopo!
     answers: []
     nextSentenceNum: 100
   - sentence: Non essere scortese. Cosa ti ho fatto?
@@ -93,13 +71,9 @@ MonoBehaviour:
     - answer: Non hai una bella faccia
       nextSentenceNum: 9
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Mi stai antipatica.Punto
+    - answer: Mi stai antipatica.
       nextSentenceNum: 9
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Va bene. Peggio per te allora non ti parler\xF2. Non mi importa!"
     answers: []
@@ -109,13 +83,9 @@ MonoBehaviour:
     - answer: Nulla, passeggiavo
       nextSentenceNum: 11
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Stavo andando a nascondere delle merendine
       nextSentenceNum: 12
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ok, buona passeggiata
     answers: []
@@ -126,13 +96,9 @@ MonoBehaviour:
         molto di te"
       nextSentenceNum: 13
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Certo, va nel mio angolo e prendi il prossimo carico
       nextSentenceNum: 14
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 2
     nextSentenceNum: 100
   - sentence: Nessun poroblema. Ci si vede
     answers: []

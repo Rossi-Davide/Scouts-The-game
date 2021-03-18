@@ -13,63 +13,39 @@ MonoBehaviour:
   m_Name: Riccardo Pieri
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Avete coperto la legna?
-    canAnswer: 1
     answers:
     - answer: No
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Perch\xE8 a cosa serve?"
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Fatelo subito! Presto potrebbe piovere
-    canAnswer: 1
     answers:
     - answer: Accidenti, spero faremo in tempo
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Quando arriva la pioggia al campo diventa tutto pi\xF9 difficile.
       Se non copri la legna diventer\xE0 tutta inutilizzabile"
-    canAnswer: 1
     answers:
     - answer: Accidenti, spero faremo in tempo
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "La pioggia \xE8 importante per\xF2, rinfresca e rinnova le foreste! "
-    canAnswer: 1
     answers:
     - answer: Per fortuna ora con la tenda nuova rimaremo asciutti!
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Se piove per due giorni a fila ci toccher\xE0 passare tutte le giornate
         dentro quelle piccole tende"
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Non smetteremo mai di mangiare bastoncini Findus bagnati
-      nextSentenceNum: 5
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: 'Non esiste buono o cattivo tempo, ma solo buono o cattivo equipaggiamento! '
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

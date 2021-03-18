@@ -13,66 +13,41 @@ MonoBehaviour:
   m_Name: MicheleBon
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: 'Ciao '
-    canAnswer: 1
     answers:
     - answer: Ciao amico
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Ehil\xE0"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: A che ora si mangia? Ho una gran fame!
-    canAnswer: 1
     answers:
-    - answer: eeeeh non lo so
+    - answer: Non lo so...
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: 'forse dovrei chiederlo ai capi '
-      nextSentenceNum: 3
+    - answer: 'Forse dovrei chiederlo ai capi '
+      nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Spero si sbrighino, ho una gran fame! Oggi abbiamo costruito l\u2019alzabandiera,
       che fatica!"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 4
   - sentence: Sai almeno cosa si mangia?
-    canAnswer: 1
     answers:
     - answer: Fagioli alla Tex
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: 'Minestrone '
       nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Pasta
-      nextSentenceNum: 5
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Oh bene, mi piacciono
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: No, ancora!!!! Uffa
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

@@ -13,48 +13,20 @@ MonoBehaviour:
   m_Name: Tommaso4- Redo
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Come sono andati i giochi fino ad ora?
-    canAnswer: 1
     answers:
     - answer: Bene. Abbiamo vinto quasi sempre
       nextSentenceNum: 3
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     - answer: Male, tanto male
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 0
-  - sentence: Come sono andati i giochi fino ad ora?
-    canAnswer: 1
-    answers:
-    - answer: Bene. Abbiamo vinto quasi sempre
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Male, tanto male
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 0
-  - sentence: Come sono andati i giochi fino ad ora?
-    canAnswer: 1
-    answers:
-    - answer: Bene. Abbiamo vinto quasi sempre
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Male, tanto male
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 0
+  - sentence: Sono contento!
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "Mi dispiace... Ma ricorda che vincere non \xE8 tutto: l'importante
+      \xE8 partecipare e divertirsri!"
+    answers: []
+    nextSentenceNum: 100

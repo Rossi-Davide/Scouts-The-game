@@ -13,29 +13,20 @@ MonoBehaviour:
   m_Name: Tommaso6
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Hai lavato le pentole?
-    canAnswer: 1
     answers:
     - answer: "S\xEC"
       nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     - answer: No
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ok ti credo sulla parola. A dopo
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Che cosa?!?! Vai subito a lavarle o saranno inusabili per cucinare
       di nuovo
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

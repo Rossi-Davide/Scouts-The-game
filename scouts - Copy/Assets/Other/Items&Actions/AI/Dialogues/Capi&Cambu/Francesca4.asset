@@ -13,63 +13,38 @@ MonoBehaviour:
   m_Name: Francesca4
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
-  - sentence: 
-    canAnswer: 1
+  - sentence: Ciao! Ti vedo affamato... non vedi l'ora di mangiare di cambusa, vero?
     answers:
     - answer: "Che men\xF9 c'\xE8 stasera?"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ah ah ah. Informazione top secret
-    canAnswer: 1
     answers:
     - answer: Ma come?
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Perch\xE8?"
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Perch\xE8 dev' essere una sorpresa"
-    canAnswer: 1
     answers:
-    - answer: Dai ma a me puoi dirlo ormai siamo entrati in cinfidenza
+    - answer: Dai ma a me puoi dirlo ormai siamo entrati in confidenza
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Ma io posso essere un' eccezione. Andiamo!!
-      nextSentenceNum: 4
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Ma che cosa pu\xF2 andare storto?! Il misterioso e super segreto men\xF9
-        della cena \xE8 stato rivelato. Aiuto!!! "
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Mi dispiace ma dalla mia bocca non uscir\xE0 nulla"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Uhm ,dai effettivamente hai ragione. E va bene mi hai convinto. Stasera
       ci saranno hamburger per la festa di inaugurazione del campo
-    canAnswer: 1
     answers:
     - answer: "Grazie mille. Prometto che non ne far\xF2 parola"
       nextSentenceNum: 100
       deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100

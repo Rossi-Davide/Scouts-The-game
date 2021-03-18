@@ -13,24 +13,16 @@ MonoBehaviour:
   m_Name: Bongia5
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
-  - sentence: "C'\xE8 il lavandino otturato, tu e la tua squadriglia potreste sistemarlo"
-    canAnswer: 1
+  - sentence: "C'\xE8 il lavandino otturato, tu e la tua squadriglia potreste sistemarlo..."
     answers:
     - answer: Provvediamo subito!!
       nextSentenceNum: 2
-      deltaPoints: 2
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Potremmo provarci s\xEC"
+      deltaPoints: 1
+    - answer: "Potremmo provarci, s\xEC"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ottimo!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

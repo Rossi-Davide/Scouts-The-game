@@ -13,101 +13,49 @@ MonoBehaviour:
   m_Name: Francesca2
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Ehi ciao, come va in squadriglia?
-    canAnswer: 1
     answers:
     - answer: Bene
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Abbiamo un po'litigato ieri. Non so ora se ci riprenderemo
+    - answer: Abbiamo un po' litigato ieri. Non so ora se ci riprenderemo
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Riuscite a suddividervi il lavoro?
-    canAnswer: 1
     answers:
     - answer: Si, funzioniamo
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Lascio fare molto al mio vice. Lui ne sa a pacchi
+    - answer: "Per modo di dire, in realt\xE0 \xE8 tutto nelle mie mani"
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Per modo di dire, in realt\xE0 \xE8 tutto nelle mie mani"
-      nextSentenceNum: 6
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Come mai avete litigato?
-    canAnswer: 1
     answers:
     - answer: "Motivi stupidi, la tenda era disordinata e non si trovavano le cose.
         Cos\xEC abbiamo avuto da ridire"
-      nextSentenceNum: 8
+      nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Il mio vice ha perso le staffe e si \xE8 incavolato con i novizi.
         Loro non sono tipetti facili e cos\xEC gli hanno risposto"
-      nextSentenceNum: 9
+      nextSentenceNum: 7
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Bene allora sono felice per voi. Buon lavoro
-    canAnswer: 0
     answers: []
-    nextSentenceNum: 100
-  - sentence: E lui come la vede la cosa?
-    canAnswer: 1
-    answers:
-    - answer: "Bene credo, non mi sembra gli di\xE0 fastidio, sia sotto stress o
-        cosa"
-      nextSentenceNum: 7
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Perde un po' le staffe quando ha troppa pressione addosso.  Forse dovrei
-        intervenire...
-      nextSentenceNum: 7
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Avete provato magari a fare una riunione di squadriglia? Vi sedete,
       esponete i problemi e cercate delle soluzioni. Potrebbe funzionare
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: "Fai ci\xF2 che ritieni giusto, ma ricorda che spesso le persone usano
-      maschere e nascondono i propri sentimenti"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Ma dai sul serio avete litigato per questo!? Ricordatevi che siete
       qui per divertirvi e non per litigare su stupidaggini
-    canAnswer: 1
-    answers:
-    - answer: Hai ragione. Cercheremo di fare del nostro meglio
-      nextSentenceNum: 100
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+    answers: []
     nextSentenceNum: 100
   - sentence: Ok posso immaginare come sia andata. Penso che fareste meglio a confrontarvi,
       magari con un capo che regola le dinamiche. Spero che le cose vadano per il
       meglio
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

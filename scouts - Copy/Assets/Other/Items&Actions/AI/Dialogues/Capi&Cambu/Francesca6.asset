@@ -13,209 +13,91 @@ MonoBehaviour:
   m_Name: Francesca6
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Come va con la cucina?
-    canAnswer: 1
     answers:
     - answer: La cucina?
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Si. Intendo come va col fuoco e con la cucina nei momenti tipo pranzo
       o cena
-    canAnswer: 1
     answers:
     - answer: "Ah va bene. Io faccio il fuoco e nessuno si \xE8 ancora lamentato
         della nostra cucina"
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "L'altro giorno abbiamo quasi ammazzato i capi per\xF2 per il resto
         nessun problema"
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Perfetto. Non vedo l'ora di venire ad assaggiare qualcosa da voi
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Ma come avete fatto?
-    canAnswer: 1
     answers:
-    - answer: "Abbiamo salato il brodo, che di base \xE8 gi\xE0 salato"
+    - answer: Abbiamo scolato la pasta troppo tardi. Era diventata colla stick
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Abbiamo scolato la pasta troppo tardi. Era diventata colla stick
+    - answer: Il cibo era un po' carbonizzato. Non proprio salutare.
       nextSentenceNum: 6
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Il cibo era un po' carbonizzato. Non proprio salutare
-      nextSentenceNum: 7
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Oh mamma. Qualcuno ha vomitato?
-    canAnswer: 1
-    answers:
-    - answer: No per fortuna
-      nextSentenceNum: 8
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Ehm...
-      nextSentenceNum: 9
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: Era ancora mangiabile. Colla a stick non mi dice molto
-    canAnswer: 1
+  - sentence: Era ancora mangiabile? "Colla stick" non mi dice molto...
     answers:
     - answer: Si
-      nextSentenceNum: 10
+      nextSentenceNum: 7
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Mentirei se dicessi di si
-      nextSentenceNum: 11
+      nextSentenceNum: 8
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Lo sapete che \xE8 cancerogeno vero?"
-    canAnswer: 1
     answers:
     - answer: Eh l'ho detto. Il cibo era carbonizzato. Ci siamo distratti giusto
         un pochino
-      nextSentenceNum: 14
+      nextSentenceNum: 9
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Si pi\xF9 o meno. Non so bene come funzioni"
-      nextSentenceNum: 15
+      nextSentenceNum: 10
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ah almeno quello. Falso allarme allora
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "Accidenti non lo sapevo. Non penso verranno a salutarvi pi\xF9 cos\xEC
       tanto spesso allora"
-    canAnswer: 1
     answers:
     - answer: Temo proprio di no
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: "Pasta un po' appiccicosa. SI pu\xF2 sopravvivere"
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: Immagino si sia blccata nell'esofago dei capi allora
-    canAnswer: 1
-    answers:
-    - answer: Si ed alcuni hanno avuto problemi respiratori, ma tutto risolto
-      nextSentenceNum: 12
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "No \xE8 passata fluidamente. Penso che i veri problemi li avremo quando
-        andremo in bagno"
-      nextSentenceNum: 13
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: Un bel viaggetto in infermeria e passa tutto
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: Saranno 2 giorni molto divertenti
-    canAnswer: 0
-    answers: []
     nextSentenceNum: 100
   - sentence: Quanto un pochino?
-    canAnswer: 1
     answers:
-    - answer: 2 minuti
-      nextSentenceNum: 16
+    - answer: 3 minuti
+      nextSentenceNum: 11
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: 5 minuti
-      nextSentenceNum: 17
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: 10 minuti
-      nextSentenceNum: 18
+      nextSentenceNum: 12
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Tutti i cibi se stracotti diventano dannosi per l'organismo. Formano
       sostanze come acrilamide che possono portare a problemi
-    canAnswer: 1
     answers:
     - answer: "Lo terr\xF2 in mente per la prossima volta"
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: Accettabile
-    canAnswer: 1
-    answers:
-    - answer: Onesto
-      nextSentenceNum: 100
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ok siete stati un po' larghi
-    canAnswer: 1
     answers:
     - answer: "Eh come ti avevo detto. Va b\xE8 sar\xE0 per la prossima volta"
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ma che diavolo stavate facendo?!?!
-    canAnswer: 1
     answers:
-    - answer: Cuocevamo la carne
-      nextSentenceNum: 19
+    - answer: eh....
+      nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Guardavamo le farfalle
-      nextSentenceNum: 20
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: Ma non prendermi in giro. Ci credo che avete quasi ammazzato i capi
-    canAnswer: 0
-    answers: []
-    nextSentenceNum: 100
-  - sentence: Ah ecco. Quindi dei bambinoni grossi e cresciuti come voi si fermano
-      a guardare le farfalle?! Alla faccia se siete sciocchi
-    canAnswer: 0
-    answers: []
     nextSentenceNum: 100

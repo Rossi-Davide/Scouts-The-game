@@ -13,30 +13,17 @@ MonoBehaviour:
   m_Name: Akela 1
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: "La tua traccia \xE8 la mia traccia, la tua preda \xE8 la mia preda,
       la tua tana \xE8 la mia tana. Come replichi?"
-    canAnswer: 1
     answers:
     - answer: "Non fare agli altri ci\xF2 che non vuoi sia fatto a te"
       nextSentenceNum: 2
       deltaPoints: 2
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: pronti a servire
+    - answer: Pronti a servire
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: amano e rispettano gli altri
-      nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: Alla prossima scout
-    canAnswer: 0
+  - sentence: Alla prossima, scout
     answers: []
     nextSentenceNum: 100

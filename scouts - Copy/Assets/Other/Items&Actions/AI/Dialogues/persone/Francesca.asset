@@ -13,49 +13,33 @@ MonoBehaviour:
   m_Name: Francesca
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Ciao
-    canAnswer: 1
     answers:
-    - answer: Ciao
+    - answer: Ciao!
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Sono la Fra, ex capo reparto!
-    canAnswer: 1
     answers:
     - answer: Piacere di conoscerti
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Che bello incontrarti!
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Tutto per gioco ma niente per gioco, lo sai cos\u2019\xE8? "
-    canAnswer: 1
     answers:
     - answer: No, non lo so
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "mmmh l'ho gi\xE0 sentito ma non ricordo"
+    - answer: "Mh...l'ho gi\xE0 sentito ma non ricordo"
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "\xC8 lo sguardo verso il mondo di noi scout, sorridiamo e cantiamo
       anche nei momenti difficili, \xE8 cos\xEC che conquistiamo le vette pi\xF9
       alte"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

@@ -13,77 +13,54 @@ MonoBehaviour:
   m_Name: Monica
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
-  - sentence: 'buongiorno buongiorno '
-    canAnswer: 1
+  - sentence: 'Buongiorno buongiorno '
     answers:
-    - answer: 'Salve salvino '
+    - answer: Salve salve
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Chi Va l\xE0?"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Dove stai andando?
-    canAnswer: 1
     answers:
     - answer: Dalle volpi
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: A cercare la Sara
       nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Ah avevo capito che non si poteva girare per gli angoli. Non \xE8
       cos\xEC?"
-    canAnswer: 1
     answers:
     - answer: "Si effettivamente \xE8 vero"
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "No, \xE8 una fesseria"
       nextSentenceNum: 6
       deltaPoints: -2
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
-  - sentence: "Ah! La sara, ne ho sentito parlare.\xE8 una brava vice."
-    canAnswer: 0
+  - sentence: Ah! La Sara, ne ho sentito parlare. E' una brava vice.
     answers: []
     nextSentenceNum: 7
   - sentence: Uhm dai penso si possa fare un'eccezione
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "Ah ok. Mi sar\xF2 sbagliata io allora"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Insieme a Davide ha progettato e realizzato tutto questo videogioco
-    canAnswer: 0
     answers: []
     nextSentenceNum: 8
   - sentence: "So che \xE8 una ragazza molto attenta. Me ne intendo di ragazzi. Sono
       una catechista da tanti anni. Tutto il gruppo \xE8 stato molto coraggioso.
       E sono davvero grata a loro per la lezione che mi hanno dato"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 9
   - sentence: "\xC8 stata una grande avventura, nata in zona rossa, dalle prime telefonate
       alla prima preview del videogame. La dimostrazione che dalle tempeste pi\xF9
       grigie possono nascere grandi opportunit\xE0 se sappiamo coglierle"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

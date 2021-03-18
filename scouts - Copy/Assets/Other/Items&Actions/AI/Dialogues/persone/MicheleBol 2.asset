@@ -13,44 +13,30 @@ MonoBehaviour:
   m_Name: MicheleBol 2
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: "D\xEC al tuo compagno di andare a prendere il cesto con il cibo"
-    canAnswer: 1
     answers:
     - answer: Devo fare qualcosa io?
       nextSentenceNum: 2
       deltaPoints: 2
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Vado subito capo
       nextSentenceNum: 100
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "S\xEC, puoi andare a prendere le pringles che facciamo uno spuntino.
       Ho ancora fame!!"
-    canAnswer: 1
     answers:
     - answer: Cosa, abbiamo delle pringles?!?!?!
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "ma non \xE8 illegale?"
       nextSentenceNum: 4
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     nextSentenceNum: 100
   - sentence: "S\xEC, dai che stasera ci divertiamo!!"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "Oh ma tu sei sempre cos\xEC noioso. Senti se non ti vuoi divertire
       allora ci divertiamo noi"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

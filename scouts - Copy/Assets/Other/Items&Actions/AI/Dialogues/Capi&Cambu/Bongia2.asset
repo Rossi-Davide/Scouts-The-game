@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Bongia2
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
+  - sentence: Hey! E' bello vederti! Volevo dirti una cosa...
+    answers: []
+    nextSentenceNum: 2
   - sentence: "Ricordati di stringere bene quelle legature o il refettorio cadr\xE0;
-      fidati \xE8 gi\xE0 successo"
-    canAnswer: 0
+      fidati \xE8 gi\xE0 successo."
     answers: []
     nextSentenceNum: 100

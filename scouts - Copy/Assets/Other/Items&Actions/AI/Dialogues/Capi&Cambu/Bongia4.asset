@@ -13,29 +13,20 @@ MonoBehaviour:
   m_Name: Bongia4
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Come sta andando il campo?
-    canAnswer: 1
     answers:
     - answer: Bene, mi piace molto!
       nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     - answer: "Cos\xEC cos\xEC... ho un po'nostalgia di casa"
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Sono felice per te
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "\xC9 normale sentire nostalgia ma adesso faremo tante attivit\xE0
       divertenti e vedrai che starai meglio"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

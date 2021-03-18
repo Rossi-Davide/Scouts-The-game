@@ -13,51 +13,34 @@ MonoBehaviour:
   m_Name: MicheleFarabegoli
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Hey boy scout, dove stai andando?
-    canAnswer: 1
     answers:
     - answer: A far legna
       nextSentenceNum: 2
       deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Dalle puma
       nextSentenceNum: 3
       deltaPoints: -2
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Uhm...non mi convinci. Non starai andando a fumare?
-    canAnswer: 1
     answers:
     - answer: Cosa?!
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Ecco...veramente...oh ok! Stavo andando dalle volpi
       nextSentenceNum: 4
       deltaPoints: -4
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Guarda che se non ti comporti bene fai 10 minuti di fila di piegamenti
-    canAnswer: 1
     answers:
-    - answer: Solo,sono super bravo!
-      nextSentenceNum: 4
-      deltaPoints: -5
-      deltaMaterials: 0
-      deltaEnergy: 0
+    - answer: Sono super bravo!
+      nextSentenceNum: 5
+      deltaPoints: -2
     nextSentenceNum: 100
   - sentence: Vedi di fare il bravo, se no lo dico ai capi reparto
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Dai per questa volta mi fido e ti lascio andare. Non combinare danni!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

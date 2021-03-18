@@ -13,86 +13,59 @@ MonoBehaviour:
   m_Name: Cesco5
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
-  - sentence: Ehi, che ci fai qui?
-    canAnswer: 1
+  - sentence: Ciao! Che stai facendo?
     answers:
     - answer: Mah, stavo camminando
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Devo andare in cambusa veramente
+    - answer: Devo andare in cambusa
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Come sta andando il campo?
-    canAnswer: 1
     answers:
     - answer: Molto bene
       nextSentenceNum: 4
       deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: A dirla tutta non sta andando una favola
       nextSentenceNum: 5
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Ah ok, a dopo allora
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Pensi di poterlo vincere?!
-    canAnswer: 1
     answers:
     - answer: Ovviamente!!
       nextSentenceNum: 6
       deltaPoints: -3
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Non saprei le altre squadriglie sono molto forti
       nextSentenceNum: 7
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     nextSentenceNum: 100
   - sentence: Che cosa ti turba?
-    canAnswer: 0
     answers:
     - answer: Abbiamo dei problemi in squadriglia
       nextSentenceNum: 8
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: Beh le ultime gare non sono andate splendidamente
       nextSentenceNum: 9
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Essere meno superbi potrebbe rendervi la vittoria pi\xF9 facile. Prova
       a fare un tentativo"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "Sono sicuro che se continuate a impegnarvi potreste avere buone possibilit\xE0.
       Continuate cos\xEC!"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "Ok, una soluzione potrebbe essere confrontarsi e cercare di chiarire
       quali sono i problemi e come si possono risolvere. Prova cos\xEC"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: "Ma dai! Il successo nelle gare non vi definiscono come squadriglia
       e si pu\xF2 anche fare un bel campo senza vincere nulla"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

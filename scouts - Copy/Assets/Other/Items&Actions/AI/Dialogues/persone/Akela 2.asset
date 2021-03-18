@@ -13,16 +13,11 @@ MonoBehaviour:
   m_Name: Akela 2
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Boschi ed acque, venti ed alberi, saggezza, forza e cortesia, che il
       favore della giungla ti accompagni. Buona caccia a chi segue la legge del branco
-    canAnswer: 1
     answers:
     - answer: Once Scout Semel Scout
-      nextSentenceNum: 2
+      nextSentenceNum: 100
       deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100

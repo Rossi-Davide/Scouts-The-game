@@ -13,28 +13,19 @@ MonoBehaviour:
   m_Name: Cesco4
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: La tua squadriglia ha svolto i servizi per oggi?
-    canAnswer: 1
     answers:
     - answer: "S\xEC"
       nextSentenceNum: 2
       deltaPoints: 1
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: Non sapevo ne avessimo?!
+    - answer: No... non sapevo ne avessimo...
       nextSentenceNum: 3
       deltaPoints: -2
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: Molto bene, a dopo!!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
-  - sentence: "Muovetevi perch\xE8 fra poco sar\xE0 ora di cena!"
-    canAnswer: 0
+  - sentence: "Muovetevi perch\xE8 tra poco sar\xE0 ora di cena!"
     answers: []
     nextSentenceNum: 100

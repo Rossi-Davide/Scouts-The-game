@@ -13,28 +13,19 @@ MonoBehaviour:
   m_Name: Cesco1
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Avete sistemato l'angolo?
-    canAnswer: 1
     answers:
     - answer: "S\xEC"
       nextSentenceNum: 2
       deltaPoints: 2
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: No
       nextSentenceNum: 3
-      deltaPoints: -2
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 0
     nextSentenceNum: 100
   - sentence: Ottimo! Bravissimi!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Dai allora mettetevi a sistemarlo di squadriglia!
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100

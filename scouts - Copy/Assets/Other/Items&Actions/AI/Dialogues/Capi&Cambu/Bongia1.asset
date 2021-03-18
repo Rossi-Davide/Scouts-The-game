@@ -13,92 +13,31 @@ MonoBehaviour:
   m_Name: Bongia1
   m_EditorClassIdentifier: 
   deltaPoints: 2
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: Ciao...  mi chiamo Chiara. Benvenuto al campo di reparto. Sono felice
       che ti sia messo in gioco in questa avventura. Come stai?
-    canAnswer: 1
     answers:
     - answer: Bene
       nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 1
     - answer: Sono un po' agitato
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Bravo! Questo \xE8 lo spirito giusto"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
-  - sentence: "Non preoccupari, vedrai che ti divertirai un mondo. Perch\xE8 dovresti
-      essere agitato? Non ce n'\xE8 motivo"
-    canAnswer: 1
+  - sentence: Come mai?
     answers:
-    - answer: "\xC8 stato un po' un colpo isolarsi per 2 settimane. Durante quest'estate
-        stavano succedendo cos\xEC tante cose"
-      nextSentenceNum: 4
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "\xC8 che sono lontano dalla mia famiglia e ci\xF2 mi rende un po'
         nervoso"
-      nextSentenceNum: 5
+      nextSentenceNum: 4
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: "Effettivamente hai ragione. Non ce n'\xE8 motivo. Grazie per avermelo
         fatto notare"
       nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+      deltaPoints: 2
     nextSentenceNum: 100
-  - sentence: "A proposito com'\xE8 andata?"
-    canAnswer: 1
-    answers:
-    - answer: "Bene, ho avuto molto pi\xF9 tempo per me e ho fatto tante belle esperienze.
-        Solo dover lasciare tutto per due settimane mi d\xE0 fastidio"
-      nextSentenceNum: 6
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: 
-      nextSentenceNum: 7
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: "Non preoccupari, vedrai che ti divertirai un mondo. Perch\xE8 dovresti
-      essere agitato? Non ce n'\xE8 motivo"
-    canAnswer: 1
-    answers:
-    - answer: "\xC8 stato un po' un colpo isolarsi per 2 settimane. Durante quest'estate
-        stavano succedendo cos\xEC tante cose"
-      nextSentenceNum: 4
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "\xC8 che sono lontano dalla mia famiglia e ci\xF2 mi rende un po'
-        nervoso"
-      nextSentenceNum: 5
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: "Effettivamente hai ragione. Non ce n'\xE8 motivo. Grazie per avermelo
-        fatto notare"
-      nextSentenceNum: 2
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    nextSentenceNum: 100
-  - sentence: "Vedrai che alla fine due settimane non sono tante e che ci divertiremo
-      anche qui. Quando tornerai poi potrai riprendere tutto quanto. Non pensare
-      di poter fare tutto solo perch\xE8 \xE8 estate, basta solo organizzarsi"
-    canAnswer: 0
+  - sentence: Non preoccupari, vedrai che ti divertirai un mondo.
     answers: []
     nextSentenceNum: 100

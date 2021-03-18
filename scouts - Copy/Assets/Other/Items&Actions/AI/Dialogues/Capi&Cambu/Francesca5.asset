@@ -13,41 +13,22 @@ MonoBehaviour:
   m_Name: Francesca5
   m_EditorClassIdentifier: 
   deltaPoints: 3
-  deltaMaterials: 0
-  deltaEnergy: 0
   sentences:
   - sentence: So che molti tuoi compagni stanno soffrendo di stress e ansia dovuta
       alla lontananza da casa. Tu stai avendo qualche problema?
-    canAnswer: 1
     answers:
     - answer: "S\xEC diciamo che ogni tanto mi manca"
       nextSentenceNum: 2
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     - answer: No, penso di essere a posto
       nextSentenceNum: 3
       deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
     nextSentenceNum: 100
   - sentence: "Anche i pi\xF9 grandi allora cadono. Per\xF2 dai non ti abbattere
       sono solo 2 settimane e poi \xE8 bello qui"
-    canAnswer: 0
     answers: []
     nextSentenceNum: 100
   - sentence: Bene allora, sono contenta per te. Butta un occhio a quelli della tua
       squadriglia e prenditi cura di loro
-    canAnswer: 1
-    answers:
-    - answer: "S\xEC diciamo che ogni tanto mi manca"
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
-    - answer: No, penso di essere a posto
-      nextSentenceNum: 0
-      deltaPoints: 0
-      deltaMaterials: 0
-      deltaEnergy: 0
+    answers: []
     nextSentenceNum: 100
