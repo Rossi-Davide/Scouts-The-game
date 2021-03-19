@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &179057071263113353
 Transform:
   m_ObjectHideFlags: 0
@@ -183,18 +183,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854f267d615152d40a1c493efff6387f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: ospite
+  objectName: Ospite
   objectSubName: Raffaele
   animationPrefix: 
-  buttons: []
+  buttons:
+  - buttonText: Parla
+    color: 2
+    generalAction: {fileID: 11400000, guid: 593a917777173f941960be1efef4bf83, type: 2}
+    previousAction: {fileID: 0}
+    hasDonePreviousAction: 0
   maxDistanceFromPlayer: 0
-  isInstantiating: 0
-  checkPositionEachFrame: 0
+  isInstantiating: 1
+  checkPositionEachFrame: 1
   spawnInRandomPosition: 0
   manageAnimationsAutomatically: 0
   customDataFileName: 
   possiblePositions: []
-  clickListener: {fileID: 0}
+  clickListener: {fileID: 6925112430229956604, guid: 65ed6bdba6f23fa469e2d084e03a41af,
+    type: 3}
   isNameAlwaysActive: 0
   nameTextOffset: {x: 0, y: 1.5, z: 0}
   loadingBarOffset: {x: 0, y: 0, z: 0}

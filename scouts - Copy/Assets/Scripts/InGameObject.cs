@@ -39,7 +39,7 @@ public abstract class InGameObject : MonoBehaviour
 	[HideInInspector]
 	[System.NonSerialized]
 	public TextMeshProUGUI nameText, subNameText;
-	Vector3 subNameRelativeOffset = new Vector3(0, -0.30f, 0);
+	Vector3 subNameRelativeOffset = new Vector3(0, -0.40f, 0);
 
 	protected Animator animator;
 	public BuildingState[] states;
@@ -397,6 +397,11 @@ public abstract class InGameObject : MonoBehaviour
 	}
 	public void ForceToggleName(bool active)
 	{
+		StartCoroutine(ActualForceToggleName(active));
+	}
+	public IEnumerator ActualForceToggleName(bool active)
+	{
+		yield return new WaitForEndOfFrame();
 		nameText.gameObject.SetActive(active);
 		subNameText.gameObject.SetActive(active);
 	}

@@ -217,16 +217,27 @@ public class AIsManager : MonoBehaviour
 					eventButton.gameObject.SetActive(false);
 					foreach (var a in e.mainAIs)
 					{
-						a.gameObject.SetActive(false);
+						a.ForceToggleName(false);
 						a.ToggleClickListener(false);
 						a.GetComponent<Animator>().SetBool("move", false);
-						a.ForceToggleName(false);
+						a.gameObject.SetActive(false);
 					}
-					if (isOpen) ToggleEventPanel();
+					ToggleEventPanel(false);
 				}
 			}
 		}
 	}
+	public void ToggleEventPanel(bool open)
+	{
+		isOpen = open;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(isOpen ? "click" : "clickDepitched");
+		eventPanel.SetActive(isOpen);
+		Joystick.instance.canUseJoystick = !isOpen;
+		overlay.SetActive(isOpen);
+		PanZoom.instance.canDo = !isOpen;
+		RefreshPanelUI();
+	}
+
 	public void ToggleEventPanel()
 	{
 		isOpen = !isOpen;

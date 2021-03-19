@@ -316,9 +316,8 @@ public abstract class BaseAI : InGameObject
 	}
 	public IEnumerator ForceTarget(Vector3 target, bool stayUntil, bool setInactive)
 	{
-
 		yield return new WaitForEndOfFrame();
-		Debug.LogError(target);
+		//Debug.LogError(target);
 		CreateNewPath(target);
 		this.stayUntil = stayUntil;
 		disable = setInactive;

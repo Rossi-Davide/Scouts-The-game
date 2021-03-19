@@ -8,9 +8,9 @@ using UnityEngine.UI;
 
 public class impostazioni : MonoBehaviour
 {
-    Resolution[] resolutions;
+    //Resolution[] resolutions;
     public AudioMixer mixer;
-    public TMP_Dropdown resDrop;
+    //public TMP_Dropdown resDrop;
 
 
     #region Singleton
@@ -25,36 +25,31 @@ public class impostazioni : MonoBehaviour
 
 	public TextMeshProUGUI masterValue, musicValue, soundsValue;
     public Toggle fullscreenUI;
-    public TMP_Dropdown qualityUI, resUI;
+    public TMP_Dropdown qualityUI;
+    //public TMP_Dropdown resUI;
 
     private void Start()
     {
-        resolutions = Screen.resolutions;
-
-        resDrop.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        int defResolution = 0;
-
-        
-        for(int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + "x" + resolutions[i].height;
-            options.Add(option);
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
-                defResolution = i;
-            }
-        }
-        resDrop.AddOptions(options);
-        resDrop.value = defResolution;
-        resDrop.RefreshShownValue();
+        //resolutions = Screen.resolutions;
+        //resDrop.ClearOptions();
+        //int defResolution = 0;
+        //for(int i = 0; i < resolutions.Length; i++)
+        //{
+        //    string option = resolutions[i].width + "x" + resolutions[i].height;
+        //    options.Add(option);
+        //    if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+        //    {
+        //        defResolution = i;
+        //    }
+        //}
+        //resDrop.AddOptions(options);
+        //resDrop.value = defResolution;
+        //resDrop.RefreshShownValue();
 
         generalVolume = 80;
 		musicVolume = 80;
 		soundsVolume = 80;
-		resIndex = 0;
+		//resIndex = 0;
 		qualityIndex = 0;
 		fullscreen = false;
         SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.impostazioniFileName, true));
@@ -67,8 +62,8 @@ public class impostazioni : MonoBehaviour
     public float musicVolume;
     [HideInInspector] [System.NonSerialized]
     public float soundsVolume;
-    [HideInInspector] [System.NonSerialized]
-    public int resIndex;
+    //[HideInInspector] [System.NonSerialized]
+    //public int resIndex;
     [HideInInspector] [System.NonSerialized]
     public int qualityIndex;
     [HideInInspector] [System.NonSerialized]
@@ -114,13 +109,13 @@ public class impostazioni : MonoBehaviour
         Screen.fullScreen = fullscreen;
     }
 
-    public void SetRes()
-    {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-        resIndex = resUI.value;
-        Resolution resolution = resolutions[resIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+    //public void SetRes()
+    //{
+    //    GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
+    //    resIndex = resUI.value;
+    //    Resolution resolution = resolutions[resIndex];
+    //    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    //}
 
 
     void RefreshUI()
@@ -133,7 +128,7 @@ public class impostazioni : MonoBehaviour
         soundsValue.transform.parent.GetComponentInChildren<Slider>().value = soundsVolume;
         fullscreenUI.isOn = fullscreen;
         qualityUI.value = qualityIndex;
-        resUI.value = resIndex;
+        //resUI.value = resIndex;
     }
     #endregion
 
@@ -152,7 +147,7 @@ public class impostazioni : MonoBehaviour
             musicVolume = musicVolume,
             soundsVolume = soundsVolume,
             qualityIndex = qualityIndex,
-            resIndex = resIndex,
+            //resIndex = resIndex,
             fullscreen = fullscreen,
         };
     }
@@ -164,7 +159,7 @@ public class impostazioni : MonoBehaviour
             musicVolume = status.musicVolume;
             soundsVolume = status.soundsVolume;
             qualityIndex = status.qualityIndex;
-            resIndex = status.resIndex;
+            //resIndex = status.resIndex;
             fullscreen = status.fullscreen;
         }
     }
@@ -174,7 +169,7 @@ public class impostazioni : MonoBehaviour
         public float musicVolume;
         public float soundsVolume;
         public int qualityIndex;
-        public int resIndex;
+        //public int resIndex;
         public bool fullscreen;
     }
 

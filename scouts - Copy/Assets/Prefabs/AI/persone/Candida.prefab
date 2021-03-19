@@ -188,8 +188,8 @@ MonoBehaviour:
   animationPrefix: 
   buttons: []
   maxDistanceFromPlayer: 0
-  isInstantiating: 0
-  checkPositionEachFrame: 0
+  isInstantiating: 1
+  checkPositionEachFrame: 1
   spawnInRandomPosition: 0
   manageAnimationsAutomatically: 0
   customDataFileName: 

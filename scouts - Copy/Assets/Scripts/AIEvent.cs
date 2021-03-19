@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 [System.Serializable]
 public class AIEvent
 {
@@ -22,6 +22,8 @@ public class AIEvent
 		public int timeLeft;
 		public int countDownLeft;
 		public bool running;
+		public InGameObject.Status[] aiInfo;
+		public int[] nextDialogueIndices;
 	}
 	public void SetStatus(Status status)
 	{
@@ -38,14 +40,28 @@ public class AIEvent
 				a.ForceToggleName(true);
 			}
 		}
+		for (int s = 0; s < mainAIs.Length; s++)
+		{
+			mainAIs[s].SetStatus(status.aiInfo[s]);
+			mainAIs[s].nextDialogueIndex = status.nextDialogueIndices[s];
+		}
 	}
 	public Status SendStatus()
 	{
+		int[] indices = new int[mainAIs.Length];
+		InGameObject.Status[] c = new InGameObject.Status[mainAIs.Length];
+		for (int i = 0; i < mainAIs.Length; i++)
+		{
+			indices[i] = mainAIs[i].nextDialogueIndex;
+			c[i] = mainAIs[i].SendStatus();
+		}
 		return new Status
 		{
 			timeLeft = timeLeft,
 			countDownLeft = countDownLeft,
 			running = running,
+			nextDialogueIndices = indices,
+			aiInfo = c,
 		};
 	}
 
