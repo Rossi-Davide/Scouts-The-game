@@ -49,8 +49,12 @@ public class nascondinoManager : MonoBehaviour
         secondsInizioGioco = 3;
         GameObject audio= GameObject.Find("/AudioManager");
 
+
         if (audio != null)
         {
+            audio.GetComponent<AudioManager>().Stop("musicaGioco");
+            audio.GetComponent<AudioManager>().Stop("nature");
+
             audio.GetComponent<AudioManager>().Play("musicaGiochi");
         }
         else

@@ -22,7 +22,7 @@ MonoBehaviour:
     warning: Sei troppo lontano!
   - type: 1
     desiredValue: 1
-    warning: "Non puoi riparare la costruzione perch\xE8 \xE8 distrutta!"
+    warning: "Non puoi riparare la costruzione perch\xE8 non \xE8 distrutta!"
   hasInfoPanel: 1
   showInActionList: 1
   timeNeeded: 0

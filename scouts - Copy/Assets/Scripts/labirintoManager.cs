@@ -60,6 +60,8 @@ public class labirintoManager : MonoBehaviour
 
         if (audio != null)
         {
+            audio.GetComponent<AudioManager>().Stop("musicaGioco");
+            audio.GetComponent<AudioManager>().Stop("nature");
             audio.GetComponent<AudioManager>().Play("musicaGiochi");
         }
         else
