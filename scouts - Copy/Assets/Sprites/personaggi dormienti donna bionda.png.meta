@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 900
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -211,153 +211,6 @@ TextureImporter:
       bones: []
       spriteID: a1a91c2fbb5269c50800000000000000
       internalID: 6671561387157854746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_3
-      rect:
-        serializedVersion: 2
-        x: 2208
-        y: 846
-        width: 12
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84b44ecfc3aeeb5e0800000000000000
-      internalID: -1891817245787272376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_4
-      rect:
-        serializedVersion: 2
-        x: 2174
-        y: 828
-        width: 33
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc02d89dd9eba2970800000000000000
-      internalID: 8731000412780175567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_5
-      rect:
-        serializedVersion: 2
-        x: 2150
-        y: 813
-        width: 24
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c0dda387486b2360800000000000000
-      internalID: 7145919890114597064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_6
-      rect:
-        serializedVersion: 2
-        x: 2140
-        y: 808
-        width: 10
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6588629038ffe0a0800000000000000
-      internalID: -6849983620708792980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_7
-      rect:
-        serializedVersion: 2
-        x: 2128
-        y: 800
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85217217279df1250800000000000000
-      internalID: 5917687520936006232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_8
-      rect:
-        serializedVersion: 2
-        x: 2116
-        y: 793
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01511f527edf580f0800000000000000
-      internalID: -1115206163488500464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personaggi dormienti donna bionda_9
-      rect:
-        serializedVersion: 2
-        x: 2033
-        y: 744
-        width: 83
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a45f8cd2501f7f4f0800000000000000
-      internalID: -794901804662327990
       vertices: []
       indices: 
       edges: []

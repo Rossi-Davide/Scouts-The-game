@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 
 	public float playerSpeed; 
     float lastX, lastY;
-	bool isMoving;
+	public bool isMoving;
 	void FixedUpdate()
 	{
 		Vector3 movement = joystick.direction;
@@ -117,6 +117,7 @@ public class Player : MonoBehaviour
 
 	public void StepSounds()
 	{
+		
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("walking");
 
 	}
