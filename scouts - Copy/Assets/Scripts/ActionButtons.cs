@@ -63,12 +63,12 @@ public class ActionButtons : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating(nameof(Check), 0.1f, 0.5f);
+		InvokeRepeating(nameof(Check), 0.08f, 1f);
 	}
 
 	private void Check()
 	{
-		if (Input.touchCount > 0 && !clicking && !IsPointerOverCollider)
+		if (Input.touchCount > 0 && !IsPointerOverCollider && !PanZoom.instance.panningOrZooming)
 		{
 			ChangeSelectedObject(null);
 			Camera.main.GetComponent<FollowPlayer>().EnableFollow();
