@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
-public class clickVerify : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class clickVerify : MonoBehaviour
 {
     //public ActionButtons madre;
 
