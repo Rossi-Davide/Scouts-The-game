@@ -32,7 +32,7 @@ public abstract class InGameObject : MonoBehaviour
 	protected bool hasBeenClicked;
 	public bool isNameAlwaysActive;
 
-	public Vector3 nameTextOffset, loadingBarOffset, clickListenerOffset;
+	public Vector3 nameTextOffset, clickListenerOffset;
 	[HideInInspector]
 	[System.NonSerialized]
 	public TimeLeftBar loadingBar;
@@ -40,6 +40,7 @@ public abstract class InGameObject : MonoBehaviour
 	[System.NonSerialized]
 	public TextMeshProUGUI nameText, subNameText;
 	Vector3 subNameRelativeOffset = new Vector3(0, -0.40f, 0);
+	Vector3 loadingBarRelativeOffset = new Vector3(0, -0.70f, 0);
 
 	protected Animator animator;
 	public BuildingState[] states;
@@ -118,7 +119,7 @@ public abstract class InGameObject : MonoBehaviour
 		}
 		nameText = Instantiate(GameManager.instance.nameTextPrefab, transform.position + nameTextOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
 		subNameText = Instantiate(GameManager.instance.subNameTextPrefab, nameText.transform.position + subNameRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TextMeshProUGUI>();
-		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, transform.position + loadingBarOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
+		loadingBar = Instantiate(GameManager.instance.loadingBarPrefab, nameText.transform.position + loadingBarRelativeOffset, Quaternion.identity, wpCanvas.transform).GetComponent<TimeLeftBar>();
 		clickListener.onClick.AddListener(OnClick);
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
 
@@ -378,7 +379,7 @@ public abstract class InGameObject : MonoBehaviour
 	}
 	public virtual void MoveUI()
 	{
-		loadingBar.transform.position = transform.position + loadingBarOffset;
+		loadingBar.transform.position = nameText.transform.position + loadingBarRelativeOffset;
 		nameText.transform.position = transform.position + nameTextOffset;
 		subNameText.transform.position = nameText.transform.position + subNameRelativeOffset;
 		clickListener.transform.position = transform.position + clickListenerOffset;
@@ -399,11 +400,17 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		StartCoroutine(ActualForceToggleName(active));
 	}
+	public void ForceToggleNameInstant(bool active)
+	{
+		nameText.gameObject.SetActive(active);
+		subNameText.gameObject.SetActive(active);
+	}
 	public IEnumerator ActualForceToggleName(bool active)
 	{
 		yield return new WaitForEndOfFrame();
 		nameText.gameObject.SetActive(active);
 		subNameText.gameObject.SetActive(active);
+		//Debug.Log("Set " + (active ? "active" : "inactive"));
 	}
 	public IEnumerator ToggleLoadingBar(bool active)
 	{

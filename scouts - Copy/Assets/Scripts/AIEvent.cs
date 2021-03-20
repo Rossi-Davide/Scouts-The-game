@@ -36,7 +36,7 @@ public class AIEvent
 			{
 				a.gameObject.SetActive(true);
 				a.ToggleClickListener(true);
-				a.GetComponent<Animator>().SetBool("move", true);
+				//a.GetComponent<Animator>().SetBool("move", true);
 				a.ForceToggleName(true);
 			}
 		}

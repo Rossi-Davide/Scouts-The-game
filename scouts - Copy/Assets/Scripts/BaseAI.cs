@@ -52,7 +52,7 @@ public abstract class BaseAI : InGameObject
 
 		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
 		InvokeRepeating(nameof(UpdateSlowed), 0.05f, 0.05f);
-		InvokeRepeating("CheckStop",1f,3f);
+		InvokeRepeating(nameof(CheckStop),1f,3f);
 	}
 
 

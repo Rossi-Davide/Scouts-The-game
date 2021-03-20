@@ -201,7 +201,7 @@ public class AIsManager : MonoBehaviour
 					{
 						a.gameObject.SetActive(true);
 						a.ToggleClickListener(true);
-						a.GetComponent<Animator>().SetBool("move", true);
+						//a.GetComponent<Animator>().SetBool("move", true);
 						a.ForceToggleName(true);
 					}
 				}
@@ -217,7 +217,8 @@ public class AIsManager : MonoBehaviour
 					eventButton.gameObject.SetActive(false);
 					foreach (var a in e.mainAIs)
 					{
-						a.ForceToggleName(false);
+						a.ForceToggleNameInstant(false);
+						//Debug.LogWarning("should have set inactive");
 						a.ToggleClickListener(false);
 						a.GetComponent<Animator>().SetBool("move", false);
 						a.gameObject.SetActive(false);
