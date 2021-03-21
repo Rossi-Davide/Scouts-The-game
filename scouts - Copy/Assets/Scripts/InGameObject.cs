@@ -136,10 +136,8 @@ public abstract class InGameObject : MonoBehaviour
 			buttons[i].canDo = true;
 		}
 
-		if (checkPositionEachFrame)
-			InvokeRepeating(nameof(MoveUI), 0.1f, 0.05f);
-		if (spawnInRandomPosition)
-			transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)];
+		if (checkPositionEachFrame) { InvokeRepeating(nameof(MoveUI), 0.1f, 0.05f); }
+		if (spawnInRandomPosition) { transform.position = possiblePositions[UnityEngine.Random.Range(0, possiblePositions.Length - 1)]; }
 
 		nameText.text = objectName;
 		subNameText.text = objectSubName;
@@ -149,8 +147,7 @@ public abstract class InGameObject : MonoBehaviour
 			SetStatus(SaveSystem.instance.LoadData<Status>(customDataFileName, false));
 			SaveSystem.instance.OnReadyToSaveData += SaveData;
 		}
-		if (GetComponent<PlayerBuildingBase>() == null)
-			MoveUI();
+		if (GetComponent<PlayerBuildingBase>() == null){MoveUI();}
 
 
 		isNameAlwaysActive = GetComponent<CapieCambu>() != null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq == Player.instance.squadriglia);

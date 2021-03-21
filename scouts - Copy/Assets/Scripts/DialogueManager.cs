@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
 		{
 			TogglePanel(null);
 			currentObject.nextDialogueIndex++;
-			StartCoroutine(currentObject.Unlock());
+			currentObject.UnlockNow();
 			GameManager.instance.ChangeCounter(Counter.Punti, CampManager.instance.MultiplyByDurationFactor(deltaPoints, DurationFactor.prizesFactor));
 		}
 	}

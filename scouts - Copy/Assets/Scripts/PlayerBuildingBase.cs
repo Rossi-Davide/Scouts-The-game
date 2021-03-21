@@ -78,7 +78,6 @@ public abstract class PlayerBuildingBase : InGameObject
 				{
 					health = 0;
 					isDestroyed = true;
-					GetComponent<Animator>().Play(objectName + "Destroyed");
 					RefreshButtonsState();
 					if (!hasBeenClicked)
 						StartCoroutine(ToggleHealthBar(false));
@@ -130,7 +129,6 @@ public abstract class PlayerBuildingBase : InGameObject
 		health = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;
 		healthBar.transform.Find("HealthValue").GetComponent<TextMeshProUGUI>().text = health.ToString();
-		GetComponent<Animator>().Play(objectName + 2);
 		RefreshButtonsState();
 	}
 

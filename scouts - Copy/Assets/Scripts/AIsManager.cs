@@ -117,7 +117,7 @@ public class AIsManager : MonoBehaviour
 
 				if (!nearPlayer)
 				{
-					StartCoroutine(sq.Unlock());
+					sq.UnlockNow();
 
 					if (sq.sq != Player.instance.squadriglia && GameManager.DoIfPercentage(perc))
 					{
@@ -142,17 +142,16 @@ public class AIsManager : MonoBehaviour
 	}
 
 
-	public void SendToSleep(bool night)
+	public void SendToSleep(bool isDay)
     {
 		Debug.Log("reached AIs manager");
-        if (!night)
+        if (!isDay)
         {
 			foreach (Transform a in squadriglieAI)
 			{
 				foreach (Transform b in a)
 				{
 					StartCoroutine(b.GetComponent<BaseAI>().ForceTarget(a.position, true, true));
-                    
 				}
 			}
         }
@@ -162,7 +161,7 @@ public class AIsManager : MonoBehaviour
 			{
 				foreach (Transform b in a)
 				{
-					StartCoroutine(b.GetComponent<BaseAI>().Unlock());
+					b.GetComponent<BaseAI>().UnlockNow();
 				}
 			}
 		}       

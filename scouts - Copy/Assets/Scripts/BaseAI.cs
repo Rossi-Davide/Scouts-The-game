@@ -30,6 +30,16 @@ public abstract class BaseAI : InGameObject
 	protected short timeSpentAtAngle = 0,contTimeSpentAtAngle=9;
 	protected short prob,stuckInCollinetta=0;
 
+	private void OnDisable()
+	{
+		Debug.Log("trying to disable");
+		//bool nearPlayer = Vector2.Distance(transform.position, Player.instance.transform.position) < 100f;
+		//if (nearPlayer)
+		//{
+		//	UnlockNow();
+		//}
+	}
+
 	protected override void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -76,7 +86,7 @@ public abstract class BaseAI : InGameObject
 	public override void Deselect()
 	{
 		base.Deselect();
-		StartCoroutine(Unlock());
+		UnlockNow();
 	}
 
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
@@ -216,6 +226,7 @@ public abstract class BaseAI : InGameObject
 			animator.SetBool("move", false);
 			ToggleClickListener(false);
 			ToggleNameAndSubName(false);
+			//Debug.LogWarning(disable);
 		}
 		if (stayUntil)
 		{
@@ -230,6 +241,17 @@ public abstract class BaseAI : InGameObject
 	public IEnumerator Unlock() //call method from another script if stayUntil is true
 	{
 		yield return new WaitForEndOfFrame();
+		gameObject.SetActive(true);
+		keepTarget = 0;
+		stayUntil = false;
+		disable = false;
+		animator = GetComponent<Animator>();
+		animator.SetBool("move", true);
+		CheckPriorityTargetsThatWait();
+		ToggleClickListener(true);
+	}
+	public void UnlockNow() //call method from another script if stayUntil is true
+	{
 		gameObject.SetActive(true);
 		keepTarget = 0;
 		stayUntil = false;

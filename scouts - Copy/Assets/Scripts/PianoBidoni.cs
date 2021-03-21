@@ -5,11 +5,10 @@ public class PianoBidoni : PlayerBuildingBase
 {
 	void CucinaStart()
 	{
-		GetComponent<Animator>().Play("PianoBidoni1");
+		
 	}
 	void EndCucina()
 	{
-		GetComponent<Animator>().Play("PianoBidoni2");
 		RefreshButtonsState();
 	}
 	public override Action GetOnEndAction(int buttonIndex)

@@ -24,7 +24,7 @@ public class Plant : InGameObject
 	{
 		GetComponent<ParticleSystem>().Stop();
 		Player.instance.enabled = true;
-		Player.instance.GetComponent<Animator>().Play("idle");
+		Player.instance.GetComponent<Animator>().Play("Idle");
 		Debug.Log("hhhhhheeeeeeei!!!");
 		Deselect();
 		Destroy(gameObject);
