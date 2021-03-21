@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Micol_idleLeft
+  m_Name: Candida_idleDownRight
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 6420894065456583723, guid: 519a45c842f414a12ad07f63f55315e3,
+      value: {fileID: 636259101242391435, guid: 2698353ceae254049964ec9204471960,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 6420894065456583723, guid: 519a45c842f414a12ad07f63f55315e3, type: 3}
+    - {fileID: 636259101242391435, guid: 2698353ceae254049964ec9204471960, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

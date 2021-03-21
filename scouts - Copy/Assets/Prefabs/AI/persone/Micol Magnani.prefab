@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7523915180491103514, guid: d6d979157731d41688e6f8ec82e06d91,
+  m_Sprite: {fileID: -5997826401492008824, guid: 519a45c842f414a12ad07f63f55315e3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -203,7 +203,6 @@ MonoBehaviour:
     type: 3}
   isNameAlwaysActive: 0
   nameTextOffset: {x: 0, y: 1.5, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   defaultStateIndex: 0

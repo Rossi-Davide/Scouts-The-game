@@ -1,79 +1,79 @@
 fileFormatVersion: 2
-guid: 43d3c7b5049c14d408928450d0573175
+guid: 519a45c842f414a12ad07f63f55315e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9062082111549503188
-    second: candida_1
+      213: -5997826401492008824
+    second: micolMagnani_1
   - first:
-      213: 5767722172662221346
-    second: candida_2
+      213: 9191164789353550865
+    second: micolMagnani_2
   - first:
-      213: -1371045735890069347
-    second: candida_3
+      213: -8421571676242419487
+    second: micolMagnani_3
   - first:
-      213: 2057190122122628189
-    second: candida_4
+      213: -176033338077243903
+    second: micolMagnani_4
   - first:
-      213: -2831794177904802193
-    second: candida_6
+      213: -544474930651170977
+    second: micolMagnani_6
   - first:
-      213: 7087383858647038823
-    second: candida_8
+      213: -2279933672283947238
+    second: micolMagnani_8
   - first:
-      213: -3123278526511959413
-    second: candida_9
+      213: -5853365538914987132
+    second: micolMagnani_9
   - first:
-      213: 5210213771011114418
-    second: candida_15
+      213: -1495853877930236780
+    second: micolMagnani_13
   - first:
-      213: -6685829282032554719
-    second: candida_16
+      213: -2395317831608755198
+    second: micolMagnani_14
   - first:
-      213: -299431093149377477
-    second: candida_18
+      213: 4766509267785587323
+    second: micolMagnani_15
   - first:
-      213: 3907537512050521677
-    second: candida_19
+      213: 4261740267085407412
+    second: micolMagnani_16
   - first:
-      213: -3973945634877270817
-    second: candida_21
+      213: 3646495777040398534
+    second: micolMagnani_17
   - first:
-      213: 2111763117529876959
-    second: candida_22
+      213: -4412621572382663390
+    second: micolMagnani_18
   - first:
-      213: 9009015662336183785
-    second: candida_23
+      213: 7666056513145638768
+    second: micolMagnani_19
   - first:
-      213: 4597698802424535783
-    second: candida_25
+      213: -672000925189973713
+    second: micolMagnani_20
   - first:
-      213: -2289153278479111678
-    second: candida_26
+      213: 1929078746395119103
+    second: micolMagnani_21
   - first:
-      213: 6181471887816260410
-    second: candida_28
+      213: 9188058408329770999
+    second: micolMagnani_22
   - first:
-      213: -1446880365129947531
-    second: candida_29
+      213: -3871848593505629797
+    second: micolMagnani_23
   - first:
-      213: -118288661144351126
-    second: candida_31
+      213: 6420894065456583723
+    second: micolMagnani_24
   - first:
-      213: -2095788373792090321
-    second: candida_32
+      213: 1613473678761618792
+    second: micolMagnani_25
   - first:
-      213: -6081848872145096465
-    second: candida_33
+      213: -8138806500757746872
+    second: micolMagnani_26
   - first:
-      213: 1740860585126219529
-    second: candida_34
+      213: -2991385021863743989
+    second: micolMagnani_27
   - first:
-      213: -7167269133505103225
-    second: candida_35
+      213: 1369106207351402672
+    second: micolMagnani_28
   - first:
-      213: -5193088190946083667
-    second: candida_36
+      213: -1578710473117265897
+    second: micolMagnani_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -171,12 +171,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: candida_1
+      name: micolMagnani_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 1157
-        width: 147
+        x: 111
+        y: 1154
+        width: 146
         height: 247
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d67450eaabf2cd70800000000000000
-      internalID: 9062082111549503188
+      spriteID: 8800c9a6aa073cca0800000000000000
+      internalID: -5997826401492008824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_2
+      name: micolMagnani_2
       rect:
         serializedVersion: 2
-        x: 389
-        y: 1159
+        x: 390
+        y: 1156
         width: 147
-        height: 247
+        height: 248
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a0da0e1c01b0050800000000000000
-      internalID: 5767722172662221346
+      spriteID: 1141f75dda39d8f70800000000000000
+      internalID: 9191164789353550865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_3
+      name: micolMagnani_3
       rect:
         serializedVersion: 2
-        x: 666
-        y: 1155
-        width: 148
-        height: 249
+        x: 667
+        y: 1156
+        width: 147
+        height: 248
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d985575da2119fce0800000000000000
-      internalID: -1371045735890069347
+      spriteID: 1e0641b0e21902b80800000000000000
+      internalID: -8421571676242419487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_4
+      name: micolMagnani_4
       rect:
         serializedVersion: 2
         x: 944
-        y: 1156
+        y: 1155
         width: 147
-        height: 246
+        height: 247
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,18 +248,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5ccf80448b9c8c10800000000000000
-      internalID: 2057190122122628189
+      spriteID: 10697479c9a9e8df0800000000000000
+      internalID: -176033338077243903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_6
+      name: micolMagnani_6
       rect:
         serializedVersion: 2
         x: 1221
-        y: 1156
+        y: 1155
+        width: 146
+        height: 245
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f577e617fe2a178f0800000000000000
+      internalID: -544474930651170977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micolMagnani_8
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 1155
         width: 146
         height: 246
       alignment: 9
@@ -269,39 +290,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6607fcd23273b8d0800000000000000
-      internalID: -2831794177904802193
+      spriteID: a1f3018976c0c50e0800000000000000
+      internalID: -2279933672283947238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_8
+      name: micolMagnani_9
       rect:
         serializedVersion: 2
-        x: 1495
-        y: 1151
-        width: 149
-        height: 250
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76b7e71a1127b5260800000000000000
-      internalID: 7087383858647038823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: candida_9
-      rect:
-        serializedVersion: 2
-        x: 2336
-        y: 1155
+        x: 2334
+        y: 1154
         width: 118
         height: 241
       alignment: 9
@@ -311,18 +311,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8236ac5ab2e7a4d0800000000000000
-      internalID: -3123278526511959413
+      spriteID: 48395780e0ba4cea0800000000000000
+      internalID: -5853365538914987132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_15
+      name: micolMagnani_13
       rect:
         serializedVersion: 2
-        x: 127
-        y: 801
+        x: 129
+        y: 800
         width: 125
         height: 239
       alignment: 9
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b547f0e1d56e4840800000000000000
-      internalID: 5210213771011114418
+      spriteID: 494e31ac2d8ad3be0800000000000000
+      internalID: -1495853877930236780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_16
+      name: micolMagnani_14
       rect:
         serializedVersion: 2
-        x: 399
-        y: 799
+        x: 401
+        y: 801
         width: 126
-        height: 238
+        height: 239
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,40 +353,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12d6b87e0b92733a0800000000000000
-      internalID: -6685829282032554719
+      spriteID: 20c1dc28f1f12ced0800000000000000
+      internalID: -2395317831608755198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_18
+      name: micolMagnani_15
       rect:
         serializedVersion: 2
-        x: 677
-        y: 799
-        width: 120
-        height: 236
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3cdf1ad10538dbf0800000000000000
-      internalID: -299431093149377477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: candida_19
-      rect:
-        serializedVersion: 2
-        x: 952
+        x: 676
         y: 797
         width: 120
+        height: 237
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a97fcccea062240800000000000000
+      internalID: 4766509267785587323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micolMagnani_16
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 800
+        width: 121
         height: 235
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
@@ -395,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d46f8480aac5a3630800000000000000
-      internalID: 3907537512050521677
+      spriteID: 4b4aa98713eb42b30800000000000000
+      internalID: 4261740267085407412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_21
+      name: micolMagnani_17
       rect:
         serializedVersion: 2
         x: 1222
-        y: 796
+        y: 797
         width: 121
-        height: 236
+        height: 237
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,18 +416,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd41d6cff75b9d8c0800000000000000
-      internalID: -3973945634877270817
+      spriteID: 6c87479d694fa9230800000000000000
+      internalID: 3646495777040398534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_22
+      name: micolMagnani_18
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 801
+        x: 2001
+        y: 800
         width: 126
         height: 239
       alignment: 9
@@ -437,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd9c326ed5d7e4d10800000000000000
-      internalID: 2111763117529876959
+      spriteID: 22dd7e91f0833c2c0800000000000000
+      internalID: -4412621572382663390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_23
+      name: micolMagnani_19
       rect:
         serializedVersion: 2
-        x: 2267
-        y: 799
-        width: 119
-        height: 240
+        x: 2269
+        y: 800
+        width: 118
+        height: 241
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ed8a795304760d70800000000000000
-      internalID: 9009015662336183785
+      spriteID: 07f8d1e38cd436a60800000000000000
+      internalID: 7666056513145638768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_25
+      name: micolMagnani_20
       rect:
         serializedVersion: 2
-        x: 115
-        y: 447
+        x: 116
+        y: 446
         width: 125
-        height: 240
+        height: 239
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,20 +479,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ead0ce73be4ecf30800000000000000
-      internalID: 4597698802424535783
+      spriteID: f29515d08b29ca6f0800000000000000
+      internalID: -672000925189973713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_26
+      name: micolMagnani_21
       rect:
         serializedVersion: 2
         x: 917
         y: 449
         width: 119
-        height: 236
+        height: 237
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,18 +500,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20ae4dfb83b4b30e0800000000000000
-      internalID: -2289153278479111678
+      spriteID: ffd03ae26e675ca10800000000000000
+      internalID: 1929078746395119103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_28
+      name: micolMagnani_22
       rect:
         serializedVersion: 2
-        x: 1186
-        y: 450
+        x: 1189
+        y: 452
         width: 121
         height: 235
       alignment: 9
@@ -521,19 +521,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3bf95e5eeff8c550800000000000000
-      internalID: 6181471887816260410
+      spriteID: 7f77904217a828f70800000000000000
+      internalID: 9188058408329770999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_29
+      name: micolMagnani_23
       rect:
         serializedVersion: 2
-        x: 1461
-        y: 451
-        width: 120
+        x: 1462
+        y: 450
+        width: 122
         height: 236
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
@@ -542,18 +542,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57621fb49f5abebe0800000000000000
-      internalID: -1446880365129947531
+      spriteID: b994008d73e644ac0800000000000000
+      internalID: -3871848593505629797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_31
+      name: micolMagnani_24
       rect:
         serializedVersion: 2
         x: 1747
-        y: 450
+        y: 449
         width: 120
         height: 247
       alignment: 9
@@ -563,60 +563,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6ec883e611cb5ef0800000000000000
-      internalID: -118288661144351126
+      spriteID: b2414f712299b1950800000000000000
+      internalID: 6420894065456583723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_32
+      name: micolMagnani_25
       rect:
         serializedVersion: 2
-        x: 1985
-        y: 450
-        width: 145
-        height: 247
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f279ab7f3934ae2e0800000000000000
-      internalID: -2095788373792090321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: candida_33
-      rect:
-        serializedVersion: 2
-        x: 2256
-        y: 450
-        width: 145
-        height: 247
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe07e2e7caee89ba0800000000000000
-      internalID: -6081848872145096465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: candida_34
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 85
+        x: 1984
+        y: 449
         width: 143
         height: 247
       alignment: 9
@@ -626,18 +584,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f4deb8a77c82810800000000000000
-      internalID: 1740860585126219529
+      spriteID: 86d670523c5346610800000000000000
+      internalID: 1613473678761618792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_35
+      name: micolMagnani_26
       rect:
         serializedVersion: 2
-        x: 384
-        y: 85
+        x: 2256
+        y: 449
         width: 145
         height: 247
       alignment: 9
@@ -647,19 +605,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78a7ec762beb88c90800000000000000
-      internalID: -7167269133505103225
+      spriteID: 84bc1badb962d0f80800000000000000
+      internalID: -8138806500757746872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candida_36
+      name: micolMagnani_27
       rect:
         serializedVersion: 2
-        x: 646
-        y: 85
-        width: 147
+        x: 111
+        y: 84
+        width: 145
         height: 247
       alignment: 9
       pivot: {x: 0.5, y: 0.16}
@@ -668,8 +626,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dacf163fdc17ee7b0800000000000000
-      internalID: -5193088190946083667
+      spriteID: b0e2361fb277c76d0800000000000000
+      internalID: -2991385021863743989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micolMagnani_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 84
+        width: 145
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b076fc77da000310800000000000000
+      internalID: 1369106207351402672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: micolMagnani_29
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 84
+        width: 132
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71018a6603b471ae0800000000000000
+      internalID: -1578710473117265897
       vertices: []
       indices: 
       edges: []
