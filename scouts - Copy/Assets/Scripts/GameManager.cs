@@ -588,7 +588,14 @@ public class GameManager : MonoBehaviour
 		rainingWaitTimeLeft = 80;
 		plEnLossTimeLeft = playerEnergyLossInterval;
 		totalDays = CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].totalDays;
-		
+
+		GameObject audio = GameObject.Find("/AudioManager");
+
+        if (audio != null)
+        {
+			audio.GetComponent<AudioManager>().Stop("musicaGiochi");
+        }
+
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
 

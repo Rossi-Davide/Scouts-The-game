@@ -477,6 +477,8 @@ public abstract class InGameObject : MonoBehaviour
 		//{
 		//	s[i] = states[i].SendStatus();
 		//}
+		Debug.LogWarning("called when started a game");
+
 		return new Status
 		{
 			position = transform.position,

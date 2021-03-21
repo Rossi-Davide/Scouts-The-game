@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Candida
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  sentences:
+  - sentence: Finalmente qui dentro. Che emozione!
+    answers:
+    - answer: In che senso finalmente?
+      nextSentenceNum: 2
+      deltaPoints: 0
+    - answer: "Gi\xE0. Non vedo l'ora di scoprire quante cose si possono fare qua"
+      nextSentenceNum: 5
+      deltaPoints: 0
+    - answer: "Oggi \xE8 il giorno dell'attacco alla cambusa!"
+      nextSentenceNum: 11
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Beh questo gioco si \xE8 fatto attendere parecchio"
+    answers:
+    - answer: "Beh penso sia comprensibile. Non \xE8 una cosa di tutti i giorni un
+        videogioco"
+      nextSentenceNum: 3
+      deltaPoints: 0
+    - answer: "S\xEC effettivamente abbiamo dei programmatori un po' lenti. Chissa
+        se sono stati licenziati "
+      nextSentenceNum: 4
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Uhm. Allora ti d\xF2 ragione"
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "Spero proprio di s\xEC. Nessuno vuole un team di lumache!"
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Veramente tante. Ho sentito dire che si possono persino imbragare le
+      tende. Magnifico!
+    answers:
+    - answer: Tu chi sei?
+      nextSentenceNum: 6
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: Mi chiamo Candida. Sono stata capa scout per anni
+    answers:
+    - answer: Piacere di conoscerti
+      nextSentenceNum: 100
+      deltaPoints: 0
+    - answer: In che gruppo eri?
+      nextSentenceNum: 7
+      deltaPoints: 0
+    - answer: Cosa ci fai qui?
+      nextSentenceNum: 8
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Nel Cesena 7\xB0 prima e poi nel Cesena 17\xB0, ho partecipato all'unione!
+      Ora, godiamoci il campo!"
+    answers:
+    - answer: Con piacere!
+      nextSentenceNum: 100
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Mio figlio Pietro \xE8 il disegnatore del gioco. Sono venuta a fargli
+      visita"
+    answers:
+    - answer: Siamo davvero in tanti qui. Non so se riuscirai a trovarlo prima di
+        dovertene andare. Mi dispiace
+      nextSentenceNum: 9
+      deltaPoints: 0
+    - answer: "Ma ho gi\xE0 incontrato Micol e Leonardo in giro per il campo. Avete
+        portato tutta la famiglia?"
+      nextSentenceNum: 10
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Far\xF2 del mio meglio. Ora scappo"
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "S\xEC siamo venuti al completo"
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Shhhhh. Non vorrai mica che i capi ti sentano
+    answers:
+    - answer: Mi aiuterai a nascondere il cibo?
+      nextSentenceNum: 12
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Assolutamente no! Sono stata una capa scout e questo va contro i miei
+      principi. Ma siccome sembri simpatico mi limiter\xF2 a mantenere il segreto"
+    answers:
+    - answer: Grazie mille
+      nextSentenceNum: 100
+      deltaPoints: 0
+    nextSentenceNum: 100

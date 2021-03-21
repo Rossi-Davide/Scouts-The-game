@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0f0dfcce4c8540b1caba86691489b, type: 3}
+  m_Name: Giulia
+  m_EditorClassIdentifier: 
+  deltaPoints: 3
+  sentences:
+  - sentence: Che bello questo campo!
+    answers:
+    - answer: Concordo. Potresti dirmi il tuo nome?
+      nextSentenceNum: 2
+      deltaPoints: 0
+    - answer: "\xC8 un campo mooolto moderno!"
+      nextSentenceNum: 8
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: Eccome! Io sono Giulia Pigozzi
+    answers:
+    - answer: Che ci fai qui?
+      nextSentenceNum: 3
+      deltaPoints: 0
+    - answer: "Piacere, \xE8 dura la vita da campo "
+      nextSentenceNum: 6
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: 'Sono la mamma di drake! Mi ha raccontato tanto. Finalmente lo vedo
+      coi miei occhi! '
+    answers:
+    - answer: "Drake \xE8 il nostro esperto di scenografie! "
+      nextSentenceNum: 4
+      deltaPoints: 0
+    - answer: "Drake \xE8 un nostro carissimo amico! Specialit\xE0 di espressione! "
+      nextSentenceNum: 4
+      deltaPoints: 0
+    - answer: "Ah s\xEC. Le sue battute fanno sempre sganasciare dalle risate"
+      nextSentenceNum: 5
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Lo scoutismo per lui \xE8 un bellissimo modo di stare insieme, vi
+      porto i suoi saluti! "
+    answers:
+    - answer: Salutalo da parte mia
+      nextSentenceNum: 100
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "Ahahaha vero. \xC8 sempre stato molto bravo"
+    answers: []
+    nextSentenceNum: 100
+  - sentence: "Non fare lo spaccone. Per\xF2 capisco pu\xF2 essere difficile"
+    answers:
+    - answer: legna, costruzioni, fuoco, grandi giochi!
+      nextSentenceNum: 7
+      deltaPoints: 0
+    nextSentenceNum: 100
+  - sentence: "S\xEC. C'\xE8 tanto da fare ma \xE8 questo il bello no?"
+    answers: []
+    nextSentenceNum: 100
+  - sentence: Capisco. Non vedo l'ora di vederlo
+    answers:
+    - answer: Si accomodi pure
+      nextSentenceNum: 100
+      deltaPoints: 0
+    nextSentenceNum: 100

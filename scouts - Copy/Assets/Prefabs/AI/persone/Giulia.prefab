@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &179057071263113353
 Transform:
   m_ObjectHideFlags: 0
@@ -197,10 +197,9 @@ MonoBehaviour:
   clickListener: {fileID: 0}
   isNameAlwaysActive: 0
   nameTextOffset: {x: 0, y: 1.5, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 11400000, guid: 51a9959e69838402c871e24c311a34a2, type: 2}
+  - {fileID: 11400000, guid: e608213315ea04e9ca316712f9c206aa, type: 2}

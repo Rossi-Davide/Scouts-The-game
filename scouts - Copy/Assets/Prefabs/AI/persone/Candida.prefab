@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &179057071263113353
 Transform:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 3310398828173343950, guid: b140e2694e8c4ae46a43c283cceb44c3,
+  m_Sprite: {fileID: 9062082111549503188, guid: 43d3c7b5049c14d408928450d0573175,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ Animator:
   m_GameObject: {fileID: 179057071263113352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dc528814831310488f648076253e740, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5f934f34e737843ba94167dbcf32cd55, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -197,10 +197,9 @@ MonoBehaviour:
   clickListener: {fileID: 0}
   isNameAlwaysActive: 0
   nameTextOffset: {x: 0, y: 1.5, z: 0}
-  loadingBarOffset: {x: 0, y: 0, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states: []
   defaultStateIndex: 0
   priorityTargets: []
   dialoguesArray:
-  - {fileID: 11400000, guid: 51a9959e69838402c871e24c311a34a2, type: 2}
+  - {fileID: 11400000, guid: 57a56fcbe66be4435abb192e1925ea7a, type: 2}

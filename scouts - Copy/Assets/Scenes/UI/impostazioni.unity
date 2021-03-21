@@ -1361,10 +1361,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1592396884}
   m_HandleRect: {fileID: 1365623280}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 80
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 80
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2801,13 +2801,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: d2c21433200a7e44ebb94f957911670d, type: 2}
-  resDrop: {fileID: 0}
   masterValue: {fileID: 322971920}
   musicValue: {fileID: 987551914}
   soundsValue: {fileID: 1072541901}
   fullscreenUI: {fileID: 1179843046}
   qualityUI: {fileID: 1694741171}
-  resUI: {fileID: 0}
 --- !u!1 &1300026779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,10 +3309,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 836907217}
   m_HandleRect: {fileID: 1462730419}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 80
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 80
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4248,10 +4246,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1909777364}
   m_HandleRect: {fileID: 793889787}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 80
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 80
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

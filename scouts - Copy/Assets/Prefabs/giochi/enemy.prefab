@@ -160,9 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 320
+  speed: 280
   nextWayPointDistance: 1
-  playerFound: 0
 --- !u!50 &1206545317203624265
 Rigidbody2D:
   serializedVersion: 4
