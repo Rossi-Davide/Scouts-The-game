@@ -76,7 +76,7 @@ public class impostazioni : MonoBehaviour
     {
         generalVolume = masterValue.transform.parent.GetComponentInChildren<Slider>().value;
         mixer.SetFloat("master", generalVolume);
-        masterValue.text = Mathf.Round(generalVolume / 80 * 100) + "%";
+        masterValue.text = Mathf.Round(generalVolume/4*5+100) + "%";
     }
 
 
@@ -84,14 +84,14 @@ public class impostazioni : MonoBehaviour
     {
         musicVolume = musicValue.transform.parent.GetComponentInChildren<Slider>().value;
         mixer.SetFloat("music", musicVolume);
-        musicValue.text = Mathf.Round(musicVolume / 80 * 100) + "%";
+        musicValue.text = Mathf.Round(musicVolume / 4 * 5 + 100) + "%";
     }
 
     public void SetVolumeSounds()
     {
         soundsVolume = soundsValue.transform.parent.GetComponentInChildren<Slider>().value;
         mixer.SetFloat("sounds", soundsVolume);
-        soundsValue.text = Mathf.Round(soundsVolume / 80 * 100) + "%";
+        soundsValue.text = Mathf.Round(soundsVolume / 4 * 5 + 100) + "%";
     }
 
 
@@ -120,11 +120,11 @@ public class impostazioni : MonoBehaviour
 
     void RefreshUI()
 	{
-        masterValue.text = Mathf.Round(generalVolume / 80 * 100) + "%";
+        masterValue.text = Mathf.Round(generalVolume / 4 * 5 + 100) + "%";
         masterValue.transform.parent.GetComponentInChildren<Slider>().value = generalVolume;
-        musicValue.text = Mathf.Round(musicVolume / 80 * 100) + "%";
+        musicValue.text = Mathf.Round(musicVolume / 4 * 5 + 100) + "%";
         musicValue.transform.parent.GetComponentInChildren<Slider>().value = musicVolume;
-        soundsValue.text = Mathf.Round(soundsVolume / 80 * 100) + "%";
+        soundsValue.text = Mathf.Round(soundsVolume / 4 * 5 + 100) + "%";
         soundsValue.transform.parent.GetComponentInChildren<Slider>().value = soundsVolume;
         fullscreenUI.isOn = fullscreen;
         qualityUI.value = qualityIndex;

@@ -17,6 +17,8 @@ public class Plant : InGameObject
 		{
 			Player.instance.GetComponent<Animator>().Play("rightHandPunch");
 		}
+		Player.instance.GetComponent<Animator>().SetBool("alberi", true);
+
 		GetComponent<ParticleSystem>().Play();
 	}
 
@@ -24,8 +26,13 @@ public class Plant : InGameObject
 	{
 		GetComponent<ParticleSystem>().Stop();
 		Player.instance.enabled = true;
-		Player.instance.GetComponent<Animator>().Play("Idle");
-		Debug.Log("hhhhhheeeeeeei!!!");
+
+
+		Player.instance.GetComponent<Animator>().SetBool("alberi",false);
+
+
+
+
 		Deselect();
 		Destroy(gameObject);
 		Destroy(clickListener.gameObject);
