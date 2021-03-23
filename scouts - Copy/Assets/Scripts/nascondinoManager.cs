@@ -114,8 +114,8 @@ public class nascondinoManager : MonoBehaviour
 
     void InizioGioco()
     {
-        enemies = new GameObject[5];
-        for(int i = 0; i < 5; i++)
+        enemies = new GameObject[4];
+        for(int i = 0; i < 4; i++)
         {
             int r = Random.Range(0, 360);
            enemies[i] =(GameObject)Instantiate(enemy,spawnPoint.position,Quaternion.AngleAxis(r,Vector3.forward));

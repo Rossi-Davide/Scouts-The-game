@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -573,8 +573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000067711, y: -0}
-  m_SizeDelta: {x: 351.85992, y: 351.85977}
+  m_AnchoredPosition: {x: -0.000067711, y: 0}
+  m_SizeDelta: {x: 523.808, y: 523.80774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309108277
 MonoBehaviour:
@@ -1697,7 +1697,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 169.5518, y: 169.5518}
+  m_SizeDelta: {x: 260.05078, y: 260.05078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911122829
 MonoBehaviour:
@@ -3748,8 +3748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 226, y: 223}
-  m_SizeDelta: {x: 379.29443, y: 379.29443}
+  m_AnchoredPosition: {x: 313, y: 312}
+  m_SizeDelta: {x: 609.16187, y: 609.16187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2083418655
 MonoBehaviour:
@@ -4337,7 +4337,7 @@ PrefabInstance:
     - target: {fileID: 7474783268864526675, guid: 26b086e400139cb4c87aa3152a465e10,
         type: 3}
       propertyPath: playSpeed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7474783268864526676, guid: 26b086e400139cb4c87aa3152a465e10,
         type: 3}
