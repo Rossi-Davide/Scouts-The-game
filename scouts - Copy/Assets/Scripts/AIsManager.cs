@@ -151,7 +151,7 @@ public class AIsManager : MonoBehaviour
 			{
 				foreach (Transform b in a)
 				{
-					StartCoroutine(b.GetComponent<BaseAI>().ForceTarget(a.position, true, true));
+					StartCoroutine(b.GetComponent<BaseAI>().ForceTarget(a.position, true, true, false));
 				}
 			}
         }

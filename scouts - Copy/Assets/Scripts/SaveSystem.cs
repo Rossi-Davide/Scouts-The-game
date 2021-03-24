@@ -28,7 +28,7 @@ public class SaveSystem : MonoBehaviour
 		{
 			System.IO.Directory.CreateDirectory(p + $"{persistentDataDirectoryName}");
 		}
-		InvokeRepeating(nameof(GetSaveAll), 5, 20);
+		InvokeRepeating(nameof(GetSaveAll), 20, 20);
 	}
 	private void OnApplicationQuit()
 	{

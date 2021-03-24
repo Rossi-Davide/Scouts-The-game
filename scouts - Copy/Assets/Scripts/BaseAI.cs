@@ -58,11 +58,11 @@ public abstract class BaseAI : InGameObject
         }
 
 
-		CreateNewPath(null);
+		CreateNewPath(null, false);
 
 		InvokeRepeating(nameof(CheckPriorityPathConditions), 1f, 1f);
 		InvokeRepeating(nameof(UpdateSlowed), 0.05f, 0.05f);
-		InvokeRepeating(nameof(CheckStop),1f,3f);
+		InvokeRepeating(nameof(CheckStop), 5f, 5f);
 	}
 
 
@@ -70,9 +70,8 @@ public abstract class BaseAI : InGameObject
     {
 		if((pos.x-0.2f)<rb.position.x&&rb.position.x<(pos.x+0.2f)&& (pos.y - 0.2f) < rb.position.y && rb.position.y < (pos.y + 0.2f))
         {
-			
 			//Debug.LogError("CheckStop");
-			CreateNewPath(null);
+			CreateNewPath(null, false);
 		}
 		pos = rb.position;
     }
@@ -81,17 +80,17 @@ public abstract class BaseAI : InGameObject
 	public override void Select()
 	{
 		base.Select();
-		StartCoroutine(ForceTarget(Player.instance.transform.position, true, false));
+		StartCoroutine(ForceTarget(Player.instance.transform.position, true, false, true));
 	}
 	public override void Deselect()
 	{
 		base.Deselect();
-		UnlockNow();
+		UnlockAndCreateExPlayerPath();
 	}
 
 	public virtual void SetMissingPriorityTarget(string targetName, Vector3 pos) { }
 
-	protected  virtual void CreateNewPath(Vector3? priorityTarget)
+	protected  virtual void CreateNewPath(Vector3? priorityTarget, bool isPlayer)
 	{
 		//Debug.LogError(priorityTarget+"priority");
 		//Debug.Log(transform.parent.name);
@@ -146,17 +145,16 @@ public abstract class BaseAI : InGameObject
 		currentTarget = priorityTarget != null ? priorityTarget.Value : a; //aggiorno la posizione dell'IA con un random
 		//Debug.LogError(currentTarget+ "current target");
 		seeker.StartPath(rb.position, currentTarget, VerifyPath);
-        if (toggleCheckBlocco)
-        {
-			if (gameObject.activeSelf) StartCoroutine(CheckBlocco());
-			toggleCheckBlocco = !toggleCheckBlocco;
-        }
-		cont++;
-		stuckInCollinetta++;
-        if (stuckInCollinetta >= 5)
-        {
-			ResetPos();
-        }
+		if (!isPlayer)
+		{
+			stuckInCollinetta++; cont++;
+			if (stuckInCollinetta >= 5) ResetPos();
+			if (toggleCheckBlocco)
+			{
+				if (gameObject.activeSelf) StartCoroutine(CheckBlocco());
+				toggleCheckBlocco = !toggleCheckBlocco;
+			}
+		}
 	}
 
 
@@ -168,6 +166,7 @@ public abstract class BaseAI : InGameObject
 
 		Vector3 a = new Vector3(n1, n2, 0);
 		rb.position = a;
+		Debug.LogWarning($"I, {objectName} {objectSubName}, have been reset");
 	}
 
 
@@ -176,12 +175,7 @@ public abstract class BaseAI : InGameObject
 		yield return new WaitForSeconds(5f);
         if (cont >= 5)
         {
-			int n1, n2;
-			n1 = Random.Range(-45, 45);
-			n2 = Random.Range(-45, 30);
-
-			Vector3 a = new Vector3(n1, n2, 0);
-			rb.position = a;
+			ResetPos();
 		}
 		cont = 0;
 		toggleCheckBlocco = !toggleCheckBlocco;
@@ -199,7 +193,7 @@ public abstract class BaseAI : InGameObject
 		else
 		{
 			//Debug.LogError("verify path");
-			CreateNewPath(null);
+			CreateNewPath(null, false);
 		}
 	}
 	protected void ChangeAnimation()
@@ -262,6 +256,12 @@ public abstract class BaseAI : InGameObject
 		ToggleClickListener(true);
 	}
 
+	public void UnlockAndCreateExPlayerPath()
+	{
+		UnlockNow();
+		CreateNewPath(null, true);
+	}
+
 	void CheckPriorityTargetsThatWait()
 	{
 		var max = -1;
@@ -280,13 +280,12 @@ public abstract class BaseAI : InGameObject
 		rb = GetComponent<Rigidbody2D>();
 		seeker = GetComponent<Seeker>();
 		//Debug.LogError("CheckPriorityTargetsThatWait");
-		CreateNewPath(target);
+		if (target != null) CreateNewPath(target, false);
 	}
 
 	protected void UpdateSlowed()
 	{
-		if (currentPath == null)
-			return;
+		if (currentPath == null) return;
 		var nextWayPoint = currentPath.vectorPath[currentWayPointIndex];
 		if (Vector2.Distance(nextWayPoint, rb.position) < minWayPointDistance)
 		{
@@ -324,30 +323,30 @@ public abstract class BaseAI : InGameObject
 		}
 		if (target != currentTarget)
         {
-			CreateNewPath(target);
+			CreateNewPath(target, false);
 			Debug.LogError("CheckPriorityPathConditions");
 		}
 	}
 
-	public IEnumerator ForceTarget(Vector3 target, int stay, bool setInactive)
+	public IEnumerator ForceTarget(Vector3 target, int stay, bool setInactive, bool isPlayerTarget)
 	{
 		yield return new WaitForEndOfFrame();
-		CreateNewPath(target);
+		CreateNewPath(target, isPlayerTarget);
 		keepTarget = stay;
 		disable = setInactive;
 	}
-	public IEnumerator ForceTarget(Vector3 target, bool stayUntil, bool setInactive)
+	public IEnumerator ForceTarget(Vector3 target, bool stayUntil, bool setInactive, bool isPlayerTarget)
 	{
 		yield return new WaitForEndOfFrame();
 		//Debug.LogError(target);
-		CreateNewPath(target);
+		CreateNewPath(target, isPlayerTarget);
 		this.stayUntil = stayUntil;
 		disable = setInactive;
 	}
-	public IEnumerator ForceTarget(Vector3 target, bool setInactive, System.Action onEnd)
+	public IEnumerator ForceTarget(Vector3 target, bool setInactive, System.Action onEnd, bool isPlayerTarget)
 	{
 		yield return new WaitForEndOfFrame();
-		CreateNewPath(target);
+		CreateNewPath(target, isPlayerTarget);
 		disable = setInactive;
 		currentEndMethod = onEnd;
 	}
@@ -358,7 +357,7 @@ public abstract class BaseAI : InGameObject
 		{
 			if (p.name == priorityTargetName)
 			{
-				CreateNewPath(p.target);
+				CreateNewPath(p.target, false);
 				keepTarget = stay;
 				disable = setInactive;
 			}
@@ -371,7 +370,7 @@ public abstract class BaseAI : InGameObject
 		{
 			if (p.name == priorityTargetName)
 			{
-				CreateNewPath(p.target);
+				CreateNewPath(p.target, false);
 				this.stayUntil = stayUntil;
 				disable = setInactive;
 			}

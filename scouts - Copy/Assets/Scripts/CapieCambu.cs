@@ -34,7 +34,7 @@ public class CapieCambu : BaseAI
 		{
 			case 1:
 				DialogueManager.instance.currentObject = this;
-				StartCoroutine(ForceTarget(Player.instance.transform.position, true, false));
+				StartCoroutine(ForceTarget(Player.instance.transform.position, true, false, false));
 				DialogueManager.instance.TogglePanel(dialoguesArray[nextDialogueIndex]);
 				break;
 		}

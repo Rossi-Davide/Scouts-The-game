@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
 		{
 			TogglePanel(null);
 			currentObject.nextDialogueIndex++;
-			currentObject.UnlockNow();
+			currentObject.UnlockAndCreateExPlayerPath();
 			GameManager.instance.ChangeCounter(Counter.Punti, CampManager.instance.MultiplyByDurationFactor(deltaPoints, DurationFactor.prizesFactor));
 		}
 	}
