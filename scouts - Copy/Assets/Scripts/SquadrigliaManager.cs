@@ -93,7 +93,7 @@ public class SquadrigliaManager : MonoBehaviour
 	private void Start()
 	{
 		GameManager.instance.OnCounterValueChange += RefreshPlayerCounters;
-		InvokeRepeating(nameof(ChangeOtherSqCounters), 30, 30);
+		InvokeRepeating(nameof(ChangeOtherSqCounters), 20, 20);
 		InvokeRepeating(nameof(OtherSQBuildBuildings), 30, 30);
 		var campManager = CampManager.instance;
 		InitializeSquadriglias(campManager.camp.settings.gender, campManager.possibleFemaleSqs, campManager.possibleMaleSqs, campManager.camp.settings.femaleSqs, campManager.camp.settings.maleSqs, campManager.camp.settings.playerSqIndex);
@@ -265,7 +265,7 @@ public class SquadrigliaManager : MonoBehaviour
 			var sq = squadriglieInGioco[i];
 			if (sq.baseSq != Player.instance.squadriglia)
 			{
-				if (Random.Range(0, 100) >= 80)
+				if (Random.Range(0, 100) >= 50)
 				{
 					int b = Random.Range(0, sq.buildings.Length);
 					sq.buildings[b].gameObject.SetActive(true);

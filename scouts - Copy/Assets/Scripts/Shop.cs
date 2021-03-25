@@ -165,23 +165,20 @@ public class Shop : MonoBehaviour
 		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].priceCounter, -((ObjectBase)selected).shopInfos[index].Price);
 		GameManager.instance.ChangeCounter(((ObjectBase)selected).shopInfos[index].rewardCounter, ((ObjectBase)selected).shopInfos[index].Reward);
 
-		if (((ObjectBase)selected).usingAmount)
-			((ObjectBase)selected).currentAmount++;
+		if (((ObjectBase)selected).usingAmount) ((ObjectBase)selected).currentAmount++;
 		if (((ObjectBase)selected).usingLevel)
 		{
-			if (((ObjectBase)selected).exists)
-				((ObjectBase)selected).level++;
-			else
-				((ObjectBase)selected).exists = true;
+			if (((ObjectBase)selected).exists) ((ObjectBase)selected).level++;
+			else ((ObjectBase)selected).exists = true;
 		}
 
-		GameManager.DestroyItemsNeededToBuyItem(((ObjectBase)selected));
+		GameManager.DestroyItemsNeededToBuyItem((ObjectBase)selected);
 
 		if (((ObjectBase)selected).type == ObjectType.Item)
 		{
-			InventoryManager.instance.Add(((ObjectBase)selected));
+			InventoryManager.instance.Add((ObjectBase)selected);
 		}
-		else if (((ObjectBase)selected).type == ObjectType.Costruzione)
+		else if (((ObjectBase)selected).type == ObjectType.Costruzione && ((ObjectBase)selected).level == 0)
 		{
 			ToggleShop();
 			modificaAngolo.instance.firstIteraction = true;
