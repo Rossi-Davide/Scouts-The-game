@@ -117,14 +117,12 @@ public abstract class PlayerBuildingBase : InGameObject
 
 	protected void MettiAlSicuro()
 	{
-		GameManager.instance.ChangeCounter(Counter.Energia, -2);
 		isSafe = true;
 		RefreshButtonsState();
 	}
 
 	protected void Ripara()
 	{
-		GameManager.instance.ChangeCounter(Counter.Energia, -5);
 		isDestroyed = false;
 		health = building.healthInfos[building.level].maxHealth;
 		healthBar.GetComponent<Slider>().value = health;

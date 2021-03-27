@@ -14,7 +14,6 @@ public class Amaca : PlayerBuildingBase
 	{
 		Player.instance.GetComponent<Animator>().SetBool("amaca",false);
 		GetComponent<SpriteRenderer>().enabled = true;
-		GameManager.instance.ChangeCounter(Counter.Energia, 20);
 		RefreshButtonsState();
 	}
 

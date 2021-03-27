@@ -31,7 +31,7 @@ MonoBehaviour:
   hasInfoPanel: 1
   showInActionList: 1
   timeNeeded: 7
-  energyGiven: 0
+  energyGiven: -2
   materialsGiven: 0
   pointsGiven: 0
   timeBeforeRedo: 0
