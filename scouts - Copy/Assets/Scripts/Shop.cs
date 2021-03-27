@@ -219,7 +219,7 @@ public class Shop : MonoBehaviour
 		//	else index = o.level - 1;
 		//}
 		//else index = o.level;
-		index = o.exists ? o.level + 1 : o.level;
+		index = canIncreaseLevel ? o.level + 1 : o.level;
 
 		pt = o.shopInfos[index].priceCounter;
 		pc = o.shopInfos[index].Price;
