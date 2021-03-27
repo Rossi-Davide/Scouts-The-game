@@ -18,7 +18,7 @@ MonoBehaviour:
   icon: {fileID: 6795497552666955061, guid: 2d4362f69d4ab53488eaa2f9bce25c33, type: 3}
   shopScreen: 6
   maxAmount: 0
-  maxLevel: 1
+  maxLevel: 0
   usingLevel: 1
   usingAmount: 0
   itemsNeededs:

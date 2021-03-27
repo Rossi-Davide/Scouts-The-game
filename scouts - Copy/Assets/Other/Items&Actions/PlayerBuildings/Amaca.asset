@@ -18,7 +18,7 @@ MonoBehaviour:
   icon: {fileID: -6914064532716248847, guid: 47dd6f38e78b1be4fafe75abcaf0d393, type: 3}
   shopScreen: 6
   maxAmount: 0
-  maxLevel: 1
+  maxLevel: 2
   usingLevel: 1
   usingAmount: 0
   itemsNeededs:
@@ -42,6 +42,13 @@ MonoBehaviour:
     - item: {fileID: 11400000, guid: 87f32248d9ab7c747b55dfe5e8efee80, type: 2}
       amount: 3
       getsDestroyed: 0
+  - items:
+    - item: {fileID: 11400000, guid: 9b73ab3977f0ce64ea390c28117ee52c, type: 2}
+      amount: 1
+      getsDestroyed: 0
+    - item: {fileID: 11400000, guid: a864eace7d48def41a321ae801398d02, type: 2}
+      amount: 5
+      getsDestroyed: 1
   shopInfos:
   - price: 130
     priceCounter: 1
@@ -49,7 +56,11 @@ MonoBehaviour:
     rewardCounter: 3
   - price: 200
     priceCounter: 1
-    reward: 5
+    reward: 7
+    rewardCounter: 3
+  - price: 300
+    priceCounter: 1
+    reward: 10
     rewardCounter: 3
   periodicUses: []
   modifiedActions: []

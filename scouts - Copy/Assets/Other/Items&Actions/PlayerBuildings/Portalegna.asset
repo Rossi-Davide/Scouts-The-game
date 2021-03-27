@@ -44,6 +44,10 @@ MonoBehaviour:
     priceCounter: 1
     reward: 5
     rewardCounter: 3
+  - price: 300
+    priceCounter: 1
+    reward: 7
+    rewardCounter: 3
   periodicUses: []
   modifiedActions: []
   changedMaxAmounts: []
