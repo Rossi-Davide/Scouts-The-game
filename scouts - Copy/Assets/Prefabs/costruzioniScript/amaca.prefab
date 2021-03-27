@@ -309,7 +309,6 @@ MonoBehaviour:
     type: 3}
   isNameAlwaysActive: 0
   nameTextOffset: {x: 0, y: 1.5, z: 0}
-  loadingBarOffset: {x: 0, y: 1.1, z: 0}
   clickListenerOffset: {x: 0, y: 0, z: 0}
   states:
   - {fileID: 11400000, guid: a259d874fadaf754b995bed56d57f78f, type: 2}

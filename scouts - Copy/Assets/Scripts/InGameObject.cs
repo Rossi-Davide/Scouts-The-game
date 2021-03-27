@@ -477,7 +477,7 @@ public abstract class InGameObject : MonoBehaviour
 		//{
 		//	s[i] = states[i].SendStatus();
 		//}
-		Debug.LogError ("called when started a game");
+		//Debug.LogError ("called when started a game");
 
 		return new Status
 		{
