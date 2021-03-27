@@ -222,13 +222,7 @@ public class Shop : MonoBehaviour
 
 
 		index = o.exists ? (canIncreaseLevel ? o.level + 1 : o.level) : o.level;
-
-		Debug.LogError(index);
-
-
-        
-			Debug.LogError(o.shopInfos.Length);
-        
+                
 
 
 		pt = o.shopInfos[index].priceCounter;
