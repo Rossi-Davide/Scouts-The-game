@@ -279,15 +279,14 @@ public class GameManager : MonoBehaviour
 
 	public static bool HasItemsToBuy(ObjectBase b)
 	{
-		bool canBuild = true;
 		if ((b.exists && b.itemsNeededs.Length > b.level + 1) || (!b.exists && b.itemsNeededs.Length > b.level))
 		{
 			foreach (var i in b.itemsNeededs[b.exists ? b.level + 1 : b.level].items)
 			{
-				canBuild = i.item.currentAmount >= i.amount;
+				if (i.item.currentAmount < i.amount) return false;
 			}
 		}
-		return canBuild;
+		return true;
 	}
 	public static void DestroyItemsNeededToBuyItem(ObjectBase b)
 	{

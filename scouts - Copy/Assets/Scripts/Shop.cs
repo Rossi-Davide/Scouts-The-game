@@ -215,13 +215,10 @@ public class Shop : MonoBehaviour
 
 		if (o.exists)
 		{
-			if (canIncreaseLevel)
-				index = o.level;
-			else
-				index = o.level - 1;
+			if (canIncreaseLevel) index = o.level;
+			else index = o.level - 1;
 		}
-		else
-			index = o.level;
+		else index = o.level;
 
 		pt = o.shopInfos[index].priceCounter;
 		pc = o.shopInfos[index].Price;
