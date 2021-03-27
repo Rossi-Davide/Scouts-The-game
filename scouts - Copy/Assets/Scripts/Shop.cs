@@ -207,7 +207,7 @@ public class Shop : MonoBehaviour
 		description.text = o.description;
 		icon.GetComponent<Image>().sprite = o.icon;
 		infoPanel.SetActive(true);
-		canIncreaseLevel = !o.usingLevel || o.level < o.maxLevel;
+		canIncreaseLevel = !o.usingLevel || (!o.exists || o.level < o.maxLevel);
 		canBuy = !o.usingAmount || o.currentAmount < o.maxAmount;
 
 		Counter pt;
