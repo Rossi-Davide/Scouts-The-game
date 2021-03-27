@@ -64,14 +64,9 @@ public class Plant : InGameObject
 		costruzioni = LayerMask.GetMask("costruzioni");
 		base.Start();
 		CheckColl();
-		//UpdatePath();
 		
 	}
-	void UpdatePath()
-	{
-		var graphToScan = AstarPath.active.data.gridGraph;
-		AstarPath.active.Scan(graphToScan);
-	}
+	
 
 	void CheckColl()
     {
