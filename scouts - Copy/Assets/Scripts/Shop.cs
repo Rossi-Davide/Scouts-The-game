@@ -213,22 +213,21 @@ public class Shop : MonoBehaviour
 		Counter pt;
 		int pc, index;
 
-		if (o.exists)
-		{
-			if (canIncreaseLevel) index = o.level;
-			else index = o.level - 1;
-		}
-		else index = o.level;
+		//if (o.exists)
+		//{
+		//	if (canIncreaseLevel) index = o.level;
+		//	else index = o.level - 1;
+		//}
+		//else index = o.level;
+		index = o.exists ? o.level + 1 : o.level;
 
 		pt = o.shopInfos[index].priceCounter;
 		pc = o.shopInfos[index].Price;
 		var itNeeded = (o.exists && o.itemsNeededs.Length > o.level + 1) || (!o.exists && o.itemsNeededs.Length > o.level) ? o.itemsNeededs[index] : null;
 
 		hasItems = GameManager.HasItemsToBuy(o);
-		if (((ObjectBase)selected).type == ObjectType.Item)
-			price.text = "Compra: " + pc.ToString();
-		else if (((ObjectBase)selected).type == ObjectType.Costruzione)
-			price.text = (o.exists ? "Migliora: " : "Costruisci: ") + pc.ToString();
+		if (((ObjectBase)selected).type == ObjectType.Item) price.text = "Compra: " + pc.ToString();
+		else if (((ObjectBase)selected).type == ObjectType.Costruzione) price.text = (o.exists ? "Migliora: " : "Costruisci: ") + pc.ToString();
 		energyLogo.SetActive(pt == Counter.Energia);
 		materialsLogo.SetActive(pt == Counter.Materiali);
 		pointsLogo.SetActive(pt == Counter.Punti);
