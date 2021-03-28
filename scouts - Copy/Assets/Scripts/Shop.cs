@@ -68,11 +68,24 @@ public class Shop : MonoBehaviour
 		OrganizeObjects(topografia, SpecificShopScreen.Topografia);
 		OrganizeObjects(espressione, SpecificShopScreen.Espressione);
 
-		foreach (var i in itemDatabase)
-			i.ResetEditableInfo();
-		foreach (var b in buildingDatabase)
-			b.ResetEditableInfo();
+		foreach (var i in itemDatabase)	i.ResetEditableInfo();
+		foreach (var b in buildingDatabase) b.ResetEditableInfo();
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.shopFileName, false));
+		StartCoroutine(SetActiveBuildings());
+	}
+
+	IEnumerator SetActiveBuildings()
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		foreach (var b in buildingDatabase)
+		{
+			if (b.exists)
+			{
+				ModificaBaseTrigger.instance.FindBuildingInSceneFromItem(b).gameObject.SetActive(true);
+			}
+		}
 	}
 
 	public Status SendStatus()

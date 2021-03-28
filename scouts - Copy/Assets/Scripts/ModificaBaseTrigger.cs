@@ -106,6 +106,19 @@ public class ModificaBaseTrigger : MonoBehaviour
 		buildingSlot.buildingParent.GetComponent<MoveBuildings>().isBeingBuilt = true;
 		ToggleModificaBase(true);
 	}
+	public PlayerBuildingBase FindBuildingInSceneFromItem(PlayerBuilding building)
+	{
+		foreach (var b in buildings)
+		{
+			var bg = b.GetComponent<PlayerBuildingBase>();
+			if (bg.building == building)
+			{
+				return bg;
+			}
+		}
+		return null;
+	}
+
 	IEnumerator GetSq()
 	{
 		var frame = new WaitForEndOfFrame();

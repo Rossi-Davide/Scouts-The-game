@@ -175,6 +175,10 @@ public class QuestManager : MonoBehaviour
 
 	void ChangeActionParameter(PlayerAction a, int delta, PlayerAction.ActionParams parameter)
 	{
+		foreach (var ac in actionDatabase)
+		{
+			ac.ResetEditableInfo();
+		}
 		switch (parameter)
 		{
 			case PlayerAction.ActionParams.timeNeeded:

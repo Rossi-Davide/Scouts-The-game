@@ -367,7 +367,7 @@ public class GameManager : MonoBehaviour
 	int? toSpawn = null;
 	void SpawnDecorations()
 	{
-		if (toSpawn == null) { toSpawn = Random.Range(15, 25); }
+		if (toSpawn == null) { toSpawn = Random.Range(25, 35); }
 		if (spawnedPlants.Length >= 60)
 			return;
 		for (int spawned = 0; spawned < toSpawn; spawned++)

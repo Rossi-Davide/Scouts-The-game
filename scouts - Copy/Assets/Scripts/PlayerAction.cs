@@ -42,6 +42,11 @@ public class PlayerAction : ScriptableObject
         EditableTimeNeeded = timeNeeded;
         //Debug.Log($"modified values: {EditableEnergyGiven}, {EditableMaterialsGiven}, {EditablePointsGiven}; real values: {editableEnergyGiven}, {editableMaterialsGiven}, {editablePointsGiven}");
     }
+    public void ResetEditableTimeNeeded() { EditableTimeNeeded = timeNeeded; }
+    public void ResetEditableEnergyGiven() { EditableEnergyGiven = energyGiven; }
+    public void ResetEditableMaterialsGiven() { EditableMaterialsGiven = materialsGiven; }
+    public void ResetEditablePointsGiven() { EditablePointsGiven = pointsGiven; }
+    public void ResetEditableTimeBeforeRedo() { EditablePointsGiven = pointsGiven; }
 
 
     public enum ActionParams
