@@ -114,8 +114,16 @@ public class CampManager : MonoBehaviour
 	{
 		SaveSystem.instance.GetSaveAll();
 		this.puntiRischiati = puntiRischiati;
-		SceneManager.LoadSceneAsync(type.ToString());
+		StartCoroutine(CaricaGioco(type));
 	}
+
+	private IEnumerator CaricaGioco(Challenge type)
+    {
+		yield return new WaitForSeconds(2f);
+		SceneManager.LoadSceneAsync(type.ToString());
+
+	}
+
 	public IEnumerator GameEnded(bool hasWon)
 	{
 		SceneManager.LoadSceneAsync("MainScene");

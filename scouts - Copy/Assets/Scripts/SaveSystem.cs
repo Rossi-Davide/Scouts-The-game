@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class SaveSystem : MonoBehaviour
 {
 	#region Singleton
@@ -70,20 +71,26 @@ public class SaveSystem : MonoBehaviour
 	public event Action OnReadyToSaveData;
 	public void GetSaveAll()
 	{
-		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName, false); }
-		if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName, false); }
-		if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName, false); }
-		if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName, false); }
-		if (ActionManager.instance != null) { SaveData(ActionManager.instance.SendStatus(), actionManagerFileName, false); }
-		if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName, false); }
-		if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName, false); }
-		if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName, false); }
-		if (Player.instance != null) { SaveData(Player.instance.SendStatus(), plFileName, false); }
-		if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName, false); }
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+			if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName, false); }
+			if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName, false); }
+			if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName, false); }
+			if (ActionManager.instance != null) { SaveData(ActionManager.instance.SendStatus(), actionManagerFileName, false); }
+			if (AIsManager.instance != null) { SaveData(AIsManager.instance.SendStatus(), aisManagerFileName, false); }
+			if (ChestManager.instance != null) { SaveData(ChestManager.instance.SendStatus(), chestManagerFileName, false); }
+			if (InventoryManager.instance != null) { SaveData(InventoryManager.instance.SendStatus(), inventoryManagerFileName, false); }
+			if (Player.instance != null) { SaveData(Player.instance.SendStatus(), plFileName, false); }
+			if (QuestManager.instance != null) { SaveData(QuestManager.instance.SendStatus(), questManagerFileName, false); }
+			if (ModificaBaseTrigger.instance != null) { SaveData(ModificaBaseTrigger.instance.SendStatus(), modificaBaseTriggerFileName, false); }
+			OnReadyToSaveData?.Invoke();
+			Debug.Log("saved data");
+		}
+
 		if (impostazioni.instance != null) { SaveData(impostazioni.instance.SendStatus(), impostazioniFileName, true); }
-		if (ModificaBaseTrigger.instance != null) { SaveData(ModificaBaseTrigger.instance.SendStatus(), modificaBaseTriggerFileName, false); }
-		OnReadyToSaveData?.Invoke();
-		Debug.Log("saved data");
+		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName, false); }
+
+
 	}
 
 	[HideInInspector] [System.NonSerialized]

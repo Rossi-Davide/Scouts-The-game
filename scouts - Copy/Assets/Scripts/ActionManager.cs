@@ -159,8 +159,9 @@ public class ActionManager : MonoBehaviour
 			}
 			a.timeLeft--;
 		}
-		foreach (var a in currentHiddenActions)
+		for(int i=0;i<currentHiddenActions.Count;i++)
 		{
+			var a = currentActions[i];
 			var actualTimeLeft = GameManager.IntToMinuteSeconds(a.timeLeft);
 			a.loadingBar.value.text = actualTimeLeft;
 			a.loadingBar.slider.value = a.totalTime - a.timeLeft;
