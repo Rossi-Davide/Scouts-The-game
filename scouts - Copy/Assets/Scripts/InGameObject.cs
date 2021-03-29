@@ -53,10 +53,12 @@ public abstract class InGameObject : MonoBehaviour
 	{
 		if (states != null && states.Length > 0)
 		{
-			var animation = states[activeStateIndex].animationSubstring;
-			if (states[activeStateIndex].variesWithLevel) animation = GetAnimationByLevel() + animation;
-			animator.Play(animationPrefix + animation);
-			Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
+			var animations = states[activeStateIndex].boolNames;
+			var l = GetLevel();
+			if (states[activeStateIndex].variesWithLevel && l != null) animator.SetInteger("livello", l.Value);
+			for (int i = 0; i < animations.Length; i++) animator.SetBool(animations[i], states[activeStateIndex].boolValues[i]);
+			if (objectName == "Refettorio") animator.SetBool("maschio", CampManager.instance.camp.settings.gender == Gender.Maschio);
+			//Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
 		}
 	}
 
@@ -96,9 +98,9 @@ public abstract class InGameObject : MonoBehaviour
 		activeStateIndex = activeIndex;
 	}
 
-	protected virtual string GetAnimationByLevel()
+	protected virtual int? GetLevel()
 	{
-		return "";
+		return null;
 	}
 	#endregion
 
@@ -412,6 +414,11 @@ public abstract class InGameObject : MonoBehaviour
 
 
 	#region Wait To Use Again
+	public void ResetWait(int b)
+	{
+		buttons[b].timeLeft = 0;
+	}
+
 	public void StartWaitToUseAgain(ActionButton b)
 	{
 		b.obj.transform.Find("TimeLeftCounter").gameObject.SetActive(true);

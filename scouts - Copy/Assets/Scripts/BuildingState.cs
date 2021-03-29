@@ -4,10 +4,11 @@
 public class BuildingState : ScriptableObject
 {
 	//the string to add to the object name
-	public string animationSubstring;
+	public string[] boolNames;
 	public bool variesWithLevel;
 	public int priority; //0 to 10 usually
 	public PlayerAction action;
+	public bool[] boolValues;
 	//[HideInInspector] [System.NonSerialized]
 	//public bool active;
 	//public int keepAfterPlay;

@@ -41,9 +41,9 @@ public abstract class PlayerBuildingBase : InGameObject
 	}
 
 
-	protected override string GetAnimationByLevel()
+	protected override int? GetLevel()
 	{
-		return "Livello" + building.level;
+		return building.level;
 	}
 
 	public override void Select()

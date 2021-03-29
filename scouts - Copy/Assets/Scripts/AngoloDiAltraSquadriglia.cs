@@ -24,7 +24,7 @@ public class AngoloDiAltraSquadriglia : InGameObject
 		{
 			case 1:
 				SfidaManager.instance.ToggleChallengePanel();
-				SfidaManager.instance.RefreshChallenge(squadriglia);
+				SfidaManager.instance.RefreshChallenge(squadriglia, this);
 				break;
 		}
 	}

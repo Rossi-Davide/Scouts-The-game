@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
   m_Name: Fuoco
   m_EditorClassIdentifier: 
-  animationSubstring: Fuoco
+  boolNames:
+  - rottura
+  - fuoco
   variesWithLevel: 1
   priority: 50
   action: {fileID: 11400000, guid: 5c6a513e913d27440ac9539e1ddfa92d, type: 2}
+  boolValues: 0001
   conditions: []

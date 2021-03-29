@@ -313,7 +313,6 @@ MonoBehaviour:
   states:
   - {fileID: 11400000, guid: a259d874fadaf754b995bed56d57f78f, type: 2}
   - {fileID: 11400000, guid: 6d5e629fb6f8ce8498dc5932489185d6, type: 2}
-  - {fileID: 11400000, guid: 8fcdc38f6b7b0b144bf9dfc3b6631b9e, type: 2}
   defaultStateIndex: 0
   building: {fileID: 11400000, guid: 6d9feeb00bb3d5e43a3fb3e206a8e137, type: 2}
 --- !u!114 &-878261277584618093

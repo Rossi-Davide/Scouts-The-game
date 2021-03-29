@@ -18,6 +18,7 @@ public class SfidaManager : MonoBehaviour
 	public Joystick joy;
 	bool isOpen;
 	public GameObject panel, overlay, topArrow, bottomArrow;
+	AngoloDiAltraSquadriglia angolo;
 	public GameObject[] selectChallengeButtons;
 	Challenge selectedChallenge;
 	int points = 0;
@@ -37,6 +38,15 @@ public class SfidaManager : MonoBehaviour
 		PanZoom.instance.canDo = !isOpen;
 		RefreshButtons();
 	}
+	public void ChiudiPannello()
+	{
+		joy.canUseJoystick = true;
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
+		overlay.SetActive(false);
+		panel.SetActive(false);
+		PanZoom.instance.canDo = true;
+		angolo.ResetWait(0);
+	}
 
 	public void ReEnableJoy()
 	{
@@ -44,9 +54,10 @@ public class SfidaManager : MonoBehaviour
 	}
 
 
-	public void RefreshChallenge(Squadriglia sq)
+	public void RefreshChallenge(Squadriglia sq, AngoloDiAltraSquadriglia a)
 	{
 		panel.transform.Find("Texts/Sfidanti").GetComponent<TextMeshProUGUI>().text = sq.name + " VS " + Player.instance.squadriglia.name + " (Tu)";
+		angolo = a;
 	}
 
 	void RefreshButtons()

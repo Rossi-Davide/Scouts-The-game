@@ -72,6 +72,7 @@ public class DialogueManager : MonoBehaviour
 		dialoguePanel.SetActive(isOpen);
 		blackOverlay.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
+		if (currentObject != null) currentObject.ResetWait(0);
 	}
 	void ShowSentence(Sentence s)
 	{

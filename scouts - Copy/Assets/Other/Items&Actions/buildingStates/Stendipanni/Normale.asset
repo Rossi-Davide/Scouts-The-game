@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
   m_Name: Normale
   m_EditorClassIdentifier: 
-  animationSubstring: Normale
+  boolNames:
+  - rottura
+  - stendi
   variesWithLevel: 0
   priority: 0
   action: {fileID: 0}
+  boolValues: 0000
   conditions: []
