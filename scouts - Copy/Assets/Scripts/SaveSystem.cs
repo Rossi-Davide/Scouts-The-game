@@ -73,7 +73,7 @@ public class SaveSystem : MonoBehaviour
 	{
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-			if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName, false); }
+			if (SquadrigliaManager.instance != null) { SaveData(SquadrigliaManager.instance.SendStatus(), squadrigliaManagerFileName, false);}
 			if (GameManager.instance != null) { SaveData(GameManager.instance.SendStatus(), gameManagerFileName, false); }
 			if (Shop.instance != null) { SaveData(Shop.instance.SendStatus(), shopFileName, false); }
 			if (ActionManager.instance != null) { SaveData(ActionManager.instance.SendStatus(), actionManagerFileName, false); }

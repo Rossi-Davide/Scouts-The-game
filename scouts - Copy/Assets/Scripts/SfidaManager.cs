@@ -36,6 +36,7 @@ public class SfidaManager : MonoBehaviour
 		overlay.SetActive(isOpen);
 		panel.SetActive(isOpen);
 		PanZoom.instance.canDo = !isOpen;
+		SaveSystem.instance.GetSaveAll();
 		RefreshButtons();
 	}
 	public void ChiudiPannello()
@@ -91,7 +92,7 @@ public class SfidaManager : MonoBehaviour
 	{
 		if (AIsManager.instance.AreThereAnyRunningEvents == null)
 		{
-			GameManager.instance.ChangeCounter(Counter.Punti, points);
+			GameManager.instance.ChangeCounter(Counter.Punti, -points);
 			CampManager.instance.StartChallenge(selectedChallenge, points);
 		}
 		else

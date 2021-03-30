@@ -482,7 +482,7 @@ public abstract class InGameObject : MonoBehaviour
 		{
 			position = transform.position,
 			active = gameObject.activeSelf,
-			actionButtonInfos = b,
+			actionButtonInfos = b,			
 			//buildingStatesInfo = s,
 			id = id,
 		};

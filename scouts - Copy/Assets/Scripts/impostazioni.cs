@@ -53,6 +53,12 @@ public class impostazioni : MonoBehaviour
 		qualityIndex = 0;
 		fullscreen = false;
         SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.impostazioniFileName, true));
+
+       /* SetVolumeMaster();
+        SetVolumeMusic();
+        SetVolumeSounds();*/
+
+
         RefreshUI();
     }
 

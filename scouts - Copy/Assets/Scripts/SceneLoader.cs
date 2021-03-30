@@ -11,8 +11,11 @@ public class SceneLoader : MonoBehaviour
             Destroy(instance.gameObject);    
         instance = this;
         DontDestroyOnLoad(this);
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.orientation = ScreenOrientation.Landscape;
     }
+
+    
+
     #endregion
 
     public void QuitApplication()
