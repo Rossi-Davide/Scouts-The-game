@@ -56,8 +56,9 @@ public abstract class InGameObject : MonoBehaviour
 			var animations = states[activeStateIndex].boolNames;
 			var l = GetLevel();
 			if (states[activeStateIndex].variesWithLevel && l != null) animator.SetInteger("livello", l.Value);
-			for (int i = 0; i < animations.Length; i++) animator.SetBool(animations[i], states[activeStateIndex].boolValues[i]);
+			if (animations != null) for (int i = 0; i < animations.Length; i++) animator.SetBool(animations[i], states[activeStateIndex].boolValues[i]);
 			if (objectName == "Refettorio") animator.SetBool("maschio", CampManager.instance.camp.settings.gender == Gender.Maschio);
+			Debug.Log($"Attempting to play animation '{animationPrefix + states[activeStateIndex].name}' for game object {objectName}");
 			//Debug.Log($"Attempting to play animation '{animationPrefix + animation}' for game object {objectName}");
 		}
 	}
@@ -76,26 +77,31 @@ public abstract class InGameObject : MonoBehaviour
 
 	protected void RefreshActiveState()
 	{
-		var maxPriority = -1;
-		int activeIndex = -1;
-		for (int i = 0; i < states.Length; i++)
+		if (manageAnimationsAutomatically)
 		{
-			var s = states[i];
-			//Debug.Log($"The state {s.animationSubstring} is {s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this))}, {(s.action == null && (s.conditions != null && s.conditions.Length > 0 && FindNotVerified(s.conditions) == null))}, {(s.action == null && (s.conditions == null || s.conditions.Length == 0))}.");
-			if (
-				(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
-				|| (s.action == null && (s.conditions != null && s.conditions.Length > 0 && FindNotVerified(s.conditions) == null))
-				|| (s.action == null && (s.conditions == null || s.conditions.Length == 0)))
+			var maxPriority = -1;
+			int activeIndex = -1;
+			for (int i = 0; i < states.Length; i++)
 			{
-				if (s.priority > maxPriority)
+				var s = states[i];
+				//Debug.Log($"The state {s.animationSubstring} is {s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this))}, {(s.action == null && (s.conditions != null && s.conditions.Length > 0 && FindNotVerified(s.conditions) == null))}, {(s.action == null && (s.conditions == null || s.conditions.Length == 0))}.");
+				if (
+					(s.action != null && (ActionManager.instance.currentActions.Exists(el => el.action == s.action && el.building == this) || ActionManager.instance.currentHiddenActions.Exists(el => el.action == s.action && el.building == this)))
+					|| (s.action == null && (s.conditions != null && s.conditions.Length > 0 && FindNotVerified(s.conditions) == null))
+					|| (s.action == null && (s.conditions == null || s.conditions.Length == 0)))
 				{
-					activeIndex = i;
-					maxPriority = s.priority;
+					if (s.priority > maxPriority)
+					{
+						activeIndex = i;
+						maxPriority = s.priority;
+					}
 				}
 			}
+			if (activeIndex == -1) activeIndex = defaultStateIndex;
+			activeStateIndex = activeIndex;
+			Debug.Log("called");
+			PlayAnimations();
 		}
-		if (activeIndex == -1) activeIndex = defaultStateIndex;
-		activeStateIndex = activeIndex;
 	}
 
 	protected virtual int? GetLevel()
@@ -125,11 +131,7 @@ public abstract class InGameObject : MonoBehaviour
 		clickListener.onClick.AddListener(OnClick);
 		InvokeRepeating(nameof(RefreshButtonsState), 1f, .2f);
 
-		if (manageAnimationsAutomatically)
-		{
-			InvokeRepeating(nameof(PlayAnimations), .3f, .3f);
-			InvokeRepeating(nameof(RefreshActiveState), .3f, .3f);
-		}
+		InvokeRepeating(nameof(RefreshActiveState), .3f, .1f);
 
 		for (int i = 0; i < buttons.Length; i++)
 		{
@@ -155,7 +157,7 @@ public abstract class InGameObject : MonoBehaviour
 		isNameAlwaysActive = GetComponent<CapieCambu>() != null || (GetComponent<Squadrigliere>() != null && GetComponent<Squadrigliere>().sq == Player.instance.squadriglia);
 		ToggleNameAndSubName(isNameAlwaysActive);
 
-		InvokeRepeating(nameof(CalculatePriceOrPrize), 3f, 3f);
+		InvokeRepeating(nameof(CalculatePriceOrPrize), 3f, 0.2f);
 	}
 
 	void RefreshPreviousActions(PlayerAction a)

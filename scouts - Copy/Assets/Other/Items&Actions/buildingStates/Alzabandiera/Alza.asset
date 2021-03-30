@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
   m_Name: Alza
   m_EditorClassIdentifier: 
-  animationSubstring: Alzata
+  boolNames:
+  - alza
+  - day
   variesWithLevel: 0
   priority: 50
   action: {fileID: 11400000, guid: 3462591e35e97f84fa5cbfe584e31197, type: 2}
-  keepAfterPlay: 0
+  boolValues: 0101
   conditions: []
-  playAtActionEnd: 1

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd923af4854f9664e8e75c729ccb49d0, type: 3}
   m_Name: Acqua2
   m_EditorClassIdentifier: 
-  animationSubstring: Acqua
+  boolNames:
+  - acqua
   variesWithLevel: 0
   priority: 1
   action: {fileID: 11400000, guid: 73f5938fb239be44589edb405704f44e, type: 2}
+  boolValues: 01
   conditions: []
