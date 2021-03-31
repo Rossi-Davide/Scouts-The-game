@@ -56,6 +56,15 @@ public class labirintoManager : MonoBehaviour
         secondsInizioGioco = 3;
         l = levGen.GetComponent<LevelGenerator>();
         panel.SetActive(true);
+       
+
+    }
+
+    // Update is called once per frame
+
+
+    IEnumerator Iniziale()
+    {
         GameObject audio = GameObject.Find("/AudioManager");
 
         if (audio != null)
@@ -68,14 +77,6 @@ public class labirintoManager : MonoBehaviour
         {
             Debug.Log("audioManager non trovato");
         }
-
-    }
-
-    // Update is called once per frame
-
-
-    IEnumerator Iniziale()
-    {
         panel.SetActive(false);
         //GameObject panel = transform.FindChild("Panel").gameObject;
         editorCountdown.transform.parent.gameObject.SetActive(false);
