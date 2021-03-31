@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 72
+  m_fontSize: 49.15
   m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2199,7 +2199,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5744616748094746322}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5744616748094746323}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2af609474c3869d42ad13306cd67fd27, type: 3}
@@ -2892,3 +2892,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c2fac03a608e94da2c4496ba95b63f, type: 3}
+--- !u!1 &5744616748094746323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5744616749825697647, guid: e3c2fac03a608e94da2c4496ba95b63f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5744616748094746322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5744616748094746324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744616748094746323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89cc6b2b2fd64b443b1f2ee5909a0e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: d2c21433200a7e44ebb94f957911670d, type: 2}

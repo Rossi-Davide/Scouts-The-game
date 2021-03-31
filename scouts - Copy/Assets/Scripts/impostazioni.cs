@@ -45,74 +45,47 @@ public class impostazioni : MonoBehaviour
         //resDrop.AddOptions(options);
         //resDrop.value = defResolution;
         //resDrop.RefreshShownValue();
-
-        generalVolume = 80;
-		musicVolume = 80;
-		soundsVolume = 80;
-		//resIndex = 0;
-		qualityIndex = 0;
-		fullscreen = false;
-        SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.impostazioniFileName, true));
-
-       /* SetVolumeMaster();
-        SetVolumeMusic();
-        SetVolumeSounds();*/
-
-
         RefreshUI();
     }
-
-    [HideInInspector] [System.NonSerialized]
-    public float generalVolume;
-    [HideInInspector] [System.NonSerialized]
-    public float musicVolume;
-    [HideInInspector] [System.NonSerialized]
-    public float soundsVolume;
-    //[HideInInspector] [System.NonSerialized]
-    //public int resIndex;
-    [HideInInspector] [System.NonSerialized]
-    public int qualityIndex;
-    [HideInInspector] [System.NonSerialized]
-    public bool fullscreen;
 
 
 	#region stuff
 
 	public void SetVolumeMaster()
     {
-        generalVolume = masterValue.transform.parent.GetComponentInChildren<Slider>().value;
-        mixer.SetFloat("master", generalVolume);
-        masterValue.text = Mathf.Round(generalVolume/4*5+100) + "%";
+        ImpostazioniMaster.instance.generalVolume = masterValue.transform.parent.GetComponentInChildren<Slider>().value;
+        mixer.SetFloat("master", ImpostazioniMaster.instance.generalVolume);
+        masterValue.text = Mathf.Round(ImpostazioniMaster.instance.generalVolume/4*5+100) + "%";
     }
 
 
     public void SetVolumeMusic()
     {
-        musicVolume = musicValue.transform.parent.GetComponentInChildren<Slider>().value;
-        mixer.SetFloat("music", musicVolume);
-        musicValue.text = Mathf.Round(musicVolume / 4 * 5 + 100) + "%";
+        ImpostazioniMaster.instance.musicVolume = musicValue.transform.parent.GetComponentInChildren<Slider>().value;
+        mixer.SetFloat("music", ImpostazioniMaster.instance.musicVolume);
+        musicValue.text = Mathf.Round(ImpostazioniMaster.instance.musicVolume / 4 * 5 + 100) + "%";
     }
 
     public void SetVolumeSounds()
     {
-        soundsVolume = soundsValue.transform.parent.GetComponentInChildren<Slider>().value;
-        mixer.SetFloat("sounds", soundsVolume);
-        soundsValue.text = Mathf.Round(soundsVolume / 4 * 5 + 100) + "%";
+        ImpostazioniMaster.instance.soundsVolume = soundsValue.transform.parent.GetComponentInChildren<Slider>().value;
+        mixer.SetFloat("sounds", ImpostazioniMaster.instance.soundsVolume);
+        soundsValue.text = Mathf.Round(ImpostazioniMaster.instance.soundsVolume / 4 * 5 + 100) + "%";
     }
 
 
     public void SetQuality()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-        qualityIndex = qualityUI.value;
-        QualitySettings.SetQualityLevel(qualityIndex);
+        ImpostazioniMaster.instance.qualityIndex = qualityUI.value;
+        QualitySettings.SetQualityLevel(ImpostazioniMaster.instance.qualityIndex);
     }
 
-    public void SetFullScreen()
+    public void Setfullscreen()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
-        fullscreen = fullscreenUI.isOn;
-        Screen.fullScreen = fullscreen;
+        ImpostazioniMaster.instance.fullscreen = fullscreenUI.isOn;
+        Screen.fullScreen = ImpostazioniMaster.instance.fullscreen;
     }
 
     //public void SetRes()
@@ -120,20 +93,20 @@ public class impostazioni : MonoBehaviour
     //    GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("click");
     //    resIndex = resUI.value;
     //    Resolution resolution = resolutions[resIndex];
-    //    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    //    Screen.SetResolution(resolution.width, resolution.height, Screen.ImpostazioniMaster.instance.fullscreen);
     //}
 
 
     void RefreshUI()
 	{
-        masterValue.text = Mathf.Round(generalVolume / 4 * 5 + 100) + "%";
-        masterValue.transform.parent.GetComponentInChildren<Slider>().value = generalVolume;
-        musicValue.text = Mathf.Round(musicVolume / 4 * 5 + 100) + "%";
-        musicValue.transform.parent.GetComponentInChildren<Slider>().value = musicVolume;
-        soundsValue.text = Mathf.Round(soundsVolume / 4 * 5 + 100) + "%";
-        soundsValue.transform.parent.GetComponentInChildren<Slider>().value = soundsVolume;
-        fullscreenUI.isOn = fullscreen;
-        qualityUI.value = qualityIndex;
+        masterValue.text = Mathf.Round(ImpostazioniMaster.instance.generalVolume / 4 * 5 + 100) + "%";
+        masterValue.transform.parent.GetComponentInChildren<Slider>().value = ImpostazioniMaster.instance.generalVolume;
+        musicValue.text = Mathf.Round(ImpostazioniMaster.instance.musicVolume / 4 * 5 + 100) + "%";
+        musicValue.transform.parent.GetComponentInChildren<Slider>().value = ImpostazioniMaster.instance.musicVolume;
+        soundsValue.text = Mathf.Round(ImpostazioniMaster.instance.soundsVolume / 4 * 5 + 100) + "%";
+        soundsValue.transform.parent.GetComponentInChildren<Slider>().value = ImpostazioniMaster.instance.soundsVolume;
+        fullscreenUI.isOn = ImpostazioniMaster.instance.fullscreen;
+        qualityUI.value = ImpostazioniMaster.instance.qualityIndex;
         //resUI.value = resIndex;
     }
     #endregion
@@ -141,43 +114,7 @@ public class impostazioni : MonoBehaviour
     public void TornaAlMenu()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("clickDepitched");
-        SaveSystem.instance.SaveData(SendStatus(), SaveSystem.instance.impostazioniFileName, true);
+        SaveSystem.instance.SaveData(ImpostazioniMaster.instance.SendStatus(), SaveSystem.instance.impostazioniMasterFileName, true);
         SceneLoader.instance.LoadMainMenuScene();
     }
-
-    public Status SendStatus()
-    {
-        return new Status
-        {
-            generalVolume = generalVolume,
-            musicVolume = musicVolume,
-            soundsVolume = soundsVolume,
-            qualityIndex = qualityIndex,
-            //resIndex = resIndex,
-            fullscreen = fullscreen,
-        };
-    }
-    void SetStatus(Status status)
-    {
-        if (status != null)
-        {
-            generalVolume = status.generalVolume;
-            musicVolume = status.musicVolume;
-            soundsVolume = status.soundsVolume;
-            qualityIndex = status.qualityIndex;
-            //resIndex = status.resIndex;
-            fullscreen = status.fullscreen;
-        }
-    }
-    public class Status
-    {
-        public float generalVolume;
-        public float musicVolume;
-        public float soundsVolume;
-        public int qualityIndex;
-        //public int resIndex;
-        public bool fullscreen;
-    }
-
-
 }

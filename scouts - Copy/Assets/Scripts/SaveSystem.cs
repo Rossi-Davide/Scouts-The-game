@@ -87,7 +87,7 @@ public class SaveSystem : MonoBehaviour
 			Debug.Log("saved data");
 		}
 
-		if (impostazioni.instance != null) { SaveData(impostazioni.instance.SendStatus(), impostazioniFileName, true); }
+		if (ImpostazioniMaster.instance != null) { SaveData(ImpostazioniMaster.instance.SendStatus(), impostazioniMasterFileName, true); }
 		if (CampManager.instance != null && CampManager.instance.camp != null) { SaveData(CampManager.instance.SendStatus(), campManagerFileName, false); }
 
 
@@ -127,7 +127,7 @@ public class SaveSystem : MonoBehaviour
 	public string gameManagerFileName = "GameManager";
 	[HideInInspector]
 	[System.NonSerialized]
-	public string impostazioniFileName = "Impostazioni";
+	public string impostazioniMasterFileName = "ImpostazioniMaster";
 	[HideInInspector]
 	[System.NonSerialized]
 	public string modificaBaseTriggerFileName = "ModificaBaseTrigger";
