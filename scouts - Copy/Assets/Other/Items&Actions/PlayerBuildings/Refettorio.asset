@@ -66,3 +66,5 @@ MonoBehaviour:
   healthInfos:
   - maxHealth: 100
     healthLossInterval: 5
+  - maxHealth: 100
+    healthLossInterval: 5
