@@ -128,7 +128,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -252,7 +252,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/daviderossi/Desktop/keystore.keystore
+  AndroidKeystoreName: /Volumes/Crucial X6/files/varie/keystore.keystore
   AndroidKeyaliasName: catalyst developers
   AndroidBuildApkPerCpuArchitecture: 1
   AndroidTVCompatibility: 0

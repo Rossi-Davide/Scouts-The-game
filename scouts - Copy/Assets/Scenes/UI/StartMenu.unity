@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 49.15
+  m_fontSize: 72
   m_fontSizeBase: 84
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2829,6 +2829,46 @@ PrefabInstance:
         type: 3}
       propertyPath: possibleDurations.Array.data[0].totalDays
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[1].shopPricesFactor
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[2].shopPricesFactor
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[1].actionPricesFactor
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[2].actionPricesFactor
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[1].actionDurationFactor
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[1].actionWaitTimeFactor
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[2].actionDurationFactor
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[2].actionWaitTimeFactor
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 5744616749825697645, guid: e3c2fac03a608e94da2c4496ba95b63f,
         type: 3}
