@@ -37,6 +37,8 @@ public class dialogueManagerTutorial : MonoBehaviour
 			}
 			Debug.Log(contatore);
 			GameObject.Find("/Canvas").GetComponent<schermateTut>().AggiornaImage(types.sentences[contatore - 1]);
+			if (contatore == types.sentences.Length) FindObjectOfType<schermateTut>().EnableButton(true);
+			else FindObjectOfType<schermateTut>().EnableButton(false);
 		}
 	}
 
@@ -57,6 +59,8 @@ public class dialogueManagerTutorial : MonoBehaviour
 			}
 			Debug.Log(contatore);
 			GameObject.Find("/Canvas").GetComponent<schermateTut>().AggiornaImage(types.sentences[contatore - 1]);
+			if (contatore == types.sentences.Length) FindObjectOfType<schermateTut>().EnableButton(true);
+			else FindObjectOfType<schermateTut>().EnableButton(false);
 		}
 	}
 	IEnumerator TypeSentence(TutorialSentence sentence)

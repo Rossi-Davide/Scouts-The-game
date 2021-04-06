@@ -33,6 +33,10 @@ public class schermateTut : MonoBehaviour
         if (sentence.clip != null) player.clip = sentence.clip;
         if (sentence.photo != null) photosOut.GetComponent<Image>().sprite = sentence.photo;
     }
+    public void EnableButton(bool active)
+	{
+        button.SetActive(active);
+	}
 
     public void StartGame()
     {
