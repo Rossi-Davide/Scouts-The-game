@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class schermateTut : MonoBehaviour
 {
-    public VideoClip[] videi;
-    public Sprite[] photos;
+    //public VideoClip[] videi;
+    //public Sprite[] photos;
     //public RawImage videoImageOut;
     public GameObject photosOut;
     public GameObject videoOut;
@@ -26,71 +26,12 @@ public class schermateTut : MonoBehaviour
         
     }
 
-    public void AggiornaImage(int contatore)
+    public void AggiornaImage(TutorialSentence sentence)
     {
-        switch (contatore)
-        {
-            case 1:
-                photosOut.GetComponent<Image>().sprite = photos[0];
-                videoOut.SetActive(false);
-                photosOut.SetActive(true);
-                break;
-            case 2:
-                photosOut.SetActive(false);
-                videoOut.SetActive(true);
-                player.clip = videi[0];
-                break;
-            case 3:
-                photosOut.SetActive(false);
-                videoOut.SetActive(true);
-                player.clip = videi[1];
-                break;
-
-            case 4:
-                photosOut.GetComponent<Image>().sprite = photos[1];
-                videoOut.SetActive(false);
-                photosOut.SetActive(true);
-                break;
-            case 5:
-                photosOut.GetComponent<Image>().sprite = photos[2];
-                break;
-            case 6:
-                photosOut.GetComponent<Image>().sprite = photos[3];
-                break;
-            case 7:
-                videoOut.SetActive(false);
-                photosOut.GetComponent<Image>().sprite = photos[4];
-                //photosOut.GetComponent<Image>().SetNativeSize();
-                photosOut.SetActive(true);
-                break;
-            case 8:
-                photosOut.SetActive(false);
-                player.clip = videi[2];
-                videoOut.SetActive(true);
-                break;
-            case 9:
-                photosOut.SetActive(false);
-                videoOut.SetActive(true);
-                player.clip = videi[6];
-                break;
-            case 10:
-                photosOut.SetActive(false);
-                player.clip = videi[3];
-                videoOut.SetActive(true);
-                break;
-            case 11:
-                photosOut.SetActive(false);
-                player.clip = videi[4];
-                videoOut.SetActive(true);
-                button.SetActive(false);
-                break;
-            case 12:
-                photosOut.SetActive(false);
-                player.clip = videi[5];
-                videoOut.SetActive(true);
-                button.SetActive(true);
-                break;
-        }
+        videoOut.SetActive(sentence.clip != null);
+        photosOut.SetActive(sentence.photo != null);
+        if (sentence.clip != null) player.clip = sentence.clip;
+        if (sentence.photo != null) photosOut.GetComponent<Image>().sprite = sentence.photo;
     }
 
     public void StartGame()

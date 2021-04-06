@@ -36,7 +36,7 @@ public class dialogueManagerTutorial : MonoBehaviour
 				contatore = types.sentences.Length;
 			}
 			Debug.Log(contatore);
-			GameObject.Find("/Canvas").GetComponent<schermateTut>().AggiornaImage(contatore);
+			GameObject.Find("/Canvas").GetComponent<schermateTut>().AggiornaImage(types.sentences[contatore]);
 		}
 	}
 
@@ -56,7 +56,7 @@ public class dialogueManagerTutorial : MonoBehaviour
 				contatore = 1;
 			}
 			Debug.Log(contatore);
-			GameObject.Find("/Canvas").GetComponent<schermateTut>().AggiornaImage(contatore);
+			GameObject.Find("/Canvas").GetComponent<schermateTut>().AggiornaImage(types.sentences[contatore]);
 		}
 	}
 	IEnumerator TypeSentence(TutorialSentence sentence)

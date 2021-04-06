@@ -674,21 +674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b7ae616e6de2145a0df359f192f717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videi:
-  - {fileID: 32900000, guid: 3902baae995ad7e4cb97f1b603fd8a53, type: 3}
-  - {fileID: 32900000, guid: 0889369e5ee677e48ba5299c1761a5fe, type: 3}
-  - {fileID: 32900000, guid: d62f0a97afb3eb5428d79b0bbdc9ce3c, type: 3}
-  - {fileID: 32900000, guid: 3027aba74fd3c5141b6d86f43805a389, type: 3}
-  - {fileID: 32900000, guid: 57f1b8abaabaffc4fb5e55bc633716f5, type: 3}
-  - {fileID: 32900000, guid: 192e8e50dde170a4fae7b7b984e7d106, type: 3}
-  - {fileID: 32900000, guid: ced7f50ec09da3b4d99b7b0fd8bf89f0, type: 3}
-  photos:
-  - {fileID: 21300000, guid: a930096231b0123428c4dce511f429d6, type: 3}
-  - {fileID: 21300000, guid: 772979916fa83f84b9f2267352901206, type: 3}
-  - {fileID: 21300000, guid: 2ca7c8fee495aec40b092ac11695db33, type: 3}
-  - {fileID: 21300000, guid: ea9a493575a1fb2469e13fda3bc9eca8, type: 3}
-  - {fileID: 21300000, guid: 5f43db6c64ea03b48bd2f994accddc89, type: 3}
-  - {fileID: 21300000, guid: 328068b470096ab42ba0bd1975a2fad0, type: 3}
   photosOut: {fileID: 82841289}
   videoOut: {fileID: 601813232}
   player: {fileID: 1888091466}
@@ -2223,61 +2208,102 @@ MonoBehaviour:
     - sentence: "Benvenuto in \"Scouts \", lo scopo del gioco \xE8 semplice: riuscire
         a vincere il campo con il maggior numero di punti possibile"
       capo: 1
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: "Le singole partite sono chiamate campi. A inizio gioco si possono
         specificare i parametri mostrati, che non potranno essere pi\xF9 cambiati.
         Una volta creato il campo apparir\xE0 qui. Cliccando sul pulsante con il
         simbolo dell'ingranaggio sono disponibili ulteriori opzioni di personalizzazione."
       capo: 0
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: Usando il joystick puoi muoverti per la mappa. Puoi usare lo zoom
         e spostare la visuale trascinando le dita sullo schermo. Cliccando sul mirino
         in basso a destra la visuale si riallinea sul tuo personaggio.
-      capo: 0
+      capo: 2
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: "Le 3 barre colorate indicano i tuoi parametri, tienile sempre d'occhio.\r\nLa
         barra blu indica l'energia, pu\xF2 essere ricaricata o consumata svolgendo
         alcune azioni. Non azzerarla mai!"
       capo: 0
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: La barra marrone indica quanti materiali hai. I materiali possono
         essere guadagnati attraverso alcune azioni (per esempio abbattere alberi)
         e potrai poi usarli per comprare oggetti.
       capo: 2
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: "La barra gialla indica il tuo punteggio. Sar\xE0 quella a determinare
         la vittoria della partita. Cerca di aumentarla il pi\xF9 possibile! Puoi
         ottenere punti svolgendo azioni come parlare o comprando tanti item nello
         shop."
       capo: 1
-    - sentence: "Nella schermata di gioco trovi anche alcuni pulsanti. Il pannello
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: Nella schermata di gioco trovi anche alcuni pulsanti. Il pannello
         delle statistiche mostra i punteggi delle altre squadriglie. Il pannello
-        Quest (pulsante con il simbolo \"?\") mostra le missioni da completare. L'inventario
-        e la cassa di squadriglia (a destra) contengono gli item ottenuti nel corso
-        della partita. Quando l'inventario \xE8 pieno, apri la cassa di squadriglia
-        per immagazzinare gli item che non usi."
+        Quest (pulsante con il simbolo "?") mostra le missioni da completare.
       capo: 0
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: "L'inventario e la cassa di squadriglia (a destra) contengono gli
+        item ottenuti nel corso della partita. Quando l'inventario \xE8 pieno, apri
+        la cassa di squadriglia per immagazzinare gli item che non usi."
+      capo: 3
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: "Nello shop \xE8 possibile acquistare oggetti spendendo materiali.
         Le costruzioni stanno nel tuo \"angolo di squadriglia\" e sono fondamentali
         nel corso del gioco. Dopo averle comprate la prima volta puoi aumentarle
-        di livello. Gli item invece danno potenziamenti o ti permettono di acquistare
-        alcune costruzioni."
+        di livello."
+      capo: 1
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: Alcuni item danno potenziamenti, mentre altri sono richiesti per
+        comprare delle costruzioni o altri item.
       capo: 3
-    - sentence: Quando compri una costruzione puoi piazzarla a piacimento all'interno
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: 'Quando compri una costruzione puoi piazzarla a piacimento all''interno
         del tuo angolo. Puoi sempre cambiare la loro posizione premendo il pulsante
-        "modifica angolo". Usa lo stesso pulsante anche per vedere dove si trova
-        il tuo angolo di squadriglia all'interno della mappa.
+        "modifica angolo". '
       capo: 0
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: Usa lo stesso pulsante anche per vedere dove si trova il tuo angolo
+        di squadriglia all'interno della mappa.
+      capo: 1
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: "Puoi cliccare oggetti nella mappa per svolgere azioni come cucinare,
         dormire, mangiare, che ti faranno avanzare nel gioco. Fai attenzione, perch\xE8
-        svolgere un'azione pu\xF2 richiedere energia/materiali/punti. Esiste un oggetto
-        speciale, la cassa del furfante, che ti permette di sbloccare una sezione
-        dello shop."
-      capo: 0
+        svolgere un'azione pu\xF2 richiedere energia/materiali/punti."
+      capo: 2
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: Esiste un oggetto speciale, la cassa del furfante, che ti permette
+        di sbloccare una sezione dello shop.
+      capo: 3
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: Puoi anche "parlare" con alcune persone, ovvero i capi e i genitori
         (che compaiono solo durante la domenica dei genitori), per guadagnare punti.
-      capo: 2
+      capo: 1
+      clip: {fileID: 0}
+      photo: {fileID: 0}
     - sentence: 'Non sei solo nella tua missione! Sei infatti a capo della tua squadriglia:
         potrai cliccare sui tuoi compagni in qualsiasi momento per fargli svolgere
-        alcune azioni come fare legna. Puoi anche guidare i tuoi squadriglieri in
-        una sfida contro un''altra squadriglia (attivata cliccando sull''angolo di
-        quest''ultima).'
+        alcune azioni come fare legna.'
+      capo: 0
+      clip: {fileID: 0}
+      photo: {fileID: 0}
+    - sentence: Puoi anche guidare i tuoi squadriglieri in una sfida contro un'altra
+        squadriglia (attivata cliccando sull'angolo di quest'ultima).
       capo: 1
+      clip: {fileID: 0}
+      photo: {fileID: 0}
   description: {fileID: 205062407}
   capi:
   - {fileID: 441440965}
