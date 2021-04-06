@@ -593,7 +593,9 @@ public class GameManager : MonoBehaviour
         if (audio != null)
         {
 			audio.GetComponent<AudioManager>().Stop("musicaGiochi");
-        }
+			audio.GetComponent<AudioManager>().Play("musicaGioco");
+		}
+		
 
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
 	}
