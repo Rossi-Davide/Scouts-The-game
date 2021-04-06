@@ -4,11 +4,13 @@ public class Tent : PlayerBuildingBase
 	void StartSleep()
 	{
 		Player.instance.gameObject.SetActive(false);
+		Joystick.instance.enabled = false;
 	}
 	void EndOfSleep()
 	{
 		GameManager.instance.SkipNight();
 		Player.instance.gameObject.SetActive(true);
+		Joystick.instance.enabled = true;
 		RefreshButtonsState();
 	}
 	public override Action GetOnEndAction(int buttonIndex)

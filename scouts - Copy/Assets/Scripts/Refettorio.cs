@@ -8,7 +8,7 @@ public class Refettorio : PlayerBuildingBase
 		switch (buttonIndex + 1)
 		{
 			case 1:
-				return null;
+				return EndEat;
 			case 2:
 				return MettiAlSicuro;
 			case 3:
@@ -18,5 +18,24 @@ public class Refettorio : PlayerBuildingBase
 		}
 	}
 
-	protected override void DoActionOnStart(int buttonIndex) { }
+	void StartEat()
+	{
+		Player.instance.gameObject.SetActive(false);
+		Joystick.instance.enabled = false;
+	}
+	void EndEat()
+	{
+		Player.instance.gameObject.SetActive(true);
+		Joystick.instance.enabled = true;
+	}
+
+	protected override void DoActionOnStart(int buttonIndex) 
+	{
+		switch (buttonIndex + 1)
+		{
+			case 1:
+				StartEat();
+				break;
+		}
+	}
 }
