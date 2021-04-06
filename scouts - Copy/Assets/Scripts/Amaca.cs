@@ -7,6 +7,7 @@ public class Amaca : PlayerBuildingBase
 	{
 		Player.instance.GetComponent<Animator>().Play("amacaDormireLv" + (building.level + 1));
 		Player.instance.GetComponent<Animator>().SetBool("amaca",true);
+		Joystick.instance.enabled = false;
 
 		GetComponent<SpriteRenderer>().enabled = false;
 	}
@@ -14,6 +15,7 @@ public class Amaca : PlayerBuildingBase
 	{
 		Player.instance.GetComponent<Animator>().SetBool("amaca",false);
 		GetComponent<SpriteRenderer>().enabled = true;
+		Joystick.instance.enabled = true;
 		RefreshButtonsState();
 	}
 
