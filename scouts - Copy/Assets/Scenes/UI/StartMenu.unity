@@ -2828,7 +2828,17 @@ PrefabInstance:
     - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
         type: 3}
       propertyPath: possibleDurations.Array.data[0].totalDays
-      value: 7
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[1].totalDays
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
+        type: 3}
+      propertyPath: possibleDurations.Array.data[2].totalDays
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5744616749825697644, guid: e3c2fac03a608e94da2c4496ba95b63f,
         type: 3}

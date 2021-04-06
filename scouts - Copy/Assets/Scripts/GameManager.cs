@@ -564,13 +564,15 @@ public class GameManager : MonoBehaviour
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
 
-		ChangeCounter(200, Counter.Materiali);
-		ChangeCounter(100, Counter.Energia);
+	
 		currentDay = 1;
 		currentHour = 7;
-		ChangeCounterMaxValue(2000, Counter.Materiali);
+		ChangeCounterMaxValue(500, Counter.Materiali);
 		ChangeCounterMaxValue(100, Counter.Energia);
 		ChangeCounterMaxValue(200, Counter.Punti);
+
+		ChangeCounter(2000, Counter.Materiali);
+		ChangeCounter(100, Counter.Energia);
 
 		InvokeRepeating(nameof(SpawnDecorations), 55f, 55);
 		InvokeRepeating(nameof(PeriodicItemActionSlow), 60, 60);
