@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1424,7 +1424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0575, y: 0.9056514}
   m_AnchorMax: {x: 0.0575, y: 0.9056514}
-  m_AnchoredPosition: {x: -2.5, y: -2.399994}
+  m_AnchoredPosition: {x: -2.5, y: -2.3999634}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086999458
@@ -2225,48 +2225,58 @@ MonoBehaviour:
       capo: 1
     - sentence: "Le singole partite sono chiamate campi. A inizio gioco si possono
         specificare i parametri mostrati, che non potranno essere pi\xF9 cambiati.
-        Una volta creato il campo apparir\xE0 qui."
+        Una volta creato il campo apparir\xE0 qui. Cliccando sul pulsante con il
+        simbolo dell'ingranaggio sono disponibili ulteriori opzioni di personalizzazione."
       capo: 0
     - sentence: Usando il joystick puoi muoverti per la mappa. Puoi usare lo zoom
-        e spostare la visuale. Cliccando sul mirino la visuale si riallinea sul tuo
-        personaggio.
+        e spostare la visuale trascinando le dita sullo schermo. Cliccando sul mirino
+        in basso a destra la visuale si riallinea sul tuo personaggio.
       capo: 0
     - sentence: "Le 3 barre colorate indicano i tuoi parametri, tienile sempre d'occhio.\r\nLa
         barra blu indica l'energia, pu\xF2 essere ricaricata o consumata svolgendo
         alcune azioni. Non azzerarla mai!"
       capo: 0
-    - sentence: La barra marrone indica quanti materiali - come il legno - hai. I
-        materiali possono essere guadagnati attraverso alcune azioni e potrai poi
-        usarli per comprare oggetti.
+    - sentence: La barra marrone indica quanti materiali hai. I materiali possono
+        essere guadagnati attraverso alcune azioni (per esempio abbattere alberi)
+        e potrai poi usarli per comprare oggetti.
       capo: 2
     - sentence: "La barra gialla indica il tuo punteggio. Sar\xE0 quella a determinare
-        la vittoria della partita. Cerca di aumentarla il pi\xF9 possibile!"
+        la vittoria della partita. Cerca di aumentarla il pi\xF9 possibile! Puoi
+        ottenere punti svolgendo azioni come parlare o comprando tanti item nello
+        shop."
       capo: 1
-    - sentence: Nella schermata di gioco trovi anche alcuni pannelli. Il pannello
-        delle statistiche mostra i punteggi dei tuoi rivali, ovvero delle altre squadriglie.
-        Il pannello Quest mostra le missioni da completare. L'inventario e la cassa
-        di squadriglia contengono gli item ottenibili nel corso della partita.
+    - sentence: "Nella schermata di gioco trovi anche alcuni pulsanti. Il pannello
+        delle statistiche mostra i punteggi delle altre squadriglie. Il pannello
+        Quest (pulsante con il simbolo \"?\") mostra le missioni da completare. L'inventario
+        e la cassa di squadriglia (a destra) contengono gli item ottenuti nel corso
+        della partita. Quando l'inventario \xE8 pieno, apri la cassa di squadriglia
+        per immagazzinare gli item che non usi."
       capo: 0
     - sentence: "Nello shop \xE8 possibile acquistare oggetti spendendo materiali.
         Le costruzioni stanno nel tuo \"angolo di squadriglia\" e sono fondamentali
-        nel corso del gioco. Gli item danno potenziamenti o ti permettono di acquistare
+        nel corso del gioco. Dopo averle comprate la prima volta puoi aumentarle
+        di livello. Gli item invece danno potenziamenti o ti permettono di acquistare
         alcune costruzioni."
       capo: 3
     - sentence: Quando compri una costruzione puoi piazzarla a piacimento all'interno
         del tuo angolo. Puoi sempre cambiare la loro posizione premendo il pulsante
-        "modifica angolo".
+        "modifica angolo". Usa lo stesso pulsante anche per vedere dove si trova
+        il tuo angolo di squadriglia all'interno della mappa.
       capo: 0
-    - sentence: "Puoi cliccare sugli oggetti nella mappa per svolgere azioni come
-        cucinare, dormire, mangiare,... Fai attenzione, perch\xE8 svolgere un'azione
-        pu\xF2 richiedere energia/materiali/punti."
+    - sentence: "Puoi cliccare oggetti nella mappa per svolgere azioni come cucinare,
+        dormire, mangiare, che ti faranno avanzare nel gioco. Fai attenzione, perch\xE8
+        svolgere un'azione pu\xF2 richiedere energia/materiali/punti. Esiste un oggetto
+        speciale, la cassa del furfante, che ti permette di sbloccare una sezione
+        dello shop."
       capo: 0
-    - sentence: Puoi anche "parlare" con alcune persone, ovvero i capi, i cambusieri
-        e i genitori (che compaiono solo durante la domenica dei genitori), per guadagnare
-        punti.
+    - sentence: Puoi anche "parlare" con alcune persone, ovvero i capi e i genitori
+        (che compaiono solo durante la domenica dei genitori), per guadagnare punti.
       capo: 2
     - sentence: 'Non sei solo nella tua missione! Sei infatti a capo della tua squadriglia:
         potrai cliccare sui tuoi compagni in qualsiasi momento per fargli svolgere
-        alcune azioni come fare legna.'
+        alcune azioni come fare legna. Puoi anche guidare i tuoi squadriglieri in
+        una sfida contro un''altra squadriglia (attivata cliccando sull''angolo di
+        quest''ultima).'
       capo: 1
   description: {fileID: 205062407}
   capi:

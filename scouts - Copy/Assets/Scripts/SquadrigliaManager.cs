@@ -247,11 +247,11 @@ public class SquadrigliaManager : MonoBehaviour
 			{
 				if (Random.Range(0, 100) >= 50)
 				{
-					sq.materials += Random.Range(5, 15);
+					sq.materials += Random.Range(15, 30);
 				}
-				if (Random.Range(0, 100) >= 70)
+				if (Random.Range(0, 100) >= 60)
 				{
-					sq.points += Random.Range(1, 3);
+					sq.points += Random.Range(5, 10);
 				}
 			}
 		}

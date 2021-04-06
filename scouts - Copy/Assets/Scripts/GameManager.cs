@@ -584,7 +584,7 @@ public class GameManager : MonoBehaviour
 		globalLight.intensity = 1f;
 		isRaining = false;
 		rainingTimeLeft = 0;
-		rainingWaitTimeLeft = 80;
+		rainingWaitTimeLeft = 0;
 		plEnLossTimeLeft = playerEnergyLossInterval;
 		totalDays = CampManager.instance.possibleDurations[CampManager.instance.camp.settings.durationIndex].totalDays;
 
