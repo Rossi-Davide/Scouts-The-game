@@ -43,7 +43,7 @@ public abstract class PlayerBuildingBase : InGameObject
 
 	protected override int? GetLevel()
 	{
-		return building.level;
+		return building.level + 1;
 	}
 
 	public override void Select()
