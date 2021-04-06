@@ -17,24 +17,20 @@ public class ShopObjectBase : MonoBehaviour
 
 	public virtual void RefreshInfo()
 	{
-		bool canIncreaseLevel = !obj.usingLevel || obj.level < obj.maxLevel;
+		bool canIncreaseLevel = !obj.usingLevel || (!obj.exists || obj.level < obj.maxLevel);
 		bool canBuy = !obj.usingAmount || obj.currentAmount < obj.maxAmount;
 		Counter pt;
 		int pc, index;
-
-		if (obj.exists)
-		{
-			if (canIncreaseLevel)
-				index = obj.level;
-			else
-				index = obj.level - 1;
-		}
-		else
-			index = obj.level;
+		//if (o.exists)
+		//{
+		//	if (canIncreaseLevel) index = o.level;
+		//	else index = o.level - 1;
+		//}
+		//else index = o.level;
+		index = obj.exists ? (canIncreaseLevel ? obj.level + 1 : obj.level) : obj.level;
 
 		pt = obj.shopInfos[index].priceCounter;
 		pc = obj.shopInfos[index].Price;
-
 		bool hasItems = GameManager.HasItemsToBuy(obj);
 		buyButtonText.text = obj.usingLevel ? (obj.exists ? "Migliora" : "Costruisci") : "Compra";
 		price.text = pc.ToString();
@@ -43,9 +39,12 @@ public class ShopObjectBase : MonoBehaviour
 		pointsLogo.SetActive(pt == Counter.Punti);
 		bool hasEnoughMoney = GameManager.instance.GetCounterValue(pt) >= pc;
 		price.color = hasEnoughMoney ? UnityEngine.Color.white : UnityEngine.Color.red;
-		price.transform.parent.GetComponent<Animator>().Play(canIncreaseLevel && canBuy && hasItems ? "Enabled" : "Disabled");
+		price.transform.parent.GetComponent<Animator>().Play(canIncreaseLevel && hasItems && canBuy ? "Enabled" : "Disabled");
+
 		amount.text = obj.currentAmount + "/" + obj.maxAmount;
+		amount.gameObject.SetActive(obj.usingAmount);
 		level.text = (obj.exists ? (obj.level + 1) : obj.level) + "/" + (obj.maxLevel + 1);
+		level.gameObject.SetActive(obj.usingLevel);
 	}
 	protected virtual void InitializeVariables()
 	{

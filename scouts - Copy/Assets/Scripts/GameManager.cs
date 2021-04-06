@@ -564,7 +564,7 @@ public class GameManager : MonoBehaviour
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
 
-		ChangeCounter(500, Counter.Materiali);
+		ChangeCounter(200, Counter.Materiali);
 		ChangeCounter(100, Counter.Energia);
 		currentDay = 1;
 		currentHour = 7;
