@@ -567,11 +567,11 @@ public class GameManager : MonoBehaviour
 	
 		currentDay = 1;
 		currentHour = 7;
-		ChangeCounterMaxValue(500, Counter.Materiali);
+		ChangeCounterMaxValue(2000, Counter.Materiali);
 		ChangeCounterMaxValue(100, Counter.Energia);
 		ChangeCounterMaxValue(200, Counter.Punti);
 
-		ChangeCounter(2000, Counter.Materiali);
+		ChangeCounter(500, Counter.Materiali);
 		ChangeCounter(100, Counter.Energia);
 
 		InvokeRepeating(nameof(SpawnDecorations), 55f, 55);
