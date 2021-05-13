@@ -24,7 +24,10 @@ public class Pause : MonoBehaviour
 		panel.SetActive(isOpen);
 		Time.timeScale = isOpen ? 0 : 1;
 		PanZoom.instance.canDo = !isOpen;
+
+		joy.canUseJoystick = !isOpen;
 	}
+
 
 	public void Menu()
 	{
