@@ -272,6 +272,8 @@ public abstract class InGameObject : MonoBehaviour
 			if (c == null)
 			{
 				var i = CheckActionItems(b);
+				bool canDoCycle = GameObject.Find("GameManager").GetComponent<CycleAcyion>().CheckConditionsCycle(0);
+
 				if (!CheckActionManager(n - 1))
 				{
 					GameManager.instance.WarningOrMessage("Non puoi eseguire più di 5 azioni contemporaneamente!", true);
@@ -284,7 +286,7 @@ public abstract class InGameObject : MonoBehaviour
 				{
 					GameManager.instance.WarningOrMessage("Hai appena fatto o stai ancora facendo questa azione!", true);
 				}
-				else if (b.previousAction != null && !b.hasDonePreviousAction)
+				else if (!canDoCycle)
 				{
 					GameManager.instance.WarningOrMessage($"Puoi svolgere questa azione solo dopo avere svolto l'azione {b.previousAction.name}!", true);
 				}
