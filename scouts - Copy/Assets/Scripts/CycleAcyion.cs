@@ -11,7 +11,7 @@ public class CycleAcyion : MonoBehaviour
    
 
 
-    public bool CheckConditionsCycle(int typeofAction)
+    public bool CheckConditionsCycle(int? typeofAction)
     {
         bool canDo=false;
 
