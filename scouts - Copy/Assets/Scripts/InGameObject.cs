@@ -272,7 +272,8 @@ public abstract class InGameObject : MonoBehaviour
 			if (c == null)
 			{
 				var i = CheckActionItems(b);
-				bool canDoCycle = GameObject.Find("GameManager").GetComponent<CycleAcyion>().CheckConditionsCycle(b.generalAction.name == "Cucinare" ? 0 : b.generalAction.name == "Mangiare" ? 1 : b.generalAction.name == "Lavare i piatti" ? 2 : null);
+				int? can = b.generalAction.name == "Cucinare" ? (int?)0 : (b.generalAction.name == "Mangiare" ? (int?)1 : (b.generalAction.name == "Lavare i piatti" ? (int?)2 : (int?)null));
+				var canDoCycle = GameObject.Find("GameManager").GetComponent<CycleAcyion>().CheckConditionsCycle(can);
 
 				if (!CheckActionManager(n - 1))
 				{

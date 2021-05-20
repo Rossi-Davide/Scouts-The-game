@@ -124,6 +124,8 @@ public class CampManager : MonoBehaviour
 
 	}
 
+	public bool hasPlayed = false;
+
 	public IEnumerator GameEnded(bool hasWon)
 	{
 		SceneManager.LoadSceneAsync("MainScene");
@@ -134,6 +136,7 @@ public class CampManager : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 		if (hasWon) { GameManager.instance.ChangeCounter(Counter.Punti, puntiRischiati * 2); }
 		GameManager.instance.WarningOrMessage(hasWon ? (puntiRischiati > 0 ? $"Hai vinto! Ottieni {puntiRischiati * 2} punti!" : "Hai vinto, ma non hai 'rischiato' nessun punto, perciò non ottieni punti aggiuntivi!") : (puntiRischiati > 0 ? $"Sei stato sconfitto! Perdi {puntiRischiati} punti." : "Hai perso! Fortunatamente non avevi 'rischiato' alcun punto!"), false);
+		hasPlayed = true;
 	}
 	#endregion
 }

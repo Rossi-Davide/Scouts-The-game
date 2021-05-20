@@ -95,6 +95,11 @@ public class SfidaManager : MonoBehaviour
 			GameManager.instance.ChangeCounter(Counter.Punti, -points);
 			CampManager.instance.StartChallenge(selectedChallenge, points);
 		}
+		else if (CampManager.instance.hasPlayed)
+		{
+			ToggleChallengePanel();
+			GameManager.instance.WarningOrMessage("Non puoi sfidare una squadriglia più di una volta nella stessa sessione di gioco!", true);
+		}
 		else
 		{
 			ToggleChallengePanel();

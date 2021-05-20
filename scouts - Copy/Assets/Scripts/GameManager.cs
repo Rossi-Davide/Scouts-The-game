@@ -558,18 +558,21 @@ public class GameManager : MonoBehaviour
 	#endregion
 	#region General
 
+	bool saveAdviceDone;
+	public GameObject saveAdvicePanel;
+
 	void Start()
 	{
 		globalLight = transform.Find("MainLights/GlobalLight").GetComponent<Light2D>();
 		OnInGameoObjectsChange += RefreshInGameObjs;
 		OnCounterValueChange += CheckPlayerDeath;
 
-	
+		saveAdviceDone = false;
 		currentDay = 1;
 		currentHour = 7;
 		ChangeCounterMaxValue(2000, Counter.Materiali);
 		ChangeCounterMaxValue(100, Counter.Energia);
-		ChangeCounterMaxValue(200, Counter.Punti);
+		ChangeCounterMaxValue(500, Counter.Punti);
 
 		ChangeCounter(500, Counter.Materiali);
 		ChangeCounter(100, Counter.Energia);
@@ -600,6 +603,17 @@ public class GameManager : MonoBehaviour
 		
 
 		SetStatus(SaveSystem.instance.LoadData<Status>(SaveSystem.instance.gameManagerFileName, false));
+
+		saveAdvicePanel.SetActive(!saveAdviceDone);
+		overlay.SetActive(!saveAdviceDone);
+	}
+
+
+	public void CloseAdvicePanel()
+	{
+		saveAdvicePanel.SetActive(false);
+		overlay.SetActive(false);
+		saveAdviceDone = true;
 	}
 
 	public GameObject victoryPanel, deathPanel, overlay;
@@ -667,12 +681,14 @@ public class GameManager : MonoBehaviour
 			globalLight = globalLight.intensity,
 			totalPlantsSpawned = spawnedPlants.Length,
 			plEnLossTimeLeft = plEnLossTimeLeft,
+			saveAdviceDone = saveAdviceDone,
 		};
 	}
 	public void SetStatus(Status status)
 	{
 		if (status != null)
 		{
+			saveAdviceDone = status.saveAdviceDone;
 			ChangeCounter(status.energyValue, Counter.Energia);
 			ChangeCounter(status.materialsValue, Counter.Materiali);
 			ChangeCounter(status.pointsValue, Counter.Punti);
@@ -714,6 +730,7 @@ public class GameManager : MonoBehaviour
 		public float globalLight;
 		public int totalPlantsSpawned;
 		public int plEnLossTimeLeft;
+		public bool saveAdviceDone;
 	}
 
 	void RefreshInGameObjs()
