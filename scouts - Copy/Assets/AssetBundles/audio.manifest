@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 115984526
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f6ea03a650873cd5da41a6c670924a6f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/audio/walking.wav
+- Assets/audio/whoosh.mp3
+- Assets/audio/Fire Sound Effect.mp3
+- Assets/audio/Perc 7.wav
+- Assets/audio/video game.wav
+- Assets/audio/Il cuore di un orologio e il suo battito (1).wav
+- Assets/audio/AUD-20200906-WA0003.mp3
+- Assets/audio/Rain Sound  Calm Sleep.mp3
+- Assets/audio/Nature Sounds Spring Afternoon - UK Garden 2015.mp3
+Dependencies: []
